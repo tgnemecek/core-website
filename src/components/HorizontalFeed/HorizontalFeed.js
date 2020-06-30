@@ -1,5 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import { theme } from "theme";
 import {
   Box,
   Typography,
@@ -15,7 +16,11 @@ import Item from "./Item";
 
 const initialItemWidth = 280;
 const itemHeight = 280;
-const breakpoint = 600;
+const itemSpacingKeyDefault = 2;
+const itemSpacing = theme.spacing(itemSpacingKeyDefault);
+const breakpointKey = "sm";
+const breakpoint = theme.breakpoints.values[breakpointKey];
+const wrapperHorPadding = theme.spacing(3);
 
 export default function HorizontalFeed(props) {
   const containerRef = React.createRef();
@@ -23,8 +28,16 @@ export default function HorizontalFeed(props) {
   const [containerSize, setContainerSize] = React.useState(0);
   const [itemWidth, setItemWidth] = React.useState(initialItemWidth);
   const [position, setPosition] = React.useState(0);
+  const [itemSpacingKey, setItemSpacingKey] = React.useState(
+    itemSpacingKeyDefault
+  );
+  const [showArrowBackground, setShowArrowBackground] = React.useState(true);
 
-  const classes = useStyles({ itemWidth, gridOffset: position * itemWidth })();
+  const classes = useStyles({
+    itemWidth,
+    gridOffset: position * itemWidth,
+    showArrowBackground,
+  })();
 
   React.useEffect(() => {
     if (props.items) {
@@ -35,17 +48,26 @@ export default function HorizontalFeed(props) {
 
   function isRightArrowVisible() {
     const numberOfItems = props.items ? props.items.length : 0;
-    return containerSize < itemWidth * (numberOfItems + position);
+    const spacingTotal = itemSpacing * 2 * numberOfItems;
+    return (
+      containerSize < itemWidth * (numberOfItems + position) + spacingTotal
+    );
   }
 
   function onResize() {
     if (!containerRef.current) return;
 
-    const width = containerRef.current.clientWidth;
+    const width = containerRef.current.offsetWidth;
     setContainerSize(width);
+
     if (width < breakpoint) {
-      setItemWidth(width);
-    } else setItemWidth(initialItemWidth);
+      console.log({ width, wrapperHorPadding, itemSpacing });
+      setItemWidth(width - 2 * wrapperHorPadding);
+      setShowArrowBackground(false);
+    } else {
+      setItemWidth(initialItemWidth);
+      setShowArrowBackground(true);
+    }
   }
 
   function scrollClick(value) {
@@ -55,7 +77,11 @@ export default function HorizontalFeed(props) {
   return (
     <Container className={classes.root} ref={containerRef}>
       <Box className={classes.boxContainer}>
-        <Grid container spacing={2} className={classes.gridContainer}>
+        <Grid
+          container
+          spacing={itemSpacingKey}
+          className={classes.gridContainer}
+        >
           {!props.items ? (
             <>
               <Grid item>
@@ -114,11 +140,11 @@ export default function HorizontalFeed(props) {
   );
 }
 
-const useStyles = ({ itemWidth, gridOffset }) =>
+const useStyles = ({ itemWidth, gridOffset, showArrowBackground }) =>
   makeStyles((theme) => ({
     root: {
       overflow: "hidden",
-      marginBottom: theme.spacing(5),
+      padding: `${theme.spacing(5)}px ${wrapperHorPadding}px`,
     },
     header: {
       flexGrow: 1,
@@ -143,9 +169,11 @@ const useStyles = ({ itemWidth, gridOffset }) =>
       top: 0,
       left: 0,
       height: "100%",
-      width: 100,
+      width: showArrowBackground ? 100 : 50,
       borderRadius: 0,
-      boxShadow: "inset 102px 0px 38px -24px rgba(255,255,255,1)",
+      boxShadow: showArrowBackground
+        ? "inset 102px 0px 38px -24px rgba(255,255,255,1)"
+        : "none",
       "&:hover": {
         background: "transparent",
       },
@@ -156,24 +184,13 @@ const useStyles = ({ itemWidth, gridOffset }) =>
       top: 0,
       right: 0,
       height: "100%",
-      width: 100,
+      width: showArrowBackground ? 100 : 50,
       borderRadius: 0,
-      boxShadow: "inset -102px 0px 38px -24px rgba(255,255,255,1)",
+      boxShadow: showArrowBackground
+        ? "inset -102px 0px 38px -24px rgba(255,255,255,1)"
+        : "none",
       "&:hover": {
         background: "transparent",
-      },
-    },
-    [theme.breakpoints.down("xs")]: {
-      root: {
-        width: "100%",
-      },
-      leftArrowButton: {
-        width: 50,
-        boxShadow: "none",
-      },
-      rightArrowButton: {
-        width: 50,
-        boxShadow: "none",
       },
     },
   }));
