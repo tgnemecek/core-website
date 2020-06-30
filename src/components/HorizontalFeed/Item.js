@@ -12,6 +12,8 @@ import {
 } from "@material-ui/core";
 import Link from "components/Link/Link";
 
+const titleMaxLength = 25;
+
 export default function Item({
   title,
   date,
@@ -20,51 +22,76 @@ export default function Item({
   titleComponent = "h3",
   itemWidth,
   itemHeight,
+  imageHeight,
 }) {
-  const classes = useStyles({ itemWidth, itemHeight })();
+  const classes = useStyles({ itemWidth, itemHeight, imageHeight })();
+
+  const renderTitle = () => {
+    if (title.length > titleMaxLength) {
+      let newTitle = title.slice(0, titleMaxLength - 3);
+      return newTitle + "...";
+    } else return title;
+  };
 
   return (
     <Grid item>
-      <Card className={classes.card}>
-        <CardActionArea className={classes.cardActionArea}>
-          <CardMedia image={image} className={classes.image} title="Event" />
+      <Card className={classes.card} elevation={3}>
+        <CardActionArea
+          className={classes.cardActionArea}
+          component={Link}
+          to={url}
+        >
+          <div className={classes.imageWrapper}>
+            <CardMedia
+              image={image}
+              className={classes.image}
+              title="Event"
+              component="img"
+            />
+          </div>
           <CardContent className={classes.cardContent}>
-            {date && (
-              <div className={classes.date}>
-                <Typography variant="body1">
-                  {moment(date).format("ddd MM/DD")}
-                </Typography>
-              </div>
-            )}
             <Typography variant="h4" component={titleComponent}>
-              {title}
+              {renderTitle()}
             </Typography>
           </CardContent>
+          {date && (
+            <div className={classes.date}>
+              <Typography variant="body1">
+                {moment(date).format("ddd MM/DD")}
+              </Typography>
+            </div>
+          )}
         </CardActionArea>
       </Card>
     </Grid>
   );
 }
 
-const useStyles = ({ itemWidth, itemHeight }) =>
+const useStyles = ({ itemWidth, itemHeight, imageHeight = 280 }) =>
   makeStyles((theme) => ({
     card: {
       minWidth: itemWidth,
       maxWidth: itemWidth,
+      "&:hover img": {
+        transform: "scale(1.2, 1.2)",
+      },
+    },
+    imageWrapper: {
+      height: imageHeight,
+      overflow: "hidden",
     },
     image: {
-      height: 200,
+      height: "100%",
+      width: "100%",
       objectFit: "cover",
+      transition: "all 0.5s ease-in-out",
     },
     cardContent: {
       position: "relative",
-      height: itemHeight / 3,
+      height: itemHeight - imageHeight,
     },
     date: {
       textAlign: "right",
-      position: "absolute",
-      bottom: 0,
-      right: theme.spacing(1),
-      paddingBottom: theme.spacing(1) / 2,
+      paddingRight: theme.spacing(1),
     },
   }));
