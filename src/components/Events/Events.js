@@ -33,6 +33,20 @@ const TEMP_DATA = [
     image:
       "https://i2.wp.com/thebestbrainpossible.com/wp-content/uploads/2019/11/Untitled-design-17.png?ssl=1",
   },
+  {
+    title: "Careers Podcast",
+    date: new Date(),
+    url: "http://www.google.com",
+    image:
+      "https://i2.wp.com/thebestbrainpossible.com/wp-content/uploads/2019/11/Untitled-design-17.png?ssl=1",
+  },
+  {
+    title: "Careers Podcast",
+    date: new Date(),
+    url: "http://www.google.com",
+    image:
+      "https://i2.wp.com/thebestbrainpossible.com/wp-content/uploads/2019/11/Untitled-design-17.png?ssl=1",
+  },
 ];
 
 export default function Events() {

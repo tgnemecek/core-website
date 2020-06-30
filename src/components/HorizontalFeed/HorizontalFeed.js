@@ -15,9 +15,9 @@ import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import Item from "./Item";
 
 const initialItemWidth = 280;
-const itemHeight = 280;
-const itemSpacingKeyDefault = 2;
-const itemSpacing = theme.spacing(itemSpacingKeyDefault);
+const itemHeight = 380;
+const itemSpacingKey = 2;
+const itemSpacing = theme.spacing(itemSpacingKey);
 const breakpointKey = "sm";
 const breakpoint = theme.breakpoints.values[breakpointKey];
 const wrapperHorPadding = theme.spacing(3);
@@ -28,14 +28,11 @@ export default function HorizontalFeed(props) {
   const [containerSize, setContainerSize] = React.useState(0);
   const [itemWidth, setItemWidth] = React.useState(initialItemWidth);
   const [position, setPosition] = React.useState(0);
-  const [itemSpacingKey, setItemSpacingKey] = React.useState(
-    itemSpacingKeyDefault
-  );
   const [showArrowBackground, setShowArrowBackground] = React.useState(true);
 
   const classes = useStyles({
     itemWidth,
-    gridOffset: position * itemWidth,
+    gridOffset: position * (itemWidth + itemSpacing),
     showArrowBackground,
   })();
 
@@ -47,11 +44,13 @@ export default function HorizontalFeed(props) {
   }, [props.items, containerRef]);
 
   function isRightArrowVisible() {
+    if (!props.items) return false;
+
+    const innerSize = containerSize - 2 * wrapperHorPadding;
     const numberOfItems = props.items ? props.items.length : 0;
-    const spacingTotal = itemSpacing * 2 * numberOfItems;
-    return (
-      containerSize < itemWidth * (numberOfItems + position) + spacingTotal
-    );
+    const spacingTotal = itemSpacing * 2 * (numberOfItems - 1);
+
+    return innerSize < itemWidth * (numberOfItems + position) + spacingTotal;
   }
 
   function onResize() {
@@ -61,8 +60,7 @@ export default function HorizontalFeed(props) {
     setContainerSize(width);
 
     if (width < breakpoint) {
-      console.log({ width, wrapperHorPadding, itemSpacing });
-      setItemWidth(width - 2 * wrapperHorPadding);
+      setItemWidth(width - itemSpacing - wrapperHorPadding * 2);
       setShowArrowBackground(false);
     } else {
       setItemWidth(initialItemWidth);
@@ -74,6 +72,26 @@ export default function HorizontalFeed(props) {
     setPosition(position + value);
   }
 
+  function renderSkeletons() {
+    const skeletonCount = Math.ceil(
+      window.innerWidth / (itemWidth + itemSpacing)
+    );
+
+    const result = [];
+    for (let i = 0; i < skeletonCount; i++) {
+      result.push(
+        <Grid item key={i}>
+          <Skeleton
+            variant="rect"
+            width={initialItemWidth}
+            height={itemHeight}
+          />
+        </Grid>
+      );
+    }
+    return result;
+  }
+
   return (
     <Container className={classes.root} ref={containerRef}>
       <Box className={classes.boxContainer}>
@@ -82,42 +100,18 @@ export default function HorizontalFeed(props) {
           spacing={itemSpacingKey}
           className={classes.gridContainer}
         >
-          {!props.items ? (
-            <>
-              <Grid item>
-                <Skeleton
-                  variant="rect"
-                  width={initialItemWidth}
-                  height={initialItemWidth}
-                />
-              </Grid>
-              <Grid item>
-                <Skeleton
-                  variant="rect"
-                  width={initialItemWidth}
-                  height={initialItemWidth}
-                />
-              </Grid>
-              <Grid item>
-                <Skeleton
-                  variant="rect"
-                  width={initialItemWidth}
-                  height={initialItemWidth}
-                />
-              </Grid>
-            </>
-          ) : (
-            props.items.map((item, i) => {
-              return (
-                <Item
-                  key={i}
-                  {...item}
-                  itemWidth={itemWidth}
-                  itemHeight={itemHeight}
-                />
-              );
-            })
-          )}
+          {!props.items
+            ? renderSkeletons()
+            : props.items.map((item, i) => {
+                return (
+                  <Item
+                    key={i}
+                    {...item}
+                    itemWidth={itemWidth}
+                    itemHeight={itemHeight}
+                  />
+                );
+              })}
         </Grid>
         {position ? (
           <IconButton
