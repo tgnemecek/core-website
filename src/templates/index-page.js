@@ -24,14 +24,14 @@ export const IndexPageTemplate = ({
   intro,
 }) => {
   return (
-    <main>
+    <>
       <Events />
       <About />
       <Testimonials />
       <Services />
       <Products />
       <Videos />
-    </main>
+    </>
   );
 };
 

@@ -1,7 +1,9 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
+
+import Navbar from "components/Navbar/Navbar";
+import Footer from "components/Footer/Footer";
+
 import "./all.sass";
 
 import { theme } from "theme";
@@ -54,7 +56,7 @@ const TemplateWrapper = ({ children }) => {
       </Helmet>
       <MuiThemeProvider theme={theme}>
         <Navbar />
-        <div>{children}</div>
+        <main>{children}</main>
         <Footer />
       </MuiThemeProvider>
     </div>

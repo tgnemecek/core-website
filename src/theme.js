@@ -37,7 +37,7 @@ const themeObject = {
   },
   palette: {
     primary: {
-      main: "#000000", // Black
+      main: "#19c7f7", // Blue
     },
     secondary: {
       main: "#FF5D5D", // Pink
