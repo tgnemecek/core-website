@@ -11,15 +11,7 @@ const themeObject = {
     },
   },
   // Use the overrides to set defaults
-  overrides: {
-    a: {
-      color: "red",
-      // display: "none",
-      // "&:visited": {
-      //   color: "red",
-      // },
-    },
-  },
+  overrides: {},
   typography: {
     fontFamily: '"Source Sans Pro", Arial, sans-serif',
     fontSize: 12,
@@ -30,8 +22,12 @@ const themeObject = {
     h2: {
       fontSize: "2rem",
       fontWeight: 700,
+      marginBottom: "2rem",
     },
     h3: {
+      fontSize: "1.5rem",
+    },
+    body2: {
       fontSize: "1.5rem",
     },
   },

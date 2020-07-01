@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
 import { Container } from "@material-ui/core";
 
+import Hero from "components/Hero/Hero";
 import Events from "components/Events/Events";
 import About from "components/About/About";
 import Testimonials from "components/Testimonials/Testimonials";
@@ -25,6 +26,7 @@ export const IndexPageTemplate = ({
 }) => {
   return (
     <>
+      <Hero />
       <Events />
       <About />
       <Testimonials />

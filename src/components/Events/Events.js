@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography } from "@material-ui/core";
 
 import HorizontalFeed from "components/HorizontalFeed/HorizontalFeed";
@@ -36,6 +36,7 @@ const TEMP_DATA = [
 ];
 
 export default function Events() {
+  const classes = useStyles();
   const [events, setEvents] = React.useState(null);
 
   React.useEffect(() => {
@@ -47,7 +48,7 @@ export default function Events() {
   }, []);
 
   return (
-    <section>
+    <section className={classes.events}>
       <Container>
         <Typography variant="h2">Events</Typography>
       </Container>
@@ -55,3 +56,9 @@ export default function Events() {
     </section>
   );
 }
+
+const useStyles = makeStyles((theme) => ({
+  events: {
+    height: 500,
+  },
+}));

@@ -41,7 +41,12 @@ const NavBar = (props) => {
       <List className={classes.list}>
         {TEMP_DATA.map(({ label, url }, i) => {
           return (
-            <ListItem key={i} className={classes.listItem} component={Link} to={url}>
+            <ListItem
+              key={i}
+              className={classes.listItem}
+              component={Link}
+              to={url}
+            >
               {label}
             </ListItem>
           );
@@ -89,7 +94,7 @@ const useStyles = makeStyles((theme) => ({
   },
   list: {
     display: "flex",
-    justifyContent: "flex-start",
+    justifyContent: "space-evenly",
     flexGrow: 1,
     padding: 0,
   },
@@ -105,6 +110,7 @@ const useStyles = makeStyles((theme) => ({
   },
   [theme.breakpoints.down("xs")]: {
     list: {
+      justifyContent: "flex-start",
       flexDirection: "column",
     },
   },

@@ -35,7 +35,7 @@ const Videos = (props) => {
   }, []);
 
   return (
-    <section>
+    <section className={classes.videos}>
       <Container>
         <Typography variant="h2">Videos</Typography>
         <div className={classes.videoWrapper}>
@@ -56,6 +56,9 @@ const Videos = (props) => {
 export default Videos;
 
 const useStyles = makeStyles((theme) => ({
+  videos: {
+    marginBottom: theme.spacing(8),
+  },
   videoWrapper: {
     width: "100%",
     display: "flex",

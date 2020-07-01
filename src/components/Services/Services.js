@@ -52,5 +52,7 @@ export default Services;
 const useStyles = makeStyles((theme) => ({
   servicesContainer: {
     justifyContent: "space-around",
+    height: 400,
+    alignItems: "center",
   },
 }));
