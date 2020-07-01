@@ -138,7 +138,7 @@ const useStyles = ({ itemWidth, gridOffset, showArrowBackground }) =>
   makeStyles((theme) => ({
     root: {
       overflow: "hidden",
-      padding: `${theme.spacing(5)}px ${wrapperHorPadding}px`,
+      padding: `0 ${wrapperHorPadding}px`,
     },
     header: {
       flexGrow: 1,
@@ -146,7 +146,6 @@ const useStyles = ({ itemWidth, gridOffset, showArrowBackground }) =>
     boxContainer: {
       overflow: "hidden",
       position: "relative",
-      marginTop: theme.spacing(3),
     },
     gridContainer: {
       position: "relative",

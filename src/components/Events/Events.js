@@ -60,11 +60,11 @@ export default function Events() {
     }, 2000);
   }, []);
   return (
-    <div>
+    <section>
       <Container>
-        <Typography variant="h2">EVENTS HERE</Typography>
+        <Typography variant="h2">Events</Typography>
       </Container>
       <HorizontalFeed items={events} />
-    </div>
+    </section>
   );
 }

@@ -13,7 +13,14 @@ const Link = React.forwardRef((props, ref) => {
     );
   } else {
     return (
-      <a href={props.to} className={classes.link} ref={ref} alt={props.alt}>
+      <a
+        href={props.to}
+        className={classes.link}
+        ref={ref}
+        alt={props.alt}
+        target="_blank"
+        rel="noreferrer"
+      >
         {props.children}
       </a>
     );
