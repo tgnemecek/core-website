@@ -5,6 +5,7 @@ import { Container } from "@material-ui/core";
 
 import Events from "components/Events/Events";
 import About from "components/About/About";
+import Testimonials from "components/Testimonials/Testimonials";
 
 import Layout from "components/Layout";
 import Features from "components/Features";
@@ -20,12 +21,11 @@ export const IndexPageTemplate = ({
   intro,
 }) => {
   return (
-    <div>
-      <section>
-        <Events />
-        <About />
-      </section>
-    </div>
+    <main>
+      <Events />
+      <About />
+      <Testimonials />
+    </main>
   );
 };
 
