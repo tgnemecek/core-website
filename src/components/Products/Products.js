@@ -38,7 +38,7 @@ const Products = (props) => {
   }, []);
 
   return (
-    <section>
+    <section className={classes.products}>
       <Container>
         <Typography variant="h2">Products</Typography>
         <Link to={products && products[index].url}>
@@ -68,6 +68,9 @@ const Products = (props) => {
 export default Products;
 
 const useStyles = makeStyles((theme) => ({
+  products: {
+    marginBottom: theme.spacing(8),
+  },
   featured: {
     height: 400,
     justifyContent: "space-between",

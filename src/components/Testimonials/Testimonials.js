@@ -77,7 +77,7 @@ const Testimonials = (props) => {
           <Grid item className={classes.testimonial}>
             {testimonials ? (
               <>
-                <Typography variant="body1">
+                <Typography variant="body2" className={classes.text}>
                   {testimonials[index].text}
                 </Typography>
                 <Typography variant="subtitle1">{`—${testimonials[index].author}, ${testimonials[index].role}`}</Typography>
@@ -102,6 +102,11 @@ export default Testimonials;
 const useStyles = makeStyles((theme) => ({
   testimonialWrapper: {
     flexWrap: "nowrap",
+    alignItems: "center",
+    height: 500,
+  },
+  text: {
+    fontStyle: "italic",
   },
   testimonial: {
     flexGrow: 1,
