@@ -7,6 +7,7 @@ import Events from "components/Events/Events";
 import About from "components/About/About";
 import Testimonials from "components/Testimonials/Testimonials";
 import Services from "components/Services/Services";
+import Products from "components/Products/Products";
 
 import Layout from "components/Layout";
 import Features from "components/Features";
@@ -27,6 +28,7 @@ export const IndexPageTemplate = ({
       <About />
       <Testimonials />
       <Services />
+      <Products />
     </main>
   );
 };

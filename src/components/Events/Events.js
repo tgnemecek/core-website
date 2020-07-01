@@ -45,6 +45,7 @@ export default function Events() {
       setEvents(data);
     }, 2000);
   }, []);
+
   return (
     <section>
       <Container>
