@@ -5,9 +5,17 @@ import { Link as GatsbyLink } from "gatsby";
 const Link = React.forwardRef((props, ref) => {
   const classes = useStyles();
 
+  const className = () => {
+    let result = classes.link;
+    if (props.className) {
+      return result + " " + props.className;
+    }
+    return result;
+  }
+
   if (props.url && props.url[0] === "/") {
     return (
-      <GatsbyLink className={classes.link} ref={ref} alt={props.alt}>
+      <GatsbyLink className={className()} ref={ref} alt={props.alt}>
         {props.children}
       </GatsbyLink>
     );
@@ -15,7 +23,7 @@ const Link = React.forwardRef((props, ref) => {
     return (
       <a
         href={props.to}
-        className={classes.link}
+        className={className()}
         ref={ref}
         alt={props.alt}
         target="_blank"
