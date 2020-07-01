@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby";
 import { Container } from "@material-ui/core";
 
 import Events from "components/Events/Events";
+import About from "components/About/About";
 
 import Layout from "components/Layout";
 import Features from "components/Features";
@@ -22,6 +23,7 @@ export const IndexPageTemplate = ({
     <div>
       <section>
         <Events />
+        <About />
       </section>
     </div>
   );
