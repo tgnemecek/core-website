@@ -8,6 +8,7 @@ import About from "components/About/About";
 import Testimonials from "components/Testimonials/Testimonials";
 import Services from "components/Services/Services";
 import Products from "components/Products/Products";
+import Videos from "components/Videos/Videos";
 
 import Layout from "components/Layout";
 import Features from "components/Features";
@@ -29,6 +30,7 @@ export const IndexPageTemplate = ({
       <Testimonials />
       <Services />
       <Products />
+      <Videos />
     </main>
   );
 };

@@ -6,6 +6,14 @@ import Link from "components/Link/Link";
 const Gallery = ({ items, index, setIndex }) => {
   const classes = useStyles();
 
+  const gridItemClass = (i) => {
+    let className = classes.gridItem;
+    if (i === index) {
+      className += ` ${classes.chosenItem}`;
+    }
+    return className;
+  };
+
   return (
     <Grid container className={classes.gallery}>
       {items
@@ -16,7 +24,7 @@ const Gallery = ({ items, index, setIndex }) => {
                 key={i}
                 xs={2}
                 onMouseEnter={() => setIndex(i)}
-                className={i === index && classes.chosenItem}
+                className={gridItemClass(i)}
               >
                 <img src={image} className={classes.image} />
               </Grid>
@@ -32,6 +40,10 @@ export default Gallery;
 const useStyles = makeStyles((theme) => ({
   gallery: {
     backgroundColor: theme.palette.grey["300"],
+    marginTop: theme.spacing(3),
+  },
+  gridItem: {
+    height: 120,
   },
   chosenItem: {
     border: `6px solid ${theme.palette.info.light}`,
