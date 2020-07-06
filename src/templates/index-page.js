@@ -16,6 +16,7 @@ import Features from "components/Features";
 import BlogRoll from "components/BlogRoll";
 
 export const IndexPageTemplate = ({
+  isPreview,
   image,
   title,
   heading,
@@ -27,7 +28,7 @@ export const IndexPageTemplate = ({
   return (
     <>
       <Hero />
-      <Events />
+      <Events isPreview={isPreview} />
       <About />
       <Testimonials />
       <Services />
@@ -38,6 +39,7 @@ export const IndexPageTemplate = ({
 };
 
 IndexPageTemplate.propTypes = {
+  isPreview: PropTypes.boolean,
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   heading: PropTypes.string,

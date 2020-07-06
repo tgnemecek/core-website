@@ -2,9 +2,10 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography } from "@material-ui/core";
 
+import Placeholder from "components/Placeholder/Placeholder";
 import HorizontalFeed from "components/HorizontalFeed/HorizontalFeed";
 
-export default function Events() {
+export default function Events({ isPreview }) {
   const classes = useStyles();
   const [events, setEvents] = React.useState(null);
 
@@ -22,7 +23,11 @@ export default function Events() {
       <Container>
         <Typography variant="h2">Events</Typography>
       </Container>
-      <HorizontalFeed items={events} />
+      {isPreview ? (
+        <Placeholder text="EVENTS ARE DISPLAYED HERE" />
+      ) : (
+        <HorizontalFeed items={events} />
+      )}
     </section>
   );
 }
