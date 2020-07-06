@@ -73,6 +73,8 @@ export default function HorizontalFeed(props) {
   }
 
   function renderSkeletons() {
+    if (!window) return null;
+
     const skeletonCount = Math.ceil(
       window.innerWidth / (itemWidth + itemSpacing)
     );
