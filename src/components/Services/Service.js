@@ -14,7 +14,7 @@ const Service = ({ title, image, url }) => {
   const classes = useStyles();
 
   return (
-    <Card>
+    <Card square>
       <CardActionArea component={Link} to={url}>
         <CardMedia image={image} component="img" />
         <CardContent>

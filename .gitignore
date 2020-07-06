@@ -10,3 +10,4 @@ yarn-error.log
 
 # External files
 files/
+.env

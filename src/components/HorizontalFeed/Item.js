@@ -9,6 +9,7 @@ import {
   CardMedia,
   CardContent,
 } from "@material-ui/core";
+import LinesEllipsis from "react-lines-ellipsis";
 import Link from "components/Link/Link";
 
 const titleMaxLength = 25;
@@ -25,16 +26,9 @@ export default function Item({
 }) {
   const classes = useStyles({ itemWidth, itemHeight, imageHeight })();
 
-  const renderTitle = () => {
-    if (title.length > titleMaxLength) {
-      let newTitle = title.slice(0, titleMaxLength - 3);
-      return newTitle + "...";
-    } else return title;
-  };
-
   return (
     <Grid item>
-      <Card className={classes.card} elevation={3}>
+      <Card className={classes.card} elevation={3} square>
         <CardActionArea
           className={classes.cardActionArea}
           component={Link}
@@ -49,9 +43,16 @@ export default function Item({
             />
           </div>
           <CardContent className={classes.cardContent}>
-            <Typography variant="h4" component={titleComponent}>
-              {renderTitle()}
-            </Typography>
+            <LinesEllipsis
+              text={title}
+              component={Typography}
+              variant="h4"
+              maxLine="2"
+              ellipsis="..."
+              trimRight
+              basedOn="letters"
+              style={{ whiteSpace: "pre-wrap" }}
+            />
           </CardContent>
           {date && (
             <div className={classes.date}>
