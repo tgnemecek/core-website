@@ -1,9 +1,9 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography, Grid } from "@material-ui/core";
-import Link from "components/Link/Link";
+import Link from "src/components/Link/Link";
 
-import Gallery from "components/Gallery/Gallery";
+import Gallery from "src/components/Gallery/Gallery";
 
 const TEMP_DATA = [
   {
