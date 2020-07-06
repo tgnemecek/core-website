@@ -12,7 +12,6 @@ export default function Events({ isPreview }) {
   React.useEffect(() => {
     fetch("/.netlify/functions/eventbrite").then((res) =>
       res.json().then((data) => {
-        console.log(data);
         setEvents(data.events);
       })
     );
