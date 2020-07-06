@@ -4,6 +4,7 @@ import { Container, Typography, Grid, IconButton } from "@material-ui/core";
 import { Skeleton } from "@material-ui/lab";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import VisuallyHidden from "@reach/visually-hidden";
 
 const TEMP_DATA = [
   {
@@ -67,7 +68,9 @@ const Testimonials = (props) => {
   return (
     <section>
       <Container>
-        <Typography variant="h2">Testimonials</Typography>
+        <VisuallyHidden>
+          <Typography variant="h2">Testimonials</Typography>
+        </VisuallyHidden>
         <Grid container className={classes.testimonialWrapper}>
           <Grid item>
             <IconButton onClick={() => changeIndex(-1)}>

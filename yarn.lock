@@ -2057,6 +2057,13 @@
   dependencies:
     tslib "^1.11.2"
 
+"@reach/visually-hidden@^0.10.4":
+  version "0.10.4"
+  resolved "https://registry.yarnpkg.com/@reach/visually-hidden/-/visually-hidden-0.10.4.tgz#ab390db0adf759393af4d856f84375468b1df676"
+  integrity sha512-GnuPuTRCf+Ih47BoKvGyB+jP8EVWLb04GfbGa5neOrjdp90qrb4zr7pMSL4ZvTsrxt9MRooJA2BhSxs5DbyqCQ==
+  dependencies:
+    tslib "^2.0.0"
+
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
@@ -3272,6 +3279,19 @@ auto-bind@^4.0.0:
   resolved "https://registry.yarnpkg.com/auto-bind/-/auto-bind-4.0.0.tgz#e3589fc6c2da8f7ca43ba9f84fa52a744fc997fb"
   integrity sha512-Hdw8qdNiqdJ8LqT0iK0sVzkFbzg6fhnQqqfWhBDxcHZvU75+B+ayzTy8x+k5Ix0Y92XOhOUlx74ps+bA6BeYMQ==
 
+autoprefixer@^9.6.1:
+  version "9.8.4"
+  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-9.8.4.tgz#736f1012673a70fa3464671d78d41abd54512863"
+  integrity sha512-84aYfXlpUe45lvmS+HoAWKCkirI/sw4JK0/bTeeqgHYco3dcsOn0NqdejISjptsYwNji/21dnkDri9PsYKk89A==
+  dependencies:
+    browserslist "^4.12.0"
+    caniuse-lite "^1.0.30001087"
+    colorette "^1.2.0"
+    normalize-range "^0.1.2"
+    num2fraction "^1.2.2"
+    postcss "^7.0.32"
+    postcss-value-parser "^4.1.0"
+
 autoprefixer@^9.8.0:
   version "9.8.0"
   resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-9.8.0.tgz#68e2d2bef7ba4c3a65436f662d0a56a741e56511"
@@ -4151,6 +4171,11 @@ caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001043, caniuse-lite@^1.0.30001061:
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001078.tgz#e1b6e2ae327b6a1ec11f65ec7a0dde1e7093074c"
   integrity sha512-sF12qXe9VMm32IEf/+NDvmTpwJaaU7N1igpiH2FdI4DyABJSsOqG3ZAcFvszLkoLoo1y6VJLMYivukUAxaMASw==
 
+caniuse-lite@^1.0.30001087:
+  version "1.0.30001094"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001094.tgz#0b11d02e1cdc201348dbd8e3e57bd9b6ce82b175"
+  integrity sha512-ufHZNtMaDEuRBpTbqD93tIQnngmJ+oBknjvr0IbFympSdtFpAUFmNv4mVKbb53qltxFx0nK3iy32S9AqkLzUNA==
+
 case@^1.6.2:
   version "1.6.3"
   resolved "https://registry.yarnpkg.com/case/-/case-1.6.3.tgz#0a4386e3e9825351ca2e6216c60467ff5f1ea1c9"
@@ -4335,7 +4360,7 @@ classnames@^2.2.5:
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
   integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
 
-clean-css@4.2.x:
+clean-css@4.2.x, clean-css@^4.2.1:
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-4.2.3.tgz#507b5de7d97b48ee53d84adb0160ff6216380f78"
   integrity sha512-VcMWDN54ZN/DS+g58HYL5/n4Zrqe8vHJpGA8KdgUXFU4fuP/aHNw8eld9SyEIyabIMJX/0RaY/fplOo5hYLSFA==
@@ -4508,6 +4533,11 @@ color@^3.0.0, color@^3.1.2:
   dependencies:
     color-convert "^1.9.1"
     color-string "^1.5.2"
+
+colorette@^1.2.0:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/colorette/-/colorette-1.2.1.tgz#4d0b921325c14faf92633086a536db6e89564b1b"
+  integrity sha512-puCDz0CzydiSYOrnXpz/PKd69zRrribezjtE9yd4zvytoRc8+RY/KJPvtPFKZS3E3wP6neGyMe0vOTlHO5L3Pw==
 
 colors@^1.1.2:
   version "1.4.0"
@@ -6107,7 +6137,7 @@ es6-weak-map@^2.0.2:
     es6-iterator "^2.0.3"
     es6-symbol "^3.1.1"
 
-escape-html@^1.0.3, escape-html@~1.0.3:
+escape-html@~1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/escape-html/-/escape-html-1.0.3.tgz#0258eae4d3d0c0974de1c169188ef0051d1d1988"
   integrity sha1-Aljq5NPQwJdN4cFpGI7wBR0dGYg=
@@ -7337,6 +7367,15 @@ gatsby-page-utils@^0.2.8:
     glob "^7.1.6"
     lodash "^4.17.15"
     micromatch "^3.1.10"
+
+gatsby-plugin-material-ui@^2.1.9:
+  version "2.1.9"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-material-ui/-/gatsby-plugin-material-ui-2.1.9.tgz#f0e4366f99475ba4ca4c7a6c6026c7546e25170e"
+  integrity sha512-bvfAEOugCyDgVY9ZNadnC+RP20qA/G2mMDnoj25hRf98fcTtP128s1DshoeYZF61w46Mqp6ACB+uZtrG6iWDfQ==
+  dependencies:
+    autoprefixer "^9.6.1"
+    clean-css "^4.2.1"
+    postcss "^7.0.17"
 
 gatsby-plugin-netlify-cms@^4.2.5:
   version "4.3.4"
@@ -9950,11 +9989,6 @@ jpeg-js@^0.3.4:
   resolved "https://registry.yarnpkg.com/jpeg-js/-/jpeg-js-0.3.7.tgz#471a89d06011640592d314158608690172b1028d"
   integrity sha512-9IXdWudL61npZjvLuVe/ktHiA41iE8qFyLB+4VDTblEsWBzeg8WQTlktdUK4CdncUqtUgUg0bbOmTE2bKBKaBQ==
 
-jquery@^3.4.1:
-  version "3.5.1"
-  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.5.1.tgz#d7b4d08e1bfdb86ad2f1a3d039ea17304717abb5"
-  integrity sha512-XwIBPqcMn57FxfT+Go5pzySnm4KWkT1Tv7gjrpT1srtf8Weynl6R273VJ5GjkRb51IzMp5nbaPjJXMWeju2MKg==
-
 js-base64@^2.1.8, js-base64@^2.5.1:
   version "2.5.2"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.5.2.tgz#313b6274dda718f714d00b3330bbae6e38e90209"
@@ -11398,14 +11432,6 @@ netlify-cms-media-library-cloudinary@^1.3.2:
   version "1.3.4"
   resolved "https://registry.yarnpkg.com/netlify-cms-media-library-cloudinary/-/netlify-cms-media-library-cloudinary-1.3.4.tgz#ef8aa18ff85d4f1957a5ce4ca89799cda3334ec1"
   integrity sha512-ujVXy1nhvYISf6Fs/UGgCWEchbEHlrpkBpwFfVdGyOpKanimmVRlqceMPzsLJbnmB2STCPWCG7vOnmvd0hZ7kw==
-
-netlify-cms-media-library-uploadcare@^0.5.2:
-  version "0.5.5"
-  resolved "https://registry.yarnpkg.com/netlify-cms-media-library-uploadcare/-/netlify-cms-media-library-uploadcare-0.5.5.tgz#295e0f5d01c0029df9e5ec03649c76a2f92fc12f"
-  integrity sha512-+pH6UKXD7nuF+WUX3C/Tk0X0vcKHndl4vZJQCdojqtk+PrOBk3VXri5XJkJd2xFUtksdprCRaKPvB2RKbuolEQ==
-  dependencies:
-    uploadcare-widget "^3.7.0"
-    uploadcare-widget-tab-effects "^1.4.0"
 
 netlify-cms-ui-default@^2.11.0:
   version "2.11.0"
@@ -13082,7 +13108,7 @@ postcss@^6.0.1, postcss@^6.0.23:
     source-map "^0.6.1"
     supports-color "^5.4.0"
 
-postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.26, postcss@^7.0.27, postcss@^7.0.30:
+postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.17, postcss@^7.0.26, postcss@^7.0.27, postcss@^7.0.30, postcss@^7.0.32:
   version "7.0.32"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.32.tgz#4310d6ee347053da3433db2be492883d62cec59d"
   integrity sha512-03eXong5NLnNCD05xscnGKGDZ98CyzoqPSMjOe6SuoQY7Z2hIj0Ld1g/O/UQRuOle2aRtiIRDg9tDcTGAkLfKw==
@@ -16458,7 +16484,7 @@ tslib@^1.0.0, tslib@^1.10.0, tslib@^1.11.1, tslib@^1.11.2, tslib@^1.6.0, tslib@^
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.13.0.tgz#c881e13cc7015894ed914862d276436fa9a47043"
   integrity sha512-i/6DQjL8Xf3be4K/E6Wgpekn5Qasl1usyw++dAA35Ue5orEn65VIxOA+YvNNl9HV3qv70T7CNwjODHZrLwvd1Q==
 
-tslib@~2.0.0:
+tslib@^2.0.0, tslib@~2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.0.0.tgz#18d13fc2dce04051e20f074cc8387fd8089ce4f3"
   integrity sha512-lTqkx847PI7xEDYJntxZH89L2/aXInsyF2luSafe/+0fHOMjlBNXdH6th7f70qxLDhul7KZK0zC8V5ZIyHl0/g==
@@ -16890,19 +16916,6 @@ update-notifier@^3.0.1:
     latest-version "^5.0.0"
     semver-diff "^2.0.0"
     xdg-basedir "^3.0.0"
-
-uploadcare-widget-tab-effects@^1.4.0:
-  version "1.4.7"
-  resolved "https://registry.yarnpkg.com/uploadcare-widget-tab-effects/-/uploadcare-widget-tab-effects-1.4.7.tgz#1d87896447716872f4dcb727b009b54fba54f106"
-  integrity sha512-FgHMdVIP8vzgGC772wZTkkh0yN94X+hkZ5uBEdZQlRucOXobyryvPEp2hRJ4wNMt7RLubXVS8WafzEnH6iQX7A==
-
-uploadcare-widget@^3.7.0:
-  version "3.9.1"
-  resolved "https://registry.yarnpkg.com/uploadcare-widget/-/uploadcare-widget-3.9.1.tgz#d94daf5d0cc4f6de3c91bc9b004ae7de479d2cec"
-  integrity sha512-nbOejbttHA2S7BPm9U/eoXhSRNCf1qgsnUHLXFkmJjc9i/dKCWOFAEJ9Xp0ioVnxExSNMVYKdh5Ng/GHlWHt4A==
-  dependencies:
-    escape-html "^1.0.3"
-    jquery "^3.4.1"
 
 upper-case@^1.1.1:
   version "1.1.3"

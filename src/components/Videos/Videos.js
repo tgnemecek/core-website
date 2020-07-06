@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography, Grid } from "@material-ui/core";
+import Placeholder from "components/Placeholder/Placeholder";
 import YouTube from "react-youtube";
 import Link from "components/Link/Link";
 
@@ -12,7 +13,7 @@ const TEMP_DATA = [
   "https://www.youtube.com/watch?v=GHp-spiklWE",
 ];
 
-const Videos = (props) => {
+const Videos = ({ isPreview }) => {
   const classes = useStyles();
   const [videos, setVideos] = React.useState(null);
   const [index, setIndex] = React.useState(0);
@@ -36,19 +37,23 @@ const Videos = (props) => {
 
   return (
     <section className={classes.videos}>
-      <Container>
-        <Typography variant="h2">Videos</Typography>
-        <div className={classes.videoWrapper}>
-          <YouTube
-            videoId={videos && videos[index].videoId}
-            opts={{
-              height: 315,
-              width: 560,
-            }}
-          />
-        </div>
-        <Gallery items={videos} index={index} setIndex={setIndex} />
-      </Container>
+      {isPreview ? (
+        <Placeholder text="Videos from Youtube are shown here" />
+      ) : (
+        <Container>
+          <Typography variant="h2">Videos</Typography>
+          <div className={classes.videoWrapper}>
+            <YouTube
+              videoId={videos && videos[index].videoId}
+              opts={{
+                height: 315,
+                width: 560,
+              }}
+            />
+          </div>
+          <Gallery items={videos} index={index} setIndex={setIndex} />
+        </Container>
+      )}
     </section>
   );
 };
