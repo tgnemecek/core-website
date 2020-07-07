@@ -10,7 +10,7 @@ import {
   Drawer,
   IconButton,
 } from "@material-ui/core";
-import Link from "components/Link/Link";
+import Link from "Link/Link";
 import MenuIcon from "@material-ui/icons/Menu";
 
 const TEMP_DATA = [
