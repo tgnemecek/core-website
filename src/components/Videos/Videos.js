@@ -1,11 +1,11 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography, Grid } from "@material-ui/core";
-import Placeholder from "Placeholder/Placeholder";
+import Placeholder from "components/Placeholder/Placeholder";
 import YouTube from "react-youtube";
-import Link from "Link/Link";
+import Link from "components/Link/Link";
 
-import Gallery from "Gallery/Gallery";
+import Gallery from "components/Gallery/Gallery";
 
 const TEMP_DATA = [
   "https://www.youtube.com/watch?v=5qap5aO4i9A",
