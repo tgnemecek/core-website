@@ -13,7 +13,12 @@ module.exports = {
   plugins: [
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sass",
-    "gatsby-plugin-resolve-src",
+    {
+      resolve: "gatsby-plugin-resolve-src",
+      options: {
+        srcPath: path.resolve(__dirname, "src"),
+      },
+    },
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: "gatsby-source-filesystem",
