@@ -32,7 +32,7 @@ const TEMP_DATA = [
   },
 ];
 
-const NavBar = (props) => {
+const Navbar = (props) => {
   const classes = useStyles();
   const [isDrawerOpen, setDrawerOpen] = React.useState(false);
 
@@ -82,7 +82,7 @@ const NavBar = (props) => {
   );
 };
 
-export default NavBar;
+export default Navbar;
 
 const useStyles = makeStyles((theme) => ({
   nav: {},
