@@ -3,17 +3,15 @@ import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
 import { Container } from "@material-ui/core";
 
-import Hero from "components/Hero/Hero";
-import Events from "components/Events/Events";
-import About from "components/About/About";
-import Testimonials from "components/Testimonials/Testimonials";
-import Services from "components/Services/Services";
-import Products from "components/Products/Products";
-import Videos from "components/Videos/Videos";
+import Hero from "../components/Hero/Hero";
+import Events from "../components/Events/Events";
+import About from "../components/About/About";
+import Testimonials from "../components/Testimonials/Testimonials";
+import Services from "../components/Services/Services";
+import Products from "../components/Products/Products";
+import Videos from "../components/Videos/Videos";
 
-import Layout from "components/Layout";
-import Features from "components/Features";
-import BlogRoll from "components/BlogRoll";
+import Layout from "../components/Layout";
 
 export const IndexPageTemplate = ({
   isPreview,

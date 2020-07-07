@@ -1,12 +1,12 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 
-import Navbar from "components/Navbar/Navbar";
-import Footer from "components/Footer/Footer";
+import Navbar from "./Navbar/Navbar";
+import Footer from "./Footer/Footer";
 
 import "./all.sass";
 
-import { theme } from "theme";
+import { theme } from "../theme";
 import { MuiThemeProvider } from "@material-ui/core";
 
 import useSiteMetadata from "./SiteMetadata";
