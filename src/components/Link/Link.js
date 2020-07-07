@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Link as GatsbyLink } from "gatsby";
+import Hero from "../Hero/Hero";
 
 const Link = React.forwardRef((props, ref) => {
   const classes = useStyles();
@@ -11,7 +12,7 @@ const Link = React.forwardRef((props, ref) => {
       return result + " " + props.className;
     }
     return result;
-  }
+  };
 
   if (props.url && props.url[0] === "/") {
     return (

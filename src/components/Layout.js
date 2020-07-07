@@ -5,7 +5,6 @@ import { Helmet } from "react-helmet";
 import Footer from "../components/Footer/Footer";
 import Link from "components/Link/Link";
 import Gallery from "components/Gallery/Gallery";
-import Hero from "components/Hero/Hero";
 
 import "./all.sass";
 
