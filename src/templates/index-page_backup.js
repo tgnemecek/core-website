@@ -2,11 +2,11 @@
 // import PropTypes from "prop-types";
 // import { Link, graphql } from "gatsby";
 
-// import Events from "Events/Events";
+// import Events from "components/Events/Events";
 
-// import Layout from "Layout";
-// import Features from "Features";
-// import BlogRoll from "BlogRoll";
+// import Layout from "components/Layout";
+// import Features from "components/Features";
+// import BlogRoll from "components/BlogRoll";
 
 // export const IndexPageTemplate = ({
 //   image,
