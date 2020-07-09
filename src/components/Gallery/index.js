@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography, Grid } from "@material-ui/core";
-import Link from "../Link/Link";
+import Link from "components/Link";
 
 const Gallery = ({ items, index, setIndex }) => {
   const classes = useStyles();
