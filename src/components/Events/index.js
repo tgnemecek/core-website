@@ -2,8 +2,8 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography } from "@material-ui/core";
 
-import Placeholder from "../Placeholder/Placeholder";
-import HorizontalFeed from "../HorizontalFeed/HorizontalFeed";
+import Placeholder from "components/Placeholder";
+import HorizontalFeed from "components/HorizontalFeed";
 
 export default function Events({ isPreview }) {
   const classes = useStyles();

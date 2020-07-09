@@ -8,7 +8,7 @@ import {
   Typography,
   Grid,
 } from "@material-ui/core";
-import Link from "../Link/Link";
+import Link from "components/Link";
 
 const Service = ({ title, image, url }) => {
   const classes = useStyles();

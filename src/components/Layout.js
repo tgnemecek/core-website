@@ -1,10 +1,8 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 
-// import Navbar from "./Navbar/Navbar";
-import Footer from "../components/Footer/Footer";
-import Link from "components/Link/Link";
-import Gallery from "components/Gallery/Gallery";
+import Navbar from "components/Navbar";
+import Footer from "components/Footer";
 
 import "./all.sass";
 
@@ -14,7 +12,7 @@ import { MuiThemeProvider } from "@material-ui/core";
 import useSiteMetadata from "./SiteMetadata";
 import { withPrefix } from "gatsby";
 
-const TemplateWrapper = ({ children }) => {
+const Layout = ({ children }) => {
   const { title, description } = useSiteMetadata();
   return (
     <div>
@@ -65,4 +63,4 @@ const TemplateWrapper = ({ children }) => {
   );
 };
 
-export default TemplateWrapper;
+export default Layout;

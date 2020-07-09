@@ -3,11 +3,21 @@ const fetch = require("node-fetch");
 module.exports.handler = async (event, context) => {
   console.log("Running eventbrite.js...");
   try {
-    const token = process.env.EVENTBRITE_TOKEN;
-    const orgId = process.env.ORGANIZATION_ID;
+    // Auth
+    const token = `token=${process.env.EVENTBRITE_API_TOKEN}`;
+    const orgId = process.env.EVENTBRITE_ORGANIZATION_ID;
+
+    const baseUrl = "https://www.eventbriteapi.com/v3/organizations";
+
+    // Request Params
+    const params = [
+      "order_by=start_desc",
+      "status=live,started,ended",
+      "show_series_parent=on",
+    ];
 
     const res = await fetch(
-      `https://www.eventbriteapi.com/v3/organizations/${orgId}/events/?token=${token}`
+      `${baseUrl}/${orgId}/events/?${params.join("&")}&${token}`
     );
 
     if (res.status !== 200) {
@@ -22,7 +32,9 @@ module.exports.handler = async (event, context) => {
 
     const data = await res.json();
     const events = data.events
-      .filter(({ status }) => status !== "canceled")
+      .filter(({ locale, is_series, is_series_parent }) => {
+        return locale === "en_US";
+      })
       .map(({ url, start, name, description, logo }) => {
         return {
           url,
@@ -32,6 +44,8 @@ module.exports.handler = async (event, context) => {
           image: logo.original.url,
         };
       });
+
+    console.log({ events });
 
     return {
       statusCode: 200,
