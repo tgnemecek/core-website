@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography, Grid } from "@material-ui/core";
-import Link from "../Link/Link";
+import Link from "components/Link";
 
 import Service from "./Service";
 
