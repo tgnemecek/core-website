@@ -12,6 +12,7 @@ import Products from "../components/Products/Products";
 import Videos from "../components/Videos/Videos";
 
 import Layout from "../components/Layout";
+import { stubFalse } from "lodash";
 
 export const IndexPageTemplate = ({
   isPreview,
@@ -37,7 +38,7 @@ export const IndexPageTemplate = ({
 };
 
 IndexPageTemplate.propTypes = {
-  isPreview: PropTypes.boolean,
+  isPreview: PropTypes.bool,
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   heading: PropTypes.string,
@@ -55,6 +56,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <IndexPageTemplate
+        isPreview={false}
         image={frontmatter.image}
         title={frontmatter.title}
         heading={frontmatter.heading}
