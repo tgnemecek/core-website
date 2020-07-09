@@ -6,7 +6,7 @@ import Footer from "components/Footer";
 
 import "./all.sass";
 
-import { theme } from "../theme";
+import { theme } from "components/theme";
 import { MuiThemeProvider } from "@material-ui/core";
 
 import useSiteMetadata from "./SiteMetadata";

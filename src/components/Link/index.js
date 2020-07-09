@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Link as GatsbyLink } from "gatsby";
-import Hero from "../Hero/Hero";
+import Hero from "components/Hero";
 
 const Link = React.forwardRef((props, ref) => {
   const classes = useStyles();
