@@ -17,6 +17,7 @@ module.exports = {
       resolve: "gatsby-plugin-root-import",
       options: {
         components: path.join(__dirname, "src/components"),
+        src: path.join(__dirname, "src"),
       },
     },
     {
@@ -30,8 +31,15 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/src/pages`,
+        path: `${__dirname}/src/collections/pages`,
         name: "pages",
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/src/collections/testimonials`,
+        name: "testimonials",
       },
     },
     {

@@ -5,6 +5,7 @@ import { Skeleton } from "@material-ui/lab";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import VisuallyHidden from "@reach/visually-hidden";
+import { shuffleArray } from "src/util";
 
 const TEMP_DATA = [
   {
@@ -35,24 +36,10 @@ const TEMP_DATA = [
 
 const Testimonials = (props) => {
   const classes = useStyles();
-  const [testimonials, setTestimonials] = React.useState(null);
+  const [testimonials, setTestimonials] = React.useState(
+    shuffleArray(props.testimonials)
+  );
   const [index, setIndex] = React.useState(0);
-
-  React.useEffect(() => {
-    setTimeout(() => {
-      const data = TEMP_DATA; // fetch function here
-
-      // Shuffle array
-      for (let i = data.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * i);
-        const temp = data[i];
-        data[i] = data[j];
-        data[j] = temp;
-      }
-
-      setTestimonials(data);
-    }, 1000);
-  }, []);
 
   const changeIndex = (value) => {
     let newIndex = index + value;
@@ -81,7 +68,7 @@ const Testimonials = (props) => {
             {testimonials ? (
               <>
                 <Typography variant="body2" className={classes.text}>
-                  {testimonials[index].text}
+                  {testimonials[index].testimonial}
                 </Typography>
                 <Typography variant="subtitle1">{`—${testimonials[index].author}, ${testimonials[index].role}`}</Typography>
               </>

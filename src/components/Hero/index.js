@@ -1,27 +1,56 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography, Grid } from "@material-ui/core";
 import Link from "components/Link";
 
-const Hero = (props) => {
-  const classes = useStyles();
+const Hero = ({ title, image, invertTitleColor }) => {
+  const classes = useStyles({ invertTitleColor })();
 
   return (
     <section className={classes.hero}>
-      <img src="" alt="CORE Logo" />
-      <Typography variant="h1">CORE Coaching &amp; Consulting</Typography>
+      <img
+        srcSet={image.srcSet}
+        sizes={image.sizes}
+        src={image.src}
+        className={classes.image}
+        alt="CORE Logo"
+      />
+      <Typography variant="h1" className={classes.title}>
+        {title}
+      </Typography>
     </section>
   );
 };
 
+Hero.propTypes = {
+  title: PropTypes.string.isRequired,
+  image: PropTypes.any.isRequired,
+  invertTitleColor: PropTypes.bool.isRequired,
+};
+
 export default Hero;
 
-const useStyles = makeStyles((theme) => ({
-  hero: {
-    height: 500,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    flexDirection: "column",
-  },
-}));
+const useStyles = ({ invertTitleColor }) =>
+  makeStyles((theme) => ({
+    hero: {
+      height: 500,
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      flexDirection: "column",
+    },
+    title: {
+      color: invertTitleColor ? "white" : "black",
+      textAlign: "center",
+    },
+    imageWrapper: {},
+    image: {
+      position: "absolute",
+      zIndex: -1,
+      top: 0,
+      height: 500,
+      width: "100%",
+      objectFit: "cover",
+    },
+  }));
