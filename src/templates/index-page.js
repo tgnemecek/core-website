@@ -13,16 +13,18 @@ import Videos from "components/Videos";
 
 import Layout from "components/Layout";
 
-export const IndexPageTemplate = ({
-  isPreview,
-  image,
-  title,
-  heading,
-  subheading,
-  mainpitch,
-  description,
-  intro,
-}) => {
+export const IndexPageTemplate = (props) => {
+  const {
+    isPreview,
+    image,
+    title,
+    heading,
+    subheading,
+    mainpitch,
+    description,
+    intro,
+  } = props;
+  console.log({ props });
   return (
     <>
       <Hero />
