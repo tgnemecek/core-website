@@ -20,8 +20,8 @@ const LandingPage = ({
   about,
   aboutImage,
   testimonials,
+  videos,
 }) => {
-  console.log({ testimonials });
   return (
     <>
       <Hero
@@ -31,10 +31,10 @@ const LandingPage = ({
       />
       <Events />
       <About about={about} image={aboutImage} />
-      {/* <Testimonials testimonials={testimonials} />
+      <Testimonials testimonials={testimonials} />
       <Services />
       <Products />
-      <Videos /> */}
+      <Videos videos={videos} />
     </>
   );
 };
@@ -79,6 +79,14 @@ export const pageQuery = graphql`
               ...GatsbyImageSharpFluid
             }
           }
+        }
+        testimonials {
+          testimonial
+          author
+          role
+        }
+        videos {
+          video
         }
       }
     }

@@ -28,10 +28,16 @@ collections:
         name: "index"
         fields:
           - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "index-page",
+              label: Collection,
+              name: collection,
+              widget: hidden,
+              default: pages,
+            }
+          - {
+              label: Template Key,
+              name: templateKey,
+              widget: hidden,
+              default: landing-page,
             }
           - { label: Title, name: title, widget: string }
           - {
@@ -51,3 +57,9 @@ collections:
               - { label: Testimonial, name: testimonial, widget: text }
               - { label: Author, name: author, widget: string }
               - { label: Role, name: role, widget: string }
+          - label: Videos
+            name: videos
+            widget: list
+            collapsed: false
+            fields:
+              - { label: Video Link, name: video, widget: string }
