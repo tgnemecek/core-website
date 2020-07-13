@@ -36,7 +36,7 @@ const Gallery = ({ items, index, setIndex }) => {
   );
 };
 
-Gallery.PropTypes = {
+Gallery.propTypes = {
   items: PropTypes.any,
   index: PropTypes.any,
   setIndex: PropTypes.any,
