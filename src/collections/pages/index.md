@@ -22,4 +22,8 @@ testimonials:
       those new expectations.
     author: D. Ginnett
     role: STEM Teacher & Science Curriculum Specialist
+videos:
+  - video: https://www.youtube.com/watch?v=5qap5aO4i9A
+  - video: https://www.youtube.com/watch?v=ArBZpMMhjuQ
+  - video: https://www.youtube.com/watch?v=GHp-spiklWE
 ---
