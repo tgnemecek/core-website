@@ -45,7 +45,7 @@ export default About;
 
 const useStyles = makeStyles((theme) => ({
   aboutGrid: {
-    height: 500,
+    minHeight: 500,
   },
   textWrapper: {
     height: "100%",
