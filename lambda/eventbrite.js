@@ -45,8 +45,6 @@ module.exports.handler = async (event, context) => {
         };
       });
 
-    console.log({ events });
-
     return {
       statusCode: 200,
       body: JSON.stringify({

@@ -3,22 +3,22 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography, Grid } from "@material-ui/core";
 import Link from "components/Link";
 
-const About = (props) => {
+const About = ({ about, image }) => {
   const classes = useStyles();
 
   return (
-    <section className={classes.about}>
+    <section>
       <Container>
         <Typography variant="h2">About</Typography>
-        <Grid container spacing={5} justify="space-between">
+        <Grid
+          container
+          spacing={5}
+          justify="space-between"
+          className={classes.aboutGrid}
+        >
           <Grid item xs={6}>
             <div className={classes.textWrapper}>
-              <Typography variant="body2">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui
-                dicta minus molestiae vel beatae natus eveniet ratione
-                temporibus aperiam harum alias officiis assumenda officia
-                quibusdam deleniti eos cupiditate dolore doloribus.
-              </Typography>
+              <Typography variant="body2">{about}</Typography>
               <Link to="/" className={classes.link}>
                 Meet the Team
               </Link>
@@ -28,7 +28,9 @@ const About = (props) => {
             <Link to="/">
               <img
                 className={classes.image}
-                src="https://i2.wp.com/thebestbrainpossible.com/wp-content/uploads/2019/11/Untitled-design-17.png?ssl=1"
+                srcSet={image.srcSet}
+                sizes={image.sizes}
+                src={image.src}
                 alt="Team"
               />
             </Link>
@@ -42,8 +44,8 @@ const About = (props) => {
 export default About;
 
 const useStyles = makeStyles((theme) => ({
-  about: {
-    height: 500,
+  aboutGrid: {
+    minHeight: 500,
   },
   textWrapper: {
     height: "100%",
@@ -58,5 +60,7 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     width: "100%",
+    height: "100%",
+    objectFit: "cover",
   },
 }));
