@@ -3,7 +3,7 @@ collection: pages
 templateKey: landing-page
 title: CORE Coaching & Consulting
 invertTitleColor: true
-heroImage: /img/chemex.jpg
+heroImage: https://res.cloudinary.com/dle9vshfv/image/upload/v1594853594/Screen_Shot_2020-07-14_at_3.36.37_PM_tuyv1z.png
 about: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
   tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
   quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -18,8 +18,7 @@ testimonials:
       results with patients I've since referred to her.
     author: T. Moriyama
     role: M.D., Psychiatrist; Instituto Bairral Hospital
-  - testimonial:
-      Thanks to Sharon's strong coaching approach, I not only doubled my
+  - testimonial: Thanks to Sharon's strong coaching approach, I not only doubled my
       income, but  am much happier (and appreciated!) in my new job. She
       challenged and supported me to raise the bar; then she helped me exceed
       those new expectations.
