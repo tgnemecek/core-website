@@ -1,4 +1,6 @@
 ---
+test:
+  child: "123"
 collection: pages
 templateKey: landing-page
 title: CORE Coaching & Consulting
