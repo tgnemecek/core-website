@@ -15,7 +15,6 @@ import Layout from "components/Layout";
 
 const LandingPage = ({
   title,
-  titleColor,
   heroImage,
   about,
   aboutImage,
@@ -24,7 +23,7 @@ const LandingPage = ({
 }) => {
   return (
     <>
-      <Hero title={title} titleColor={titleColor} image={heroImage} />
+      <Hero title={title} image={heroImage} />
       <Events />
       <About about={about} image={aboutImage} />
       <Testimonials testimonials={testimonials} />
@@ -60,7 +59,6 @@ export const pageQuery = graphql`
     main: markdownRemark(frontmatter: { templateKey: { eq: "landing-page" } }) {
       frontmatter {
         title
-        titleColor
         heroImage
         # heroImage {
         #   childImageSharp {

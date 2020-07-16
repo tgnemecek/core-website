@@ -11,7 +11,6 @@ module.exports = {
     url: "http://localhost:8888",
   },
   plugins: [
-    "netlify-cms-widget-color",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sass",
     {
