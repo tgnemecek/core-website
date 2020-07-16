@@ -1,9 +1,8 @@
 ---
 collection: pages
 templateKey: landing-page
-title:
-  - text: CORE Coaching & Consulting
-  - color: ffffff
+title: CORE Coaching & Consulting
+titleColor: ffffff
 heroImage: https://res.cloudinary.com/dle9vshfv/image/upload/v1594853594/Screen_Shot_2020-07-14_at_3.36.37_PM_tuyv1z.png
 about: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
   tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
