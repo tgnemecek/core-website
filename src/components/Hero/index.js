@@ -4,8 +4,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography, Grid } from "@material-ui/core";
 import Link from "components/Link";
 
-const Hero = ({ title, image, invertTitleColor }) => {
-  const classes = useStyles({ invertTitleColor })();
+const Hero = ({ title, titleColor, image }) => {
+  const classes = useStyles({ titleColor })();
 
   return (
     <section className={classes.hero}>
@@ -31,7 +31,7 @@ Hero.propTypes = {
 
 export default Hero;
 
-const useStyles = ({ invertTitleColor }) =>
+const useStyles = ({ titleColor }) =>
   makeStyles((theme) => ({
     hero: {
       height: 500,
@@ -41,7 +41,7 @@ const useStyles = ({ invertTitleColor }) =>
       flexDirection: "column",
     },
     title: {
-      color: invertTitleColor ? "white" : "black",
+      color: titleColor,
       textAlign: "center",
     },
     imageWrapper: {},

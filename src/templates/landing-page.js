@@ -24,11 +24,7 @@ const LandingPage = ({
 }) => {
   return (
     <>
-      <Hero
-        title={title}
-        image={heroImage}
-        invertTitleColor={invertTitleColor}
-      />
+      <Hero title={title.text} titleColor={title.color} image={heroImage} />
       <Events />
       <About about={about} image={aboutImage} />
       <Testimonials testimonials={testimonials} />
@@ -63,7 +59,10 @@ export const pageQuery = graphql`
     # Basic Page Data
     main: markdownRemark(frontmatter: { templateKey: { eq: "landing-page" } }) {
       frontmatter {
-        title
+        title {
+          text
+          color
+        }
         invertTitleColor
         heroImage {
           childImageSharp {
