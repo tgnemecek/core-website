@@ -1,7 +1,9 @@
 ---
 collection: pages
 templateKey: landing-page
-title: CORE Coaching & Consulting
+title:
+  - text: CORE Coaching & Consulting
+  - color: ffffff
 invertTitleColor: true
 heroImage: /img/chemex.jpg
 about: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
