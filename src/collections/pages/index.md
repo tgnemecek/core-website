@@ -51,6 +51,12 @@ titleColor: ""
 aboutImage: /img/flavor_wheel.jpg
 videos:
   - video: https://www.youtube.com/watch?v=5qap5aO4i9A
+    title: Breakout! Career Speech
+    link: https://www.youtube.com/watch?v=df2uZ3kqZt8
   - video: https://www.youtube.com/watch?v=ArBZpMMhjuQ
+    link: https://www.youtube.com/watch?v=UIcTxjwm_8E
+    title: "Webinar: Structure"
   - video: https://www.youtube.com/watch?v=GHp-spiklWE
+    title: Introduction to Executive Career Coaching
+    link: https://www.youtube.com/watch?v=fOxyq9djBS8
 ---
