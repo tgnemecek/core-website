@@ -10,6 +10,7 @@ const Videos = (props) => {
   const classes = useStyles();
   const [videos, setVideos] = React.useState(null);
   const [index, setIndex] = React.useState(0);
+  const [title, setTitle] = React.useState("");
 
   React.useEffect(() => {
     setVideos(
@@ -18,23 +19,36 @@ const Videos = (props) => {
         const videoId = video.slice(videoIdIndex);
         return {
           videoId,
-          image: `http://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`,
+          // image: `http://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`,
+          videoLink: video,
         };
       })
     );
+    getVideoTitle();
   }, []);
+
+  const getVideoTitle = async () => {
+    // const videoLink = videos[index].videoLink;
+  };
+
+  const onReady = (e) => {
+    console.log({ e });
+  };
 
   return (
     <section className={classes.videos}>
       <Container>
         <Typography variant="h2">Videos</Typography>
+        <h1>{title}</h1>
         <div className={classes.videoWrapper}>
           <YouTube
+            showinfo={1}
             videoId={videos && videos[index].videoId}
             opts={{
               height: 315,
               width: 560,
             }}
+            onReady={onReady}
           />
         </div>
         <Gallery items={videos} index={index} setIndex={setIndex} />
