@@ -18,6 +18,25 @@ media_library:
     api_key: 934769914928744
 
 collections:
+  - name: "information"
+    label: "Information"
+    editor:
+      preview: false
+    files:
+      - file: "src/collections/information/contact/index.md"
+        label: "Contact Information"
+        name: "contact"
+        fields:
+          - { label: Email, name: email, widget: string, required: false }
+          - { label: Phone 1, name: phone1, widget: string, required: false }
+          - { label: Phone 2, name: phone2, widget: string, required: false }
+          - {
+              label: External Link,
+              name: link,
+              widget: string,
+              required: false,
+            }
+          - { label: Address, name: address, widget: text, required: false }
   - name: "pages"
     label: "Pages"
     editor:
@@ -59,9 +78,16 @@ collections:
               - { label: Title, name: title, widget: string }
               - { label: Description, name: description, widget: text }
               - { label: Image, name: image, widget: image }
+              - {
+                  label: External Link,
+                  name: link,
+                  widget: string,
+                  required: false,
+                }
           - label: Videos
             name: videos
             widget: list
             collapsed: false
             fields:
-              - { label: Video Link, name: video, widget: string }
+              - { label: Video Title, name: title, widget: string }
+              - { label: Video Link, name: link, widget: string }

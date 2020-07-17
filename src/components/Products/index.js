@@ -5,37 +5,9 @@ import { Container, Typography, Grid } from "@material-ui/core";
 import Link from "components/Link";
 import Gallery from "components/Gallery";
 
-const TEMP_DATA = [
-  {
-    title: "SOS: Switch Off Stress",
-    description:
-      "Natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus",
-    url: "http://www.google.com",
-    image:
-      "https://i2.wp.com/thebestbrainpossible.com/wp-content/uploads/2019/11/Untitled-design-17.png?ssl=1",
-  },
-  {
-    title: "Classes",
-    description:
-      "Ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus",
-    url: "http://www.google.com",
-    image:
-      "https://s31450.pcdn.co/wp-content/uploads/2019/11/Implementing-active-learning-and-student-centered-pedagogy.jpg",
-  },
-];
-
-const Products = (props) => {
+const Products = ({ products }) => {
   const classes = useStyles();
-  const [products, setProducts] = React.useState(null);
   const [index, setIndex] = React.useState(0);
-
-  React.useEffect(() => {
-    // Fetch
-    setTimeout(() => {
-      const data = TEMP_DATA;
-      setProducts(data);
-    }, 200);
-  }, []);
 
   return (
     <section className={classes.products}>

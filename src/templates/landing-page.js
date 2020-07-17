@@ -19,6 +19,7 @@ const LandingPage = ({
   about,
   aboutImage,
   testimonials,
+  products,
   videos,
 }) => {
   return (
@@ -28,7 +29,7 @@ const LandingPage = ({
       <About about={about} image={aboutImage} />
       <Testimonials testimonials={testimonials} />
       <Services />
-      <Products />
+      <Products products={products} />
       <Videos videos={videos} />
     </>
   );
@@ -79,6 +80,11 @@ export const pageQuery = graphql`
           testimonial
           author
           role
+        }
+        products {
+          title
+          description
+          image
         }
         videos {
           video
