@@ -67,7 +67,7 @@ const Navbar = (props) => {
   };
 
   return (
-    <AppBar position="sticky" component="nav" className={classes.nav}>
+    <AppBar component="nav" className={classes.nav}>
       <Toolbar className={classes.toolbar}>
         <Link to="/">LOGO HERE</Link>
         <Hidden xsDown>{renderNavContent()}</Hidden>
@@ -93,8 +93,9 @@ export default Navbar;
 const useStyles = ({ isOnTop }) =>
   makeStyles((theme) => ({
     nav: {
-      backgroundColor: isOnTop ? "transparent" : theme.palette.common.white,
+      backgroundColor: isOnTop ? "#0000004d" : theme.palette.common.white,
       transition: "background-color 0.5s",
+      position: "fixed",
     },
     toolbar: {
       display: "flex",

@@ -28,8 +28,6 @@ const Footer = ({ email, phone1, phone2, address, link }) => {
     );
   };
 
-  link = "www.google.com";
-
   return (
     <footer className={classes.footer}>
       <Container>

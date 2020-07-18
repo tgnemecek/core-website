@@ -26,7 +26,6 @@ exports.createPages = ({ actions, graphql }) => {
       }
     }
   `).then((result) => {
-    console.dir(result, { depth: null });
     if (result.errors) {
       result.errors.forEach((e) => console.error(e.toString()));
       return Promise.reject(result.errors);
@@ -56,19 +55,16 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode });
-    const formatted = { ...node };
-
-    formatted.frontmatter = {
-      [node.frontmatter.collection]: {
-        [node.frontmatter.key]: node.frontmatter,
+    const formatted = {
+      ...node,
+      frontmatter: {
+        [node.frontmatter.collection]: {
+          [node.frontmatter.key]: node.frontmatter,
+        },
+        key: node.frontmatter.key,
+        collection: node.frontmatter.collection,
       },
-      key: node.frontmatter.key,
-      collection: node.frontmatter.collection,
     };
-
-    if (node.frontmatter.key === "contact") {
-      console.log(formatted);
-    }
 
     createNodeField({
       name: `slug`,

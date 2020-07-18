@@ -17,9 +17,11 @@ const Hero = ({ title, image }) => {
         className={classes.image}
         alt="CORE Logo"
       />
-      <Typography variant="h1" className={classes.title}>
-        {title}
-      </Typography>
+      <div>
+        <Typography variant="h1" className={classes.title}>
+          {title}
+        </Typography>
+      </div>
     </section>
   );
 };
@@ -34,11 +36,12 @@ export default Hero;
 const useStyles = () =>
   makeStyles((theme) => ({
     hero: {
-      height: 500,
+      height: "100vh",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
       flexDirection: "column",
+      backgroundColor: "#00000026",
     },
     title: {
       color: "white",
@@ -49,7 +52,7 @@ const useStyles = () =>
       position: "absolute",
       zIndex: -1,
       top: 0,
-      height: 500,
+      height: "100%",
       width: "100%",
       objectFit: "cover",
     },
