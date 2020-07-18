@@ -6,10 +6,15 @@ const Section = ({
   children,
   backgroundColor = "common.white",
   small = false,
+  id = "",
 }) => {
   const classes = useStyles({ backgroundColor, small })();
 
-  return <section className={classes.section}>{children}</section>;
+  return (
+    <section className={classes.section} id={id}>
+      {children}
+    </section>
+  );
 };
 
 export default Section;

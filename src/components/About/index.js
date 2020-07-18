@@ -9,7 +9,7 @@ const About = ({ about, image }) => {
   const classes = useStyles();
 
   return (
-    <Section>
+    <Section id="about">
       <Container>
         <Typography variant="h2">About</Typography>
         <Grid
