@@ -35,7 +35,7 @@ about: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
   cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
   proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-aboutImage: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1595107665/Annotation_2020-07-18_172732_dmvgwj.jpg
+aboutImage: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1595111411/logo_feamvb.png
 testimonials:
   - testimonial: During a crossroads in my career, Sharon coached me to overcome
       obstacles and doubts, and then supported me in making a bold decision that
