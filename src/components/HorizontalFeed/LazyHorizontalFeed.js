@@ -108,6 +108,7 @@ export default function LazyHorizontalFeed(props) {
                 return (
                   <Item
                     key={i}
+                    delay={i * 100}
                     {...item}
                     itemWidth={itemWidth}
                     itemHeight={itemHeight}

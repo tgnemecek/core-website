@@ -1,5 +1,4 @@
 import React from "react";
-import { graphql } from "gatsby";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   Container,
@@ -7,46 +6,70 @@ import {
   Grid,
   List,
   ListItem,
+  ListItemIcon,
   Divider,
 } from "@material-ui/core";
 import Link from "components/Link";
+import EmailIcon from "@material-ui/icons/Email";
+import PhoneIphoneIcon from "@material-ui/icons/PhoneIphone";
+import LinkIcon from "@material-ui/icons/Link";
 
 const Footer = ({ email, phone1, phone2, address, link }) => {
   const classes = useStyles();
 
   const renderPhone = (phone) => {
     return (
-      <div>
-        <a href={`tel:${phone.replace(/\D/g, "")}`}>
-          <Typography variant="body1">{phone}</Typography>
-        </a>
-      </div>
+      <ListItem component="a" href={`tel:${phone.replace(/\D/g, "")}`}>
+        <ListItemIcon>
+          <PhoneIphoneIcon />
+        </ListItemIcon>
+        <Typography variant="body1">{phone}</Typography>
+      </ListItem>
     );
   };
+
+  link = "www.google.com";
 
   return (
     <footer className={classes.footer}>
       <Container>
         <Grid container justify="space-between">
           <Grid item className={classes.leftSide}>
-            {email && (
-              <div>
-                <a href={`mailto:${email}`}>
+            <List>
+              {email && (
+                <ListItem component="a" href={`mailto:${email}`}>
+                  <ListItemIcon>
+                    <EmailIcon />
+                  </ListItemIcon>
                   <Typography variant="body1">{email}</Typography>
-                </a>
-              </div>
-            )}
-            {phone1 && renderPhone(phone1)}
-            {phone2 && renderPhone(phone2)}
+                </ListItem>
+              )}
+              {link && (
+                <ListItem component="a" href={link}>
+                  <ListItemIcon>
+                    <LinkIcon />
+                  </ListItemIcon>
+                  <Typography variant="body1">{link}</Typography>
+                </ListItem>
+              )}
+              {phone1 && renderPhone(phone1)}
+              {phone2 && renderPhone(phone2)}
+            </List>
           </Grid>
           <Grid item className={classes.rightSide}>
-            {link && <Typography variant="body1">{link}</Typography>}
-            {address &&
-              address.split("\n").map((line, i) => (
-                <Typography variant="body1" key={i}>
-                  {line}
-                </Typography>
-              ))}
+            <List>
+              {address && (
+                <ListItem>
+                  <List>
+                    {address.split("\n").map((line, i) => (
+                      <ListItem key={i}>
+                        <Typography variant="body1">{line}</Typography>
+                      </ListItem>
+                    ))}
+                  </List>
+                </ListItem>
+              )}
+            </List>
           </Grid>
         </Grid>
       </Container>
@@ -61,8 +84,9 @@ const Footer = ({ email, phone1, phone2, address, link }) => {
 
 const useStyles = makeStyles((theme) => ({
   footer: {
-    paddingTop: theme.spacing(3),
-    backgroundColor: theme.palette.grey["400"],
+    paddingTop: 100,
+    // backgroundColor: theme.palette.grey[200],
+    backgroundColor: theme.palette.primary.main,
   },
   leftSide: {
     "& p": {
@@ -70,9 +94,15 @@ const useStyles = makeStyles((theme) => ({
       display: "inline",
     },
   },
+  rightSide: {
+    "& p": {
+      textAlign: "right",
+      width: "100%",
+    },
+  },
   copyright: {
-    borderTop: `1px solid ${theme.palette.grey[500]}`,
-    marginTop: theme.spacing(3),
+    borderTop: `1px solid ${theme.palette.grey[300]}`,
+    marginTop: 200,
     padding: `${theme.spacing(3)}px 0`,
     textAlign: "center",
     width: "100%",

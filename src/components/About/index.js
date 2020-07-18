@@ -1,13 +1,15 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography, Grid } from "@material-ui/core";
+import Fade from "react-reveal/Fade";
+import Section from "components/Section";
 import Link from "components/Link";
 
 const About = ({ about, image }) => {
   const classes = useStyles();
 
   return (
-    <section>
+    <Section>
       <Container>
         <Typography variant="h2">About</Typography>
         <Grid
@@ -18,12 +20,14 @@ const About = ({ about, image }) => {
         >
           <Grid item xs={6}>
             <div className={classes.textWrapper}>
-              <Typography variant="body2">{about}</Typography>
-              <div>
-                <Link to="/" className={classes.link}>
-                  <Typography variant="body1">Meet the Team</Typography>
-                </Link>
-              </div>
+              <Fade left>
+                <Typography variant="body2">{about}</Typography>
+                <div>
+                  <Link to="/" className={classes.link}>
+                    <Typography variant="body1">Meet the Team</Typography>
+                  </Link>
+                </div>
+              </Fade>
             </div>
           </Grid>
           <Grid item xs={5}>
@@ -40,7 +44,7 @@ const About = ({ about, image }) => {
           </Grid>
         </Grid>
       </Container>
-    </section>
+    </Section>
   );
 };
 

@@ -2,7 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography, Grid } from "@material-ui/core";
 import YouTube from "react-youtube";
-import Placeholder from "components/Placeholder";
+import Section from "components/Section";
 import Link from "components/Link";
 import Gallery from "components/Gallery";
 
@@ -27,7 +27,7 @@ const Videos = (props) => {
   }, []);
 
   return (
-    <section className={classes.videos}>
+    <Section>
       <Container>
         <Typography variant="h2">Videos</Typography>
         <Typography variant="h3" align="center">
@@ -35,26 +35,39 @@ const Videos = (props) => {
         </Typography>
         <div className={classes.videoWrapper}>
           <YouTube
+            className={classes.video}
             videoId={videos && videos[index].videoId}
-            opts={{
-              height: 315,
-              width: 560,
-            }}
+            // opts={{
+            //   height: 315,
+            //   width: 900,
+            // }}
           />
         </div>
         <Gallery items={videos} index={index} setIndex={setIndex} />
       </Container>
-    </section>
+    </Section>
   );
 };
 
 export default Videos;
 
 const useStyles = makeStyles((theme) => ({
-  videos: {},
   videoWrapper: {
+    width: "80%",
+    position: "relative",
+    paddingTop: "56.25%",
+    margin: "auto",
+    [theme.breakpoints.down("xs")]: {
+      width: "100%",
+    },
+  },
+  video: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
     width: "100%",
-    display: "flex",
-    justifyContent: "center",
+    height: "100%",
   },
 }));

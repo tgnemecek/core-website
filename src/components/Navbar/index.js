@@ -33,8 +33,17 @@ const TEMP_DATA = [
 ];
 
 const Navbar = (props) => {
-  const classes = useStyles();
+  const [isOnTop, setOnTop] = React.useState(true);
   const [isDrawerOpen, setDrawerOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    setOnTop(!window.scrollY);
+    window.addEventListener("scroll", () => setOnTop(!window.scrollY), {
+      passive: true,
+    });
+  }, []);
+
+  const classes = useStyles({ isOnTop })();
 
   const renderNavContent = () => {
     return (
@@ -47,7 +56,9 @@ const Navbar = (props) => {
               component={Link}
               to={url}
             >
-              {label}
+              <Typography variant="body1" className={classes.text}>
+                {label}
+              </Typography>
             </ListItem>
           );
         })}
@@ -56,12 +67,7 @@ const Navbar = (props) => {
   };
 
   return (
-    <AppBar
-      position="sticky"
-      component="nav"
-      className={classes.nav}
-      color="primary"
-    >
+    <AppBar position="sticky" component="nav" className={classes.nav}>
       <Toolbar className={classes.toolbar}>
         <Link to="/">LOGO HERE</Link>
         <Hidden xsDown>{renderNavContent()}</Hidden>
@@ -84,34 +90,48 @@ const Navbar = (props) => {
 
 export default Navbar;
 
-const useStyles = makeStyles((theme) => ({
-  nav: {},
-  toolbar: {
-    display: "flex",
-    justifyContent: "space-between",
-    minHeight: "inherit",
-    height: theme.spacing(9),
-  },
-  list: {
-    display: "flex",
-    justifyContent: "space-evenly",
-    flexGrow: 1,
-    padding: 0,
-  },
-  listItem: {
-    width: "auto",
-    paddingTop: 0,
-    paddingBottom: 0,
-    height: theme.spacing(9),
-    whiteSpace: "nowrap",
-    "&:hover": {
-      backgroundColor: theme.palette.action.hover,
+const useStyles = ({ isOnTop }) =>
+  makeStyles((theme) => ({
+    nav: {
+      backgroundColor: isOnTop ? "transparent" : theme.palette.common.white,
+      transition: "background-color 0.5s",
     },
-  },
-  [theme.breakpoints.down("xs")]: {
+    toolbar: {
+      display: "flex",
+      justifyContent: "space-between",
+      minHeight: "inherit",
+      height: theme.spacing(9),
+    },
     list: {
-      justifyContent: "flex-start",
-      flexDirection: "column",
+      display: "flex",
+      justifyContent: "space-evenly",
+      flexGrow: 1,
+      padding: 0,
     },
-  },
-}));
+    listItem: {
+      width: "auto",
+      paddingTop: 0,
+      paddingBottom: 0,
+      height: theme.spacing(9),
+      whiteSpace: "nowrap",
+      "&:hover": {
+        backgroundColor: theme.palette.action.hover,
+      },
+    },
+    text: {
+      color: isOnTop ? theme.palette.common.white : theme.palette.text.primary,
+      transition: "color 0.5s",
+    },
+    [theme.breakpoints.down("xs")]: {
+      nav: {
+        backgroundColor: theme.palette.common.white,
+      },
+      list: {
+        justifyContent: "flex-start",
+        flexDirection: "column",
+      },
+      text: {
+        color: theme.palette.text.primary,
+      },
+    },
+  }));

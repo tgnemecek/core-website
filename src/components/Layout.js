@@ -1,12 +1,8 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 
-import Navbar from "components/Navbar";
-import Footer from "components/Footer";
-
 // import "./all.sass";
 import "./reset.css";
-import "./globals.css";
 import "fontsource-roboto";
 
 import { theme } from "components/theme";
@@ -57,10 +53,7 @@ const Layout = ({ children }) => {
           content={`${withPrefix("/")}img/og-image.jpg`}
         />
       </Helmet>
-      <MuiThemeProvider theme={theme}>
-        {/* <Navbar /> */}
-        {children}
-      </MuiThemeProvider>
+      <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>
     </div>
   );
 };

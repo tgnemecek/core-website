@@ -1,5 +1,6 @@
 import React from "react";
 import moment from "moment";
+import Fade from "react-reveal/Fade";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   Typography,
@@ -23,46 +24,49 @@ export default function Item({
   itemWidth,
   itemHeight,
   imageHeight,
+  delay = 0,
 }) {
   const classes = useStyles({ itemWidth, itemHeight, imageHeight })();
 
   return (
     <Grid item>
-      <Card className={classes.card} elevation={3} square>
-        <CardActionArea
-          className={classes.cardActionArea}
-          component={Link}
-          to={url}
-        >
-          <div className={classes.imageWrapper}>
-            <CardMedia
-              image={image}
-              className={classes.image}
-              title="Event"
-              component="img"
-            />
-          </div>
-          <CardContent className={classes.cardContent}>
-            <LinesEllipsis
-              text={title}
-              component={Typography}
-              variant="h4"
-              maxLine="2"
-              ellipsis="..."
-              trimRight
-              basedOn="letters"
-              style={{ whiteSpace: "pre-wrap" }}
-            />
-          </CardContent>
-          {date && (
-            <div className={classes.date}>
-              <Typography variant="body1">
-                {moment(date).format("ddd MM/DD")}
-              </Typography>
+      <Fade delay={delay}>
+        <Card className={classes.card} elevation={3} square>
+          <CardActionArea
+            className={classes.cardActionArea}
+            component={Link}
+            to={url}
+          >
+            <div className={classes.imageWrapper}>
+              <CardMedia
+                image={image}
+                className={classes.image}
+                title="Event"
+                component="img"
+              />
             </div>
-          )}
-        </CardActionArea>
-      </Card>
+            <CardContent className={classes.cardContent}>
+              <LinesEllipsis
+                text={title}
+                component={Typography}
+                variant="h4"
+                maxLine="2"
+                ellipsis="..."
+                trimRight
+                basedOn="letters"
+                style={{ whiteSpace: "pre-wrap" }}
+              />
+            </CardContent>
+            {date && (
+              <div className={classes.date}>
+                <Typography variant="body1">
+                  {moment(date).format("ddd MM/DD")}
+                </Typography>
+              </div>
+            )}
+          </CardActionArea>
+        </Card>
+      </Fade>
     </Grid>
   );
 }

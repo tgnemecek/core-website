@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography, Grid } from "@material-ui/core";
+import Section from "components/Section";
 import Link from "components/Link";
 
 import Service from "./Service";
@@ -30,9 +31,11 @@ const Services = (props) => {
   const classes = useStyles();
 
   return (
-    <section>
+    <Section>
       <Container>
-        <Typography variant="h2">Services</Typography>
+        <Typography variant="srOnly" component="h2">
+          Services
+        </Typography>
         <Grid container className={classes.servicesContainer}>
           {SERVICES.map(({ title, image, url }, i) => {
             return (
@@ -43,7 +46,7 @@ const Services = (props) => {
           })}
         </Grid>
       </Container>
-    </section>
+    </Section>
   );
 };
 
