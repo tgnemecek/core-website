@@ -12,6 +12,7 @@ import Services from "components/Services";
 import Products from "components/Products";
 import Videos from "components/Videos";
 import Layout from "components/Layout";
+import Footer from "components/Footer";
 
 const LandingPage = ({
   title,
@@ -43,11 +44,13 @@ const LandingPage = ({
 // };
 
 const LandingPageLoader = (props) => {
-  const data = dataFormatter(props.data);
-
+  const data = dataFormatter(props.data.allMarkdownRemark.nodes);
   return (
     <Layout>
-      <LandingPage {...data.main} />
+      <main>
+        <LandingPage {...data.pages.LandingPage} />
+      </main>
+      <Footer {...data.information.contact} />
     </Layout>
   );
 };
@@ -55,39 +58,44 @@ const LandingPageLoader = (props) => {
 export default LandingPageLoader;
 
 export const pageQuery = graphql`
-  query PageQuery {
-    # Basic Page Data
-    main: markdownRemark(frontmatter: { templateKey: { eq: "landing-page" } }) {
-      frontmatter {
-        title
-        heroImage
-        # heroImage {
-        #   childImageSharp {
-        #     fluid(maxWidth: 2048, quality: 100) {
-        #       ...GatsbyImageSharpFluid
-        #     }
-        #   }
-        # }
-        about
-        aboutImage {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
+  query LandingPageQuery {
+    allMarkdownRemark {
+      nodes {
+        frontmatter {
+          information {
+            contact {
+              address
+              email
+              link
+              phone1
+              phone2
+              title
             }
           }
-        }
-        testimonials {
-          testimonial
-          author
-          role
-        }
-        products {
-          title
-          description
-          image
-        }
-        videos {
-          video
+          pages {
+            LandingPage {
+              about
+              aboutImage
+              heroImage
+              products {
+                description
+                image
+                title
+              }
+              testimonials {
+                author
+                role
+                testimonial
+              }
+              title
+              titleColor
+              videos {
+                video
+                title
+                link
+              }
+            }
+          }
         }
       }
     }

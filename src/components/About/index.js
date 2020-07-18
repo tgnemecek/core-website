@@ -19,19 +19,22 @@ const About = ({ about, image }) => {
           <Grid item xs={6}>
             <div className={classes.textWrapper}>
               <Typography variant="body2">{about}</Typography>
-              <Link to="/" className={classes.link}>
-                Meet the Team
-              </Link>
+              <div>
+                <Link to="/" className={classes.link}>
+                  <Typography variant="body1">Meet the Team</Typography>
+                </Link>
+              </div>
             </div>
           </Grid>
           <Grid item xs={5}>
             <Link to="/">
               <img
                 className={classes.image}
-                srcSet={image.srcSet}
-                sizes={image.sizes}
-                src={image.src}
-                alt="Team"
+                src={image}
+                // srcSet={image.srcSet}
+                // sizes={image.sizes}
+                // src={image.src}
+                alt="About"
               />
             </Link>
           </Grid>
@@ -54,7 +57,8 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
   },
   link: {
-    "&:hover": {
+    "& p": {
+      display: "inline",
       textDecoration: "underline",
     },
   },

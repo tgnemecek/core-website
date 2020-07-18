@@ -10,45 +10,36 @@ const Videos = (props) => {
   const classes = useStyles();
   const [videos, setVideos] = React.useState(null);
   const [index, setIndex] = React.useState(0);
-  const [title, setTitle] = React.useState("");
 
   React.useEffect(() => {
     setVideos(
-      props.videos.map(({ video }) => {
-        const videoIdIndex = video.indexOf("?v=") + 3;
-        const videoId = video.slice(videoIdIndex);
+      props.videos.map(({ title, link }) => {
+        const videoIdIndex = link.indexOf("?v=") + 3;
+        const videoId = link.slice(videoIdIndex);
         return {
           videoId,
-          // image: `http://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`,
-          videoLink: video,
+          image: `http://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`,
+          link,
+          title,
         };
       })
     );
-    getVideoTitle();
   }, []);
-
-  const getVideoTitle = async () => {
-    // const videoLink = videos[index].videoLink;
-  };
-
-  const onReady = (e) => {
-    console.log({ e });
-  };
 
   return (
     <section className={classes.videos}>
       <Container>
         <Typography variant="h2">Videos</Typography>
-        <h1>{title}</h1>
+        <Typography variant="h3" align="center">
+          {videos && videos[index].title}
+        </Typography>
         <div className={classes.videoWrapper}>
           <YouTube
-            showinfo={1}
             videoId={videos && videos[index].videoId}
             opts={{
               height: 315,
               width: 560,
             }}
-            onReady={onReady}
           />
         </div>
         <Gallery items={videos} index={index} setIndex={setIndex} />
@@ -60,9 +51,7 @@ const Videos = (props) => {
 export default Videos;
 
 const useStyles = makeStyles((theme) => ({
-  videos: {
-    marginBottom: theme.spacing(8),
-  },
+  videos: {},
   videoWrapper: {
     width: "100%",
     display: "flex",

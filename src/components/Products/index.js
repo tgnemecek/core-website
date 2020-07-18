@@ -13,9 +13,9 @@ const Products = ({ products }) => {
     <section className={classes.products}>
       <Container>
         <Typography variant="h2">Products</Typography>
-        <Link to={products && products[index].url}>
+        <Link to={products && products[index].link}>
           <Grid container className={classes.featured}>
-            <Grid item xs={4}>
+            <Grid item xs={4} className={classes.imageWrapper}>
               <img
                 src={products && products[index].image}
                 className={classes.image}
@@ -44,12 +44,14 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(8),
   },
   featured: {
-    height: 400,
     justifyContent: "space-between",
+  },
+  imageWrapper: {
+    height: 400,
   },
   image: {
     width: "100%",
     height: "100%",
-    objectFit: "cover",
+    objectFit: "contain",
   },
 }));

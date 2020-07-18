@@ -4,7 +4,10 @@ import { Helmet } from "react-helmet";
 import Navbar from "components/Navbar";
 import Footer from "components/Footer";
 
-import "./all.sass";
+// import "./all.sass";
+import "./reset.css";
+import "./globals.css";
+import "fontsource-roboto";
 
 import { theme } from "components/theme";
 import { MuiThemeProvider } from "@material-ui/core";
@@ -56,8 +59,7 @@ const Layout = ({ children }) => {
       </Helmet>
       <MuiThemeProvider theme={theme}>
         {/* <Navbar /> */}
-        <main>{children}</main>
-        <Footer />
+        {children}
       </MuiThemeProvider>
     </div>
   );
