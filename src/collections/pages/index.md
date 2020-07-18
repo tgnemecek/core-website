@@ -1,7 +1,7 @@
 ---
 collection: pages
 title: CORE Coaching & Consulting
-heroImage: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1595107594/stock-photo-power-of-thinking-abstract-imagination-world-universe-inside-your-mind-watercolor-painting-687858871_comxqw.jpg
+heroImage: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1595111344/stock-photo-disturbing-thoughts-series-moody-paint-in-motion-inside-human-face-silhouette-artwork-on-inner-1666658287_uvbwkp.jpg
 products:
   - title: "Book: SOS: Switch Off Stress"
     description: "SOS: Switch Off Stress is a practical, immediately usable book
