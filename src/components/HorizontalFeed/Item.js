@@ -48,9 +48,10 @@ export default function Item({
             <CardContent className={classes.cardContent}>
               <LinesEllipsis
                 text={title}
+                className={classes.title}
                 component={Typography}
                 variant="h4"
-                maxLine="2"
+                maxLine="3"
                 ellipsis="..."
                 trimRight
                 basedOn="letters"
@@ -93,6 +94,9 @@ const useStyles = ({ itemWidth, itemHeight, imageHeight = 280 }) =>
     cardContent: {
       position: "relative",
       height: itemHeight - imageHeight,
+    },
+    title: {
+      fontSize: "1.2rem",
     },
     date: {
       textAlign: "right",
