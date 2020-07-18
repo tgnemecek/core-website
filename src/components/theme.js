@@ -1,5 +1,7 @@
 import { createMuiTheme } from "@material-ui/core";
 
+const baseFontColor = "#595959";
+
 const themeObject = {
   breakpoints: {
     values: {
@@ -10,25 +12,42 @@ const themeObject = {
       xl: 1920,
     },
   },
-  // Use the overrides to set defaults
   overrides: {},
   typography: {
-    fontFamily: '"Source Sans Pro", Arial, sans-serif',
+    fontFamily: '"Roboto", Arial, sans-serif',
     fontSize: 12,
     h1: {
       fontSize: "2rem",
       fontWeight: 700,
+      color: baseFontColor,
     },
     h2: {
       fontSize: "2rem",
       fontWeight: 700,
       marginBottom: "2rem",
+      marginTop: "2rem",
+      color: baseFontColor,
     },
     h3: {
       fontSize: "1.5rem",
+      marginBottom: "1rem",
+      color: baseFontColor,
+    },
+    body1: {
+      fontSize: "1.2rem",
+      color: baseFontColor,
     },
     body2: {
       fontSize: "1.5rem",
+      color: baseFontColor,
+    },
+    subtitle1: {
+      color: baseFontColor,
+    },
+    subtitle2: {
+      fontSize: "1.2rem",
+      color: baseFontColor,
+      textDecoration: "underline",
     },
   },
   palette: {
@@ -37,6 +56,9 @@ const themeObject = {
     },
     secondary: {
       main: "#FF5D5D", // Pink
+    },
+    text: {
+      primary: baseFontColor,
     },
   },
 };

@@ -7,32 +7,7 @@ import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import VisuallyHidden from "@reach/visually-hidden";
 import { shuffleArray } from "src/util";
 
-const TEMP_DATA = [
-  {
-    text:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus",
-    author: "Thiago Nemecek",
-    role: "Web Developer",
-  },
-  {
-    text:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda",
-    author: "James Gustav",
-    role: "CEO",
-  },
-  {
-    text:
-      "Minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus",
-    author: "Bob Edward",
-    role: "Artist",
-  },
-  {
-    text:
-      "Vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda",
-    author: "Paul Henry",
-    role: "Vice President of Big Corporation",
-  },
-];
+import Testimonial from "./Testimonial";
 
 const Testimonials = (props) => {
   const classes = useStyles();
@@ -65,15 +40,8 @@ const Testimonials = (props) => {
             </IconButton>
           </Grid>
           <Grid item className={classes.testimonial}>
-            {testimonials ? (
-              <>
-                <Typography variant="body2" className={classes.text}>
-                  {testimonials[index].testimonial}
-                </Typography>
-                <Typography variant="subtitle1">{`—${testimonials[index].author}, ${testimonials[index].role}`}</Typography>
-              </>
-            ) : (
-              <Skeleton />
+            {testimonials && (
+              <Testimonial key={index} {...testimonials[index]} />
             )}
           </Grid>
           <Grid item>
@@ -94,9 +62,6 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: "nowrap",
     alignItems: "center",
     height: 500,
-  },
-  text: {
-    fontStyle: "italic",
   },
   testimonial: {
     flexGrow: 1,

@@ -27,6 +27,13 @@ collections:
         label: "Contact Information"
         name: "contact"
         fields:
+          - {
+              label: Collection,
+              name: collection,
+              widget: hidden,
+              default: information,
+            }
+          - { label: Key, name: key, widget: hidden, default: contact }
           - { label: Email, name: email, widget: string, required: false }
           - { label: Phone 1, name: phone1, widget: string, required: false }
           - { label: Phone 2, name: phone2, widget: string, required: false }
@@ -52,12 +59,7 @@ collections:
               widget: hidden,
               default: pages,
             }
-          - {
-              label: Template Key,
-              name: templateKey,
-              widget: hidden,
-              default: landing-page,
-            }
+          - { label: Key, name: key, widget: hidden, default: LandingPage }
           - { label: Title, name: title, widget: string }
           - { label: Hero Image, name: heroImage, widget: image }
           - { label: About, name: about, widget: text }

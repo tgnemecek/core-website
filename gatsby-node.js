@@ -2,6 +2,7 @@ const _ = require("lodash");
 const path = require("path");
 const { createFilePath } = require("gatsby-source-filesystem");
 const { fmImagesToRelative } = require("gatsby-remark-relative-images");
+const schema = require("./src/schema");
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
@@ -18,7 +19,7 @@ exports.createPages = ({ actions, graphql }) => {
               slug
             }
             frontmatter {
-              templateKey
+              key
             }
           }
         }
@@ -38,7 +39,7 @@ exports.createPages = ({ actions, graphql }) => {
       createPage({
         path: edge.node.fields.slug,
         component: path.resolve(
-          `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
+          `src/templates/${String(edge.node.frontmatter.key)}.js`
         ),
         // additional data can be passed via context
         context: {
@@ -55,10 +56,30 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode });
+    const formatted = { ...node };
+
+    formatted.frontmatter = {
+      [node.frontmatter.collection]: {
+        [node.frontmatter.key]: node.frontmatter,
+      },
+      key: node.frontmatter.key,
+      collection: node.frontmatter.collection,
+    };
+
+    if (node.frontmatter.key === "contact") {
+      console.log(formatted);
+    }
+
     createNodeField({
       name: `slug`,
-      node,
+      node: formatted,
       value,
     });
   }
+};
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+  const typeDefs = schema;
+  createTypes(typeDefs);
 };

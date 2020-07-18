@@ -10,9 +10,10 @@ const Hero = ({ title, image }) => {
   return (
     <section className={classes.hero}>
       <img
-        srcSet={image.srcSet}
-        sizes={image.sizes}
-        src={image.src}
+        // srcSet={image.srcSet}
+        // sizes={image.sizes}
+        // src={image.src}
+        src={image}
         className={classes.image}
         alt="CORE Logo"
       />
