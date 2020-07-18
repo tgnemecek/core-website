@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography, Grid } from "@material-ui/core";
-
+import Section from "components/Section";
 import Link from "components/Link";
 import Gallery from "components/Gallery";
 
@@ -10,7 +10,7 @@ const Products = ({ products }) => {
   const [index, setIndex] = React.useState(0);
 
   return (
-    <section className={classes.products}>
+    <Section>
       <Container>
         <Typography variant="h2">Products</Typography>
         <Link to={products && products[index].link}>
@@ -33,16 +33,13 @@ const Products = ({ products }) => {
         </Link>
         <Gallery items={products} index={index} setIndex={setIndex} />
       </Container>
-    </section>
+    </Section>
   );
 };
 
 export default Products;
 
 const useStyles = makeStyles((theme) => ({
-  products: {
-    marginBottom: theme.spacing(8),
-  },
   featured: {
     justifyContent: "space-between",
   },

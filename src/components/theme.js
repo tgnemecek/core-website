@@ -23,9 +23,8 @@ const themeObject = {
     },
     h2: {
       fontSize: "2rem",
-      fontWeight: 700,
+      fontWeight: 400,
       marginBottom: "2rem",
-      marginTop: "2rem",
       color: baseFontColor,
     },
     h3: {
@@ -52,10 +51,10 @@ const themeObject = {
   },
   palette: {
     primary: {
-      main: "#19c7f7", // Blue
+      main: "#fdf6f0", // Soft pink
     },
     secondary: {
-      main: "#FF5D5D", // Pink
+      main: "#FF5D5D",
     },
     text: {
       primary: baseFontColor,

@@ -12,6 +12,8 @@ import Services from "components/Services";
 import Products from "components/Products";
 import Videos from "components/Videos";
 import Layout from "components/Layout";
+
+import Navbar from "components/Navbar";
 import Footer from "components/Footer";
 
 const LandingPage = ({
@@ -47,6 +49,7 @@ const LandingPageLoader = (props) => {
   const data = dataFormatter(props.data.allMarkdownRemark.nodes);
   return (
     <Layout>
+      <Navbar />
       <main>
         <LandingPage {...data.pages.LandingPage} />
       </main>
