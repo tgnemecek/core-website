@@ -29,6 +29,7 @@ const Link = React.forwardRef((props, ref) => {
         alt={props.alt}
         target="_blank"
         rel="noreferrer"
+        {...props}
       >
         {props.children}
       </a>

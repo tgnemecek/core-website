@@ -4,6 +4,7 @@ const _ = require("lodash");
 
 const Section = ({
   children,
+  className = "",
   backgroundColor = "common.white",
   small = false,
   id = "",
@@ -11,7 +12,7 @@ const Section = ({
   const classes = useStyles({ backgroundColor, small })();
 
   return (
-    <section className={classes.section} id={id}>
+    <section className={`${classes.section} ${className}`} id={id}>
       {children}
     </section>
   );
