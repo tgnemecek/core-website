@@ -21,7 +21,7 @@ const Footer = ({ email, phone1, phone2, address, link }) => {
     return (
       <ListItem component="a" href={`tel:${phone.replace(/\D/g, "")}`}>
         <ListItemIcon>
-          <PhoneIphoneIcon />
+          <PhoneIphoneIcon className={classes.icon} />
         </ListItemIcon>
         <Typography variant="body1">{phone}</Typography>
       </ListItem>
@@ -37,7 +37,7 @@ const Footer = ({ email, phone1, phone2, address, link }) => {
               {email && (
                 <ListItem component="a" href={`mailto:${email}`}>
                   <ListItemIcon>
-                    <EmailIcon />
+                    <EmailIcon className={classes.icon} />
                   </ListItemIcon>
                   <Typography variant="body1">{email}</Typography>
                 </ListItem>
@@ -45,7 +45,7 @@ const Footer = ({ email, phone1, phone2, address, link }) => {
               {link && (
                 <ListItem component="a" href={link}>
                   <ListItemIcon>
-                    <LinkIcon />
+                    <LinkIcon className={classes.icon} />
                   </ListItemIcon>
                   <Typography variant="body1">{link}</Typography>
                 </ListItem>
@@ -90,13 +90,18 @@ const useStyles = makeStyles((theme) => ({
     "& p": {
       textDecoration: "underline",
       display: "inline",
+      color: theme.palette.common.white,
     },
   },
   rightSide: {
     "& p": {
       textAlign: "right",
       width: "100%",
+      color: theme.palette.common.white,
     },
+  },
+  icon: {
+    color: theme.palette.common.white,
   },
   copyright: {
     borderTop: `1px solid ${theme.palette.grey[300]}`,
@@ -104,6 +109,9 @@ const useStyles = makeStyles((theme) => ({
     padding: `${theme.spacing(3)}px 0`,
     textAlign: "center",
     width: "100%",
+    "& p": {
+      color: theme.palette.common.white,
+    },
   },
 }));
 

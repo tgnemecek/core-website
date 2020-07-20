@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
-import { Container, Typography, Grid } from "@material-ui/core";
+import { Container, Typography, Grid, Button } from "@material-ui/core";
 import Link from "components/Link";
 
 const Hero = ({ title, image }) => {
@@ -17,11 +17,19 @@ const Hero = ({ title, image }) => {
         className={classes.image}
         alt="CORE Logo"
       />
-      <div>
-        <Typography variant="h1" className={classes.title}>
-          {title}
-        </Typography>
-      </div>
+      <Typography variant="h1" className={classes.title}>
+        {title}
+      </Typography>
+      <Button
+        variant="contained"
+        component="a"
+        href="#about"
+        color="primary"
+        size="large"
+        className={classes.explore}
+      >
+        Explore
+      </Button>
     </section>
   );
 };
@@ -46,6 +54,10 @@ const useStyles = () =>
     title: {
       color: "white",
       textAlign: "center",
+    },
+    explore: {
+      position: "relative",
+      top: "20%",
     },
     imageWrapper: {},
     image: {

@@ -29,7 +29,9 @@ const Videos = (props) => {
   return (
     <Section>
       <Container>
-        <Typography variant="h2">Videos</Typography>
+        <Typography variant="srOnly" component="h2">
+          Videos
+        </Typography>
         <Typography variant="h3" align="center">
           {videos && videos[index].title}
         </Typography>

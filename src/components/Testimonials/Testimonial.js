@@ -8,13 +8,14 @@ const Testimonial = ({ testimonial, author, role }) => {
 
   return (
     <Fade>
-      <Typography variant="body2" className={classes.text}>
+      <Typography variant="body2" component="p" className={classes.text}>
         {testimonial}
       </Typography>
       <Typography
         variant="subtitle1"
         component="p"
-      >{`—${author}, ${role}`}</Typography>
+        className={classes.subText}
+      >{`— ${author}, ${role}`}</Typography>
     </Fade>
   );
 };
@@ -24,5 +25,9 @@ export default Testimonial;
 const useStyles = makeStyles((theme) => ({
   text: {
     fontStyle: "italic",
+    color: theme.palette.common.white,
+  },
+  subText: {
+    color: theme.palette.common.white,
   },
 }));

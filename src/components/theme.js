@@ -51,7 +51,8 @@ const themeObject = {
   },
   palette: {
     primary: {
-      main: "#fdf6f0", // Soft pink
+      main: "#e96e57",
+      // main: "#fdf6f0", // Soft pink
     },
     secondary: {
       main: "#FF5D5D",

@@ -4,21 +4,25 @@ import { Container, Typography, Grid } from "@material-ui/core";
 import Fade from "react-reveal/Fade";
 import Section from "components/Section";
 import Link from "components/Link";
+import streak from "src/img/streak1.jpg";
 
 const About = ({ about, image }) => {
   const classes = useStyles();
 
   return (
-    <Section>
+    <Section id="about" className={classes.about}>
       <Container>
-        <Typography variant="h2">About</Typography>
+        <Typography variant="srOnly" component="h2">
+          About
+        </Typography>
         <Grid
           container
           spacing={5}
-          justify="space-between"
+          justify="center"
           className={classes.aboutGrid}
         >
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6} className={classes.leftSide}>
+            <img src={streak} className={classes.streak} />
             <div className={classes.textWrapper}>
               <Fade left>
                 <Typography variant="body2">{about}</Typography>
@@ -30,7 +34,7 @@ const About = ({ about, image }) => {
               </Fade>
             </div>
           </Grid>
-          <Grid item xs={5}>
+          <Grid item xs={6} className={classes.imgWrapper}>
             <Link to="/">
               <img
                 className={classes.image}
@@ -51,8 +55,32 @@ const About = ({ about, image }) => {
 export default About;
 
 const useStyles = makeStyles((theme) => ({
+  about: {
+    position: "relative",
+  },
   aboutGrid: {
     minHeight: 500,
+    "& > div": {
+      zIndex: 1,
+    },
+  },
+  streak: {
+    position: "absolute",
+    left: "-2vw",
+    height: "calc(100% - 220px)",
+    width: "52vw",
+    top: "110px",
+  },
+  [theme.breakpoints.down("sm")]: {
+    leftSide: {
+      position: "relative",
+    },
+    streak: {
+      width: "110vw",
+      minWidth: 700,
+      height: "110%",
+      top: "-5%",
+    },
   },
   textWrapper: {
     height: "100%",
@@ -66,9 +94,18 @@ const useStyles = makeStyles((theme) => ({
       textDecoration: "underline",
     },
   },
+  imgWrapper: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
   image: {
     width: "100%",
     height: "100%",
-    objectFit: "cover",
+    maxWidth: 400,
+    maxHeight: 400,
+    minHeight: 250,
+    minWidth: 250,
+    objectFit: "contain",
   },
 }));
