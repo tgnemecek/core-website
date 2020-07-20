@@ -7,8 +7,6 @@ import coachingImg from "src/img/services-coaching.jpg";
 import businessImg from "src/img/services-business.jpg";
 import learningImg from "src/img/services-learning.jpg";
 
-import Service from "./Service";
-
 const hoverGrowth = 10; // Percent
 
 const Services = (props) => {
@@ -142,6 +140,9 @@ const useStyles = makeStyles((theme) => {
       alignItems: "flex-end",
       padding: theme.spacing(6),
       overflow: "hidden",
+      "& button": {
+        fontSize: "1rem",
+      },
     },
     img: {
       width: "100%",
