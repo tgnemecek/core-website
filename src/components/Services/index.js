@@ -140,6 +140,9 @@ const useStyles = makeStyles((theme) => {
       alignItems: "flex-end",
       padding: theme.spacing(6),
       overflow: "hidden",
+      "& button": {
+        fontSize: "1rem",
+      },
     },
     img: {
       width: "100%",
