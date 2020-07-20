@@ -49,7 +49,7 @@ const LandingPageLoader = (props) => {
   const data = dataFormatter(props.data.allMarkdownRemark.nodes);
   return (
     <Layout>
-      <Navbar />
+      <Navbar page="LandingPage" />
       <main>
         <LandingPage {...data.pages.LandingPage} />
       </main>

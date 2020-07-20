@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography, Grid } from "@material-ui/core";
+import Fade from "react-reveal/Fade";
 import YouTube from "react-youtube";
 import Section from "components/Section";
 import Link from "components/Link";
@@ -27,22 +28,20 @@ const Videos = (props) => {
   }, []);
 
   return (
-    <Section>
+    <Section className={classes.videos}>
       <Container>
         <Typography variant="srOnly" component="h2">
           Videos
         </Typography>
-        <Typography variant="h3" align="center">
-          {videos && videos[index].title}
-        </Typography>
+        <Fade duration={200} key={index}>
+          <Typography variant="h2" component="h3" gutterBottom>
+            {videos && videos[index].title}
+          </Typography>
+        </Fade>
         <div className={classes.videoWrapper}>
           <YouTube
             className={classes.video}
             videoId={videos && videos[index].videoId}
-            // opts={{
-            //   height: 315,
-            //   width: 900,
-            // }}
           />
         </div>
         <Gallery items={videos} index={index} setIndex={setIndex} />
@@ -54,13 +53,19 @@ const Videos = (props) => {
 export default Videos;
 
 const useStyles = makeStyles((theme) => ({
+  videos: {
+    background: theme.palette.common.white,
+    background:
+      "linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(237,245,246,1) 100%)",
+  },
   videoWrapper: {
-    width: "80%",
+    width: "calc(100% - 400px)",
     position: "relative",
-    paddingTop: "56.25%",
+    paddingTop: "calc(56.25% - 200px)",
     margin: "auto",
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down("sm")]: {
       width: "100%",
+      paddingTop: "56.25%",
     },
   },
   video: {

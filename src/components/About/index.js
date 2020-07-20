@@ -10,7 +10,7 @@ const About = ({ about, image }) => {
   const classes = useStyles();
 
   return (
-    <Section id="about" className={classes.about}>
+    <Section className={classes.about}>
       <Container>
         <Typography variant="srOnly" component="h2">
           About
@@ -68,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
     left: "-2vw",
     height: "calc(100% - 220px)",
-    width: "52vw",
+    width: "54vw",
     top: "110px",
   },
   [theme.breakpoints.down("sm")]: {
