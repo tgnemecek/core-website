@@ -21,7 +21,7 @@ const Products = ({ products }) => {
                 className={classes.image}
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={6} className={classes.rightSide}>
               <Typography variant="h3">
                 {products && products[index].title}
               </Typography>
@@ -50,5 +50,9 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     height: "100%",
     objectFit: "contain",
+  },
+  rightSide: {
+    padding: theme.spacing(4),
+    boxShadow: "0px 0px 31px -3px rgba(0,0,0,0.24)",
   },
 }));

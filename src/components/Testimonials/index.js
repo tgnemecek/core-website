@@ -37,7 +37,7 @@ const Testimonials = (props) => {
         <Grid container className={classes.testimonialWrapper}>
           <Grid item>
             <IconButton onClick={() => changeIndex(-1)}>
-              <ArrowBackIosIcon />
+              <ArrowBackIosIcon className={classes.arrow} />
             </IconButton>
           </Grid>
           <Grid item className={classes.testimonial}>
@@ -47,7 +47,7 @@ const Testimonials = (props) => {
           </Grid>
           <Grid item>
             <IconButton onClick={() => changeIndex(1)}>
-              <ArrowForwardIosIcon />
+              <ArrowForwardIosIcon className={classes.arrow} />
             </IconButton>
           </Grid>
         </Grid>
@@ -63,6 +63,9 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: "nowrap",
     alignItems: "center",
     height: 500,
+  },
+  arrow: {
+    color: theme.palette.common.white,
   },
   testimonial: {
     flexGrow: 1,
