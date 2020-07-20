@@ -12,6 +12,7 @@ import {
 } from "@material-ui/core";
 import Link from "components/Link";
 import MenuIcon from "@material-ui/icons/Menu";
+import logo from "src/img/logo.png";
 
 const TEMP_DATA = [
   {
@@ -32,7 +33,7 @@ const TEMP_DATA = [
   },
 ];
 
-const Navbar = (props) => {
+const Navbar = ({ page }) => {
   const [isOnTop, setOnTop] = React.useState(true);
   const [isDrawerOpen, setDrawerOpen] = React.useState(false);
 
@@ -69,7 +70,15 @@ const Navbar = (props) => {
   return (
     <AppBar component="nav" className={classes.nav}>
       <Toolbar className={classes.toolbar}>
-        <Link to="/">LOGO HERE</Link>
+        {page === "LandingPage" ? (
+          <a href="#hero">
+            <img src={logo} alt="Company Logo" className={classes.logo} />
+          </a>
+        ) : (
+          <Link to="/">
+            <img src={logo} alt="Company Logo" className={classes.logo} />
+          </Link>
+        )}
         <Hidden xsDown>{renderNavContent()}</Hidden>
         <Hidden smUp>
           <IconButton onClick={() => setDrawerOpen(true)}>
@@ -102,6 +111,9 @@ const useStyles = ({ isOnTop }) =>
       justifyContent: "space-between",
       minHeight: "inherit",
       height: theme.spacing(9),
+    },
+    logo: {
+      width: "50px",
     },
     list: {
       display: "flex",

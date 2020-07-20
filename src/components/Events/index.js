@@ -18,9 +18,12 @@ export default function Events({ isPreview }) {
   }, []);
 
   return (
-    <Section>
-      <Container>
+    <Section id="events">
+      <Container className={classes.headingWrapper}>
         <Typography variant="h2">Events</Typography>
+        <Typography variant="subtitle1" component="p">
+          Latest updates about our online and in-person events
+        </Typography>
       </Container>
       <HorizontalFeed items={events} />
     </Section>

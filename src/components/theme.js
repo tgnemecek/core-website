@@ -17,15 +17,15 @@ const themeObject = {
     fontFamily: '"Roboto", Arial, sans-serif',
     fontSize: 12,
     h1: {
-      fontSize: "2rem",
+      fontSize: "3.2rem",
       fontWeight: 700,
-      color: baseFontColor,
+      color: "#535353",
     },
     h2: {
-      fontSize: "2rem",
+      fontSize: "3rem",
       fontWeight: 400,
-      marginBottom: "2rem",
       color: baseFontColor,
+      borderBottom: "1px solid lightgray",
     },
     h3: {
       fontSize: "1.5rem",
@@ -41,7 +41,9 @@ const themeObject = {
       color: baseFontColor,
     },
     subtitle1: {
+      fontSize: "1.2rem",
       color: baseFontColor,
+      marginBottom: "2rem",
     },
     subtitle2: {
       fontSize: "1.2rem",
