@@ -4,8 +4,11 @@ import { Container, Typography } from "@material-ui/core";
 
 import Section from "components/Section";
 import HorizontalFeed from "components/HorizontalFeed";
+import Event from "./Event";
 
-export default function Events({ isPreview }) {
+const skeletonHeight = 440;
+
+export default function Events() {
   const classes = useStyles();
   const [events, setEvents] = React.useState(null);
 
@@ -24,10 +27,18 @@ export default function Events({ isPreview }) {
         <Typography variant="subtitle1" component="p">
           Latest updates about our online and in-person events
         </Typography>
+        <div className={classes.feedWrapper}>
+          <HorizontalFeed skeletonHeight={skeletonHeight}>
+            {events && events.map((event, i) => <Event key={i} {...event} />)}
+          </HorizontalFeed>
+        </div>
       </Container>
-      <HorizontalFeed items={events} />
     </Section>
   );
 }
 
-const useStyles = makeStyles((theme) => ({}));
+const useStyles = makeStyles((theme) => ({
+  feedWrapper: {
+    padding: `0 ${theme.spacing(3)}px`,
+  },
+}));
