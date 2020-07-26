@@ -12,13 +12,13 @@ products:
       ASAP.  Switch Off Stress is used by clients of Core Coaching & Consulting
       to optimize their progress. it is available in print or as an e-book or
       ibook."
-    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1594942999/sos-book_tc9jx9.jpg
+    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1595800837/sos-book-1_f2u9zr.jpg
   - title: "APP: SOS: Switch off Stress"
     description: "The NEW APP - SOS: Switch Off Stress -- is available in both FREE
       and FULL versions. It offers ONE-MINUTE versions of the Switch Off Stress
       techniques - wadding vocal instructions and original soothing music to
       stop stress dead in its tracks."
-    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1594943242/sos-app_kbhclp.jpg
+    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1595801147/icon_hcpkac.jpg
   - description: Discover 10 Core (Heroic) Types that are readily available to you
       for rapid personal and professional development. These Core Types also
       will allow you to better understand yourself, your colleagues, and your
@@ -26,7 +26,7 @@ products:
       employees, improve communications and teamwork, and steer their companies
       past the most likely areas of sabotage.
     title: Working from Your Core
-    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1594943340/wfyccover_1c14d0492cbc9_twtauk.jpg
+    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1595801251/sos-book_tc9jx9_ccgc4y.jpg
 titleColor: ""
 key: LandingPage
 about: Worried about your career?  Stuck in a job that doesn't fit? Explore
