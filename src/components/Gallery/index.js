@@ -2,11 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-import { Container, Typography, Grid } from "@material-ui/core";
 import { theme } from "components/theme";
-import Link from "components/Link";
+import HorizontalFeed from "components/HorizontalFeed";
 
-const baseHeight = 120;
+const baseHeight = 160;
+const baseWidth = 160;
 
 const Gallery = ({ items, index, setIndex }) => {
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
@@ -21,24 +21,43 @@ const Gallery = ({ items, index, setIndex }) => {
   };
 
   return (
-    <Grid container className={classes.gallery}>
-      {items
-        ? items.map(({ image }, i) => {
+    <div className={classes.gallery}>
+      <HorizontalFeed initialItemWidth={baseWidth} spacing={0}>
+        {items &&
+          items.map(({ image }, i) => {
             return (
-              <Grid
-                item
+              <div
                 key={i}
-                xs={mobile ? 3 : 2}
                 onMouseEnter={() => setIndex(i)}
                 className={gridItemClass(i)}
               >
                 <img src={image} className={classes.image} />
-              </Grid>
+              </div>
             );
-          })
-        : null}
-    </Grid>
+          })}
+      </HorizontalFeed>
+    </div>
   );
+
+  // return (
+  //   <Grid container className={classes.gallery}>
+  //     {items
+  //       ? items.map(({ image }, i) => {
+  //           return (
+  //             <Grid
+  //               item
+  //               key={i}
+  //               xs={mobile ? 3 : 2}
+  //               onMouseEnter={() => setIndex(i)}
+  //               className={gridItemClass(i)}
+  //             >
+  //               <img src={image} className={classes.image} />
+  //             </Grid>
+  //           );
+  //         })
+  //       : null}
+  //   </Grid>
+  // );
 };
 
 Gallery.propTypes = {
@@ -60,6 +79,7 @@ const useStyles = ({ mobile }) =>
     gridItem: {
       height: mobile ? baseHeight * 2 : baseHeight,
       flexShrink: 0,
+      overflow: "hidden",
       transition: "border 0.1s",
     },
     chosenItem: {
