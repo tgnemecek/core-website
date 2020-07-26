@@ -35,16 +35,14 @@ const About = ({ about, image }) => {
             </div>
           </Grid>
           <Grid item xs={6} className={classes.imgWrapper}>
-            <Link to="/">
-              <img
-                className={classes.image}
-                src={image}
-                // srcSet={image.srcSet}
-                // sizes={image.sizes}
-                // src={image.src}
-                alt="About"
-              />
-            </Link>
+            <img
+              className={classes.image}
+              src={image}
+              // srcSet={image.srcSet}
+              // sizes={image.sizes}
+              // src={image.src}
+              alt="About"
+            />
           </Grid>
         </Grid>
       </Container>

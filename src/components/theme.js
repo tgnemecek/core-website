@@ -1,6 +1,7 @@
 import { createMuiTheme } from "@material-ui/core";
 
 const baseFontColor = "#595959";
+const primaryColor = "#e96e57";
 
 const themeObject = {
   breakpoints: {
@@ -25,7 +26,7 @@ const themeObject = {
       fontSize: "3rem",
       fontWeight: 400,
       color: baseFontColor,
-      borderBottom: "1px solid lightgray",
+      borderBottom: `2px solid ${primaryColor}`,
     },
     h3: {
       fontSize: "1.5rem",
@@ -53,8 +54,7 @@ const themeObject = {
   },
   palette: {
     primary: {
-      main: "#e96e57",
-      // main: "#fdf6f0", // Soft pink
+      main: primaryColor,
     },
     secondary: {
       main: "#FF5D5D",

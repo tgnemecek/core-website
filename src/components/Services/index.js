@@ -40,85 +40,87 @@ const Services = (props) => {
   };
 
   return (
-    <section className={classes.services}>
-      <Typography variant="srOnly" component="h2">
-        Services
-      </Typography>
-      <Grid container className={classes.servicesContainer}>
-        <Grid
-          item
-          component={Link}
-          to="/coaching"
-          onMouseEnter={() => onMouseEnter("coaching")}
-          onMouseLeave={() => onMouseLeave("coaching")}
-          sm={12}
-          md={4}
-          className={classes.serviceWrapper}
-        >
-          <img
-            src={coachingImg}
-            className={classes.img}
-            style={imgStyle("coaching")}
-          />
-          <Button
-            variant="contained"
-            size="large"
-            color="primary"
-            component="div"
+    <div className={classes.servicesBackground}>
+      <section className={classes.services}>
+        <Typography variant="srOnly" component="h2">
+          Services
+        </Typography>
+        <Grid container className={classes.servicesContainer}>
+          <Grid
+            item
+            component={Link}
+            to="/coaching"
+            onMouseEnter={() => onMouseEnter("coaching")}
+            onMouseLeave={() => onMouseLeave("coaching")}
+            sm={12}
+            md={4}
+            className={classes.serviceWrapper}
           >
-            CORE Coaching
-          </Button>
-        </Grid>
-        <Grid
-          item
-          component={Link}
-          to="/business"
-          onMouseEnter={() => onMouseEnter("business")}
-          onMouseLeave={() => onMouseLeave("business")}
-          sm={12}
-          md={4}
-          className={classes.serviceWrapper}
-        >
-          <img
-            src={businessImg}
-            className={`${classes.img} ${classes.businessImg}`}
-            style={imgStyle("business")}
-          />
-          <Button
-            variant="contained"
-            size="large"
-            color="primary"
-            component="div"
+            <img
+              src={coachingImg}
+              className={classes.img}
+              style={imgStyle("coaching")}
+            />
+            <Button
+              variant="contained"
+              size="large"
+              color="primary"
+              component="div"
+            >
+              CORE Coaching
+            </Button>
+          </Grid>
+          <Grid
+            item
+            component={Link}
+            to="/business"
+            onMouseEnter={() => onMouseEnter("business")}
+            onMouseLeave={() => onMouseLeave("business")}
+            sm={12}
+            md={4}
+            className={classes.serviceWrapper}
           >
-            CORE Business
-          </Button>
-        </Grid>
-        <Grid
-          item
-          component={Link}
-          to="/learning"
-          onMouseEnter={() => onMouseEnter("learning")}
-          onMouseLeave={() => onMouseLeave("learning")}
-          sm={12}
-          md={4}
-          className={classes.serviceWrapper}
-        >
-          <img
-            src={learningImg}
-            className={classes.img}
-            style={imgStyle("learning")}
-          />
-          <Button
-            variant="contained"
-            size="large"
-            color="primary"
-            component="div"
+            <img
+              src={businessImg}
+              className={`${classes.img} ${classes.businessImg}`}
+              style={imgStyle("business")}
+            />
+            <Button
+              variant="contained"
+              size="large"
+              color="primary"
+              component="div"
+            >
+              CORE Business
+            </Button>
+          </Grid>
+          <Grid
+            item
+            component={Link}
+            to="/learning"
+            onMouseEnter={() => onMouseEnter("learning")}
+            onMouseLeave={() => onMouseLeave("learning")}
+            sm={12}
+            md={4}
+            className={classes.serviceWrapper}
           >
-            CORE Learning
-          </Button>
+            <img
+              src={learningImg}
+              className={classes.img}
+              style={imgStyle("learning")}
+            />
+            <Button
+              variant="contained"
+              size="large"
+              color="primary"
+              component="div"
+            >
+              CORE Learning
+            </Button>
+          </Grid>
         </Grid>
-      </Grid>
-    </section>
+      </section>
+    </div>
   );
 };
 
@@ -126,6 +128,9 @@ export default Services;
 
 const useStyles = makeStyles((theme) => {
   return {
+    servicesBackground: {
+      backgroundColor: theme.palette.common.white,
+    },
     services: {
       maxWidth: 1700,
       margin: "auto",

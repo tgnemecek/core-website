@@ -6,12 +6,9 @@ import Section from "components/Section";
 import Link from "components/Link";
 import Gallery from "components/Gallery";
 
-// REMOVE PRE-PRODUCTS
-const Products = ({ products: preProducts }) => {
+const Products = ({ products }) => {
   const classes = useStyles();
   const [index, setIndex] = React.useState(0);
-
-  const products = [...preProducts, ...preProducts, ...preProducts];
 
   return (
     <Section>
@@ -56,6 +53,7 @@ const useStyles = makeStyles((theme) => ({
   },
   imageWrapper: {
     height: 400,
+    flexBasis: 400,
   },
   image: {
     width: "100%",
