@@ -1,7 +1,7 @@
 ---
 collection: pages
 title: CORE Coaching & Consulting
-heroImage: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1595111344/stock-photo-disturbing-thoughts-series-moody-paint-in-motion-inside-human-face-silhouette-artwork-on-inner-1666658287_uvbwkp.jpg
+heroImage: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1595790093/hero-no-watermark_ypcfx2.jpg
 products:
   - title: "Book: SOS: Switch Off Stress"
     description: "SOS: Switch Off Stress is a practical, immediately usable book
@@ -29,12 +29,10 @@ products:
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1594943340/wfyccover_1c14d0492cbc9_twtauk.jpg
 titleColor: ""
 key: LandingPage
-about: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+about: Worried about your career?  Stuck in a job that doesn't fit? Explore
+  expert one-on-one coaching or Breakout! Career Groups. Click on colored balls
+  in Compass below to see all the ways we help you Overcome Obstacles on your
+  way to Great Success.
 aboutImage: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1595111411/logo_feamvb.png
 testimonials:
   - testimonial: During a crossroads in my career, Sharon coached me to overcome
