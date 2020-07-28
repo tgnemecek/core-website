@@ -1,7 +1,7 @@
 import { createMuiTheme } from "@material-ui/core";
 
 const baseFontColor = "#595959";
-const primaryColor = "#e96e57";
+const primaryColor = "#315cb0";
 
 const themeObject = {
   breakpoints: {
