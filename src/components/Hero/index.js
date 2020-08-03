@@ -6,7 +6,7 @@ import { Container, Typography, Grid, Button } from "@material-ui/core";
 import Link from "components/Link";
 import logo from "src/img/logo.png";
 
-const Hero = ({ title, image }) => {
+const Hero = ({ hero: { title, image } }) => {
   const classes = useStyles()();
 
   return (
@@ -53,8 +53,10 @@ const Hero = ({ title, image }) => {
 };
 
 Hero.propTypes = {
-  title: PropTypes.string.isRequired,
-  image: PropTypes.any.isRequired,
+  hero: PropTypes.exact({
+    title: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default Hero;

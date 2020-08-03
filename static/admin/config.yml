@@ -60,11 +60,19 @@ collections:
               default: pages,
             }
           - { label: Key, name: key, widget: hidden, default: LandingPage }
-          - { label: Title, name: title, widget: string }
-          - { label: Hero Image, name: heroImage, widget: image }
-          - { label: About, name: about, widget: text }
-          - { label: About Image, name: aboutImage, widget: image }
-          - label: Testimonials
+          - label: Hero Section
+            name: hero
+            widget: object
+            fields:
+              - { label: Title, name: title, widget: markdown }
+              - { label: Hero Image, name: image, widget: image }
+          - label: About Section
+            name: about
+            widget: object
+            fields:
+              - { label: About Text, name: text, widget: text }
+              - { label: About Image, name: image, widget: image }
+          - label: Testimonials Section
             name: testimonials
             widget: list
             collapsed: false
@@ -72,7 +80,7 @@ collections:
               - { label: Testimonial, name: testimonial, widget: text }
               - { label: Author, name: author, widget: string }
               - { label: Role, name: role, widget: string }
-          - label: Products
+          - label: Products Section
             name: products
             widget: list
             collapsed: false
@@ -86,7 +94,7 @@ collections:
                   widget: string,
                   required: false,
                 }
-          - label: Videos
+          - label: Videos Section
             name: videos
             widget: list
             collapsed: false

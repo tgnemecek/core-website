@@ -17,8 +17,7 @@ import Navbar from "components/Navbar";
 import Footer from "components/Footer";
 
 const LandingPage = ({
-  title,
-  heroImage,
+  hero,
   about,
   aboutImage,
   testimonials,
@@ -27,13 +26,13 @@ const LandingPage = ({
 }) => {
   return (
     <>
-      <Hero title={title} image={heroImage} />
-      <Events />
+      <Hero hero={hero} />
+      {/* <Events />
       <About about={about} image={aboutImage} />
       <Testimonials testimonials={testimonials} />
       <Services />
       <Products products={products} />
-      <Videos videos={videos} />
+      <Videos videos={videos} /> */}
     </>
   );
 };
@@ -77,9 +76,14 @@ export const pageQuery = graphql`
           }
           pages {
             LandingPage {
-              about
-              aboutImage
-              heroImage
+              hero {
+                title
+                image
+              }
+              about {
+                text
+                image
+              }
               products {
                 description
                 image

@@ -34,13 +34,22 @@ const Pages = `
     collection: String!
     key: String!
 
-    about: String
-    aboutImage: String
-    heroImage: String
+    hero: Hero!
+    about: About!
     products: [Product!]!
     testimonials: [Testimonial!]!
     title: String
     videos: [Video!]!
+  }
+
+  type Hero {
+    title: String
+    image: String
+  }
+
+  type About {
+    text: String
+    image: String
   }
 
   type Product {
