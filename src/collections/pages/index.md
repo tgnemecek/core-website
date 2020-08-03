@@ -1,27 +1,25 @@
 ---
 collection: pages
 title: CORE Coaching & Consulting
-heroImage: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1595790093/hero-no-watermark_ypcfx2.jpg
+heroImage: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596492787/pexels-pixabay-161154_uftaqi.jpg
 products:
   - title: "Book: SOS: Switch Off Stress"
-    description: 'SOS: Switch Off Stress is a practical, immediately usable book
+    description: "SOS: Switch Off Stress is a practical, immediately usable book
       that provides 101 Really Fast Ways to stop stress (in 6 seconds to 6
       minutes). Switch Off Stress is a great book for our troubled times. It
-      follows the The Balancing Act''s powerful "Compass" process to show you
+      follows the The Balancing Act's powerful \"Compass\" process to show you
       exactly what kind of stress is harming you so you can target and remove it
       ASAP.  Switch Off Stress is used by clients of Core Coaching & Consulting
       to optimize their progress. it is available in print or as an e-book or
-      ibook.'
+      ibook."
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1594942999/sos-book_tc9jx9.jpg
   - title: "APP: SOS: Switch off Stress"
-    description:
-      "The NEW APP - SOS: Switch Off Stress -- is available in both FREE
+    description: "The NEW APP - SOS: Switch Off Stress -- is available in both FREE
       and FULL versions. It offers ONE-MINUTE versions of the Switch Off Stress
       techniques - wadding vocal instructions and original soothing music to
       stop stress dead in its tracks."
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1594943242/sos-app_kbhclp.jpg
-  - description:
-      Discover 10 Core (Heroic) Types that are readily available to you
+  - description: Discover 10 Core (Heroic) Types that are readily available to you
       for rapid personal and professional development. These Core Types also
       will allow you to better understand yourself, your colleagues, and your
       organization.  This approach also helps leaders understand their
@@ -31,7 +29,12 @@ products:
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1595801251/sos-book_tc9jx9_ccgc4y.jpg
 titleColor: ""
 key: LandingPage
-about: "Jump-start your career by joining highly-motivated, like-minded professionals from around the world and work with expert coaches to get back on track! You will receive 9 group sessions and 3 private half-hour sessions, 2 assessments of your career strengths & weaknesses, and copies of the e-books: 'The Balancing Act' and 'Prospering and Working' alongside many other resources."
+about: "Jump-start your career by joining highly-motivated, like-minded
+  professionals from around the world and work with expert coaches to get back
+  on track! You will receive 9 group sessions and 3 private half-hour sessions,
+  2 assessments of your career strengths & weaknesses, and copies of the
+  e-books: 'The Balancing Act' and 'Prospering and Working' alongside many other
+  resources."
 aboutImage: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1595111411/logo_feamvb.png
 testimonials:
   - testimonial: During a crossroads in my career, Sharon coached me to overcome
@@ -40,8 +43,7 @@ testimonials:
       results with patients I've since referred to her.
     author: T. Moriyama
     role: M.D., Psychiatrist; Instituto Bairral Hospital
-  - testimonial:
-      Thanks to Sharon's strong coaching approach, I not only doubled my
+  - testimonial: Thanks to Sharon's strong coaching approach, I not only doubled my
       income, but  am much happier (and appreciated!) in my new job. She
       challenged and supported me to raise the bar; then she helped me exceed
       those new expectations.
