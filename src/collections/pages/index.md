@@ -1,7 +1,8 @@
 ---
 collection: pages
-title: CORE Coaching & Consulting
-heroImage: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1595790093/hero-no-watermark_ypcfx2.jpg
+hero:
+  - title: "CORE Coaching & Consulting"
+    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1595790093/hero-no-watermark_ypcfx2.jpg
 products:
   - title: "Book: SOS: Switch Off Stress"
     description: 'SOS: Switch Off Stress is a practical, immediately usable book
