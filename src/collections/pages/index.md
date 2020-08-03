@@ -32,7 +32,12 @@ products:
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1595801251/sos-book_tc9jx9_ccgc4y.jpg
 titleColor: ""
 key: LandingPage
-about: "Jump-start your career by joining highly-motivated, like-minded professionals from around the world and work with expert coaches to get back on track! You will receive 9 group sessions and 3 private half-hour sessions, 2 assessments of your career strengths & weaknesses, and copies of the e-books: 'The Balancing Act' and 'Prospering and Working' alongside many other resources."
+about: "Jump-start your career by joining highly-motivated, like-minded
+  professionals from around the world and work with expert coaches to get back
+  on track! You will receive 9 group sessions and 3 private half-hour sessions,
+  2 assessments of your career strengths & weaknesses, and copies of the
+  e-books: 'The Balancing Act' and 'Prospering and Working' alongside many other
+  resources."
 aboutImage: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1595111411/logo_feamvb.png
 testimonials:
   - testimonial: During a crossroads in my career, Sharon coached me to overcome
