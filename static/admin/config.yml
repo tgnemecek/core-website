@@ -59,7 +59,13 @@ collections:
               widget: hidden,
               default: pages,
             }
-          - { label: Key, name: key, widget: hidden, default: LandingPage }
+          - { label: Key, name: key, widget: hidden, default: landing }
+          - {
+              label: Component,
+              name: component,
+              widget: hidden,
+              default: LandingPage,
+            }
           - label: Hero Section
             name: hero
             widget: object

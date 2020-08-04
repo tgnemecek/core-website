@@ -61,7 +61,9 @@ export default LandingPageLoader;
 
 export const pageQuery = graphql`
   query LandingPageQuery {
-    allMarkdownRemark {
+    allMarkdownRemark(
+      filter: { frontmatter: { key: { in: ["landing", "contact"] } } }
+    ) {
       nodes {
         frontmatter {
           information {

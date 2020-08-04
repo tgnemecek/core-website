@@ -2,7 +2,7 @@ const _ = require("lodash");
 const path = require("path");
 const { createFilePath } = require("gatsby-source-filesystem");
 const { fmImagesToRelative } = require("gatsby-remark-relative-images");
-const schema = require("./src/schema");
+const mySchema = require("./src/schema");
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
@@ -19,7 +19,7 @@ exports.createPages = ({ actions, graphql }) => {
               slug
             }
             frontmatter {
-              key
+              component
             }
           }
         }
@@ -31,19 +31,15 @@ exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(result.errors);
     }
 
-    const posts = result.data.allMarkdownRemark.edges;
+    const edges = result.data.allMarkdownRemark.edges;
 
-    posts.forEach((edge) => {
-      const id = edge.node.id;
+    edges.forEach((edge) => {
+      console.log(edge.node.frontmatter);
       createPage({
         path: edge.node.fields.slug,
         component: path.resolve(
-          `src/templates/${String(edge.node.frontmatter.key)}.js`
+          `src/templates/${String(edge.node.frontmatter.component)}.js`
         ),
-        // additional data can be passed via context
-        context: {
-          id,
-        },
       });
     });
   });
@@ -63,6 +59,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         },
         key: node.frontmatter.key,
         collection: node.frontmatter.collection,
+        component: node.frontmatter.component,
       },
     };
 
@@ -74,8 +71,13 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 };
 
-exports.createSchemaCustomization = ({ actions }) => {
+exports.createSchemaCustomization = ({ actions, schema }) => {
   const { createTypes } = actions;
-  const typeDefs = schema;
+
+  const typeDefs = mySchema.map((type) => {
+    if (typeof type === "string") return type;
+    return schema.buildObjectType(type);
+  });
+
   createTypes(typeDefs);
 };
