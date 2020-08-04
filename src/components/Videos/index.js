@@ -52,6 +52,8 @@ const Videos = (props) => {
 
 export default Videos;
 
+const videoPercentPadding = 20;
+
 const useStyles = makeStyles((theme) => ({
   videos: {
     background: theme.palette.common.white,
@@ -59,9 +61,9 @@ const useStyles = makeStyles((theme) => ({
       "linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(237,245,246,1) 100%)",
   },
   videoWrapper: {
-    width: "calc(100% - 400px)",
+    width: `${100 - videoPercentPadding}%`,
     position: "relative",
-    paddingTop: "calc(56.25% - 200px)",
+    paddingTop: `${56.25 - videoPercentPadding / 2}%`,
     margin: "auto",
     [theme.breakpoints.down("sm")]: {
       width: "100%",

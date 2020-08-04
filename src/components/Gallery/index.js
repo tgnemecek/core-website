@@ -22,7 +22,11 @@ const Gallery = ({ items, index, setIndex }) => {
 
   return (
     <div className={classes.gallery}>
-      <HorizontalFeed initialItemWidth={baseWidth} spacing={0}>
+      <HorizontalFeed
+        initialItemWidth={baseWidth}
+        spacing={0}
+        resizeOnMobile={false}
+      >
         {items &&
           items.map(({ image }, i) => {
             return (
@@ -38,26 +42,6 @@ const Gallery = ({ items, index, setIndex }) => {
       </HorizontalFeed>
     </div>
   );
-
-  // return (
-  //   <Grid container className={classes.gallery}>
-  //     {items
-  //       ? items.map(({ image }, i) => {
-  //           return (
-  //             <Grid
-  //               item
-  //               key={i}
-  //               xs={mobile ? 3 : 2}
-  //               onMouseEnter={() => setIndex(i)}
-  //               className={gridItemClass(i)}
-  //             >
-  //               <img src={image} className={classes.image} />
-  //             </Grid>
-  //           );
-  //         })
-  //       : null}
-  //   </Grid>
-  // );
 };
 
 Gallery.propTypes = {
@@ -71,13 +55,13 @@ export default Gallery;
 const useStyles = ({ mobile }) =>
   makeStyles((theme) => ({
     gallery: {
-      backgroundColor: theme.palette.grey["300"],
+      backgroundColor: theme.palette.grey[300],
       marginTop: theme.spacing(3),
       overflow: "hidden",
       flexWrap: "nowrap",
     },
     gridItem: {
-      height: mobile ? baseHeight * 2 : baseHeight,
+      height: mobile ? baseHeight / 1.5 : baseHeight,
       flexShrink: 0,
       overflow: "hidden",
       transition: "border 0.1s",

@@ -301,3 +301,7 @@ textarea {
   clip: rect(00 0 0);
   overflow: hidden;
 }
+
+main {
+  overflow-x: hidden;
+}

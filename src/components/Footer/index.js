@@ -18,12 +18,17 @@ const Footer = ({ email, phone1, phone2, address, link }) => {
   const classes = useStyles();
 
   const renderPhone = (phone) => {
+    const href = `tel:${phone.replace(/\D/g, "")}`;
     return (
-      <ListItem component="a" href={`tel:${phone.replace(/\D/g, "")}`}>
+      <ListItem>
         <ListItemIcon>
-          <PhoneIphoneIcon className={classes.icon} />
+          <a href={href}>
+            <PhoneIphoneIcon className={classes.icon} />
+          </a>
         </ListItemIcon>
-        <Typography variant="body1">{phone}</Typography>
+        <Typography component="a" href={href} variant="body1">
+          {phone}
+        </Typography>
       </ListItem>
     );
   };
@@ -32,42 +37,50 @@ const Footer = ({ email, phone1, phone2, address, link }) => {
     <footer className={classes.footer}>
       <Container>
         <Grid container justify="space-between">
-          <Grid item className={classes.leftSide}>
+          <Grid item className={classes.leftSide} xs={12} md={6}>
             <List>
               {email && (
-                <ListItem component="a" href={`mailto:${email}`}>
+                <ListItem>
                   <ListItemIcon>
-                    <EmailIcon className={classes.icon} />
+                    <a href={`mailto:${email}`}>
+                      <EmailIcon className={classes.icon} />
+                    </a>
                   </ListItemIcon>
-                  <Typography variant="body1">{email}</Typography>
+                  <Typography
+                    variant="body1"
+                    component="a"
+                    href={`mailto:${email}`}
+                  >
+                    {email}
+                  </Typography>
                 </ListItem>
               )}
               {link && (
-                <ListItem component="a" href={link}>
+                <ListItem>
                   <ListItemIcon>
-                    <LinkIcon className={classes.icon} />
+                    <a href={link}>
+                      <LinkIcon className={classes.icon} />
+                    </a>
                   </ListItemIcon>
-                  <Typography variant="body1">{link}</Typography>
+                  <Typography component="a" href={link} variant="body1">
+                    {link}
+                  </Typography>
                 </ListItem>
               )}
               {phone1 && renderPhone(phone1)}
               {phone2 && renderPhone(phone2)}
             </List>
           </Grid>
-          <Grid item className={classes.rightSide}>
-            <List>
-              {address && (
-                <ListItem>
-                  <List>
-                    {address.split("\n").map((line, i) => (
-                      <ListItem key={i}>
-                        <Typography variant="body1">{line}</Typography>
-                      </ListItem>
-                    ))}
-                  </List>
-                </ListItem>
-              )}
-            </List>
+          <Grid item className={classes.rightSide} xs={12} md={6}>
+            {address && (
+              <List>
+                {address.split("\n").map((line, i) => (
+                  <ListItem key={i}>
+                    <Typography variant="body1">{line}</Typography>
+                  </ListItem>
+                ))}
+              </List>
+            )}
           </Grid>
         </Grid>
       </Container>
@@ -87,17 +100,21 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.primary.main,
   },
   leftSide: {
-    "& p": {
+    "& a": {
       textDecoration: "underline",
       display: "inline",
       color: theme.palette.common.white,
     },
   },
   rightSide: {
+    marginBottom: 100,
     "& p": {
       textAlign: "right",
       width: "100%",
       color: theme.palette.common.white,
+      [theme.breakpoints.down("sm")]: {
+        textAlign: "left",
+      },
     },
   },
   icon: {
@@ -105,7 +122,6 @@ const useStyles = makeStyles((theme) => ({
   },
   copyright: {
     borderTop: `1px solid ${theme.palette.grey[300]}`,
-    marginTop: 200,
     padding: `${theme.spacing(3)}px 0`,
     textAlign: "center",
     width: "100%",

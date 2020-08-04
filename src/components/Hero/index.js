@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import parse from "html-react-parser";
 import Fade from "react-reveal/Fade";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography, Grid, Button } from "@material-ui/core";
@@ -27,14 +28,7 @@ const Hero = ({ hero: { title, image } }) => {
         </Grid>
         <Grid item>
           <Fade>
-            <Typography variant="h1">
-              {/* {title} */}
-              CORE
-              <br />
-              Coaching &amp;
-              <br />
-              Consulting
-            </Typography>
+            <Typography variant="h1">{parse(title)}</Typography>
           </Fade>
         </Grid>
       </Grid>
@@ -75,10 +69,19 @@ const useStyles = () =>
       backgroundColor: "#ffffffd1",
       justifyContent: "center",
       alignItems: "center",
-      height: 260,
+      // height: 260,
     },
     logo: {
       height: 260,
+      [theme.breakpoints.down("md")]: {
+        height: 200,
+      },
+      [theme.breakpoints.down("sm")]: {
+        height: 180,
+      },
+      [theme.breakpoints.down("xs")]: {
+        height: 130,
+      },
     },
     explore: {
       position: "relative",
@@ -92,6 +95,7 @@ const useStyles = () =>
       top: 0,
       height: "100%",
       width: "100%",
+      maxWidth: "100vw",
       objectFit: "cover",
     },
   }));

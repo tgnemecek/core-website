@@ -72,6 +72,16 @@ collections:
             fields:
               - { label: About Text, name: text, widget: text }
               - { label: About Image, name: image, widget: image }
+          - label: Services Section
+            name: services
+            widget: list
+            allow_add: false
+            collapsed: false
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Short Description, name: description, widget: text }
+              - { label: Image, name: image, widget: image }
+              - { label: Name, name: name, widget: hidden }
           - label: Testimonials Section
             name: testimonials
             widget: list

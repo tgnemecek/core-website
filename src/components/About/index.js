@@ -6,7 +6,7 @@ import Section from "components/Section";
 import Link from "components/Link";
 import streak from "src/img/streak1.jpg";
 
-const About = ({ about, image }) => {
+const About = ({ about: { text, image } }) => {
   const classes = useStyles();
 
   return (
@@ -25,7 +25,7 @@ const About = ({ about, image }) => {
             <img src={streak} className={classes.streak} />
             <div className={classes.textWrapper}>
               <Fade left>
-                <Typography variant="body2">{about}</Typography>
+                <Typography variant="body2">{text}</Typography>
                 <div>
                   <Link to="/" className={classes.link}>
                     <Typography variant="body1">Meet the Team</Typography>
