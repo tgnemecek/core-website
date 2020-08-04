@@ -1,4 +1,4 @@
-import { createMuiTheme } from "@material-ui/core";
+import { createMuiTheme, responsiveFontSizes } from "@material-ui/core";
 
 const baseFontColor = "#595959";
 const primaryColor = "#315cb0";
@@ -65,4 +65,4 @@ const themeObject = {
   },
 };
 
-export const theme = createMuiTheme(themeObject);
+export const theme = responsiveFontSizes(createMuiTheme(themeObject));

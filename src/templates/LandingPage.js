@@ -19,20 +19,20 @@ import Footer from "components/Footer";
 const LandingPage = ({
   hero,
   about,
-  aboutImage,
   testimonials,
+  services,
   products,
   videos,
 }) => {
   return (
     <>
       <Hero hero={hero} />
-      {/* <Events />
-      <About about={about} image={aboutImage} />
+      <Events />
+      <About about={about} />
       <Testimonials testimonials={testimonials} />
-      <Services />
+      <Services services={services} />
       <Products products={products} />
-      <Videos videos={videos} /> */}
+      <Videos videos={videos} />
     </>
   );
 };
@@ -84,20 +84,23 @@ export const pageQuery = graphql`
                 text
                 image
               }
-              products {
-                description
-                image
-                title
-              }
               testimonials {
                 author
                 role
                 testimonial
               }
-              title
-              titleColor
+              services {
+                title
+                name
+                description
+                image
+              }
+              products {
+                description
+                image
+                title
+              }
               videos {
-                video
                 title
                 link
               }

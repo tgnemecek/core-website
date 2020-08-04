@@ -29,5 +29,6 @@ const useStyles = makeStyles((theme) => ({
   },
   subText: {
     color: theme.palette.common.white,
+    margin: 0,
   },
 }));

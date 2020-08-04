@@ -16,11 +16,7 @@ import logo from "src/img/logo.png";
 
 const TEMP_DATA = [
   {
-    label: "CORE Coaching",
-    url: "/",
-  },
-  {
-    label: "CORE Business",
+    label: "CORE Leading",
     url: "/",
   },
   {
@@ -28,7 +24,11 @@ const TEMP_DATA = [
     url: "/",
   },
   {
-    label: "Meet the Team",
+    label: "CORE Coaching",
+    url: "/",
+  },
+  {
+    label: "CORE Team",
     url: "/",
   },
 ];
@@ -79,8 +79,8 @@ const Navbar = ({ page }) => {
             <img src={logo} alt="Company Logo" className={classes.logo} />
           </Link>
         )}
-        <Hidden xsDown>{renderNavContent()}</Hidden>
-        <Hidden smUp>
+        <Hidden smDown>{renderNavContent()}</Hidden>
+        <Hidden mdUp>
           <IconButton onClick={() => setDrawerOpen(true)}>
             <MenuIcon fontSize="large" />
           </IconButton>
@@ -102,7 +102,7 @@ export default Navbar;
 const useStyles = ({ isOnTop }) =>
   makeStyles((theme) => ({
     nav: {
-      backgroundColor: isOnTop ? "#0000004d" : theme.palette.common.white,
+      backgroundColor: isOnTop ? "#000000c7" : theme.palette.common.white,
       transition: "background-color 0.5s",
       position: "fixed",
     },
@@ -135,7 +135,7 @@ const useStyles = ({ isOnTop }) =>
       color: isOnTop ? theme.palette.common.white : theme.palette.text.primary,
       transition: "color 0.5s",
     },
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down("sm")]: {
       nav: {
         backgroundColor: theme.palette.common.white,
       },

@@ -1,7 +1,9 @@
 ---
+collection: pages
+key: LandingPage
 hero:
   title: |-
-    <!--StartFragment-->
+    <span>
 
     CORE
 
@@ -13,7 +15,7 @@ hero:
 
     Consulting
 
-    <!--EndFragment-->
+    </span>
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596493058/pexels-pixabay-161154_uftaqi.jpg
 about:
   text: "Jump-start your career by joining highly-motivated, like-minded
@@ -30,16 +32,29 @@ testimonials:
       results with patients I've since referred to her.
     author: T. Moriyama
     role: M.D., Psychiatrist; Instituto Bairral Hospital
+services:
+  - title: CORE Coaching
+    description: Description of service goes here.
+    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596506930/services-coaching_nwxnao.jpg
+    name: coaching
+  - title: CORE Leading
+    description: Description of service goes here.
+    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596506930/services-business_l0t54c.jpg
+    name: leading
+  - title: CORE Learning
+    description: Description of service goes here.
+    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596506928/services-learning_bby0id.jpg
+    name: learning
 products:
   - title: "Book: SOS: Switch Off Stress"
-    description: "SOS: Switch Off Stress is a practical, immediately usable book
+    description: 'SOS: Switch Off Stress is a practical, immediately usable book
       that provides 101 Really Fast Ways to stop stress (in 6 seconds to 6
       minutes). Switch Off Stress is a great book for our troubled times. It
-      follows the The Balancing Act''s powerful \"Compass\" process to show you
+      follows the The Balancing Act''''s powerful "Compass" process to show you
       exactly what kind of stress is harming you so you can target and remove it
       ASAP.  Switch Off Stress is used by clients of Core Coaching & Consulting
       to optimize their progress. it is available in print or as an e-book or
-      ibook."
+      ibook.'
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1595800837/sos-book-1_f2u9zr.jpg
 videos:
   - title: Breakout! Career Speech

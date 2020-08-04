@@ -16,6 +16,7 @@ export default function Feed({
   skeletonHeight = 440,
   initialItemWidth = 280,
   spacing: itemSpacingKey = 2,
+  resizeOnMobile = true,
 }) {
   const containerRef = React.createRef();
 
@@ -55,7 +56,7 @@ export default function Feed({
     setContainerSize(width);
 
     if (width < breakpoint) {
-      setItemWidth(width - itemSpacing);
+      if (resizeOnMobile) setItemWidth(width - itemSpacing);
       setShowArrowBackground(false);
     } else {
       setItemWidth(initialItemWidth);

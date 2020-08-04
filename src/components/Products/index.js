@@ -19,7 +19,7 @@ const Products = ({ products }) => {
         </Typography>
         <Link to={products && products[index].link}>
           <Grid container className={classes.featured}>
-            <Grid item xs={4} className={classes.imageWrapper}>
+            <Grid item xs={12} md={5} className={classes.leftSide}>
               <Fade duration={200} key={index}>
                 <img
                   src={products && products[index].image}
@@ -27,7 +27,7 @@ const Products = ({ products }) => {
                 />
               </Fade>
             </Grid>
-            <Grid item xs={6} className={classes.rightSide}>
+            <Grid item xs={12} md={7} className={classes.rightSide}>
               <Fade bottom duration={300} key={index}>
                 <Typography variant="h3">
                   {products && products[index].title}
@@ -49,11 +49,17 @@ export default Products;
 
 const useStyles = makeStyles((theme) => ({
   featured: {
-    justifyContent: "space-between",
+    padding: `0 10%`,
+    [theme.breakpoints.down("sm")]: {
+      justifyContent: "center",
+      padding: 0,
+    },
   },
-  imageWrapper: {
-    height: 400,
-    flexBasis: 400,
+  leftSide: {
+    backgroundColor: theme.palette.grey[900],
+    [theme.breakpoints.down("sm")]: {
+      height: 200,
+    },
   },
   image: {
     width: "100%",
