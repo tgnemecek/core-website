@@ -1,6 +1,7 @@
 ---
 collection: pages
-key: LandingPage
+key: landing
+component: LandingPage
 hero:
   title: |-
     <span>
