@@ -26,6 +26,20 @@
 //   return newData;
 // };
 
+export const formatPagesQuery = (nodes) => {
+  const result = [];
+  nodes.forEach(({ frontmatter: { pages } }) => {
+    Object.keys(pages).forEach((page) => {
+      if (pages[page])
+        result.push({
+          ...pages[page],
+          key: page,
+        });
+    });
+  });
+  return result;
+};
+
 export const dataFormatter = (nodes) => {
   const obj = {};
   nodes.forEach(({ frontmatter }) => {

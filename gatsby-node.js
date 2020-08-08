@@ -2,7 +2,7 @@ const _ = require("lodash");
 const path = require("path");
 const { createFilePath } = require("gatsby-source-filesystem");
 const { fmImagesToRelative } = require("gatsby-remark-relative-images");
-const mySchema = require("./src/schema");
+const schema = require("./src/schema");
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
@@ -63,6 +63,8 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       },
     };
 
+    console.log(formatted);
+
     createNodeField({
       name: `slug`,
       node: formatted,
@@ -71,13 +73,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 };
 
-exports.createSchemaCustomization = ({ actions, schema }) => {
+exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
-
-  const typeDefs = mySchema.map((type) => {
-    if (typeof type === "string") return type;
-    return schema.buildObjectType(type);
-  });
-
-  createTypes(typeDefs);
+  createTypes(schema);
 };

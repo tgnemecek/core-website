@@ -1,44 +1,3 @@
-// module.exports = schema = [
-//   `
-//   type MarkdownRemark implements Node {
-//     frontmatter: Frontmatter
-//   }
-//   type Frontmatter {
-//     collection: String
-//     key: String
-//     information: Information
-//     component: String
-//     pages: Pages
-//   }
-//   type Pages {
-//     landing: LandingPage
-//     leading: ServicesPage
-//     coaching: ServicesPage
-//     learning: ServicesPage
-//   }
-//   `,
-//   {
-//     name: "LandingPage",
-//     fields: {
-//       collection: "String",
-//       key: "String!",
-
-//       hero: {
-//         title: "String",
-//         image: "String"
-//       },
-//       about: {
-//         text: "String",
-//         image: "String"
-//       },
-//       products: [Product!]!
-//       testimonials: [Testimonial!]!
-//       title: String
-//       videos: [Video!]!
-//     }
-//   }
-// ]
-
 const MarkdownRemark = `
   type MarkdownRemark implements Node {
     frontmatter: Frontmatter
@@ -121,9 +80,7 @@ const ServicesPage = `
     component: String
     key: String
     title: String
-    order: {
-      resolve: (source) => typeof source.order === "number"
-    }
+    order: Int
     gallery: ServiceGallery
   }
   type ServiceGallery {
