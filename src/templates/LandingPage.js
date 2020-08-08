@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
 import { Container } from "@material-ui/core";
 
-import { dataFormatter } from "src/util";
+import { formatPagesQuery } from "src/util";
 import Hero from "components/Hero";
 import Events from "components/Events";
 import About from "components/About";
@@ -45,14 +45,18 @@ const LandingPage = ({
 // };
 
 const LandingPageLoader = (props) => {
-  const data = dataFormatter(props.data.allMarkdownRemark.nodes);
+  const landing = props.data.landing.nodes[0].frontmatter.pages.landing;
+  const contact = props.data.contact.nodes[0].frontmatter.information.contact;
+
+  const pages = formatPagesQuery(props.data.pages.nodes);
+
   return (
     <Layout>
-      <Navbar page="LandingPage" />
+      <Navbar page="LandingPage" pages={pages} />
       <main>
-        <LandingPage {...data.pages.LandingPage} />
+        <LandingPage {...landing} />
       </main>
-      <Footer {...data.information.contact} />
+      <Footer {...contact} />
     </Layout>
   );
 };
@@ -61,23 +65,13 @@ export default LandingPageLoader;
 
 export const pageQuery = graphql`
   query LandingPageQuery {
-    allMarkdownRemark(
-      filter: { frontmatter: { key: { in: ["landing", "contact"] } } }
+    landing: allMarkdownRemark(
+      filter: { frontmatter: { key: { eq: "landing" } } }
     ) {
       nodes {
         frontmatter {
-          information {
-            contact {
-              address
-              email
-              link
-              phone1
-              phone2
-              title
-            }
-          }
           pages {
-            LandingPage {
+            landing {
               hero {
                 title
                 image
@@ -106,6 +100,43 @@ export const pageQuery = graphql`
                 title
                 link
               }
+            }
+          }
+        }
+      }
+    }
+    pages: allMarkdownRemark(
+      filter: { frontmatter: { collection: { eq: "pages" } } }
+    ) {
+      nodes {
+        frontmatter {
+          pages {
+            coaching {
+              title
+            }
+            leading {
+              title
+            }
+            learning {
+              title
+            }
+          }
+        }
+      }
+    }
+    contact: allMarkdownRemark(
+      filter: { frontmatter: { key: { eq: "contact" } } }
+    ) {
+      nodes {
+        frontmatter {
+          information {
+            contact {
+              email
+              link
+              address
+              phone1
+              phone2
+              title
             }
           }
         }

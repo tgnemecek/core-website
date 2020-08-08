@@ -14,26 +14,28 @@ import Link from "components/Link";
 import MenuIcon from "@material-ui/icons/Menu";
 import logo from "src/img/logo.png";
 
-const TEMP_DATA = [
-  {
-    label: "CORE Leading",
-    url: "/",
-  },
-  {
-    label: "CORE Learning",
-    url: "/",
-  },
-  {
-    label: "CORE Coaching",
-    url: "/",
-  },
-  {
-    label: "CORE Team",
-    url: "/",
-  },
-];
+// const TEMP_DATA = [
+//   {
+//     title: "CORE Leading",
+//     key: "/",
+//   },
+//   {
+//     title: "CORE Learning",
+//     key: "/",
+//   },
+//   {
+//     title: "CORE Coaching",
+//     key: "/",
+//   },
+//   {
+//     title: "CORE Team",
+//     key: "/",
+//   },
+// ];
 
-const Navbar = ({ page }) => {
+const Navbar = ({ page, pages }) => {
+  console.log("navbar");
+  console.log({ pages });
   const [isOnTop, setOnTop] = React.useState(true);
   const [isDrawerOpen, setDrawerOpen] = React.useState(false);
 
@@ -49,16 +51,16 @@ const Navbar = ({ page }) => {
   const renderNavContent = () => {
     return (
       <List className={classes.list}>
-        {TEMP_DATA.map(({ label, url }, i) => {
+        {pages.map(({ title, key }, i) => {
           return (
             <ListItem
               key={i}
               className={classes.listItem}
               component={Link}
-              to={url}
+              to={key}
             >
               <Typography variant="body1" className={classes.text}>
-                {label}
+                {title}
               </Typography>
             </ListItem>
           );
