@@ -14,25 +14,6 @@ import Link from "components/Link";
 import MenuIcon from "@material-ui/icons/Menu";
 import logo from "src/img/logo.png";
 
-// const TEMP_DATA = [
-//   {
-//     title: "CORE Leading",
-//     key: "/",
-//   },
-//   {
-//     title: "CORE Learning",
-//     key: "/",
-//   },
-//   {
-//     title: "CORE Coaching",
-//     key: "/",
-//   },
-//   {
-//     title: "CORE Team",
-//     key: "/",
-//   },
-// ];
-
 const Navbar = ({ page, pages }) => {
   console.log("navbar");
   console.log({ pages });
@@ -51,7 +32,7 @@ const Navbar = ({ page, pages }) => {
   const renderNavContent = () => {
     return (
       <List className={classes.list}>
-        {pages.map(({ title, key }, i) => {
+        {pages.map(({ label, key }, i) => {
           return (
             <ListItem
               key={i}
@@ -60,7 +41,7 @@ const Navbar = ({ page, pages }) => {
               to={key}
             >
               <Typography variant="body1" className={classes.text}>
-                {title}
+                {label}
               </Typography>
             </ListItem>
           );

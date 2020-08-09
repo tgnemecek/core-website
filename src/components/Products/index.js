@@ -13,7 +13,9 @@ const Products = ({ products }) => {
   return (
     <Section>
       <Container>
-        <Typography variant="h2">Products</Typography>
+        <Typography variant="h2">
+          Leading Your Life &amp; Work Products
+        </Typography>
         <Typography variant="subtitle1" component="p">
           From books to apps, use these resources to assist you in your journey
         </Typography>
