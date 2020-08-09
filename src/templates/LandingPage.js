@@ -47,8 +47,8 @@ const LandingPage = ({
 const LandingPageLoader = (props) => {
   const landing = props.data.landing.nodes[0].frontmatter.pages.landing;
   const contact = props.data.contact.nodes[0].frontmatter.information.contact;
-
-  const pages = formatPagesQuery(props.data.pages.nodes);
+  const pages =
+    props.data.pages.nodes[0].frontmatter.information.navigation.links;
 
   return (
     <Layout>
@@ -106,19 +106,16 @@ export const pageQuery = graphql`
       }
     }
     pages: allMarkdownRemark(
-      filter: { frontmatter: { collection: { eq: "pages" } } }
+      filter: { frontmatter: { key: { eq: "navigation" } } }
     ) {
       nodes {
         frontmatter {
-          pages {
-            coaching {
-              title
-            }
-            leading {
-              title
-            }
-            learning {
-              title
+          information {
+            navigation {
+              links {
+                label
+                url
+              }
             }
           }
         }
