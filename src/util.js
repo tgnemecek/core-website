@@ -20,3 +20,9 @@ export const shuffleArray = (inputData) => {
   }
   return data;
 };
+
+export const getVideoId = (link) => {
+  const videoIdIndex = link.indexOf("?v=") + 3;
+  const videoId = link.slice(videoIdIndex);
+  return videoId;
+};

@@ -6,6 +6,7 @@ import YouTube from "react-youtube";
 import Section from "components/Section";
 import Link from "components/Link";
 import Gallery from "components/Gallery";
+import { getVideoId } from "src/util";
 
 const Videos = (props) => {
   const classes = useStyles();
@@ -15,8 +16,7 @@ const Videos = (props) => {
   React.useEffect(() => {
     setVideos(
       props.videos.map(({ title, link }) => {
-        const videoIdIndex = link.indexOf("?v=") + 3;
-        const videoId = link.slice(videoIdIndex);
+        const videoId = getVideoId(link);
         return {
           videoId,
           image: `http://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`,
