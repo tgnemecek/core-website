@@ -7,8 +7,8 @@ import { Container, Typography, Grid, Button } from "@material-ui/core";
 import Link from "components/Link";
 import logo from "src/img/logo.png";
 
-const Hero = ({ hero: { title, image } }) => {
-  const classes = useStyles()();
+const Hero = ({ hero: { title, image }, small = false }) => {
+  const classes = useStyles({ small })();
 
   return (
     <section className={classes.hero} id="hero">
@@ -18,30 +18,38 @@ const Hero = ({ hero: { title, image } }) => {
         // src={image.src}
         src={image}
         className={classes.image}
-        alt="CORE Logo"
+        alt="Hero Image"
       />
-      <Grid container className={classes.logoBar}>
-        <Grid item>
-          <Fade left>
-            <img src={logo} className={classes.logo} />
-          </Fade>
-        </Grid>
-        <Grid item>
-          <Fade>
-            <Typography variant="h1">{parse(title)}</Typography>
-          </Fade>
-        </Grid>
-      </Grid>
-      <Button
-        variant="contained"
-        component="a"
-        href="#events"
-        color="primary"
-        size="large"
-        className={classes.explore}
-      >
-        Explore
-      </Button>
+      <div className={classes.logoBarBackground}>
+        <Container>
+          <Grid container className={classes.logoBar}>
+            {!small && (
+              <Grid item>
+                <Fade left>
+                  <img src={logo} className={classes.logo} />
+                </Fade>
+              </Grid>
+            )}
+            <Grid item>
+              <Fade>
+                <Typography variant="h1">{parse(title)}</Typography>
+              </Fade>
+            </Grid>
+          </Grid>
+        </Container>
+      </div>
+      {!small && (
+        <Button
+          variant="contained"
+          component="a"
+          href="#events"
+          color="primary"
+          size="large"
+          className={classes.explore}
+        >
+          Explore
+        </Button>
+      )}
     </section>
   );
 };
@@ -55,21 +63,23 @@ Hero.propTypes = {
 
 export default Hero;
 
-const useStyles = () =>
+const useStyles = ({ small }) =>
   makeStyles((theme) => ({
     hero: {
-      height: "100vh",
+      height: small ? "400px" : "100vh",
       display: "flex",
-      alignItems: "center",
+      alignItems: small ? "flex-start" : "center",
       justifyContent: "center",
       flexDirection: "column",
       backgroundColor: "#00000026",
     },
-    logoBar: {
+    logoBarBackground: {
       backgroundColor: "#ffffffd1",
-      justifyContent: "center",
+      width: "100%",
+    },
+    logoBar: {
+      justifyContent: small ? "flex-start" : "center",
       alignItems: "center",
-      // height: 260,
     },
     logo: {
       height: 260,
