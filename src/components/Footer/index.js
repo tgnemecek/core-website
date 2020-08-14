@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   Container,
@@ -93,6 +94,16 @@ const Footer = ({ email, phone1, phone2, address, link }) => {
   );
 };
 
+Footer.propTypes = {
+  email: PropTypes.string,
+  phone1: PropTypes.string,
+  phone2: PropTypes.string,
+  address: PropTypes.string,
+  link: PropTypes.string,
+};
+
+export default Footer;
+
 const useStyles = makeStyles((theme) => ({
   footer: {
     paddingTop: 100,
@@ -130,5 +141,3 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-
-export default Footer;

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import { theme } from "components/theme";
 import { Box, IconButton, Grid, Container } from "@material-ui/core";
@@ -11,13 +12,13 @@ import Item from "./Item";
 const breakpointKey = "sm";
 const breakpoint = theme.breakpoints.values[breakpointKey];
 
-export default function Feed({
+const Feed = ({
   children,
   skeletonHeight = 440,
   initialItemWidth = 280,
   spacing: itemSpacingKey = 2,
   resizeOnMobile = true,
-}) {
+}) => {
   const containerRef = React.createRef();
 
   const itemSpacing = theme.spacing(itemSpacingKey);
@@ -127,7 +128,17 @@ export default function Feed({
       </Box>
     </div>
   );
-}
+};
+
+Feed.propTypes = {
+  skeletonHeight: PropTypes.number,
+  initialItemWidth: PropTypes.number,
+  spacing: PropTypes.number,
+  resizeOnMobile: PropTypes.bool,
+  children: PropTypes.node,
+};
+
+export default Feed;
 
 const useStyles = ({ gridOffset, showArrowBackground }) =>
   makeStyles((theme) => ({

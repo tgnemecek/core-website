@@ -52,7 +52,7 @@ const LandingPageLoader = (props) => {
 
   return (
     <Layout>
-      <Navbar page="LandingPage" pages={pages} />
+      <Navbar path={props.path} pages={pages} />
       <main>
         <LandingPage {...landing} />
       </main>

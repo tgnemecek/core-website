@@ -11,41 +11,50 @@ import {
   CardContent,
 } from "@material-ui/core";
 import LaunchIcon from "@material-ui/icons/Launch";
-import Section from "components/Section";
-import Link from "components/Link";
-import { theme } from "components/theme";
+import Fade from "react-reveal/Fade";
 
 const transition = "all 0.3s ease-in-out";
 
-const Member = ({ idx, name, role, photo, video, bio, setMemberToView }) => {
+const Member = ({
+  idx,
+  name,
+  role,
+  photo,
+  video,
+  bio,
+  setMemberToView,
+  delay = 0,
+}) => {
   const [isHovering, setIsHovering] = React.useState(false);
   const classes = useStyles({ isHovering })();
 
   return (
-    <Card elevation={6} square>
-      <CardActionArea
-        onClick={() => setMemberToView(idx)}
-        onMouseEnter={() => setIsHovering(true)}
-        onMouseLeave={() => setIsHovering(false)}
-      >
-        <div className={classes.imageWrapper}>
-          <CardMedia
-            image={photo}
-            className={classes.image}
-            title={name}
-            component="img"
-          />
-          <div className={classes.shadow}></div>
-          <Typography variant="subtitle2" className={classes.showMore}>
-            Show More <LaunchIcon />
-          </Typography>
-        </div>
-        <CardContent className={classes.content}>
-          <Typography variant="h3">{name}</Typography>
-          <Typography variant="body1">{role}</Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>
+    <Fade delay={delay}>
+      <Card elevation={6} square>
+        <CardActionArea
+          onClick={() => setMemberToView(idx)}
+          onMouseEnter={() => setIsHovering(true)}
+          onMouseLeave={() => setIsHovering(false)}
+        >
+          <div className={classes.imageWrapper}>
+            <CardMedia
+              image={photo}
+              className={classes.image}
+              title={name}
+              component="img"
+            />
+            <div className={classes.shadow}></div>
+            <Typography variant="subtitle2" className={classes.showMore}>
+              Show More <LaunchIcon />
+            </Typography>
+          </div>
+          <CardContent className={classes.content}>
+            <Typography variant="h3">{name}</Typography>
+            <Typography variant="body1">{role}</Typography>
+          </CardContent>
+        </CardActionArea>
+      </Card>
+    </Fade>
   );
 };
 
