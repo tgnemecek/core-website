@@ -1,7 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography, Button, Grid } from "@material-ui/core";
-import Section from "components/Section";
 import Link from "components/Link";
 import { theme } from "components/theme";
 
@@ -67,7 +66,7 @@ const Services = ({ services }) => {
         <Typography variant="srOnly" component="h2">
           Services
         </Typography>
-        <Grid container className={classes.servicesContainer}>
+        <Grid container>
           {services.map(({ title, image, name, description }, i) => (
             <Grid
               item
@@ -107,7 +106,7 @@ const useStyles = makeStyles((theme) => {
       backgroundColor: theme.palette.common.white,
     },
     services: {
-      maxWidth: 1700,
+      maxWidth: 1100,
       margin: "auto",
     },
     serviceWrapper: {

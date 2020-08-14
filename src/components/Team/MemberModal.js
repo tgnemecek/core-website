@@ -12,8 +12,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import YouTube from "react-youtube";
 import Fade from "@material-ui/core/Fade";
 import Modal from "components/Modal";
-import Link from "components/Link";
-import { theme } from "components/theme";
+import ReplyIcon from "@material-ui/icons/Reply";
 import { getVideoId } from "src/util";
 
 const timeout = 2000;
@@ -21,10 +20,6 @@ const timeout = 2000;
 const MemberModal = ({ memberToView: { name, role, bio, video }, onClose }) => {
   const [modalReady, setModalReady] = React.useState(false);
   const classes = useStyles({ modalReady })();
-
-  const _onReady = (e) => {
-    e.target.playVideo();
-  };
 
   React.useEffect(() => {
     setTimeout(() => {
@@ -42,15 +37,6 @@ const MemberModal = ({ memberToView: { name, role, bio, video }, onClose }) => {
                 <YouTube
                   className={classes.video}
                   videoId={getVideoId(video)}
-                  onReady={_onReady}
-                  playerVars={
-                    {
-                      // autoplay: 1,
-                      // origin: window.location.origin,
-                      // host: "http://www.youtube.com",
-                      // origin: window.location.host,
-                    }
-                  }
                 />
               </div>
             </Grid>
@@ -74,6 +60,10 @@ const MemberModal = ({ memberToView: { name, role, bio, video }, onClose }) => {
                   {bio}
                 </Typography>
               </div>
+              <Typography variant="body1" className={classes.watchVideo}>
+                <ReplyIcon />
+                Watch Video
+              </Typography>
               <ButtonBase className={classes.bottomButton} onClick={onClose}>
                 Back
               </ButtonBase>
@@ -98,10 +88,11 @@ const useStyles = ({ modalReady }) =>
       overflow: "hidden",
       position: "relative",
       height: "100%",
+      zIndex: 1,
     },
     video: {
       position: "absolute",
-      bottom: modalReady ? 0 : "100%",
+      top: 0,
       left: 0,
       width: "100%",
       height: "100%",
@@ -114,6 +105,13 @@ const useStyles = ({ modalReady }) =>
       overflow: "auto",
       height: 400,
       paddingTop: theme.spacing(2),
+    },
+    watchVideo: {
+      fontSize: "1rem",
+      position: "relative",
+      left: modalReady ? 0 : -50,
+      opacity: modalReady ? 1 : 0,
+      transition: "all 0.5s",
     },
     bottomButton: {
       color: "white",

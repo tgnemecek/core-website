@@ -78,6 +78,7 @@ const Team = () => {
                   {...member}
                   idx={i}
                   setMemberToView={(idx) => setMemberToView(TEMP_DATA[idx])}
+                  delay={i * 100}
                 />
               </Grid>
             );

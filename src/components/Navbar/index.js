@@ -10,21 +10,26 @@ import {
   Drawer,
   IconButton,
 } from "@material-ui/core";
-import Link from "components/Link";
+import { Link as GatsbyLink } from "gatsby";
 import MenuIcon from "@material-ui/icons/Menu";
 import logo from "src/img/logo.png";
 
-const Navbar = ({ page, pages }) => {
-  console.log("navbar");
-  console.log({ pages });
+const Navbar = ({ path, pages }) => {
   const [isOnTop, setOnTop] = React.useState(true);
   const [isDrawerOpen, setDrawerOpen] = React.useState(false);
 
+  const onScroll = () => {
+    setOnTop(!window.scrollY);
+  };
+
   React.useEffect(() => {
     setOnTop(!window.scrollY);
-    window.addEventListener("scroll", () => setOnTop(!window.scrollY), {
+    window.addEventListener("scroll", onScroll, {
       passive: true,
     });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
   }, []);
 
   const classes = useStyles({ isOnTop })();
@@ -32,13 +37,13 @@ const Navbar = ({ page, pages }) => {
   const renderNavContent = () => {
     return (
       <List className={classes.list}>
-        {pages.map(({ label, key }, i) => {
+        {pages.map(({ label, url }, i) => {
           return (
             <ListItem
               key={i}
               className={classes.listItem}
-              component={Link}
-              to={key}
+              component={GatsbyLink}
+              to={url}
             >
               <Typography variant="body1" className={classes.text}>
                 {label}
@@ -53,14 +58,14 @@ const Navbar = ({ page, pages }) => {
   return (
     <AppBar component="nav" className={classes.nav}>
       <Toolbar className={classes.toolbar}>
-        {page === "LandingPage" ? (
+        {path === "/" ? (
           <a href="#hero">
             <img src={logo} alt="Company Logo" className={classes.logo} />
           </a>
         ) : (
-          <Link to="/">
+          <GatsbyLink to="/">
             <img src={logo} alt="Company Logo" className={classes.logo} />
-          </Link>
+          </GatsbyLink>
         )}
         <Hidden smDown>{renderNavContent()}</Hidden>
         <Hidden mdUp>

@@ -8,7 +8,7 @@ import Event from "./Event";
 
 const skeletonHeight = 440;
 
-export default function Events() {
+const Events = () => {
   const classes = useStyles();
   const [events, setEvents] = React.useState(null);
 
@@ -37,7 +37,9 @@ export default function Events() {
       </Container>
     </Section>
   );
-}
+};
+
+export default Events;
 
 const useStyles = makeStyles((theme) => ({
   feedWrapper: {

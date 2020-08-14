@@ -1,9 +1,10 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography, Grid } from "@material-ui/core";
 import Fade from "react-reveal/Fade";
 import Section from "components/Section";
-import Link from "components/Link";
+import { Link as GatsbyLink } from "gatsby";
 import streak from "src/img/streak1.jpg";
 
 const About = ({ about: { text, image } }) => {
@@ -27,9 +28,9 @@ const About = ({ about: { text, image } }) => {
               <Fade left>
                 <Typography variant="body2">{text}</Typography>
                 <div>
-                  <Link to="/" className={classes.link}>
+                  <GatsbyLink to="/team" className={classes.link}>
                     <Typography variant="body1">Meet the Team</Typography>
-                  </Link>
+                  </GatsbyLink>
                 </div>
               </Fade>
             </div>
@@ -48,6 +49,13 @@ const About = ({ about: { text, image } }) => {
       </Container>
     </Section>
   );
+};
+
+About.propTypes = {
+  about: PropTypes.exact({
+    text: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+  }),
 };
 
 export default About;

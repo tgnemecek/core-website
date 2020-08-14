@@ -45,9 +45,13 @@ const Gallery = ({ items, index, setIndex }) => {
 };
 
 Gallery.propTypes = {
-  items: PropTypes.any,
-  index: PropTypes.any,
-  setIndex: PropTypes.any,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      image: PropTypes.string.isRequired,
+    })
+  ),
+  index: PropTypes.number.isRequired,
+  setIndex: PropTypes.func.isRequired,
 };
 
 export default Gallery;
