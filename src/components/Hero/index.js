@@ -4,7 +4,7 @@ import parse from "html-react-parser";
 import Fade from "react-reveal/Fade";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography, Grid, Button } from "@material-ui/core";
-import Link from "components/Link";
+import { Link } from "gatsby";
 import logo from "src/img/logo.png";
 
 const Hero = ({ hero: { title, image }, small = false }) => {

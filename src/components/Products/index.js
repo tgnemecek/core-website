@@ -3,7 +3,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography, Grid } from "@material-ui/core";
 import Fade from "react-reveal/Fade";
 import Section from "components/Section";
-import Link from "components/Link";
 import Gallery from "components/Gallery";
 
 const Products = ({ products }) => {
@@ -19,7 +18,7 @@ const Products = ({ products }) => {
         <Typography variant="subtitle1" component="p">
           From books to apps, use these resources to assist you in your journey
         </Typography>
-        <Link to={products && products[index].link}>
+        <a href={products ? products[index].link : ""}>
           <Grid container className={classes.featured}>
             <Grid item xs={12} md={5} className={classes.leftSide}>
               <Fade duration={200} key={index}>
@@ -40,7 +39,7 @@ const Products = ({ products }) => {
               </Fade>
             </Grid>
           </Grid>
-        </Link>
+        </a>
         <Gallery items={products} index={index} setIndex={setIndex} />
       </Container>
     </Section>

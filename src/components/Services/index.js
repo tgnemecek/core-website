@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography, Button, Grid } from "@material-ui/core";
-import Link from "components/Link";
+import { Link } from "gatsby";
 import { theme } from "components/theme";
 
 const hoverGrowth = 10; // Percent
