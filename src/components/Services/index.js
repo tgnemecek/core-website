@@ -66,7 +66,7 @@ const Services = ({ services }) => {
         <Typography variant="srOnly" component="h2">
           Services
         </Typography>
-        <Grid container>
+        <Grid container className={classes.servicesGridContainer}>
           {services.map(({ title, image, name, description }, i) => (
             <Grid
               item
@@ -108,6 +108,10 @@ const useStyles = makeStyles((theme) => {
     services: {
       maxWidth: 1100,
       margin: "auto",
+      padding: "50px 0",
+    },
+    servicesGridContainer: {
+      boxShadow: "0px 14px 43px -14px rgba(0,0,0,0.64)",
     },
     serviceWrapper: {
       border: "none",
