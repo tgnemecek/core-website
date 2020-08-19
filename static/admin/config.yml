@@ -136,3 +136,39 @@ collections:
             fields:
               - { label: Video Title, name: title, widget: string }
               - { label: Video Link, name: link, widget: string }
+      - file: "src/collections/pages/team.md"
+        label: "Team Page"
+        name: "index"
+        fields:
+          - {
+              label: Collection,
+              name: collection,
+              widget: hidden,
+              default: pages,
+            }
+          - { label: Key, name: key, widget: hidden, default: team }
+          - {
+              label: Component,
+              name: component,
+              widget: hidden,
+              default: TeamPage,
+            }
+          - { label: Title, name: title, widget: hidden, default: Core Team }
+          - { label: Order, name: order, widget: hidden, default: 3 }
+          - label: Hero Section
+            name: hero
+            widget: object
+            fields:
+              - { label: Title, name: title, widget: markdown }
+              - { label: Hero Image, name: image, widget: image }
+          - label: Members
+            name: members
+            widget: list
+            allow_add: true
+            collapsed: false
+            fields:
+              - { label: Name, name: title, widget: string }
+              - { label: Role, name: description, widget: string }
+              - { label: Photo, name: photo, widget: image }
+              - { label: Video, name: video, widget: string }
+              - { label: Bio, name: bio, widget: text }

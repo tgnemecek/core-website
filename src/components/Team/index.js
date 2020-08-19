@@ -2,7 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography, Button, Grid, Modal } from "@material-ui/core";
 import Section from "components/Section";
-import Link from "components/Link";
+import { Link } from "gatsby";
 import { theme } from "components/theme";
 import Member from "./Member";
 import MemberModal from "./MemberModal";
@@ -64,16 +64,16 @@ const TEMP_DATA = [
   },
 ];
 
-const Team = () => {
+const Team = ({ members }) => {
   const [memberToView, setMemberToView] = React.useState(null);
 
   return (
     <Section>
       <Container>
         <Grid container spacing={3}>
-          {TEMP_DATA.map((member, i) => {
+          {members.map((member, i) => {
             return (
-              <Grid item key={i} xs={4}>
+              <Grid item key={i} xs={12} sm={6} md={4}>
                 <Member
                   {...member}
                   idx={i}

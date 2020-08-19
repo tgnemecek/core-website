@@ -11,7 +11,7 @@ import {
   CardContent,
 } from "@material-ui/core";
 import LinesEllipsis from "react-lines-ellipsis";
-import Link from "components/Link";
+import { Link } from "gatsby";
 
 const titleMaxLength = 25;
 

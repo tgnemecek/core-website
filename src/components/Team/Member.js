@@ -15,16 +15,7 @@ import Fade from "react-reveal/Fade";
 
 const transition = "all 0.3s ease-in-out";
 
-const Member = ({
-  idx,
-  name,
-  role,
-  photo,
-  video,
-  bio,
-  setMemberToView,
-  delay = 0,
-}) => {
+const Member = ({ idx, name, role, photo, setMemberToView, delay = 0 }) => {
   const [isHovering, setIsHovering] = React.useState(false);
   const classes = useStyles({ isHovering })();
 
@@ -63,7 +54,7 @@ export default Member;
 const useStyles = ({ isHovering }) =>
   makeStyles((theme) => ({
     imageWrapper: {
-      height: "40vw",
+      height: 520,
       maxHeight: 520,
       overflow: "hidden",
       position: "relative",

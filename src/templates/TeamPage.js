@@ -9,21 +9,14 @@ import Layout from "components/Layout";
 import Navbar from "components/Navbar";
 import Footer from "components/Footer";
 
-const TeamPage = ({ hero }) => {
+const TeamPage = ({ hero, members }) => {
   return (
     <>
       <Hero hero={hero} small={true} />
-      <Team />
+      <Team members={members} />
     </>
   );
 };
-
-// TeamPage.propTypes = {
-//   main: {
-//     about: PropTypes.string.isRequired,
-//     title: PropTypes.string.isRequired
-//   },
-// };
 
 const TeamPageLoader = (props) => {
   const team = props.data.team.nodes[0].frontmatter.pages.team;
@@ -54,6 +47,13 @@ export const pageQuery = graphql`
               hero {
                 title
                 image
+              }
+              members {
+                name
+                role
+                photo
+                video
+                bio
               }
             }
           }

@@ -10,7 +10,7 @@ import {
   Drawer,
   IconButton,
 } from "@material-ui/core";
-import { Link as GatsbyLink } from "gatsby";
+import { Link } from "gatsby";
 import MenuIcon from "@material-ui/icons/Menu";
 import logo from "src/img/logo.png";
 
@@ -42,7 +42,7 @@ const Navbar = ({ path, pages }) => {
             <ListItem
               key={i}
               className={classes.listItem}
-              component={GatsbyLink}
+              component={Link}
               to={url}
             >
               <Typography variant="body1" className={classes.text}>
@@ -63,9 +63,9 @@ const Navbar = ({ path, pages }) => {
             <img src={logo} alt="Company Logo" className={classes.logo} />
           </a>
         ) : (
-          <GatsbyLink to="/">
+          <Link to="/">
             <img src={logo} alt="Company Logo" className={classes.logo} />
-          </GatsbyLink>
+          </Link>
         )}
         <Hidden smDown>{renderNavContent()}</Hidden>
         <Hidden mdUp>

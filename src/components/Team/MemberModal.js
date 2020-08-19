@@ -22,9 +22,12 @@ const MemberModal = ({ memberToView: { name, role, bio, video }, onClose }) => {
   const classes = useStyles({ modalReady })();
 
   React.useEffect(() => {
-    setTimeout(() => {
+    const timeoutId = setTimeout(() => {
       setModalReady(true);
     }, timeout);
+    return () => {
+      clearTimeout(timeoutId);
+    };
   }, []);
 
   return (

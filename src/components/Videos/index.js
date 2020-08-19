@@ -4,7 +4,7 @@ import { Container, Typography, Grid } from "@material-ui/core";
 import Fade from "react-reveal/Fade";
 import YouTube from "react-youtube";
 import Section from "components/Section";
-import Link from "components/Link";
+import { Link } from "gatsby";
 import Gallery from "components/Gallery";
 import { getVideoId } from "src/util";
 

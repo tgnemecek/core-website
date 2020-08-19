@@ -10,7 +10,7 @@ import {
   ListItemIcon,
   Divider,
 } from "@material-ui/core";
-import Link from "components/Link";
+import { Link } from "gatsby";
 import EmailIcon from "@material-ui/icons/Email";
 import PhoneIphoneIcon from "@material-ui/icons/PhoneIphone";
 import LinkIcon from "@material-ui/icons/Link";
