@@ -159,7 +159,7 @@ collections:
             name: hero
             widget: object
             fields:
-              - { label: Title, name: title, widget: markdown }
+              - { label: Title, name: title, widget: string }
               - { label: Hero Image, name: image, widget: image }
           - label: Members
             name: members
