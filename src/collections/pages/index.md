@@ -67,8 +67,8 @@ products:
       ibook."
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1595800837/sos-book-1_f2u9zr.jpg
 videos:
-  - title: Breakout! Career Speech
+  - title: Breakout! Career Speech (for college students)
     link: https://www.youtube.com/watch?v=5qap5aO4i9A
-  - title: "Webinar: Structure"
-    link: https://www.youtube.com/watch?v=UIcTxjwm_8E
+  - title: Changing Organizations (Sharon at Brazkil Banking Association) English
+    link: https://www.youtube.com/watch?v=XQdlMuzwBAE&t=77s
 ---
