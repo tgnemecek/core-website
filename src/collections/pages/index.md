@@ -69,6 +69,7 @@ products:
 videos:
   - title: Breakout! Career Speech (for college students)
     link: https://www.youtube.com/watch?v=5qap5aO4i9A
-  - title: Changing Organizations (Sharon at Brazkil Banking Association) English
+  - title: Navigating Organizational Change (Sharon at FEBRBAN - Brazil Banking
+      Association) English
     link: https://www.youtube.com/watch?v=XQdlMuzwBAE&t=77s
 ---
