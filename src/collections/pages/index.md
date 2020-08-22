@@ -46,6 +46,15 @@ testimonials:
       results with patients I've since referred to her.
     author: T. Moriyama
     role: M.D., Psychiatrist; Instituto Bairral Hospital
+  - testimonial: The Leading Your Life & Work program helped me to find myself in
+      this changing world. I am so excited, looking forward to develop a new
+      Project with my students. I learned wonderful techniques to remove
+      obstacles, find my center and my purpose, connect with real and achievable
+      goals. I feel like I had a puzzle with some missing pieces and The
+      Balancing Act program has helped me to find them and put them in the
+      proper place, to continue growing and discovering my own path.
+    author: Ana Martinez
+    role: Art Teacher, American School of Barcelona
 products:
   - title: "Book: SOS: Switch Off Stress"
     description: "SOS: Switch Off Stress is a practical, immediately usable book
