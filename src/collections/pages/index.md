@@ -20,22 +20,23 @@ hero:
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596493058/pexels-pixabay-161154_uftaqi.jpg
 about:
   text: Core Coaching & Consulting (CCC) is an international group of change
-    agents working from their Core to create balance, well-being, and flow that
-    transforms individual lives and organizational systems. We use the ancient
-    system of the 5 elements as described in the book The Balancing Act to
-    create and deliver powerful programs such as Leading Your Life and Work.
+    agents who work from their Cores to create balance, well-being, and flow
+    that transforms individual lives and organizational systems. We use the
+    ancient system of the 5 elements as described in the book The Balancing Act
+    to create and deliver powerful programs such as Leading Your Life and Work.
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1595111411/logo_feamvb.png
 services:
   - title: CORE Coaching
-    description: Description of service goes here.
+    description: Transformational Coaching services and professional coaching
+      certifications.
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596506930/services-coaching_nwxnao.jpg
     name: coaching
   - title: CORE Leading
-    description: Description of service goes here.
+    description: "For leaders who want to transform themselves, their teams & companies. "
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596506930/services-business_l0t54c.jpg
     name: leading
   - title: CORE Learning
-    description: Description of service goes here.
+    description: Educational services for teachers, students and adults in transition.
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596506928/services-learning_bby0id.jpg
     name: learning
 testimonials:
