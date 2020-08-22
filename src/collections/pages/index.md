@@ -67,8 +67,6 @@ products:
       ibook."
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1595800837/sos-book-1_f2u9zr.jpg
 videos:
-  - title: Breakout! Career Speech (for college students)
-    link: https://www.youtube.com/watch?v=5qap5aO4i9A
   - title: Navigating Organizational Change (Sharon at FEBRBAN - Brazil Banking
       Association) English
     link: https://www.youtube.com/watch?v=XQdlMuzwBAE&t=77s
