@@ -54,13 +54,12 @@ testimonials:
       discovering my own path.
     author: Ana Martinez
     role: Art Teacher, American School of Barcelona
-  - testimonial: I feel happier and more hopeful and confident about being able to
-      make changes in my life because I feel I have the tools to make them
-      happen. I was once again reminded that life is too short not to deal with
-      personal issues that can make me a happier and more fulfilled person. I
-      have a better understanding of the Elements of Success and how to keep
-      them in balance in my life. Thank you for the opportunity to participate
-      in this life changing program.
+  - testimonial: I feel more hopeful and confident about being able to make changes
+      in my life because I have the tools to make them happen. I was reminded
+      that life is too short not to deal with personal issues that can make me a
+      happier and more fulfilled person. I have a better understanding of the
+      Elements of Success and how to keep them in balance in my life. Thank you
+      for the opportunity to participate in this life changing program.
     author: Martha Brine, PhD
     role: Former Dean of Students, North Shore Community College, Massachusetts
 products:
