@@ -22,8 +22,8 @@ about:
   text: Core Coaching & Consulting (CCC) is an international group of change
     agents who work from their Cores to create balance, well-being, and flow
     that transforms individual lives and organizational systems. We use the
-    ancient system of the 5 elements as described in the book The Balancing Act
-    to create and deliver powerful programs such as Leading Your Life and Work.
+    ancient system of the 5 elements as described in The Balancing Act to create
+    and deliver powerful programs such as Leading Your Life and Work.
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1595111411/logo_feamvb.png
 services:
   - title: CORE Leading
