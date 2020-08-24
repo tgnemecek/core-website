@@ -74,6 +74,10 @@ videos:
   - title: Navigating Organizational Change (Sharon at FEBRBAN - Brazil Banking
       Association) English
     link: https://www.youtube.com/watch?v=XQdlMuzwBAE
+  - link: https://www.youtube.com/watch?v=df2uZ3kqZt8
+    title: Breakout Career Speech
+  - link: https://www.youtube.com/watch?v=I3LmXgYoRLY
+    title: "Intro to the SOS: Switch Off Stress App"
   - link: https://www.youtube.com/watch?v=-UwqzjoubDA
     title: Experiencing the Element of Structure
   - link: https://www.youtube.com/watch?v=PVwxrMku-xY
