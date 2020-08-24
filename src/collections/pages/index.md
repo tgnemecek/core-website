@@ -44,8 +44,8 @@ testimonials:
       obstacles and doubts, and then supported me in making a bold decision that
       I've never regretted. What's more, Sharon has achieved similar amazing
       results with patients I've since referred to her.
-    author: T. Moriyama
-    role: M.D., Psychiatrist; Instituto Bairral Hospital
+    author: Tais Moriyama
+    role: M.D., Psychiatrist; Instituto Bairral Hospital, Brazil
   - testimonial: The Leading Your Life & Work program helped me to find myself in
       this changing world. I am so excited, looking forward to develop a new
       Project with my students. I learned wonderful techniques to remove
@@ -65,7 +65,7 @@ products:
       ASAP.  Switch Off Stress is used by clients of Core Coaching & Consulting
       to optimize their progress. it is available in print or as an e-book or
       ibook."
-    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1595800837/sos-book-1_f2u9zr.jpg
+    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1594942999/sos-book_tc9jx9.jpg
 videos:
   - title: Navigating Organizational Change (Sharon at FEBRBAN - Brazil Banking
       Association) English
