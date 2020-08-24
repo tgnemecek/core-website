@@ -29,15 +29,15 @@ services:
   - title: CORE Coaching
     description: Transformational Coaching services and professional coaching
       certifications.
-    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596506930/services-coaching_nwxnao.jpg
+    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1598276678/Core_Coaching_cropped_p6sdzy.jpg
     name: coaching
   - title: CORE Leading
     description: "For leaders who want to transform themselves, their teams & companies. "
-    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596506930/services-business_l0t54c.jpg
+    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1598276669/CORE_Leading_2_fzegfc.jpg
     name: leading
   - title: CORE Learning
     description: Educational services for teachers, students and adults in transition.
-    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596506928/services-learning_bby0id.jpg
+    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1598276673/Core_learning_4_1_u3aepv.jpg
     name: learning
 testimonials:
   - testimonial: During a crossroads in my career, Sharon coached me to overcome
