@@ -26,15 +26,15 @@ about:
     to create and deliver powerful programs such as Leading Your Life and Work.
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1595111411/logo_feamvb.png
 services:
+  - title: CORE Leading
+    description: "For leaders who want to transform themselves, their teams & companies. "
+    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1598276669/CORE_Leading_2_fzegfc.jpg
+    name: leading
   - title: CORE Coaching
     description: Transformational Coaching services and professional coaching
       certifications.
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1598276678/Core_Coaching_cropped_p6sdzy.jpg
     name: coaching
-  - title: CORE Leading
-    description: "For leaders who want to transform themselves, their teams & companies. "
-    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1598276669/CORE_Leading_2_fzegfc.jpg
-    name: leading
   - title: CORE Learning
     description: Educational services for teachers, students and adults in transition.
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1598276673/Core_learning_4_1_u3aepv.jpg
@@ -47,12 +47,11 @@ testimonials:
     author: Tais Moriyama
     role: M.D., Psychiatrist; Instituto Bairral Hospital, Brazil
   - testimonial: The Leading Your Life & Work program helped me to find myself in
-      this changing world. I am so excited, looking forward to develop a new
-      Project with my students. I learned wonderful techniques to remove
-      obstacles, find my center and my purpose, connect with real and achievable
-      goals. I feel like I had a puzzle with some missing pieces and The
-      Balancing Act program has helped me to find them and put them in the
-      proper place, to continue growing and discovering my own path.
+      this changing world. I learned wonderful techniques to remove obstacles,
+      find my center and my purpose, connect with real and achievable goals. I
+      feel like I had a puzzle with some missing pieces and The Balancing Act
+      program has helped me to find them and put them in the proper place, to
+      continue growing and discovering my own path.
     author: Ana Martinez
     role: Art Teacher, American School of Barcelona
 products:
