@@ -46,12 +46,12 @@ testimonials:
       results with patients I've since referred to her.
     author: Tais Moriyama
     role: M.D., Psychiatrist; Instituto Bairral Hospital, Brazil
-  - testimonial: The Leading Your Life & Work program helped me to find myself in
-      this changing world. I learned wonderful techniques to remove obstacles,
-      find my center and my purpose, connect with real and achievable goals. I
-      feel like I had a puzzle with some missing pieces and The Balancing Act
-      program has helped me to find them and put them in the proper place, to
-      continue growing and discovering my own path.
+  - testimonial: Leading Your Life & Work helped me to find myself in this changing
+      world. I learned wonderful techniques to remove obstacles, find my center
+      and my purpose, connect with real and achievable goals. I feel like I had
+      a puzzle with some missing pieces and The Balancing Act program has helped
+      me to find them and put them in the proper place, to continue growing and
+      discovering my own path.
     author: Ana Martinez
     role: Art Teacher, American School of Barcelona
 products:
