@@ -64,12 +64,11 @@ products:
   - title: "Book: SOS: Switch Off Stress"
     description: "SOS: Switch Off Stress is a practical, immediately usable book
       that provides 101 Really Fast Ways to stop stress (in 6 seconds to 6
-      minutes). Switch Off Stress is a great book for our troubled times. It
-      follows the The Balancing Act''s powerful \"Compass\" process to show you
-      exactly what kind of stress is harming you so you can target and remove it
-      ASAP.  Switch Off Stress is used by clients of Core Coaching & Consulting
-      to optimize their progress. it is available in print or as an e-book or
-      ibook."
+      minutes). SOS is a great book for our troubled times. It follows the The
+      Balancing Act's powerful process to show you exactly what kind of stress
+      is harming you so you can target and remove it ASAP.  Switch Off Stress is
+      used by clients of Core Coaching & Consulting to optimize their progress.
+      it is available in print or as an e-book."
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1594942999/sos-book_tc9jx9.jpg
 videos:
   - title: Navigating Organizational Change (Sharon at FEBRBAN - Brazil Banking
