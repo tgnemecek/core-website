@@ -55,6 +55,12 @@ testimonials:
     author: Ana Martinez
     role: Art Teacher, American School of Barcelona
 products:
+  - image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1598280642/Apple_Ipad_Balancing_Act-003_fmny9x.jpg
+    title: The Balancing Act
+    description: "The Balancing Act is the foundational work for all Core Coaching &
+      Consulting programs, including Leading Your Life and Work. TBA describes
+      how you can implement a systemic, logical and pragmatic 6-point approach
+      to transform your own life and positively impact the world around you. "
   - title: "Book: SOS: Switch Off Stress"
     description: "SOS: Switch Off Stress is a practical, immediately usable book
       that provides 101 Really Fast Ways to stop stress (in 6 seconds to 6
