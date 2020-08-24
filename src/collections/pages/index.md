@@ -69,15 +69,15 @@ products:
 videos:
   - title: Navigating Organizational Change (Sharon at FEBRBAN - Brazil Banking
       Association) English
-    link: https://www.youtube.com/watch?v=XQdlMuzwBAE&t=77s
+    link: https://www.youtube.com/watch?v=XQdlMuzwBAE
   - link: https://www.youtube.com/watch?v=-UwqzjoubDA
     title: Experiencing the Element of Structure
-  - link: https://www.youtube.com/watch?v=PVwxrMku-xY&t=1s
+  - link: https://www.youtube.com/watch?v=PVwxrMku-xY
     title: Experiencing the Element of Interactions
-  - link: https://www.youtube.com/watch?v=WJCNNiSDG2M&t=22s
+  - link: https://www.youtube.com/watch?v=WJCNNiSDG2M
     title: Experiencing the Element of Mission
   - title: Experiencing the Element of Vision
-    link: https://www.youtube.com/watch?v=rCaVCYjfQVc&t=21s
+    link: https://www.youtube.com/watch?v=rCaVCYjfQVc
   - title: Experiencing the CORE Element
-    link: https://www.youtube.com/watch?v=rCaVCYjfQVc&t=21s
+    link: https://www.youtube.com/watch?v=rCaVCYjfQVc
 ---
