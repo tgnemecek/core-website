@@ -33,7 +33,7 @@ services:
   - title: CORE Coaching
     description: Transformational Coaching services and professional coaching
       certifications.
-    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1598276678/Core_Coaching_cropped_p6sdzy.jpg
+    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1598279507/Core_Coaching_cropped2_i4vxi2.jpg
     name: coaching
   - title: CORE Learning
     description: Educational services for teachers, students and adults in transition.
