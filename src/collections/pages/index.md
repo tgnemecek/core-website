@@ -87,14 +87,4 @@ videos:
     title: Breakout Career Speech
   - link: https://www.youtube.com/watch?v=I3LmXgYoRLY
     title: "Intro to the SOS: Switch Off Stress App"
-  - link: https://www.youtube.com/watch?v=-UwqzjoubDA
-    title: Experiencing the Element of Structure
-  - link: https://www.youtube.com/watch?v=PVwxrMku-xY
-    title: Experiencing the Element of Interactions
-  - link: https://www.youtube.com/watch?v=WJCNNiSDG2M&t=71s
-    title: Experiencing the Element of Mission
-  - title: Experiencing the Element of Vision
-    link: https://www.youtube.com/watch?v=rCaVCYjfQVc
-  - title: Experiencing the CORE Element
-    link: https://www.youtube.com/watch?v=_QVfyj94x5A
 ---
