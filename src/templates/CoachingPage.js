@@ -1,12 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
-import { Container } from "@material-ui/core";
+import { Container, Typography } from "@material-ui/core";
 
 import Hero from "components/Hero";
 import Section from "components/Section";
 import Explanation from "components/Explanation";
 import Benefits from "components/Benefits";
+import ScheduleButton from "components/ScheduleButton";
+
 import Layout from "components/Layout";
 
 import Navbar from "components/Navbar";
@@ -19,6 +21,10 @@ const CoachingPage = ({ hero, benefits, explanation }) => {
       <Section>
         <Explanation explanation={explanation} />
         <Benefits benefits={benefits} />
+        <ScheduleButton
+          text="Schedule a call"
+          href="https://core.coachesconsole.com/breakout--career-course-registration.html"
+        />
       </Section>
     </>
   );
