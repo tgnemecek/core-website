@@ -32,7 +32,7 @@ members:
       populations, youth and adult. A native Argentinian, now resident of
       Cambridge, MA, Rafael is eager to bring TBA to all parts of Central and
       South America.
-    video: https://www.youtube.com/watch?v=52Iv5hdqDxw&t=39s
+    video: https://www.youtube.com/watch?v=52Iv5hdqDxw
   - name: John Mark
     role: Vice President
     photo: https://upload.wikimedia.org/wikipedia/commons/4/48/Outdoors-man-portrait_%28cropped%29.jpg
