@@ -25,7 +25,7 @@ members:
     description: CEO & Founder
   - name: Penelope Kennedy
     role: CEO & Founder
-    photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1599227856/RafaCOREpic_cropped_ibisul.jpg
+    photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1599228983/RafaCOREpic_cropped2_dtegib.jpg
     video: https://www.youtube.com/watch?v=wGMv6kxZgUw
     bio: Rafael Medina has been involved in The Balancing Act work, even before the
       official launch of Core Coaching and Consulting. Rafael and Sharon met
