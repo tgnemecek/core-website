@@ -25,17 +25,18 @@ members:
     description: CEO & Founder
   - name: Penelope Kennedy
     role: CEO & Founder
-    photo: https://cdn.pixabay.com/photo/2017/08/30/17/27/business-woman-2697954_1280.jpg
+    photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1599227856/RafaCOREpic_cropped_ibisul.jpg
     video: https://www.youtube.com/watch?v=wGMv6kxZgUw
-    bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.
-    description: CEO & Founder
-    title: Penelope Kennedy
+    bio: Rafael Medina has been involved in The Balancing Act work, even before the
+      official launch of Core Coaching and Consulting. Rafael and Sharon met
+      while she and other colleagues were delivering the first Opportunity
+      Knocking program for ex-prisoners at a half-way home where Rafael managed
+      technology. He immediately saw the possibilities of TBA for all sorts of
+      populations, youth and adult. A native Argentinian, now resident of
+      Cambridge, MA, Rafael is eager to bring TBA to all parts of Central and
+      South America.
+    description: Manager of Development in South and Central America
+    title: Rafael Medina
   - name: John Mark
     role: Vice President
     photo: https://upload.wikimedia.org/wikipedia/commons/4/48/Outdoors-man-portrait_%28cropped%29.jpg
