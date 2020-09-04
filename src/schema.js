@@ -8,6 +8,7 @@ const MarkdownRemark = `
     information: Information
     component: String
     pages: Pages
+    category: String
   }
   type Pages {
     landing: LandingPage
@@ -79,9 +80,11 @@ const ServicesPage = `
     category: String
     component: String
     key: String
-    title: String
+    hero: Hero
     order: Int
     gallery: ServiceGallery
+    explanation: String
+    benefits: String
   }
   type ServiceGallery {
     image: String
