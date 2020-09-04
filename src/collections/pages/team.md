@@ -10,16 +10,18 @@ hero:
 members:
   - name: Kate Gordon
     role: CEO & Founder
-    photo: https://assets.entrepreneur.com/content/3x2/2000/20190911203533-ent19-octnov-100women.jpeg
+    photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1599225883/Sharon_for_website_cropped1_st6bvo.jpg
     video: https://www.youtube.com/watch?v=wGMv6kxZgUw
-    bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.
-    title: Kate Gordon
+    bio: Sharon Seivert is leader of the Core Coaching & Consulting Team and author
+      of "The Balancing Act", the foundational book that first outlined the
+      6-point system CCC uses for all our work. As both a US and European
+      citizen, Sharon loves few things more than spending time with her
+      international family, friends, colleagues and clients. Sharon is pictured
+      here in her front yard on the North Shore of Boston where she spends her
+      time when not Zooming with clients and colleagues or writing new books
+      (her latest is "6 Steps to Leading Your Life and Work (from the Inside
+      Out)".
+    title: Sharon Seivert
     description: CEO & Founder
   - name: Penelope Kennedy
     role: CEO & Founder
