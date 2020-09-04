@@ -8,10 +8,9 @@ hero:
   title: Meet the Team
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596493058/pexels-pixabay-161154_uftaqi.jpg
 members:
-  - name: Kate Gordon
-    role: CEO & Founder
+  - title: Sharon Seivert
+    description: CEO & Founder
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1599227340/Sharon_for_website_cropped3_dgcvwi.jpg
-    video: https://www.youtube.com/watch?v=wGMv6kxZgUw
     bio: Sharon Seivert is leader of the Core Coaching & Consulting Team and author
       of "The Balancing Act", the foundational book that first outlined the
       6-point system CCC uses for all our work. As both a US and European
@@ -21,12 +20,10 @@ members:
       time when not Zooming with clients and colleagues or writing new books
       (her latest is "6 Steps to Leading Your Life and Work (from the Inside
       Out)".
-    title: Sharon Seivert
-    description: CEO & Founder
-  - name: Penelope Kennedy
-    role: CEO & Founder
+    video: https://www.youtube.com/watch?v=52Iv5hdqDxw
+  - title: Rafael Medina
+    description: Manager, South & Central America
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1599228983/RafaCOREpic_cropped2_dtegib.jpg
-    video: https://www.youtube.com/watch?v=wGMv6kxZgUw
     bio: Rafael Medina has been involved in The Balancing Act work, even before the
       official launch of Core Coaching and Consulting. Rafael and Sharon met
       while she and other colleagues were delivering the first Opportunity
@@ -35,8 +32,7 @@ members:
       populations, youth and adult. A native Argentinian, now resident of
       Cambridge, MA, Rafael is eager to bring TBA to all parts of Central and
       South America.
-    description: Manager, South & Central America
-    title: Rafael Medina
+    video: https://www.youtube.com/watch?v=52Iv5hdqDxw&t=39s
   - name: John Mark
     role: Vice President
     photo: https://upload.wikimedia.org/wikipedia/commons/4/48/Outdoors-man-portrait_%28cropped%29.jpg
