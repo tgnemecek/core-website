@@ -172,3 +172,29 @@ collections:
               - { label: Photo, name: photo, widget: image }
               - { label: Video, name: video, widget: string }
               - { label: Bio, name: bio, widget: text }
+      - file: "src/collections/pages/coaching.md"
+        label: "Coaching Page"
+        name: "team"
+        fields:
+          - {
+              label: Collection,
+              name: collection,
+              widget: hidden,
+              default: pages,
+            }
+          - { label: Key, name: key, widget: hidden, default: coaching }
+          - {
+              label: Component,
+              name: component,
+              widget: hidden,
+              default: ServicesPage,
+            }
+          - {
+              label: Title,
+              name: title,
+              widget: hidden,
+              default: CORE Coaching,
+            }
+          - { label: Order, name: order, widget: hidden, default: 3 }
+          - { label: Explanation, name: explanation, widget: text }
+          - { label: Benefits, name: benefits, widget: html }
