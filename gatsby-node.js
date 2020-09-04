@@ -20,6 +20,7 @@ exports.createPages = ({ actions, graphql }) => {
             }
             frontmatter {
               component
+              category
             }
           }
         }
@@ -34,7 +35,6 @@ exports.createPages = ({ actions, graphql }) => {
     const edges = result.data.allMarkdownRemark.edges;
 
     edges.forEach((edge) => {
-      console.log(edge.node.frontmatter);
       createPage({
         path: edge.node.fields.slug,
         component: path.resolve(
@@ -62,8 +62,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         component: node.frontmatter.component,
       },
     };
-
-    console.log(formatted);
 
     createNodeField({
       name: `slug`,

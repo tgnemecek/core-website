@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
 import { Container } from "@material-ui/core";
 
@@ -37,15 +36,8 @@ const LandingPage = ({
   );
 };
 
-// LandingPage.propTypes = {
-//   main: {
-//     about: PropTypes.string.isRequired,
-//     title: PropTypes.string.isRequired
-//   },
-// };
-
 const LandingPageLoader = (props) => {
-  const landing = props.data.landing.nodes[0].frontmatter.pages.landing;
+  const landing = props.data.main.nodes[0].frontmatter.pages.landing;
   const contact = props.data.contact.nodes[0].frontmatter.information.contact;
   const pages =
     props.data.pages.nodes[0].frontmatter.information.navigation.links;
@@ -65,7 +57,7 @@ export default LandingPageLoader;
 
 export const pageQuery = graphql`
   query LandingPageQuery {
-    landing: allMarkdownRemark(
+    main: allMarkdownRemark(
       filter: { frontmatter: { key: { eq: "landing" } } }
     ) {
       nodes {
