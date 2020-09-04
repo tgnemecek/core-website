@@ -10,7 +10,7 @@ hero:
 members:
   - name: Kate Gordon
     role: CEO & Founder
-    photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1599225883/Sharon_for_website_cropped1_st6bvo.jpg
+    photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1599227340/Sharon_for_website_cropped3_dgcvwi.jpg
     video: https://www.youtube.com/watch?v=wGMv6kxZgUw
     bio: Sharon Seivert is leader of the Core Coaching & Consulting Team and author
       of "The Balancing Act", the foundational book that first outlined the
