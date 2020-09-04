@@ -35,7 +35,7 @@ members:
       populations, youth and adult. A native Argentinian, now resident of
       Cambridge, MA, Rafael is eager to bring TBA to all parts of Central and
       South America.
-    description: Manager of Development in South and Central America
+    description: Manager, Development in South and Central America
     title: Rafael Medina
   - name: John Mark
     role: Vice President
