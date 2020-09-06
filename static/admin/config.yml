@@ -174,7 +174,7 @@ collections:
               - { label: Bio, name: bio, widget: text }
       - file: "src/collections/pages/coaching.md"
         label: "Coaching Page"
-        name: "team"
+        name: "coaching"
         fields:
           - {
               label: Collection,
