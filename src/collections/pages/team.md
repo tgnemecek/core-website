@@ -2,16 +2,16 @@
 collection: pages
 key: team
 component: TeamPage
-title: CORE Team
 order: 3
 hero:
   title: Meet the Team
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596493058/pexels-pixabay-161154_uftaqi.jpg
 members:
-  - title: Sharon Seivert
-    description: CEO & Founder
+  - name: Sharon Seivert
+    role: CEO & Founder
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1599227340/Sharon_for_website_cropped3_dgcvwi.jpg
-    bio: Sharon Seivert is leader of the Core Coaching & Consulting Team and author
+    bio:
+      Sharon Seivert is leader of the Core Coaching & Consulting Team and author
       of "The Balancing Act", the foundational book that first outlined the
       6-point system CCC uses for all our work. As both a US and European
       citizen, Sharon loves few things more than spending time with her
@@ -21,10 +21,11 @@ members:
       (her latest is "6 Steps to Leading Your Life and Work (from the Inside
       Out)".
     video: https://www.youtube.com/watch?v=52Iv5hdqDxw
-  - title: Rafael Medina
-    description: Manager, South & Central America
+  - name: Rafael Medina
+    role: Manager, South & Central America
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1599228983/RafaCOREpic_cropped2_dtegib.jpg
-    bio: Rafael Medina has been involved in The Balancing Act work, even before the
+    bio:
+      Rafael Medina has been involved in The Balancing Act work, even before the
       official launch of Core Coaching and Consulting. Rafael and Sharon met
       while she and other colleagues were delivering the first Opportunity
       Knocking program for ex-prisoners at a half-way home where Rafael managed
@@ -37,7 +38,8 @@ members:
     role: Vice President
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1599227340/Sharon_for_website_cropped3_dgcvwi.jpg
     video: https://www.youtube.com/watch?v=52Iv5hdqDxw
-    bio: Sharon Seivert is leader of the Core Coaching & Consulting Team and author
+    bio:
+      Sharon Seivert is leader of the Core Coaching & Consulting Team and author
       of "The Balancing Act", the foundational book that first outlined the
       6-point system CCC uses for all our work. As both a US and European
       citizen, Sharon loves few things more than spending time with her

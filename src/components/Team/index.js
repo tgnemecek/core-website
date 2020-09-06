@@ -10,6 +10,8 @@ import MemberModal from "./MemberModal";
 const Team = ({ members }) => {
   const [memberToView, setMemberToView] = React.useState(null);
 
+  console.log({ members });
+
   return (
     <Section>
       <Container>

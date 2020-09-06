@@ -153,7 +153,6 @@ collections:
               widget: hidden,
               default: TeamPage,
             }
-          - { label: Title, name: title, widget: hidden, default: Core Team }
           - { label: Order, name: order, widget: hidden, default: 3 }
           - label: Hero Section
             name: hero
@@ -167,8 +166,8 @@ collections:
             allow_add: true
             collapsed: false
             fields:
-              - { label: Name, name: title, widget: string }
-              - { label: Role, name: description, widget: string }
+              - { label: Name, name: name, widget: string }
+              - { label: Role, name: role, widget: string }
               - { label: Photo, name: photo, widget: image }
               - { label: Video, name: video, widget: string }
               - { label: Bio, name: bio, widget: text }
