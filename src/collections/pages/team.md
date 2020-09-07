@@ -10,8 +10,7 @@ members:
   - name: Sharon Seivert
     role: CEO & Founder
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1599227340/Sharon_for_website_cropped3_dgcvwi.jpg
-    bio:
-      Sharon Seivert is leader of the Core Coaching & Consulting Team and author
+    bio: Sharon Seivert is leader of the Core Coaching & Consulting Team and author
       of "The Balancing Act", the foundational book that first outlined the
       6-point system CCC uses for all our work. As both a US and European
       citizen, Sharon loves few things more than spending time with her
@@ -24,8 +23,7 @@ members:
   - name: Rafael Medina
     role: Manager, South & Central America
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1599228983/RafaCOREpic_cropped2_dtegib.jpg
-    bio:
-      Rafael Medina has been involved in The Balancing Act work, even before the
+    bio: Rafael Medina has been involved in The Balancing Act work, even before the
       official launch of Core Coaching and Consulting. Rafael and Sharon met
       while she and other colleagues were delivering the first Opportunity
       Knocking program for ex-prisoners at a half-way home where Rafael managed
@@ -34,22 +32,6 @@ members:
       Cambridge, MA, Rafael is eager to bring TBA to all parts of Central and
       South America.
     video: https://www.youtube.com/watch?v=52Iv5hdqDxw
-  - name: John Mark
-    role: Vice President
-    photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1599227340/Sharon_for_website_cropped3_dgcvwi.jpg
-    video: https://www.youtube.com/watch?v=52Iv5hdqDxw
-    bio:
-      Sharon Seivert is leader of the Core Coaching & Consulting Team and author
-      of "The Balancing Act", the foundational book that first outlined the
-      6-point system CCC uses for all our work. As both a US and European
-      citizen, Sharon loves few things more than spending time with her
-      international family, friends, colleagues and clients. Sharon is pictured
-      here in her front yard on the North Shore of Boston where she spends her
-      time when not Zooming with clients and colleagues or writing new books
-      (her latest is "6 Steps to Leading Your Life and Work (from the Inside
-      Out)".
-    description: CEO & Founder
-    title: Sharon Seivert
   - name: Philip Henry
     role: CTO
     photo: https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/04/08/16/gettyimages-651958742.jpg?w968h681
