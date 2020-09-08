@@ -12,13 +12,12 @@ members:
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1599227340/Sharon_for_website_cropped3_dgcvwi.jpg
     bio: Sharon Seivert is leader of the Core Coaching & Consulting Team and author
       of "The Balancing Act", the foundational book that first outlined the
-      6-point system CCC uses for all our work. As both a US and European
-      citizen, Sharon loves few things more than spending time with her
-      international family, friends, colleagues and clients. Sharon is pictured
-      here in her front yard on the North Shore of Boston where she spends her
-      time when not Zooming with clients and colleagues or writing new books
-      (her latest is "6 Steps to Leading Your Life and Work (from the Inside
-      Out)".
+      6-point system CCC uses for all our work. As both a US and EU citizen,
+      Sharon loves few things more than spending time with her international
+      family, friends, colleagues and clients. Sharon is pictured here in her
+      front yard on the North Shore of Boston where she enjoys spending her time
+      while not Zooming with clients and colleagues or writing new books (her
+      latest is "6 Steps to Leading Your Life and Work (from the Inside Out)".
     video: https://www.youtube.com/watch?v=52Iv5hdqDxw
   - name: Rafael Medina
     role: Manager, South & Central America
