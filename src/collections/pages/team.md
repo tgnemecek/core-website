@@ -26,10 +26,12 @@ members:
       official launch of Core Coaching and Consulting. Rafael and Sharon met
       while she and other colleagues were delivering the first Opportunity
       Knocking program for ex-prisoners at a half-way home where Rafael managed
-      technology. He immediately saw the possibilities of TBA for all sorts of
-      populations, youth and adult. A native Argentinian, now resident of
-      Cambridge, MA, Rafael is eager to bring TBA to all parts of Central and
-      South America.
+      the computer systems and other technology. A long-time entrepreneur,
+      Rafael immediately saw the possibilities of TBA to help all sorts of
+      people, ranging from at-risk youth and adults in transition. A native
+      Argentinian, now resident of Cambridge, MA, Rafael is eager to bring TBA
+      via his organizing, educational and media skills to all parts of Central
+      and South America.
     video: https://www.youtube.com/watch?v=52Iv5hdqDxw
   - name: Philip Henry
     role: CTO
