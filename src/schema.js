@@ -12,6 +12,7 @@ const MarkdownRemark = `
   }
   type Pages {
     landing: LandingPage
+    team: TeamPage
     leading: ServicesPage
     coaching: ServicesPage
     learning: ServicesPage
@@ -74,6 +75,22 @@ const LandingPage = `
   }
 `;
 
+const TeamPage = `
+  type TeamPage {
+    collection: String!
+    key: String!
+
+    members: [Member]
+  }
+  type Member {
+    name: String
+    role: String
+    photo: String
+    bio: String
+    linkedin: String
+  }
+`;
+
 const ServicesPage = `
   type ServicesPage {
     collection: String
@@ -96,5 +113,6 @@ module.exports = schema = [
   MarkdownRemark,
   Information,
   LandingPage,
+  TeamPage,
   ServicesPage,
 ].join(" ");
