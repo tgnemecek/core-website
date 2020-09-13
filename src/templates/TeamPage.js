@@ -54,6 +54,7 @@ export const pageQuery = graphql`
                 photo
                 video
                 bio
+                linkedin
               }
             }
           }
