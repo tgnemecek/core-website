@@ -171,7 +171,12 @@ collections:
               - { label: Photo, name: photo, widget: image }
               - { label: Video, name: video, widget: string }
               - { label: Bio, name: bio, widget: text }
-              - { label: LinkedIn Link, name: linkedin, widget: string }
+              - {
+                  label: LinkedIn Link,
+                  name: linkedin,
+                  widget: string,
+                  required: false,
+                }
       - file: "src/collections/pages/coaching.md"
         label: "Coaching Page"
         name: "coaching"
