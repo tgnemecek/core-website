@@ -7,24 +7,30 @@ import Hero from "components/Hero";
 import Section from "components/Section";
 import Explanation from "components/Explanation";
 import Benefits from "components/Benefits";
-import ScheduleButton from "components/ScheduleButton";
+import FreeReport from "components/FreeReport";
+import CallToAction from "components/CallToAction";
+import PayPalButtons from "components/PayPalButtons";
 
 import Layout from "components/Layout";
 
 import Navbar from "components/Navbar";
 import Footer from "components/Footer";
 
-const CoachingPage = ({ hero, benefits, explanation }) => {
+const CoachingPage = ({ hero, benefits, explanation, email }) => {
   return (
     <>
       <Hero hero={hero} small={true} />
       <Section>
         <Explanation explanation={explanation} />
-        <Benefits benefits={benefits} />
-        <ScheduleButton
-          text="Schedule a call"
-          href="https://core.coachesconsole.com/breakout--career-course-registration.html"
+        <FreeReport
+          reportText="Get your Free Personal Report!"
+          downloadLink="link"
         />
+        <Benefits benefits={benefits} />
+        <CallToAction text="Send Us a Message" href={`mailto:${email}`} />
+      </Section>
+      <Section>
+        <PayPalButtons buttonTypes={["careerStrengths", "personalStrengths"]} />
       </Section>
     </>
   );
@@ -40,7 +46,7 @@ const CoachingPageLoader = (props) => {
     <Layout>
       <Navbar path={props.path} pages={pages} />
       <main>
-        <CoachingPage {...coaching} />
+        <CoachingPage {...coaching} email={contact.email} />
       </main>
       <Footer {...contact} />
     </Layout>
