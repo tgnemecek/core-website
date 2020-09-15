@@ -57,7 +57,7 @@ const themeObject = {
       main: primaryColor,
     },
     secondary: {
-      main: "#FF5D5D",
+      main: "#c23535",
     },
     text: {
       primary: baseFontColor,
