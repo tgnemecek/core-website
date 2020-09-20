@@ -63,7 +63,7 @@ members:
     title: Julia Johnson
     description: Marketing Lead
   - name: Mercedes Bellavista
-    role: Translator
+    role: Lead Translator
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600617695/Mercedes_pguhyx.jpg
     video: https://www.youtube.com/watch?v=wGMv6kxZgUw
     bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
