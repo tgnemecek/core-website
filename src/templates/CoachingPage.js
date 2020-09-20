@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
 import { Container, Typography } from "@material-ui/core";
+import coachingReport from "src/downloads/free-reports/coaching.pdf";
 
 import Hero from "components/Hero";
 import Section from "components/Section";
@@ -24,7 +25,7 @@ const CoachingPage = ({ hero, benefits, explanation, email }) => {
         <Explanation explanation={explanation} />
         <FreeReport
           reportText="Get your Free Personal Report!"
-          downloadLink="link"
+          downloadLink={coachingReport}
         />
         <Benefits benefits={benefits} />
         <CallToAction text="Send Us a Message" href={`mailto:${email}`} />
@@ -85,6 +86,7 @@ export const pageQuery = graphql`
               links {
                 label
                 url
+                description
               }
             }
           }

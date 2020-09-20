@@ -1,5 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 import {
   AppBar,
   Toolbar,
@@ -9,14 +10,18 @@ import {
   Hidden,
   Drawer,
   IconButton,
+  Tooltip,
 } from "@material-ui/core";
 import { Link } from "gatsby";
 import MenuIcon from "@material-ui/icons/Menu";
 import logo from "src/img/logo.png";
+import { theme } from "components/theme";
 
 const Navbar = ({ path, pages }) => {
   const [isOnTop, setOnTop] = React.useState(true);
   const [isDrawerOpen, setDrawerOpen] = React.useState(false);
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const classes = useStyles({ isOnTop })();
 
   const onScroll = () => {
     setOnTop(!window.scrollY);
@@ -32,23 +37,27 @@ const Navbar = ({ path, pages }) => {
     };
   }, []);
 
-  const classes = useStyles({ isOnTop })();
-
   const renderNavContent = () => {
+    const Test = (props) => <div {...props} className={classes.tooltip}></div>;
     return (
       <List className={classes.list}>
-        {pages.map(({ label, url }, i) => {
+        {pages.map(({ label, url, description }, i) => {
           return (
-            <ListItem
+            <Tooltip
               key={i}
-              className={classes.listItem}
-              component={Link}
-              to={url}
+              title={<Typography>{description}</Typography>}
+              PopperProps={{
+                className: `MuiTooltip-popper MuiTooltip-popperArrow ${classes.tooltip}`,
+              }}
+              placement={isMobile ? "left" : "bottom"}
+              arrow
             >
-              <Typography variant="body1" className={classes.text}>
-                {label}
-              </Typography>
-            </ListItem>
+              <ListItem className={classes.listItem} component={Link} to={url}>
+                <Typography variant="body1" className={classes.text}>
+                  {label}
+                </Typography>
+              </ListItem>
+            </Tooltip>
           );
         })}
       </List>
@@ -119,6 +128,14 @@ const useStyles = ({ isOnTop }) =>
         backgroundColor: theme.palette.action.hover,
       },
     },
+    tooltip: {
+      marginTop: "-14px",
+      "& p": {
+        fontSize: "15px",
+        color: "white",
+        textAlign: "center",
+      },
+    },
     text: {
       color: isOnTop ? theme.palette.common.white : theme.palette.text.primary,
       transition: "color 0.5s",
@@ -133,6 +150,9 @@ const useStyles = ({ isOnTop }) =>
       },
       text: {
         color: theme.palette.text.primary,
+      },
+      tooltip: {
+        marginTop: 0,
       },
     },
   }));

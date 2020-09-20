@@ -42,6 +42,7 @@ collections:
             fields:
               - { label: Label, name: label, widget: string }
               - { label: Relative URL, name: url, widget: string }
+              - { label: Tooltip, name: description, widget: string }
       - file: "src/collections/information/contact/index.md"
         label: "Contact Information"
         name: "contact"
