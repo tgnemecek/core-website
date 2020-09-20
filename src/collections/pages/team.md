@@ -35,7 +35,7 @@ members:
       and South America.
     video: https://www.youtube.com/watch?v=52Iv5hdqDxw
   - name: Frederick Reed
-    role: Co-Inventor, CORE Profiles System
+    role: Inventor & Manager, CORE Profiles System
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600615133/Fred_cropped_ka48fq.jpg
     video: https://www.youtube.com/watch?v=wGMv6kxZgUw
     bio: Fred lives in the beautiful Shenandoah Valley of Virginia, where he enjoys
