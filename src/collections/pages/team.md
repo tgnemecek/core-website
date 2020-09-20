@@ -9,8 +9,7 @@ members:
   - name: Sharon Seivert
     role: CEO & Founder
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1599227340/Sharon_for_website_cropped3_dgcvwi.jpg
-    bio:
-      'Sharon Seivert is leader of the Core Coaching & Consulting Team and author
+    bio: Sharon Seivert is leader of the Core Coaching & Consulting Team and author
       of "The Balancing Act", the foundational book that first outlined the
       6-point system CCC uses for all our work. As both a US and EU citizen,
       Sharon loves few things more than spending time with her international
@@ -18,14 +17,13 @@ members:
       front yard on the North Shore of Boston where she enjoys spending her time
       while not coaching leaders, working with global colleagues, or writing new
       books (her latest is "6 Steps to Leading Your Life and Work (from the
-      Inside Out)"'
+      Inside Out)"
     linkedin: https://www.linkedin.com/in/sharonseivert/
     video: https://www.youtube.com/watch?v=52Iv5hdqDxw
   - name: Rafael Medina
     role: Manager, South & Central America
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1599228983/RafaCOREpic_cropped2_dtegib.jpg
-    bio:
-      Rafael Medina has been involved in The Balancing Act work, even before the
+    bio: Rafael Medina has been involved in The Balancing Act work, even before the
       official launch of Core Coaching and Consulting. Rafael and Sharon met
       while she and other colleagues were delivering the first Opportunity
       Knocking program for ex-prisoners at a half-way home where Rafael managed
@@ -36,17 +34,19 @@ members:
       via his organizing, educational and media skills to all parts of Central
       and South America.
     video: https://www.youtube.com/watch?v=52Iv5hdqDxw
-  - name: Philip Henry
+  - name: Frederick Reed
     role: CTO
-    photo: https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/04/08/16/gettyimages-651958742.jpg?w968h681
+    photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600615133/Fred_cropped_ka48fq.jpg
     video: https://www.youtube.com/watch?v=wGMv6kxZgUw
-    bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.
+    bio: Fred is settled in the beautiful Shenandoah Valley of Virginia, where he
+      enjoys hiking, orienteering and running trails in the surrounding Blue
+      Ridge and Allegheny Mountains. Fred is co-inventor of The Balancing Act's
+      online profile and report system. He is CORE team's resident philosopher
+      who also assists wherever needed with technology, management, and product
+      design. His experience with The Balancing Act goes back 25 years to
+      co-authoring several chapters in "Managing in Organizations that Learn"
+      where he and Sharon explored the integration of The Balancing Act and
+      Pragmatic philosophy.
     description: CTO
     title: Philip Henry
   - name: Julia Johnson
