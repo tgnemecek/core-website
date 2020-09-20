@@ -21,7 +21,7 @@ members:
     linkedin: https://www.linkedin.com/in/sharonseivert/
     video: https://www.youtube.com/watch?v=52Iv5hdqDxw
   - name: Rafael Medina
-    role: Manager, South & Central America
+    role: Manager, Latin America
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1599228983/RafaCOREpic_cropped2_dtegib.jpg
     bio: Rafael Medina has been involved in The Balancing Act work, even before the
       official launch of Core Coaching and Consulting. Rafael and Sharon met
