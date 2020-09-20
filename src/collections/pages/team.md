@@ -62,9 +62,9 @@ members:
       est laborum.
     title: Julia Johnson
     description: Marketing Lead
-  - name: Alisson Garcia
-    role: Customer Success Manager
-    photo: https://image.freepik.com/free-photo/business-young-woman-looking-camera-office_1301-6547.jpg
+  - name: Mercedes Bellavista
+    role: Translator
+    photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600617695/Mercedes_pguhyx.jpg
     video: https://www.youtube.com/watch?v=wGMv6kxZgUw
     bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
