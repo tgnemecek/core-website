@@ -107,6 +107,7 @@ export const pageQuery = graphql`
               links {
                 label
                 url
+                description
               }
             }
           }

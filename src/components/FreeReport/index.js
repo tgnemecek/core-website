@@ -9,6 +9,8 @@ import Section from "components/Section";
 const FreeReport = ({ reportText, downloadLink }) => {
   const classes = useStyles();
 
+  if (!downloadLink) return null;
+
   return (
     <div className={classes.reportWrapper}>
       <Grid
