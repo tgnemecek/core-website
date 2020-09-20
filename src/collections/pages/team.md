@@ -49,6 +49,7 @@ members:
       philosophy.
     description: CTO
     title: Philip Henry
+    linkedin: https://www.linkedin.com/in/fwreed/
   - name: Xavier Nova
     role: Manager, CORE Europe
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600617682/Xavi_aeglpo.jpg
@@ -62,6 +63,7 @@ members:
       est laborum.
     title: Julia Johnson
     description: Marketing Lead
+    linkedin: https://www.linkedin.com/in/xavinova/
   - name: Mercedes Bellavista
     role: Lead Translator
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600618633/Mercedes2_xo5nss.jpg
@@ -75,4 +77,5 @@ members:
       est laborum.
     title: Alisson Garcia
     description: Customer Success Manager
+    linkedin: https://www.linkedin.com/in/mercedes-bellavista-9825681a/
 ---
