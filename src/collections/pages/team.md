@@ -35,18 +35,18 @@ members:
       and South America.
     video: https://www.youtube.com/watch?v=52Iv5hdqDxw
   - name: Frederick Reed
-    role: CTO
+    role: Co-Inventor, CORE Profiles System
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600615133/Fred_cropped_ka48fq.jpg
     video: https://www.youtube.com/watch?v=wGMv6kxZgUw
-    bio: Fred is settled in the beautiful Shenandoah Valley of Virginia, where he
-      enjoys hiking, orienteering and running trails in the surrounding Blue
-      Ridge and Allegheny Mountains. Fred is co-inventor of The Balancing Act's
-      online profile and report system. He is CORE team's resident philosopher
-      who also assists wherever needed with technology, management, and product
-      design. His experience with The Balancing Act goes back 25 years to
-      co-authoring several chapters in "Managing in Organizations that Learn"
-      where he and Sharon explored the integration of The Balancing Act and
-      Pragmatic philosophy.
+    bio: Fred lives in the beautiful Shenandoah Valley of Virginia, where he enjoys
+      hiking, orienteering and running trails in the surrounding Blue Ridge and
+      Allegheny Mountains. Fred is co-inventor of The Balancing Act's online
+      profile and report system. He is CORE team's resident philosopher who also
+      assists wherever needed with technology, management, and product design.
+      Fred's experience with The Balancing Act goes back 25 years to when he and
+      Sharon co-authored two chapters in "Managing in Organizations that Learn"
+      that explored the integration of The Balancing Act and Pragmatic
+      philosophy.
     description: CTO
     title: Philip Henry
   - name: Julia Johnson
