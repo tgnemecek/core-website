@@ -49,9 +49,9 @@ members:
       philosophy.
     description: CTO
     title: Philip Henry
-  - name: Julia Johnson
-    role: Marketing Lead
-    photo: https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80
+  - name: Xavier Nova
+    role: Manager, CORE Europe
+    photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600617682/Xavi_aeglpo.jpg
     video: https://www.youtube.com/watch?v=wGMv6kxZgUw
     bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
