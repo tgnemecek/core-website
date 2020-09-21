@@ -30,7 +30,7 @@ const Navbar = ({ pages }) => {
   };
 
   const getPath = () => {
-    if (window) {
+    if (typeof window !== "undefined") {
       return window.location.pathname;
     }
   };
