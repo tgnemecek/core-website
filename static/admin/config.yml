@@ -238,7 +238,7 @@ collections:
               - { label: Explanation Text, name: text, widget: text }
               - { label: Explanation Image, name: image, widget: image }
           - { label: Benefits, name: benefits, widget: html }
-        - file: "src/collections/pages/learning.md"
+      - file: "src/collections/pages/learning.md"
         label: "Learning Page"
         name: "learning"
         fields:
