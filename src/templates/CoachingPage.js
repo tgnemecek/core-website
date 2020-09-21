@@ -1,9 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link, graphql } from "gatsby";
-import { Container, Typography } from "@material-ui/core";
+import { graphql } from "gatsby";
 import coachingReport from "src/downloads/free-reports/coaching.pdf";
-
+import { getContactEmail } from "src/util";
 import Hero from "components/Hero";
 import Section from "components/Section";
 import Explanation from "components/Explanation";
@@ -39,17 +38,14 @@ const CoachingPage = ({ hero, benefits, explanation, email }) => {
 
 const CoachingPageLoader = (props) => {
   const coaching = props.data.main.nodes[0].frontmatter.pages.coaching;
-  const contact = props.data.contact.nodes[0].frontmatter.information.contact;
-  const pages =
-    props.data.pages.nodes[0].frontmatter.information.navigation.links;
 
   return (
     <Layout>
-      <Navbar path={props.path} pages={pages} />
+      <Navbar />
       <main>
-        <CoachingPage {...coaching} email={contact.email} />
+        <CoachingPage {...coaching} email={getContactEmail()} />
       </main>
-      <Footer {...contact} />
+      <Footer />
     </Layout>
   );
 };
@@ -66,46 +62,14 @@ export const pageQuery = graphql`
           pages {
             coaching {
               benefits
-              explanation
+              explanation {
+                text
+                image
+              }
               hero {
                 title
                 image
               }
-            }
-          }
-        }
-      }
-    }
-    pages: allMarkdownRemark(
-      filter: { frontmatter: { key: { eq: "navigation" } } }
-    ) {
-      nodes {
-        frontmatter {
-          information {
-            navigation {
-              links {
-                label
-                url
-                description
-              }
-            }
-          }
-        }
-      }
-    }
-    contact: allMarkdownRemark(
-      filter: { frontmatter: { key: { eq: "contact" } } }
-    ) {
-      nodes {
-        frontmatter {
-          information {
-            contact {
-              email
-              link
-              address
-              phone1
-              phone2
-              title
             }
           }
         }

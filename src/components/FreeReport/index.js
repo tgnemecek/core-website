@@ -49,7 +49,7 @@ const FreeReport = ({ reportText, downloadLink }) => {
 
 FreeReport.prototypes = {
   reportText: PropTypes.string.isRequired,
-  downloadLink: PropTypes.string.isRequired,
+  downloadLink: PropTypes.string,
 };
 
 export default FreeReport;

@@ -1,6 +1,6 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import PropTypes from "prop-types";
+import { makeStyles } from "@material-ui/core/styles";
 import { Link, graphql } from "gatsby";
 import { Button, Typography, Container } from "@material-ui/core";
 
@@ -16,6 +16,11 @@ const CallToAction = ({ href, text }) => {
       </Button>
     </Container>
   );
+};
+
+CallToAction.prototypes = {
+  href: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
 };
 
 export default CallToAction;

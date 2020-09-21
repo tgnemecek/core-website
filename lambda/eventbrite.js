@@ -1,7 +1,6 @@
 const fetch = require("node-fetch");
 
 module.exports.handler = async (event, context) => {
-  console.log("Running eventbrite.js...");
   try {
     // Auth
     const token = `token=${process.env.EVENTBRITE_API_TOKEN}`;
@@ -21,7 +20,6 @@ module.exports.handler = async (event, context) => {
     );
 
     if (res.status !== 200) {
-      console.log(res);
       return {
         statusCode: res.status,
         body: JSON.stringify({

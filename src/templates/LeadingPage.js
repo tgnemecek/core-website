@@ -1,23 +1,78 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { Link, graphql } from "gatsby";
-import { Container } from "@material-ui/core";
-
-import { dataFormatter } from "src/util";
+import { graphql } from "gatsby";
+import leadingReport from "src/downloads/free-reports/leading.pdf";
+import { getContactEmail } from "src/util";
 import Hero from "components/Hero";
-import Events from "components/Events";
-import About from "components/About";
-import Testimonials from "components/Testimonials";
-import Services from "components/Services";
-import Products from "components/Products";
-import Videos from "components/Videos";
+import Section from "components/Section";
+import Explanation from "components/Explanation";
+import Benefits from "components/Benefits";
+import FreeReport from "components/FreeReport";
+import CallToAction from "components/CallToAction";
+import PayPalButtons from "components/PayPalButtons";
+
 import Layout from "components/Layout";
 
 import Navbar from "components/Navbar";
 import Footer from "components/Footer";
 
-const LeadingPage = () => {
-  return <div>LEADING PAGE</div>;
+const LeadingPage = ({ hero, benefits, explanation, email }) => {
+  return (
+    <>
+      <Hero hero={hero} small={true} />
+      <Section>
+        <Explanation explanation={explanation} />
+        <FreeReport
+          reportText="Get your Free Personal Report!"
+          downloadLink={leadingReport}
+        />
+        <Benefits benefits={benefits} />
+        <CallToAction text="Send Us a Message" href={`mailto:${email}`} />
+      </Section>
+      <Section>
+        <PayPalButtons buttonTypes={["careerStrengths", "personalStrengths"]} />
+      </Section>
+    </>
+  );
 };
 
-export default LeadingPage;
+const LeadingPageLoader = (props) => {
+  const leading = props.data.main.nodes[0].frontmatter.pages.leading;
+
+  return (
+    <Layout>
+      <Navbar />
+      <main>
+        <LeadingPage {...leading} email={getContactEmail()} />
+      </main>
+      <Footer />
+    </Layout>
+  );
+};
+
+export default LeadingPageLoader;
+
+export const pageQuery = graphql`
+  query LeadingPageQuery {
+    main: allMarkdownRemark(
+      filter: { frontmatter: { key: { eq: "leading" } } }
+    ) {
+      nodes {
+        frontmatter {
+          pages {
+            leading {
+              benefits
+              explanation {
+                text
+                image
+              }
+              hero {
+                title
+                image
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
