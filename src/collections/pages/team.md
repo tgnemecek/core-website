@@ -96,7 +96,7 @@ members:
     video: https://www.youtube.com/watch?v=wGMv6kxZgUw
     role: Marketing & Communications Manager
   - name: Jordi Formiguera Macia
-    role: CORE Coach
+    role: CORE Life Coach
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600730640/Jordi_Formiguera_photo_1_ovy0xl.jpg
     bio: 'Jordi lives in Barcelona and has worked for more than 15 years
       accompanying people as a career and professional counselor. He is a
