@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet";
 import "./reset.css";
 import "fontsource-roboto";
 
+import GoogleAnalytics from "components/GoogleAnalytics";
 import { theme } from "components/theme";
 import { MuiThemeProvider } from "@material-ui/core";
 
@@ -37,22 +38,19 @@ const Layout = ({ children }) => {
           href={`${withPrefix("/")}img/favicon-16x16.png`}
           sizes="16x16"
         />
-
-        <link
+        {/* <link
           rel="mask-icon"
           href={`${withPrefix("/")}img/safari-pinned-tab.svg`}
           color="#ff4400"
-        />
+        /> */}
         <meta name="theme-color" content="#fff" />
 
         <meta property="og:type" content="business.business" />
         <meta property="og:title" content={title} />
         <meta property="og:url" content="/" />
-        <meta
-          property="og:image"
-          content={`${withPrefix("/")}img/og-image.jpg`}
-        />
+        <meta property="og:image" content={`${withPrefix("/")}img/logo.png`} />
       </Helmet>
+      <GoogleAnalytics />
       <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>
     </div>
   );

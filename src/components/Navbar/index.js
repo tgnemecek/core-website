@@ -1,5 +1,8 @@
 import React from "react";
+import { graphql, useStaticQuery } from "gatsby";
+import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 import {
   AppBar,
   Toolbar,
@@ -9,17 +12,27 @@ import {
   Hidden,
   Drawer,
   IconButton,
+  Tooltip,
 } from "@material-ui/core";
 import { Link } from "gatsby";
 import MenuIcon from "@material-ui/icons/Menu";
 import logo from "src/img/logo.png";
+import { theme } from "components/theme";
 
-const Navbar = ({ path, pages }) => {
+const Navbar = ({ pages }) => {
   const [isOnTop, setOnTop] = React.useState(true);
   const [isDrawerOpen, setDrawerOpen] = React.useState(false);
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const classes = useStyles({ isOnTop })();
 
   const onScroll = () => {
     setOnTop(!window.scrollY);
+  };
+
+  const getPath = () => {
+    if (window) {
+      return window.location.pathname;
+    }
   };
 
   React.useEffect(() => {
@@ -32,23 +45,26 @@ const Navbar = ({ path, pages }) => {
     };
   }, []);
 
-  const classes = useStyles({ isOnTop })();
-
   const renderNavContent = () => {
     return (
       <List className={classes.list}>
-        {pages.map(({ label, url }, i) => {
+        {pages.map(({ label, url, description }, i) => {
           return (
-            <ListItem
+            <Tooltip
               key={i}
-              className={classes.listItem}
-              component={Link}
-              to={url}
+              title={description ? <Typography>{description}</Typography> : ""}
+              PopperProps={{
+                className: `MuiTooltip-popper MuiTooltip-popperArrow ${classes.tooltip}`,
+              }}
+              placement={isMobile ? "left" : "bottom"}
+              arrow
             >
-              <Typography variant="body1" className={classes.text}>
-                {label}
-              </Typography>
-            </ListItem>
+              <ListItem className={classes.listItem} component={Link} to={url}>
+                <Typography variant="body1" className={classes.text}>
+                  {label}
+                </Typography>
+              </ListItem>
+            </Tooltip>
           );
         })}
       </List>
@@ -58,7 +74,7 @@ const Navbar = ({ path, pages }) => {
   return (
     <AppBar component="nav" className={classes.nav}>
       <Toolbar className={classes.toolbar}>
-        {path === "/" ? (
+        {getPath() === "/" ? (
           <a href="#hero">
             <img src={logo} alt="Company Logo" className={classes.logo} />
           </a>
@@ -85,7 +101,15 @@ const Navbar = ({ path, pages }) => {
   );
 };
 
-export default Navbar;
+Navbar.prototypes = {
+  pages: PropTypes.arrayOf(
+    PropTypes.exact({
+      label: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired,
+      description: PropTypes.string,
+    })
+  ).isRequired,
+};
 
 const useStyles = ({ isOnTop }) =>
   makeStyles((theme) => ({
@@ -119,6 +143,14 @@ const useStyles = ({ isOnTop }) =>
         backgroundColor: theme.palette.action.hover,
       },
     },
+    tooltip: {
+      marginTop: "-14px",
+      "& p": {
+        fontSize: "15px",
+        color: "white",
+        textAlign: "center",
+      },
+    },
     text: {
       color: isOnTop ? theme.palette.common.white : theme.palette.text.primary,
       transition: "color 0.5s",
@@ -134,5 +166,36 @@ const useStyles = ({ isOnTop }) =>
       text: {
         color: theme.palette.text.primary,
       },
+      tooltip: {
+        marginTop: 0,
+      },
     },
   }));
+
+const NavbarLoader = () => {
+  const data = useStaticQuery(graphql`
+    query NavbarQuery {
+      pages: allMarkdownRemark(
+        filter: { frontmatter: { key: { eq: "navigation" } } }
+      ) {
+        nodes {
+          frontmatter {
+            information {
+              navigation {
+                links {
+                  label
+                  url
+                  description
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+  const pages = data.pages.nodes[0].frontmatter.information.navigation.links;
+  return <Navbar pages={pages} />;
+};
+
+export default NavbarLoader;

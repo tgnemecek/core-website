@@ -1,4 +1,5 @@
 import React from "react";
+import { graphql, useStaticQuery } from "gatsby";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import {
@@ -10,7 +11,6 @@ import {
   ListItemIcon,
   Divider,
 } from "@material-ui/core";
-import { Link } from "gatsby";
 import EmailIcon from "@material-ui/icons/Email";
 import PhoneIphoneIcon from "@material-ui/icons/PhoneIphone";
 import LinkIcon from "@material-ui/icons/Link";
@@ -102,12 +102,9 @@ Footer.propTypes = {
   link: PropTypes.string,
 };
 
-export default Footer;
-
 const useStyles = makeStyles((theme) => ({
   footer: {
     paddingTop: 100,
-    // backgroundColor: theme.palette.grey[200],
     backgroundColor: theme.palette.primary.main,
   },
   leftSide: {
@@ -141,3 +138,32 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
+
+const FooterLoader = () => {
+  const data = useStaticQuery(graphql`
+    query FooterQuery {
+      contact: allMarkdownRemark(
+        filter: { frontmatter: { key: { eq: "contact" } } }
+      ) {
+        nodes {
+          frontmatter {
+            information {
+              contact {
+                email
+                link
+                address
+                phone1
+                phone2
+                title
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+  const contact = data.contact.nodes[0].frontmatter.information.contact;
+  return <Footer {...contact} />;
+};
+
+export default FooterLoader;

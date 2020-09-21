@@ -1,12 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
-import { Link, graphql } from "gatsby";
 import { Container, Typography, Grid } from "@material-ui/core";
 
-import Section from "components/Section";
-
-const Explanation = ({ explanation }) => {
+const Explanation = ({ explanation: { text, image } }) => {
   const classes = useStyles();
 
   return (
@@ -17,16 +14,13 @@ const Explanation = ({ explanation }) => {
         className={classes.gridContainer}
         alignItems="center"
       >
-        <Grid item xs={8}>
+        <Grid item xs={12} md={8}>
           <Typography variant="body1" align="center">
-            {explanation}
+            {text}
           </Typography>
         </Grid>
-        <Grid item xs={4} className={classes.imgContainer}>
-          <img
-            src="https://cdn.now.howstuffworks.com/media-content/0b7f4e9b-f59c-4024-9f06-b3dc12850ab7-1920-1080.jpg"
-            className={classes.image}
-          />
+        <Grid item xs={12} md={4} className={classes.imgContainer}>
+          <img src={image} className={classes.image} />
         </Grid>
       </Grid>
     </Container>
@@ -34,17 +28,21 @@ const Explanation = ({ explanation }) => {
 };
 
 Explanation.prototypes = {
-  explanation: PropTypes.string.isRequired,
+  explanation: PropTypes.exact({
+    text: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+  }),
 };
 
 export default Explanation;
 
 const useStyles = makeStyles((theme) => ({
   gridContainer: {
-    height: "400px",
+    minHeight: "400px",
   },
   imgContainer: {
     alignSelf: "stretch",
+    maxHeight: "400px",
   },
   image: {
     width: "100%",

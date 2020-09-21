@@ -29,7 +29,6 @@ const Benefits = ({ benefits }) => {
               return (
                 <List>
                   {children.map(({ name, children }, i) => {
-                    console.log({ children });
                     if (name === "li")
                       return (
                         <ListItem key={i}>
