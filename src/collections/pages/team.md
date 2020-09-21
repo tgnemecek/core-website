@@ -54,13 +54,16 @@ members:
     role: Manager, CORE Europe
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600617682/Xavi_aeglpo.jpg
     video: https://www.youtube.com/watch?v=wGMv6kxZgUw
-    bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.
+    bio: Entrepreneur and trainer, with over 25 years of experience working with
+      individuals, corporations and foundations in countries such as Qatar,
+      India, USA, United Kingdom, Spain and other European countries. His
+      extensive knowledge of the business aspects and customs of each place has
+      allowed him to develop a deep respect for the different cultures,
+      languages and religions. Xavier has a natural ability to see the overall
+      picture, focus on the greater goal and make bold decisions, while
+      considering all aspects of any given situation.  His humanitarian facet
+      has led him to be actively involved in Fundación PRASAD España, where he
+      acts as Chairman of the Board of Trustees.
     title: Julia Johnson
     description: Marketing Lead
     linkedin: https://www.linkedin.com/in/xavinova/
@@ -68,13 +71,16 @@ members:
     role: Lead Translator
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600618633/Mercedes2_xo5nss.jpg
     video: https://www.youtube.com/watch?v=wGMv6kxZgUw
-    bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.
+    bio: Mercedes lives in Barcelona with her husband and three children. She
+      defines herself as a "book eater" who is fascinated by the richness of
+      language, and finding the exact meaning of each word and its equivalent in
+      other languages. She has been in the field of translation and interpreting
+      for more than 25 years, in which she started in the 1990s when she lived
+      in the United States working for an NGO. Since then, she has been an
+      English-Spanish interpreter in countless courses, workshops, conferences,
+      and seminars, in the United States, India and Spain, as well as an
+      English-Spanish translator of different works, including the book
+      "Prospering" by Sharon Seivert.
     title: Alisson Garcia
     description: Customer Success Manager
     linkedin: https://www.linkedin.com/in/mercedes-bellavista-9825681a/
