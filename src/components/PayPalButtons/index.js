@@ -1,19 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
-import { Link, graphql } from "gatsby";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 import {
   Container,
   Typography,
-  Button,
-  Paper,
   Grid,
   Card,
   CardContent,
-  CardActions,
   CardActionArea,
-  IconButton,
 } from "@material-ui/core";
+import { theme } from "components/theme";
 
 import Section from "components/Section";
 
@@ -64,6 +61,7 @@ const buttons = {
 
 const PayPalButtons = ({ buttonTypes }) => {
   const classes = useStyles();
+  const sm = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
     <>
@@ -74,12 +72,12 @@ const PayPalButtons = ({ buttonTypes }) => {
         </Typography>
       </Container>
       <Container maxWidth="md">
-        <Grid container alignItems="center" spacing={8}>
+        <Grid container alignItems="center" spacing={sm ? 2 : 8}>
           {buttonTypes.map((key) => {
             const { label, description, value, price } = buttons[key];
 
             return (
-              <Grid item key={key} xs={6}>
+              <Grid item key={key} xs={12} sm={6}>
                 <Card raised className={classes.card}>
                   <CardContent className={classes.cardContent}>
                     <Typography variant="h3">{label}</Typography>
@@ -100,27 +98,12 @@ const PayPalButtons = ({ buttonTypes }) => {
                         type="hidden"
                         value={value}
                       />
-                      {/* <Button
-                        variant="outlined"
-                        color="primary"
-                        name="submit"
-                        type="submit"
-                        src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif"
-                      >
-                        BUY
-                      </Button> */}
                       <input
                         alt="PayPal - The safer, easier way to pay online!"
                         name="submit"
                         src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif"
                         type="image"
                       />
-                      {/* <img
-                        src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif"
-                        alt=""
-                        width="1"
-                        height="1"
-                      /> */}
                       <Typography variant="subtitle1" className={classes.price}>
                         ${price}
                       </Typography>
@@ -136,10 +119,9 @@ const PayPalButtons = ({ buttonTypes }) => {
   );
 };
 
-// PayPalButtons.prototypes = {
-//   reportText: PropTypes.string.isRequired,
-//   downloadLink: PropTypes.string.isRequired,
-// };
+PayPalButtons.prototypes = {
+  buttonTypes: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 export default PayPalButtons;
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import PropTypes from "prop-types";
 import { Container, Typography, Button, Grid, Modal } from "@material-ui/core";
 import Section from "components/Section";
 import { Link } from "gatsby";
@@ -36,6 +36,18 @@ const Team = ({ members }) => {
       )}
     </Section>
   );
+};
+
+Team.prototypes = {
+  members: PropTypes.arrayOf(
+    PropTypes.exact({
+      name: PropTypes.string.isRequired,
+      role: PropTypes.string.isRequired,
+      photo: PropTypes.string.isRequired,
+      bio: PropTypes.string.isRequired,
+      video: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
 
 export default Team;

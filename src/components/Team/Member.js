@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   Container,
@@ -47,6 +48,15 @@ const Member = ({ idx, name, role, photo, setMemberToView, delay = 0 }) => {
       </Card>
     </Fade>
   );
+};
+
+Member.prototypes = {
+  idx: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  role: PropTypes.string.isRequired,
+  photo: PropTypes.string.isRequired,
+  setMemberToView: PropTypes.func.isRequired,
+  delay: PropTypes.number.isRequired,
 };
 
 export default Member;

@@ -1,4 +1,6 @@
 import React from "react";
+import { graphql, useStaticQuery } from "gatsby";
+import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import {
@@ -17,7 +19,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import logo from "src/img/logo.png";
 import { theme } from "components/theme";
 
-const Navbar = ({ path, pages }) => {
+const Navbar = ({ pages }) => {
   const [isOnTop, setOnTop] = React.useState(true);
   const [isDrawerOpen, setDrawerOpen] = React.useState(false);
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
@@ -25,6 +27,12 @@ const Navbar = ({ path, pages }) => {
 
   const onScroll = () => {
     setOnTop(!window.scrollY);
+  };
+
+  const getPath = () => {
+    if (window) {
+      return window.location.pathname;
+    }
   };
 
   React.useEffect(() => {
@@ -38,14 +46,13 @@ const Navbar = ({ path, pages }) => {
   }, []);
 
   const renderNavContent = () => {
-    const Test = (props) => <div {...props} className={classes.tooltip}></div>;
     return (
       <List className={classes.list}>
         {pages.map(({ label, url, description }, i) => {
           return (
             <Tooltip
               key={i}
-              title={<Typography>{description}</Typography>}
+              title={description ? <Typography>{description}</Typography> : ""}
               PopperProps={{
                 className: `MuiTooltip-popper MuiTooltip-popperArrow ${classes.tooltip}`,
               }}
@@ -67,7 +74,7 @@ const Navbar = ({ path, pages }) => {
   return (
     <AppBar component="nav" className={classes.nav}>
       <Toolbar className={classes.toolbar}>
-        {path === "/" ? (
+        {getPath() === "/" ? (
           <a href="#hero">
             <img src={logo} alt="Company Logo" className={classes.logo} />
           </a>
@@ -94,7 +101,15 @@ const Navbar = ({ path, pages }) => {
   );
 };
 
-export default Navbar;
+Navbar.prototypes = {
+  pages: PropTypes.arrayOf(
+    PropTypes.exact({
+      label: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired,
+      description: PropTypes.string,
+    })
+  ).isRequired,
+};
 
 const useStyles = ({ isOnTop }) =>
   makeStyles((theme) => ({
@@ -156,3 +171,31 @@ const useStyles = ({ isOnTop }) =>
       },
     },
   }));
+
+const NavbarLoader = () => {
+  const data = useStaticQuery(graphql`
+    query NavbarQuery {
+      pages: allMarkdownRemark(
+        filter: { frontmatter: { key: { eq: "navigation" } } }
+      ) {
+        nodes {
+          frontmatter {
+            information {
+              navigation {
+                links {
+                  label
+                  url
+                  description
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+  const pages = data.pages.nodes[0].frontmatter.information.navigation.links;
+  return <Navbar pages={pages} />;
+};
+
+export default NavbarLoader;
