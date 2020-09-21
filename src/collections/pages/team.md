@@ -95,4 +95,20 @@ members:
     linkedin: https://www.linkedin.com/in/bonnie-koch/
     video: https://www.youtube.com/watch?v=wGMv6kxZgUw
     role: Marketing & Communications Manager
+  - name: Jordi Formiguera Macia
+    role: CORE Coach
+    photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600730640/Jordi_Formiguera_photo_1_ovy0xl.jpg
+    bio: 'Jordi lives in Barcelona and has worked for more than 15 years
+      accompanying people as a career and professional counselor. He is a
+      systemic coach accredited by the University of Barcelona for 10 years and
+      is currently a member of the Executive Council of a Foundation that is
+      dedicated to providing support to people suffering from a mental disorder
+      or psychological distress, being also the Head of the Department of Labor
+      Insertion. Since 2020 he has been part of the Core Coaching & Consulting
+      team. Jordi enjoys meditation, sports and culture in general and he loves
+      spending time with his family and friends. He defines his philosophy of
+      life as follows: "Enjoy the moment, savor every moment, live without
+      expectations and free from all fears"  '
+    linkedin: https://www.linkedin.com/in/jordiformiguera-lifecoach/
+    video: https://www.youtube.com/watch?v=wGMv6kxZgUw
 ---
