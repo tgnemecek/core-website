@@ -5,7 +5,7 @@ const ID = "UA-178536442-1";
 
 const GoogleAnalytics = () => {
   React.useEffect(() => {
-    if (window) {
+    if (typeof window !== "undefined") {
       ReactGA.initialize(ID);
       ReactGA.pageview(window.location.pathname);
     }
