@@ -4,7 +4,6 @@ import parse from "html-react-parser";
 import Fade from "react-reveal/Fade";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography, Grid, Button } from "@material-ui/core";
-import { Link } from "gatsby";
 import logo from "src/img/logo.png";
 
 const Hero = ({ hero: { title, image }, small = false }) => {
@@ -12,14 +11,7 @@ const Hero = ({ hero: { title, image }, small = false }) => {
 
   return (
     <section className={classes.hero} id="hero">
-      <img
-        // srcSet={image.srcSet}
-        // sizes={image.sizes}
-        // src={image.src}
-        src={image}
-        className={classes.image}
-        alt="Hero Image"
-      />
+      <img src={image} className={classes.image} alt="Hero Image" />
       <div className={classes.logoBarBackground}>
         <Container>
           <Grid container className={classes.logoBar}>

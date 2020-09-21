@@ -38,6 +38,7 @@
     "prop-types": "^15.6.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
+    "react-ga": "^3.1.2",
     "react-helmet": "^6.0.0",
     "react-lines-ellipsis": "^0.14.1",
     "react-material-ui-carousel": "^1.6.0",

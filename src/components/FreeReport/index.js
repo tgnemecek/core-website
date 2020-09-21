@@ -9,6 +9,8 @@ import Section from "components/Section";
 const FreeReport = ({ reportText, downloadLink }) => {
   const classes = useStyles();
 
+  if (!downloadLink) return null;
+
   return (
     <div className={classes.reportWrapper}>
       <Grid
@@ -47,7 +49,7 @@ const FreeReport = ({ reportText, downloadLink }) => {
 
 FreeReport.prototypes = {
   reportText: PropTypes.string.isRequired,
-  downloadLink: PropTypes.string.isRequired,
+  downloadLink: PropTypes.string,
 };
 
 export default FreeReport;

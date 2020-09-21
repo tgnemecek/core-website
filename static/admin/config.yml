@@ -42,6 +42,7 @@ collections:
             fields:
               - { label: Label, name: label, widget: string }
               - { label: Relative URL, name: url, widget: string }
+              - { label: Tooltip, name: description, widget: string }
       - file: "src/collections/information/contact/index.md"
         label: "Contact Information"
         name: "contact"
@@ -192,14 +193,78 @@ collections:
               label: Component,
               name: component,
               widget: hidden,
-              default: ServicesPage,
+              default: CoachingPage,
             }
+          - label: Hero Section
+            name: hero
+            widget: object
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Hero Image, name: image, widget: image }
+          - label: Explanation
+            name: explanation
+            widget: object
+            fields:
+              - { label: Explanation Text, name: text, widget: text }
+              - { label: Explanation Image, name: image, widget: image }
+          - { label: Benefits, name: benefits, widget: html }
+      - file: "src/collections/pages/leading.md"
+        label: "Leading Page"
+        name: "leading"
+        fields:
           - {
-              label: Title,
-              name: title,
+              label: Collection,
+              name: collection,
               widget: hidden,
-              default: CORE Coaching,
+              default: pages,
             }
-          - { label: Order, name: order, widget: hidden, default: 3 }
-          - { label: Explanation, name: explanation, widget: text }
+          - { label: Key, name: key, widget: hidden, default: leading }
+          - {
+              label: Component,
+              name: component,
+              widget: hidden,
+              default: LeadingPage,
+            }
+          - label: Hero Section
+            name: hero
+            widget: object
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Hero Image, name: image, widget: image }
+          - label: Explanation
+            name: explanation
+            widget: object
+            fields:
+              - { label: Explanation Text, name: text, widget: text }
+              - { label: Explanation Image, name: image, widget: image }
+          - { label: Benefits, name: benefits, widget: html }
+        - file: "src/collections/pages/learning.md"
+        label: "Learning Page"
+        name: "learning"
+        fields:
+          - {
+              label: Collection,
+              name: collection,
+              widget: hidden,
+              default: pages,
+            }
+          - { label: Key, name: key, widget: hidden, default: learning }
+          - {
+              label: Component,
+              name: component,
+              widget: hidden,
+              default: LearningPage,
+            }
+          - label: Hero Section
+            name: hero
+            widget: object
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Hero Image, name: image, widget: image }
+          - label: Explanation
+            name: explanation
+            widget: object
+            fields:
+              - { label: Explanation Text, name: text, widget: text }
+              - { label: Explanation Image, name: image, widget: image }
           - { label: Benefits, name: benefits, widget: html }

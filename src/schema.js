@@ -42,6 +42,7 @@ const LandingPage = `
 
     hero: Hero!
     about: About!
+    services: [Service!]!
     products: [Product!]!
     testimonials: [Testimonial!]!
     title: String
@@ -56,6 +57,13 @@ const LandingPage = `
   type About {
     text: String
     image: String
+  }
+
+  type Service {
+    title: String
+    image: String
+    name: String
+    description: String
   }
 
   type Product {
@@ -98,14 +106,13 @@ const ServicesPage = `
     component: String
     key: String
     hero: Hero
-    order: Int
-    gallery: ServiceGallery
-    explanation: String
+    explanation: Explanation
     benefits: String
   }
-  type ServiceGallery {
-    image: String
-    description: String
+
+  type Explanation {
+    text: String!
+    image: String!
   }
 `;
 
