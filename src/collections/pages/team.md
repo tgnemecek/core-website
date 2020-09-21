@@ -78,4 +78,15 @@ members:
     title: Alisson Garcia
     description: Customer Success Manager
     linkedin: https://www.linkedin.com/in/mercedes-bellavista-9825681a/
+  - name: Bonnie Koch
+    photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600730088/CCC_Bonnie2_cqkpve.jpg
+    bio: Bonnie Koch is a Certified CORE Coach and founding member of the CORE
+      Team.  She leads our marketing and communications initiatives
+      globally.  Bonnie also teaches Advertising Management at Boston
+      University, where she incorporates The Balancing Act leadership
+      concepts.  Bonnie comes to the CORE Team with expertise in brand strategy,
+      account management and leadership development.
+    linkedin: https://www.linkedin.com/in/bonnie-koch/
+    video: https://www.youtube.com/watch?v=wGMv6kxZgUw
+    role: Marketing & Communications Manager
 ---
