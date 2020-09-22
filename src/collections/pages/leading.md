@@ -25,8 +25,7 @@ explanation:
 benefits: |-
   <ul>
 
-    
-  <li>Frustrated, anxious, overwhelmed about all problems have to fix.</li>
+  <li>Frustrated, anxious about all problems have to fix ASAP.</li>
     <li>Unclear about company's vision and how to achieve it.</li>
     <li>Not aligned with others about best actions to take.</li>
     <li>Not communicating as powerfully or confidently as wish.</li>
