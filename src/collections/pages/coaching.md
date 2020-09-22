@@ -7,9 +7,9 @@ hero:
   title: CORE Coaching
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596493058/pexels-pixabay-161154_uftaqi.jpg
 explanation:
-  text: "We can change your life and work from this moment on! Let us serve as an
-    EXPERT PARTNER to guide you rapidly through difficult transitions and teach
-    you pragmatic tools for removing all obstacles in your way. TRY OUR FREE
+  text: "Change your life and work from this moment on! Let us serve as an EXPERT
+    PARTNER to guide you rapidly through difficult transitions and teach you
+    pragmatic tools for removing all obstacles in your way. TRY OUR FREE
     SAMPLES: instructional videos, Career Compass report, and an individualized
     report of your greatest strength and liability for transitions. FOR MORE
     INFORMATION, contact us via the message link below--OR take a Premium
