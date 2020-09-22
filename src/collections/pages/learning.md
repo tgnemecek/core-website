@@ -35,6 +35,6 @@ benefits: |-
     <li>Ask for help and form healthy relationships.</li>
 
     <li>Form new habits to improve health, learning, finances.</li>
-    <li>Use native gifts to create a happy life and give back to community.</li>
+    <li>Use native gifts to create a happy life and give back to the world.</li>
   </ul>
 ---
