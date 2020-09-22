@@ -8,9 +8,9 @@ hero:
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596493058/pexels-pixabay-161154_uftaqi.jpg
 explanation:
   text: >-
-    Let us become an EXPERT PARTNER who  guides you safely and rapidly through
-    difficult transitions and teach you new tools for Leading Your Life and Work
-    more confidently from this moment on.
+    Let us become an EXPERT PARTNER who guides you safely and rapidly through
+    difficult transitions and teaches you new tools for Leading Your Life and
+    Work more confidently from this moment on.
 
     TRY OUR FREE SAMPLES to experience first-hand the systemic, healing power of The Balancing Act: check out instructional videos, read the Career Compass report, and get an individualized report that reveals your own greatest strength and liability for transitions. 
 
