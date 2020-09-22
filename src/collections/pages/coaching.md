@@ -8,15 +8,11 @@ hero:
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596493058/pexels-pixabay-161154_uftaqi.jpg
 explanation:
   text: >-
-    Let us become an EXPERT PARTNER who guides you safely and rapidly through
-    difficult transitions and teaches you new tools for Leading Your Life and
-    Work more confidently from this moment on.
+    We can serve as your EXPERT PARTNER to guide you safely and rapidly through
+    difficult transitions, all while teaching you new tools for Leading Your
+    Life and Work more confidently from this moment on.
 
-    TRY OUR FREE SAMPLES to experience first-hand the systemic, healing power of The Balancing Act: check out instructional videos, read the Career Compass report, and get an individualized report that reveals your own greatest strength and liability for transitions. 
-
-    FOR MORE INFORMATION, contact us via the message link below--OR take a Premium Profile to get a full report on your own strengths and weaknesses, attend one of our excellent seminars, or sign up for our life-changing group implementation program. You can also speak directly with a Core Team member to explore how one-on-one coaching could positively change the course of your life and work forever. 
-
-    And if you are a practicing CAREER OR LIFE COACH, we can certify you to enrich your clients with The Balancing Act processes, programs and profiles.
+    TRY OUR FREE SAMPLES to experience first-hand the healing power of The Balancing Act: instructional videos, the Career Compass report, and an individualized report that reveals your own greatest strength and liability for transitions. FOR MORE INFORMATION, contact us via the message link below--OR take a Premium Profile to get a full report on your own strengths and weaknesses, attend one of our excellent seminars, or sign up for our life-changing group implementation program. You can also speak directly with a Core Team member to explore how INDIVIDUALIZED COACHING could positively change the course of your life and work forever. And if you are a practicing CAREER OR LIFE COACH, we can certify you to enrich your clients with The Balancing Act processes, programs and profiles.
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600731885/pexels-pixabay-39308_xdhgw6.jpg
 benefits: >-
   <ul>
