@@ -20,7 +20,7 @@ explanation:
     your life and work now and forever. And if you are a practicing CAREER OR
     LIFE COACH, we can certify you to enrich your clients with The Balancing
     Act's processes, programs and profiles."
-  image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600813635/Coaching_cropped_ajnp1h.jpg
+  image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600816113/Coaching_cropped_ibup02.jpg
 benefits: >-
   <ul>
     <li>
