@@ -7,23 +7,24 @@ hero:
   title: CORE Leading
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596493058/pexels-pixabay-161154_uftaqi.jpg
 explanation:
-  text: "You do not have to face your leadership challenges alone! PARTNER with
-    our business experts to rapidly make difficult decisions, initiate necessary
-    changes, and ensure the best possible results. TRY OUR FREE SAMPLES:
-    instructional videos, Leader Compass report, and an individualized report of
-    your greatest leadership strength and liability. FOR MORE INFORMATION,
-    contact us via the message link below--OR take a Premium Profile to get a
-    full report on your leader strengths and weaknesses, attend one of our
-    excellent seminars, or sign up for our life-changing leader training. You
-    can also speak directly with a Core Team member to explore how our
-    data-driven, agile PARTNERING process can create sustainable changes for a
-    great ROI. And if you are a practicing EXECUTIVE COACH OR ORGANIZATIONAL
-    CONSULTANT, we can certify you to enrich your business clients with The
-    Balancing Act's powerful processes, programs and profiles for leaders, teams
-    and organizations."
+  text: "Why face your leadership challenges alone when you could PARTNER with our
+    business experts to more rapidly make difficult decisions, initiate
+    necessary changes, and ensure the best possible results. TRY OUR FREE
+    SAMPLES: instructional videos, Leader Compass report, and a report of your
+    greatest leadership strength and liability. FOR MORE INFORMATION, contact us
+    via the message link below--OR take a Premium Profile for a full report on
+    your leader strengths and weaknesses, attend one of our excellent seminars,
+    or sign up for our life-changing leader training. You can also speak
+    directly with a Core Team member to explore how our data-driven, agile
+    PARTNERING process can create sustainable changes for a great ROI. And if
+    you are a practicing EXECUTIVE COACH OR ORGANIZATIONAL CONSULTANT, we can
+    certify you to enrich your business clients with The Balancing Act's
+    powerful processes, programs and profiles for leaders, teams and
+    organizations."
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600785500/CCC_Leading_cropped_ue4zbu.jpg
-benefits: |-
+benefits: >-
   <ul>
+
 
   <li>Frustrated, anxious about all the problems you have to fix ASAP.</li>
     <li>Unclear about company's vision and how to achieve it.</li>
@@ -31,7 +32,10 @@ benefits: |-
     <li>Not communicating as powerfully or confidently as wish.</li>
     <li>Losing money; inefficient processes or inadequate capital.</li>
   <ll>Working too hard for results; not leveraging efforts to next success.</li>
-  <ll>Are a business coach whose clients say yes to these questions.</li>
 
+   <li>Are a Business Coach or Org Consultant whose clients say yes to these questions.</li>
   </ul>
+
+
+  <!--EndFragment-->
 ---
