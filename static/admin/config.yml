@@ -207,7 +207,7 @@ collections:
             fields:
               - { label: Explanation Text, name: text, widget: text }
               - { label: Explanation Image, name: image, widget: image }
-          - { label: Benefits, name: benefits, widget: html }
+          - { label: Benefits, name: benefits, widget: markdown }
       - file: "src/collections/pages/leading.md"
         label: "Leading Page"
         name: "leading"
@@ -237,7 +237,7 @@ collections:
             fields:
               - { label: Explanation Text, name: text, widget: text }
               - { label: Explanation Image, name: image, widget: image }
-          - { label: Benefits, name: benefits, widget: html }
+          - { label: Benefits, name: benefits, widget: markdown }
       - file: "src/collections/pages/learning.md"
         label: "Learning Page"
         name: "learning"
@@ -267,4 +267,4 @@ collections:
             fields:
               - { label: Explanation Text, name: text, widget: text }
               - { label: Explanation Image, name: image, widget: image }
-          - { label: Benefits, name: benefits, widget: html }
+          - { label: Benefits, name: benefits, widget: markdown }
