@@ -7,21 +7,20 @@ hero:
   title: CORE Learning
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596493058/pexels-pixabay-161154_uftaqi.jpg
 explanation:
-  text: "Students, Teachers and Parents are facing extraordinary challenges as we
-    all deal with how to create new learning environments despite the global
-    pandemic, economic challenges and social & political unrest. In this
-    topsy-turvy world, Teachers have become front-line workers, Parents have
-    become at-home teachers and Students are struggling to continue studying. In
-    fact, all of us have had to become students again as  learn new skills
-    necessary to thrive in this global transition. LET US HELP YOU meet these
-    challenges with The Balancing Act's proven tools. TRY OUR FREE SAMPLES:
-    instructional videos, special Learning report, and an individualized
-    assessment of your greatest strength and liability during times of stress.
-    FOR MORE INFORMATION, contact us via the message link below--OR take a
-    Premium Profile to get a full report on your personal strengths and
-    weaknesses, attend our special seminars for adults in transition, or sign up
-    for our life-changing group implementation program. You can also contact us
-    to explore how you can become one of our CERTIFIED TEACHERS around the world
+  text: "Students, Teachers and Parents face extraordinary challenges creating new
+    learning environments despite the global pandemic, economic challenges and
+    social & political unrest. In this topsy-turvy world, Teachers have become
+    front-line workers, Parents have become at-home teachers and Students are
+    struggling to continue learning. In fact, all of us need to be students
+    again so we can learn skills for thriving in these changing times. LET US
+    HELP YOU meet these challenges with The Balancing Act's proven tools. TRY
+    OUR FREE SAMPLES: instructional videos, special Learning report, and an
+    individualized assessment of your greatest strength and liability in
+    managing stress. FOR MORE INFORMATION, contact us via the message link
+    below--OR take a Premium Profile to get a full report on your personal
+    strengths and weaknesses, attend our special seminars for adults in
+    transition, or sign up for our life-changing group implementation program.
+    And please contact us to explore how to become one of our CERTIFIED TEACHERS
     who enrich their students with The Compass Course and other Core Learning
     programs. "
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600804117/abdelkader-ft-CcZzQcYGYC4-unsplash_jvaahu.jpg
