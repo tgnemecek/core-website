@@ -19,8 +19,8 @@ explanation:
     directly with a Core Team member to explore how INDIVIDUALIZED COACHING
     could positively change the course of your life and work now and forever.
     And if you are a practicing CAREER OR LIFE COACH, we can certify you to
-    enrich your clients with The Balancing Act's powerful processes, programs
-    and profiles."
+    enrich your clients with The Balancing Act's processes, programs and
+    profiles."
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600731885/pexels-pixabay-39308_xdhgw6.jpg
 benefits: >-
   <ul>
