@@ -11,8 +11,8 @@ explanation:
     all deal with how to create new learning environments despite the global
     pandemic, economic challenges and social & political unrest. Teachers have
     become front-line workers, parents have become at-home teachers and students
-    are doing their best to continue their studies despite an upended world. In
-    fact, all of us have become students again as we need to learn new skills to
+    are doing their best to continue studying despite an upended world. In fact,
+    all of us have become students again as we need to learn new skills to
     thrive as our world makes an epic transition. LET US HELP YOU to meet these
     challenges with The Balancing Act's proven tools. TRY OUR FREE SAMPLES:
     instructional videos, special Learning report, and an individualized report
