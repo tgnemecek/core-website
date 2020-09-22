@@ -26,6 +26,8 @@ explanation:
     Learning programs. "
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600804117/abdelkader-ft-CcZzQcYGYC4-unsplash_jvaahu.jpg
 benefits: |-
+  ...your students or children need to:
+
   <ul>
     <li>
       Overcome anxiety, frustration, feeling stuck.
