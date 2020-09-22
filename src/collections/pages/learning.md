@@ -7,14 +7,20 @@ hero:
   title: CORE Learning
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596493058/pexels-pixabay-161154_uftaqi.jpg
 explanation:
-  text: "Get unstuck, gain clarity and confidence, find work that suits you
-    better! We are SO excited to announce the first bi-lingual Breakout! Career
-    Group (English/Spanish). Jump-start your career by joining highly-motivated,
-    like-minded professionals from around the world AND work with expert coaches
-    to get back on track! You will receive 12 career coaching sessions: 9 group
-    sessions and 3 private half-hour sessions, 2 assessments of your career
-    strengths & weaknesses, bonuses (copies of e-books --The Balancing Act,
-    Prospering and Working and many other resources)."
+  text: "Students, Teachers and Parents are facing extraordinary challenges as we
+    deal with how to create new learning environments despite the global
+    pandemic, economic challenges and social & political unrest. Teachers have
+    become front-line workers, parents have become at-home teachers and students
+    are doing their best in an upended world. LET US HELP YOU to meet these
+    challenges with The Balancing Act's proven tools. TRY OUR FREE SAMPLES:
+    instructional videos, Special Learning report, and an individualized report
+    of your greatest strength and liability during times of stress. FOR MORE
+    INFORMATION, contact us via the message link below--OR take a Premium
+    Profile to get a full report on your personal strengths and weaknesses,
+    attend one of our excellent seminars, or sign up for our life-changing group
+    implementation program. You can also speak directly with a Core Team member
+    to explore how we certify Teachers to to enrich students around the world
+    with The Compass Course and other Core Learning programs. "
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600804117/abdelkader-ft-CcZzQcYGYC4-unsplash_jvaahu.jpg
 benefits: |-
   <ul>
