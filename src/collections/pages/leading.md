@@ -33,7 +33,7 @@ benefits: >-
     <li>Losing money; inefficient processes or inadequate capital.</li>
   <ll>Working too hard for results; not leveraging efforts to next success.</li>
 
-   <li>Are a Business Coach or Org Consultant whose clients say yes to these questions.</li>
+   <li>A Business Coach or Consultant whose clients say yes to these questions.</li>
   </ul>
 
 
