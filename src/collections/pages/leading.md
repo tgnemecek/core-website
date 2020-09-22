@@ -17,9 +17,9 @@ explanation:
     leader trainings. You can also speak directly with a Core Team member to
     explore how our data-driven, agile PARTNERING process can create sustainable
     change in your company for a great ROI. And if you are a practicing
-    EXECUTIVE COACH OR ORGANIZATIONAL CONSULTANT, we can certify you to enrich
-    your business clients with The Balancing Act's powerful processes, programs
-    and profiles for leaders, teams and organizations."
+    EXECUTIVE COACH OR ORGANIZATIONAL CONSULTANT, we can certify you to use The
+    Balancing Act's powerful processes, programs and profiles for leaders, teams
+    and organizations."
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600785500/CCC_Leading_cropped_ue4zbu.jpg
 benefits: >-
   <ul>
