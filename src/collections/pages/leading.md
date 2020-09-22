@@ -25,12 +25,15 @@ explanation:
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600735364/CCC_Leading_ec6m5q.jpg
 benefits: |-
   <ul>
-    <li>
-      Feel Stuck, anxious, frustrated, bored; lack direction; job is poor fit.
-    </li>
-    <li>Lack Clarity. Don't see better options (or how to get there).</li>
-    <li>Feel Unmotivated. Change seems too hard; why try?</li>
-    <li>Are not sure who can help - and feel reluctant to ask for favors.</li>
-    <li>Don't have enough money to meet your needs &/or desires.</li>
+
+    
+  <li>Frustrated, anxious, overwhelmed about all problems have to fix.</li>
+    <li>Unclear about company's vision and how to achieve it.</li>
+    <li>Not aligned with others about best actions to take.</li>
+    <li>Not communicating as powerfully or confidently as wish.</li>
+    <li>Losing money; inefficient processes or inadequate capital.</li>
+  <ll>Working too hard for results; not leveraging efforts to next success.</li>
+  <ll>Are a business coach whose clients say yes to these questions.</li>
+
   </ul>
 ---
