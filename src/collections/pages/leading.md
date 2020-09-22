@@ -7,10 +7,9 @@ hero:
   title: CORE Leading
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596493058/pexels-pixabay-161154_uftaqi.jpg
 explanation:
-  text: "Our business experts can PARTNER with you to navigate leadership
-    challenges with the teams and organizations you manage. We will stand with
-    you to initiate difficult but necessary changes and help you remain agile
-    during implementation so you achieve the best possible results for everyone
+  text: "You do not have to face all your leadership challenges alone. Our
+    business experts can PARTNER with you to initiate difficult but necessary
+    changes and ensure you achieve the best possible results for everyone
     involved. TRY OUR FREE SAMPLES: instructional videos, Leader Compass report,
     and an individualized report of your greatest leadership strength and
     liability. FOR MORE INFORMATION, contact us via the message link below--OR
@@ -22,7 +21,7 @@ explanation:
     ORGANIZATIONAL CONSULTANT, we can certify you to enrich your business
     clients with The Balancing Act's powerful processes, programs and profiles
     for leaders, teams and organizations."
-  image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600735364/CCC_Leading_ec6m5q.jpg
+  image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600785500/CCC_Leading_cropped_ue4zbu.jpg
 benefits: |-
   <ul>
 
