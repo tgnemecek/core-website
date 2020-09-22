@@ -7,15 +7,22 @@ hero:
   title: CORE Leading
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596493058/pexels-pixabay-161154_uftaqi.jpg
 explanation:
-  text: "Get unstuck, gain clarity and confidence, find work that suits you
-    better! We are SO excited to announce the first bi-lingual Breakout! Career
-    Group (English/Spanish). Jump-start your career by joining highly-motivated,
-    like-minded professionals from around the world AND work with expert coaches
-    to get back on track! You will receive 12 career coaching sessions: 9 group
-    sessions and 3 private half-hour sessions, 2 assessments of your career
-    strengths & weaknesses, bonuses (copies of e-books --The Balancing Act,
-    Prospering and Working and many other resources)"
-  image: https://cdn.now.howstuffworks.com/media-content/0b7f4e9b-f59c-4024-9f06-b3dc12850ab7-1920-1080.jpg
+  text: "Our business experts can PARTNER with you to navigate leadership
+    challenges with the teams and organizations you manage. We will stand with
+    you to initiate difficult but necessary changes and help you remain agile
+    during implementation so you achieve the best possible results for everyone
+    involved. TRY OUR FREE SAMPLES: instructional videos, Leader Compass report,
+    and an individualized report of your greatest leadership strength and
+    liability. FOR MORE INFORMATION, contact us via the message link below--OR
+    take a Premium Profile to get a full report on your leader strengths and
+    weaknesses, attend one of our excellent seminars, or sign up for our
+    life-changing leader training. You can also speak directly with a Core Team
+    member to explore how our data-driven PARTNERING process could positively
+    change all your outcomes. And if you are a practicing EXECUTIVE COACH OR
+    ORGANIZATIONAL CONSULTANT, we can certify you to enrich your business
+    clients with The Balancing Act's powerful processes, programs and profiles
+    for leaders, teams and organizations."
+  image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600735364/CCC_Leading_ec6m5q.jpg
 benefits: |-
   <ul>
     <li>
