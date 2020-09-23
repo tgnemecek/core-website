@@ -76,6 +76,7 @@ products:
       Consulting programs, including Leading Your Life and Work. TBA describes
       how you can implement a systemic, logical and pragmatic 6-point approach
       to transform your own life and positively impact the world around you. "
+    link: https://www.amazon.com/Balancing-Act-Mastering-Elements-Relationships-ebook/dp/B07QGQG38H/ref=sr_1_1?dchild=1&keywords=the+balancing+act+seivert&qid=1600887520&s=books&sr=1-1
   - title: "Book: SOS: Switch Off Stress"
     description: "SOS: Switch Off Stress is a practical, immediately usable book
       that provides 101 Really Fast Ways to stop stress (in 6 seconds to 6
@@ -85,6 +86,20 @@ products:
       used by clients of Core Coaching & Consulting to optimize their progress.
       it is available in print or as an e-book."
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1594942999/sos-book_tc9jx9.jpg
+    link: https://www.amazon.com/SOS-Switch-Stress-Sharon-Seivert-ebook/dp/B00H312T3A/ref=sr_1_1?dchild=1&keywords=switch+off+stress+seivert&qid=1600887576&s=books&sr=1-1
+  - title: "Prospering: 6 Steps for Spiraling up to Great Wealth"
+    link: https://www.amazon.com/Prospering-Steps-Spiraling-Great-Wealth-ebook/dp/B0831QTTSC/ref=sr_1_1?dchild=1&keywords=prospering+seivert&qid=1600888410&s=books&sr=1-1
+    description: In this brand new e-book, Sharon shows how The Balancing Act
+      methodology can help you prosper in every possible way -- a timely topic
+      for these times of global economic crises!
+    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600889276/Prospering_cover_bbx8cd.jpg
+  - title: Working from Your Core
+    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600888032/wfyccover_msrx27.jpg
+    description: Ten Heroic Core Types that can help you more confidently Lead Your
+      Life and Work from the inside out. WFYC compliments The Balancing Act
+      processes of CORE Coaching and Consulting by showing how we can become
+      more heroic despite the challenging times in which we live.
+    link: https://www.amazon.com/Working-Your-Core-Sharon-Seivert-ebook/dp/B00J4BUQ2S/ref=sr_1_1?dchild=1&keywords=Working+from+Your+Core+seivert&qid=1600888309&s=books&sr=1-1
 videos:
   - title: Navigating Organizational Change (Sharon at FEBRBAN - Brazil Banking
       Association) English
