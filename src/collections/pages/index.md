@@ -70,7 +70,7 @@ testimonials:
     author: "- C. Beira"
     role: Founder, Espaço Integral
 products:
-  - image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1598280642/Apple_Ipad_Balancing_Act-003_fmny9x.jpg
+  - image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600890104/TBA_Kindlecover_cropped_irfmvt.jpg
     title: The Balancing Act
     description: "The Balancing Act is the foundational work for all Core Coaching &
       Consulting programs, including Leading Your Life and Work. TBA describes
