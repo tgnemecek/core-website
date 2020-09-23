@@ -93,4 +93,6 @@ videos:
     title: Breakout Career Speech
   - link: https://www.youtube.com/watch?v=I3LmXgYoRLY
     title: "Intro to the SOS: Switch Off Stress App"
+  - link: https://www.youtube.com/watch?v=52Iv5hdqDxw
+    title: Intro to Career Coaching Program (ENG & SPA)
 ---
