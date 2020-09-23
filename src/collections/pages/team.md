@@ -9,15 +9,15 @@ members:
   - name: Sharon Seivert
     role: CEO & Founder
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1599227340/Sharon_for_website_cropped3_dgcvwi.jpg
-    bio: Sharon Seivert is leader of the Core Coaching & Consulting Team and author
+    bio: 'Sharon Seivert is leader of the Core Coaching & Consulting Team and author
       of "The Balancing Act", the foundational book that first outlined the
       6-point system CCC uses for all our work. As both a US and EU citizen,
       Sharon loves few things more than spending time with her international
       family, friends, colleagues and clients. Sharon is pictured here in her
       front yard on the North Shore of Boston where she enjoys spending her time
       while not coaching leaders, working with global colleagues, or writing new
-      books (her latest is "6 Steps to Leading Your Life and Work (from the
-      Inside Out)"
+      books; her latest ebooks are "Prospering: 6 Steps to Great Wealth" and  "6
+      Steps to Leading Your Life and Work (from the Inside Out)".'
     linkedin: https://www.linkedin.com/in/sharonseivert/
     video: https://www.youtube.com/watch?v=52Iv5hdqDxw
   - name: Rafael Medina
@@ -54,16 +54,16 @@ members:
     role: Manager, CORE Europe
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600617682/Xavi_aeglpo.jpg
     video: https://www.youtube.com/watch?v=wGMv6kxZgUw
-    bio: Entrepreneur and trainer, with over 25 years of experience working with
-      individuals, corporations and foundations in countries such as Qatar,
-      India, USA, United Kingdom, Spain and other European countries. His
-      extensive knowledge of the business aspects and customs of each place has
-      allowed him to develop a deep respect for the different cultures,
-      languages and religions. Xavier has a natural ability to see the overall
-      picture, focus on the greater goal and make bold decisions, while
-      considering all aspects of any given situation.  His humanitarian facet
-      has led him to be actively involved in Fundación PRASAD España, where he
-      acts as Chairman of the Board of Trustees.
+    bio: Xavi is an entrepreneur and trainer, with over 25 years of experience
+      working with individuals, corporations and foundations around the world
+      (Qatar, India, USA, United Kingdom, Spain and  Europe). His extensive
+      knowledge of the business aspects and customs of each place has allowed
+      him to develop a deep respect for different cultures, languages and
+      religions. Xavier has a natural ability to see the overall picture, focus
+      on the greater goal and make bold decisions, while considering all aspects
+      of any given situation.  His humanitarian interests have led him to be
+      actively involved in Fundación PRASAD España, where he acts as Chairman of
+      the Board of Trustees.
     title: Julia Johnson
     description: Marketing Lead
     linkedin: https://www.linkedin.com/in/xavinova/
@@ -74,13 +74,12 @@ members:
     bio: Mercedes lives in Barcelona with her husband and three children. She
       defines herself as a "book eater" who is fascinated by the richness of
       language, and finding the exact meaning of each word and its equivalent in
-      other languages. She has been in the field of translation and interpreting
-      for more than 25 years, in which she started in the 1990s when she lived
-      in the United States working for an NGO. Since then, she has been an
-      English-Spanish interpreter in countless courses, workshops, conferences,
-      and seminars, in the United States, India and Spain, as well as an
-      English-Spanish translator of different works, including the book
-      "Prospering" by Sharon Seivert.
+      other languages. Mercedes has been in the field of translation and
+      interpreting since the 1990s when she lived in the United States and
+      worked for an NGO. Since then, she has been an English-Spanish interpreter
+      for countless courses, workshops, conferences, and seminars, in the United
+      States, India and Spain. She also has been the English-Spanish translator
+      of different works, including the book "Prospering" by Sharon Seivert.
     title: Alisson Garcia
     description: Customer Success Manager
     linkedin: https://www.linkedin.com/in/mercedes-bellavista-9825681a/
@@ -90,25 +89,23 @@ members:
       Team.  She leads our marketing and communications initiatives
       globally.  Bonnie also teaches Advertising Management at Boston
       University, where she incorporates The Balancing Act leadership
-      concepts.  Bonnie comes to the CORE Team with expertise in brand strategy,
-      account management and leadership development.
+      concepts.  Bonnie comes to the CORE Team with extensive expertise in brand
+      strategy, account management and leadership development.
     linkedin: https://www.linkedin.com/in/bonnie-koch/
     video: https://www.youtube.com/watch?v=wGMv6kxZgUw
     role: Marketing & Communications Manager
   - name: Jordi Formiguera Macia
     role: Lead CORE Coach, Spanish Team
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600730640/Jordi_Formiguera_photo_1_ovy0xl.jpg
-    bio: 'Jordi lives in Barcelona and has worked for more than 15 years
-      accompanying people as a career and professional counselor. He is a
-      systemic coach accredited by the University of Barcelona for 10 years and
-      is currently a member of the Executive Council of a Foundation that is
-      dedicated to providing support to people suffering from a mental disorder
-      or psychological distress, being also the Head of the Department of Labor
-      Insertion. Since 2020 he has been part of the Core Coaching & Consulting
-      team. Jordi enjoys meditation, sports and culture in general and he loves
-      spending time with his family and friends. He defines his philosophy of
-      life as follows: "Enjoy the moment, savor every moment, live without
-      expectations and free from all fears"  '
+    bio: 'Jordi lives in Barcelona and has worked for more than 15 years as a career
+      and professional counselor. He is a systemic coach accredited by the
+      University of Barcelona and currently serves on the Executive Council and
+      as the Head of the Department of Labor for a Foundation dedicated to
+      supporting people who suffer from a mental disorder or psychological
+      distress. Since 2020 Jordi has been part of the Core Coaching & Consulting
+      team. He enjoys meditation, sports and spending time with his family and
+      friends. Jordi defines his philosophy of life as: "Enjoy the moment, savor
+      every moment, live without expectations and free from all fears"  '
     linkedin: https://www.linkedin.com/in/jordiformiguera-lifecoach/
     video: https://www.youtube.com/watch?v=wGMv6kxZgUw
 ---
