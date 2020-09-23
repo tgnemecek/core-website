@@ -95,4 +95,6 @@ videos:
     title: "Intro to the SOS: Switch Off Stress App"
   - link: https://www.youtube.com/watch?v=52Iv5hdqDxw
     title: Intro to Career Coaching Program (ENG & SPA)
+  - link: https://www.youtube.com/watch?v=_QVfyj94x5A&t=126s
+    title: "The Elemental Mediations: CORE"
 ---
