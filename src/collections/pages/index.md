@@ -99,4 +99,10 @@ videos:
     title: "Experience the Elements: CORE"
   - title: "Experience the Elements: Vision"
     link: https://www.youtube.com/watch?v=rCaVCYjfQVc
+  - title: "Experience the Elements: Mission"
+    link: https://www.youtube.com/watch?v=WJCNNiSDG2M
+  - title: "Experience the Elements: Interactions"
+    link: https://www.youtube.com/watch?v=PVwxrMku-xY
+  - title: "Experience the Elements: Structure"
+    link: https://www.youtube.com/watch?v=-UwqzjoubDA
 ---
