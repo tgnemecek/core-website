@@ -95,6 +95,12 @@ videos:
     title: "Intro to the SOS: Switch Off Stress App"
   - link: https://www.youtube.com/watch?v=52Iv5hdqDxw
     title: Intro to Career Coaching Program (ENG & SPA)
+  - link: https://www.youtube.com/watch?v=0ziHaZlhmp0
+    title: Intro to CORE Learning
+  - link: https://www.youtube.com/watch?v=fOxyq9djBS8
+    title: Intro to Executive Coaching
+  - link: https://www.youtube.com/watch?v=zAXnSyIsvIE
+    title: Intro to CORE Leading & Business services
   - link: https://www.youtube.com/watch?v=_QVfyj94x5A
     title: "Experience the Elements: CORE"
   - title: "Experience the Elements: Vision"
