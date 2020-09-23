@@ -96,5 +96,7 @@ videos:
   - link: https://www.youtube.com/watch?v=52Iv5hdqDxw
     title: Intro to Career Coaching Program (ENG & SPA)
   - link: https://www.youtube.com/watch?v=_QVfyj94x5A&t=126s
-    title: "The Elemental Mediations: CORE"
+    title: "Experience the Elements: CORE"
+  - title: "Experience the Elements: Vision"
+    link: https://www.youtube.com/watch?v=rCaVCYjfQVc&t=27s
 ---
