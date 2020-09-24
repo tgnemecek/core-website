@@ -77,6 +77,18 @@ products:
       how you can implement a systemic, logical and pragmatic 6-point approach
       to transform your own life and positively impact the world around you. "
     link: https://www.amazon.com/Balancing-Act-Mastering-Elements-Relationships-ebook/dp/B07QGQG38H/ref=sr_1_1?dchild=1&keywords=the+balancing+act+seivert&qid=1600887520&s=books&sr=1-1
+  - title: 6 Steps to Leading Your Life and Work (from the Inside Out)
+    description: The Balancing Act process can ensure that you lead your life and
+      work the way YOU want. If you follow these 6 steps you will transform
+      yourself so you are more confident and capable of achieving your dreams
+    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600964000/6_Steps_LYL_W_cover_yatpeq.jpg
+    link: https://www.amazon.com/dp/B08JYC63Y6/ref=sr_1_3?dchild=1&keywords=6+steps+to+leading+your+life+and+work&qid=1600964053&s=books&sr=1-3
+  - title: "Prospering: 6 Steps for Spiraling up to Great Wealth"
+    link: https://www.amazon.com/Prospering-Steps-Spiraling-Great-Wealth-ebook/dp/B0831QTTSC/ref=sr_1_1?dchild=1&keywords=prospering+seivert&qid=1600888410&s=books&sr=1-1
+    description: In this brand new e-book, Sharon shows how The Balancing Act
+      methodology can help you prosper in every possible way -- a timely topic
+      for these times of global economic crises!
+    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600889276/Prospering_cover_bbx8cd.jpg
   - title: "Book: SOS: Switch Off Stress"
     description: "SOS: Switch Off Stress is a practical, immediately usable book
       that provides 101 Really Fast Ways to stop stress (in 6 seconds to 6
@@ -87,12 +99,6 @@ products:
       it is available in print or as an e-book."
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1594942999/sos-book_tc9jx9.jpg
     link: https://www.amazon.com/SOS-Switch-Stress-Sharon-Seivert-ebook/dp/B00H312T3A/ref=sr_1_1?dchild=1&keywords=switch+off+stress+seivert&qid=1600887576&s=books&sr=1-1
-  - title: "Prospering: 6 Steps for Spiraling up to Great Wealth"
-    link: https://www.amazon.com/Prospering-Steps-Spiraling-Great-Wealth-ebook/dp/B0831QTTSC/ref=sr_1_1?dchild=1&keywords=prospering+seivert&qid=1600888410&s=books&sr=1-1
-    description: In this brand new e-book, Sharon shows how The Balancing Act
-      methodology can help you prosper in every possible way -- a timely topic
-      for these times of global economic crises!
-    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600889276/Prospering_cover_bbx8cd.jpg
   - title: Working from Your Core
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600888032/wfyccover_msrx27.jpg
     description: Ten Heroic Core Types that can help you more confidently Lead Your
@@ -101,8 +107,7 @@ products:
       more heroic despite the challenging times in which we live.
     link: https://www.amazon.com/Working-Your-Core-Sharon-Seivert-ebook/dp/B00J4BUQ2S/ref=sr_1_1?dchild=1&keywords=Working+from+Your+Core+seivert&qid=1600888309&s=books&sr=1-1
 videos:
-  - title: Navigating Organizational Change (Sharon at FEBRBAN - Brazil Banking
-      Association) English
+  - title: Navigating Organizational Change (Brazil Banking Association)
     link: https://www.youtube.com/watch?v=XQdlMuzwBAE
   - link: https://www.youtube.com/watch?v=df2uZ3kqZt8
     title: Breakout Career Speech
