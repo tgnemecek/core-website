@@ -107,7 +107,7 @@ products:
       more heroic despite the challenging times in which we live.
     link: https://www.amazon.com/Working-Your-Core-Sharon-Seivert-ebook/dp/B00J4BUQ2S/ref=sr_1_1?dchild=1&keywords=Working+from+Your+Core+seivert&qid=1600888309&s=books&sr=1-1
 videos:
-  - title: Navigating Organizational Change (Brazil Banking Association)
+  - title: Organizational Change (Brazil Banks)
     link: https://www.youtube.com/watch?v=XQdlMuzwBAE
   - link: https://www.youtube.com/watch?v=df2uZ3kqZt8
     title: Breakout Career Speech
