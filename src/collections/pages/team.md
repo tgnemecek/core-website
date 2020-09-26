@@ -108,4 +108,10 @@ members:
       every moment, live without expectations and free from all fears"  '
     linkedin: https://www.linkedin.com/in/jordiformiguera-lifecoach/
     video: https://www.youtube.com/watch?v=wGMv6kxZgUw
+  - name: Marianne Collins
+    role: Strategic Business Partner
+    photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1601145382/Marianne_for_CCC_dffzeh.jpg
+    bio: bio will go here
+    linkedin: https://www.linkedin.com/in/marianneecollins/
+    video: https://www.youtube.com/watch?v=wGMv6kxZgUw
 ---
