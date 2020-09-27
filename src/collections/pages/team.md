@@ -117,7 +117,23 @@ members:
   - name: Dorothy Ginnett
     role: Teacher of CORE Teachers
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1601214719/Dorothy_Ginnett_June_2020_Barcelona_rxnu98.jpg
-    bio: bio will go here
+    bio: Dorothy Ginnett is a graduate of the Breakout Career Coaching Group and has
+      successfully used the Balancing Act techniques to transition to a more
+      fulfilling educational career twice.  Currently she lives and teaches high
+      school science in Barcelona, Spain and is a Teacher Consultant for a fully
+      online US based virtual school.  Dorothy is a science educator and
+      wildlife ecologist with experience teaching at the university through high
+      school level, with gifted to at-risk student populations.  In addition to
+      science classroom teaching, she is an experienced online educator, having
+      taught virtual courses since 2004,  She has designed the curriculum for
+      fully online graduate level science teacher courses and a fully online AP
+      Biology course.  She has been a regional science curriculum consultant in
+      Wisconsin, offering professional development for science educators in 35
+      school districts.  In addition, Dorothy is a Senior Online Advisor for the
+      National Science Teaching Association.  Her big sister, Sharon, is the
+      creative force behind CORE Consulting and Dorothy is honored to be part of
+      this amazing team.  The Balancing Act holds great promise to improve
+      educational culture.
     linkedin: https://www.linkedin.com/in/dorothy-ginnett/
     video: video will go here
 ---
