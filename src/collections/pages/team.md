@@ -114,4 +114,10 @@ members:
     bio: bio will go here
     linkedin: https://www.linkedin.com/in/marianneecollins/
     video: https://www.youtube.com/watch?v=wGMv6kxZgUw
+  - name: Dorothy Ginnett
+    role: Teacher of CORE Teachers
+    photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1601214719/Dorothy_Ginnett_June_2020_Barcelona_rxnu98.jpg
+    bio: bio will go here
+    linkedin: https://www.linkedin.com/in/dorothy-ginnett/
+    video: video will go here
 ---
