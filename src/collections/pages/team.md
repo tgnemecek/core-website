@@ -112,41 +112,37 @@ members:
     role: Strategic Business Partner
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1601145382/Marianne_for_CCC_dffzeh.jpg
     bio: >-
-      As an operating executive, Marianne has held C-Level roles in both large
-      and mid-size organizations where she had oversight of the full P&L and
-      responsibility for both Revenue and Operations functions - leading teams
-      of over 1,000 employees.  
+      Marianne has held C-Level roles in both large and mid-size organizations
+      where she had oversight of the full P&L, including managing both Revenue
+      and Operations functions and leading teams of over 1,000 employees. Her
+      work with CORE Coaching & Consulting focuses on Executive Development,
+      Performance Enhancement, Career Transition Strategies and coaching
+      entrepreneurs on business strategy, plan development and fundraising.
 
+      As an executive coach, Marianne partners with leaders to implement plans that enhance individual performance, drive team results, improve internal communications and accelerate profit growth strategies.  She currently serves on both for-profit and non-profit Boards of Directors.
 
-      As an executive coach, Marianne has partnered with executives to implement plans that enhance individual performance, drive team results, improve internal communications and accelerate profit growth strategies.  She currently serves on both for profit and non-profit Boards.
-
-
-      Her work with CORE Coaching & Consulting is focused on Executive Development, Performance Enhancement, Career Transition Strategies and coaching entrepreneurs on business strategy, plan development and fundraising.
-
-
-      Marianne lives with her family in Boston and volunteers with Equine Therapeutic Riding Programs - supporting children and young adults
+      Marianne lives with her family in Boston and volunteers with Equine Therapeutic Riding Programs, which supports the development of at-risk children and young adults.
     linkedin: https://www.linkedin.com/in/marianneecollins/
     video: https://www.youtube.com/watch?v=wGMv6kxZgUw
   - name: Dorothy Ginnett
     role: Teacher of CORE Teachers
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1601304340/CCC_Dorothy_qgw5r8.jpg
-    bio: Dorothy Ginnett is a graduate of the Breakout Career Coaching Group and has
-      successfully used the Balancing Act techniques to transition to a more
-      fulfilling educational career twice.  Currently she lives and teaches high
-      school science in Barcelona, Spain and is a Teacher Consultant for a fully
-      online US based virtual school.  Dorothy is a science educator and
-      wildlife ecologist with experience teaching at the university through high
-      school level, with gifted to at-risk student populations.  In addition to
-      science classroom teaching, she is an experienced online educator, having
-      taught virtual courses since 2004,  She has designed the curriculum for
-      fully online graduate level science teacher courses and a fully online AP
-      Biology course.  She has been a regional science curriculum consultant in
-      Wisconsin, offering professional development for science educators in 35
-      school districts.  In addition, Dorothy is a Senior Online Advisor for the
-      National Science Teaching Association.  Her big sister, Sharon, is the
-      creative force behind CORE Consulting and Dorothy is honored to be part of
-      this amazing team.  The Balancing Act holds great promise to improve
-      educational culture.
+    bio: Dorothy Ginnett has benefited directly from Balancing Act coaching on two
+      separate occasions when she transitioned to more fulfilling educational
+      jobs.  Currently she teaches high school science in Barcelona, Spain and
+      serves as a Teacher Consultant for a fully online US-based virtual
+      school.  Dorothy's experience as a science educator and wildlife ecologist
+      includes teaching at the university through high school level, with
+      student populations that range from gifted to at-risk. Dorothy brings to
+      the CORE team her considerable expertise as a Teacher of Teachers and an
+      online educator; this includes teaching virtual courses since 2004,
+      designing the curriculum for graduate level science teacher courses,
+      teaching professional development for science educators in 35 school
+      districts, and serving as a Senior Online Advisor for the National Science
+      Teaching Association.  Her big sister, Sharon, is the creative force
+      behind CORE Coaching & Consulting -- and Dorothy is honored to be part of
+      this amazing team because she believes The Balancing Act holds great
+      promise to improve educational culture.
     linkedin: https://www.linkedin.com/in/dorothy-ginnett/
     video: video will go here
   - name: Auke van Keulen
@@ -154,18 +150,18 @@ members:
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1601302983/CCC_Auke_zrnfqf.png
     video: video will be here
     bio: Auke is an experienced businessman with 20 years of management experience
-      in international organizations. As a precondition for working on
-      leadership in organizations, he starts from the principle that everything
-      that happens around the leader says something about the leader and that
-      the desired changes in the organization therefore always find their
-      foundation in their own personal change. He combines business with the
-      human aspect and his Frisian and fresh approach is direct, open, honest
-      and of a powerful simplicity. He works as an (executive) management coach,
-      as change process facilitator and consultant on leadership development,
-      team building, career transitions, cultural issues, strategic business
-      planning, mergers and starting new companies. He has been working with the
-      developer of The Balancing Act, Sharon Seivert (USA) since 2004. He is
-      (co) author of the booklet "Happy at Work" and gives interactive, in-depth
-      workshops on Leadership - and Organizations in Balance.
+      in international organizations. He has been working with the developer of
+      The Balancing Act, Sharon Seivert, since 2004. As a precondition for
+      working on leadership in organizations, Auke starts from the principle
+      that everything that happens around the leader says something about the
+      leader--and that the desired changes in the organization therefore always
+      find their foundation in the leader's personal change. Auke combines
+      business with the human aspect in his consulting, and his approach is
+      direct, open, honest and of a powerful simplicity. Auke works as an
+      executive coach, change process facilitator, and a consultant on
+      leadership development, team building, career transitions, cultural
+      issues, strategic business planning, mergers and starting new companies.
+      He is (co) author of the booklet "Happy at Work" and gives interactive,
+      in-depth workshops on Leadership and Organizations in Balance.
     linkedin: https://www.linkedin.com/in/auke-van-keulen-a810516/
 ---
