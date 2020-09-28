@@ -129,7 +129,7 @@ members:
     video: https://www.youtube.com/watch?v=wGMv6kxZgUw
   - name: Dorothy Ginnett
     role: Teacher of CORE Teachers
-    photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1601214719/Dorothy_Ginnett_June_2020_Barcelona_rxnu98.jpg
+    photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1601304340/CCC_Dorothy_qgw5r8.jpg
     bio: Dorothy Ginnett is a graduate of the Breakout Career Coaching Group and has
       successfully used the Balancing Act techniques to transition to a more
       fulfilling educational career twice.  Currently she lives and teaches high
