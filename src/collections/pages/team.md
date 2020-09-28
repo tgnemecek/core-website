@@ -111,7 +111,20 @@ members:
   - name: Marianne Collins
     role: Strategic Business Partner
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1601145382/Marianne_for_CCC_dffzeh.jpg
-    bio: bio will go here
+    bio: >-
+      As an operating executive, Marianne has held C-Level roles in both large
+      and mid-size organizations where she had oversight of the full P&L and
+      responsibility for both Revenue and Operations functions - leading teams
+      of over 1,000 employees.  
+
+
+      As an executive coach, Marianne has partnered with executives to implement plans that enhance individual performance, drive team results, improve internal communications and accelerate profit growth strategies.  She currently serves on both for profit and non-profit Boards.
+
+
+      Her work with CORE Coaching & Consulting is focused on Executive Development, Performance Enhancement, Career Transition Strategies and coaching entrepreneurs on business strategy, plan development and fundraising.
+
+
+      Marianne lives with her family in Boston and volunteers with Equine Therapeutic Riding Programs - supporting children and young adults
     linkedin: https://www.linkedin.com/in/marianneecollins/
     video: https://www.youtube.com/watch?v=wGMv6kxZgUw
   - name: Dorothy Ginnett
@@ -136,4 +149,23 @@ members:
       educational culture.
     linkedin: https://www.linkedin.com/in/dorothy-ginnett/
     video: video will go here
+  - name: Auke van Keulen
+    role: Manager, Holland
+    photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1601302983/CCC_Auke_zrnfqf.png
+    video: video will be here
+    bio: Auke is an experienced businessman with 20 years of management experience
+      in international organizations. As a precondition for working on
+      leadership in organizations, he starts from the principle that everything
+      that happens around the leader says something about the leader and that
+      the desired changes in the organization therefore always find their
+      foundation in their own personal change. He combines business with the
+      human aspect and his Frisian and fresh approach is direct, open, honest
+      and of a powerful simplicity. He works as an (executive) management coach,
+      as change process faciltator and consultant on leadership development,
+      team building, career transitions, cultural issues, strategic business
+      planning, mergers and starting new companies. He has been working with the
+      developer of The Balancing Act, Sharon Seivert (USA) since 2004. He is
+      (co) author of the booklet "Happy at Work" and gives interactive, in-depth
+      workshops on Leadership - and Organizations in Balance.
+    linkedin: https://www.linkedin.com/in/auke-van-keulen-a810516/
 ---
