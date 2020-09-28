@@ -161,7 +161,7 @@ members:
       foundation in their own personal change. He combines business with the
       human aspect and his Frisian and fresh approach is direct, open, honest
       and of a powerful simplicity. He works as an (executive) management coach,
-      as change process faciltator and consultant on leadership development,
+      as change process facilitator and consultant on leadership development,
       team building, career transitions, cultural issues, strategic business
       planning, mergers and starting new companies. He has been working with the
       developer of The Balancing Act, Sharon Seivert (USA) since 2004. He is
