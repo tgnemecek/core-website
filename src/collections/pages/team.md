@@ -54,7 +54,7 @@ members:
   - name: Xavier Nova
     role: Manager, CORE Europe
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600617682/Xavi_aeglpo.jpg
-    video: https://youtu.be/Drg9JUYrrrA
+    video: https://www.youtube.com/watch?v=Drg9JUYrrrA
     bio: Xavi is an entrepreneur and trainer, with over 25 years of experience
       working with individuals, corporations and foundations around the world
       (Qatar, India, USA, United Kingdom, Spain and  Europe). His extensive
