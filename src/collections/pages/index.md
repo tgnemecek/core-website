@@ -109,7 +109,7 @@ products:
 videos:
   - title: Organizational Change (Brazil Banks)
     link: https://www.youtube.com/watch?v=XQdlMuzwBAE
-  - link: https://youtu.be/Drg9JUYrrrA
+  - link: https://www.youtube.com/watch?v=Drg9JUYrrrA
     title: "Xavi Nova: How The Balancing Act changed my life and work"
   - link: https://www.youtube.com/watch?v=df2uZ3kqZt8
     title: Breakout Career Speech
