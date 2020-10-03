@@ -34,10 +34,11 @@ members:
       via his organizing, educational and media skills to all parts of Central
       and South America.
     video: https://www.youtube.com/watch?v=52Iv5hdqDxw
+    linkedin: ""
   - name: Frederick Reed
     role: Inventor & Manager, CORE Profiles System
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600615133/Fred_cropped_ka48fq.jpg
-    video: https://www.youtube.com/watch?v=wGMv6kxZgUw
+    video: video will go here
     bio: Fred lives in the beautiful Shenandoah Valley of Virginia, where he enjoys
       hiking, orienteering and running trails in the surrounding Blue Ridge and
       Allegheny Mountains. Fred is co-inventor of The Balancing Act's online
@@ -53,7 +54,7 @@ members:
   - name: Xavier Nova
     role: Manager, CORE Europe
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600617682/Xavi_aeglpo.jpg
-    video: https://www.youtube.com/watch?v=wGMv6kxZgUw
+    video: https://youtu.be/Drg9JUYrrrA
     bio: Xavi is an entrepreneur and trainer, with over 25 years of experience
       working with individuals, corporations and foundations around the world
       (Qatar, India, USA, United Kingdom, Spain and  Europe). His extensive
@@ -70,7 +71,7 @@ members:
   - name: Mercedes Bellavista
     role: Lead Translator
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600618633/Mercedes2_xo5nss.jpg
-    video: https://www.youtube.com/watch?v=wGMv6kxZgUw
+    video: video will go here
     bio: Mercedes lives in Barcelona with her husband and three children. She
       defines herself as a "book eater" who is fascinated by the richness of
       language, and finding the exact meaning of each word and its equivalent in
@@ -92,7 +93,7 @@ members:
       concepts.  Bonnie comes to the CORE Team with extensive expertise in brand
       strategy, account management and leadership development.
     linkedin: https://www.linkedin.com/in/bonnie-koch/
-    video: https://www.youtube.com/watch?v=wGMv6kxZgUw
+    video: video will go here
     role: Marketing & Communications Manager
   - name: Jordi Formiguera Macia
     role: Lead CORE Coach, Spanish Team
@@ -107,7 +108,7 @@ members:
       friends. Jordi defines his philosophy of life as: "Enjoy the moment, savor
       every moment, live without expectations and free from all fears"  '
     linkedin: https://www.linkedin.com/in/jordiformiguera-lifecoach/
-    video: https://www.youtube.com/watch?v=wGMv6kxZgUw
+    video: video will go here
   - name: Marianne Collins
     role: Strategic Business Partner
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1601145382/Marianne_for_CCC_dffzeh.jpg
@@ -123,7 +124,7 @@ members:
 
       Marianne lives with her family in Boston and volunteers with Equine Therapeutic Riding Programs, which supports the development of at-risk children and young adults.
     linkedin: https://www.linkedin.com/in/marianneecollins/
-    video: https://www.youtube.com/watch?v=wGMv6kxZgUw
+    video: video will go here
   - name: Dorothy Ginnett
     role: Teacher of CORE Teachers
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1601304340/CCC_Dorothy_qgw5r8.jpg
