@@ -13,13 +13,13 @@ explanation:
     pragmatic tools for removing all obstacles in your way. 
 
 
-    TRY OUR FREE SAMPLES: instructional videos, Career Compass report, and an individualized report of your greatest strength and liability for transitions. 
+    TRY FREE SAMPLES: 1) An individualized report of your greatest strength and liability for personal, work or stressful transitions; 2) Career Compass Report, and 3) Instructional videos.
 
 
-    FOR MORE INFORMATION, contact us via the message link below--OR take a Premium Profile to get a full report on your transition strengths and weaknesses, attend one of our excellent seminars, or sign up for our life-changing group implementation program. 
+    LEARN MORE: Send your questions to us by clicking the message link below--OR take a Premium Profile to get a comprehensive report about your work or life transition strengths and weaknesses--and how to improve them. 
 
 
-    You can also speak directly with a Core Team member to explore how INDIVIDUALIZED COACHING could positively change the course of your life and work now and forever. 
+    MOVE FASTER FORWARD: Attend one of our excellent seminars...sign up for our life-changing group implementation program...OR click the message link to explore how INDIVIDUALIZED COACHING could positively change the course of your life and work, now and forever. 
 
 
     And if you are a practicing CAREER OR LIFE COACH, we can certify you to enrich your clients with The Balancing Act's processes, programs and profiles.
