@@ -86,12 +86,15 @@ members:
     linkedin: https://www.linkedin.com/in/mercedes-bellavista-9825681a/
   - name: Bonnie Koch
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600733167/CCC_Bonnie_cropped_mdqzsh.jpg
-    bio: Bonnie Koch is a Certified CORE Coach and founding member of the CORE
-      Team.  She leads our marketing and communications initiatives
-      globally.  Bonnie also teaches Advertising Management at Boston
-      University, where she incorporates The Balancing Act leadership
-      concepts.  Bonnie comes to the CORE Team with extensive expertise in brand
-      strategy, account management and leadership development.
+    bio: "Bonnie Koch is a Certified CORE Coach, founding member of the CORE Team,
+      and graduate of the Leading Your Life and Work program.  She leads our
+      marketing and communications initiatives globally.  Bonnie also teaches
+      Advertising Management at Boston University, where she incorporates The
+      Balancing Act leadership concepts.  Bonnie comes to the CORE Team with
+      extensive expertise in brand strategy, account management and leadership
+      development. She also has many years of leadership experience with
+      Landmark (a global personal and professional development company)  and the
+      End Violence Project (a US prison leadership program). "
     linkedin: https://www.linkedin.com/in/bonnie-koch/
     video: video will go here
     role: Marketing & Communications Manager
