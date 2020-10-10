@@ -22,7 +22,7 @@ explanation:
     MOVE FASTER FORWARD: Attend one of our excellent seminars...sign up for our life-changing group implementation program...OR click the message link to explore how INDIVIDUALIZED COACHING could positively change the course of your life and work, now and forever. 
 
 
-    And if you are a practicing CAREER OR LIFE COACH, we can certify you to enrich your clients with The Balancing Act's processes, programs and profiles.
+    And if you are a practicing CAREER OR LIFE COACH, we can certify you to enrich your clients with The Balancing Act's processes, programs and profiles. [LINK HERE](https://www.google.com)
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600816113/Coaching_cropped_ibup02.jpg
 benefits: >-
   <ul>
