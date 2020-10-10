@@ -11,51 +11,44 @@ import {
   CardActionArea,
 } from "@material-ui/core";
 import { theme } from "components/theme";
-
-import Section from "components/Section";
+import paypalBuyNow from "src/img/paypal-buy-now.jpg";
+import paypalDonate from "src/img/paypal-donate.jpg";
 
 const buttons = {
   careerStrengths: {
     label: "Career Strengths Scale",
     description:
-      "This scale will measure all the things related to some thing. This scale will measure all the things related to some thing.",
+      "If you're thinking about changing your career, take this Individualized Career Strengths Report to discover your strengths and weaknesses in 6 key success factors--and get practical suggestions for how to quickly improve each one.",
     value: "RLJD2JRPKQ2H2",
-    price: 1,
+    price: 24,
   },
-  leadershipStrengths: {
-    label: "Leadership Strengths Scale",
+  leaderStrengths: {
+    label: "Leader Strengths Scale",
     description:
-      "This scale will measure all the things related to some thing. This scale will measure all the things related to some thing.",
+      "To improve your leadership skills in these challenging times, take the Leadership Strengths Scale to discover your personal AND professional strengths and weaknesses among 6 key success factors. You'll also receive practical tips for rapid improvement.",
     value: "AXSRW3XF4FKR8",
-    price: 1,
+    price: 49,
   },
   entrepreneuerStrengths: {
     label: "Entrepreneuer Strengths Scale",
     description:
-      "This scale will measure all the things related to some thing. This scale will measure all the things related to some thing.",
+      "If you want to start and lead your own business, the Entrepreneur Strengths Scale will reveal your strengths and weaknesses in 6 key factors--plus provide valuable tips to increase your odds of a successful launch.",
     value: "Z86XSVPCFP6H6",
-    price: 1,
-  },
-  careerBalance: {
-    label: "Career Balance Profile",
-    description:
-      "This scale will measure all the things related to some thing. This scale will measure all the things related to some thing.",
-    value: "G4FNAL4UMBYXA",
-    price: 1,
-  },
-  leadershipBalance: {
-    label: "Leadership Balance Profile",
-    description:
-      "This scale will measure all the things related to some thing. This scale will measure all the things related to some thing.",
-    value: "A3M5P48V2LLBC",
-    price: 1,
+    price: 24,
   },
   personalStrengths: {
     label: "Personal Strengths Scale",
     description:
-      "This scale will measure all the things related to some thing. This scale will measure all the things related to some thing.",
+      "If you’re in a stressful life transition, take this Individualized Personal Strengths Scale to discover your strengths and weaknesses in 6 key life-success factors. You'll also get practical suggestions for how to improve each one.",
     value: "D2ZV5ASMDUXQG",
-    price: 1,
+    price: 24,
+  },
+  donation: {
+    label: "Make a Difference!",
+    description:
+      "Contribute to the efforts of Core Learning, a 501 c3 non-profit educational services organization, to bring The Balancing Act's transformational life/work skills training to at-risk youth and adults around the globe.",
+    value: "JTFYEZ4SXFFW6",
+    button: paypalDonate,
   },
 };
 
@@ -74,7 +67,7 @@ const PayPalButtons = ({ buttonTypes }) => {
       <Container maxWidth="md">
         <Grid container alignItems="center" spacing={sm ? 2 : 8}>
           {buttonTypes.map((key) => {
-            const { label, description, value, price } = buttons[key];
+            const { label, description, value, price, button } = buttons[key];
 
             return (
               <Grid item key={key} xs={12} sm={6}>
@@ -86,7 +79,7 @@ const PayPalButtons = ({ buttonTypes }) => {
                   <form
                     action="https://www.paypal.com/cgi-bin/webscr"
                     method="post"
-                    target="_top"
+                    target="_blank"
                   >
                     <CardActionArea
                       type="submit"
@@ -101,12 +94,17 @@ const PayPalButtons = ({ buttonTypes }) => {
                       <input
                         alt="PayPal - The safer, easier way to pay online!"
                         name="submit"
-                        src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif"
+                        src={button || paypalBuyNow}
                         type="image"
                       />
-                      <Typography variant="subtitle1" className={classes.price}>
-                        ${price}
-                      </Typography>
+                      {price && (
+                        <Typography
+                          variant="subtitle1"
+                          className={classes.price}
+                        >
+                          ${price}
+                        </Typography>
+                      )}
                     </CardActionArea>
                   </form>
                 </Card>

@@ -9,8 +9,6 @@ const Products = ({ products }) => {
   const classes = useStyles();
   const [index, setIndex] = React.useState(0);
 
-  console.log({ products });
-
   return (
     <Section>
       <Container>
