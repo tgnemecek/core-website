@@ -1,10 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
-import { Link, graphql } from "gatsby";
-import { Container, Typography, Button, Grid } from "@material-ui/core";
-
-import Section from "components/Section";
+import { Typography, Button, Grid } from "@material-ui/core";
 
 const FreeReport = ({ reportText, downloadLink }) => {
   const classes = useStyles();
