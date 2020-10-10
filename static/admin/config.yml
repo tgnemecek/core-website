@@ -209,12 +209,9 @@ collections:
                   label: Explanation Text,
                   name: text,
                   widget: markdown,
-                  options:
-                    {
-                      buttons: ["link"],
-                      editor_components: [],
-                      modes: ["rich_text"],
-                    },
+                  buttons: ["link"],
+                  editor_components: [],
+                  modes: ["rich_text"],
                 }
               - { label: Explanation Image, name: image, widget: image }
           - { label: Benefits, name: benefits, widget: markdown }
