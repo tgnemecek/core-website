@@ -22,7 +22,7 @@ const LeadingPage = ({ hero, benefits, explanation, email }) => {
       <Section>
         <Explanation explanation={explanation} />
         <FreeReport
-          reportText="Get your Free Personal Report!"
+          reportText="Get a Free Leader Compass Report!"
           downloadLink={leadingReport}
         />
         <Benefits benefits={benefits} />

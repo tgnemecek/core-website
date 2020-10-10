@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import coachingReport from "src/downloads/free-reports/coaching.pdf";
 import { getContactEmail } from "src/util";
@@ -23,7 +22,7 @@ const CoachingPage = ({ hero, benefits, explanation, email }) => {
       <Section>
         <Explanation explanation={explanation} />
         <FreeReport
-          reportText="Get your Free Personal Report!"
+          reportText="Get a Free Career Compass Report!"
           downloadLink={coachingReport}
         />
         <Benefits benefits={benefits} />
