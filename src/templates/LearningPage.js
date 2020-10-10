@@ -31,7 +31,7 @@ const LearningPage = ({ hero, benefits, explanation, email }) => {
         <CallToAction text="Send Us a Message" href={`mailto:${email}`} />
       </Section>
       <Section>
-        <PayPalButtons buttonTypes={["careerStrengths", "personalStrengths"]} />
+        <PayPalButtons buttonTypes={["personalStrengths", "donation"]} />
       </Section>
     </>
   );
