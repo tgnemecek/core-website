@@ -9,6 +9,8 @@ const Products = ({ products }) => {
   const classes = useStyles();
   const [index, setIndex] = React.useState(0);
 
+  console.log({ products });
+
   return (
     <Section>
       <Container>
@@ -18,7 +20,11 @@ const Products = ({ products }) => {
         <Typography variant="subtitle1" component="p">
           From books to apps, use these resources to assist you in your journey
         </Typography>
-        <a href={products ? products[index].link : ""}>
+        <a
+          href={products ? products[index].link : ""}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <Grid container className={classes.featured}>
             <Grid item xs={12} md={5} className={classes.leftSide}>
               <Fade duration={200} key={index}>
