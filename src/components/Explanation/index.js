@@ -1,10 +1,26 @@
 import React from "react";
 import PropTypes from "prop-types";
+import ReactMarkdown from "react-markdown";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography, Grid } from "@material-ui/core";
 
 const Explanation = ({ explanation: { text, image } }) => {
   const classes = useStyles();
+
+  const preparedText = () => {
+    return (
+      <ReactMarkdown
+        source={text}
+        renderers={{
+          paragraph: (props) => <Typography {...props} variant="body1" />,
+          text: "span",
+          link: (props) => (
+            <a target="_blank" rel="noopener noreferrer" {...props} />
+          ),
+        }}
+      />
+    );
+  };
 
   return (
     <Container maxWidth="lg">
@@ -15,9 +31,7 @@ const Explanation = ({ explanation: { text, image } }) => {
         alignItems="center"
       >
         <Grid item xs={12} md={8}>
-          <Typography variant="body1" align="center">
-            {text}
-          </Typography>
+          {preparedText()}
         </Grid>
         <Grid item xs={12} md={4} className={classes.imgContainer}>
           <img src={image} className={classes.image} />

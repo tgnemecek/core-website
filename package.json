@@ -41,6 +41,7 @@
     "react-ga": "^3.1.2",
     "react-helmet": "^6.0.0",
     "react-lines-ellipsis": "^0.14.1",
+    "react-markdown": "^4.3.1",
     "react-material-ui-carousel": "^1.6.0",
     "react-responsive-carousel": "^3.2.9",
     "react-reveal": "^1.2.2",
