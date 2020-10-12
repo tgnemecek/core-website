@@ -4,7 +4,6 @@ import { Container, Typography, Grid } from "@material-ui/core";
 import Fade from "react-reveal/Fade";
 import YouTube from "react-youtube";
 import Section from "components/Section";
-import { Link } from "gatsby";
 import Gallery from "components/Gallery";
 import { getVideoId } from "src/util";
 
@@ -19,7 +18,7 @@ const Videos = (props) => {
         const videoId = getVideoId(link);
         return {
           videoId,
-          image: `http://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`,
+          image: `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`,
           link,
           title,
         };
