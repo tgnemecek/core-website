@@ -24,9 +24,12 @@ export const shuffleArray = (inputData) => {
 };
 
 export const getVideoId = (link) => {
-  const videoIdIndex = link.indexOf("?v=") + 3;
-  const videoId = link.slice(videoIdIndex);
-  return videoId;
+  let videoIdIndex = link.indexOf("?v=");
+  if (videoIdIndex > -1) {
+    return link.slice(videoIdIndex + 3);
+  }
+  videoIdIndex = link.indexOf(".be/");
+  return link.slice(videoIdIndex + 4);
 };
 
 export const getContactEmail = () => {
