@@ -15,7 +15,7 @@ explanation:
     continue learning. LET US HELP YOU meet these challenges with The Balancing
     Act's proven tools. 
 
-    FOR FREE: 1) Report on your greatest stress-management strength & weakness; 2) Special Learning report; 3) instructional video. 
+    FOR FREE: 1) Assessment of your greatest stress-management strength & weakness; 2) Special Learning report; 3) instructional video. 
 
     FOR MORE INFO: Contact us via message link below--OR take a Premium Profile to get a full report on your personal strengths and weaknesses, attend our special seminars for adults in transition, or sign up for our life-changing implementation program. 
 
