@@ -9,16 +9,19 @@ hero:
 explanation:
   text: >-
     TEACHERS, STUDENTS and PARENTS: Use The Balancing Act's proven tools to meet
-    the extraordinary challenges of this unbalanced, topsy-turvy world where
-    Teachers have become front-line workers, Parents have become at-home
-    teachers, and Students are struggling just to continue learning. 
+    the extraordinary challenges of this topsy-turvy world where Teachers have
+    become front-line workers, Parents have become at-home teachers, and
+    Students are struggling to continue learning. 
 
 
-    FOR FREE: 1) Assessment of your greatest stress-management strength & weakness; 2) Special Learning report; 3) instructional video. 
+    FOR FREE: 1) Assessment of your greatest stress-management strength & weakness; 2) Special Learning report; 3) instructional video.  
+
 
     FOR MORE INFO: Contact us via message link below--OR take a Premium Profile to get a full report on your personal strengths and weaknesses...attend our special seminars for adults in transition...or sign up for our life-changing implementation program. 
 
-    CONTACT US to explore how to become a CERTIFIED TEACHER who enriches your students with The Compass Course and other Core Learning programs.
+
+
+    CONTACT US to become a CERTIFIED TEACHER who enriches your students with The Compass Course and other Core Learning programs.
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600804117/abdelkader-ft-CcZzQcYGYC4-unsplash_jvaahu.jpg
 benefits: >-
   
