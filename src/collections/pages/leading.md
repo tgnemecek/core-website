@@ -8,14 +8,17 @@ hero:
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596493058/pexels-pixabay-161154_uftaqi.jpg
 explanation:
   text: >-
-    Why face leadership challenges alone? PARTNER with our experts to shed new
-    light on old problems, rapidly make difficult decisions, engage your whole
-    team to create lasting change and optimal results.  
+    Why face leadership challenges alone? PARTNER with experts to shed new light
+    on old problems, make strong decisions, engage teams to create lasting
+    change & optimal results.  
 
 
-    FOR FREE: 1) A report on your own greatest leadership strength & liability; 2) Leader Compass report; 3) Instructional videos. 
+    FOR FREE: 1) A report on your own greatest leadership strength & liability; 2) Leader Compass report; 3) Instructional videos.  
 
-    FOR MORE INFO: Contact us via message link...take a Premium Profile for a full report on your leader strengths and weaknesses...sign up for life-changing strategic trainings...explore how our DATA-DRIVEN and AGILE processes can create sustainable change in your company for a great ROI. 
+
+    FOR MORE INFO: Contact us via Message link...take Premium Profile for a full report on your leader strengths and weaknesses...sign up for life-changing strategic trainings...explore how our DATA-DRIVEN and AGILE processes can create sustainable change for a great ROI. 
+
+
 
     FOR EXECUTIVE COACHES or ORGANIZATIONAL CONSULTANTS: We can certify you to use The Balancing Act's powerful processes, programs and profiles for leaders, teams and organizations.
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600812431/eean-chen-5hz5hpjFIro-unsplash_aie6fn.jpg
