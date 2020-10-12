@@ -13,7 +13,7 @@ explanation:
     remove obstacles in your way. 
 
 
-    FREE: 1) Individualized report of your greatest strength and liability for transitions; 2) Career Compass Report; 3) Instructional videos.
+    FOR FREE: 1) Individualized report of your greatest strength and liability for transitions; 2) Career Compass Report; 3) Instructional videos.
 
 
     LEARN MORE: Send questions via the message link below--OR take a Premium Profile for a comprehensive report about your own work or life transition strengths & weaknesses--and how to improve them. 
@@ -22,7 +22,7 @@ explanation:
     MOVE FAST FORWARD: Attend one of our excellent seminars...sign up for life-changing implementation program...OR click message link to explore how INDIVIDUALIZED COACHING could change the course of your life and work, now and forever. 
 
 
-    If you are a CAREER OR LIFE COACH, we can certify you to enrich your clients with The Balancing Act's processes, programs and profiles. [LINK HERE](https://www.google.com)
+    FOR CAREER OR LIFE COACHES: We can certify you to enrich your clients with The Balancing Act's processes, programs and profiles. [LINK HERE](https://www.google.com)
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600816113/Coaching_cropped_ibup02.jpg
 benefits: >-
   <ul>
