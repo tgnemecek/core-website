@@ -136,17 +136,16 @@ members:
       jobs.  Currently she teaches high school science in Barcelona, Spain and
       serves as a Teacher Consultant for a fully online US-based virtual
       school.  Dorothy's experience as a science educator and wildlife ecologist
-      includes teaching at the university through high school level, with
-      student populations that range from gifted to at-risk. Dorothy brings to
-      the CORE team her considerable expertise as a Teacher of Teachers and an
-      online educator; this includes teaching virtual courses since 2004,
-      designing the curriculum for graduate level science teacher courses,
-      teaching professional development for science educators in 35 school
-      districts, and serving as a Senior Online Advisor for the National Science
-      Teaching Association.  Her big sister, Sharon, is the creative force
-      behind CORE Coaching & Consulting -- and Dorothy is honored to be part of
-      this amazing team because she believes The Balancing Act holds great
-      promise to improve educational culture.
+      includes teaching university through high school, with student populations
+      that range from gifted to at-risk. Dorothy brings to the CORE team her
+      expertise as a Teacher of Teachers and an online educator; this includes
+      teaching virtual courses since 2004, designing the curriculum for graduate
+      science teacher courses, teaching professional development for science
+      educators in 35 school districts, and serving as a Senior Online Advisor
+      for the National Science Teaching Association.  Her big sister, Sharon, is
+      the creative force behind CORE Coaching & Consulting--and Dorothy is
+      honored to be part of this amazing team because she believes The Balancing
+      Act holds great promise to improve educational culture.
     linkedin: https://www.linkedin.com/in/dorothy-ginnett/
     video: video will go here
   - name: Auke van Keulen
@@ -168,4 +167,19 @@ members:
       He is (co) author of the booklet "Happy at Work" and gives interactive,
       in-depth workshops on Leadership and Organizations in Balance.
     linkedin: https://www.linkedin.com/in/auke-van-keulen-a810516/
+  - name: Randall Reade
+    role: Advisor for TBA Entrepreneurs
+    bio: >
+      Randall Reade co-founded The Washington DC ArchAngels (WDCA), a leading
+      angel investment group in the US.  Beginning in 2011, WDCA has reviewed
+      thousands of early stage companies and has presented over 800 to its
+      investors.  Mr. Reade has developed a course load of angel
+      investment  entrepreneur workshops.  He has developed a network of top
+      investors from all of the US and the many countries, most recently Poland
+      and China. 
+
+      Mr. Reade is a founder &/or director of a dozen non profit arts organizations, and has managed many of these from startup to maturity.  For several years he was the Chair of the International Committee for the Northern Virginia Technology Council, the largest tech council in the US.  He graduated from Case Western Reserve University School of Law in 1987.
+    linkedin: https://www.linkedin.com/in/randall-reade-1770035/
+    video: video will go here
+    photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596506930/services-business_l0t54c.jpg
 ---
