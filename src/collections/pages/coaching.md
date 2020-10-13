@@ -13,7 +13,7 @@ explanation:
     remove obstacles in your way. 
 
 
-    FOR FREE: 1) Individualized report of your greatest strength and liability for transitions; 2) Career Compass Report; 3) Instructional videos.
+    FOR FREE: 1) [Individualized assessment](http://profiles.thecoreporation.com/sample/welcome) of your greatest strength and liability for transitions; 2) Career Compass Report; 3) Instructional videos.
 
 
     LEARN MORE: Send questions via the message link below--OR take a Premium Profile for a comprehensive report about your own work or life transition strengths & weaknesses--and how to improve them. 
