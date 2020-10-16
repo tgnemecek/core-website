@@ -13,7 +13,7 @@ explanation:
     engage teams to create lasting change & optimal results.  
 
 
-    FOR FREE: 1) An assessment of your own major strength & liability; 2) Leader Compass report; 3) Instructional videos.  
+    FOR FREE: 1) [Assessment](http://profiles.thecoreporation.com/sample/welcome) of your own major strength & liability; 2) Leader Compass report; 3) Instructional videos.  
 
 
     FOR MORE INFO: Contact us via Message link...take Premium Profile for a full report on your leader strengths and weaknesses...sign up for life-changing strategic trainings...explore how our DATA-DRIVEN and AGILE processes can create sustainable change for a great ROI. 
