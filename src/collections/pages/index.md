@@ -133,4 +133,6 @@ videos:
     link: https://www.youtube.com/watch?v=PVwxrMku-xY
   - title: "Experience the Elements: Structure"
     link: https://www.youtube.com/watch?v=-UwqzjoubDA
+  - link: https://youtu.be/zVmDGM24baM
+    title: Introducing Sharon Seivert & Core Coaching and Consulting
 ---
