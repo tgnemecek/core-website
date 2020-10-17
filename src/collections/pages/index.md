@@ -115,16 +115,16 @@ videos:
     title: Breakout Career Speech
   - title: Organizational Change (Brazil Banks)
     link: https://www.youtube.com/watch?v=XQdlMuzwBAE
-  - link: https://www.youtube.com/watch?v=I3LmXgYoRLY
-    title: "Intro to the SOS: Switch Off Stress App"
-  - link: https://www.youtube.com/watch?v=52Iv5hdqDxw
-    title: Intro to Career Coaching Program (ENG & SPA)
   - title: "Eva: Transformative"
     link: https://youtu.be/DIWW0Ln6FvA
+  - link: https://www.youtube.com/watch?v=52Iv5hdqDxw
+    title: Intro to Career Coaching Program (ENG & SPA)
   - link: https://youtu.be/jMqxETd1Y8w
     title: "Noemi: I changed everything (SPA & ENG)"
   - link: https://youtu.be/zN_54BRtEYY
     title: "Juame: Very practical (SPA & ENG)"
+  - link: https://www.youtube.com/watch?v=I3LmXgYoRLY
+    title: "Intro to the SOS: Switch Off Stress App"
   - link: https://www.youtube.com/watch?v=_QVfyj94x5A
     title: "Experience the Elements: CORE"
   - title: "Experience the Elements: Vision"
