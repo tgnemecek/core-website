@@ -107,12 +107,14 @@ products:
       more heroic despite the challenging times in which we live.
     link: https://www.amazon.com/Working-Your-Core-Sharon-Seivert-ebook/dp/B00J4BUQ2S/ref=sr_1_1?dchild=1&keywords=Working+from+Your+Core+seivert&qid=1600888309&s=books&sr=1-1
 videos:
-  - title: Organizational Change (Brazil Banks)
-    link: https://www.youtube.com/watch?v=XQdlMuzwBAE
+  - link: https://www.youtube.com/watch?v=zVmDGM24baM
+    title: Introducing Sharon Seivert & Core Coaching and Consulting
   - link: https://www.youtube.com/watch?v=Drg9JUYrrrA
     title: "Xavi Nova: The Balancing Act changed my life and work"
   - link: https://www.youtube.com/watch?v=df2uZ3kqZt8
     title: Breakout Career Speech
+  - title: Organizational Change (Brazil Banks)
+    link: https://www.youtube.com/watch?v=XQdlMuzwBAE
   - link: https://www.youtube.com/watch?v=I3LmXgYoRLY
     title: "Intro to the SOS: Switch Off Stress App"
   - link: https://www.youtube.com/watch?v=52Iv5hdqDxw
@@ -133,6 +135,4 @@ videos:
     link: https://www.youtube.com/watch?v=PVwxrMku-xY
   - title: "Experience the Elements: Structure"
     link: https://www.youtube.com/watch?v=-UwqzjoubDA
-  - link: https://youtu.be/zVmDGM24baM
-    title: Introducing Sharon Seivert & Core Coaching and Consulting
 ---
