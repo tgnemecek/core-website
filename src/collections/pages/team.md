@@ -18,8 +18,8 @@ members:
       while not coaching leaders, working with global colleagues, or writing new
       books; her latest ebooks are "Prospering: 6 Steps to Great Wealth" and  "6
       Steps to Leading Your Life and Work (from the Inside Out)".'
-    linkedin: https://www.youtube.com/watch?v=zVmDGM24baM
-    video: https://www.youtube.com/watch?v=52Iv5hdqDxw
+    linkedin: https://www.linkedin.com/in/sharonseivert/
+    video: https://www.youtube.com/watch?v=zVmDGM24baM
   - name: Rafael Medina
     role: Manager, Latin America
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1599228983/RafaCOREpic_cropped2_dtegib.jpg
