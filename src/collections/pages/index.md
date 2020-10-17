@@ -111,14 +111,14 @@ videos:
     title: Introducing Sharon Seivert & Core Coaching and Consulting
   - link: https://www.youtube.com/watch?v=Drg9JUYrrrA
     title: "Xavi Nova: The Balancing Act changed my life and work"
+  - link: https://www.youtube.com/watch?v=52Iv5hdqDxw
+    title: Intro to Career Coaching Program (ENG & SPA)
+  - title: "Eva: Transformative"
+    link: https://youtu.be/DIWW0Ln6FvA
   - link: https://www.youtube.com/watch?v=df2uZ3kqZt8
     title: Breakout Career Speech
   - title: Organizational Change (Brazil Banks)
     link: https://www.youtube.com/watch?v=XQdlMuzwBAE
-  - title: "Eva: Transformative"
-    link: https://youtu.be/DIWW0Ln6FvA
-  - link: https://www.youtube.com/watch?v=52Iv5hdqDxw
-    title: Intro to Career Coaching Program (ENG & SPA)
   - link: https://youtu.be/jMqxETd1Y8w
     title: "Noemi: I changed everything (SPA & ENG)"
   - link: https://youtu.be/zN_54BRtEYY
