@@ -8,18 +8,21 @@ hero:
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596493058/pexels-pixabay-161154_uftaqi.jpg
 explanation:
   text: >-
-    Why face leadership challenges alone? PARTNER with our experts to shed new
-    light on old problems with powerful diagnostic tools, make strong decisions,
-    engage teams to create lasting change & optimal results.  
+    Why face your leadership challenges alone? PARTNER with our Holistic
+    Leadership experts to shed new light on old problems, gain diagnostic tools
+    that reveal where you (or your organization) are in-balance versus
+    out-of-balance, and make strong, systemic decisions for lasting change and
+    optimal results that will ripple throughout your whole life, relationships
+    and work.  
 
 
     FOR FREE: 1) [Assessment](http://profiles.thecoreporation.com/sample/welcome) of your own major strength & liability; 2) Leader Compass report; 3) Instructional videos.  
 
 
-    FOR MORE INFO: Contact us via Message link...take Premium Profile for a full report on your leader strengths and weaknesses...sign up for life-changing strategic trainings...explore how our DATA-DRIVEN and AGILE processes can create sustainable change for a great ROI. 
+    FOR MORE INFO: Contact us via Message link...take Premium Profile for a full report on your holistic leadership strengths and weaknesses...sign up for life-changing strategic trainings...explore how our data-driven and agile processes can create sustainable change for a great ROI. 
 
 
-    FOR EXECUTIVE COACHES or ORGANIZATIONAL CONSULTANTS: We can certify you to use The Balancing Act's powerful processes, programs, diagnostic tools and profiles for leaders, teams and organizations.
+    FOR EXECUTIVE COACHES & BUSINESS CONSULTANTS: We can certify you to use The Balancing Act's powerful holistic processes, programs, diagnostic tools and profiles for leaders, teams and organizations.
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600812431/eean-chen-5hz5hpjFIro-unsplash_aie6fn.jpg
 benefits: >-
   <ul>
