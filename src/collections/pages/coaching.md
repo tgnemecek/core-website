@@ -8,9 +8,12 @@ hero:
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596493058/pexels-pixabay-161154_uftaqi.jpg
 explanation:
   text: >-
-    Change your life and work for good! Let us be your EXPERT PARTNER to guide
-    you quickly through difficult transitions and give you real-life feedback
-    and pragmatic tools to remove obstacles in your way. 
+    What do you want to change about your life and work? How can you become the
+    great person you've always wanted to be? Let us serve as your EXPERT
+    PARTNER--a knowledgable guide on this journey to leading the best life and
+    work of which you're capable. We can support you through difficult
+    transitions and give you real-life feedback and the pragmatic tools you'll
+    need to remove obstacles in your way. 
 
 
     FOR FREE: 1) [Individualized assessment](http://profiles.thecoreporation.com/sample/welcome) of your greatest strength and liability for transitions; 2) Career Compass Report; 3) Instructional videos.
@@ -22,7 +25,7 @@ explanation:
     MOVE FAST FORWARD: Attend one of our excellent seminars...sign up for life-changing implementation program...OR click message link to explore how one-on-one CORE Coaching could change the course of your life and work, now and forever. 
 
 
-    FOR CAREER OR LIFE COACHES: We can certify you to enrich your clients with The Balancing Act's processes, programs and profiles.
+    FOR CAREER & LIFE COACHES: We can certify you to enrich your clients with The Balancing Act's holistic processes, programs and profiles.
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600816113/Coaching_cropped_ibup02.jpg
 benefits: >-
   <ul>
