@@ -10,10 +10,10 @@ explanation:
   text: >-
     What do you want to change about your life and work? How can you become the
     great person you've always wanted to be? Let us serve as your EXPERT
-    PARTNER--a knowledgable guide on this journey to leading the best life and
-    work of which you're capable. We can support you through difficult
-    transitions and give you real-life feedback and the pragmatic tools you'll
-    need to remove obstacles in your way. 
+    PARTNER--a knowledgable guide on this journey to leading your best life and
+    work. We can support you through difficult transitions and give you
+    real-life feedback and the pragmatic tools you'll need to remove obstacles
+    in your way. 
 
 
     FOR FREE: 1) [Individualized assessment](http://profiles.thecoreporation.com/sample/welcome) of your greatest strength and liability for transitions; 2) Career Compass Report; 3) Instructional videos.
