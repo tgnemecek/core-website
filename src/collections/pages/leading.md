@@ -8,17 +8,17 @@ hero:
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596493058/pexels-pixabay-161154_uftaqi.jpg
 explanation:
   text: >-
-    Why face leadership challenges alone? PARTNER with our Holistic Leadership
-    experts to shed new light on old problems, gain diagnostic tools that show
+    WHY face leadership challenges alone? PARTNER with our Holistic Leadership
+    experts to shed new light on old problems, get diagnostic tools that show
     where you (or your business) are in-balance versus out-of-balance, and make
-    strong, systemic decisions for optimal results that will ripple throughout
+    stronger, systemic decisions for optimal results that will ripple throughout
     your whole life, relationships, work & organization.  
 
 
     FOR FREE: 1) [Assessment](http://profiles.thecoreporation.com/sample/welcome) of your own major strength & liability; 2) Leader Compass report; 3) Instructional videos.  
 
 
-    FOR MORE INFO: Contact us via Message link...take Premium Profile for a full report on your holistic leadership strengths and weaknesses...sign up for life-changing strategic trainings...explore how our data-driven and agile processes can create sustainable change for a great ROI. 
+    FYI: Contact us via Message link...take Premium Profile for a full report on your holistic leadership strengths and weaknesses...sign up for life-changing strategic trainings...explore how our data-driven and agile processes can create sustainable change for a great ROI. 
 
 
     FOR EXECUTIVE COACHES & BUSINESS CONSULTANTS: We can certify you to use The Balancing Act's powerful processes, programs, diagnostic tools and profiles for leaders, teams and organizations.
