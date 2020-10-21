@@ -80,23 +80,19 @@ testimonials:
       with ease and humor, keeping them on track to deliver tangible results.
       She has a gift for quickly identifying exactly how leaders get in their
       own way AND helping them remove obstacles to success.
-    author: R. Reade
-    role: Senior VP, Washington DC Archangels"
+    author: Randall Reade
+    role: Senior VP, Washington DC Archangels
 products:
   - image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600890104/TBA_Kindlecover_cropped_irfmvt.jpg
     title: The Balancing Act
     description: >-
       The Balancing Act is the foundational work for all Core Coaching &
       Consulting programs, including Leading Your Life and Work. TBA describes
-      how you can implement a holistic, systemic, logical and pragmatic 6-step
-      process that will change your own life, work and relationships in ways you
-      want--and in doing so, help you positively impact the world around you. 
+      how you can change your own life, work and relationships in ways you want
+      by implementing this 6-step holistic, systemic, pragmatic process.
 
 
-      Since the original publication of The Balancing Act in 2001, the ideas contained in these pages have grown into a global movement. Seivert has built an international network of business and educational colleagues, plus developed a comprehensive series of pragmatic programs, online assessments, supportive interventions, and practical measurements of progress--all of which have contributed to significantly increasing the odds of success for individuals and companies in transition.
-
-
-      In these pages you will find the foundational body of work that led to this rich development of effective interventions for people from all walks of life, ranging from wealthy business owners and senior leaders to career changers to new entrepreneurs to beleaguered teachers, parents and at-risk youth. 
+      Since The Balancing Act was published in 2001, it has grown into a global movement of business and educational change agents who deploy its powerful programs, online assessments, and practical data-driven interventions to significantly increase the odds of success for agile companies, holistic leaders, and individuals from every walk of life who want to more powerfully lead their own lives and work. 
     link: https://www.amazon.com/Balancing-Act-Mastering-Elements-Relationships-ebook/dp/B07QGQG38H/ref=sr_1_1?dchild=1&keywords=the+balancing+act+seivert&qid=1600887520&s=books&sr=1-1
   - title: 6 Steps to Leading Your Life and Work (from the Inside Out)
     description: The Balancing Act process can ensure that you lead your life and
