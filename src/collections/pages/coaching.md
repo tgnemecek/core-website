@@ -19,10 +19,10 @@ explanation:
     FOR FREE: 1) [Assess](http://profiles.thecoreporation.com/sample/welcome) your greatest strength and liability for this transition; 2) Career Compass Report; 3) Instructional videos.
 
 
-    LEARN MORE: Take a Premium Profile for a comprehensive report about your strengths and weaknesses for making a work or life transition (and ways to improve them)....send questions via the message link below to explore how one-on-one CORE Coaching could change the course of your life and work, now and forever. 
+    LEARN MORE: Take a Premium Profile for a comprehensive report about your strengths and weaknesses for making a transition (and ways to improve them)....send questions via the message link to explore how one-on-one CORE Coaching could change the course of your life and work, now and forever. 
 
 
-    MOVE FAST FORWARD: Attend one of our excellent seminars (Productivity, Stress, Prospering, or the Leading Your Life and Work seminar or 3-month implementation program (descriptions on home page).
+    MOVE FAST FORWARD: Attend one of our excellent seminars (Productivity, Stress, Prospering, or the Leading Your Life and Work seminar or 3-month implementation program--descriptions on home page).
 
 
     FOR CAREER & LIFE COACHES: We can certify you to enrich your clients with The Balancing Act's holistic processes, programs and profiles.
