@@ -19,11 +19,11 @@ hero:
     </span>
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596493058/pexels-pixabay-161154_uftaqi.jpg
 about:
-  text: Core Coaching & Consulting (CCC) is an international group of change
-    agents who work from their Cores to create balance, well-being, and flow
-    that transforms individual lives and organizational systems. We use the
-    ancient system of the 5 elements as described in The Balancing Act to create
-    and deliver powerful programs such as Leading Your Life and Work.
+  text: Core Coaching & Consulting (CCC) is a global group of change agents who
+    work from their Cores to create balance, well-being, and flow that
+    transforms individual lives and organizational systems. We use the ancient
+    system of the 5 elements & Synergy as described in The Balancing Act to
+    deliver powerful holistic programs such as Leading Your Life and Work.
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1595111411/logo_feamvb.png
 services:
   - title: CORE Leading
@@ -72,10 +72,21 @@ testimonials:
 products:
   - image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600890104/TBA_Kindlecover_cropped_irfmvt.jpg
     title: The Balancing Act
-    description: "The Balancing Act is the foundational work for all Core Coaching &
+    description: >-
+      The Balancing Act is the foundational work for all Core Coaching &
       Consulting programs, including Leading Your Life and Work. TBA describes
-      how you can implement a systemic, logical and pragmatic 6-point approach
-      to transform your own life and positively impact the world around you. "
+      how you can implement a systemic, logical and pragmatic 6-step approach to
+      transform your own life, work and relationships--and in so doing,
+      positively impact the world around you. 
+
+
+      Since the original publication of The Balancing Act in 2001, the ideas contained in these pages have grown into a global movement. Seivert has developed an international network of business and educational colleagues, plus a comprehensive series of pragmatic programs, online assessments, supportive interventions, and detailed measurements of progress -- all of which have contributed to significantly increasing the odds of success for individuals and companies in transition.
+
+
+      In these pages you will find the foundational body of work that led to this rich development of effective interventions for people from all walks of life--and from all over the world--ranging from wealthy business owners and senior leaders to career changers and new entrepreneurs to beleaguered teachers and at-risk youth. 
+
+
+      See below what some of them have said about how The Balancing Act has benefitted them:"Over the past decade, I have used the Core Leadership program to help hundreds of leaders positively transform themselves, and therefore their teams, companies (and families.) The ancient philosophy of The Balancing Act is the most systemic, powerful and comprehensive leadership development process I know. And it leads to miracles; they do happen! " - Auke van Keulen, Consultant, Exec Coach, DeCoreporation, The Netherlands"Sharon has a remarkable ability to manage difficult entrepreneurs with ease and humor, keeping them on track to deliver tangible results. She has a gift for quickly identifying exactly how leaders get in their own way AND helping them remove obstacles to success." - R. Reade, SVP, Washington DC Archangels"During a crossroads in my career, Sharon coached me to overcome obstacles and doubts, and then supported me in making a bold decision that I've never regretted. What's more, Sharon has achieved similar amazing results with patients I've since referred to her." - - T. Moriyama, M.D., Psychiatrist; Instituto Bairral Hospital "Sharon is so warm and welcoming that I have seen people from every walk of life enthusiastically accept and love her. Students treat her like a rock star, teachers like a expert colleague, and parents like a trusted advisor. - C. Beira, Founder, Espaço HillasThe Balancing Act author, Sharon Seivert, is President of CORE Coaching & Consulting, an international consortium of business consultants, coaches, and teachers who use The Balancing Act programs to foster greater balance, productivity, health and happiness in clients' lives, work and relationships. Sharon lives and works in Cambridge, MA, US. For more information about Sharon, The Balancing Act, and the many TBA programs available to you, go to: www.CoreCoachingConssulting.com
     link: https://www.amazon.com/Balancing-Act-Mastering-Elements-Relationships-ebook/dp/B07QGQG38H/ref=sr_1_1?dchild=1&keywords=the+balancing+act+seivert&qid=1600887520&s=books&sr=1-1
   - title: 6 Steps to Leading Your Life and Work (from the Inside Out)
     description: The Balancing Act process can ensure that you lead your life and
