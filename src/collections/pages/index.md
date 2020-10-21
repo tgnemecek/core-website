@@ -87,9 +87,9 @@ products:
     title: The Balancing Act
     description: >-
       The Balancing Act is the foundational work for all Core Coaching &
-      Consulting programs, including Leading Your Life and Work. TBA describes
-      how you can change your own life, work and relationships in ways you want
-      by implementing this 6-step holistic, systemic, pragmatic process.
+      Consulting programs, including Leading Your Life and Work. TBA shows you
+      how to change your own life, work and relationships by implementing its
+      6-step holistic, systemic, pragmatic process.
 
 
       Since The Balancing Act was published in 2001, it has grown into a global movement of business and educational change agents who deploy its powerful programs, online assessments, and practical data-driven interventions to significantly increase the odds of success for agile companies, holistic leaders, and individuals from every walk of life who want to more powerfully lead their own lives and work. 
