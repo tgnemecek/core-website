@@ -93,7 +93,7 @@ products:
       6-step holistic, systemic process.
 
 
-      Since The Balancing Act was published in 2001, it has grown into a global movement of business and educational change agents who deploy its powerful pragmatic programs, online assessments, and practical data-driven interventions to significantly increase the odds of success for companies who want to become more agile, leaders who want to be more effective, and individuals who want to lead happier and more meaningful lives and work. 
+      Since The Balancing Act was published in 2001, it has grown into a global movement of business and educational change agents who deploy its powerful pragmatic programs, online assessments, and practical data-driven interventions to significantly increase the odds of success for companies who want to become more agile, leaders who want to be more effective, and individuals who want to lead happier lives and have more meaningful work. 
     link: https://www.amazon.com/Balancing-Act-Mastering-Elements-Relationships-ebook/dp/B07QGQG38H/ref=sr_1_1?dchild=1&keywords=the+balancing+act+seivert&qid=1600887520&s=books&sr=1-1
   - title: 6 Steps to Leading Your Life and Work (from the Inside Out)
     description: The Balancing Act process can ensure that you lead your life and
