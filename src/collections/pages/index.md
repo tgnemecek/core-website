@@ -20,10 +20,11 @@ hero:
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596493058/pexels-pixabay-161154_uftaqi.jpg
 about:
   text: Core Coaching & Consulting (CCC) is a global group of change agents who
-    work from their Cores to create balance, well-being, and flow that
-    transforms individual lives and organizational systems. We use the ancient
-    system of the 5 elements & Synergy as described in The Balancing Act to
-    deliver powerful holistic programs such as Leading Your Life and Work.
+    use the holistic system of The Balancing Act to create balance, well-being,
+    and flow in individual lives and organizations. CCC supports lasting
+    transformation from the CORE, from the inside out, with its powerful
+    pragmatic programs that are based on The Balancing Act's ancient system of
+    the 5 elements & Synergy.
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1595111411/logo_feamvb.png
 services:
   - title: CORE Leading
