@@ -20,11 +20,11 @@ hero:
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596493058/pexels-pixabay-161154_uftaqi.jpg
 about:
   text: Core Coaching & Consulting (CCC) is a global group of change agents who
-    use the holistic system of The Balancing Act to create balance, well-being,
-    and flow in individual lives and organizations. CCC supports lasting
-    transformation from the CORE, from the inside out, with its powerful
-    pragmatic programs that are rooted in science, data, and The Balancing Act's
-    ancient healing method of the 5 elements & Synergy.
+    use the holistic system of The Balancing Act to create Balance, Well-being,
+    and Flow in individual lives and organizations. CCC creates lasting
+    transformation from the CORE (from the inside out) with powerful pragmatic
+    programs that are rooted in science, data, and TBA's ancient healing method
+    of the 5 elements & Synergy.
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1595111411/logo_feamvb.png
 services:
   - title: CORE Leading
@@ -90,10 +90,10 @@ products:
       The Balancing Act is the foundational work for all Core Coaching &
       Consulting programs, including Leading Your Life and Work. TBA shows you
       how to change your own life, work and relationships by implementing its
-      6-step holistic, systemic, pragmatic process.
+      6-step holistic, systemic process.
 
 
-      Since The Balancing Act was published in 2001, it has grown into a global movement of business and educational change agents who deploy its powerful programs, online assessments, and practical data-driven interventions to significantly increase the odds of success for agile companies, holistic leaders, and individuals from every walk of life who want to more powerfully lead their own lives and work. 
+      Since The Balancing Act was published in 2001, it has grown into a global movement of business and educational change agents who deploy its powerful pragmatic programs, online assessments, and practical data-driven interventions to significantly increase the odds of success for companies who want to become more agile, leaders who want to be more effective, and individuals who want to lead happier and more meaningful lives and work. 
     link: https://www.amazon.com/Balancing-Act-Mastering-Elements-Relationships-ebook/dp/B07QGQG38H/ref=sr_1_1?dchild=1&keywords=the+balancing+act+seivert&qid=1600887520&s=books&sr=1-1
   - title: 6 Steps to Leading Your Life and Work (from the Inside Out)
     description: The Balancing Act process can ensure that you lead your life and
