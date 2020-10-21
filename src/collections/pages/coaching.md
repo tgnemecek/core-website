@@ -8,21 +8,21 @@ hero:
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596493058/pexels-pixabay-161154_uftaqi.jpg
 explanation:
   text: >-
-    What do you want to change about your life and work? How can you become the
-    great person you've always wanted to be? Make us your EXPERT PARTNER--a
-    knowledgable guide on this journey to leading your best life and work. We
-    will support you through difficult transitions and give you real-life
-    feedback and the pragmatic tools you'll need to remove obstacles in your
-    way. 
+    WHAT do you want to change about your life and work? WHY (what are the
+    problems)? WHEN will you decide to act? HOW can you become the great person
+    you've always wanted to be! 
 
 
-    FOR FREE: 1) [Individualized assessment](http://profiles.thecoreporation.com/sample/welcome) of your greatest strength and liability for transitions; 2) Career Compass Report; 3) Instructional videos.
+    LET US HELP! Make us your expert partner who guides you through the difficult transition ahead, removing obstacles in your way so you can transform yourself into a powerful holistic leader in every part of your life, work, and relationships. 
 
 
-    LEARN MORE: Send questions via the message link below--OR take a Premium Profile for a comprehensive report about your own work or life transition strengths & weaknesses--and how to improve them. 
+    FOR FREE: 1) [Assess](http://profiles.thecoreporation.com/sample/welcome) your greatest strength and liability for this transition; 2) Career Compass Report; 3) Instructional videos.
 
 
-    MOVE FAST FORWARD: Attend one of our excellent seminars...sign up for life-changing implementation program...OR click message link to explore how one-on-one CORE Coaching could change the course of your life and work, now and forever. 
+    LEARN MORE: Take a Premium Profile for a comprehensive report about your strengths and weaknesses for making a work or life transition (and ways to improve them)....send questions via the message link below to explore how one-on-one CORE Coaching could change the course of your life and work, now and forever. 
+
+
+    MOVE FAST FORWARD: Attend one of our excellent seminars (Productivity, Stress, Prospering, or the Leading Your Life and Work seminar or 3-month implementation program (descriptions on home page).
 
 
     FOR CAREER & LIFE COACHES: We can certify you to enrich your clients with The Balancing Act's holistic processes, programs and profiles.
