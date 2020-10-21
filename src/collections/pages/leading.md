@@ -10,15 +10,15 @@ explanation:
   text: >-
     WHY face leadership challenges alone? PARTNER with our Holistic Leadership
     experts to shed new light on old problems, get diagnostic tools that show
-    where you (or your business) are in-balance versus out-of-balance, and make
-    stronger, systemic decisions for optimal results that will ripple throughout
-    your whole life, relationships, work & organization.  
+    where you (your teams or company) are in-balance versus out-of-balance, and
+    make stronger, systemic decisions for optimal results that will ripple
+    throughout your whole life, relationships, work & organization.  
 
 
-    FOR FREE: 1) [Assessment](http://profiles.thecoreporation.com/sample/welcome) of your own major strength & liability; 2) Leader Compass report; 3) Instructional videos.  
+    FOR FREE: 1) [Assess](http://profiles.thecoreporation.com/sample/welcome) your major strength & liability; 2) Leader Compass report; 3) Instructional videos.  
 
 
-    FYI: Contact us via Message link...take Premium Profile for a full report on your holistic leadership strengths and weaknesses...sign up for life-changing strategic trainings...explore how our data-driven and agile processes can create sustainable change for a great ROI. 
+    FYI: Take a Premium Profile for a full report on your holistic leadership strengths and weaknesses...OR contact us via Message link to explore how our data-driven, agile coaching can create a great ROI for you (become a powerful holistic leader) or your team & company (build them from the inside out). 
 
 
     FOR EXECUTIVE COACHES & BUSINESS CONSULTANTS: We can certify you to use The Balancing Act's powerful processes, programs, diagnostic tools and profiles for leaders, teams and organizations.
