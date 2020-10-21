@@ -23,8 +23,8 @@ about:
     use the holistic system of The Balancing Act to create balance, well-being,
     and flow in individual lives and organizations. CCC supports lasting
     transformation from the CORE, from the inside out, with its powerful
-    pragmatic programs that are based on The Balancing Act's ancient system of
-    the 5 elements & Synergy.
+    pragmatic programs that are rooted in data, science, and The Balancing Act's
+    ancient healing method of the 5 elements & Synergy.
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1595111411/logo_feamvb.png
 services:
   - title: CORE Leading
