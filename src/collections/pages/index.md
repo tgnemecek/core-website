@@ -108,7 +108,7 @@ products:
     link: https://www.amazon.com/Working-Your-Core-Sharon-Seivert-ebook/dp/B00J4BUQ2S/ref=sr_1_1?dchild=1&keywords=Working+from+Your+Core+seivert&qid=1600888309&s=books&sr=1-1
 videos:
   - link: https://www.youtube.com/watch?v=zVmDGM24baM
-    title: Introducing Sharon Seivert & Core Coaching and Consulting
+    title: Introducing Core Coaching & Consulting
   - link: https://www.youtube.com/watch?v=Drg9JUYrrrA
     title: "Xavi Nova: The Balancing Act changed my life and work"
   - link: https://www.youtube.com/watch?v=52Iv5hdqDxw
