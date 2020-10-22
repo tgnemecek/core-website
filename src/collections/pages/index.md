@@ -124,6 +124,22 @@ products:
       processes of CORE Coaching and Consulting by showing how we can become
       more heroic despite the challenging times in which we live.
     link: https://www.amazon.com/Working-Your-Core-Sharon-Seivert-ebook/dp/B00J4BUQ2S/ref=sr_1_1?dchild=1&keywords=Working+from+Your+Core+seivert&qid=1600888309&s=books&sr=1-1
+  - title: "SOS: Switch Off Stress App"
+    description: >
+      SOS: Switch Off Stress is a smart-phone app with 1 to 2-minute
+      stress-reduction techniques based on The Balancing Act system. 
+
+      It will quickly improve your health, sense of well-being, and strengthen your immune-system resistance. In this way you can become even stronger as you decide the daily specifics of how you want to lead your new life and work.
+
+      To Download the app:
+
+      •	APPLE: Go to Apple Store; Choose “LITE” (free) or “PRO” version. 
+
+      •	ANDROID: Go to Play Store; choose LITE or PRO versions of SOS. 
+
+      Start the SOS app by scoring which of 6 types of stress are causing you the most pain. Then you’ll get more points for that element whenever you return to relieve your worst stressor! With points you can keep track of your progress or play a friendly competitive game with friends, family and colleagues who are trying to reduce their stress. 
+    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1594943242/sos-app_kbhclp.jpg
+    link: https://apps.apple.com/jm/app/sos-switch-off-stress-lite/id1263283831
 videos:
   - link: https://www.youtube.com/watch?v=zVmDGM24baM
     title: Introducing Core Coaching & Consulting
