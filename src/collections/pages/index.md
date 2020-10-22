@@ -138,7 +138,7 @@ products:
       •	ANDROID: Go to Play Store; choose LITE or PRO versions of SOS. 
 
       Start the SOS app by scoring which of 6 types of stress are causing you the most pain. Then you’ll get more points for that element whenever you return to relieve your worst stressor! With points you can keep track of your progress or play a friendly competitive game with friends, family and colleagues who are trying to reduce their stress. 
-    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1594943242/sos-app_kbhclp.jpg
+    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1595801147/icon_hcpkac.jpg
     link: https://apps.apple.com/jm/app/sos-switch-off-stress-lite/id1263283831
 videos:
   - link: https://www.youtube.com/watch?v=zVmDGM24baM
