@@ -13,11 +13,11 @@ members:
       of "The Balancing Act", the foundational book that first outlined the
       6-point system CCC uses for all our work. As both a US and EU citizen,
       Sharon loves few things more than spending time with her international
-      family, friends, colleagues and clients. Sharon is pictured here in her
-      front yard on the North Shore of Boston where she enjoys spending her time
-      while not coaching leaders, working with global colleagues, or writing new
+      family, friends, colleagues and clients. She is pictured here in her front
+      yard on the North Shore of Boston where she enjoys spending her time while
+      not coaching leaders, working with global colleagues, or writing new
       books; her latest ebooks are "Prospering: 6 Steps to Great Wealth" and  "6
-      Steps to Leading Your Life and Work (from the Inside Out)".'
+      Steps to Leading Your Life and Work (from the Inside Out)". '
     linkedin: https://www.linkedin.com/in/sharonseivert/
     video: https://www.youtube.com/watch?v=zVmDGM24baM
   - name: Rafael Medina
