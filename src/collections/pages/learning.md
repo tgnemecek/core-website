@@ -9,15 +9,16 @@ hero:
 explanation:
   text: >-
     TEACHERS, STUDENTS and PARENTS: Use The Balancing Act's holistic, systemic
-    method and pragmatic tools to meet the extraordinary challenges of this
-    topsy-turvy world where Teachers have become front-line workers, Parents are
-    now at-home teachers, and Students are struggling to continue learning. 
+    learning methodology and pragmatic tools to meet the extraordinary
+    challenges of this topsy-turvy world where Teachers have become front-line
+    workers, Parents are now at-home teachers, and Students are struggling to
+    continue learning. 
 
 
-    FOR FREE: 1) [Assess ](http://profiles.thecoreporation.com/sample/welcome)your major stress-management strength & weakness; 2) Special Learning report; 3) instructional video.  
+    FOR FREE: 1) [Assess ](http://profiles.thecoreporation.com/sample/welcome)your major stress strength & weakness; 2) Special Learning report; 3) Videos.  
 
 
-    FYI: Contact us via message link below--OR take a Premium Profile to get a full report on your personal strengths and weaknesses...attend one of our special seminars for adults in transition...or sign up for our life-changing implementation program. 
+    FYI: Contact us via message link below--OR take a Premium Profile to get a full report on your strengths and weaknesses...attend one of our special seminars for adults in transition...or sign up for our life-changing implementation program. 
 
 
     CONTACT US via the message link to explore how you can become a CERTIFIED TEACHER who enriches your students with TBA programs such as The Compass Course and other Core Learning programs.
