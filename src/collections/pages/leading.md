@@ -15,10 +15,10 @@ explanation:
     throughout your life, relationships & organization.  
 
 
-    FOR FREE: 1) [Assess](http://profiles.thecoreporation.com/sample/welcome) your major strength & liability; 2) Leader Compass report; 3) Videos.  
+    FOR FREE: 1) [Assess](http://profiles.thecoreporation.com/sample/welcome) your major strength & liability; 2) Leader Compass report; 3) SOS: Switch Off Stress app; 4) Videos.  
 
 
-    FYI: Take a Premium Profile for a full report on your holistic leadership strengths and weaknesses...OR contact us via Message link to explore how our data-driven, agile coaching can create a great ROI by building your leadership capabilities, your team & your company from the inside out). 
+    FYI: Take a Premium Profile for a full report on your holistic leadership strengths and weaknesses...OR contact us via Message link to explore how our data-driven, agile coaching can create a great ROI by building your leadership capabilities, your team & your company from the inside out).  You can also check out our seminars on Productivity, Stress, Prospering, a Leading Your Life and Work seminar or the 3-month implementation program. See descriptions on home page.
 
 
     FOR EXECUTIVE COACHES & BUSINESS CONSULTANTS: We can certify you to use The Balancing Act's powerful processes, programs, diagnostic tools and profiles for leaders, teams and organizations.
