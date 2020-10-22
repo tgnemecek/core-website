@@ -8,21 +8,21 @@ hero:
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596493058/pexels-pixabay-161154_uftaqi.jpg
 explanation:
   text: >-
-    WHAT do you want to change about your life and work? WHY (what are the
-    problems)? WHEN will you decide to act? HOW can you become the great person
-    you've always wanted to be! 
+    WHY do you want to change your life and work? WHAT problems do you need to
+    solve? WHEN will you be able to act? HOW can you become the great person
+    you've always wanted to be?
 
 
-    LET US HELP! Make us your expert partner who guides you through the difficult transition ahead, removing obstacles in your way so you can transform yourself into a powerful holistic leader in every part of your life, work, and relationships. 
+    MAKE US YOUR PARTNER--an expert guide through difficult transitions, removing obstacles so you can transform yourself into a powerful holistic leader of every part of your life, work, and relationships. 
 
 
-    FOR FREE: 1) [Assess](http://profiles.thecoreporation.com/sample/welcome) your greatest strength and liability for this transition; 2) Career Compass Report; 3) Instructional videos.
+    FOR FREE: 1) [Assess](http://profiles.thecoreporation.com/sample/welcome) your greatest strength and liability; 2) Career Compass Report; 3) Videos.
 
 
-    LEARN MORE: Take a Premium Profile for a comprehensive report about your strengths and weaknesses for making a transition (and ways to improve them)....send questions via the message link to explore how one-on-one CORE Coaching could change the course of your life and work, now and forever. 
+    LEARN MORE: Take a Premium Profile for a comprehensive report about your strengths and weaknesses (plus specific ways to improve them)....send questions via the message link to explore how one-on-one CORE Coaching could change the course of your life and work, now and forever. 
 
 
-    MOVE FAST FORWARD: Attend one of our excellent seminars (Productivity, Stress, Prospering, or the Leading Your Life and Work seminar or 3-month implementation program--descriptions on home page).
+    MOVE FAST FORWARD: Attend one of our excellent seminars (Productivity, Stress, Prospering, a Leading Your Life and Work seminar or the 3-month implementation program). See descriptions on home page.
 
 
     FOR CAREER & LIFE COACHES: We can certify you to enrich your clients with The Balancing Act's holistic processes, programs and profiles.
