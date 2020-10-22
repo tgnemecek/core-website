@@ -18,7 +18,7 @@ explanation:
     FOR FREE: 1) [Assess ](http://profiles.thecoreporation.com/sample/welcome)your major stress strength & weakness; 2) Special Learning report; 3) SOS: Switch Off Stress App; 4) Videos.  
 
 
-    FYI: Contact us via message link below--OR take a Premium Profile to get a full report on your strengths and weaknesses...attend one of our special seminars for adults in transition...or sign up for our life-changing implementation program. 
+    FYI: Contact us via message link below--OR take a Premium Profile to get a full report on your personal strengths and weaknesses...Attend one of our excellent seminars (Productivity, Stress, Prospering, a Leading Your Life and Work seminar or the 3-month implementation program). See descriptions on home page.
 
 
     CONTACT US via the message link to explore how you can become a CERTIFIED TEACHER who enriches your students with TBA programs such as The Compass Course and other Core Learning programs.
