@@ -15,7 +15,7 @@ explanation:
     continue learning. 
 
 
-    FOR FREE: 1) [Assess ](http://profiles.thecoreporation.com/sample/welcome)your major stress strength & weakness; 2) Special Learning report; 3) Videos.  
+    FOR FREE: 1) [Assess ](http://profiles.thecoreporation.com/sample/welcome)your major stress strength & weakness; 2) Special Learning report; 3) SOS: Switch Off Stress App; 4) Videos.  
 
 
     FYI: Contact us via message link below--OR take a Premium Profile to get a full report on your strengths and weaknesses...attend one of our special seminars for adults in transition...or sign up for our life-changing implementation program. 
