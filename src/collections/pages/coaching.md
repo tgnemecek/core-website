@@ -16,7 +16,7 @@ explanation:
     MAKE US YOUR PARTNER--an expert guide through difficult transitions, removing obstacles so you can transform yourself into a powerful holistic leader of every part of your life, work, and relationships. 
 
 
-    FOR FREE: 1) [Assess](http://profiles.thecoreporation.com/sample/welcome) your greatest strength and liability; 2) Career Compass Report; 3) Videos.
+    FOR FREE: 1) [Assess](http://profiles.thecoreporation.com/sample/welcome) your greatest strength and liability; 2) Career Compass Report; 3) SOS: Switch Off Stress app; 4) Videos.
 
 
     LEARN MORE: Take a Premium Profile for a comprehensive report about your strengths and weaknesses (plus specific ways to improve them)....send questions via the message link to explore how one-on-one CORE Coaching could change the course of your life and work, now and forever. 
