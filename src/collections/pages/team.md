@@ -85,7 +85,7 @@ members:
     description: Customer Success Manager
     linkedin: https://www.linkedin.com/in/mercedes-bellavista-9825681a/
   - name: Bonnie Koch
-    photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600733167/CCC_Bonnie_cropped_mdqzsh.jpg
+    photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1603402483/Bonnie2_ojiu5j.jpg
     bio: "Bonnie Koch is a Certified CORE Coach, founding member of the CORE Team,
       and graduate of the Leading Your Life and Work program.  She leads our
       marketing and communications initiatives globally.  Bonnie also teaches
