@@ -18,7 +18,7 @@ explanation:
     FOR FREE: 1) [Assess](http://profiles.thecoreporation.com/sample/welcome) your major strength & liability; 2) Leader Compass report; 3) Videos.  
 
 
-    FYI: Take a Premium Profile for a full report on your holistic leadership strengths and weaknesses...OR contact us via Message link to explore how our data-driven, agile coaching can create a great ROI for you (to become a better leader) or your team & company (build them from the inside out). 
+    FYI: Take a Premium Profile for a full report on your holistic leadership strengths and weaknesses...OR contact us via Message link to explore how our data-driven, agile coaching can create a great ROI by building your leadership capabilities, your team & your company from the inside out). 
 
 
     FOR EXECUTIVE COACHES & BUSINESS CONSULTANTS: We can certify you to use The Balancing Act's powerful processes, programs, diagnostic tools and profiles for leaders, teams and organizations.
