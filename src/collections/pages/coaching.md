@@ -8,12 +8,11 @@ hero:
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596493058/pexels-pixabay-161154_uftaqi.jpg
 explanation:
   text: >-
-    WHY do you want to change your life or work? WHAT problems do you need to
-    solve? WHEN can you act? HOW can you become the great person you've always
-    wanted to be?
+    WHAT do you want to change about your life or work? WHY? WHEN can you act?
+    HOW can you become the great person you've always wanted to be?
 
 
-    GET AN EXPERT PARTNER to guide you through difficult transitions & remove obstacles so you can transform yourself into a powerful holistic leader of every part of your life, work, & relationships. 
+    GET AN EXPERT PARTNER to guide you through difficult transitions & remove obstacles so you can transform yourself into a powerful leader of every part of your life, work & relationships. 
 
 
     FOR FREE: 1) [Assess](http://profiles.thecoreporation.com/sample/welcome) your greatest strength and liability; 2) Career Compass Report; 3) SOS: Switch Off Stress app; 4) Instructional Videos.
