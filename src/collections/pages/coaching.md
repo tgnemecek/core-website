@@ -13,13 +13,13 @@ explanation:
     wanted to be?
 
 
-    MAKE US YOUR EXPERT PARTNER to guide you through difficult transitions, remove obstacles so you can transform yourself into a powerful holistic leader of every part of your life, work, and relationships. 
+    GET AN EXPERT PARTNER to guide you through difficult transitions & remove obstacles so you can transform yourself into a powerful holistic leader of every part of your life, work, & relationships. 
 
 
     FOR FREE: 1) [Assess](http://profiles.thecoreporation.com/sample/welcome) your greatest strength and liability; 2) Career Compass Report; 3) SOS: Switch Off Stress app; 4) Instructional Videos.
 
 
-    LEARN MORE: Take a Premium Profile for a comprehensive report on your strengths and weaknesses (plus specific ways to improve them).....  Check out our excellent programs (Productivity, Stress, Prospering, Leading Your Life and Work \[seminar or the 3-month implementation program])...OR send questions via the message link to explore how one-on-one CORE Coaching could change your life, work and relationships, now and forever
+    LEARN MORE: Take a Premium Profile for a comprehensive report on your strengths and weaknesses (plus specific ways to improve them).... Check out our excellent programs (Productivity, Stress, Prospering, Leading Your Life and Work \[seminar or the 3-month implementation program])...OR click the message link to ask questions &/or explore how one-on-one CORE Coaching could change your life, work and relationships, now and forever
 
 
     FOR CAREER & LIFE COACHES: We can certify you to enrich your clients with The Balancing Act's holistic processes, programs and profiles.
