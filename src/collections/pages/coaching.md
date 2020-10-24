@@ -8,8 +8,9 @@ hero:
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596493058/pexels-pixabay-161154_uftaqi.jpg
 explanation:
   text: >-
-    WHAT do you want to change about your life or work? WHY? WHEN can you act?
-    HOW can you become the great person you've always wanted to be?
+    WHAT do you want to change about your life or work? WHY is that important to
+    you? WHEN can you act? HOW can you become the great person you've always
+    wanted to be?
 
 
     GET AN EXPERT PARTNER to guide you through difficult transitions & remove obstacles so you can transform yourself into a powerful leader of every part of your life, work & relationships. 
