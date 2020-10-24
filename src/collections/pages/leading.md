@@ -12,7 +12,7 @@ explanation:
     experts to shed new light on old problems, get diagnostic tools that reveal
     where you & your organization are in-balance versus out-of-balance (And
     why!) We also provide pragmatic tools so you can create a whole new level of
-    healthy Balance, Ease and success for yourself, your team & business. 
+    healthy Balance, Ease and Success for yourself, your teams & business. 
 
 
     FOR FREE: 1) [Assess](http://profiles.thecoreporation.com/sample/welcome) your major strength & liability; 2) Leader Compass report; 3) SOS: Switch Off Stress app; 4) Instructional Videos.  
