@@ -8,11 +8,12 @@ hero:
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596493058/pexels-pixabay-161154_uftaqi.jpg
 explanation:
   text: >-
-    WHY face leadership challenges alone? PARTNER with our Holistic Leadership
+    Why face leadership challenges alone? PARTNER with our Holistic Leadership
     experts to shed new light on old problems, get diagnostic tools that reveal
-    where you (your teams or company) are in-balance versus out-of-balance, and
-    make stronger, systemic decisions for optimal results that will ripple
-    throughout your life, relationships & organization.  
+    where you & your organization are in-balance versus out-of-balance (and
+    why!). We also provide pragmatic tools so you can optimize results and
+    create a whole new level of healthy Balance and Ease for yourself, your team
+    & organization. 
 
 
     FOR FREE: 1) [Assess](http://profiles.thecoreporation.com/sample/welcome) your major strength & liability; 2) Leader Compass report; 3) SOS: Switch Off Stress app; 4) Videos.  
