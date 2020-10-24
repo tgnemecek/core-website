@@ -21,7 +21,7 @@ explanation:
     FYI: Contact us via message link below--OR take a Premium Profile to get a full report on your personal strengths and weaknesses...Attend one of our excellent seminars (Productivity, Stress, Prospering, a Leading Your Life and Work seminar or the 3-month implementation program). See descriptions on home page.
 
 
-    CONTACT US via the message link to explore how you can become a CERTIFIED TEACHER who enriches your students with TBA programs such as The Compass Course and other Core Learning programs.
+    BECOME A CERTIFIED TEACHER who enriches your students with TBA programs such as The Compass Course and other Core Learning programs. Send us Message to find out more.
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600804117/abdelkader-ft-CcZzQcYGYC4-unsplash_jvaahu.jpg
 benefits: >-
   
