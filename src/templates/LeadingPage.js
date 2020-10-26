@@ -25,7 +25,10 @@ const LeadingPage = ({ hero, benefits, explanation, email }) => {
           reportText="Get a Free Leader Compass Report!"
           downloadLink={leadingReport}
         />
-        <Benefits benefits={benefits} />
+        <Benefits
+          benefits={benefits}
+          title="Schedule a time with us if you are:"
+        />
         <CallToAction text="Send Us a Message" href={`mailto:${email}`} />
       </Section>
       <Section>

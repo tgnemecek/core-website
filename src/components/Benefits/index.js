@@ -16,13 +16,13 @@ import ErrorOutlineIcon from "@material-ui/icons/ErrorOutline";
 
 import Section from "components/Section";
 
-const Benefits = ({ benefits }) => {
+const Benefits = ({ benefits, title }) => {
   const classes = useStyles();
 
   return (
     <Container>
       <Paper elevation={3} square className={classes.paper}>
-        <Typography variant="h2">Schedule a time with us if you:</Typography>
+        <Typography variant="h2">{title}</Typography>
         {parse(benefits, {
           replace: ({ name, children }) => {
             if (name === "ul")
@@ -49,7 +49,8 @@ const Benefits = ({ benefits }) => {
 };
 
 Benefits.prototypes = {
-  explanation: PropTypes.string.isRequired,
+  benefits: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 export default Benefits;

@@ -1,5 +1,17 @@
 import { graphql, useStaticQuery } from "gatsby";
 
+export const cleanNodeKey = (props) => {
+  return props.children.map((child) => {
+    return {
+      ...child,
+      props: {
+        ...child.props,
+        nodeKey: null,
+      },
+    };
+  });
+};
+
 export const dataFormatter = (nodes) => {
   const obj = {};
   nodes.forEach(({ frontmatter }) => {
