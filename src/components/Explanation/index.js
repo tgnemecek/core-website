@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import ReactMarkdown from "react-markdown";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography, Grid } from "@material-ui/core";
+import { cleanNodeKey } from "src/util";
 
 const Explanation = ({ explanation: { text, image } }) => {
   const classes = useStyles();
@@ -15,7 +16,7 @@ const Explanation = ({ explanation: { text, image } }) => {
           paragraph: (props) => <Typography {...props} variant="body1" />,
           text: "span",
           link: (props) => (
-            <a target="_blank" rel="noopener noreferrer" {...props} />
+            <a {...props} target="_blank" rel="noopener noreferrer" />
           ),
         }}
       />
