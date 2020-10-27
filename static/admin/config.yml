@@ -176,7 +176,7 @@ collections:
               - { label: Name, name: name, widget: string }
               - { label: Role, name: role, widget: string }
               - { label: Photo, name: photo, widget: image }
-              - { label: Video, name: video, widget: string }
+              - { label: Video, name: video, widget: string, required: false }
               - { label: Bio, name: bio, widget: text }
               - {
                   label: LinkedIn Link,
