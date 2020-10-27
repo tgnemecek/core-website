@@ -29,12 +29,10 @@ const Events = () => {
         <Typography variant="subtitle1" component="p">
           Latest updates about our online and in-person events
         </Typography>
-        <div className={classes.feedWrapper}>
-          <HorizontalFeed skeletonHeight={skeletonHeight}>
-            {events && events.map((event, i) => <Event key={i} {...event} />)}
-          </HorizontalFeed>
-        </div>
       </Container>
+      <HorizontalFeed skeletonHeight={skeletonHeight}>
+        {events && events.map((event, i) => <Event key={i} {...event} />)}
+      </HorizontalFeed>
     </Section>
   );
 };

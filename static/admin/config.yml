@@ -122,6 +122,12 @@ collections:
             collapsed: false
             fields:
               - { label: Title, name: title, widget: string }
+              - {
+                  label: Subtitle,
+                  name: subtitle,
+                  widget: string,
+                  required: false,
+                }
               - { label: Description, name: description, widget: text }
               - { label: Image, name: image, widget: image }
               - {

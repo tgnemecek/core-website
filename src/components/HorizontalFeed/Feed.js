@@ -34,11 +34,15 @@ const Feed = ({
   })();
 
   React.useEffect(() => {
-    if (children) {
+    if (children && containerRef.current) {
       onResize();
       if (window) window.addEventListener("resize", onResize);
     }
   }, [children, containerRef]);
+
+  React.useEffect(() => {
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
 
   function isRightArrowVisible() {
     if (!children) return false;
@@ -114,7 +118,7 @@ const Feed = ({
             className={classes.leftArrowButton}
             onClick={() => scrollClick(1)}
           >
-            <ArrowBackIosIcon />
+            <ArrowBackIosIcon viewBox="0 0 15 24" />
           </IconButton>
         ) : null}
         {isRightArrowVisible() ? (
@@ -122,7 +126,7 @@ const Feed = ({
             className={classes.rightArrowButton}
             onClick={() => scrollClick(-1)}
           >
-            <ArrowForwardIosIcon />
+            <ArrowForwardIosIcon viewBox="0 0 20 24" />
           </IconButton>
         ) : null}
       </Box>
@@ -140,8 +144,30 @@ Feed.propTypes = {
 
 export default Feed;
 
-const useStyles = ({ gridOffset, showArrowBackground }) =>
-  makeStyles((theme) => ({
+const useStyles = ({ gridOffset, showArrowBackground }) => {
+  const commonArrowStyles = {
+    position: "absolute",
+    padding: 0,
+    top: 0,
+    height: "100%",
+    width: showArrowBackground ? 100 : 50,
+    borderRadius: 0,
+    "&:hover": {
+      background: "transparent",
+    },
+    [theme.breakpoints.down("md")]: {
+      "& .MuiIconButton-label": {
+        background: "#3c3c3cad",
+        height: 50,
+        borderRadius: "50%",
+      },
+      "& svg": {
+        fill: "white",
+      },
+    },
+  };
+
+  return makeStyles((theme) => ({
     root: {
       overflow: "hidden",
     },
@@ -162,13 +188,8 @@ const useStyles = ({ gridOffset, showArrowBackground }) =>
       transition: "left 0.3s",
     },
     leftArrowButton: {
-      position: "absolute",
-      padding: 0,
-      top: 0,
+      ...commonArrowStyles,
       left: 0,
-      height: "100%",
-      width: showArrowBackground ? 100 : 50,
-      borderRadius: 0,
       boxShadow: showArrowBackground
         ? "inset 102px 0px 38px -24px rgba(255,255,255,1)"
         : "none",
@@ -177,18 +198,11 @@ const useStyles = ({ gridOffset, showArrowBackground }) =>
       },
     },
     rightArrowButton: {
-      position: "absolute",
-      padding: 0,
-      top: 0,
+      ...commonArrowStyles,
       right: 0,
-      height: "100%",
-      width: showArrowBackground ? 100 : 50,
-      borderRadius: 0,
       boxShadow: showArrowBackground
         ? "inset -102px 0px 38px -24px rgba(255,255,255,1)"
         : "none",
-      "&:hover": {
-        background: "transparent",
-      },
     },
   }));
+};
