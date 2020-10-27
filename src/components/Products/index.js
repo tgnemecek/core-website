@@ -1,6 +1,13 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Container, Typography, Grid } from "@material-ui/core";
+import {
+  Container,
+  Typography,
+  Grid,
+  Card,
+  CardContent,
+  CardHeader,
+} from "@material-ui/core";
 import Fade from "react-reveal/Fade";
 import Section from "components/Section";
 import Gallery from "components/Gallery";
@@ -8,6 +15,18 @@ import Gallery from "components/Gallery";
 const Products = ({ products }) => {
   const classes = useStyles();
   const [index, setIndex] = React.useState(0);
+
+  const Image = ({ className }) => {
+    return (
+      <div className={className}>
+        <Fade duration={200} key={index}>
+          <img src={products[index].image} className={classes.image} />
+        </Fade>
+      </div>
+    );
+  };
+
+  if (!products) return null;
 
   return (
     <Section>
@@ -19,32 +38,35 @@ const Products = ({ products }) => {
           From books to apps, use these resources to assist you in your journey
         </Typography>
         <a
-          href={products ? products[index].link : ""}
+          href={products[index].link || ""}
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Grid container className={classes.featured} spacing={3}>
-            <Grid item xs={12} md={5} className={classes.leftSide}>
-              <Fade duration={200} key={index}>
-                <img
-                  src={products && products[index].image}
-                  className={classes.image}
-                />
-              </Fade>
-            </Grid>
-            <Grid item xs={12} md={7} className={classes.rightSide}>
+          <div className={classes.featured}>
+            <Image className={classes.leftSide} />
+            <Card className={classes.rightSide}>
               <Fade bottom duration={300} key={index}>
-                <div className={classes.textContainer}>
-                  <Typography variant="h3">
-                    {products && products[index].title}
+                <CardHeader
+                  title={
+                    <Typography variant="h3" gutterBottom>
+                      {products[index].title}
+                    </Typography>
+                  }
+                  subheader={
+                    <div className={classes.subheader}>
+                      {products[index].subtitle}
+                    </div>
+                  }
+                />
+                <CardContent className={classes.content}>
+                  <Image className={classes.insideImage} />
+                  <Typography variant="body1" className={classes.paragraph}>
+                    {products[index].description}
                   </Typography>
-                  <Typography variant="body1">
-                    {products && products[index].description}
-                  </Typography>
-                </div>
+                </CardContent>
               </Fade>
-            </Grid>
-          </Grid>
+            </Card>
+          </div>
         </a>
         <Gallery
           items={products}
@@ -62,32 +84,56 @@ export default Products;
 
 const useStyles = makeStyles((theme) => ({
   featured: {
-    padding: `0 10%`,
-    height: 500,
+    display: "grid",
+    "grid-template-columns": "1fr 1fr",
+    // "grid-template-rows": 500,
+    // padding: `0 10%`,
+    // height: 500,
     [theme.breakpoints.down("sm")]: {
-      justifyContent: "center",
-      padding: 0,
-      height: 800,
+      "grid-template-columns": "1fr",
     },
   },
   leftSide: {
-    backgroundColor: "white",
-    height: "100%",
     [theme.breakpoints.down("sm")]: {
-      height: 400,
+      display: "none",
+    },
+    display: "flex",
+    justifyContent: "center",
+    "& img": {
+      height: 500,
+      maxWidth: 400,
     },
   },
   image: {
     width: "100%",
-    height: "100%",
     objectFit: "contain",
   },
   rightSide: {
     boxShadow: "0px 0px 31px -3px rgba(0,0,0,0.24)",
-  },
-  textContainer: {
-    padding: theme.spacing(3),
+    height: 500,
     overflow: "auto",
-    height: "100%",
+  },
+  content: {
+    [theme.breakpoints.down("sm")]: {
+      display: "grid",
+      "grid-template-columns": "200px 1fr",
+      "grid-column-gap": 15,
+    },
+    [theme.breakpoints.down("xs")]: {
+      "grid-template-columns": "1fr",
+    },
+  },
+  insideImage: {
+    [theme.breakpoints.up("md")]: {
+      display: "none",
+    },
+    [theme.breakpoints.down("xs")]: {
+      display: "none",
+    },
+  },
+  paragraph: {
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "0.9rem",
+    },
   },
 }));
