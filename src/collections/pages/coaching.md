@@ -19,10 +19,10 @@ explanation:
     FOR FREE: 1) [Assess](http://profiles.thecoreporation.com/sample/welcome) your greatest strength and liability; 2) Career Compass Report; 3) SOS: Switch Off Stress app; 4) Instructional Videos.
 
 
-    LEARN MORE: Take a Premium Profile for a comprehensive report on your strengths and weaknesses (plus specific ways to improve them).... Check out our excellent programs (Productivity, Stress, Prospering, Leading Your Life and Work \[seminar or the 3-month implementation program])...OR click the message link to ask questions &/or explore how one-on-one CORE Coaching could change your life, work & relationships, now and forever
+    LEARN MORE: Take a Premium Profile for a comprehensive report on your strengths and weaknesses (plus specific ways to improve them).... Check out our excellent programs (Productivity, Stress, Prospering, and Leading Your Life and Work seminar or 3-month implementation program)...OR click the message link to ask questions &/or explore how One-on-One CORE Coaching could change your life, work & relationships, now and forever
 
 
-    FOR CAREER & LIFE COACHES: We can certify you to enrich your clients with The Balancing Act's holistic processes, programs and profiles.
+    FOR CAREER & LIFE COACHES: We can certify you to enrich your clients with The Balancing Act's holistic processes, programs and diagnostic profiles.
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600816113/Coaching_cropped_ibup02.jpg
 benefits: >-
   <ul>
