@@ -25,7 +25,7 @@ const LearningPage = ({ hero, benefits, explanation, email }) => {
           reportText="Get a Free Report to Improve Learning!"
           downloadLink={learningReport}
         />
-        <Benefits benefits={benefits} />
+        <Benefits benefits={benefits} title="Schedule a time with us if you:" />
         <CallToAction text="Send Us a Message" href={`mailto:${email}`} />
       </Section>
       <Section>

@@ -5,12 +5,9 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { theme } from "components/theme";
 import HorizontalFeed from "components/HorizontalFeed";
 
-const baseHeight = 160;
-const baseWidth = 160;
-
-const Gallery = ({ items, index, setIndex }) => {
+const Gallery = ({ items, index, setIndex, height = 160, width = 160 }) => {
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const classes = useStyles({ mobile })();
+  const classes = useStyles({ mobile, height, width })();
 
   const gridItemClass = (i) => {
     let className = classes.gridItem;
@@ -23,7 +20,7 @@ const Gallery = ({ items, index, setIndex }) => {
   return (
     <div className={classes.gallery}>
       <HorizontalFeed
-        initialItemWidth={baseWidth}
+        initialItemWidth={width}
         spacing={0}
         resizeOnMobile={false}
       >
@@ -56,7 +53,7 @@ Gallery.propTypes = {
 
 export default Gallery;
 
-const useStyles = ({ mobile }) =>
+const useStyles = ({ mobile, height }) =>
   makeStyles((theme) => ({
     gallery: {
       backgroundColor: theme.palette.grey[300],
@@ -65,7 +62,7 @@ const useStyles = ({ mobile }) =>
       flexWrap: "nowrap",
     },
     gridItem: {
-      height: mobile ? baseHeight / 1.5 : baseHeight,
+      height: mobile ? height / 1.5 : height,
       flexShrink: 0,
       overflow: "hidden",
       transition: "border 0.1s",
