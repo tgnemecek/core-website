@@ -19,7 +19,7 @@ import { getVideoId } from "src/util";
 const timeout = 2000;
 
 const MemberModal = ({
-  memberToView: { name, role, bio, video, linkedin },
+  memberToView: { name, role, bio, photo, video, linkedin },
   onClose,
 }) => {
   const [modalReady, setModalReady] = React.useState(false);
@@ -40,12 +40,16 @@ const MemberModal = ({
         <Paper square elevation={6} className={classes.paper}>
           <Grid container>
             <Grid item xs={false} md={6} className={classes.leftSide}>
-              <div className={classes.videoWrapper}>
-                <YouTube
-                  className={classes.video}
-                  videoId={getVideoId(video)}
-                />
-              </div>
+              {video ? (
+                <div className={classes.videoWrapper}>
+                  <YouTube
+                    className={classes.video}
+                    videoId={getVideoId(video)}
+                  />
+                </div>
+              ) : (
+                <img src={photo} />
+              )}
             </Grid>
             <Grid item xs={12} md={6}>
               <div className={classes.content}>
