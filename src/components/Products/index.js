@@ -67,13 +67,14 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       justifyContent: "center",
       padding: 0,
+      height: 800,
     },
   },
   leftSide: {
     backgroundColor: "white",
     height: "100%",
     [theme.breakpoints.down("sm")]: {
-      height: 200,
+      height: 400,
     },
   },
   image: {

@@ -26,9 +26,15 @@ const useStyles = makeStyles((theme) => ({
   text: {
     fontStyle: "italic",
     color: theme.palette.common.white,
+    [theme.breakpoints.down("md")]: {
+      fontSize: "1rem",
+    },
   },
   subText: {
     color: theme.palette.common.white,
     margin: 0,
+    [theme.breakpoints.down("md")]: {
+      fontSize: "0.9rem",
+    },
   },
 }));

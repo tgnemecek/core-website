@@ -13,6 +13,7 @@ import {
   Drawer,
   IconButton,
   Tooltip,
+  Box,
 } from "@material-ui/core";
 import { Link } from "gatsby";
 import MenuIcon from "@material-ui/icons/Menu";
@@ -84,7 +85,7 @@ const Navbar = ({ pages }) => {
           </Link>
         )}
         <Hidden smDown>{renderNavContent()}</Hidden>
-        <Hidden mdUp>
+        <Box display={{ md: "none" }}>
           <IconButton onClick={() => setDrawerOpen(true)}>
             <MenuIcon fontSize="large" />
           </IconButton>
@@ -95,7 +96,7 @@ const Navbar = ({ pages }) => {
           >
             {renderNavContent()}
           </Drawer>
-        </Hidden>
+        </Box>
       </Toolbar>
     </AppBar>
   );
