@@ -23,7 +23,7 @@ const Products = ({ products }) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Grid container className={classes.featured}>
+          <Grid container className={classes.featured} spacing={3}>
             <Grid item xs={12} md={5} className={classes.leftSide}>
               <Fade duration={200} key={index}>
                 <img
@@ -34,17 +34,25 @@ const Products = ({ products }) => {
             </Grid>
             <Grid item xs={12} md={7} className={classes.rightSide}>
               <Fade bottom duration={300} key={index}>
-                <Typography variant="h3">
-                  {products && products[index].title}
-                </Typography>
-                <Typography variant="body1">
-                  {products && products[index].description}
-                </Typography>
+                <div className={classes.textContainer}>
+                  <Typography variant="h3">
+                    {products && products[index].title}
+                  </Typography>
+                  <Typography variant="body1">
+                    {products && products[index].description}
+                  </Typography>
+                </div>
               </Fade>
             </Grid>
           </Grid>
         </a>
-        <Gallery items={products} index={index} setIndex={setIndex} />
+        <Gallery
+          items={products}
+          index={index}
+          setIndex={setIndex}
+          height={300}
+          width={200}
+        />
       </Container>
     </Section>
   );
@@ -55,13 +63,15 @@ export default Products;
 const useStyles = makeStyles((theme) => ({
   featured: {
     padding: `0 10%`,
+    height: 500,
     [theme.breakpoints.down("sm")]: {
       justifyContent: "center",
       padding: 0,
     },
   },
   leftSide: {
-    backgroundColor: theme.palette.grey[900],
+    backgroundColor: "white",
+    height: "100%",
     [theme.breakpoints.down("sm")]: {
       height: 200,
     },
@@ -72,8 +82,11 @@ const useStyles = makeStyles((theme) => ({
     objectFit: "contain",
   },
   rightSide: {
-    padding: theme.spacing(4),
     boxShadow: "0px 0px 31px -3px rgba(0,0,0,0.24)",
-    overflow: "hidden",
+  },
+  textContainer: {
+    padding: theme.spacing(3),
+    overflow: "auto",
+    height: "100%",
   },
 }));

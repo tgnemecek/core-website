@@ -57,7 +57,7 @@ export default Benefits;
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    maxWidth: 700,
+    maxWidth: 750,
     margin: "50px auto",
     "& h2": {
       padding: theme.spacing(2),
