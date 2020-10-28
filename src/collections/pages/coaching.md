@@ -20,7 +20,9 @@ explanation:
     **How** can you become the great person you've always wanted to be?
 
 
-    **Get an expert partner** to guide you through difficult transitions & remove obstacles so you can transform yourself into a powerful leader of every part of your life, work & relationships. 
+    **Get an expert partner** to guide you through difficult transitions & remove obstacles so you can transform yourself into a powerful leader of every part of your life, work & relationships.
+
+
 
 
     FOR FREE:
