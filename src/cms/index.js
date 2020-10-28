@@ -1,4 +1,5 @@
 import React from "react";
+import CMS from "netlify-cms-app";
 import ReactDOM from "react-dom";
 import config from "./config.json";
 
