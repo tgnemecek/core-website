@@ -8,7 +8,7 @@ hero:
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596493058/pexels-pixabay-161154_uftaqi.jpg
 explanation:
   text: >-
-    **Teachers**, **Students** and **Parents**: Use The Balancing Act's
+    **Teachers**, **Students** and **Parents**: Use *The Balancing Act's*
     holistic, systemic learning methodology and pragmatic tools to meet the
     extraordinary challenges of this topsy-turvy world where Teachers have
     become front-line workers, Parents are now at-home teachers, and Students
@@ -25,13 +25,13 @@ explanation:
     3. SOS: Switch Off Stress app.
 
 
-    [Contact us](mailto:sseivert@thecoreporation.com) to get more information or take a **Premium Profile** to get a full report on your personal strengths and weaknesses. Attend one of our **excellent seminars**: Productivity, Stress, Prospering, a Leading Your Life and Work seminar or the 3-month implementation program.
+    [Contact us](mailto:sseivert@thecoreporation.com) to get more information or take a **Premium Profile** to get a full report on your personal strengths and weaknesses. Attend one of our **excellent seminars**: Productivity, Stress, Prospering, a Leading Your Life & Work seminar or the 3-month implementation program. And please **donate** (below) so we can bring TBA programs to at-risk youth around the world.
 
 
     - - -
 
 
-    **Become a Certified Teacher** who enriches students with TBA programs such as The Compass Course. [Send us a Message](mailto:sseivert@thecoreporation.com) to find out more.
+    **Become a Certified Teacher** who enriches students with TBA programs such as *The Compass Course*. [Send us a Message](mailto:sseivert@thecoreporation.com) to find out more.
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600804117/abdelkader-ft-CcZzQcYGYC4-unsplash_jvaahu.jpg
 benefits: >-
   
