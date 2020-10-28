@@ -5,11 +5,10 @@ import cloudinary from "netlify-cms-media-library-cloudinary";
 import VideoWidget from "./VideoWidget";
 import config from "./config";
 
-CMS.registerMediaLibrary(cloudinary);
-CMS.registerWidget("video", VideoWidget, null, "string");
-
 const AdminConsole = () => {
   React.useEffect(() => {
+    CMS.registerMediaLibrary(cloudinary);
+    CMS.registerWidget("video", VideoWidget, null, "string");
     CMS.init({ config });
   }, []);
 
