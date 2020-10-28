@@ -247,14 +247,7 @@ collections:
             name: explanation
             widget: object
             fields:
-              - {
-                  label: Explanation Text,
-                  name: text,
-                  widget: markdown,
-                  buttons: ["link"],
-                  editor_components: [],
-                  modes: ["rich_text"],
-                }
+              - { label: Explanation Text, name: text, widget: markdown }
               - { label: Explanation Image, name: image, widget: image }
           - { label: Benefits, name: benefits, widget: markdown }
       - file: "src/collections/pages/learning.md"
@@ -284,13 +277,6 @@ collections:
             name: explanation
             widget: object
             fields:
-              - {
-                  label: Explanation Text,
-                  name: text,
-                  widget: markdown,
-                  buttons: ["link"],
-                  editor_components: [],
-                  modes: ["rich_text"],
-                }
+              - { label: Explanation Text, name: text, widget: markdown }
               - { label: Explanation Image, name: image, widget: image }
           - { label: Benefits, name: benefits, widget: markdown }
