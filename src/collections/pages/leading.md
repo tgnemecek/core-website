@@ -8,10 +8,10 @@ hero:
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596493058/pexels-pixabay-161154_uftaqi.jpg
 explanation:
   text: >-
-    Why face leadership challenges alone? **Partner** with our **Holistic
+    Why face leadership challenges alone? Partner with our **Holistic
     Leadership** experts to shed new light on old problems, get diagnostic tools
     that reveal where you and your organization are in-balance versus
-    out-of-balance. And then we will provide **pragmatic tools** so you can
+    out-of-balance. And then we will provide **pragmatic** tools so you can
     create a whole new level of healthy Balance, Ease and Success for yourself,
     your teams & business.
 
