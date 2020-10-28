@@ -18,14 +18,22 @@ const VideoWidget = ({
   });
 
   const isValid = () => {
-    return isVideoValid(value);
+    const valid = isVideoValid(value);
+    if (!valid)
+      return {
+        error: {
+          message: "The provided link is invalid. Please double check.",
+        },
+      };
+    return true;
   };
 
   return (
-    <div className={classNameWrapper}>
-      <label htmlFor={forID}>YouTube Link (Optional)</label>
-      <input id={forID} onChange={onChange} value={value} />
-    </div>
+    <input
+      id={forID}
+      onChange={({ target: { value } }) => onChange(value)}
+      value={value}
+    />
   );
 };
 
