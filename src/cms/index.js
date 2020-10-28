@@ -6,7 +6,7 @@ import VideoWidget from "./VideoWidget";
 import config from "./config";
 
 CMS.registerMediaLibrary(cloudinary);
-CMS.registerWidget("video", VideoWidget, Preview, "string");
+CMS.registerWidget("video", VideoWidget, null, "string");
 
 const AdminConsole = () => {
   React.useEffect(() => {
