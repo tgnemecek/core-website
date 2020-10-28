@@ -90,7 +90,7 @@ const TeamPage = `
   type TeamPage {
     collection: String!
     key: String!
-
+    hero: Hero
     members: [Member]
   }
   type Member {
@@ -99,6 +99,7 @@ const TeamPage = `
     photo: String
     bio: String
     linkedin: String
+    video: String
   }
 `;
 
