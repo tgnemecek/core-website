@@ -71,6 +71,7 @@ const LandingPage = `
     image: String
     title: String
     subtitle: String
+    link: String
   }
 
   type Testimonial {

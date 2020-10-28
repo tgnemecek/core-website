@@ -22,8 +22,13 @@ const Explanation = ({ explanation: { text, image } }) => {
       <ReactMarkdown
         source={text}
         renderers={{
-          paragraph: (props) => <Typography {...props} variant="body1" />,
-          // text: "span",
+          paragraph: (props) => (
+            <Typography
+              {...props}
+              variant="body1"
+              style={{ marginBottom: 10 }}
+            />
+          ),
           text: (props) => <React.Fragment {...props} />,
           link: (props) => (
             <a {...props} target="_blank" rel="noopener noreferrer" />
@@ -39,6 +44,9 @@ const Explanation = ({ explanation: { text, image } }) => {
           ),
           strong: (props) => (
             <strong style={{ fontWeight: "bold" }} {...props} />
+          ),
+          blockquote: (props) => (
+            <Typography {...props} variant="h4" style={{ marginTop: 15 }} />
           ),
         }}
       />
