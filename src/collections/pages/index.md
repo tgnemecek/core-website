@@ -152,13 +152,13 @@ videos:
     title: Introducing Core Coaching & Consulting
   - link: https://www.youtube.com/watch?v=Drg9JUYrrrA
     title: Xavi Nova
-    subtitle: The Balancing Act Changed My Life and Work
+    subtitle: '"The Balancing Act Changed My Life and Work"'
   - link: https://www.youtube.com/watch?v=52Iv5hdqDxw
     title: Intro to Career Coaching Program
     subtitle: (Spanish & English)
   - title: Eva
     link: https://youtu.be/DIWW0Ln6FvA
-    subtitle: Transformative
+    subtitle: '"Transformative"'
   - link: https://www.youtube.com/watch?v=df2uZ3kqZt8
     title: Breakout Career Speech
   - title: Organizational Change
@@ -166,13 +166,13 @@ videos:
     subtitle: (Brazil Banks)
   - link: https://youtu.be/jMqxETd1Y8w
     title: Noemi
-    subtitle: I Changed Everything (Spanish & English)
+    subtitle: '"I Changed Everything" (Spanish & English)'
   - link: https://youtu.be/zN_54BRtEYY
     title: Juame
-    subtitle: Very Practical (Spanish & English)
+    subtitle: '"Very Practical" (Spanish & English)'
   - link: https://www.youtube.com/watch?v=I3LmXgYoRLY
     title: "SOS: Switch Off Stress App"
-    subtitle: Introduction to the App
+    subtitle: Introduction to the Mobile App
   - link: https://www.youtube.com/watch?v=_QVfyj94x5A
     title: "Experience the Elements: CORE"
     subtitle: ""
