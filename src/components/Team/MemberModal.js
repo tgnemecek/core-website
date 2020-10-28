@@ -23,7 +23,7 @@ const MemberModal = ({
   onClose,
 }) => {
   const [modalReady, setModalReady] = React.useState(false);
-  const classes = useStyles({ modalReady })();
+  const classes = useStyles({ modalReady, video })();
 
   React.useEffect(() => {
     const timeoutId = setTimeout(() => {
@@ -48,7 +48,9 @@ const MemberModal = ({
                   />
                 </div>
               ) : (
-                <img src={photo} />
+                <div className={classes.imageWrapper}>
+                  <img src={photo} />
+                </div>
               )}
             </Grid>
             <Grid item xs={12} md={6}>
@@ -121,7 +123,7 @@ const MemberModal = ({
   );
 };
 
-const useStyles = ({ modalReady }) =>
+const useStyles = ({ modalReady, video }) =>
   makeStyles((theme) => ({
     paper: {
       width: "calc(100vw - 30px)",
@@ -130,6 +132,15 @@ const useStyles = ({ modalReady }) =>
     },
     leftSide: {
       backgroundColor: "black",
+    },
+    imageWrapper: {
+      height: 671,
+      overflow: "hidden",
+      "& img": {
+        width: "100%",
+        height: "100%",
+        objectFit: "cover",
+      },
     },
     videoWrapper: {
       paddingTop: "56.25%",
@@ -156,6 +167,7 @@ const useStyles = ({ modalReady }) =>
       paddingTop: theme.spacing(2),
     },
     watchVideo: {
+      visibility: video ? "visible" : "hidden",
       fontSize: "1rem",
       position: "relative",
       left: modalReady ? 0 : -50,

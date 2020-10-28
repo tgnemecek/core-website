@@ -86,9 +86,6 @@ const useStyles = makeStyles((theme) => ({
   featured: {
     display: "grid",
     "grid-template-columns": "1fr 1fr",
-    // "grid-template-rows": 500,
-    // padding: `0 10%`,
-    // height: 500,
     [theme.breakpoints.down("sm")]: {
       "grid-template-columns": "1fr",
     },
