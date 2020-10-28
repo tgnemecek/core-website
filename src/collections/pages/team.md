@@ -38,7 +38,7 @@ members:
   - name: Frederick Reed
     role: Inventor & Manager, CORE Profiles System
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600615133/Fred_cropped_ka48fq.jpg
-    video: video will go here
+    video: ""
     bio: Fred lives in the beautiful Shenandoah Valley of Virginia, where he enjoys
       hiking, orienteering and running trails in the surrounding Blue Ridge and
       Allegheny Mountains. Fred is co-inventor of The Balancing Act's online
@@ -71,7 +71,7 @@ members:
   - name: Mercedes Bellavista
     role: Lead Translator
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600618633/Mercedes2_xo5nss.jpg
-    video: video will go here
+    video: ""
     bio: Mercedes lives in Barcelona with her husband and three children. She
       defines herself as a "book eater" who is fascinated by the richness of
       language, and finding the exact meaning of each word and its equivalent in
@@ -96,7 +96,7 @@ members:
       Landmark (a global personal and professional development company)  and the
       End Violence Project (a US prison leadership program). "
     linkedin: https://www.linkedin.com/in/bonnie-koch/
-    video: video will go here
+    video: ""
     role: Marketing & Communications Manager
   - name: Jordi Formiguera Macia
     role: Lead CORE Coach, Spanish Team
@@ -111,7 +111,7 @@ members:
       friends. Jordi defines his philosophy of life as: "Enjoy the moment, savor
       every moment, live without expectations and free from all fears"  '
     linkedin: https://www.linkedin.com/in/jordiformiguera-lifecoach/
-    video: video will go here
+    video: ""
   - name: Marianne Collins
     role: Strategic Business Partner
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1601145382/Marianne_for_CCC_dffzeh.jpg
@@ -127,7 +127,7 @@ members:
 
       Marianne lives with her family in Boston and volunteers with Equine Therapeutic Riding Programs, which supports the development of at-risk children and young adults.
     linkedin: https://www.linkedin.com/in/marianneecollins/
-    video: video will go here
+    video: ""
   - name: Dorothy Ginnett
     role: Teacher of CORE Teachers
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1601304340/CCC_Dorothy_qgw5r8.jpg
@@ -147,11 +147,11 @@ members:
       honored to be part of this amazing team because she believes The Balancing
       Act holds great promise to improve educational culture.
     linkedin: https://www.linkedin.com/in/dorothy-ginnett/
-    video: video will go here
+    video: ""
   - name: Auke van Keulen
     role: Manager, Holland
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1601302983/CCC_Auke_zrnfqf.png
-    video: video will be here
+    video: ""
     bio: Auke is an experienced businessman with 20 years of management experience
       in international organizations. He has been working with the developer of
       The Balancing Act, Sharon Seivert, since 2004. As a precondition for
