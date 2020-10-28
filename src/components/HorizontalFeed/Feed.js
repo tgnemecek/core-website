@@ -159,6 +159,7 @@ const useStyles = ({ gridOffset, showArrowBackground }) => {
       "& .MuiIconButton-label": {
         background: "#3c3c3cad",
         height: 50,
+        width: 50,
         borderRadius: "50%",
       },
       "& svg": {
