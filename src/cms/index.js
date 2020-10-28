@@ -3,7 +3,7 @@ import CMS from "netlify-cms-app";
 import ReactDOM from "react-dom";
 import cloudinary from "netlify-cms-media-library-cloudinary";
 import VideoWidget from "./VideoWidget";
-import config from "./config";
+import config from "./config.json";
 
 const AdminConsole = () => {
   React.useEffect(() => {
@@ -15,5 +15,5 @@ const AdminConsole = () => {
   return <div id="nc-root" />;
 };
 
-const rootElement = document.getElementById("root");
+const rootElement = document.body;
 ReactDOM.render(<AdminConsole />, rootElement);
