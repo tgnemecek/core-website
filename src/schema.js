@@ -70,6 +70,7 @@ const LandingPage = `
     description: String
     image: String
     title: String
+    subtitle: String
   }
 
   type Testimonial {
@@ -80,6 +81,7 @@ const LandingPage = `
   type Video {
     link: String
     title: String
+    subtitle: String
   }
 `;
 
