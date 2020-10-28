@@ -11,9 +11,9 @@ explanation:
     Why face leadership challenges alone? **Partner** with our **Holistic
     Leadership** experts to shed new light on old problems, get diagnostic tools
     that reveal where you and your organization are in-balance versus
-    out-of-balance. And then we will provide you with **pragmatic tools** so you
-    can create a whole new level of healthy Balance, Ease and Success for
-    yourself, your teams & business.
+    out-of-balance. And then we will provide **pragmatic tools** so you can
+    create a whole new level of healthy Balance, Ease and Success for yourself,
+    your teams & business.
 
 
     > **For Free:**
@@ -26,7 +26,7 @@ explanation:
     3. SOS: Switch Off Stress app.
 
 
-    Take a **Premium Profile** for a full report on your leadership strengths and weaknesses, or [contact us](mailto:sseivert@thecoreporation.com) to explore how our data-driven, agile coaching can create a great ROI by building yourself, your team & company from the inside out. And check out our **practical programs** on Productivity, Stress, Prospering, and Leading Your Life and Work (seminar or 3-month implementation program).
+    Take a **Premium Profile** for a full report on your leadership strengths and weaknesses. [Contact us](mailto:sseivert@thecoreporation.com) to explore how our data-driven, agile coaching can create a great ROI by building yourself, your team & company from the inside out. Check out **practical programs** on Productivity, Stress, Prospering, and Leading Your Life & Work (seminar or 3-month implementation program).
 
 
     - - -
