@@ -46,7 +46,7 @@ testimonials:
       obstacles and doubts, and then supported me in making a bold decision that
       I've never regretted. What's more, Sharon has achieved similar amazing
       results with patients I've since referred to her.
-    author: "- Tais Moriyama"
+    author: Tais Moriyama
     role: M.D., Psychiatrist; Instituto Bairral Hospital, Brazil
   - testimonial: Leading Your Life & Work helped me to find myself in this changing
       world. I learned wonderful techniques to remove obstacles, find my center
@@ -54,7 +54,7 @@ testimonials:
       a puzzle with some missing pieces and The Balancing Act program has helped
       me to find them and put them in the proper place, to continue growing and
       discovering my own path.
-    author: "- Ana Martinez"
+    author: Ana Martinez
     role: Art Teacher, American School of Barcelona
   - testimonial: I feel more hopeful and confident about being able to make changes
       in my life because I have the tools to make them happen. I was reminded
@@ -62,27 +62,27 @@ testimonials:
       happier and more fulfilled person. I have a better understanding of the
       Elements of Success and how to keep them in balance in my life. Thank you
       for the opportunity to participate in this life changing program.
-    author: "- Martha Brine, PhD"
+    author: Martha Brine, PhD
     role: Former Dean of Students, North Shore Community College, Massachusetts
   - testimonial: >
       Sharon is so warm and welcoming that I have seen people from every walk of
       life enthusiastically accept and love her. Students treat her like a rock
       star, teachers like a expert colleague, and parents like a trusted
       advisor. 
-    author: "- Cristiane Beira"
+    author: Cristiane Beira
     role: Founder, Espaço Integral
   - testimonial: "Over the past decade, I have used the Core Leadership program to
       help hundreds of leaders positively transform themselves, and therefore
       their teams, companies (and families.) The ancient philosophy of The
       Balancing Act is the most systemic, powerful and comprehensive leadership
       development process I know. And it leads to miracles; they do happen! "
-    author: "- Auke van Keulen"
+    author: Auke van Keulen
     role: Consultant, Exec Coach, DeCoreporation, The Netherlands
   - testimonial: Sharon has a remarkable ability to manage difficult entrepreneurs
       with ease and humor, keeping them on track to deliver tangible results.
       She has a gift for quickly identifying exactly how leaders get in their
       own way AND helping them remove obstacles to success.
-    author: "- Randall Reade"
+    author: Randall Reade
     role: Senior VP, Washington DC Archangels
 products:
   - image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600890104/TBA_Kindlecover_cropped_irfmvt.jpg
