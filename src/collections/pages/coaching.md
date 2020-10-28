@@ -8,21 +8,37 @@ hero:
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596493058/pexels-pixabay-161154_uftaqi.jpg
 explanation:
   text: >-
-    WHAT do you want to change about your life or work? WHY is that important to
-    you? WHEN can you act? HOW can you become the great person you've always
-    wanted to be?
+    **What** do you want to change about your life or work?
 
 
-    GET AN EXPERT PARTNER to guide you through difficult transitions & remove obstacles so you can transform yourself into a powerful leader of every part of your life, work & relationships. 
+    **Why** is that important to you?
 
 
-    FOR FREE: 1) [Assess](http://profiles.thecoreporation.com/sample/welcome) your greatest strength and liability; 2) Career Compass Report; 3) SOS: Switch Off Stress app; 4) Instructional Videos.
+    **When** can you act?
 
 
-    LEARN MORE: Take a Premium Profile for a comprehensive report on your strengths and weaknesses (plus specific ways to improve them).... Check out our excellent programs (Productivity, Stress, Prospering, and Leading Your Life and Work seminar or 3-month implementation program)...OR click the message link to ask questions &/or explore how One-on-One CORE Coaching could change your life, work & relationships, now and forever
+    **How** can you become the great person you've always wanted to be?
 
 
-    FOR CAREER & LIFE COACHES: We can certify you to enrich your clients with The Balancing Act's holistic processes, programs and diagnostic profiles.
+    **Get an expert partner** to guide you through difficult transitions & remove obstacles so you can transform yourself into a powerful leader of every part of your life, work & relationships. 
+
+
+    FOR FREE:
+
+
+    1. [Assess](http://profiles.thecoreporation.com/sample/welcome) your greatest strength and liability;
+
+    2. Career Compass Report;
+
+    3. SOS: Switch Off Stress app;
+
+    4. Instructional Videos.
+
+
+    **Learn more**: Take a Premium Profile for a comprehensive report on your strengths and weaknesses (plus specific ways to improve them). Check out our excellent programs: Productivity, Stress, Prospering, and Leading Your Life and Work seminar or 3-month implementation program. Or click the message link to ask questions &/or explore how One-on-One CORE Coaching could change your life, work & relationships, now and forever.
+
+
+    **For career & life coaches**: We can certify you to enrich your clients with The Balancing Act's holistic processes, programs and diagnostic profiles.
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600816113/Coaching_cropped_ibup02.jpg
 benefits: >-
   <ul>
