@@ -19,7 +19,7 @@ explanation:
     > **For Free:**
 
 
-    1. [Assessment](http://profiles.thecoreporation.com/sample/welcome) of your greatest strength and liability;
+    1. [Assessment](http://profiles.thecoreporation.com/sample/welcome) of your greatest leadership strength and liability;
 
     2. Leader Compass Report;
 
@@ -32,7 +32,7 @@ explanation:
     - - -
 
 
-    **For executive coaches & business consultants**: Get certified to use The Balancing Act's powerful processes, programs, and diagnostic profiles for leaders, teams and organizations.
+    **For executive coaches & business consultants**: Get certified to use *The Balancing Act's* powerful processes, programs, and diagnostic profiles for leaders, teams and organizations.
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600812431/eean-chen-5hz5hpjFIro-unsplash_aie6fn.jpg
 benefits: >-
   <ul>
