@@ -26,13 +26,13 @@ explanation:
     3. SOS: Switch Off Stress app.
 
 
-    Take a **Premium Profile** for a comprehensive report on your strengths and weaknesses (plus specific ways to improve them). Check out our **excellent programs**: Productivity, Stress, Prospering, and Leading Your Life and Work seminar or 3-month implementation program. Or click the message link to **ask questions or explore** how One-on-One CORE Coaching could change your life, work & relationships, now and forever.
+    Take a **Premium Profile** for a comprehensive report on your strengths and weaknesses (plus specific ways to improve them). Check out our **excellent programs**: Productivity, Stress, Prospering, and Leading Your Life and Work seminar or 3-month implementation program. Or click the message link to ask questions or e**xplore** how One-on-One CORE Coaching could change your life, work & relationships, now and forever.
 
 
     - - -
 
 
-    **For career & life coaches**: We can certify you to enrich your clients with The Balancing Act's holistic processes, programs and diagnostic profiles.
+    **For career & life coaches**: We can certify you to enrich your clients with *The Balancing Act's* holistic processes, programs and diagnostic profiles.
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600816113/Coaching_cropped_ibup02.jpg
 benefits: >-
   <ul>
