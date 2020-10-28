@@ -1,5 +1,7 @@
 import { graphql, useStaticQuery } from "gatsby";
 
+const youtubeRegex = /(?:https?:\/\/)?(?:www\.)?youtu(?:\.be\/|be.com\/\S*(?:watch|embed)(?:(?:(?=\/[^&\s\?]+(?!\S))\/)|(?:\S*v=|v\/)))([^&\s\?]+)/;
+
 export const cleanNodeKey = (props) => {
   return props.children.map((child) => {
     return {
@@ -35,13 +37,14 @@ export const shuffleArray = (inputData) => {
   return data;
 };
 
+export const isVideoValid = (link) => {
+  const matches = link.match(youtubeRegex);
+  return Boolean(matches);
+};
+
 export const getVideoId = (link) => {
-  let videoIdIndex = link.indexOf("?v=");
-  if (videoIdIndex > -1) {
-    return link.slice(videoIdIndex + 3);
-  }
-  videoIdIndex = link.indexOf(".be/");
-  return link.slice(videoIdIndex + 4);
+  const matches = link.match(youtubeRegex);
+  return matches[1];
 };
 
 export const getContactEmail = () => {
