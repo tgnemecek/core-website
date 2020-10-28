@@ -87,6 +87,7 @@ export const pageQuery = graphql`
               }
               videos {
                 title
+                subtitle
                 link
               }
             }
