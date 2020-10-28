@@ -41,7 +41,7 @@ explanation:
 
 
     Check out our programs on Productivity, Stress, Prospering, and Leading Your Life and Work (seminar
-    or 3-month implementation program). See descriptions on home page.
+    or 3-month implementation program).
 
     ***
 
