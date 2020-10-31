@@ -9,7 +9,7 @@ const AdminConsole = () => {
   React.useEffect(() => {
     CMS.registerMediaLibrary(cloudinary);
     CMS.registerWidget("video", VideoWidget, null, "string");
-    CMS.init({ config });
+    // CMS.init({ config });
   }, []);
 
   return <div id="nc-root" />;
