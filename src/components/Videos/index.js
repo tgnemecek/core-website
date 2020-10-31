@@ -14,17 +14,20 @@ const Videos = (props) => {
 
   React.useEffect(() => {
     setVideos(
-      props.videos.map(({ title, link }) => {
+      props.videos.map(({ title, subtitle, link }) => {
         const videoId = getVideoId(link);
         return {
           videoId,
           image: `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`,
           link,
           title,
+          subtitle,
         };
       })
     );
   }, []);
+
+  if (!videos) return null;
 
   return (
     <Section className={classes.videos}>
@@ -33,15 +36,17 @@ const Videos = (props) => {
           Videos
         </Typography>
         <Fade duration={200} key={index}>
-          <Typography variant="h2" component="h3" gutterBottom>
-            {videos && videos[index].title}
+          <Typography variant="h2">{videos[index].title}</Typography>
+          <Typography
+            variant="subtitle1"
+            component="p"
+            className={classes.subtitle}
+          >
+            {videos[index].subtitle}
           </Typography>
         </Fade>
         <div className={classes.videoWrapper}>
-          <YouTube
-            className={classes.video}
-            videoId={videos && videos[index].videoId}
-          />
+          <YouTube className={classes.video} videoId={videos[index].videoId} />
         </div>
         <Gallery items={videos} index={index} setIndex={setIndex} />
       </Container>
@@ -54,6 +59,9 @@ export default Videos;
 const videoPercentPadding = 20;
 
 const useStyles = makeStyles((theme) => ({
+  subtitle: {
+    height: 31.25,
+  },
   videos: {
     background: theme.palette.common.white,
     background:
