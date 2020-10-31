@@ -10,6 +10,7 @@
       "deleteMedia": "[skip ci] Delete “{{path}}”"
     }
   },
+  "load_config_file": false,
   "media_folder": "static/img",
   "public_folder": "/img",
   "media_library": {
@@ -284,6 +285,12 @@
                   "widget": "string"
                 },
                 {
+                  "label": "Video Subtitle",
+                  "name": "subtitle",
+                  "widget": "string",
+                  "required": false
+                },
+                {
                   "label": "Video Link",
                   "name": "link",
                   "widget": "string"
@@ -363,7 +370,7 @@
                 {
                   "label": "Video",
                   "name": "video",
-                  "widget": "video",
+                  "widget": "string",
                   "required": false
                 },
                 {
@@ -429,10 +436,7 @@
                 {
                   "label": "Explanation Text",
                   "name": "text",
-                  "widget": "markdown",
-                  "buttons": ["link"],
-                  "editor_components": [],
-                  "modes": ["rich_text"]
+                  "widget": "markdown"
                 },
                 {
                   "label": "Explanation Image",
@@ -496,10 +500,7 @@
                 {
                   "label": "Explanation Text",
                   "name": "text",
-                  "widget": "markdown",
-                  "buttons": ["link"],
-                  "editor_components": [],
-                  "modes": ["rich_text"]
+                  "widget": "markdown"
                 },
                 {
                   "label": "Explanation Image",
@@ -563,10 +564,7 @@
                 {
                   "label": "Explanation Text",
                   "name": "text",
-                  "widget": "markdown",
-                  "buttons": ["link"],
-                  "editor_components": [],
-                  "modes": ["rich_text"]
+                  "widget": "markdown"
                 },
                 {
                   "label": "Explanation Image",
