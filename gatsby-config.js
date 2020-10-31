@@ -15,12 +15,6 @@ module.exports = {
     "gatsby-plugin-material-ui",
     "gatsby-plugin-sass",
     {
-      resolve: `gatsby-plugin-netlify-identity`,
-      options: {
-        url: `https://core-website-2020-test.netlify.com/`,
-      },
-    },
-    {
       resolve: "gatsby-plugin-root-import",
       options: {
         components: path.join(__dirname, "src/components"),
