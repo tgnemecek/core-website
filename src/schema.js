@@ -70,6 +70,8 @@ const LandingPage = `
     description: String
     image: String
     title: String
+    subtitle: String
+    link: String
   }
 
   type Testimonial {
@@ -80,6 +82,7 @@ const LandingPage = `
   type Video {
     link: String
     title: String
+    subtitle: String
   }
 `;
 
@@ -87,7 +90,7 @@ const TeamPage = `
   type TeamPage {
     collection: String!
     key: String!
-
+    hero: Hero
     members: [Member]
   }
   type Member {
@@ -96,6 +99,7 @@ const TeamPage = `
     photo: String
     bio: String
     linkedin: String
+    video: String
   }
 `;
 

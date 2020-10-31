@@ -142,6 +142,12 @@ collections:
             collapsed: false
             fields:
               - { label: Video Title, name: title, widget: string }
+              - {
+                  label: Video Subtitle,
+                  name: subtitle,
+                  widget: string,
+                  required: false,
+                }
               - { label: Video Link, name: link, widget: string }
       - file: "src/collections/pages/team.md"
         label: "Team Page"
@@ -176,7 +182,7 @@ collections:
               - { label: Name, name: name, widget: string }
               - { label: Role, name: role, widget: string }
               - { label: Photo, name: photo, widget: image }
-              - { label: Video, name: video, widget: video, required: false }
+              - { label: Video, name: video, widget: string, required: false }
               - { label: Bio, name: bio, widget: text }
               - {
                   label: LinkedIn Link,
@@ -211,14 +217,7 @@ collections:
             name: explanation
             widget: object
             fields:
-              - {
-                  label: Explanation Text,
-                  name: text,
-                  widget: markdown,
-                  buttons: ["link"],
-                  editor_components: [],
-                  modes: ["rich_text"],
-                }
+              - { label: Explanation Text, name: text, widget: markdown }
               - { label: Explanation Image, name: image, widget: image }
           - { label: Benefits, name: benefits, widget: markdown }
       - file: "src/collections/pages/leading.md"
@@ -248,14 +247,7 @@ collections:
             name: explanation
             widget: object
             fields:
-              - {
-                  label: Explanation Text,
-                  name: text,
-                  widget: markdown,
-                  buttons: ["link"],
-                  editor_components: [],
-                  modes: ["rich_text"],
-                }
+              - { label: Explanation Text, name: text, widget: markdown }
               - { label: Explanation Image, name: image, widget: image }
           - { label: Benefits, name: benefits, widget: markdown }
       - file: "src/collections/pages/learning.md"
@@ -285,13 +277,6 @@ collections:
             name: explanation
             widget: object
             fields:
-              - {
-                  label: Explanation Text,
-                  name: text,
-                  widget: markdown,
-                  buttons: ["link"],
-                  editor_components: [],
-                  modes: ["rich_text"],
-                }
+              - { label: Explanation Text, name: text, widget: markdown }
               - { label: Explanation Image, name: image, widget: image }
           - { label: Benefits, name: benefits, widget: markdown }
