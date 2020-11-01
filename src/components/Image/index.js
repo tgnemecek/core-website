@@ -14,6 +14,7 @@ const Image = ({ src = "", ...props }) => {
         publicId={getImageId(src)}
         crop="fill"
         fetchFormat="auto"
+        secure
         responsive
         {...props}
       />
