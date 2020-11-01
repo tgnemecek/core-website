@@ -23,7 +23,7 @@ const About = ({ about: { text, image } }) => {
           className={classes.aboutGrid}
         >
           <Grid item xs={12} md={6} className={classes.leftSide}>
-            <img src={streak} className={classes.streak} />
+            <img src={streak} className={classes.streak} alt="Streak" />
             <div className={classes.textWrapper}>
               <Fade left>
                 <Typography variant="body2">{text}</Typography>
@@ -36,14 +36,7 @@ const About = ({ about: { text, image } }) => {
             </div>
           </Grid>
           <Grid item xs={6} className={classes.imgWrapper}>
-            <img
-              className={classes.image}
-              src={image}
-              // srcSet={image.srcSet}
-              // sizes={image.sizes}
-              // src={image.src}
-              alt="About"
-            />
+            <img className={classes.image} src={image} alt="CORE Logo" />
           </Grid>
         </Grid>
       </Container>

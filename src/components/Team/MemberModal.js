@@ -51,7 +51,13 @@ const MemberModal = ({
                 </div>
               ) : (
                 <div className={classes.imageWrapper}>
-                  <Image src={photo} width="550" height="500" gravity="faces" />
+                  <Image
+                    alt={name}
+                    src={photo}
+                    width="550"
+                    height="500"
+                    gravity="faces"
+                  />
                 </div>
               )}
             </div>
@@ -60,6 +66,7 @@ const MemberModal = ({
                 <div>
                   <div className={classes.header}>
                     <Image
+                      alt={name}
                       className={classes.thumbnail}
                       src={photo}
                       width="70"

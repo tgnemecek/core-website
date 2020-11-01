@@ -12,14 +12,19 @@ const Hero = ({ hero: { title, image }, small = false }) => {
 
   return (
     <section className={classes.hero} id="hero">
-      <Image className={classes.image} src={image} width="1920" />
+      <Image
+        className={classes.image}
+        src={image}
+        width="1920"
+        alt="Main illustration of the page"
+      />
       <div className={classes.logoBarBackground}>
         <Container>
           <Grid container className={classes.logoBar}>
             {!small && (
               <Grid item>
                 <Fade left>
-                  <img src={logo} className={classes.logo} />
+                  <img src={logo} className={classes.logo} alt="CORE Logo" />
                 </Fade>
               </Grid>
             )}

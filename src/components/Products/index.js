@@ -22,6 +22,7 @@ const Products = ({ products }) => {
       <div className={className}>
         <Fade duration={200} key={index}>
           <Image
+            alt="Featured product"
             className={classes.image}
             src={products[index].image || ""}
             width="400"
@@ -64,7 +65,10 @@ const Products = ({ products }) => {
                   }
                 />
                 <CardContent className={classes.content}>
-                  <Image className={classes.insideImage} />
+                  <Image
+                    alt="Featured Product"
+                    className={classes.insideImage}
+                  />
                   <Typography variant="body1" className={classes.paragraph}>
                     {products[index].description}
                   </Typography>

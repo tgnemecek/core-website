@@ -67,6 +67,7 @@ const Explanation = ({ explanation: { text, image } }) => {
         </Grid>
         <Grid item xs={12} md={4} className={classes.imgContainer}>
           <Image
+            alt="About the service provided"
             className={classes.image}
             src={image}
             height={imageHeight}

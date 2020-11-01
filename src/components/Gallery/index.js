@@ -34,6 +34,7 @@ const Gallery = ({ items, index, setIndex, height = 160, width = 160 }) => {
                 className={gridItemClass(i)}
               >
                 <Image
+                  alt="Item in the gallery"
                   className={classes.image}
                   src={image}
                   width={width}

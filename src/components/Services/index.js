@@ -111,6 +111,7 @@ const Services = ({ services }) => {
               className={classes.serviceWrapper}
             >
               <Image
+                alt={title}
                 className={classes.img}
                 src={image}
                 width="366"
