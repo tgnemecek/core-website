@@ -8,8 +8,8 @@ import config from "./config.json";
 const AdminConsole = () => {
   React.useEffect(() => {
     CMS.registerMediaLibrary(cloudinary);
-    CMS.registerWidget("video", VideoWidget, null, "string");
-    // CMS.init({ config });
+    CMS.registerWidget("video", VideoWidget, null);
+    CMS.init({ config });
   }, []);
 
   return <div id="nc-root" />;

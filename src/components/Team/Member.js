@@ -13,6 +13,7 @@ import {
 } from "@material-ui/core";
 import LaunchIcon from "@material-ui/icons/Launch";
 import Fade from "react-reveal/Fade";
+import Image from "components/Image";
 
 const transition = "all 0.3s ease-in-out";
 
@@ -29,11 +30,12 @@ const Member = ({ idx, name, role, photo, setMemberToView, delay = 0 }) => {
           onMouseLeave={() => setIsHovering(false)}
         >
           <div className={classes.imageWrapper}>
-            <CardMedia
-              image={photo}
+            <Image
               className={classes.image}
-              title={name}
-              component="img"
+              src={photo}
+              height="520"
+              gravity="faces"
+              crop="fill"
             />
             <div className={classes.shadow}></div>
             <Typography variant="subtitle2" className={classes.showMore}>
