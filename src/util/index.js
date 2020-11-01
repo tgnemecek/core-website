@@ -1,4 +1,5 @@
 import { graphql, useStaticQuery } from "gatsby";
+export { default as useBreakpoint } from "./useBreakpoint";
 
 const youtubeRegex = /(?:https?:\/\/)?(?:www\.)?youtu(?:\.be\/|be.com\/\S*(?:watch|embed)(?:(?:(?=\/[^&\s\?]+(?!\S))\/)|(?:\S*v=|v\/)))([^&\s\?]+)/;
 
@@ -49,7 +50,7 @@ export const getVideoId = (link) => {
 
 export const getImageId = (link) => {
   const matches = link.match(/image\/upload\/.*\/(.*)/);
-  return matches[1];
+  return matches ? matches[1] : "";
 };
 
 export const getContactEmail = () => {

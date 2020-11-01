@@ -2,13 +2,16 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography, Button, Grid } from "@material-ui/core";
 import { Link } from "gatsby";
+import { useBreakpoint } from "src/util";
 import { theme } from "components/theme";
+import Image from "components/Image";
 
 const hoverGrowth = 10; // Percent
 
 const Services = ({ services }) => {
   const [hover, setHover] = React.useState(null);
   const classes = useStyles();
+  const { md } = useBreakpoint();
 
   const onMouseEnter = (service) => {
     setHover(service);
@@ -18,6 +21,34 @@ const Services = ({ services }) => {
     if (hover === service) {
       setHover(null);
     }
+  };
+
+  const imgProps = (service) => {
+    let result = {};
+    if (hover === service) {
+      result = {
+        style: {
+          height: `${100 + hoverGrowth}%`,
+          width: `${100 + hoverGrowth}%`,
+          top: `-${hoverGrowth / 2}%`,
+          left: `-${hoverGrowth / 2}%`,
+        },
+      };
+    } else if (hover) {
+      result = {
+        style: {
+          filter: "grayscale(100%) contrast(50%)",
+        },
+      };
+    }
+    if (!md) {
+      result = {
+        ...result,
+        width: "900",
+        height: "220",
+      };
+    }
+    return result;
   };
 
   const imgStyle = (service) => {
@@ -79,7 +110,13 @@ const Services = ({ services }) => {
               md={4}
               className={classes.serviceWrapper}
             >
-              <img src={image} className={classes.img} style={imgStyle(name)} />
+              <Image
+                className={classes.img}
+                src={image}
+                width="366"
+                height="700"
+                {...imgProps(name)}
+              />
               <div className={classes.textBox} style={boxStyle(name)}>
                 <Typography variant="h3">{title}</Typography>
                 <Typography
@@ -158,10 +195,6 @@ const useStyles = makeStyles((theme) => {
     [theme.breakpoints.down("sm")]: {
       serviceWrapper: {
         height: 200,
-      },
-      businessImg: {
-        // top: "40%",
-        // height: "140%",
       },
     },
   };

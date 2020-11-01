@@ -35,7 +35,6 @@ const Member = ({ idx, name, role, photo, setMemberToView, delay = 0 }) => {
               src={photo}
               height="520"
               gravity="faces"
-              crop="fill"
             />
             <div className={classes.shadow}></div>
             <Typography variant="subtitle2" className={classes.showMore}>
