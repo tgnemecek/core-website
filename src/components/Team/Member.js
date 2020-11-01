@@ -31,6 +31,7 @@ const Member = ({ idx, name, role, photo, setMemberToView, delay = 0 }) => {
         >
           <div className={classes.imageWrapper}>
             <Image
+              alt={name}
               className={classes.image}
               src={photo}
               height="520"

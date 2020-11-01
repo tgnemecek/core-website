@@ -77,11 +77,11 @@ const Navbar = ({ pages }) => {
       <Toolbar className={classes.toolbar}>
         {getPath() === "/" ? (
           <a href="#hero">
-            <img src={logo} alt="Company Logo" className={classes.logo} />
+            <img src={logo} alt="CORE Logo" className={classes.logo} />
           </a>
         ) : (
           <Link to="/">
-            <img src={logo} alt="Company Logo" className={classes.logo} />
+            <img src={logo} alt="CORE Logo" className={classes.logo} />
           </Link>
         )}
         <Hidden smDown>{renderNavContent()}</Hidden>
