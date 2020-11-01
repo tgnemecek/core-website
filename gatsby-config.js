@@ -3,6 +3,7 @@ const path = require("path");
 module.exports = {
   siteMetadata: {
     title: "CORE Coaching & Consulting",
+    siteUrl: "https://www.corecoachingconsulting.com",
     description:
       "This repo contains CORE Coaching & Consulting website's source code",
   },
@@ -14,6 +15,13 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-material-ui",
     "gatsby-plugin-sass",
+    "gatsby-plugin-sitemap",
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://www.corecoachingconsulting.com",
+      },
+    },
     {
       resolve: "gatsby-plugin-root-import",
       options: {
