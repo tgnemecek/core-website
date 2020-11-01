@@ -11,11 +11,12 @@ import {
   ListItemIcon,
 } from "@material-ui/core";
 import StarIcon from "@material-ui/icons/Star";
+import Image from "components/Image";
+
+const imageHeight = 400;
 
 const Explanation = ({ explanation: { text, image } }) => {
   const classes = useStyles();
-
-  console.log({ text });
 
   const preparedText = () => {
     return (
@@ -65,7 +66,12 @@ const Explanation = ({ explanation: { text, image } }) => {
           {preparedText()}
         </Grid>
         <Grid item xs={12} md={4} className={classes.imgContainer}>
-          <img src={image} className={classes.image} />
+          <Image
+            className={classes.image}
+            src={image}
+            height={imageHeight}
+            gravity="auto"
+          />
         </Grid>
       </Grid>
     </Container>
@@ -86,8 +92,9 @@ const useStyles = makeStyles((theme) => ({
     minHeight: "400px",
   },
   imgContainer: {
+    margin: "auto",
     alignSelf: "stretch",
-    maxHeight: "400px",
+    height: imageHeight,
   },
   image: {
     width: "100%",

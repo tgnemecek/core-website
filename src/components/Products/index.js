@@ -11,16 +11,21 @@ import {
 import Fade from "react-reveal/Fade";
 import Section from "components/Section";
 import Gallery from "components/Gallery";
+import Image from "components/Image";
 
 const Products = ({ products }) => {
   const classes = useStyles();
   const [index, setIndex] = React.useState(0);
 
-  const Image = ({ className }) => {
+  const ImageWrapper = ({ className }) => {
     return (
       <div className={className}>
         <Fade duration={200} key={index}>
-          <img src={products[index].image} className={classes.image} />
+          <Image
+            className={classes.image}
+            src={products[index].image || ""}
+            width="400"
+          />
         </Fade>
       </div>
     );
@@ -43,7 +48,7 @@ const Products = ({ products }) => {
           rel="noopener noreferrer"
         >
           <div className={classes.featured}>
-            <Image className={classes.leftSide} />
+            <ImageWrapper className={classes.leftSide} />
             <Card className={classes.rightSide}>
               <Fade bottom duration={300} key={index}>
                 <CardHeader

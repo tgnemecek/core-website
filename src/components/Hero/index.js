@@ -5,13 +5,14 @@ import Fade from "react-reveal/Fade";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography, Grid, Button } from "@material-ui/core";
 import logo from "src/img/logo.png";
+import Image from "components/Image";
 
 const Hero = ({ hero: { title, image }, small = false }) => {
   const classes = useStyles({ small })();
 
   return (
     <section className={classes.hero} id="hero">
-      <img src={image} className={classes.image} alt="Hero Image" />
+      <Image className={classes.image} src={image} width="1920" />
       <div className={classes.logoBarBackground}>
         <Container>
           <Grid container className={classes.logoBar}>

@@ -27,11 +27,6 @@ const MemberModal = ({
   const [modalReady, setModalReady] = React.useState(false);
   const classes = useStyles({ modalReady, video })();
 
-  console.log({
-    id: getImageId(photo),
-    photo,
-  });
-
   React.useEffect(() => {
     const timeoutId = setTimeout(() => {
       setModalReady(true);
@@ -56,13 +51,7 @@ const MemberModal = ({
                 </div>
               ) : (
                 <div className={classes.imageWrapper}>
-                  <Image
-                    src={photo}
-                    width="550"
-                    height="500"
-                    gravity="faces"
-                    crop="fill"
-                  />
+                  <Image src={photo} width="550" height="500" gravity="faces" />
                 </div>
               )}
             </div>
@@ -76,7 +65,6 @@ const MemberModal = ({
                       width="70"
                       height="70"
                       gravity="faces"
-                      crop="fill"
                     />
                     <div>
                       <Typography variant="h4">{name}</Typography>

@@ -4,6 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { theme } from "components/theme";
 import HorizontalFeed from "components/HorizontalFeed";
+import Image from "components/Image";
 
 const Gallery = ({ items, index, setIndex, height = 160, width = 160 }) => {
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
@@ -32,7 +33,12 @@ const Gallery = ({ items, index, setIndex, height = 160, width = 160 }) => {
                 onMouseEnter={() => setIndex(i)}
                 className={gridItemClass(i)}
               >
-                <img src={image} className={classes.image} />
+                <Image
+                  className={classes.image}
+                  src={image}
+                  width={width}
+                  height={height}
+                />
               </div>
             );
           })}
