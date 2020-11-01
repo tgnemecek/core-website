@@ -8,13 +8,15 @@ import {
   Typography,
   Grid,
   Paper,
+  Hidden,
 } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
 import YouTube from "react-youtube";
 import Fade from "@material-ui/core/Fade";
 import Modal from "components/Modal";
+import Image from "components/Image";
 import ReplyIcon from "@material-ui/icons/Reply";
-import { getVideoId } from "src/util";
+import { getVideoId, getImageId } from "src/util";
 
 const timeout = 2000;
 
@@ -24,6 +26,11 @@ const MemberModal = ({
 }) => {
   const [modalReady, setModalReady] = React.useState(false);
   const classes = useStyles({ modalReady, video })();
+
+  console.log({
+    id: getImageId(photo),
+    photo,
+  });
 
   React.useEffect(() => {
     const timeoutId = setTimeout(() => {
@@ -38,8 +45,8 @@ const MemberModal = ({
     <Modal open={true} onClose={onClose}>
       <Fade in timeout={timeout}>
         <Paper square elevation={6} className={classes.paper}>
-          <Grid container>
-            <Grid item xs={false} md={6} className={classes.leftSide}>
+          <div className={classes.gridContainer}>
+            <div className={classes.leftSide}>
               {video ? (
                 <div className={classes.videoWrapper}>
                   <YouTube
@@ -49,25 +56,39 @@ const MemberModal = ({
                 </div>
               ) : (
                 <div className={classes.imageWrapper}>
-                  <img src={photo} />
+                  <Image
+                    src={photo}
+                    width="550"
+                    height="500"
+                    gravity="faces"
+                    crop="fill"
+                  />
                 </div>
               )}
-            </Grid>
-            <Grid item xs={12} md={6}>
+            </div>
+            <div className={classes.rightSide}>
               <div className={classes.content}>
-                <Grid container justify="space-between">
-                  <Grid item>
-                    <Typography variant="h4">{name}</Typography>
-                    <Typography variant="body1" gutterBottom>
-                      {role}
-                    </Typography>
-                  </Grid>
-                  <Grid item>
-                    <IconButton onClick={onClose}>
-                      <CloseIcon fontSize="small" />
-                    </IconButton>
-                  </Grid>
-                </Grid>
+                <div>
+                  <div className={classes.header}>
+                    <Image
+                      className={classes.thumbnail}
+                      src={photo}
+                      width="70"
+                      height="70"
+                      gravity="faces"
+                      crop="fill"
+                    />
+                    <div>
+                      <Typography variant="h4">{name}</Typography>
+                      <Typography variant="body1" gutterBottom>
+                        {role}
+                      </Typography>
+                    </div>
+                  </div>
+                  <IconButton onClick={onClose} className={classes.closeButton}>
+                    <CloseIcon fontSize="small" />
+                  </IconButton>
+                </div>
                 <Divider light />
                 <Typography variant="body1" className={classes.bio}>
                   {bio}
@@ -115,8 +136,8 @@ const MemberModal = ({
               <ButtonBase className={classes.bottomButton} onClick={onClose}>
                 Back
               </ButtonBase>
-            </Grid>
-          </Grid>
+            </div>
+          </div>
         </Paper>
       </Fade>
     </Modal>
@@ -130,11 +151,40 @@ const useStyles = ({ modalReady, video }) =>
       maxWidth: "1200px",
       overflow: "hidden",
     },
+    gridContainer: {
+      display: "grid",
+      position: "relative",
+      gridTemplateColumns: "50% 50%",
+      [theme.breakpoints.down("sm")]: {
+        gridTemplateColumns: "1fr",
+      },
+    },
     leftSide: {
       backgroundColor: "black",
+      [theme.breakpoints.down("sm")]: {
+        display: "none",
+      },
+    },
+    header: {
+      display: "grid",
+      gridTemplateColumns: "auto 1fr",
+      gap: "15px",
+    },
+    closeButton: {
+      position: "absolute",
+      top: 0,
+      right: 0,
+    },
+    thumbnail: {
+      borderRadius: "50%",
+      marginBottom: theme.spacing(2),
+      boxShadow: theme.shadows[4],
+      [theme.breakpoints.up("md")]: {
+        display: "none",
+      },
     },
     imageWrapper: {
-      height: 671,
+      height: "100%",
       overflow: "hidden",
       "& img": {
         width: "100%",

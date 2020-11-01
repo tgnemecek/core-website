@@ -47,6 +47,11 @@ export const getVideoId = (link) => {
   return matches[1];
 };
 
+export const getImageId = (link) => {
+  const matches = link.match(/image\/upload\/.*\/(.*)/);
+  return matches[1];
+};
+
 export const getContactEmail = () => {
   const data = useStaticQuery(graphql`
     query EmailQuery {

@@ -8,15 +8,6 @@ const VideoWidget = ({
   classNameWrapper,
   onChange,
 }) => {
-  console.log({
-    componentLogging: "VideoWidget",
-    value,
-    field,
-    forID,
-    classNameWrapper,
-    onChange,
-  });
-
   const isValid = () => {
     const valid = isVideoValid(value);
     if (!valid) {
