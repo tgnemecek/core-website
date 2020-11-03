@@ -98,9 +98,16 @@ products:
     link: https://www.amazon.com/Balancing-Act-Mastering-Elements-Relationships-ebook/dp/B07QGQG38H/ref=sr_1_1?dchild=1&keywords=the+balancing+act+seivert&qid=1600887520&s=books&sr=1-1
     subtitle: Mastering the 5 Elements of Success in Life, Work and Relationships
   - title: 6 Steps to Leading Your Life and Work
-    description: The Balancing Act process can ensure that you lead your life and
-      work the way YOU want. If you follow these 6 steps you will transform
-      yourself so you are more confident and capable of achieving your dreams
+    description: >-
+      This book is a call to the quest, a practical guide that will help you
+      become a real-life Hero at this painful and confusing crossroads in
+      history. 
+
+      "How?" you ask.
+
+      Leading Your Life and Work shows you how to use The Balancing Act’s step-by-step highly-effective, systemic, holistic change process so you can transform these “worst of times” (pandemic, economic collapse, ecological disasters, and social reckoning) into the “best of times”. That is, rather than be defeated by all the odds against you now, you will emerge on the other side of this global transition more powerful, clear, purpose-driven, and happier than you ever imagined.
+
+      So, I urge you to take heart, be courageous, and open this book today so you can immediately implement TBA’s 6-step COREvolutionary process. By deliberately changing yourself from the inside-out, you will take charge of your circumstances, assume complete responsibility for your own life and work, your ability to respond to crises will be magnified many times over…and you will create many positive ripple effects in your community, workplace, and the world.
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600964000/6_Steps_LYL_W_cover_yatpeq.jpg
     link: https://www.amazon.com/dp/B08JYC63Y6/ref=sr_1_3?dchild=1&keywords=6+steps+to+leading+your+life+and+work&qid=1600964053&s=books&sr=1-3
     subtitle: (from the Inside Out)
