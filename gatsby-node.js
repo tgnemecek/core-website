@@ -2,7 +2,7 @@ const _ = require("lodash");
 const path = require("path");
 const { createFilePath } = require("gatsby-source-filesystem");
 const { fmImagesToRelative } = require("gatsby-remark-relative-images");
-const schema = require("./src/schema");
+const schema = require("./src/schema.tsx");
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
@@ -38,7 +38,7 @@ exports.createPages = ({ actions, graphql }) => {
       createPage({
         path: edge.node.fields.slug,
         component: path.resolve(
-          `src/templates/${String(edge.node.frontmatter.component)}.js`
+          `src/templates/${String(edge.node.frontmatter.component)}.tsx`
         ),
       });
     });
