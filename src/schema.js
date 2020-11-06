@@ -120,7 +120,7 @@ const ServicesPage = `
   }
 `;
 
-module.exports = [
+module.exports = schema = [
   MarkdownRemark,
   Information,
   LandingPage,
