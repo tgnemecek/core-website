@@ -15,6 +15,13 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-material-ui",
     "gatsby-plugin-sass",
+    {
+      resolve: "gatsby-plugin-typescript",
+      options: {
+        isTSX: true,
+        allExtensions: true,
+      },
+    },
     "gatsby-plugin-sitemap",
     {
       resolve: "gatsby-plugin-robots-txt",
