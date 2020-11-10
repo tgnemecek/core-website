@@ -102,9 +102,9 @@ products:
       This book is a call to the quest, a practical guide that will help you
       become a real-life Hero at this crossroads in history. "How?" you ask.
 
-      Use The Balancing Act’s step-by-step systemic, holistic change process to transform these “worst of times” (pandemic, recession, climate & social shifts) into the “best of times”. That is, rather than be defeated, emerge on the other side of this global transition more powerful, clear, purpose-driven, and happier than you imagined possible. 
+      Use The Balancing Act’s step-by-step systemic, holistic change process to transform these “worst of times” (pandemic, recession, climate, political & social shifts) into the “best of times”. That is, rather than be defeated, you will emerge on the other side of this global transition more powerful, clear, purpose-driven, and happier than you imagined possible. 
 
-      I urge you to take heart, be courageous, and immediately implement TBA’s 6-step COREvolutionary process. By deliberately changing yourself from the inside-out, you will take complete responsibility so your ability-to-respond to crises will be magnified many times over. What's more, you will create many positive ripple effects in your community, workplace, and the world.
+      I urge you to take heart, be courageous, and become pragmatically, carefully optimistic so you can immediately implement TBA’s 6-step COREvolutionary process. By deliberately changing yourself from the inside-out, you will be able to take complete responsibility for your whole life so your ability-to-respond to crises will be magnified many times over. What's more, you will create many positive ripple effects in your community, workplace, and the world.
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600964000/6_Steps_LYL_W_cover_yatpeq.jpg
     link: https://www.amazon.com/dp/B08JYC63Y6/ref=sr_1_3?dchild=1&keywords=6+steps+to+leading+your+life+and+work&qid=1600964053&s=books&sr=1-3
     subtitle: (from the Inside Out)
