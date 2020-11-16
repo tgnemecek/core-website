@@ -191,4 +191,6 @@ videos:
     link: https://www.youtube.com/watch?v=PVwxrMku-xY
   - title: "Experience the Elements: Structure"
     link: https://www.youtube.com/watch?v=-UwqzjoubDA
+  - title: Experience Synerty
+    link: https://www.youtube.com/watch?v=V-NNyRtyfeY
 ---
