@@ -157,23 +157,26 @@ videos:
   - link: https://www.youtube.com/watch?v=Drg9JUYrrrA
     title: Xavi Nova
     subtitle: '"The Balancing Act Changed My Life and Work"'
-  - link: https://www.youtube.com/watch?v=52Iv5hdqDxw
-    title: Intro to Career Coaching Program
-    subtitle: (Spanish & English)
   - title: Eva
     link: https://youtu.be/DIWW0Ln6FvA
     subtitle: '"Transformative"'
+  - link: https://www.youtube.com/watch?v=YK73aDweeV8
+    title: "Andrea: The course gave me great strategies..."
+    subtitle: To tap into my true talents, confidence & flow so everything works in sync
+  - link: https://www.youtube.com/watch?v=52Iv5hdqDxw
+    title: Intro to Career Coaching Program
+    subtitle: (Spanish & English)
   - link: https://www.youtube.com/watch?v=df2uZ3kqZt8
     title: Breakout Career Speech
-  - title: Organizational Change
-    link: https://www.youtube.com/watch?v=XQdlMuzwBAE
-    subtitle: (Brazil Banks)
   - link: https://youtu.be/jMqxETd1Y8w
     title: Noemi
     subtitle: '"I Changed Everything" (Spanish & English)'
   - link: https://youtu.be/zN_54BRtEYY
     title: Juame
     subtitle: '"Very Practical" (Spanish & English)'
+  - title: Organizational Change
+    link: https://www.youtube.com/watch?v=XQdlMuzwBAE
+    subtitle: (Brazil Banks)
   - link: https://www.youtube.com/watch?v=I3LmXgYoRLY
     title: "SOS: Switch Off Stress App"
     subtitle: Introduction to the Mobile App
