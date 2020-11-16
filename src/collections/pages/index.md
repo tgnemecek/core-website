@@ -99,12 +99,12 @@ products:
     subtitle: Mastering the 5 Elements of Success in Life, Work and Relationships
   - title: 6 Steps to Leading Your Life and Work
     description: >-
-      This book is a call to the quest, a practical guide that will help you
-      become a real-life Hero at this crossroads in history. "How?" you ask...by
-      using The Balancing Act’s step-by-step systemic, holistic change process
-      to transform these “worst of times” (pandemic, recession, climate, &
-      social shifts) into the “best of times”. That is, rather than be defeated,
-      you will emerge on the other side of this global transition more powerful,
+      This book is a call to the quest, a practical guide to becoming a
+      real-life Hero at this crossroads in history. "How?" you ask...by using
+      The Balancing Act’s step-by-step systemic, holistic change process to
+      transform these “worst of times” (pandemic, recession, climate, & social
+      shifts) into the “best of times”. That is, rather than be defeated, you
+      will emerge on the other side of this global transition more powerful,
       clear, purpose-driven, and happier than you imagined possible. 
 
       I urge you to take heart, be courageous, and become pragmatically, carefully optimistic so you can immediately implement TBA’s 6-step COREvolutionary process. By deliberately changing yourself from the inside-out, you will be able to take complete responsibility for your whole life so your ability-to-respond to crises will be magnified many times over. What's more, you will create many positive ripple effects in your community, workplace, and world.
