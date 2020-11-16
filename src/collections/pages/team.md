@@ -183,5 +183,5 @@ members:
       Mr. Reade is a founder &/or director of a dozen non profit arts organizations, and has managed many of these from startup to maturity.  For several years he was the Chair of the International Committee for the Northern Virginia Technology Council, the largest tech council in the US.  He graduated from Case Western Reserve University School of Law in 1987.
     linkedin: https://www.linkedin.com/in/randall-reade-1770035/
     video: ""
-    photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1602864078/Randy_CCC_photo_nacbxr.jpg
+    photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1605537039/CCC_Randy_uxsqxo.jpg
 ---
