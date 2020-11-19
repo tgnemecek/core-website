@@ -184,4 +184,12 @@ members:
     linkedin: https://www.linkedin.com/in/randall-reade-1770035/
     video: ""
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1605537039/CCC_Randy_uxsqxo.jpg
+  - name: Sam Turgeon
+    role: "Social Media "
+    photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1605792399/CCC_Sam_bkrxw9.jpg
+    bio: "As a middle-schooler from New Hampshire, Sam is the youngest member of the
+      international Core Team, leading our social media efforts on YouTube,
+      video production, and Instagram. Sam is an aspiring entrepreneur who
+      already has his own YouTube channel: TurgTheSkater, where he can be seen
+      perfecting his skateboarding expertise."
 ---
