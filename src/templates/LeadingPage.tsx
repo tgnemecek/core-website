@@ -7,7 +7,6 @@ import Section from "components/Section";
 import Explanation from "components/Explanation";
 import Benefits from "components/Benefits";
 import FreeReport from "components/FreeReport";
-import CallToAction from "components/CallToAction";
 import PayPalButtons from "components/PayPalButtons";
 
 import Layout from "components/Layout";
@@ -29,7 +28,6 @@ const LeadingPage: React.FC<any> = ({ hero, benefits, explanation, email }) => {
           benefits={benefits}
           title="Schedule a time with us if you are:"
         />
-        <CallToAction text="Send Us a Message" href={`mailto:${email}`} />
       </Section>
       <Section>
         <PayPalButtons

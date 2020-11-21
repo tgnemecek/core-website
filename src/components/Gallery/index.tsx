@@ -1,10 +1,7 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-import { theme } from "components/theme";
-import HorizontalFeed from "components/HorizontalFeed";
-import Image from "components/Image";
+import { Image, HorizontalFeed, theme } from "components";
 
 type GalleryProps = {
   items: {

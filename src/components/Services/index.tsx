@@ -2,9 +2,8 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography, Grid } from "@material-ui/core";
 import { Link } from "gatsby";
-import { useBreakpoint } from "src/util";
-import { theme } from "components/theme";
-import Image from "components/Image";
+import { useBreakpoint } from "util";
+import { Image, theme } from "components";
 
 const hoverGrowth = 10; // Percent
 

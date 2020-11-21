@@ -1,7 +1,7 @@
 import React from "react";
-import { themeObject } from "src/components/theme";
+import { breakpoints } from "components";
 
-const breakpointMap = themeObject.breakpoints.values;
+const breakpointMap = breakpoints.values;
 
 type UseBreakpointState = Record<"sm" | "md" | "lg" | "xl" | "xxl", boolean>;
 

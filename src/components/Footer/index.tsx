@@ -9,7 +9,6 @@ import {
   List,
   ListItem,
   ListItemIcon,
-  Divider,
 } from "@material-ui/core";
 import EmailIcon from "@material-ui/icons/Email";
 import PhoneIphoneIcon from "@material-ui/icons/PhoneIphone";
