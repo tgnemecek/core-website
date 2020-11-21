@@ -1,11 +1,10 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
-import { theme } from "components/theme";
 import { Box, IconButton, Grid, Container } from "@material-ui/core";
 import { Skeleton } from "@material-ui/lab";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import { theme } from "components";
 
 import Item from "./Item";
 

@@ -2,18 +2,18 @@ import React from "react";
 import { graphql } from "gatsby";
 import coachingReport from "src/downloads/free-reports/coaching.pdf";
 import { getContactEmail } from "src/util";
-import Hero from "components/Hero";
-import Section from "components/Section";
-import Explanation from "components/Explanation";
-import Benefits from "components/Benefits";
-import FreeReport from "components/FreeReport";
-import CallToAction from "components/CallToAction";
-import PayPalButtons from "components/PayPalButtons";
-
-import Layout from "components/Layout";
-
-import Navbar from "components/Navbar";
-import Footer from "components/Footer";
+import {
+  Hero,
+  Section,
+  Explanation,
+  Benefits,
+  FreeReport,
+  CallToAction,
+  PayPalButtons,
+  Layout,
+  Navbar,
+  Footer,
+} from "components";
 
 const CoachingPage: React.FC<any> = ({
   hero,

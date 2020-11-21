@@ -3,16 +3,18 @@ import { createMuiTheme, responsiveFontSizes } from "@material-ui/core";
 const baseFontColor = "#595959";
 const primaryColor = "#315cb0";
 
-export const themeObject = {
-  breakpoints: {
-    values: {
-      xs: 400,
-      sm: 600,
-      md: 960,
-      lg: 1280,
-      xl: 1920,
-    },
+export const breakpoints = {
+  values: {
+    xs: 400,
+    sm: 600,
+    md: 960,
+    lg: 1280,
+    xl: 1920,
   },
+};
+
+const themeObject = {
+  breakpoints,
   overrides: {},
   typography: {
     fontFamily: '"Roboto", Arial, sans-serif',
@@ -65,4 +67,6 @@ export const themeObject = {
   },
 };
 
-export const theme = responsiveFontSizes(createMuiTheme(themeObject));
+const theme = responsiveFontSizes(createMuiTheme(themeObject));
+
+export default theme;

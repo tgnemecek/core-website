@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import {
@@ -10,7 +9,7 @@ import {
   CardContent,
   CardActionArea,
 } from "@material-ui/core";
-import { theme } from "components/theme";
+import { theme } from "components";
 import buttons from "./buttons";
 
 type PayPalButtonsProps = {

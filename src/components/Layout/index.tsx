@@ -4,11 +4,11 @@ import { Helmet } from "react-helmet";
 import "./reset.css";
 import "fontsource-roboto";
 
-import GoogleAnalytics from "components/GoogleAnalytics";
-import { theme } from "components/theme";
+import { GoogleAnalytics, theme } from "components";
+
 import { MuiThemeProvider } from "@material-ui/core";
 
-import useSiteMetadata from "./SiteMetadata";
+import { useSiteMetadata } from "util";
 import { withPrefix } from "gatsby";
 
 const Layout: React.FC = ({ children }) => {

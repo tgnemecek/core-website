@@ -1,6 +1,5 @@
 import React from "react";
-import { graphql, useStaticQuery } from "gatsby";
-import PropTypes from "prop-types";
+import { graphql, useStaticQuery, Link } from "gatsby";
 import { makeStyles } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import {
@@ -15,10 +14,9 @@ import {
   Tooltip,
   Box,
 } from "@material-ui/core";
-import { Link } from "gatsby";
 import MenuIcon from "@material-ui/icons/Menu";
 import logo from "src/img/logo.png";
-import { theme } from "components/theme";
+import { theme } from "components";
 
 type NavbarProps = {
   pages: {
