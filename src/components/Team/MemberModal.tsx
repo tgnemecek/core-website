@@ -13,10 +13,9 @@ import {
 import CloseIcon from "@material-ui/icons/Close";
 import YouTube from "react-youtube";
 import Fade from "@material-ui/core/Fade";
-import Modal from "components/Modal";
-import Image from "components/Image";
+import { getVideoId } from "utils";
+import { Modal, Image } from "components";
 import ReplyIcon from "@material-ui/icons/Reply";
-import { getVideoId, getImageId } from "src/util";
 import { MemberType } from "./types";
 
 const timeout = 2000;

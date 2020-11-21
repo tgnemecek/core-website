@@ -1,18 +1,19 @@
 import React from "react";
 import { graphql } from "gatsby";
 import leadingReport from "src/downloads/free-reports/leading.pdf";
-import { getContactEmail } from "src/util";
-import Hero from "components/Hero";
-import Section from "components/Section";
-import Explanation from "components/Explanation";
-import Benefits from "components/Benefits";
-import FreeReport from "components/FreeReport";
-import PayPalButtons from "components/PayPalButtons";
+import { getContactEmail } from "utils";
 
-import Layout from "components/Layout";
-
-import Navbar from "components/Navbar";
-import Footer from "components/Footer";
+import {
+  Hero,
+  Section,
+  Explanation,
+  Benefits,
+  FreeReport,
+  PayPalButtons,
+  Layout,
+  Navbar,
+  Footer,
+} from "components";
 
 const LeadingPage: React.FC<any> = ({ hero, benefits, explanation, email }) => {
   return (

@@ -10,7 +10,7 @@ import {
   ListItemIcon,
 } from "@material-ui/core";
 import StarIcon from "@material-ui/icons/Star";
-import Image from "components/Image";
+import { Image } from "components";
 
 const imageHeight = 400;
 

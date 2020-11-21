@@ -1,5 +1,5 @@
 import React from "react";
-import { isVideoValid } from "src/util";
+import { isVideoValid } from "utils";
 
 const VideoWidget = ({
   value = "",

@@ -5,8 +5,8 @@ import { Skeleton } from "@material-ui/lab";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import VisuallyHidden from "@reach/visually-hidden";
-import Section from "components/Section";
-import { shuffleArray } from "src/util";
+import { Section } from "components";
+import { shuffleArray } from "utils";
 
 import Testimonial from "./Testimonial";
 import { TestimonialType } from "./types";

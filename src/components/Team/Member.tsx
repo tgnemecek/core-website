@@ -9,7 +9,7 @@ import {
 } from "@material-ui/core";
 import LaunchIcon from "@material-ui/icons/Launch";
 import Fade from "react-reveal/Fade";
-import Image from "components/Image";
+import { Image } from "components";
 import { MemberType } from "./types";
 
 const transition = "all 0.3s ease-in-out";
