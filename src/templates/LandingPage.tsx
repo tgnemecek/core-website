@@ -1,18 +1,18 @@
 import React from "react";
-import { Link, graphql } from "gatsby";
-import { Container } from "@material-ui/core";
+import { graphql } from "gatsby";
 
-import Hero from "components/Hero";
-import Events from "components/Events";
-import About from "components/About";
-import Testimonials from "components/Testimonials";
-import Services from "components/Services";
-import Products from "components/Products";
-import Videos from "components/Videos";
-import Layout from "components/Layout";
-
-import Navbar from "components/Navbar";
-import Footer from "components/Footer";
+import {
+  Hero,
+  Events,
+  About,
+  Testimonials,
+  Services,
+  Products,
+  Videos,
+  Layout,
+  Navbar,
+  Footer,
+} from "components";
 
 const LandingPage: React.FC<any> = ({
   hero,

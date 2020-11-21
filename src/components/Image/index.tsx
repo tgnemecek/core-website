@@ -1,6 +1,6 @@
 import React from "react";
 import { Image as CloudinaryImage } from "cloudinary-react";
-import { getImageId } from "src/util";
+import { getImageId } from "utils";
 
 // Check main props here: https://cloudinary.com/documentation/image_transformations#resizing_and_cropping_images
 

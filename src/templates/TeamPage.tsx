@@ -1,13 +1,7 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 
-import Hero from "components/Hero";
-import Team from "components/Team";
-import Layout from "components/Layout";
-
-import Navbar from "components/Navbar";
-import Footer from "components/Footer";
+import { Hero, Team, Layout, Navbar, Footer } from "components";
 
 const TeamPage: React.FC<any> = ({ hero, members }) => {
   return (

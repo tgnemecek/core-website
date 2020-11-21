@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import coachingReport from "src/downloads/free-reports/coaching.pdf";
-import { getContactEmail } from "src/util";
+import { getContactEmail } from "utils";
 import {
   Hero,
   Section,

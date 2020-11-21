@@ -9,9 +9,7 @@ import {
   CardHeader,
 } from "@material-ui/core";
 import Fade from "react-reveal/Fade";
-import Section from "components/Section";
-import Gallery from "components/Gallery";
-import Image from "components/Image";
+import { Section, Gallery, Image } from "components";
 
 type ProductsProps = {
   products: {

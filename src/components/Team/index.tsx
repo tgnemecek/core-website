@@ -1,9 +1,6 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { Container, Typography, Button, Grid, Modal } from "@material-ui/core";
-import Section from "components/Section";
-import { Link } from "gatsby";
-import { theme } from "components/theme";
+import { Container, Grid } from "@material-ui/core";
+import { Section } from "components";
 import Member from "./Member";
 import MemberModal from "./MemberModal";
 import { MemberType } from "./types";

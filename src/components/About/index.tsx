@@ -2,7 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography, Grid } from "@material-ui/core";
 import Fade from "react-reveal/Fade";
-import Section from "components/Section";
+import { Section } from "components";
 import { Link } from "gatsby";
 import streak from "src/img/streak1.jpg";
 

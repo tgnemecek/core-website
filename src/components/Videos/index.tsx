@@ -1,11 +1,10 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Container, Typography, Grid } from "@material-ui/core";
+import { Container, Typography } from "@material-ui/core";
 import Fade from "react-reveal/Fade";
 import YouTube from "react-youtube";
-import Section from "components/Section";
-import Gallery from "components/Gallery";
-import { getVideoId } from "src/util";
+import { Section, Gallery } from "components";
+import { getVideoId } from "utils";
 
 type VideosProps = {
   videos: {

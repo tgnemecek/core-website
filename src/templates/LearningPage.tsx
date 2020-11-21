@@ -1,19 +1,19 @@
 import React from "react";
 import { graphql } from "gatsby";
 import learningReport from "src/downloads/free-reports/learning.pdf";
-import { getContactEmail } from "src/util";
-import Hero from "components/Hero";
-import Section from "components/Section";
-import Explanation from "components/Explanation";
-import Benefits from "components/Benefits";
-import FreeReport from "components/FreeReport";
-import CallToAction from "components/CallToAction";
-import PayPalButtons from "components/PayPalButtons";
+import { getContactEmail } from "utils";
 
-import Layout from "components/Layout";
-
-import Navbar from "components/Navbar";
-import Footer from "components/Footer";
+import {
+  Hero,
+  Section,
+  Explanation,
+  Benefits,
+  FreeReport,
+  PayPalButtons,
+  Layout,
+  Navbar,
+  Footer,
+} from "components";
 
 const LearningPage: React.FC<any> = ({
   hero,
@@ -31,7 +31,6 @@ const LearningPage: React.FC<any> = ({
           downloadLink={learningReport}
         />
         <Benefits benefits={benefits} title="Schedule a time with us if you:" />
-        <CallToAction text="Send Us a Message" href={`mailto:${email}`} />
       </Section>
       <Section>
         <PayPalButtons buttonTypes={["personalStrengths", "donation"]} />

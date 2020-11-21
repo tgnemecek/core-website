@@ -1,8 +1,7 @@
 import React from "react";
 import { Container, Typography } from "@material-ui/core";
 
-import Section from "components/Section";
-import HorizontalFeed from "components/HorizontalFeed";
+import { Section, HorizontalFeed } from "components";
 import Event from "./Event";
 import { EventDTO } from "./types";
 

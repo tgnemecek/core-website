@@ -8,7 +8,7 @@ import { GoogleAnalytics, theme } from "components";
 
 import { MuiThemeProvider } from "@material-ui/core";
 
-import { useSiteMetadata } from "util";
+import { useSiteMetadata } from "utils";
 import { withPrefix } from "gatsby";
 
 const Layout: React.FC = ({ children }) => {
