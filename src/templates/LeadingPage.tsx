@@ -8,8 +8,10 @@ import {
   Section,
   Explanation,
   Benefits,
+  CallToAction,
   FreeReport,
   PayPalButtons,
+  ContactForm,
   Layout,
   Navbar,
   Footer,
@@ -29,12 +31,14 @@ const LeadingPage: React.FC<any> = ({ hero, benefits, explanation, email }) => {
           benefits={benefits}
           title="Schedule a time with us if you are:"
         />
+        <CallToAction href="#contact-form" text="Send Us a message" />
       </Section>
       <Section>
         <PayPalButtons
           buttonTypes={["leaderStrengths", "entrepreneuerStrengths"]}
         />
       </Section>
+      <ContactForm />
     </>
   );
 };

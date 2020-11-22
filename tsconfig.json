@@ -5,7 +5,7 @@
     "paths": {
       "src/*": ["./src/*"],
       "components": ["./src/components/index.ts"],
-      "utils": ["./src/utils/index.tss"]
+      "utils": ["./src/utils/index.ts"]
     },
     "sourceMap": true,
     "noImplicitAny": true,

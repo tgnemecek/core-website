@@ -15,7 +15,19 @@ export const breakpoints = {
 
 const themeObject = {
   breakpoints,
-  overrides: {},
+  overrides: {
+    MuiFilledInput: {
+      root: {
+        backgroundColor: "#f5f3f369",
+        "&&:hover": {
+          backgroundColor: "#f5f3f369",
+        },
+        "&.Mui-focused": {
+          backgroundColor: "#f5f3f3cc",
+        },
+      },
+    },
+  },
   typography: {
     fontFamily: '"Roboto", Arial, sans-serif',
     fontSize: 12,
