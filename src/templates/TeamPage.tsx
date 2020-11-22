@@ -1,56 +1,20 @@
 import React from "react";
-import { graphql } from "gatsby";
-
 import { Hero, Team, Layout, Navbar, Footer } from "components";
+import { useTeamPage } from "utils";
 
-const TeamPage: React.FC<any> = ({ hero, members }) => {
-  return (
-    <>
-      <Hero hero={hero} small />
-      <Team members={members} />
-    </>
-  );
-};
-
-const TeamPageLoader: React.FC<any> = (props) => {
-  const team = props.data.team.nodes[0].frontmatter.pages.team;
+const TeamPage: React.FC = () => {
+  const { hero, members } = useTeamPage();
 
   return (
     <Layout>
       <Navbar />
       <main>
-        <TeamPage {...team} />
+        <Hero hero={hero} small />
+        <Team members={members} />
       </main>
       <Footer />
     </Layout>
   );
 };
 
-export default TeamPageLoader;
-
-export const pageQuery = graphql`
-  query TeamPageQuery {
-    team: allMarkdownRemark(filter: { frontmatter: { key: { eq: "team" } } }) {
-      nodes {
-        frontmatter {
-          pages {
-            team {
-              hero {
-                title
-                image
-              }
-              members {
-                name
-                role
-                photo
-                video
-                bio
-                linkedin
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`;
+export default TeamPage;
