@@ -10,7 +10,7 @@ const useLearningPage = (): ServicesPage => {
         nodes {
           frontmatter {
             pages {
-              leading {
+              learning {
                 benefits
                 explanation {
                   text
