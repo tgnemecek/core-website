@@ -71,7 +71,7 @@ const ContactForm: React.FC = () => {
           name="contact"
           method="POST"
           data-netlify="true"
-          netlify-honeypot="bot-field"
+          netlify-honeypot="honeypot"
           onSubmit={handleSubmit}
         >
           <Paper className={classes.paper} elevation={6}>
