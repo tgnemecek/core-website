@@ -31,7 +31,7 @@ const Footer: React.FC<FooterProps> = ({
 }) => {
   const classes = useStyles();
 
-  const renderPhone = (phone) => {
+  const renderPhone = (phone: string) => {
     const href = `tel:${phone.replace(/\D/g, "")}`;
     return (
       <ListItem>
