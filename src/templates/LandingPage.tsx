@@ -27,12 +27,12 @@ const LandingPage: React.FC<any> = ({
     <>
       <Hero hero={hero} />
       {/* <Events /> */}
-      <About about={about} />
+      {/* <About about={about} />
       <Testimonials testimonials={testimonials} />
       <Services services={services} />
       <Products products={products} />
       <Videos videos={videos} />
-      <ContactForm />
+      <ContactForm /> */}
     </>
   );
 };
