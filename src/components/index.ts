@@ -1,6 +1,7 @@
 export { default as About } from "./About";
 export { default as Benefits } from "./Benefits";
 export { default as CallToAction } from "./CallToAction";
+export { default as ContactForm } from "./ContactForm";
 export { default as Events } from "./Events";
 export { default as Explanation } from "./Explanation";
 export { default as Footer } from "./Footer";

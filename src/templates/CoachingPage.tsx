@@ -10,6 +10,7 @@ import {
   FreeReport,
   CallToAction,
   PayPalButtons,
+  ContactForm,
   Layout,
   Navbar,
   Footer,
@@ -31,11 +32,12 @@ const CoachingPage: React.FC<any> = ({
           downloadLink={coachingReport}
         />
         <Benefits benefits={benefits} title="Schedule a time with us if you:" />
-        <CallToAction text="Send Us a Message" href={`mailto:${email}`} />
+        <CallToAction text="Send Us a Message" href="#contact-form" />
       </Section>
       <Section>
         <PayPalButtons buttonTypes={["careerStrengths", "personalStrengths"]} />
       </Section>
+      <ContactForm />
     </>
   );
 };

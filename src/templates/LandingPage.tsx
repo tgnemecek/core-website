@@ -9,6 +9,7 @@ import {
   Services,
   Products,
   Videos,
+  ContactForm,
   Layout,
   Navbar,
   Footer,
@@ -31,6 +32,7 @@ const LandingPage: React.FC<any> = ({
       <Services services={services} />
       <Products products={products} />
       <Videos videos={videos} />
+      <ContactForm />
     </>
   );
 };
