@@ -17,6 +17,7 @@ import {
 
 const CoachingPage: React.FC = () => {
   const { hero, benefits, explanation } = useCoachingPage();
+
   return (
     <Layout>
       <Navbar />

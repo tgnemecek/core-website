@@ -10,7 +10,7 @@ const useCoachingPage = (): ServicesPage => {
         nodes {
           frontmatter {
             pages {
-              leading {
+              coaching {
                 benefits
                 explanation {
                   text
