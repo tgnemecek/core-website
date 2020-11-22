@@ -1,16 +1,48 @@
-export type Hero = {
+export type HeroType = {
   title: string;
   image: string;
 };
 
-export type Benefits = string;
-
-export type Explanation = {
+export type AboutType = {
   text: string;
   image: string;
 };
 
-export type Member = {
+export type TestimonialType = {
+  author: string;
+  role: string;
+  testimonial: string;
+};
+
+export type ServiceType = {
+  title: string;
+  name: string;
+  description: string;
+  image: string;
+};
+
+export type ProductType = {
+  description: string;
+  image: string;
+  title: string;
+  subtitle: string;
+  link: string;
+};
+
+export type VideoType = {
+  title: string;
+  subtitle: string;
+  link: string;
+};
+
+export type BenefitsType = string;
+
+export type ExplanationType = {
+  text: string;
+  image: string;
+};
+
+export type MemberType = {
   name: string;
   role: string;
   photo: string;
@@ -19,13 +51,24 @@ export type Member = {
   linkedin?: string;
 };
 
-export type ServicesPage = {
-  hero: Hero;
-  benefits: Benefits;
-  explanation: Explanation;
+// Types for each page query
+
+export type LandingPageDTO = () => {
+  hero: HeroType;
+  about: AboutType;
+  testimonials: TestimonialType[];
+  services: ServiceType[];
+  products: ProductType[];
+  videos: VideoType[];
 };
 
-export type TeamPage = {
-  hero: Hero;
-  members: Member[];
+export type ServicesPageDTO = {
+  hero: HeroType;
+  benefits: BenefitsType;
+  explanation: ExplanationType;
+};
+
+export type TeamPageDTO = {
+  hero: HeroType;
+  members: MemberType[];
 };

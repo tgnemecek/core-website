@@ -1,40 +1,7 @@
 import { useStaticQuery, graphql } from "gatsby";
+import { LandingPageDTO } from "types";
 
-type UseLandingPage = () => {
-  hero: {
-    title: string;
-    image: string;
-  };
-  about: {
-    text: string;
-    image: string;
-  };
-  testimonials: {
-    author: string;
-    role: string;
-    testimonial: string;
-  }[];
-  services: {
-    title: string;
-    name: string;
-    description: string;
-    image: string;
-  }[];
-  products: {
-    description: string;
-    image: string;
-    title: string;
-    subtitle: string;
-    link: string;
-  }[];
-  videos: {
-    title: string;
-    subtitle: string;
-    link: string;
-  }[];
-};
-
-const useLandingPage: UseLandingPage = () => {
+const useLandingPage = (): LandingPageDTO => {
   const data = useStaticQuery(graphql`
     query LandingPageQuery {
       main: allMarkdownRemark(

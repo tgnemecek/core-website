@@ -1,7 +1,7 @@
 import { useStaticQuery, graphql } from "gatsby";
-import { TeamPage } from "types";
+import { TeamPageDTO } from "types";
 
-const useTeamPage = (): TeamPage => {
+const useTeamPage = (): TeamPageDTO => {
   const data = useStaticQuery(graphql`
     query TeamPageQuery {
       team: allMarkdownRemark(
