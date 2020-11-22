@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql, useStaticQuery, Link } from "gatsby";
+import { Link } from "gatsby";
 import { makeStyles } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import {
@@ -17,16 +17,10 @@ import {
 import MenuIcon from "@material-ui/icons/Menu";
 import logo from "src/img/logo.png";
 import { theme } from "components";
+import { usePages } from "utils";
 
-type NavbarProps = {
-  pages: {
-    label: string;
-    url: string;
-    description?: string;
-  }[];
-};
-
-const Navbar: React.FC<NavbarProps> = ({ pages }) => {
+const Navbar: React.FC = () => {
+  const pages = usePages();
   const [isOnTop, setOnTop] = React.useState(true);
   const [isDrawerOpen, setDrawerOpen] = React.useState(false);
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
@@ -110,7 +104,7 @@ const Navbar: React.FC<NavbarProps> = ({ pages }) => {
 
 type UseStylesProps = {
   isOnTop: boolean;
-}
+};
 
 const useStyles = ({ isOnTop }: UseStylesProps) =>
   makeStyles((theme) => ({
@@ -173,30 +167,4 @@ const useStyles = ({ isOnTop }: UseStylesProps) =>
     },
   }));
 
-const NavbarLoader = () => {
-  const data = useStaticQuery(graphql`
-    query NavbarQuery {
-      pages: allMarkdownRemark(
-        filter: { frontmatter: { key: { eq: "navigation" } } }
-      ) {
-        nodes {
-          frontmatter {
-            information {
-              navigation {
-                links {
-                  label
-                  url
-                  description
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `);
-  const pages = data.pages.nodes[0].frontmatter.information.navigation.links;
-  return <Navbar pages={pages} />;
-};
-
-export default NavbarLoader;
+export default Navbar;
