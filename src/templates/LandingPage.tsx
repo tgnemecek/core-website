@@ -13,7 +13,7 @@ import {
   // Layout,
   Navbar,
   Footer,
-} from "components";
+} from "components/index";
 
 const LandingPage: React.FC<any> = ({
   hero,
