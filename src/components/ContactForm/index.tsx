@@ -36,7 +36,10 @@ const ContactForm: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const body = new URLSearchParams(form).toString();
+    const body = new URLSearchParams({
+      "form-name": "contact",
+      ...form,
+    }).toString();
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -65,7 +68,6 @@ const ContactForm: React.FC = () => {
       </Typography>
       <div className={classes.container}>
         <form
-          id="form"
           name="contact"
           method="POST"
           data-netlify="true"
