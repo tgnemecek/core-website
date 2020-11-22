@@ -15,31 +15,32 @@ import { graphql } from "gatsby";
 //   Footer,
 // } from "components";
 
-// const LandingPage: React.FC<any> = ({
-//   hero,
-//   about,
-//   testimonials,
-//   services,
-//   products,
-//   videos,
-// }) => {
-//   return (
-//     <>
-//       {/* <Hero hero={hero} /> */}
-//       {/* <Events /> */}
-//       {/* <About about={about} />
-//       <Testimonials testimonials={testimonials} />
-//       <Services services={services} />
-//       <Products products={products} />
-//       <Videos videos={videos} />
-//       <ContactForm /> */}
-//     </>
-//   );
-// };
+const LandingPage: React.FC<any> = ({
+  hero,
+  about,
+  testimonials,
+  services,
+  products,
+  videos,
+}) => {
+  return (
+    <>
+      {/* <Hero hero={hero} /> */}
+      {/* <Events /> */}
+      {/* <About about={about} />
+      <Testimonials testimonials={testimonials} />
+      <Services services={services} />
+      <Products products={products} />
+      <Videos videos={videos} />
+      <ContactForm /> */}
+    </>
+  );
+};
 
 const LandingPageLoader: React.FC<any> = (props) => {
-  // const landing = props.data.main.nodes[0].frontmatter.pages.landing;
-  return null;
+  const landing = props.data.main.nodes[0].frontmatter.pages.landing;
+  console.log({landing})
+  return <LandingPage {...landing} />
   // return (
   //   <Layout>
   //     <Navbar />
