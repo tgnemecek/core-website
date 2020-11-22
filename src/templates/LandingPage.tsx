@@ -10,9 +10,9 @@ import {
   // Products,
   // Videos,
   // ContactForm,
-  Layout,
-  // Navbar,
-  // Footer,
+  // Layout,
+  Navbar,
+  Footer,
 } from "components";
 
 const LandingPage: React.FC<any> = ({
@@ -40,14 +40,23 @@ const LandingPage: React.FC<any> = ({
 const LandingPageLoader: React.FC<any> = (props) => {
   const landing = props.data.main.nodes[0].frontmatter.pages.landing;
   return (
-    <Layout>
-      {/* <Navbar /> */}
+    <>
+      <Navbar />
       <main>
         <LandingPage {...landing} />
       </main>
-      {/* <Footer /> */}
-    </Layout>
+      <Footer />
+    </>
   );
+  // return (
+  //   <Layout>
+  //     <Navbar />
+  //     <main>
+  //       <LandingPage {...landing} />
+  //     </main>
+  //     <Footer />
+  //   </Layout>
+  // );
 };
 
 export default LandingPageLoader;
