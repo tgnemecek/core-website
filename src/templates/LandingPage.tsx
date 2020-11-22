@@ -127,7 +127,7 @@ import {
   Footer,
 } from "components";
 
-const LeadingPage: React.FC<any> = ({ hero, benefits, explanation, email }) => {
+const LandingPage: React.FC<any> = ({ hero, benefits, explanation, email }) => {
   return (
     <>
       <Hero hero={hero} small={true} />
@@ -153,24 +153,24 @@ const LeadingPage: React.FC<any> = ({ hero, benefits, explanation, email }) => {
   );
 };
 
-const LeadingPageLoader: React.FC<any> = (props) => {
+const LandingPageLoader: React.FC<any> = (props) => {
   const leading = props.data.main.nodes[0].frontmatter.pages.leading;
 
   return (
     <Layout>
       <Navbar />
       <main>
-        <LeadingPage {...leading} email={getContactEmail()} />
+        <LandingPage {...leading} email={getContactEmail()} />
       </main>
       <Footer />
     </Layout>
   );
 };
 
-export default LeadingPageLoader;
+export default LandingPageLoader;
 
 export const pageQuery = graphql`
-  query LeadingPageQuery {
+  query LandingPageQuery {
     main: allMarkdownRemark(
       filter: { frontmatter: { key: { eq: "leading" } } }
     ) {
