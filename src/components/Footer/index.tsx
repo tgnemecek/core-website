@@ -13,15 +13,7 @@ import PhoneIphoneIcon from "@material-ui/icons/PhoneIphone";
 import LinkIcon from "@material-ui/icons/Link";
 import { useContactInfo } from "utils";
 
-type FooterProps = {
-  email?: string;
-  phone1?: string;
-  phone2?: string;
-  address?: string;
-  link?: string;
-};
-
-const Footer: React.FC<FooterProps> = () => {
+const Footer: React.FC = () => {
   const { email, phone1, phone2, address, link } = useContactInfo();
   const classes = useStyles();
 

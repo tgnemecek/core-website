@@ -1,7 +1,7 @@
 import { useStaticQuery, graphql } from "gatsby";
-import { ServicesPage } from "types";
+import { ServicesPageDTO } from "types";
 
-const useLeadingPage = (): ServicesPage => {
+const useLeadingPage = (): ServicesPageDTO => {
   const data = useStaticQuery(graphql`
     query LeadingPageQuery {
       main: allMarkdownRemark(

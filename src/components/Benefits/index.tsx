@@ -11,9 +11,10 @@ import {
   ListItemIcon,
 } from "@material-ui/core";
 import ErrorOutlineIcon from "@material-ui/icons/ErrorOutline";
+import { BenefitsType } from "types";
 
 type BenefitsProps = {
-  benefits: string;
+  benefits: BenefitsType;
   title: string;
 };
 

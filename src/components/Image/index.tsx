@@ -6,6 +6,11 @@ import { getImageId } from "utils";
 
 type ImageProps = {
   src?: string;
+  alt?: string;
+  className?: string;
+  gravity?: string;
+  height?: number;
+  width?: number;
 };
 
 const Image: React.FC<ImageProps> = ({ src = "", ...props }) => {

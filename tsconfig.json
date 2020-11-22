@@ -8,6 +8,7 @@
       "utils": ["./src/utils/index.ts"],
       "types": ["./src/types/index.ts"]
     },
+    "types": [],
     "sourceMap": true,
     "noImplicitAny": true,
     "module": "esnext",
@@ -20,5 +21,6 @@
         "name": "typescript-styled-plugin"
       }
     ]
-  }
+  },
+  "exclude": ["node_modules/*", "public", "files", "lambda"]
 }

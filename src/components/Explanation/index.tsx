@@ -11,14 +11,12 @@ import {
 } from "@material-ui/core";
 import StarIcon from "@material-ui/icons/Star";
 import { Image } from "components";
+import { ExplanationType } from "types";
 
 const imageHeight = 400;
 
 type ExplanationProps = {
-  explanation: {
-    text: string;
-    image: string;
-  };
+  explanation: ExplanationType;
 };
 
 const Explanation: React.FC<ExplanationProps> = ({
