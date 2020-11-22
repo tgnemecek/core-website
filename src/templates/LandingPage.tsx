@@ -1,19 +1,19 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-// import {
-//   // Hero,
-//   // Events,
-//   // About,
-//   // Testimonials,
-//   // Services,
-//   // Products,
-//   // Videos,
-//   // ContactForm,
-//   Layout,
-//   Navbar,
-//   Footer,
-// } from "components";
+import {
+  // Hero,
+  // Events,
+  // About,
+  // Testimonials,
+  // Services,
+  // Products,
+  // Videos,
+  // ContactForm,
+  Layout,
+  // Navbar,
+  // Footer,
+} from "components";
 
 const LandingPage: React.FC<any> = ({
   hero,
@@ -39,17 +39,15 @@ const LandingPage: React.FC<any> = ({
 
 const LandingPageLoader: React.FC<any> = (props) => {
   const landing = props.data.main.nodes[0].frontmatter.pages.landing;
-  console.log({landing})
-  return <LandingPage {...landing} />
-  // return (
-  //   <Layout>
-  //     <Navbar />
-  //     <main>
-  //       <LandingPage {...landing} />
-  //     </main>
-  //     <Footer />
-  //   </Layout>
-  // );
+  return (
+    <Layout>
+      {/* <Navbar /> */}
+      <main>
+        <LandingPage {...landing} />
+      </main>
+      {/* <Footer /> */}
+    </Layout>
+  );
 };
 
 export default LandingPageLoader;
