@@ -41,7 +41,7 @@ const LandingPageLoader: React.FC<any> = (props) => {
   const landing = props.data.main.nodes[0].frontmatter.pages.landing;
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
       <main>
         <LandingPage {...landing} />
       </main>
