@@ -76,15 +76,6 @@ const ContactForm: React.FC = () => {
         >
           <Paper className={classes.paper} elevation={6}>
             <TextField
-              autoComplete="off"
-              className={classes.honeypot}
-              name="bot-field"
-              label="Please leave this blank"
-              variant="filled"
-              value={honeypot}
-              onChange={handleChange("honeypot")}
-            />
-            <TextField
               name="name"
               label="Your Name"
               variant="filled"
@@ -104,7 +95,7 @@ const ContactForm: React.FC = () => {
               required
             />
             <TextField
-              name="name"
+              name="message"
               label="Your Message"
               variant="filled"
               value={message}
@@ -113,6 +104,15 @@ const ContactForm: React.FC = () => {
               multiline
               rows={5}
               required
+            />
+            <TextField
+              autoComplete="off"
+              className={classes.honeypot}
+              name="bot-field"
+              label="Please leave this blank"
+              variant="filled"
+              value={honeypot}
+              onChange={handleChange("honeypot")}
             />
             <div className={classes.thankYou}>
               <div>
