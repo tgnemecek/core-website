@@ -20,7 +20,7 @@ import {
 const LeadingPage: React.FC<any> = ({ hero, benefits, explanation, email }) => {
   return (
     <>
-      <Hero hero={hero} small={true} />
+      <Hero hero={hero} small />
       <Section>
         <Explanation explanation={explanation} />
         <FreeReport
