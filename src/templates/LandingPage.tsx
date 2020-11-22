@@ -2,14 +2,14 @@ import React from "react";
 import { graphql } from "gatsby";
 
 import {
-  Hero,
-  Events,
-  About,
-  Testimonials,
-  Services,
-  Products,
-  Videos,
-  ContactForm,
+  // Hero,
+  // Events,
+  // About,
+  // Testimonials,
+  // Services,
+  // Products,
+  // Videos,
+  // ContactForm,
   Layout,
   Navbar,
   Footer,
