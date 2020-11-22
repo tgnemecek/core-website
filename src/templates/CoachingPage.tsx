@@ -40,7 +40,7 @@ const CoachingPage: React.FC = () => {
             buttonTypes={["careerStrengths", "personalStrengths"]}
           />
         </Section>
-        <ContactForm />{" "}
+        <ContactForm />
       </main>
       <Footer />
     </Layout>
