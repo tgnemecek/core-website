@@ -108,7 +108,11 @@ const Navbar: React.FC<NavbarProps> = ({ pages }) => {
   );
 };
 
-const useStyles = ({ isOnTop }) =>
+type UseStylesProps = {
+  isOnTop: boolean;
+}
+
+const useStyles = ({ isOnTop }: UseStylesProps) =>
   makeStyles((theme) => ({
     nav: {
       backgroundColor: isOnTop ? "#000000c7" : theme.palette.common.white,
