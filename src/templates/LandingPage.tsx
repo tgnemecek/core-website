@@ -1,5 +1,5 @@
 import React from "react";
-// import { graphql } from "gatsby";
+import { graphql } from "gatsby";
 
 // import {
 //   // Hero,
@@ -14,11 +14,6 @@ import React from "react";
 //   Navbar,
 //   Footer,
 // } from "components";
-const a = () => {
-  return null;
-}
-
-export default a;
 
 // const LandingPage: React.FC<any> = ({
 //   hero,
@@ -42,65 +37,66 @@ export default a;
 //   );
 // };
 
-// const LandingPageLoader: React.FC<any> = (props) => {
-//   const landing = props.data.main.nodes[0].frontmatter.pages.landing;
-//   return (
-//     <Layout>
-//       <Navbar />
-//       <main>
-//         <LandingPage {...landing} />
-//       </main>
-//       <Footer />
-//     </Layout>
-//   );
-// };
+const LandingPageLoader: React.FC<any> = (props) => {
+  // const landing = props.data.main.nodes[0].frontmatter.pages.landing;
+  return null;
+  // return (
+  //   <Layout>
+  //     <Navbar />
+  //     <main>
+  //       <LandingPage {...landing} />
+  //     </main>
+  //     <Footer />
+  //   </Layout>
+  // );
+};
 
-// export default LandingPageLoader;
+export default LandingPageLoader;
 
-// export const pageQuery = graphql`
-//   query LandingPageQuery {
-//     main: allMarkdownRemark(
-//       filter: { frontmatter: { key: { eq: "landing" } } }
-//     ) {
-//       nodes {
-//         frontmatter {
-//           pages {
-//             landing {
-//               hero {
-//                 title
-//                 image
-//               }
-//               about {
-//                 text
-//                 image
-//               }
-//               testimonials {
-//                 author
-//                 role
-//                 testimonial
-//               }
-//               services {
-//                 title
-//                 name
-//                 description
-//                 image
-//               }
-//               products {
-//                 description
-//                 image
-//                 title
-//                 subtitle
-//                 link
-//               }
-//               videos {
-//                 title
-//                 subtitle
-//                 link
-//               }
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
+export const pageQuery = graphql`
+  query LandingPageQuery {
+    main: allMarkdownRemark(
+      filter: { frontmatter: { key: { eq: "landing" } } }
+    ) {
+      nodes {
+        frontmatter {
+          pages {
+            landing {
+              hero {
+                title
+                image
+              }
+              about {
+                text
+                image
+              }
+              testimonials {
+                author
+                role
+                testimonial
+              }
+              services {
+                title
+                name
+                description
+                image
+              }
+              products {
+                description
+                image
+                title
+                subtitle
+                link
+              }
+              videos {
+                title
+                subtitle
+                link
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
