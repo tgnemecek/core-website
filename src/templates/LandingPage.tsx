@@ -25,7 +25,7 @@ const LandingPage: React.FC<any> = ({
 }) => {
   return (
     <>
-      <Hero hero={hero} />
+      {/* <Hero hero={hero} /> */}
       {/* <Events /> */}
       {/* <About about={about} />
       <Testimonials testimonials={testimonials} />
