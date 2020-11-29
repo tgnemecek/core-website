@@ -34,7 +34,7 @@ explanation:
     **Become a Certified Teacher** who enriches students with TBA programs such as *The Compass Course*. [Send us a Message](mailto:sseivert@thecoreporation.com) to find out more.
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600804117/abdelkader-ft-CcZzQcYGYC4-unsplash_jvaahu.jpg
 benefits: >-
-  
+
 
   <ul>
     <li>

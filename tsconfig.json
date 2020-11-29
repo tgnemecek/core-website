@@ -9,6 +9,7 @@
       "types": ["./src/types/index.ts"]
     },
     "types": [],
+    "skipLibCheck": true,
     "sourceMap": true,
     "noImplicitAny": true,
     "module": "esnext",
@@ -22,5 +23,10 @@
       }
     ]
   },
-  "exclude": ["node_modules/*", "public", "files", "lambda"]
+  "exclude": [
+    "node_modules",
+    "./node_modules",
+    "./node_modules/*",
+    "./node_modules/@types/node/index.d.ts"
+  ]
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import { useLocation } from "@reach/router";
 import {
   Paper,
   Typography,
@@ -11,17 +12,20 @@ import Alert from "@material-ui/lab/Alert";
 import SendIcon from "@material-ui/icons/Send";
 import { Section } from "components";
 
-const initialForm = {
+const initialForm = (pathname: string) => ({
   name: "",
   email: "",
   message: "",
+  page: pathname,
   honeypot: "",
-};
+});
 
 const ContactForm: React.FC = () => {
   const [status, setStatus] = React.useState<"success" | "error">("success");
   const [submitted, setSubmitted] = React.useState(false);
-  const [form, setForm] = React.useState(initialForm);
+
+  const { pathname } = useLocation();
+  const [form, setForm] = React.useState(initialForm(pathname));
 
   const classes = useStyles({
     showThanks: status === "success" && submitted,
@@ -48,7 +52,7 @@ const ContactForm: React.FC = () => {
       .then(() => {
         setSubmitted(true);
         setStatus("success");
-        setForm(initialForm);
+        setForm(initialForm(pathname));
       })
       .catch((err) => {
         setSubmitted(true);
