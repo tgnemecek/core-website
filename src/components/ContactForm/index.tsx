@@ -17,7 +17,6 @@ const initialForm = (pathname: string): Record<string, string> => ({
   email: "",
   message: "",
   page: pathname,
-  honeypot: undefined,
 });
 
 const ContactForm: React.FC = () => {
@@ -44,6 +43,7 @@ const ContactForm: React.FC = () => {
       "form-name": "contact",
       ...form,
     }).toString();
+
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -63,7 +63,7 @@ const ContactForm: React.FC = () => {
       });
   };
 
-  const { honeypot, name, email, message } = form;
+  const { name, email, message } = form;
 
   return (
     <Section id="contact-form" backgroundColor="grey[50]">
@@ -75,7 +75,6 @@ const ContactForm: React.FC = () => {
           name="contact"
           method="POST"
           data-netlify="true"
-          netlify-honeypot="honeypot"
           onSubmit={handleSubmit}
         >
           <Paper className={classes.paper} elevation={6}>
@@ -108,15 +107,6 @@ const ContactForm: React.FC = () => {
               multiline
               rows={5}
               required
-            />
-            <TextField
-              autoComplete="off"
-              className={classes.honeypot}
-              name="honeypot"
-              label="Please leave this blank"
-              variant="filled"
-              value={honeypot}
-              onChange={handleChange("honeypot")}
             />
             <div className={classes.thankYou}>
               <div>
@@ -185,14 +175,6 @@ const useStyles = ({ showThanks }: UseStylesProps) =>
       display: "grid",
       gap: "15px",
       position: "relative",
-    },
-    honeypot: {
-      position: "absolute",
-      height: 0,
-      width: 0,
-      overflow: "hidden",
-      left: -9999,
-      zIndex: -9999,
     },
     thankYou: {
       position: "absolute",
