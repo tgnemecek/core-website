@@ -12,12 +12,12 @@ import Alert from "@material-ui/lab/Alert";
 import SendIcon from "@material-ui/icons/Send";
 import { Section } from "components";
 
-const initialForm = (pathname: string) => ({
+const initialForm = (pathname: string): Record<string, string> => ({
   name: "",
   email: "",
   message: "",
   page: pathname,
-  honeypot: "",
+  honeypot: undefined,
 });
 
 const ContactForm: React.FC = () => {
