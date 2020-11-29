@@ -112,7 +112,7 @@ const ContactForm: React.FC = () => {
             <TextField
               autoComplete="off"
               className={classes.honeypot}
-              name="bot-field"
+              name="honeypot"
               label="Please leave this blank"
               variant="filled"
               value={honeypot}
