@@ -108,6 +108,7 @@ const ContactForm: React.FC = () => {
               rows={5}
               required
             />
+            <input type="hidden" name="page" />
             <div className={classes.thankYou}>
               <div>
                 <div>
