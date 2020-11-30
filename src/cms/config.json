@@ -590,8 +590,7 @@
       },
       "folder": "src/collections/events",
       "create": true,
-      "slug": "index",
-      "path": "{{title}}/index",
+      "slug": "{{title}}",
       "fields": [
         {
           "label": "Title",

@@ -7,42 +7,78 @@ const schema = require("./src/schema");
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
 
-  return graphql(`
-    {
-      allMarkdownRemark(
-        filter: { frontmatter: { collection: { eq: "pages" } } }
-      ) {
-        edges {
-          node {
-            id
-            fields {
-              slug
-            }
-            frontmatter {
-              component
-              category
+  const createMainPages = () => {
+    return graphql(`
+      {
+        allMarkdownRemark(
+          filter: { frontmatter: { collection: { eq: "pages" } } }
+        ) {
+          edges {
+            node {
+              id
+              fields {
+                slug
+              }
+              frontmatter {
+                component
+                category
+              }
             }
           }
         }
       }
-    }
-  `).then((result) => {
-    if (result.errors) {
-      result.errors.forEach((e) => console.error(e.toString()));
-      return Promise.reject(result.errors);
-    }
+    `).then((result) => {
+      if (result.errors) {
+        result.errors.forEach((e) => console.error(e.toString()));
+        return Promise.reject(result.errors);
+      }
 
-    const edges = result.data.allMarkdownRemark.edges;
+      const edges = result.data.allMarkdownRemark.edges;
 
-    edges.forEach((edge) => {
-      createPage({
-        path: edge.node.fields.slug,
-        component: path.resolve(
-          `src/templates/${String(edge.node.frontmatter.component)}.tsx`
-        ),
+      edges.forEach((edge) => {
+        createPage({
+          path: edge.node.fields.slug,
+          component: path.resolve(
+            `src/templates/${String(edge.node.frontmatter.component)}.tsx`
+          ),
+        });
       });
     });
-  });
+  };
+
+  const createEventPage = () => {
+    return graphql(`
+      {
+        allMarkdownRemark(
+          filter: { frontmatter: { collection: { eq: "events" } } }
+        ) {
+          edges {
+            node {
+              id
+              fields {
+                slug
+              }
+            }
+          }
+        }
+      }
+    `).then((result) => {
+      if (result.errors) {
+        result.errors.forEach((e) => console.error(e.toString()));
+        return Promise.reject(result.errors);
+      }
+
+      const edges = result.data.allMarkdownRemark.edges;
+
+      edges.forEach((edge) => {
+        createPage({
+          path: `event/${edge.slug}`,
+          component: path.resolve(`src/templates/EventPage.tsx`),
+        });
+      });
+    });
+  };
+  return Promise.all([createMainPages(), createEventPage()]);
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
