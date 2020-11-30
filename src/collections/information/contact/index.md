@@ -1,7 +1,7 @@
 ---
 collection: information
 key: contact
-email: contact@thecoreporation.com
+email: ""
 phone1: ""
 address: ""
 ---
