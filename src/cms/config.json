@@ -1,7 +1,7 @@
 {
   "backend": {
     "name": "git-gateway",
-    "branch": "master",
+    "branch": "dev",
     "commit_messages": {
       "create": "Create {{collection}} “{{slug}}”",
       "update": "Update {{collection}} “{{slug}}”",
@@ -660,7 +660,7 @@
         {
           "label": "Location (for in-person events)",
           "name": "location",
-          "widget": "map",
+          "widget": "string",
           "required": false
         },
         {
