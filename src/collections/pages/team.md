@@ -190,6 +190,8 @@ members:
     bio: "As a middle-schooler from New Hampshire, Sam is the youngest member of the
       international Core Team, leading our social media efforts on YouTube,
       video production, and Instagram. Sam is an aspiring entrepreneur and
-      social media Influencer who has established his own YouTube channel:
-      TurgTheSkater, where he can be seen perfecting his skateboarding skills."
+      social media Influencer who has established his own YouTube channel: Turgs
+      The Skater, where he can be seen perfecting his skateboarding skills.
+      https://www.youtube.com/channel/UC8O4QZElBgrnvrOIWGHux6Q"
+    linkedin: https://www.youtube.com/channel/UC8O4QZElBgrnvrOIWGHux6Q
 ---
