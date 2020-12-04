@@ -191,7 +191,7 @@ members:
       international Core Team, leading our social media efforts on YouTube,
       video production, and Instagram. Sam is an aspiring entrepreneur and
       social media Influencer who has established his own YouTube channel: Turgs
-      The Skater, where he can be seen perfecting his skateboarding skills.
-      https://www.youtube.com/channel/UC8O4QZElBgrnvrOIWGHux6Q"
+      The Skater, where he can be seen perfecting his skateboarding skills. "
     linkedin: https://www.youtube.com/channel/UC8O4QZElBgrnvrOIWGHux6Q
+    video: https://www.youtube.com/channel/UC8O4QZElBgrnvrOIWGHux6Q
 ---
