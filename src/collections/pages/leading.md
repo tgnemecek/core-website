@@ -1,6 +1,5 @@
 ---
 collection: pages
-category: services
 key: leading
 component: LeadingPage
 hero:

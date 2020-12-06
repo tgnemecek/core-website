@@ -7,30 +7,30 @@ type Pages = {
 }[];
 
 const usePages = () => {
-  const data = useStaticQuery(
-    graphql`
-      query NavbarQuery {
-        pages: allMarkdownRemark(
-          filter: { frontmatter: { key: { eq: "navigation" } } }
-        ) {
-          nodes {
-            frontmatter {
-              information {
-                navigation {
-                  links {
-                    label
-                    url
-                    description
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    `
-  );
-  return data.pages.nodes[0].frontmatter.information.navigation.links as Pages;
+  // const data = useStaticQuery(
+  //   graphql`
+  //     query NavbarQuery {
+  //       pages: allMarkdownRemark(
+  //         filter: { frontmatter: { key: { eq: "navigation" } } }
+  //       ) {
+  //         nodes {
+  //           frontmatter {
+  //             information {
+  //               navigation {
+  //                 links {
+  //                   label
+  //                   url
+  //                   description
+  //                 }
+  //               }
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //   `
+  // );
+  // return data.pages.nodes[0].frontmatter.information.navigation.links as Pages;
 };
 
 export default usePages;

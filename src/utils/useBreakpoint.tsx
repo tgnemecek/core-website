@@ -1,5 +1,5 @@
 import React from "react";
-import { breakpoints } from "components";
+import { breakpoints } from "utils";
 
 const breakpointMap = breakpoints.values;
 

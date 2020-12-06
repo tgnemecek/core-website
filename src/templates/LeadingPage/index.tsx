@@ -1,13 +1,13 @@
 import React from "react";
 import { graphql } from "gatsby";
 import leadingReport from "src/downloads/free-reports/leading.pdf";
-import { useLeadingPage } from "utils";
+import { ServicesPageDTO } from "types";
 
 import {
   Hero,
   Section,
-  Explanation,
-  Benefits,
+  ServiceExplanation,
+  ServiceBenefits,
   CallToAction,
   FreeReport,
   PayPalButtons,
@@ -17,20 +17,28 @@ import {
   Footer,
 } from "components";
 
-const LeadingPage: React.FC = () => {
-  const { hero, benefits, explanation } = useLeadingPage();
+const LeadingPage: React.FC<ServicesPageDTO> = ({
+  data: {
+    markdownRemark: {
+      frontmatter: {
+        pages: { leading },
+      },
+    },
+  },
+}) => {
+  const { hero, benefits, explanation } = leading;
   return (
     <Layout>
       <Navbar />
       <main>
         <Hero hero={hero} small />
         <Section>
-          <Explanation explanation={explanation} />
+          <ServiceExplanation explanation={explanation} />
           <FreeReport
             reportText="Get a Free Leader Compass Report!"
             downloadLink={leadingReport}
           />
-          <Benefits
+          <ServiceBenefits
             benefits={benefits}
             title="Schedule a time with us if you are:"
           />
@@ -49,3 +57,26 @@ const LeadingPage: React.FC = () => {
 };
 
 export default LeadingPage;
+
+export const pageQuery = graphql`
+  query LeadingPageQuery($id: String!) {
+    markdownRemark(id: { eq: $id }) {
+      id
+      frontmatter {
+        pages {
+          leading {
+            benefits
+            explanation {
+              text
+              image
+            }
+            hero {
+              title
+              image
+            }
+          }
+        }
+      }
+    }
+  }
+`;

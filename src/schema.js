@@ -1,14 +1,15 @@
 const MarkdownRemark = `
   type MarkdownRemark implements Node {
     frontmatter: Frontmatter
+    fields: Fields
+  }
+  type Fields {
+    slug: String
   }
   type Frontmatter {
-    collection: String
-    key: String
-    information: Information
-    component: String
     pages: Pages
-    category: String
+    information: Information
+    events: EventPage
   }
   type Pages {
     landing: LandingPage
@@ -22,6 +23,7 @@ const MarkdownRemark = `
 const Information = `
   type Information {
     contact: Contact!
+    navigation: Navigation!
   }
   type Contact {
     collection: String!
@@ -32,6 +34,16 @@ const Information = `
     phone1: String
     phone2: String
     link: String
+  }
+  type Navigation {
+    collection: String!
+    key: String!
+    links: [NavigationLink!]!
+  }
+  type NavigationLink {
+    label: String!
+    url: String!
+    description: String
   }
 `;
 
@@ -106,7 +118,6 @@ const TeamPage = `
 const ServicesPage = `
   type ServicesPage {
     collection: String
-    category: String
     component: String
     key: String
     hero: Hero
@@ -120,10 +131,34 @@ const ServicesPage = `
   }
 `;
 
+const EventPage = `
+  type EventPage {
+    collection: String!
+    title: String!
+    subtitle: String!
+    description: String!
+    image: String!
+    video: String
+    date: Date!
+    duration: Int!
+    language: [String!]!
+    isOnline: Boolean!
+    location: String
+    tickets: [Ticket!]!
+  }
+
+  type Ticket {
+    description: String!
+    price: Int!
+    endsOn: String!
+  }
+`;
+
 module.exports = schema = [
   MarkdownRemark,
   Information,
   LandingPage,
   TeamPage,
   ServicesPage,
+  EventPage,
 ].join(" ");

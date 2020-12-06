@@ -11,14 +11,17 @@ import {
   ListItemIcon,
 } from "@material-ui/core";
 import ErrorOutlineIcon from "@material-ui/icons/ErrorOutline";
-import { BenefitsType } from "types";
+import { ServiceBenefitsType } from "types";
 
-type BenefitsProps = {
-  benefits: BenefitsType;
+type ServiceBenefitsProps = {
+  benefits: ServiceBenefitsType;
   title: string;
 };
 
-const Benefits: React.FC<BenefitsProps> = ({ benefits, title }) => {
+const ServiceBenefits: React.FC<ServiceBenefitsProps> = ({
+  benefits,
+  title,
+}) => {
   const classes = useStyles();
 
   return (
@@ -50,7 +53,7 @@ const Benefits: React.FC<BenefitsProps> = ({ benefits, title }) => {
   );
 };
 
-export default Benefits;
+export default ServiceBenefits;
 
 const useStyles = makeStyles((theme) => ({
   paper: {

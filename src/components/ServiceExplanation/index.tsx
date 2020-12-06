@@ -11,15 +11,15 @@ import {
 } from "@material-ui/core";
 import StarIcon from "@material-ui/icons/Star";
 import { Image } from "components";
-import { ExplanationType } from "types";
+import { ServiceExplanationType } from "types";
 
 const imageHeight = 400;
 
-type ExplanationProps = {
-  explanation: ExplanationType;
+type ServiceExplanationProps = {
+  explanation: ServiceExplanationType;
 };
 
-const Explanation: React.FC<ExplanationProps> = ({
+const ServiceExplanation: React.FC<ServiceExplanationProps> = ({
   explanation: { text, image },
 }) => {
   const classes = useStyles();
@@ -85,7 +85,7 @@ const Explanation: React.FC<ExplanationProps> = ({
   );
 };
 
-export default Explanation;
+export default ServiceExplanation;
 
 const useStyles = makeStyles((theme) => ({
   gridContainer: {

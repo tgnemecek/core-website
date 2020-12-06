@@ -1,11 +1,12 @@
 import React from "react";
+import { graphql } from "gatsby";
 import coachingReport from "src/downloads/free-reports/coaching.pdf";
-import { useCoachingPage } from "utils";
+import { ServicesPageDTO } from "types";
 import {
   Hero,
   Section,
-  Explanation,
-  Benefits,
+  ServiceExplanation,
+  ServiceBenefits,
   FreeReport,
   CallToAction,
   PayPalButtons,
@@ -15,8 +16,16 @@ import {
   Footer,
 } from "components";
 
-const CoachingPage: React.FC = () => {
-  const { hero, benefits, explanation } = useCoachingPage();
+const CoachingPage: React.FC<ServicesPageDTO> = ({
+  data: {
+    markdownRemark: {
+      frontmatter: {
+        pages: { coaching },
+      },
+    },
+  },
+}) => {
+  const { hero, benefits, explanation } = coaching;
 
   return (
     <Layout>
@@ -24,12 +33,12 @@ const CoachingPage: React.FC = () => {
       <main>
         <Hero hero={hero} small />
         <Section>
-          <Explanation explanation={explanation} />
+          <ServiceExplanation explanation={explanation} />
           <FreeReport
             reportText="Get a Free Career Compass Report!"
             downloadLink={coachingReport}
           />
-          <Benefits
+          <ServiceBenefits
             benefits={benefits}
             title="Schedule a time with us if you:"
           />
@@ -48,3 +57,26 @@ const CoachingPage: React.FC = () => {
 };
 
 export default CoachingPage;
+
+export const pageQuery = graphql`
+  query CoachingPageQuery($id: String!) {
+    markdownRemark(id: { eq: $id }) {
+      id
+      frontmatter {
+        pages {
+          coaching {
+            benefits
+            explanation {
+              text
+              image
+            }
+            hero {
+              title
+              image
+            }
+          }
+        }
+      }
+    }
+  }
+`;

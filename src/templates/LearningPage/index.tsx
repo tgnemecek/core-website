@@ -1,12 +1,13 @@
 import React from "react";
+import { graphql } from "gatsby";
 import learningReport from "src/downloads/free-reports/learning.pdf";
-import { useLearningPage } from "utils";
+import { ServicesPageDTO } from "types";
 
 import {
   Hero,
   Section,
-  Explanation,
-  Benefits,
+  ServiceExplanation,
+  ServiceBenefits,
   CallToAction,
   FreeReport,
   PayPalButtons,
@@ -16,20 +17,28 @@ import {
   Footer,
 } from "components";
 
-const LearningPage: React.FC = () => {
-  const { hero, benefits, explanation } = useLearningPage();
+const LearningPage: React.FC<ServicesPageDTO> = ({
+  data: {
+    markdownRemark: {
+      frontmatter: {
+        pages: { learning },
+      },
+    },
+  },
+}) => {
+  const { hero, benefits, explanation } = learning;
   return (
     <Layout>
       <Navbar />
       <main>
         <Hero hero={hero} small={true} />
         <Section>
-          <Explanation explanation={explanation} />
+          <ServiceExplanation explanation={explanation} />
           <FreeReport
             reportText="Get a Free Report to Improve Learning!"
             downloadLink={learningReport}
           />
-          <Benefits
+          <ServiceBenefits
             benefits={benefits}
             title="Schedule a time with us if you:"
           />
@@ -46,3 +55,26 @@ const LearningPage: React.FC = () => {
 };
 
 export default LearningPage;
+
+export const pageQuery = graphql`
+  query LearningPageQuery($id: String!) {
+    markdownRemark(id: { eq: $id }) {
+      id
+      frontmatter {
+        pages {
+          learning {
+            benefits
+            explanation {
+              text
+              image
+            }
+            hero {
+              title
+              image
+            }
+          }
+        }
+      }
+    }
+  }
+`;

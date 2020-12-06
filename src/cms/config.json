@@ -590,8 +590,14 @@
       },
       "folder": "src/collections/events",
       "create": true,
-      "slug": "{{title}}",
+      "slug": "{{year}}-{{month}}-{{day}}-{{title}}",
       "fields": [
+        {
+          "label": "Collection",
+          "name": "collection",
+          "widget": "hidden",
+          "default": "events"
+        },
         {
           "label": "Title",
           "name": "title",

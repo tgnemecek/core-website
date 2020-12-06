@@ -1,6 +1,5 @@
 ---
 collection: pages
-category: servicesß
 key: learning
 component: LearningPage
 hero:
