@@ -8,8 +8,9 @@ const MarkdownRemark = `
   }
   type Frontmatter {
     pages: Pages
-    information: Information
     events: EventPage
+    contact: Contact
+    navigation: Navigation
   }
   type Pages {
     landing: LandingPage
@@ -19,18 +20,10 @@ const MarkdownRemark = `
     coaching: ServicesPage
     leading: ServicesPage
     learning: ServicesPage
-  }
-`;
 
-const Information = `
-  type Information {
-    contact: Contact!
-    navigation: Navigation!
   }
+
   type Contact {
-    collection: String!
-    key: String!
-
     address: String
     email: String
     phone1: String
@@ -38,8 +31,6 @@ const Information = `
     link: String
   }
   type Navigation {
-    collection: String!
-    key: String!
     links: [NavigationLink!]!
   }
   type NavigationLink {
@@ -158,7 +149,6 @@ const EventPage = `
 
 module.exports = schema = [
   MarkdownRemark,
-  Information,
   LandingPage,
   TeamPage,
   ServicesPage,

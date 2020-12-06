@@ -1,6 +1,5 @@
 ---
-collection: information
-key: contact
+collection: contact
 email: sseivert@thecoreporation.com
 phone1: ""
 address: |-

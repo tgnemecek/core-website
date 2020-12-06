@@ -19,7 +19,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
             pages: {
               [pageKey]: node.frontmatter,
             },
-            component: node.frontmatter.component,
             collection: node.frontmatter.collection,
           },
         },

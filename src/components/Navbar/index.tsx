@@ -17,90 +17,89 @@ import {
 import MenuIcon from "@material-ui/icons/Menu";
 import logo from "src/img/logo.png";
 import { theme } from "components";
-import { usePages } from "utils";
+import { useNavigation } from "utils";
 
 const Navbar: React.FC = () => {
-  return null;
-  // const pages = usePages();
-  // const [isOnTop, setOnTop] = React.useState(true);
-  // const [isDrawerOpen, setDrawerOpen] = React.useState(false);
-  // const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  // const classes = useStyles({ isOnTop })();
+  const { links } = useNavigation();
+  const [isOnTop, setOnTop] = React.useState(true);
+  const [isDrawerOpen, setDrawerOpen] = React.useState(false);
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const classes = useStyles({ isOnTop })();
 
-  // const onScroll = () => {
-  //   setOnTop(!window.scrollY);
-  // };
+  const onScroll = () => {
+    setOnTop(!window.scrollY);
+  };
 
-  // const getPath = () => {
-  //   if (typeof window !== "undefined") {
-  //     return window.location.pathname;
-  //   }
-  // };
+  const getPath = () => {
+    if (typeof window !== "undefined") {
+      return window.location.pathname;
+    }
+  };
 
-  // React.useEffect(() => {
-  //   setOnTop(!window.scrollY);
-  //   window.addEventListener("scroll", onScroll, {
-  //     passive: true,
-  //   });
-  //   return () => {
-  //     window.removeEventListener("scroll", onScroll);
-  //   };
-  // }, []);
+  React.useEffect(() => {
+    setOnTop(!window.scrollY);
+    window.addEventListener("scroll", onScroll, {
+      passive: true,
+    });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
 
-  // const renderNavContent = () => {
-  //   return (
-  //     <List className={classes.list}>
-  //       {pages.map(({ label, url, description }, i) => {
-  //         return (
-  //           <Tooltip
-  //             key={i}
-  //             title={description ? <Typography>{description}</Typography> : ""}
-  //             PopperProps={{
-  //               className: `MuiTooltip-popper MuiTooltip-popperArrow ${classes.tooltip}`,
-  //             }}
-  //             placement={isMobile ? "left" : "bottom"}
-  //             arrow
-  //           >
-  //             <ListItem className={classes.listItem} component={Link} to={url}>
-  //               <Typography variant="body1" className={classes.text}>
-  //                 {label}
-  //               </Typography>
-  //             </ListItem>
-  //           </Tooltip>
-  //         );
-  //       })}
-  //     </List>
-  //   );
-  // };
+  const renderNavContent = () => {
+    return (
+      <List className={classes.list}>
+        {links.map(({ label, url, description }, i) => {
+          return (
+            <Tooltip
+              key={i}
+              title={description ? <Typography>{description}</Typography> : ""}
+              PopperProps={{
+                className: `MuiTooltip-popper MuiTooltip-popperArrow ${classes.tooltip}`,
+              }}
+              placement={isMobile ? "left" : "bottom"}
+              arrow
+            >
+              <ListItem className={classes.listItem} component={Link} to={url}>
+                <Typography variant="body1" className={classes.text}>
+                  {label}
+                </Typography>
+              </ListItem>
+            </Tooltip>
+          );
+        })}
+      </List>
+    );
+  };
 
-  // return (
-  //   <AppBar component="nav" className={classes.nav}>
-  //     <Toolbar className={classes.toolbar}>
-  //       {getPath() === "/" ? (
-  //         <a href="#hero">
-  //           <img src={logo} alt="CORE Logo" className={classes.logo} />
-  //         </a>
-  //       ) : (
-  //         <Link to="/">
-  //           <img src={logo} alt="CORE Logo" className={classes.logo} />
-  //         </Link>
-  //       )}
-  //       <Hidden smDown>{renderNavContent()}</Hidden>
-  //       <Box display={{ md: "none" }}>
-  //         <IconButton onClick={() => setDrawerOpen(true)}>
-  //           <MenuIcon fontSize="large" />
-  //         </IconButton>
-  //         <Drawer
-  //           anchor="right"
-  //           open={isDrawerOpen}
-  //           onClose={() => setDrawerOpen(false)}
-  //         >
-  //           {renderNavContent()}
-  //         </Drawer>
-  //       </Box>
-  //     </Toolbar>
-  //   </AppBar>
-  // );
+  return (
+    <AppBar component="nav" className={classes.nav}>
+      <Toolbar className={classes.toolbar}>
+        {getPath() === "/" ? (
+          <a href="#hero">
+            <img src={logo} alt="CORE Logo" className={classes.logo} />
+          </a>
+        ) : (
+          <Link to="/">
+            <img src={logo} alt="CORE Logo" className={classes.logo} />
+          </Link>
+        )}
+        <Hidden smDown>{renderNavContent()}</Hidden>
+        <Box display={{ md: "none" }}>
+          <IconButton onClick={() => setDrawerOpen(true)}>
+            <MenuIcon fontSize="large" />
+          </IconButton>
+          <Drawer
+            anchor="right"
+            open={isDrawerOpen}
+            onClose={() => setDrawerOpen(false)}
+          >
+            {renderNavContent()}
+          </Drawer>
+        </Box>
+      </Toolbar>
+    </AppBar>
+  );
 };
 
 type UseStylesProps = {

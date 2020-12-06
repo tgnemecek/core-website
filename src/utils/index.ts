@@ -7,11 +7,7 @@ export { default as shuffleArray } from "./shuffleArray";
 
 export { default as useBreakpoint } from "./useBreakpoint";
 export { default as useContactInfo } from "./useContactInfo";
-export { default as useCoachingPage } from "./useCoachingPage";
-export { default as useLandingPage } from "./useLandingPage";
-export { default as useLeadingPage } from "./useLeadingPage";
-export { default as useLearningPage } from "./useLearningPage";
-export { default as usePages } from "./usePages";
+export { default as useNavigation } from "./useNavigation";
 export { default as useSiteMetadata } from "./useSiteMetadata";
 export { default as useTeamPage } from "./useTeamPage";
 
