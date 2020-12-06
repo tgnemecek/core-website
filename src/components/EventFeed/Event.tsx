@@ -1,6 +1,5 @@
 import React from "react";
 import moment from "moment";
-import Fade from "react-reveal/Fade";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   Typography,
@@ -12,16 +11,20 @@ import {
 } from "@material-ui/core";
 import LinesEllipsis from "react-lines-ellipsis";
 import { Link } from "gatsby";
-import { EventDTO } from "./types";
+import { EventType } from "types";
 
-type EventProps = EventDTO;
+type EventProps = {
+  event: EventType;
+};
 
-const Event: React.FC<EventProps> = ({ title, date, url, image }) => {
+const Event: React.FC<EventProps> = ({
+  event: { title, date, image, language, subtitle, slug },
+}) => {
   const classes = useStyles();
 
   return (
     <Card className={classes.card} elevation={3} square>
-      <CardActionArea component={Link} to={url}>
+      <CardActionArea component={Link} to={`/event${slug}`}>
         <div className={classes.imageWrapper}>
           <CardMedia
             image={image}
