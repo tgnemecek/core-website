@@ -1,23 +1,13 @@
 import React from "react";
 import { Container, Typography } from "@material-ui/core";
-
 import { Section, HorizontalFeed } from "components";
+import { useEventFeed } from "utils";
 import Event from "./Event";
-import { EventDTO } from "./types";
 
 const skeletonHeight = 440;
 
-const Events: React.FC = () => {
-  const [events, setEvents] = React.useState<EventDTO[]>(null);
-
-  React.useEffect(() => {
-    fetch("/.netlify/functions/eventbrite").then((res) =>
-      res.json().then((data) => {
-        setEvents(data.events as EventDTO[]);
-      })
-    );
-  }, []);
-
+const EventFeed: React.FC = () => {
+  const events = useEventFeed();
   return (
     <Section id="events">
       <Container>
@@ -29,10 +19,10 @@ const Events: React.FC = () => {
         </Typography>
       </Container>
       <HorizontalFeed skeletonHeight={skeletonHeight}>
-        {events && events.map((event, i) => <Event key={i} {...event} />)}
+        {events && events.map((event, i) => <Event key={i} event={event} />)}
       </HorizontalFeed>
     </Section>
   );
 };
 
-export default Events;
+export default EventFeed;

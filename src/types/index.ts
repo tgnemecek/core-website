@@ -53,7 +53,26 @@ export type MemberType = {
   linkedin?: string;
 };
 
-// Types for each page query
+export type EventType = {
+  slug?: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  image: string;
+  video?: string;
+  date: Date;
+  duration: number;
+  language: string[];
+  isOnline: boolean;
+  location?: string;
+  tickets: {
+    description: string;
+    price: number;
+    endsOn: string;
+  }[];
+};
+
+// Data Transfer Objects:
 
 export type GenericDTO<FrontmatterType> = {
   data: {
@@ -94,23 +113,7 @@ export type TeamPageDTO = PagesDTO<{
 }>;
 
 export type EventPageDTO = GenericDTO<{
-  events: {
-    title: string;
-    subtitle: string;
-    description: string;
-    image: string;
-    video?: string;
-    date: Date;
-    duration: number;
-    language: string[];
-    isOnline: boolean;
-    location?: string;
-    tickets: {
-      description: string;
-      price: number;
-      endsOn: string;
-    }[];
-  };
+  events: EventType;
 }>;
 
 export type NavigationInfoDTO = GenericDTO<{
@@ -126,3 +129,23 @@ export type NavigationInfoDTO = GenericDTO<{
 export type ContactInfoDTO = GenericDTO<{
   contact: Record<"address" | "email" | "phone1" | "phone2" | "link", string>;
 }>;
+
+export type EventFeedDTO = {
+  data: {
+    allMarkdownRemark: {
+      edges: {
+        node: {
+          fields: {
+            slug: string;
+          };
+          frontmatter: {
+            events: Pick<
+              EventType,
+              "date" | "image" | "language" | "subtitle" | "title"
+            >;
+          };
+        };
+      }[];
+    };
+  };
+};

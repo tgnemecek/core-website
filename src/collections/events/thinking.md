@@ -1,6 +1,6 @@
 ---
 collection: events
-title: Leading Your Life and Work Seminar
+title: Thinking
 subtitle: A new world of work has been forced upon us. Learn how you can
   powerfully move your career forward or find a new path in uncertain times.
 description: >-
@@ -12,7 +12,7 @@ description: >-
   **Part 3.** Introduce the post-session care package. This includes a video/audio of the session (so you can review the materials anytime). You will also receive check-in texts from your coach, plus other career resources.
   CORE Coaching & Consulting is an international team of coaches based in the US, Europe and South America. We use the Balancing Act principles of CORE Coaching President Sharon Seivert as a basis for this seminar.
   We hope you use this experiential workshop to jumpstart your career during these challenging times.
-image: https://upload.wikimedia.org/wikipedia/commons/3/35/Neckertal_20150527-6384.jpg
+image: https://iso.500px.com/wp-content/uploads/2014/07/big-one.jpg
 video: https://www.youtube.com/watch?v=LsjCdQLnogE
 date: 2020-12-02T23:17:22.841Z
 duration: 30
