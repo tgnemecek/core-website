@@ -33,7 +33,6 @@ export default TeamPage;
 export const pageQuery = graphql`
   query TeamPageQuery($id: String!) {
     markdownRemark(id: { eq: $id }) {
-      id
       frontmatter {
         pages {
           team {

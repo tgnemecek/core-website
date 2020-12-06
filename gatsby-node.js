@@ -9,15 +9,41 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   if (node.internal.type === "MarkdownRemark") {
     const value = createFilePath({ node, getNode });
 
+    const pageMap = {
+      "/": {
+        key: "landing",
+        component: "LandingPage",
+      },
+      "/coaching/": {
+        key: "services",
+        component: "ServicesPage",
+      },
+      "/leading/": {
+        key: "services",
+        component: "ServicesPage",
+      },
+      "/learning/": {
+        key: "services",
+        component: "ServicesPage",
+      },
+      "/team/": {
+        key: "team",
+        component: "TeamPage",
+      },
+    };
+
     if (node.frontmatter.collection === "pages") {
-      const pageKey = value === "/" ? "landing" : "services";
+      const { key, component } = pageMap[value];
       createNodeField({
         name: "slug",
         node: {
           ...node,
           frontmatter: {
+            component,
             pages: {
-              [pageKey]: node.frontmatter,
+              [key]: {
+                ...node.frontmatter,
+              },
             },
             collection: node.frontmatter.collection,
           },
@@ -55,6 +81,9 @@ exports.createPages = ({ actions, graphql }) => {
               fields {
                 slug
               }
+              frontmatter {
+                component
+              }
             }
           }
         }
@@ -65,24 +94,17 @@ exports.createPages = ({ actions, graphql }) => {
         return Promise.reject(result.errors);
       }
 
-      const slugMap = {
-        "/": "LandingPage",
-        "/coaching/": "ServicesPage",
-        "/leading/": "ServicesPage",
-        "/learning/": "ServicesPage",
-        "/team/": "TeamPage",
-      };
-
       const edges = result.data.allMarkdownRemark.edges;
 
       edges.forEach((edge) => {
         const {
           id,
           fields: { slug },
+          frontmatter: { component },
         } = edge.node;
         createPage({
           path: slug,
-          component: path.resolve(`src/templates/${slugMap[slug]}/index.tsx`),
+          component: path.resolve(`src/templates/${component}/index.tsx`),
           context: {
             id,
             slug,
@@ -118,8 +140,6 @@ exports.createPages = ({ actions, graphql }) => {
 
       edges.forEach((edge) => {
         const id = edge.node.id;
-        console.log("HERES THE EVENT");
-        console.log({ edge });
         createPage({
           path: `/event${edge.node.fields.slug}`,
           component: path.resolve(`src/templates/EventPage/index.tsx`),
