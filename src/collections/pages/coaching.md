@@ -1,6 +1,5 @@
 ---
 collection: pages
-category: services
 key: coaching
 component: CoachingPage
 hero:

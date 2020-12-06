@@ -1,7 +1,6 @@
 const _ = require("lodash");
 const path = require("path");
 const { createFilePath } = require("gatsby-source-filesystem");
-const { fmImagesToRelative } = require("gatsby-remark-relative-images");
 const schema = require("./src/schema");
 
 exports.createPages = ({ actions, graphql }) => {
@@ -21,7 +20,6 @@ exports.createPages = ({ actions, graphql }) => {
               }
               frontmatter {
                 component
-                category
               }
             }
           }
@@ -36,11 +34,15 @@ exports.createPages = ({ actions, graphql }) => {
       const edges = result.data.allMarkdownRemark.edges;
 
       edges.forEach((edge) => {
+        const id = edge.node.id;
         createPage({
           path: edge.node.fields.slug,
           component: path.resolve(
-            `src/templates/${String(edge.node.frontmatter.component)}.tsx`
+            `src/templates/${String(edge.node.frontmatter.component)}/index.tsx`
           ),
+          context: {
+            id,
+          },
         });
       });
     });
@@ -71,9 +73,15 @@ exports.createPages = ({ actions, graphql }) => {
       const edges = result.data.allMarkdownRemark.edges;
 
       edges.forEach((edge) => {
+        const id = edge.node.id;
+        console.log("HERES THE EVENT");
+        console.log({ edge });
         createPage({
-          path: `event/${edge.slug}`,
-          component: path.resolve(`src/templates/EventPage.tsx`),
+          path: `/event${edge.node.fields.slug}`,
+          component: path.resolve(`src/templates/EventPage/index.tsx`),
+          context: {
+            id,
+          },
         });
       });
     });
@@ -83,29 +91,67 @@ exports.createPages = ({ actions, graphql }) => {
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
-  fmImagesToRelative(node); // convert image paths for gatsby images
 
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === "MarkdownRemark") {
     const value = createFilePath({ node, getNode });
-    const formatted = {
-      ...node,
-      frontmatter: {
-        [node.frontmatter.collection]: {
-          [node.frontmatter.key]: node.frontmatter,
-        },
-        key: node.frontmatter.key,
-        collection: node.frontmatter.collection,
-        component: node.frontmatter.component,
-      },
-    };
 
-    createNodeField({
-      name: `slug`,
-      node: formatted,
-      value,
-    });
+    if (node.frontmatter.collection === "pages") {
+      createNodeField({
+        name: "slug",
+        node: {
+          ...node,
+          frontmatter: {
+            pages: {
+              [value.replace(/\//g, "") || "landing"]: node.frontmatter,
+            },
+            component: node.frontmatter.component,
+            collection: node.frontmatter.collection,
+          },
+        },
+        value,
+      });
+    } else {
+      createNodeField({
+        name: "slug",
+        node: {
+          ...node,
+          frontmatter: {
+            [node.frontmatter.collection]: node.frontmatter,
+            collection: node.frontmatter.collection,
+          },
+        },
+        value,
+      });
+    }
   }
 };
+
+// exports.onCreateNode = ({ node, actions, getNode }) => {
+//   const { createNodeField } = actions;
+//   fmImagesToRelative(node); // convert image paths for gatsby images
+
+//   if (node.internal.type === `MarkdownRemark`) {
+//     console.dir({ node }, { depth: null });
+//     const value = createFilePath({ node, getNode });
+// const formatted = {
+//   ...node,
+//   frontmatter: {
+//     [node.frontmatter.collection]: {
+//       [node.frontmatter.key]: node.frontmatter,
+//     },
+//     key: node.frontmatter.key,
+//     collection: node.frontmatter.collection,
+//     component: node.frontmatter.component,
+//   },
+// };
+
+//     createNodeField({
+//       name: `slug`,
+//       node: formatted,
+//       value,
+//     });
+//   }
+// };
 
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;

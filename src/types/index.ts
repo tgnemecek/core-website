@@ -35,9 +35,9 @@ export type VideoType = {
   link: string;
 };
 
-export type BenefitsType = string;
+export type ServiceBenefitsType = string;
 
-export type ExplanationType = {
+export type ServiceExplanationType = {
   text: string;
   image: string;
 };
@@ -53,22 +53,54 @@ export type MemberType = {
 
 // Types for each page query
 
-export type LandingPageDTO = () => {
+export type GenericDTO<FrontmatterType> = {
+  data: {
+    markdownRemark: {
+      frontmatter: FrontmatterType;
+    };
+  };
+};
+
+export type PagesDTO<PageType> = GenericDTO<{
+  pages: Record<string, PageType>;
+}>;
+
+export type LandingPageDTO = PagesDTO<{
   hero: HeroType;
   about: AboutType;
   testimonials: TestimonialType[];
   services: ServiceType[];
   products: ProductType[];
   videos: VideoType[];
-};
+}>;
 
-export type ServicesPageDTO = {
+export type ServicesPageDTO = PagesDTO<{
   hero: HeroType;
-  benefits: BenefitsType;
-  explanation: ExplanationType;
-};
+  benefits: ServiceBenefitsType;
+  explanation: ServiceExplanationType;
+}>;
 
-export type TeamPageDTO = {
+export type TeamPageDTO = PagesDTO<{
   hero: HeroType;
   members: MemberType[];
-};
+}>;
+
+export type EventPageDTO = GenericDTO<{
+  events: {
+    title: string;
+    subtitle: string;
+    description: string;
+    image: string;
+    video?: string;
+    date: Date;
+    duration: number;
+    language: string[];
+    isOnline: boolean;
+    location?: string;
+    tickets: {
+      description: string;
+      price: number;
+      endsOn: string;
+    }[];
+  };
+}>;

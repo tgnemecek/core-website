@@ -1,17 +1,8 @@
 import { createMuiTheme, responsiveFontSizes } from "@material-ui/core";
+import { breakpoints } from "utils";
 
 const baseFontColor = "#595959";
 const primaryColor = "#315cb0";
-
-export const breakpoints = {
-  values: {
-    xs: 400,
-    sm: 600,
-    md: 960,
-    lg: 1280,
-    xl: 1920,
-  },
-};
 
 const themeObject = {
   breakpoints,
