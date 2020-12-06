@@ -81,8 +81,11 @@ export type LandingPageDTO = PagesDTO<{
 
 export type ServicesPageDTO = PagesDTO<{
   hero: HeroType;
-  benefits: ServiceBenefitsType;
-  explanation: ServiceExplanationType;
+  benefits: {
+    text: string;
+    image: string;
+  };
+  explanation: string;
 }>;
 
 export type TeamPageDTO = PagesDTO<{
@@ -108,4 +111,18 @@ export type EventPageDTO = GenericDTO<{
       endsOn: string;
     }[];
   };
+}>;
+
+export type NavigationInfoDTO = GenericDTO<{
+  navigation: {
+    links: {
+      label: string;
+      url: string;
+      description?: string;
+    }[];
+  };
+}>;
+
+export type ContactInfoDTO = GenericDTO<{
+  contact: Record<"address" | "email" | "phone1" | "phone2" | "link", string>;
 }>;
