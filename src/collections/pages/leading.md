@@ -37,12 +37,12 @@ benefits: >-
   <ul>
 
 
-  <li>Frustrated, anxious about all the problems you have to fix ASAP.</li>
-    <li>Unclear about company's vision and how to achieve it.</li>
-    <li>Not aligned with others about best actions to take.</li>
-    <li>Not communicating as powerfully or confidently as wish.</li>
-    <li>Losing money; inefficient processes or inadequate capital.</li>
-  <ll>Working too hard for results; not leveraging efforts to next success.</li>
+  <li>Feel frustrated, anxious about all the problems you have to fix ASAP.</li>
+    <li>Are unclear about company's vision and how to achieve it.</li>
+    <li>Are not aligned with others about best actions to take.</li>
+    <li>Are not communicating as powerfully or confidently as wish.</li>
+    <li>Are losing money; have inefficient processes or inadequate capital.</li>
+  <ll>Are working too hard for results; not leveraging efforts to next success.</li>
 
 
   <ll>A Business Coach or Consultant whose clients say yes to these questions. </li>

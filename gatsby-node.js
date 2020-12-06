@@ -3,6 +3,44 @@ const path = require("path");
 const { createFilePath } = require("gatsby-source-filesystem");
 const schema = require("./src/schema");
 
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions;
+
+  if (node.internal.type === "MarkdownRemark") {
+    const value = createFilePath({ node, getNode });
+
+    if (node.frontmatter.collection === "pages") {
+      const pageKey = value === "/" ? "landing" : "services";
+      createNodeField({
+        name: "slug",
+        node: {
+          ...node,
+          frontmatter: {
+            pages: {
+              [pageKey]: node.frontmatter,
+            },
+            component: node.frontmatter.component,
+            collection: node.frontmatter.collection,
+          },
+        },
+        value,
+      });
+    } else {
+      createNodeField({
+        name: "slug",
+        node: {
+          ...node,
+          frontmatter: {
+            [node.frontmatter.collection]: node.frontmatter,
+            collection: node.frontmatter.collection,
+          },
+        },
+        value,
+      });
+    }
+  }
+};
+
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
 
@@ -18,9 +56,6 @@ exports.createPages = ({ actions, graphql }) => {
               fields {
                 slug
               }
-              frontmatter {
-                component
-              }
             }
           }
         }
@@ -31,17 +66,27 @@ exports.createPages = ({ actions, graphql }) => {
         return Promise.reject(result.errors);
       }
 
+      const slugMap = {
+        "/": "LandingPage",
+        "/coaching/": "ServicesPage",
+        "/leading/": "ServicesPage",
+        "/learning/": "ServicesPage",
+        "/team/": "TeamPage",
+      };
+
       const edges = result.data.allMarkdownRemark.edges;
 
       edges.forEach((edge) => {
-        const id = edge.node.id;
+        const {
+          id,
+          fields: { slug },
+        } = edge.node;
         createPage({
-          path: edge.node.fields.slug,
-          component: path.resolve(
-            `src/templates/${String(edge.node.frontmatter.component)}/index.tsx`
-          ),
+          path: slug,
+          component: path.resolve(`src/templates/${slugMap[slug]}/index.tsx`),
           context: {
             id,
+            slug,
           },
         });
       });
@@ -88,70 +133,6 @@ exports.createPages = ({ actions, graphql }) => {
   };
   return Promise.all([createMainPages(), createEventPage()]);
 };
-
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions;
-
-  if (node.internal.type === "MarkdownRemark") {
-    const value = createFilePath({ node, getNode });
-
-    if (node.frontmatter.collection === "pages") {
-      createNodeField({
-        name: "slug",
-        node: {
-          ...node,
-          frontmatter: {
-            pages: {
-              [value.replace(/\//g, "") || "landing"]: node.frontmatter,
-            },
-            component: node.frontmatter.component,
-            collection: node.frontmatter.collection,
-          },
-        },
-        value,
-      });
-    } else {
-      createNodeField({
-        name: "slug",
-        node: {
-          ...node,
-          frontmatter: {
-            [node.frontmatter.collection]: node.frontmatter,
-            collection: node.frontmatter.collection,
-          },
-        },
-        value,
-      });
-    }
-  }
-};
-
-// exports.onCreateNode = ({ node, actions, getNode }) => {
-//   const { createNodeField } = actions;
-//   fmImagesToRelative(node); // convert image paths for gatsby images
-
-//   if (node.internal.type === `MarkdownRemark`) {
-//     console.dir({ node }, { depth: null });
-//     const value = createFilePath({ node, getNode });
-// const formatted = {
-//   ...node,
-//   frontmatter: {
-//     [node.frontmatter.collection]: {
-//       [node.frontmatter.key]: node.frontmatter,
-//     },
-//     key: node.frontmatter.key,
-//     collection: node.frontmatter.collection,
-//     component: node.frontmatter.component,
-//   },
-// };
-
-//     createNodeField({
-//       name: `slug`,
-//       node: formatted,
-//       value,
-//     });
-//   }
-// };
 
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;

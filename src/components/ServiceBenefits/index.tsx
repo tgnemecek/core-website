@@ -15,19 +15,15 @@ import { ServiceBenefitsType } from "types";
 
 type ServiceBenefitsProps = {
   benefits: ServiceBenefitsType;
-  title: string;
 };
 
-const ServiceBenefits: React.FC<ServiceBenefitsProps> = ({
-  benefits,
-  title,
-}) => {
+const ServiceBenefits: React.FC<ServiceBenefitsProps> = ({ benefits }) => {
   const classes = useStyles();
 
   return (
     <Container>
       <Paper elevation={3} square className={classes.paper}>
-        <Typography variant="h2">{title}</Typography>
+        <Typography variant="h2">Schedule a time with us if you:</Typography>
         {parse(benefits, {
           replace: ({ name, children }) => {
             if (name === "ul")

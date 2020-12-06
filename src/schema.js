@@ -14,8 +14,10 @@ const MarkdownRemark = `
   type Pages {
     landing: LandingPage
     team: TeamPage
-    leading: ServicesPage
+    services: ServicesPage
+
     coaching: ServicesPage
+    leading: ServicesPage
     learning: ServicesPage
   }
 `;
