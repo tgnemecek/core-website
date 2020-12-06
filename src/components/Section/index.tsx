@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { get } from "lodash";
+import { theme } from "components";
 
 type SectionProps = {
   className?: string;
@@ -12,7 +12,7 @@ type SectionProps = {
 const Section: React.FC<SectionProps> = ({
   children,
   className = "",
-  backgroundColor = "common.white",
+  backgroundColor = theme.palette.common.white,
   small = false,
   id = "",
 }) => {
@@ -37,6 +37,6 @@ const useStyles = ({ backgroundColor, small }: UseStylesProps) =>
     section: {
       boxShadow: "inset 0px -10px 12px -3px rgba(0, 0, 0, 0.1)",
       padding: small ? "40px 0" : "120px 0",
-      backgroundColor: get(theme, `palette.${backgroundColor}`),
+      backgroundColor,
     },
   }));

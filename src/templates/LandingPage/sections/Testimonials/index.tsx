@@ -5,7 +5,7 @@ import { Skeleton } from "@material-ui/lab";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import VisuallyHidden from "@reach/visually-hidden";
-import { Section } from "components";
+import { Section, theme } from "components";
 import { shuffleArray } from "utils";
 
 import Testimonial from "./Testimonial";
@@ -34,7 +34,7 @@ const Testimonials: React.FC<TestimonialsProps> = (props) => {
   };
 
   return (
-    <Section backgroundColor="primary.main" small={true}>
+    <Section backgroundColor={theme.palette.primary.main} small={true}>
       <Container>
         <VisuallyHidden>
           <Typography variant="h2">Testimonials</Typography>

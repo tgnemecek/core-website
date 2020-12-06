@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { EventPageDTO } from "types";
+import { Header } from "./sections";
 
 const EventPage: React.FC<EventPageDTO> = ({
   data: {
@@ -35,31 +36,35 @@ const EventPage: React.FC<EventPageDTO> = ({
     location,
     tickets,
   });
+
+  const getPriceRange = () => {
+    const { min, max } = tickets.reduce(
+      (acc, { price }) => {
+        return {
+          min: price < acc.min ? price : acc.min,
+          max: price > acc.max ? price : acc.max,
+        };
+      },
+      {
+        min: 999,
+        max: 0,
+      }
+    );
+    return `$${min}-${max}`;
+  };
+
   return (
-    <div>
-      EventPage
-      <div>
-        {[
-          title,
-          subtitle,
-          description,
-          image,
-          video,
-          date,
-          duration,
-          language,
-          isOnline,
-          location,
-          tickets,
-        ]
-          .filter((value) => typeof value === "string")
-          .map((value, i) => (
-            <div key={i} style={{ marginTop: 25 }}>
-              {value}
-            </div>
-          ))}
-      </div>
-    </div>
+    <>
+      <Header
+        title={title}
+        subtitle={subtitle}
+        date={date}
+        image={image}
+        isOnline={isOnline}
+        location={location}
+        priceRange={getPriceRange()}
+      />
+    </>
   );
 };
 

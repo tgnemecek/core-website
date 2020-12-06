@@ -42,9 +42,7 @@ const MarkdownRemark = `
 
 const LandingPage = `
   type LandingPage {
-    collection: String!
-    key: String!
-
+    collection: String
     hero: Hero!
     about: About!
     services: [Service!]!
@@ -93,8 +91,7 @@ const LandingPage = `
 
 const TeamPage = `
   type TeamPage {
-    collection: String!
-    key: String!
+    collection: String
     hero: Hero
     members: [Member]
   }
@@ -111,8 +108,6 @@ const TeamPage = `
 const ServicesPage = `
   type ServicesPage {
     collection: String
-    component: String
-    key: String
     hero: Hero
     explanation: Explanation
     benefits: String
