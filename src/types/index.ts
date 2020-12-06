@@ -44,13 +44,6 @@ export type VideoType = {
 
 export type ServiceNameType = "leading" | "coaching" | "learning";
 
-export type ServiceBenefitsType = string;
-
-export type ServiceExplanationType = {
-  text: string;
-  image: string;
-};
-
 export type MemberType = {
   name: string;
   role: string;

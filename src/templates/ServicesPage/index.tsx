@@ -5,19 +5,15 @@ import coachingReport from "src/downloads/free-reports/coaching.pdf";
 import learningReport from "src/downloads/free-reports/learning.pdf";
 import { ServicesPageDTO, ServiceNameType, PayPalButtonName } from "types";
 
+import { Hero, Section, ContactForm, Layout, Navbar, Footer } from "components";
+
 import {
-  Hero,
-  Section,
-  ServiceExplanation,
-  ServiceBenefits,
+  Benefits,
   CallToAction,
+  Explanation,
   FreeReport,
   PayPalButtons,
-  ContactForm,
-  Layout,
-  Navbar,
-  Footer,
-} from "components";
+} from "./sections";
 
 const ServicesPage: React.FC<ServicesPageDTO> = ({
   data: {
@@ -83,12 +79,12 @@ const ServicesPage: React.FC<ServicesPageDTO> = ({
       <main>
         <Hero hero={hero} small={true} />
         <Section>
-          <ServiceExplanation explanation={explanation} />
+          <Explanation explanation={explanation} />
           <FreeReport
             reportText={getReportText()}
             downloadLink={getReportLink()}
           />
-          <ServiceBenefits benefits={benefits} />
+          <Benefits benefits={benefits} />
           <CallToAction href="#contact-form" text="Send Us a message" />
         </Section>
         <Section>
