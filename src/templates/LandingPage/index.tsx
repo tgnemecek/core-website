@@ -2,17 +2,9 @@ import React from "react";
 import { graphql } from "gatsby";
 import { LandingPageDTO } from "types";
 
-import {
-  About,
-  Testimonials,
-  Products,
-  Videos,
-  Hero,
-  ContactForm,
-  Layout,
-  Navbar,
-  Footer,
-} from "components";
+import { Hero, ContactForm, Layout, Navbar, Footer } from "components";
+
+import { About, Testimonials, Products, Videos } from "./sections";
 
 const LandingPage: React.FC<LandingPageDTO> = ({
   data: {
