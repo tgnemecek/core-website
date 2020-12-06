@@ -21,6 +21,13 @@ export type ServiceType = {
   image: string;
 };
 
+export type PayPalButtonName =
+  | "careerStrengths"
+  | "leaderStrengths"
+  | "entrepreneuerStrengths"
+  | "personalStrengths"
+  | "donation";
+
 export type ProductType = {
   description: string;
   image: string;
@@ -34,6 +41,8 @@ export type VideoType = {
   subtitle: string;
   link: string;
 };
+
+export type ServiceNameType = "leading" | "coaching" | "learning";
 
 export type ServiceBenefitsType = string;
 
@@ -56,6 +65,9 @@ export type MemberType = {
 export type GenericDTO<FrontmatterType> = {
   data: {
     markdownRemark: {
+      fields: {
+        slug?: string;
+      };
       frontmatter: FrontmatterType;
     };
   };

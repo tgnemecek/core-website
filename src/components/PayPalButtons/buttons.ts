@@ -1,5 +1,6 @@
 import paypalBuyNow from "src/img/paypal-buy-now.jpg";
 import paypalDonate from "src/img/paypal-donate.jpg";
+import { PayPalButtonName } from "types";
 
 type ButtonData = {
   label: string;
@@ -9,14 +10,7 @@ type ButtonData = {
   button: "*jpg";
 };
 
-type ButtonNames =
-  | "careerStrengths"
-  | "leaderStrengths"
-  | "entrepreneuerStrengths"
-  | "personalStrengths"
-  | "donation";
-
-type Buttons = Record<ButtonNames, ButtonData>;
+type Buttons = Record<PayPalButtonName, ButtonData>;
 
 const buttons: Buttons = {
   careerStrengths: {

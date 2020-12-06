@@ -10,10 +10,11 @@ import {
   CardActionArea,
 } from "@material-ui/core";
 import { theme } from "components";
+import { PayPalButtonName } from "types";
 import buttons from "./buttons";
 
 type PayPalButtonsProps = {
-  buttonTypes: (keyof typeof buttons)[];
+  buttonTypes: PayPalButtonName[];
 };
 
 const PayPalButtons: React.FC<PayPalButtonsProps> = ({ buttonTypes }) => {
