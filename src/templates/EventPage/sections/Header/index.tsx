@@ -30,7 +30,7 @@ const Header: React.FC<HeaderProps> = ({
   priceRange,
 }) => {
   const classes = useStyles();
-  console.log({ isOnline });
+
   return (
     <section className={classes.section}>
       <Container>
@@ -39,9 +39,9 @@ const Header: React.FC<HeaderProps> = ({
             <Image src={image} width={400} />
           </div>
           <div>
-            <Card raised className={classes.card}>
+            <Card className={classes.card}>
               <CardContent className={classes.cardContent}>
-                <Typography variant="subtitle1" color="textSecondary">
+                <Typography variant="body1" color="textSecondary">
                   {moment(date).format("MMMM D, YYYY")}
                 </Typography>
                 <Typography variant="h4">{title}</Typography>
@@ -74,7 +74,7 @@ export default Header;
 const useStyles = makeStyles((theme) => ({
   section: {
     ...getTintedBackground(),
-    padding: "40px 0",
+    padding: "100px 0 40px 0",
   },
   gridContainer: {
     display: "grid",
@@ -87,6 +87,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   imageWrapper: {
+    boxShadow: theme.shadows[5],
     width: "100%",
     height: "100%",
     "& > *": {
@@ -98,6 +99,7 @@ const useStyles = makeStyles((theme) => ({
   card: {
     height: "100%",
     position: "relative",
+    boxShadow: theme.shadows[5],
   },
   cardContent: {
     padding: 20,
