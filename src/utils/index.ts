@@ -4,6 +4,8 @@ export { default as getImageId } from "./getImageId";
 export { default as getVideoId } from "./getVideoId";
 export { default as isVideoValid } from "./isVideoValid";
 export { default as shuffleArray } from "./shuffleArray";
+export { default as getTintedBackground } from "./getTintedBackground";
+export { default as formatLanguage } from "./formatLanguage";
 
 // Hooks:
 export { default as useBreakpoint } from "./useBreakpoint";

@@ -10,6 +10,7 @@ import {
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { Image } from "components";
+import { getTintedBackground } from "utils";
 import { EventType } from "types";
 
 type HeaderProps = Pick<
@@ -70,15 +71,9 @@ const Header: React.FC<HeaderProps> = ({
 
 export default Header;
 
-const backgroundImage =
-  "url(https://llandscapes-10674.kxcdn.com/wp-content/uploads/2019/07/lighting.jpg)";
-const overlaidBackground = `linear-gradient(0deg, rgb(255 255 255 / 81%), rgb(255 255 255 / 81%)), ${backgroundImage}`;
-
 const useStyles = makeStyles((theme) => ({
   section: {
-    background: overlaidBackground,
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
+    ...getTintedBackground(),
     padding: "40px 0",
   },
   gridContainer: {
