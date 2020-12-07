@@ -130,6 +130,11 @@ export type ContactInfoDTO = GenericDTO<{
   contact: Record<"address" | "email" | "phone1" | "phone2" | "link", string>;
 }>;
 
+export type EventFeedType = Pick<
+  EventType,
+  "date" | "image" | "language" | "subtitle" | "title" | "slug"
+>;
+
 export type EventFeedDTO = {
   data: {
     allMarkdownRemark: {
@@ -139,10 +144,7 @@ export type EventFeedDTO = {
             slug: string;
           };
           frontmatter: {
-            events: Pick<
-              EventType,
-              "date" | "image" | "language" | "subtitle" | "title"
-            >;
+            events: EventFeedType;
           };
         };
       }[];
