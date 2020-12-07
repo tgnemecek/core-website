@@ -33,13 +33,11 @@ const Header: React.FC<HeaderProps> = ({
   return (
     <section className={classes.section}>
       <Container>
-        <Grid container justify="space-between">
-          <Grid item xs={5}>
-            <div className={classes.imageWrapper}>
-              <Image src={image} width={400} />
-            </div>
-          </Grid>
-          <Grid item xs={5}>
+        <div className={classes.gridContainer}>
+          <div className={classes.imageWrapper}>
+            <Image src={image} width={400} />
+          </div>
+          <div>
             <Card raised className={classes.card}>
               <CardContent className={classes.cardContent}>
                 <Typography variant="subtitle1" color="textSecondary">
@@ -48,7 +46,7 @@ const Header: React.FC<HeaderProps> = ({
                 <Typography variant="h5">{title}</Typography>
                 <Typography variant="body1">{subtitle}</Typography>
               </CardContent>
-              <CardActions>
+              <CardActions className={classes.cardActions}>
                 <Grid container justify="space-between">
                   <Grid item>
                     <Typography variant="body1">
@@ -63,8 +61,8 @@ const Header: React.FC<HeaderProps> = ({
                 </Grid>
               </CardActions>
             </Card>
-          </Grid>
-        </Grid>
+          </div>
+        </div>
       </Container>
     </section>
   );
@@ -83,6 +81,16 @@ const useStyles = makeStyles((theme) => ({
     backgroundRepeat: "no-repeat",
     padding: "40px 0",
   },
+  gridContainer: {
+    display: "grid",
+    gridTemplateColumns: "500px 500px",
+    gridTemplateRows: 300,
+    justifyContent: "space-between",
+    [theme.breakpoints.down("md")]: {
+      gridTemplateColumns: "1fr",
+      gridTemplateRows: "200px 300px",
+    },
+  },
   imageWrapper: {
     width: "100%",
     height: "100%",
@@ -93,9 +101,17 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   card: {
-    padding: 20,
+    height: "100%",
+    position: "relative",
   },
   cardContent: {
-    minHeight: 300,
+    padding: 20,
+  },
+  cardActions: {
+    position: "absolute",
+    left: 0,
+    bottom: 0,
+    padding: 20,
+    width: "100%",
   },
 }));
