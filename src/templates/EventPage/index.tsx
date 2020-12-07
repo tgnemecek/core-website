@@ -1,11 +1,13 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { EventPageDTO } from "types";
-import { Header } from "./sections";
+import { Layout, EventFeed } from "components";
+import { Header, Video } from "./sections";
 
 const EventPage: React.FC<EventPageDTO> = ({
   data: {
     markdownRemark: {
+      fields: { slug },
       frontmatter: { events },
     },
   },
@@ -50,11 +52,11 @@ const EventPage: React.FC<EventPageDTO> = ({
         max: 0,
       }
     );
-    return `$${min}-${max}`;
+    return `$${min} - $${max}`;
   };
 
   return (
-    <>
+    <Layout>
       <Header
         title={title}
         subtitle={subtitle}
@@ -64,7 +66,12 @@ const EventPage: React.FC<EventPageDTO> = ({
         location={location}
         priceRange={getPriceRange()}
       />
-    </>
+      <Video video={video} />
+      <EventFeed
+        title="You might also like these events"
+        filter={(event) => event.slug !== slug}
+      />
+    </Layout>
   );
 };
 
@@ -73,7 +80,9 @@ export default EventPage;
 export const pageQuery = graphql`
   query EventQuery($id: String!) {
     markdownRemark(id: { eq: $id }) {
-      id
+      fields {
+        slug
+      }
       frontmatter {
         events {
           title

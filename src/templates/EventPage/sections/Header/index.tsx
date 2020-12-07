@@ -43,7 +43,7 @@ const Header: React.FC<HeaderProps> = ({
                 <Typography variant="subtitle1" color="textSecondary">
                   {moment(date).format("MMMM D, YYYY")}
                 </Typography>
-                <Typography variant="h5">{title}</Typography>
+                <Typography variant="h4">{title}</Typography>
                 <Typography variant="body1">{subtitle}</Typography>
               </CardContent>
               <CardActions className={classes.cardActions}>

@@ -2,18 +2,23 @@ import React from "react";
 import { Container, Typography } from "@material-ui/core";
 import { Section, HorizontalFeed } from "components";
 import { useEventFeed } from "utils";
+import { EventFeedType } from "types";
 import Event from "./Event";
 
 const skeletonHeight = 440;
 
-const EventFeed: React.FC = () => {
-  const events = useEventFeed();
+type EventFeedProps = {
+  title: string;
+  filter?: (event: EventFeedType) => boolean;
+};
+
+const EventFeed: React.FC<EventFeedProps> = ({ title, filter }) => {
+  const events = useEventFeed().filter(filter || Boolean);
+
   return (
     <Section id="events">
       <Container>
-        <Typography variant="h2">
-          Leading Your Life &amp; Work Events
-        </Typography>
+        <Typography variant="h2">{title}</Typography>
         <Typography variant="subtitle1" component="p">
           Latest updates about our online and in-person events
         </Typography>

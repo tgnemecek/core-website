@@ -14,7 +14,10 @@ import { Link } from "gatsby";
 import { EventType } from "types";
 
 type EventProps = {
-  event: EventType;
+  event: Pick<
+    EventType,
+    "title" | "date" | "image" | "language" | "subtitle" | "slug"
+  >;
 };
 
 const Event: React.FC<EventProps> = ({
