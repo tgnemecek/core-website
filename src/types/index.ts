@@ -62,7 +62,7 @@ export type EventType = {
   video?: string;
   date: Date;
   duration: number;
-  language: string[];
+  language: "EN" | "ES";
   isOnline: boolean;
   location?: string;
   tickets: {

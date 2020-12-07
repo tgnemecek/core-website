@@ -10,7 +10,7 @@ import {
   ListItemIcon,
 } from "@material-ui/core";
 import StarIcon from "@material-ui/icons/Star";
-import { Image } from "components";
+import { Image, Markdown } from "components";
 
 const imageHeight = 400;
 
@@ -26,42 +26,6 @@ const Explanation: React.FC<ExplanationProps> = ({
 }) => {
   const classes = useStyles();
 
-  const preparedText = () => {
-    return (
-      <ReactMarkdown
-        source={text}
-        renderers={{
-          paragraph: (props) => (
-            <Typography
-              {...props}
-              variant="body1"
-              style={{ marginBottom: 10 }}
-            />
-          ),
-          text: (props) => <React.Fragment {...props} />,
-          link: (props) => (
-            <a {...props} target="_blank" rel="noopener noreferrer" />
-          ),
-          list: (props) => <List {...props} />,
-          listItem: ({ children, ...props }) => (
-            <ListItem {...props}>
-              <ListItemIcon>
-                <StarIcon />
-              </ListItemIcon>
-              <Typography variant="body1">{children}</Typography>
-            </ListItem>
-          ),
-          strong: (props) => (
-            <strong style={{ fontWeight: "bold" }} {...props} />
-          ),
-          blockquote: (props) => (
-            <Typography {...props} variant="h4" style={{ marginTop: 15 }} />
-          ),
-        }}
-      />
-    );
-  };
-
   return (
     <Container maxWidth="lg">
       <Grid
@@ -71,7 +35,7 @@ const Explanation: React.FC<ExplanationProps> = ({
         alignItems="center"
       >
         <Grid item xs={12} md={8}>
-          {preparedText()}
+          <Markdown text={text} />
         </Grid>
         <Grid item xs={12} md={4} className={classes.imgContainer}>
           <Image

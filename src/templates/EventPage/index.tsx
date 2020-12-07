@@ -1,8 +1,9 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { Container } from "@material-ui/core";
 import { EventPageDTO } from "types";
 import { Layout, EventFeed } from "components";
-import { Header, Video } from "./sections";
+import { Aside, Header, ContentGrid, Body, Video } from "./sections";
 
 const EventPage: React.FC<EventPageDTO> = ({
   data: {
@@ -55,6 +56,10 @@ const EventPage: React.FC<EventPageDTO> = ({
     return `$${min} - $${max}`;
   };
 
+  const toggleTicketsModal = () => {
+    return;
+  };
+
   return (
     <Layout>
       <Header
@@ -67,6 +72,17 @@ const EventPage: React.FC<EventPageDTO> = ({
         priceRange={getPriceRange()}
       />
       <Video video={video} />
+      <ContentGrid>
+        <Body title={title} subtitle={subtitle} description={description} />
+        <Aside
+          date={date}
+          isOnline={isOnline}
+          location={location}
+          duration={duration}
+          language={language}
+          toggleTicketsModal={toggleTicketsModal}
+        />
+      </ContentGrid>
       <EventFeed
         title="You might also like these events"
         filter={(event) => event.slug !== slug}

@@ -8,6 +8,7 @@ export { default as Hero } from "./Hero";
 export { default as HorizontalFeed } from "./HorizontalFeed";
 export { default as Image } from "./Image";
 export { default as Layout } from "./Layout";
+export { default as Markdown } from "./Markdown";
 export { default as Modal } from "./Modal";
 export { default as Navbar } from "./Navbar";
 export { default as Section } from "./Section";
