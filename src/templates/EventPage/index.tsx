@@ -1,9 +1,8 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Container } from "@material-ui/core";
 import { EventPageDTO } from "types";
-import { Layout, EventFeed } from "components";
-import { Aside, Header, ContentGrid, Body, Video } from "./sections";
+import { Layout, EventFeed, Footer, Navbar } from "components";
+import { Aside, FixedBar, Header, ContentGrid, Body, Video } from "./sections";
 
 const EventPage: React.FC<EventPageDTO> = ({
   data: {
@@ -62,31 +61,36 @@ const EventPage: React.FC<EventPageDTO> = ({
 
   return (
     <Layout>
-      <Header
-        title={title}
-        subtitle={subtitle}
-        date={date}
-        image={image}
-        isOnline={isOnline}
-        location={location}
-        priceRange={getPriceRange()}
-      />
-      <Video video={video} />
-      <ContentGrid>
-        <Body title={title} subtitle={subtitle} description={description} />
-        <Aside
+      <Navbar />
+      <main>
+        <Header
+          title={title}
+          subtitle={subtitle}
           date={date}
+          image={image}
           isOnline={isOnline}
           location={location}
-          duration={duration}
-          language={language}
-          toggleTicketsModal={toggleTicketsModal}
+          priceRange={getPriceRange()}
         />
-      </ContentGrid>
-      <EventFeed
-        title="You might also like these events"
-        filter={(event) => event.slug !== slug}
-      />
+        <Video video={video} />
+        <ContentGrid>
+          <Body title={title} subtitle={subtitle} description={description} />
+          <Aside
+            date={date}
+            isOnline={isOnline}
+            location={location}
+            duration={duration}
+            language={language}
+            toggleTicketsModal={toggleTicketsModal}
+          />
+        </ContentGrid>
+        <EventFeed
+          title="You might also like these events"
+          filter={(event) => event.slug !== slug}
+        />
+        <FixedBar toggleTicketsModal={toggleTicketsModal} />
+      </main>
+      <Footer paddingBottom={70} />
     </Layout>
   );
 };

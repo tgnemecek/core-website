@@ -13,9 +13,13 @@ import PhoneIphoneIcon from "@material-ui/icons/PhoneIphone";
 import LinkIcon from "@material-ui/icons/Link";
 import { useContactInfo } from "utils";
 
-const Footer: React.FC = () => {
+type FooterProps = {
+  paddingBottom?: number;
+};
+
+const Footer: React.FC<FooterProps> = ({ paddingBottom = 0 }) => {
   const { email, phone1, phone2, address, link } = useContactInfo();
-  const classes = useStyles();
+  const classes = useStyles({ paddingBottom })();
 
   const renderPhone = (phone: string) => {
     const href = `tel:${phone.replace(/\D/g, "")}`;
@@ -93,41 +97,47 @@ const Footer: React.FC = () => {
   );
 };
 
-const useStyles = makeStyles((theme) => ({
-  footer: {
-    paddingTop: 100,
-    backgroundColor: theme.palette.primary.main,
-  },
-  leftSide: {
-    "& a": {
-      textDecoration: "underline",
-      display: "inline",
-      color: theme.palette.common.white,
+type UseStylesProps = {
+  paddingBottom: number;
+};
+
+const useStyles = ({ paddingBottom }: UseStylesProps) =>
+  makeStyles((theme) => ({
+    footer: {
+      paddingTop: 100,
+      backgroundColor: theme.palette.primary.main,
+      paddingBottom,
     },
-  },
-  rightSide: {
-    marginBottom: 100,
-    "& p": {
-      textAlign: "right",
-      width: "100%",
-      color: theme.palette.common.white,
-      [theme.breakpoints.down("sm")]: {
-        textAlign: "left",
+    leftSide: {
+      "& a": {
+        textDecoration: "underline",
+        display: "inline",
+        color: theme.palette.common.white,
       },
     },
-  },
-  icon: {
-    color: theme.palette.common.white,
-  },
-  copyright: {
-    borderTop: `1px solid ${theme.palette.grey[300]}`,
-    padding: `${theme.spacing(3)}px 0`,
-    textAlign: "center",
-    width: "100%",
-    "& p": {
+    rightSide: {
+      marginBottom: 100,
+      "& p": {
+        textAlign: "right",
+        width: "100%",
+        color: theme.palette.common.white,
+        [theme.breakpoints.down("sm")]: {
+          textAlign: "left",
+        },
+      },
+    },
+    icon: {
       color: theme.palette.common.white,
     },
-  },
-}));
+    copyright: {
+      borderTop: `1px solid ${theme.palette.grey[300]}`,
+      padding: `${theme.spacing(3)}px 0`,
+      textAlign: "center",
+      width: "100%",
+      "& p": {
+        color: theme.palette.common.white,
+      },
+    },
+  }));
 
 export default Footer;

@@ -32,6 +32,7 @@ const Aside: React.FC<AsideProps> = ({
   location,
   duration,
   language,
+  toggleTicketsModal,
 }) => {
   const classes = useStyles();
 
@@ -98,7 +99,12 @@ const Aside: React.FC<AsideProps> = ({
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small" variant="contained" className={classes.buy}>
+          <Button
+            size="small"
+            variant="contained"
+            className={classes.buy}
+            onClick={toggleTicketsModal}
+          >
             Buy
           </Button>
         </CardActions>
