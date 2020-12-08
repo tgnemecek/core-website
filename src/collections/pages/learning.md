@@ -25,7 +25,7 @@ explanation:
     3. SOS: Switch Off Stress app.
 
 
-    [Contact us](mailto:sseivert@thecoreporation.com) to get more information or take a **Premium Profile** to get a full report on your personal strengths and weaknesses. Attend one of our **excellent seminars**: Productivity, Stress, Prospering, a Leading Your Life & Work seminar or the 3-month implementation program. And please **donate** (below) so we can bring TBA programs to at-risk youth around the world.
+    [Go here](https://core.coachesconsole.com/core-learning-services_0.html) to learn more about Core Learning's many programs. [Contact us](mailto:sseivert@thecoreporation.com) to get more information or take a **Premium Profile** to get a full report on your personal strengths and weaknesses. Attend one of our **excellent seminars**: Productivity, Stress, Prospering, a Leading Your Life & Work seminar or the 3-month implementation program. And please **donate** (below) so we can bring TBA programs to at-risk youth around the world.
 
 
     - - -
