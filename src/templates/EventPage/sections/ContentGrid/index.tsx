@@ -7,7 +7,7 @@ const ContentGrid: React.FC = ({ children }) => {
   const classes = useStyles();
 
   return (
-    <Section>
+    <Section noPadding>
       <Container className={classes.container}>{children}</Container>
     </Section>
   );

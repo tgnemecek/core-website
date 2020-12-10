@@ -121,6 +121,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    boxShadow: "inset 27px 0px 14px -17px rgb(0 0 0 / 24%)",
   },
   card: {
     width: "calc(100% - 50px)",
