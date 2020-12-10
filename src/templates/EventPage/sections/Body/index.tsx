@@ -19,7 +19,9 @@ const Body: React.FC<BodyProps> = ({ title, subtitle, description }) => {
 
   return (
     <section className={classes.section}>
-      <Typography variant="h2">{title}</Typography>
+      <Typography variant="h2" className={classes.title}>
+        {title}
+      </Typography>
       <Typography variant="body1" className={classes.subtitle}>
         {subtitle}
       </Typography>
@@ -36,7 +38,10 @@ const useStyles = makeStyles((theme) => ({
   section: {
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
-    padding: "40px 0",
+    padding: "120px 0",
+  },
+  title: {
+    marginLeft: 25,
   },
   subtitle: {
     backgroundColor: theme.palette.grey[400],

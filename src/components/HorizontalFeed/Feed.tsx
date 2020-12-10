@@ -23,9 +23,8 @@ const Feed: React.FC<FeedProps> = ({
   skeletonHeight = 440,
   initialItemWidth = 280,
   spacing: itemSpacingKey = 2,
-  resizeOnMobile = true,
 }) => {
-  const containerRef = React.createRef<HTMLDivElement>();
+  const [container, setContainer] = React.createRef<HTMLDivElement>();
 
   const itemSpacing = theme.spacing(itemSpacingKey);
 
@@ -40,11 +39,11 @@ const Feed: React.FC<FeedProps> = ({
   })();
 
   React.useEffect(() => {
-    if (children && containerRef.current) {
+    if (children && container) {
       onResize();
       if (window) window.addEventListener("resize", onResize);
     }
-  }, [children, containerRef]);
+  }, [children, container]);
 
   React.useEffect(() => {
     return () => window.removeEventListener("resize", onResize);
@@ -55,19 +54,27 @@ const Feed: React.FC<FeedProps> = ({
 
     const innerSize = containerSize;
     const numberOfItems = children ? children.length : 0;
-    const spacingTotal = itemSpacing * 2 * (numberOfItems - 1);
 
-    return innerSize < itemWidth * (numberOfItems + position) + spacingTotal;
+    const width = container?.offsetWidth;
+    if (!width) return;
+
+    const isMobile = width < breakpoint;
+    let spacingTotal = 0;
+    if (!isMobile) {
+      spacingTotal = itemSpacing * 2 * (numberOfItems - 1);
+    }
+
+    return innerSize < itemWidth * (numberOfItems - position) + spacingTotal;
   }
 
   function onResize() {
-    if (!containerRef.current) return;
+    if (!container) return;
 
-    const width = containerRef.current.offsetWidth;
+    const width = container.offsetWidth;
     setContainerSize(width);
 
     if (width < breakpoint) {
-      if (resizeOnMobile) setItemWidth(width - itemSpacing);
+      setItemWidth(width - itemSpacing);
       setShowArrowBackground(false);
     } else {
       setItemWidth(initialItemWidth);
@@ -75,6 +82,7 @@ const Feed: React.FC<FeedProps> = ({
     }
   }
 
+  console.log({ position });
   function scrollClick(value: number) {
     setPosition(position + value);
   }
@@ -102,7 +110,7 @@ const Feed: React.FC<FeedProps> = ({
   }
 
   return (
-    <div className={classes.root} ref={containerRef}>
+    <div className={classes.root} ref={setContainer}>
       <Box className={classes.boxContainer}>
         <Grid
           container
@@ -122,7 +130,7 @@ const Feed: React.FC<FeedProps> = ({
         {position ? (
           <IconButton
             className={classes.leftArrowButton}
-            onClick={() => scrollClick(1)}
+            onClick={() => scrollClick(-1)}
           >
             <ArrowBackIosIcon viewBox="0 0 15 24" />
           </IconButton>
@@ -130,7 +138,7 @@ const Feed: React.FC<FeedProps> = ({
         {isRightArrowVisible() ? (
           <IconButton
             className={classes.rightArrowButton}
-            onClick={() => scrollClick(-1)}
+            onClick={() => scrollClick(1)}
           >
             <ArrowForwardIosIcon viewBox="0 0 20 24" />
           </IconButton>
@@ -185,7 +193,7 @@ const useStyles = ({ gridOffset, showArrowBackground }: UseStylesProps) => {
       },
       gridContainer: {
         position: "relative",
-        left: gridOffset || 0,
+        left: -gridOffset,
         flexWrap: "nowrap",
         height: "100%",
         padding: 0,
