@@ -1,58 +1,91 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Container, Typography, IconButton } from "@material-ui/core";
+import { IconButton } from "@material-ui/core";
 import ArrowBackIosRoundedIcon from "@material-ui/icons/ArrowBackIosRounded";
 import ArrowForwardIosRoundedIcon from "@material-ui/icons/ArrowForwardIosRounded";
 import useResizeAware from "react-resize-aware";
-import { Section } from "components";
-import { useEventFeed, useBreakpoint } from "utils";
-import { EventFeedType } from "types";
 
 type HorizontalFeedProps = {
   items?: React.ReactNodeArray;
-  height?: number;
 };
 
-const HorizontalFeed: React.FC<HorizontalFeedProps> = ({
-  items = [],
-  height = 440,
-}) => {
+type DragDataType = {
+  mouseX: number;
+  scrollLeft: number;
+};
+
+const HorizontalFeed: React.FC<HorizontalFeedProps> = ({ items = [] }) => {
   const [resizeListener, sizes] = useResizeAware();
   const [position, setPosition] = React.useState(0);
+  const scrollRef = React.useRef<HTMLDivElement>(null);
+  const dragData = React.useRef<DragDataType>(null);
 
-  const numberOfItemsShown = React.useMemo(() => {
-    const { width } = sizes;
-
-    if (width > 1100) return 4;
-    if (width > 800) return 3;
-    if (width > 700) return 2;
-    return 1;
+  const { itemWidth, itemHeight, itemPadding } = React.useMemo(() => {
+    const { width: containerWidth } = sizes;
+    let width;
+    if (containerWidth > 800) width = 300;
+    else if (containerWidth > 400) width = 250;
+    else width = containerWidth / 1.2;
+    return {
+      itemWidth: width,
+      itemHeight: width * 1.2,
+      itemPadding: 10,
+    };
   }, [sizes]);
 
-  const itemWidth = sizes.width / numberOfItemsShown;
-  const itemPadding = React.useMemo(() => {
-    const { width } = sizes;
+  const onDragStart = (e: React.DragEvent<HTMLDivElement>) => {
+    dragData.current = {
+      mouseX: e.clientX,
+      scrollLeft: e.currentTarget.scrollLeft,
+    };
+    e.currentTarget.style.cursor = "grabbing";
+    e.currentTarget.style.userSelect = "none";
+  };
 
-    if (width > 800) return 10;
-    if (width > 700) return 30;
-    if (width > 450) return 80;
-    return 10;
-  }, [sizes]);
+  const onDrag = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    if (!dragData.current) return;
+    const { mouseX, scrollLeft } = dragData.current;
+    const deltaX = e.clientX - mouseX;
+    e.currentTarget.scrollLeft = scrollLeft - deltaX;
+  };
+
+  const onDragEnd = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    if (!dragData.current) return;
+    const { mouseX, scrollLeft } = dragData.current;
+    const deltaX = e.clientX - mouseX;
+
+    const actualValue = scrollLeft - deltaX;
+    e.currentTarget.scrollLeft = actualValue;
+
+    const gridValue = Math.round(actualValue / itemWidth) * itemWidth;
+    e.currentTarget.scrollTo({
+      left: gridValue,
+      behavior: "smooth",
+    });
+  };
 
   const classes = useStyles({
     numberOfEvents: items.length,
     position,
     itemWidth,
-    height,
+    itemHeight,
     itemPadding,
     showPrevious: position > 0,
-    showNext: items.length - (numberOfItemsShown + position) > 0,
+    showNext: true,
+    // showNext: items.length - (numberOfItemsShown + position) > 0,
   })();
 
   return (
     <div className={classes.container}>
-      <div className={classes.scrollContainer}>
-        <div className={classes.scroll} onTouchEnd={(e) => console.log(e)}>
+      <div
+        className={classes.scrollContainer}
+        draggable
+        ref={scrollRef}
+        onDragStart={onDragStart}
+        onDrag={onDrag}
+        onDragEnd={onDragEnd}
+      >
+        <div className={classes.scroll}>
           {resizeListener}
           {items.map((item, i) => (
             <div key={i} className={classes.item}>
@@ -61,7 +94,7 @@ const HorizontalFeed: React.FC<HorizontalFeedProps> = ({
           ))}
         </div>
       </div>
-      <div className={classes.buttonWrapper}>
+      {/* <div className={classes.buttonWrapper}>
         <IconButton
           onClick={() => setPosition((prev) => prev - 1)}
           className={classes.previousButton}
@@ -74,7 +107,7 @@ const HorizontalFeed: React.FC<HorizontalFeedProps> = ({
         >
           <ArrowForwardIosRoundedIcon />
         </IconButton>
-      </div>
+      </div> */}
     </div>
   );
 };
@@ -83,7 +116,7 @@ type UseStylesProps = {
   numberOfEvents: number;
   position: number;
   itemWidth: number;
-  height: number;
+  itemHeight: number;
   itemPadding: number;
   showPrevious: boolean;
   showNext: boolean;
@@ -93,7 +126,7 @@ const useStyles = ({
   numberOfEvents,
   position,
   itemWidth,
-  height,
+  itemHeight,
   itemPadding,
   showPrevious,
   showNext,
@@ -115,17 +148,21 @@ const useStyles = ({
         position: "relative",
       },
       scrollContainer: {
-        overflow: "hidden",
+        overflow: "auto",
         paddingBottom: 10,
       },
       scroll: {
         display: "grid",
         gridTemplateColumns: `repeat(${numberOfEvents}, ${itemWidth}px)`,
         position: "relative",
-        left: `-${position * itemWidth}px`,
+        // left: `-${position * itemWidth}px`,
         transition: "left 0.5s ease-in-out",
       },
-      item: { height, width: itemWidth, padding: `0 ${itemPadding}px` },
+      item: {
+        height: itemHeight,
+        width: itemWidth,
+        padding: `0 ${itemPadding}px`,
+      },
       buttonWrapper: {
         display: "flex",
         justifyContent: "space-between",
