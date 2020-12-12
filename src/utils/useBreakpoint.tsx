@@ -3,15 +3,15 @@ import { breakpoints } from "utils";
 
 const breakpointMap = breakpoints.values;
 
-type UseBreakpointState = Record<"sm" | "md" | "lg" | "xl" | "xxl", boolean>;
+type UseBreakpointState = Record<"xs" | "sm" | "md" | "lg" | "xl", boolean>;
 
 const useBreakpoint = () => {
   const [state, setState] = React.useState<UseBreakpointState>({
+    xs: true,
     sm: true,
     md: true,
     lg: true,
     xl: true,
-    xxl: true,
   });
 
   const onResize = () => {
@@ -21,7 +21,7 @@ const useBreakpoint = () => {
 
       const newState = { ...prevState };
 
-      Object.keys(breakpointMap).forEach((key) => {
+      Object.keys(breakpointMap).forEach((key: keyof UseBreakpointState) => {
         const point = breakpointMap[key];
         const result = width >= point;
         if (result !== prevState[key]) hasChanged = true;
