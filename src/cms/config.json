@@ -602,7 +602,7 @@
           "label": "Title",
           "name": "title",
           "widget": "string",
-          "pattern": "['^.{3,40}$', 'Must have between 3 and 40 characters']"
+          "pattern": ["^.{3,40}$", "Must have between 3 and 40 characters"]
         },
         {
           "label": "Subtitle",
