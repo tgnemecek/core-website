@@ -140,14 +140,14 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
     ...getTintedBackground(),
     boxShadow: "inset 27px 0px 14px -17px rgb(0 0 0 / 24%)",
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down("sm")]: {
       boxShadow: "none",
       background: "none",
     },
   },
   card: {
     width: "calc(100% - 50px)",
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down("sm")]: {
       borderRadius: 0,
       boxShadow: "none",
     },

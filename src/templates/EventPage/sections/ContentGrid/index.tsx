@@ -26,13 +26,13 @@ const useStyles = makeStyles((theme) => ({
   container: {
     display: "grid",
     gridTemplateColumns: "2fr 1fr",
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down("sm")]: {
       gridTemplateColumns: "1fr",
     },
   },
   body: {},
   aside: {
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down("sm")]: {
       gridRow: 1,
     },
   },
