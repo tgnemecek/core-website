@@ -12,7 +12,7 @@ type HorizontalFeedProps = {
 
 const HorizontalFeed: React.FC<HorizontalFeedProps> = ({ items = [] }) => {
   const [resizeListener, sizes] = useResizeAware();
-  const { xs, sm, md } = useBreakpoint();
+  const { sm, md } = useBreakpoint();
   const [initialScroll, setInitialScroll] = React.useState(null);
   const [showPrevious, setShowPrevious] = React.useState(false);
   const [showNext, setShowNext] = React.useState(true);
@@ -20,11 +20,13 @@ const HorizontalFeed: React.FC<HorizontalFeedProps> = ({ items = [] }) => {
 
   const canScroll = Boolean(initialScroll !== null);
 
+  const scrollAmount = md ? 3 : 1;
+
   const { itemWidth, itemHeight, itemPadding } = React.useMemo(() => {
     const { width: containerWidth } = sizes;
     let width;
 
-    if (containerWidth > 700) width = containerWidth / 3;
+    if (md) width = containerWidth / 3;
     else width = containerWidth - 60;
 
     const minHeight = 200;
@@ -37,7 +39,7 @@ const HorizontalFeed: React.FC<HorizontalFeedProps> = ({ items = [] }) => {
       itemHeight: height,
       itemPadding: 10,
     };
-  }, [sizes]);
+  }, [sizes, md]);
 
   const onTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
     setInitialScroll(e.currentTarget.scrollLeft);
@@ -88,7 +90,7 @@ const HorizontalFeed: React.FC<HorizontalFeedProps> = ({ items = [] }) => {
     if (!scrollRef.current) return;
 
     let targetScroll = scrollRef.current.scrollLeft;
-    const amount = itemWidth * 3;
+    const amount = itemWidth * scrollAmount;
 
     if (type === "previous") targetScroll -= amount;
     else targetScroll += amount;
@@ -190,6 +192,7 @@ const useStyles = ({
       scrollContainer: {
         overflow: canScroll ? "auto" : "hidden",
         paddingBottom: 10,
+        width: "100%",
       },
       scroll: {
         display: "grid",
