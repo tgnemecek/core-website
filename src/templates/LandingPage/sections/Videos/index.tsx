@@ -7,21 +7,28 @@ import { Section, Gallery } from "components";
 import { getVideoId } from "utils";
 
 type VideosProps = {
-  videos: {
-    title: string;
-    subtitle?: string;
-    link: string;
-  }[];
+  videos: RawVideoType[];
 };
 
-const Videos: React.FC<VideosProps> = (props) => {
+type RawVideoType = {
+  title: string;
+  subtitle?: string;
+  link: string;
+};
+
+type VideoType = RawVideoType & {
+  videoId: string;
+  image: string;
+};
+
+const Videos: React.FC<VideosProps> = ({ videos: rawVideos }) => {
   const classes = useStyles();
-  const [videos, setVideos] = React.useState(null);
-  const [index, setIndex] = React.useState(0);
+  const [videos, setVideos] = React.useState<VideoType[]>(null);
+  const [activeindex, setActiveIndex] = React.useState(0);
 
   React.useEffect(() => {
     setVideos(
-      props.videos.map(({ title, subtitle, link }) => {
+      rawVideos.map(({ title, subtitle, link }) => {
         const videoId = getVideoId(link);
         return {
           videoId,
@@ -42,20 +49,28 @@ const Videos: React.FC<VideosProps> = (props) => {
         <Typography variant="srOnly" component="h2">
           Videos
         </Typography>
-        <Fade duration={200} key={index}>
-          <Typography variant="h2">{videos[index].title}</Typography>
+        <Fade duration={200} key={activeindex}>
+          <Typography variant="h2">{videos[activeindex].title}</Typography>
           <Typography
             variant="subtitle1"
             component="p"
             className={classes.subtitle}
           >
-            {videos[index].subtitle}
+            {videos[activeindex].subtitle}
           </Typography>
         </Fade>
         <div className={classes.videoWrapper}>
-          <YouTube className={classes.video} videoId={videos[index].videoId} />
+          <YouTube
+            className={classes.video}
+            videoId={videos[activeindex].videoId}
+          />
         </div>
-        <Gallery items={videos} index={index} setIndex={setIndex} />
+        <Gallery
+          images={videos.map(({ image }) => image)}
+          activeIndex={activeindex}
+          setActiveIndex={setActiveIndex}
+          itemHeight={200}
+        />
       </Container>
     </Section>
   );
@@ -63,7 +78,7 @@ const Videos: React.FC<VideosProps> = (props) => {
 
 export default Videos;
 
-const videoPercentPadding = 20;
+const videoPercentPadding = 40;
 
 const useStyles = makeStyles((theme) => ({
   subtitle: {
