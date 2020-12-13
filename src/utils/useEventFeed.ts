@@ -15,10 +15,12 @@ const useEventFeed = () => {
             frontmatter {
               events {
                 date
+                duration
                 image
                 language
                 subtitle
                 title
+                isOnline
               }
             }
           }

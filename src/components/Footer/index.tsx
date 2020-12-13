@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   Container,
@@ -45,7 +46,7 @@ const Footer: React.FC<FooterProps> = ({ paddingBottom = 0 }) => {
             <List>
               {email && (
                 <ListItem>
-                  <ListItemIcon>
+                  <ListItemIcon className={classes.iconWrapper}>
                     <a href={`mailto:${email}`}>
                       <EmailIcon className={classes.icon} />
                     </a>
@@ -90,7 +91,7 @@ const Footer: React.FC<FooterProps> = ({ paddingBottom = 0 }) => {
       </Container>
       <div className={classes.copyright}>
         <Typography variant="body1">
-          © Core Coaching &amp; Consulting
+          © {moment().format("YYYY")} Core Coaching &amp; Consulting
         </Typography>
       </div>
     </footer>
@@ -124,6 +125,11 @@ const useStyles = ({ paddingBottom }: UseStylesProps) =>
         [theme.breakpoints.down("sm")]: {
           textAlign: "left",
         },
+      },
+    },
+    iconWrapper: {
+      [theme.breakpoints.down("sm")]: {
+        display: "none",
       },
     },
     icon: {
