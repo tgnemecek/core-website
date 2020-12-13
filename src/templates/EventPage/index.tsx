@@ -71,19 +71,25 @@ const EventPage: React.FC<EventPageDTO> = ({
           isOnline={isOnline}
           location={location}
           priceRange={getPriceRange()}
+          language={language}
         />
         <Video video={video} />
-        <ContentGrid>
-          <Body title={title} subtitle={subtitle} description={description} />
-          <Aside
-            date={date}
-            isOnline={isOnline}
-            location={location}
-            duration={duration}
-            language={language}
-            toggleTicketsModal={toggleTicketsModal}
-          />
-        </ContentGrid>
+        <ContentGrid
+          body={
+            <Body title={title} subtitle={subtitle} description={description} />
+          }
+          aside={
+            <Aside
+              date={date}
+              isOnline={isOnline}
+              location={location}
+              duration={duration}
+              language={language}
+              priceRange={getPriceRange()}
+              toggleTicketsModal={toggleTicketsModal}
+            />
+          }
+        ></ContentGrid>
         <EventFeed
           title="You might also like these events"
           filter={(event) => event.slug !== slug}

@@ -8,6 +8,7 @@ type SectionProps = {
   small?: boolean;
   id?: string;
   noPadding?: boolean;
+  noShadows?: boolean;
 };
 
 const Section: React.FC<SectionProps> = ({
@@ -17,8 +18,9 @@ const Section: React.FC<SectionProps> = ({
   small = false,
   id = "",
   noPadding,
+  noShadows,
 }) => {
-  const classes = useStyles({ backgroundColor, small, noPadding })();
+  const classes = useStyles({ backgroundColor, small, noPadding, noShadows })();
 
   return (
     <section className={`${classes.section} ${className}`} id={id}>
@@ -33,12 +35,20 @@ type UseStylesProps = {
   backgroundColor: string;
   small: boolean;
   noPadding?: boolean;
+  noShadows?: boolean;
 };
 
-const useStyles = ({ backgroundColor, small, noPadding }: UseStylesProps) =>
+const useStyles = ({
+  backgroundColor,
+  small,
+  noPadding,
+  noShadows,
+}: UseStylesProps) =>
   makeStyles((theme) => ({
     section: {
-      boxShadow: "inset 0px -10px 12px -3px rgba(0, 0, 0, 0.1)",
+      boxShadow: noShadows
+        ? "none"
+        : "inset 0px -10px 12px -3px rgba(0, 0, 0, 0.1)",
       padding: noPadding ? 0 : small ? "40px 0" : "120px 0",
       backgroundColor,
     },

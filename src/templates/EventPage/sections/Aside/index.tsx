@@ -12,18 +12,21 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@material-ui/core";
+import ConfirmationNumberIcon from "@material-ui/icons/ConfirmationNumber";
 import PlaceIcon from "@material-ui/icons/Place";
 import LanguageIcon from "@material-ui/icons/Language";
 import AlarmIcon from "@material-ui/icons/Alarm";
 import { makeStyles } from "@material-ui/core/styles";
 import { getTintedBackground, formatLanguage } from "utils";
 import { EventType } from "types";
+import { Section } from "components";
 
 type AsideProps = Pick<
   EventType,
   "date" | "isOnline" | "location" | "duration" | "language"
 > & {
   toggleTicketsModal: () => void;
+  priceRange: string;
 };
 
 const Aside: React.FC<AsideProps> = ({
@@ -32,6 +35,7 @@ const Aside: React.FC<AsideProps> = ({
   location,
   duration,
   language,
+  priceRange,
   toggleTicketsModal,
 }) => {
   const classes = useStyles();
@@ -53,63 +57,76 @@ const Aside: React.FC<AsideProps> = ({
   };
 
   return (
-    <aside className={classes.aside}>
-      <Card raised className={classes.card}>
-        <CardContent>
-          <Typography variant="subtitle1">
-            {moment(date).format("MMMM D, YYYY")}
-          </Typography>
-          <List>
-            <ListItem className={classes.listItem}>
-              <ListItemIcon className={classes.listIcon}>
-                <PlaceIcon />
-              </ListItemIcon>
-              <ListItemText className={classes.listText}>
-                {isOnline ? "Online" : location}
-              </ListItemText>
-            </ListItem>
-            <ListItem className={classes.listItem}>
-              <ListItemIcon className={classes.listIcon}>
-                <LanguageIcon />
-              </ListItemIcon>
-              <ListItemText className={classes.listText}>
-                {formatLanguage(language)}
-              </ListItemText>
-            </ListItem>
-            <ListItem className={classes.listItem}>
-              <ListItemIcon className={classes.listIcon}>
-                <AlarmIcon />
-              </ListItemIcon>
-              <ListItemText className={classes.listText}>
-                {getDateWithDuration()}
-              </ListItemText>
-            </ListItem>
-          </List>
-          <Typography variant="body1" className={classes.refundHeader}>
-            Refund Policy
-          </Typography>
-          <Typography variant="body1" className={classes.refund}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
-            odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
-            quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent
-            mauris. Fusce nec tellus sed augue semper porta. Mauris massa.
-            Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad
-            litora torquent per conubia nostra, per inceptos himenaeos.
-            Curabitur sodales ligula in libero.
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <Button
-            size="small"
-            variant="contained"
-            className={classes.buy}
-            onClick={toggleTicketsModal}
-          >
-            Buy
-          </Button>
-        </CardActions>
-      </Card>
-    </aside>
+    <>
+      <aside className={classes.aside}>
+        <Card raised className={classes.card}>
+          <CardContent>
+            <Typography variant="subtitle1">
+              {moment(date).format("MMMM D, YYYY")}
+            </Typography>
+            <List>
+              <ListItem className={classes.listItem}>
+                <ListItemIcon className={classes.listIcon}>
+                  <ConfirmationNumberIcon />
+                </ListItemIcon>
+                <ListItemText className={classes.listText}>
+                  {priceRange}
+                </ListItemText>
+              </ListItem>
+              <ListItem className={classes.listItem}>
+                <ListItemIcon className={classes.listIcon}>
+                  <PlaceIcon />
+                </ListItemIcon>
+                <ListItemText className={classes.listText}>
+                  {isOnline ? "Online" : location}
+                </ListItemText>
+              </ListItem>
+              <ListItem className={classes.listItem}>
+                <ListItemIcon className={classes.listIcon}>
+                  <LanguageIcon />
+                </ListItemIcon>
+                <ListItemText className={classes.listText}>
+                  {formatLanguage(language)}
+                </ListItemText>
+              </ListItem>
+              <ListItem className={classes.listItem}>
+                <ListItemIcon className={classes.listIcon}>
+                  <AlarmIcon />
+                </ListItemIcon>
+                <ListItemText className={classes.listText}>
+                  {getDateWithDuration()}
+                </ListItemText>
+              </ListItem>
+            </List>
+            <Typography variant="body1" className={classes.refundHeader}>
+              Refund Policy
+            </Typography>
+            <Typography variant="body1" className={classes.refund}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+              nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.
+              Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.
+              Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris
+              massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti
+              sociosqu ad litora torquent per conubia nostra, per inceptos
+              himenaeos. Curabitur sodales ligula in libero.
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button
+              size="small"
+              variant="contained"
+              className={classes.buy}
+              onClick={toggleTicketsModal}
+            >
+              Buy
+            </Button>
+          </CardActions>
+        </Card>
+      </aside>
+      <Section noShadows noPadding>
+        <div className={classes.divider} />
+      </Section>
+    </>
   );
 };
 
@@ -117,14 +134,28 @@ export default Aside;
 
 const useStyles = makeStyles((theme) => ({
   aside: {
-    ...getTintedBackground(),
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    height: "100%",
+    ...getTintedBackground(),
     boxShadow: "inset 27px 0px 14px -17px rgb(0 0 0 / 24%)",
+    [theme.breakpoints.down("md")]: {
+      boxShadow: "none",
+      background: "none",
+    },
   },
   card: {
     width: "calc(100% - 50px)",
+    [theme.breakpoints.down("md")]: {
+      borderRadius: 0,
+      boxShadow: "none",
+    },
+  },
+  divider: {
+    width: "100%",
+    borderBottom: `1px solid ${theme.palette.grey[200]}`,
+    paddingBottom: theme.spacing(6),
   },
   listItem: {
     paddingLeft: 0,

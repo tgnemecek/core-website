@@ -19,6 +19,7 @@ type LanguageProps = {
   showLanguage?: boolean;
   separator?: React.ReactText;
   className?: string;
+  flagSize?: number;
 };
 
 const Language: React.FC<LanguageProps> = ({
@@ -27,6 +28,7 @@ const Language: React.FC<LanguageProps> = ({
   showCode,
   showLanguage,
   className = "",
+  flagSize,
 }) => {
   const classes = useStyles();
   const codes = Array.isArray(rawCode) ? rawCode : [rawCode];
@@ -34,12 +36,25 @@ const Language: React.FC<LanguageProps> = ({
   return (
     <>
       {codes.map((code) => (
-        <Tooltip title={formatLanguage(code)}>
+        <Tooltip
+          title={
+            <Typography variant="body1" className={classes.tooltip}>
+              {formatLanguage(code)}
+            </Typography>
+          }
+        >
           <span
             key={code}
             className={`${className} ${classes.languageWrapper}`}
           >
-            {showFlag && <Flag code={code} className={classes.flag} />}
+            {showFlag && (
+              <Flag
+                code={code}
+                className={classes.flag}
+                width={flagSize}
+                height={flagSize}
+              />
+            )}
             {showCode && (
               <Typography variant="body1" className={classes.text}>
                 {code}
@@ -58,6 +73,10 @@ const Language: React.FC<LanguageProps> = ({
 };
 
 const useStyles = makeStyles((theme) => ({
+  tooltip: {
+    color: "white",
+    fontSize: "0.9rem",
+  },
   languageWrapper: {
     display: "inline-flex",
   },
