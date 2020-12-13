@@ -27,7 +27,11 @@ const Event: React.FC<EventProps> = ({
 
   return (
     <Card className={classes.card} elevation={3} square>
-      <CardActionArea component={Link} to={`/event${slug}`}>
+      <CardActionArea
+        component={Link}
+        to={`/event${slug}`}
+        className={classes.cardActionArea}
+      >
         <div className={classes.imageWrapper}>
           <CardMedia
             image={image}
@@ -48,6 +52,9 @@ const Event: React.FC<EventProps> = ({
             basedOn="letters"
             style={{ whiteSpace: "pre-wrap" }}
           />
+          <div className={classes.language}>
+            <Typography variant="body1">{language}</Typography>
+          </div>
           {date && (
             <div className={classes.date}>
               <Typography variant="body1">
@@ -66,12 +73,21 @@ export default Event;
 const useStyles = makeStyles((theme) => ({
   card: {
     height: "100%",
+    width: "100%",
     "&:hover img": {
       transform: "scale(1.2, 1.2)",
     },
   },
+  cardActionArea: {
+    display: "grid",
+    gridTemplateColumns: "100%",
+    gridTemplateRows: "1fr 30%",
+    height: "100%",
+    width: "100%",
+  },
   imageWrapper: {
-    height: 280,
+    height: "100%",
+    width: "100%",
     overflow: "hidden",
   },
   image: {
@@ -81,17 +97,26 @@ const useStyles = makeStyles((theme) => ({
     transition: "all 0.5s ease-in-out",
   },
   cardContent: {
-    position: "relative",
-    height: 160,
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-between",
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr",
+    gridAutoRows: "1fr auto",
+    padding: "10px 15px",
+    height: "100%",
   },
   title: {
     fontSize: "1.2rem",
+    gridColumnEnd: "span 2",
+  },
+  language: {
+    "& > *": {
+      fontSize: "0.9rem",
+    },
   },
   date: {
     textAlign: "right",
     paddingRight: theme.spacing(1),
+    "& > *": {
+      fontSize: "0.9rem",
+    },
   },
 }));
