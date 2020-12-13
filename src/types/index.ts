@@ -53,6 +53,8 @@ export type MemberType = {
   linkedin?: string;
 };
 
+export type LanguageType = "EN" | "ES";
+
 export type EventType = {
   slug?: string;
   title: string;
@@ -62,7 +64,7 @@ export type EventType = {
   video?: string;
   date: Date;
   duration: number;
-  language: "EN" | "ES";
+  language: LanguageType | LanguageType[];
   isOnline: boolean;
   location?: string;
   tickets: {
