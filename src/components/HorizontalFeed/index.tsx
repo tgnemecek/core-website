@@ -37,7 +37,7 @@ const HorizontalFeed: React.FC<HorizontalFeedProps> = ({ items = [] }) => {
       itemHeight: height,
       itemPadding: 10,
     };
-  }, [sizes, xs, sm, md]);
+  }, [sizes]);
 
   const onTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
     setInitialScroll(e.currentTarget.scrollLeft);
@@ -100,7 +100,7 @@ const HorizontalFeed: React.FC<HorizontalFeedProps> = ({ items = [] }) => {
   };
 
   const classes = useStyles({
-    numberOfEvents: items.length,
+    numberOfItems: items.length,
     itemWidth,
     itemHeight,
     itemPadding,
@@ -112,7 +112,7 @@ const HorizontalFeed: React.FC<HorizontalFeedProps> = ({ items = [] }) => {
   return (
     <div className={classes.container}>
       {sm && (
-        <div className={classes.buttonWrapper}>
+        <div>
           <IconButton
             onClick={() => handleClick("previous")}
             className={classes.previousButton}
@@ -138,7 +138,7 @@ const HorizontalFeed: React.FC<HorizontalFeedProps> = ({ items = [] }) => {
           ))}
         </div>
       </div>
-      <div className={classes.buttonWrapper}>
+      <div>
         {sm && (
           <IconButton
             onClick={() => handleClick("next")}
@@ -153,7 +153,7 @@ const HorizontalFeed: React.FC<HorizontalFeedProps> = ({ items = [] }) => {
 };
 
 type UseStylesProps = {
-  numberOfEvents: number;
+  numberOfItems: number;
   itemWidth: number;
   itemHeight: number;
   itemPadding: number;
@@ -163,7 +163,7 @@ type UseStylesProps = {
 };
 
 const useStyles = ({
-  numberOfEvents,
+  numberOfItems,
   itemWidth,
   itemHeight,
   itemPadding,
@@ -193,16 +193,14 @@ const useStyles = ({
       },
       scroll: {
         display: "grid",
-        gridTemplateColumns: `repeat(${numberOfEvents}, ${itemWidth}px)`,
+        gridTemplateColumns: `repeat(${numberOfItems}, ${itemWidth}px)`,
         position: "relative",
-        transition: "left 0.5s ease-in-out",
       },
       item: {
         height: itemHeight,
         width: itemWidth,
         padding: `0 ${itemPadding}px`,
       },
-      buttonWrapper: {},
       previousButton: button(showPrevious),
       nextButton: button(showNext),
     };

@@ -23,17 +23,17 @@ type ProductsProps = {
 
 const Products: React.FC<ProductsProps> = ({ products }) => {
   const classes = useStyles();
-  const [index, setIndex] = React.useState(0);
+  const [activeindex, setActiveIndex] = React.useState(0);
 
   const ImageWrapper: React.FC<{ className?: string }> = ({ className }) => {
     return (
       <div className={className}>
-        <Fade duration={200} key={index}>
+        <Fade duration={200} key={activeindex}>
           <Image
             alt="Featured product"
             className={classes.image}
-            src={products[index].image || ""}
-            width="400"
+            src={products[activeindex].image || ""}
+            width={400}
           />
         </Fade>
       </div>
@@ -52,21 +52,21 @@ const Products: React.FC<ProductsProps> = ({ products }) => {
           From books to apps, use these resources to assist you in your journey
         </Typography>
         <a
-          href={products[index].link || ""}
+          href={products[activeindex].link || ""}
           target="_blank"
           rel="noopener noreferrer"
         >
           <div className={classes.featured}>
             <ImageWrapper className={classes.leftSide} />
             <Card className={classes.rightSide}>
-              <Fade bottom duration={300} key={index}>
+              <Fade bottom duration={300} key={activeindex}>
                 <CardHeader
                   title={
                     <Typography variant="h3" gutterBottom>
-                      {products[index].title}
+                      {products[activeindex].title}
                     </Typography>
                   }
-                  subheader={<div>{products[index].subtitle}</div>}
+                  subheader={<div>{products[activeindex].subtitle}</div>}
                 />
                 <CardContent className={classes.content}>
                   <Image
@@ -74,7 +74,7 @@ const Products: React.FC<ProductsProps> = ({ products }) => {
                     className={classes.insideImage}
                   />
                   <Typography variant="body1" className={classes.paragraph}>
-                    {products[index].description}
+                    {products[activeindex].description}
                   </Typography>
                 </CardContent>
               </Fade>
@@ -82,11 +82,9 @@ const Products: React.FC<ProductsProps> = ({ products }) => {
           </div>
         </a>
         <Gallery
-          items={products}
-          index={index}
-          setIndex={setIndex}
-          height={300}
-          width={200}
+          images={products.map(({ image }) => image)}
+          setActiveIndex={setActiveIndex}
+          activeIndex={activeindex}
         />
       </Container>
     </Section>
@@ -144,6 +142,24 @@ const useStyles = makeStyles((theme) => ({
   paragraph: {
     [theme.breakpoints.down("sm")]: {
       fontSize: "0.9rem",
+    },
+  },
+  galleryItem: {
+    width: "100%",
+    height: "100%",
+    overflow: "hidden",
+    border: `10px solid transparent`,
+    "& img": {
+      width: "100%",
+      height: "100%",
+      objectFit: "cover",
+      transition: "all 0.5s",
+    },
+  },
+  activeGalleryItem: {
+    border: `10px solid ${theme.palette.primary.light}`,
+    "& img": {
+      transform: "scale(1.1)",
     },
   },
 }));
