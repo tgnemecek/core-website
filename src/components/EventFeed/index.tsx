@@ -17,15 +17,12 @@ const EventFeed: React.FC<EventFeedProps> = ({ title, filter }) => {
       <Container>
         <Typography variant="h2">{title}</Typography>
         <Typography variant="subtitle1" component="p">
-          Latest updates about our online and in-person events
+          Latest updates about our online and in person events
         </Typography>
       </Container>
       <Container>
         <HorizontalFeed
-          items={[...events, ...events].map((
-            event,
-            i // Remove duplicate events!!!!
-          ) => (
+          items={events.map((event, i) => (
             <Event key={i} event={event} />
           ))}
         />

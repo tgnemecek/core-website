@@ -5,7 +5,7 @@ import Fade from "react-reveal/Fade";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography, Grid, Button } from "@material-ui/core";
 import logo from "src/img/logo.png";
-import { Image } from "components";
+import { Image, SmoothScroll } from "components";
 
 type HeroProps = {
   hero: {
@@ -26,7 +26,7 @@ const Hero: React.FC<HeroProps> = ({
       <Image
         className={classes.image}
         src={image}
-        width="1920"
+        width={1920}
         alt="Main illustration of the page"
       />
       <div className={classes.logoBarBackground}>
@@ -48,16 +48,16 @@ const Hero: React.FC<HeroProps> = ({
         </Container>
       </div>
       {!small && (
-        <Button
-          variant="contained"
-          component="a"
-          href="#events"
-          color="primary"
-          size="large"
-          className={classes.explore}
-        >
-          Explore
-        </Button>
+        <SmoothScroll targetId="events" className={classes.explore}>
+          <Button
+            variant="contained"
+            component="a"
+            color="primary"
+            size="large"
+          >
+            Explore
+          </Button>
+        </SmoothScroll>
       )}
     </section>
   );
