@@ -9,13 +9,13 @@ import {
   Typography,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { Image } from "components";
+import { Image, Language } from "components";
 import { getTintedBackground } from "utils";
 import { EventType } from "types";
 
 type HeaderProps = Pick<
   EventType,
-  "title" | "subtitle" | "date" | "image" | "isOnline" | "location"
+  "title" | "subtitle" | "date" | "image" | "isOnline" | "location" | "language"
 > & {
   priceRange: string;
 };
@@ -28,6 +28,7 @@ const Header: React.FC<HeaderProps> = ({
   isOnline,
   location,
   priceRange,
+  language,
 }) => {
   const classes = useStyles();
 
@@ -50,9 +51,12 @@ const Header: React.FC<HeaderProps> = ({
               <CardActions className={classes.cardActions}>
                 <Grid container justify="space-between">
                   <Grid item>
-                    <Typography variant="body1">
-                      {isOnline ? "Online Event" : location}
-                    </Typography>
+                    <div className={classes.extra}>
+                      <Language code={language} showFlag flagSize={24} />
+                      <Typography variant="body1">
+                        {isOnline ? "Online" : "In Person"}
+                      </Typography>
+                    </div>
                   </Grid>
                   <Grid item>
                     <Typography variant="body1" color="textSecondary">
@@ -83,7 +87,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-between",
     [theme.breakpoints.down("md")]: {
       gridTemplateColumns: "1fr",
-      gridTemplateRows: "200px 300px",
+      gridTemplateRows: "250px 300px",
     },
   },
   imageWrapper: {
@@ -110,5 +114,8 @@ const useStyles = makeStyles((theme) => ({
     bottom: 0,
     padding: 20,
     width: "100%",
+  },
+  extra: {
+    display: "flex",
   },
 }));

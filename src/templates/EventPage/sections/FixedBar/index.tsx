@@ -33,7 +33,7 @@ const FixedBar: React.FC<FixedBarProps> = ({ toggleTicketsModal }) => {
         className={classes.buy}
         onClick={toggleTicketsModal}
       >
-        Buy Tickets
+        <div>Buy Tickets</div>
       </Button>
     </div>
   );
@@ -52,6 +52,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     padding: theme.spacing(2),
     backgroundColor: "white",
+    zIndex: 1,
     "&:before": {
       content: "''",
       position: "absolute",
