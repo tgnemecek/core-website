@@ -134,7 +134,14 @@ export type ContactInfoDTO = GenericDTO<{
 
 export type EventFeedType = Pick<
   EventType,
-  "date" | "image" | "language" | "subtitle" | "title" | "slug"
+  | "date"
+  | "duration"
+  | "image"
+  | "language"
+  | "subtitle"
+  | "title"
+  | "slug"
+  | "isOnline"
 >;
 
 export type EventFeedDTO = {

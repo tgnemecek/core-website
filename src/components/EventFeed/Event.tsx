@@ -7,18 +7,22 @@ import {
   CardActionArea,
   CardMedia,
   CardContent,
+  Chip,
 } from "@material-ui/core";
 import { Link } from "gatsby";
-import { Language } from "components";
+import { Language, EventStatus } from "components";
 import { EventType } from "types";
 import { useBreakpoint } from "utils";
 
 type EventProps = {
-  event: Pick<EventType, "title" | "date" | "image" | "language" | "slug">;
+  event: Pick<
+    EventType,
+    "title" | "date" | "image" | "language" | "slug" | "isOnline" | "duration"
+  >;
 };
 
 const Event: React.FC<EventProps> = ({
-  event: { title, date, image, language, slug },
+  event: { title, date, image, language, slug, isOnline, duration },
 }) => {
   const breakpoints = useBreakpoint();
   const classes = useStyles({ breakpoints })();
@@ -44,12 +48,13 @@ const Event: React.FC<EventProps> = ({
           </Typography>
           <div className={classes.extra}>
             <Language code={language} showFlag />
+            <Typography variant="body1">
+              {isOnline ? "Online" : "In Person"}
+            </Typography>
           </div>
           {date && (
             <div className={classes.date}>
-              <Typography variant="body1">
-                {moment(date).format("MMM D")}
-              </Typography>
+              <EventStatus date={date} duration={duration} />
             </div>
           )}
         </CardContent>
@@ -113,6 +118,7 @@ const useStyles = ({ breakpoints }: UseStylesProps) =>
         marginBottom: 10,
       },
       extra: {
+        display: "flex",
         "& > *": {
           fontSize: "0.9rem",
         },
@@ -122,6 +128,18 @@ const useStyles = ({ breakpoints }: UseStylesProps) =>
         "& > *": {
           fontSize: "0.9rem",
         },
+      },
+      eventUpcoming: {
+        backgroundColor: "#03a9f4",
+        color: "white",
+      },
+      eventEnded: {
+        backgroundColor: "#fa5555",
+        color: "white",
+      },
+      eventLive: {
+        backgroundColor: "#55bd41",
+        color: "white",
       },
     };
   });

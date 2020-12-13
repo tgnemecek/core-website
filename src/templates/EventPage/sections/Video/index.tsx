@@ -14,11 +14,9 @@ const Video: React.FC<VideoProps> = ({ video }) => {
 
   return (
     <section className={classes.section}>
-      <Container>
-        <div className={classes.videoWrapper}>
-          <YouTube className={classes.video} videoId={getVideoId(video)} />
-        </div>
-      </Container>
+      <div className={classes.videoWrapper}>
+        <YouTube className={classes.video} videoId={getVideoId(video)} />
+      </div>
     </section>
   );
 };
@@ -32,8 +30,8 @@ const useStyles = makeStyles((theme) => ({
     background: theme.palette.grey[300],
   },
   videoWrapper: {
-    width: `${100 - videoPercentPadding}%`,
     position: "relative",
+    width: `${100 - videoPercentPadding}%`,
     paddingTop: `${56.25 - videoPercentPadding / 2}%`,
     margin: "auto",
     [theme.breakpoints.down("sm")]: {

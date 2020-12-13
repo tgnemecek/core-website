@@ -153,9 +153,11 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   divider: {
-    width: "100%",
-    borderBottom: `1px solid ${theme.palette.grey[200]}`,
-    paddingBottom: theme.spacing(6),
+    [theme.breakpoints.down("sm")]: {
+      width: "100%",
+      borderBottom: `1px solid ${theme.palette.grey[200]}`,
+      paddingBottom: theme.spacing(6),
+    },
   },
   listItem: {
     paddingLeft: 0,

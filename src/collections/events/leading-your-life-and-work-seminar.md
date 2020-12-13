@@ -20,7 +20,7 @@ description: >-
   We hope you use this experiential workshop to jumpstart your career during these challenging times.
 image: https://upload.wikimedia.org/wikipedia/commons/3/35/Neckertal_20150527-6384.jpg
 video: https://www.youtube.com/watch?v=LsjCdQLnogE
-date: 2020-12-02T23:17:22.841Z
+date: 2020-12-22T23:17:22.841Z
 duration: 30
 language:
   - EN
