@@ -4,86 +4,130 @@ import { IconButton } from "@material-ui/core";
 import ArrowBackIosRoundedIcon from "@material-ui/icons/ArrowBackIosRounded";
 import ArrowForwardIosRoundedIcon from "@material-ui/icons/ArrowForwardIosRounded";
 import useResizeAware from "react-resize-aware";
+import { useBreakpoint } from "utils";
 
 type HorizontalFeedProps = {
   items?: React.ReactNodeArray;
 };
 
-type DragDataType = {
-  mouseX: number;
-  scrollLeft: number;
-};
-
 const HorizontalFeed: React.FC<HorizontalFeedProps> = ({ items = [] }) => {
   const [resizeListener, sizes] = useResizeAware();
-  const [position, setPosition] = React.useState(0);
+  const { xs, sm, md } = useBreakpoint();
+  const [initialScroll, setInitialScroll] = React.useState(null);
+  const [showPrevious, setShowPrevious] = React.useState(false);
+  const [showNext, setShowNext] = React.useState(true);
   const scrollRef = React.useRef<HTMLDivElement>(null);
-  const dragData = React.useRef<DragDataType>(null);
+
+  const canScroll = Boolean(initialScroll !== null);
 
   const { itemWidth, itemHeight, itemPadding } = React.useMemo(() => {
     const { width: containerWidth } = sizes;
     let width;
-    if (containerWidth > 800) width = 300;
-    else if (containerWidth > 400) width = 250;
-    else width = containerWidth / 1.2;
+
+    if (containerWidth > 700) width = containerWidth / 3;
+    else width = containerWidth - 60;
+
+    const minHeight = 200;
+    const maxHeight = 400;
+
+    const height = Math.min(Math.max(width, minHeight), maxHeight);
+
     return {
       itemWidth: width,
-      itemHeight: width * 1.2,
+      itemHeight: height,
       itemPadding: 10,
     };
-  }, [sizes]);
+  }, [sizes, xs, sm, md]);
 
-  const onDragStart = (e: React.DragEvent<HTMLDivElement>) => {
-    dragData.current = {
-      mouseX: e.clientX,
-      scrollLeft: e.currentTarget.scrollLeft,
-    };
-    e.currentTarget.style.cursor = "grabbing";
-    e.currentTarget.style.userSelect = "none";
+  const onTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    setInitialScroll(e.currentTarget.scrollLeft);
   };
 
-  const onDrag = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    if (!dragData.current) return;
-    const { mouseX, scrollLeft } = dragData.current;
-    const deltaX = e.clientX - mouseX;
-    e.currentTarget.scrollLeft = scrollLeft - deltaX;
-  };
+  const onTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
+    let gridValue;
 
-  const onDragEnd = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    if (!dragData.current) return;
-    const { mouseX, scrollLeft } = dragData.current;
-    const deltaX = e.clientX - mouseX;
+    if (
+      initialScroll <= e.currentTarget.scrollLeft &&
+      e.currentTarget.scrollLeft
+    ) {
+      gridValue = Math.ceil(e.currentTarget.scrollLeft / itemWidth);
+    } else {
+      gridValue = Math.floor(e.currentTarget.scrollLeft / itemWidth);
+    }
 
-    const actualValue = scrollLeft - deltaX;
-    e.currentTarget.scrollLeft = actualValue;
+    gridValue = gridValue * itemWidth;
 
-    const gridValue = Math.round(actualValue / itemWidth) * itemWidth;
     e.currentTarget.scrollTo({
       left: gridValue,
+      behavior: "smooth",
+    });
+
+    setInitialScroll(null);
+  };
+
+  const onScroll = () => {
+    if (!scrollRef.current) return;
+    const { scrollLeft, scrollWidth, scroll } = scrollRef.current;
+
+    if (!scrollLeft) {
+      setShowPrevious(false);
+      setShowNext(true);
+    } else {
+      setShowPrevious(true);
+
+      const scrollPos = Math.round((scrollLeft + sizes.width) / 10);
+      const roundedWith = Math.round(scrollWidth / 10);
+
+      if (scrollPos === roundedWith) {
+        setShowNext(false);
+      }
+    }
+  };
+
+  const handleClick = (type: "previous" | "next") => {
+    if (!scrollRef.current) return;
+
+    let targetScroll = scrollRef.current.scrollLeft;
+    const amount = itemWidth * 3;
+
+    if (type === "previous") targetScroll -= amount;
+    else targetScroll += amount;
+
+    scrollRef.current.scrollTo({
+      left: targetScroll,
       behavior: "smooth",
     });
   };
 
   const classes = useStyles({
     numberOfEvents: items.length,
-    position,
     itemWidth,
     itemHeight,
     itemPadding,
-    showPrevious: position > 0,
-    showNext: true,
-    // showNext: items.length - (numberOfItemsShown + position) > 0,
+    canScroll,
+    showPrevious,
+    showNext,
   })();
 
   return (
     <div className={classes.container}>
+      {sm && (
+        <div className={classes.buttonWrapper}>
+          <IconButton
+            onClick={() => handleClick("previous")}
+            className={classes.previousButton}
+          >
+            <ArrowBackIosRoundedIcon />
+          </IconButton>
+        </div>
+      )}
       <div
         className={classes.scrollContainer}
         draggable
         ref={scrollRef}
-        onDragStart={onDragStart}
-        onDrag={onDrag}
-        onDragEnd={onDragEnd}
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
+        onScroll={onScroll}
       >
         <div className={classes.scroll}>
           {resizeListener}
@@ -94,40 +138,36 @@ const HorizontalFeed: React.FC<HorizontalFeedProps> = ({ items = [] }) => {
           ))}
         </div>
       </div>
-      {/* <div className={classes.buttonWrapper}>
-        <IconButton
-          onClick={() => setPosition((prev) => prev - 1)}
-          className={classes.previousButton}
-        >
-          <ArrowBackIosRoundedIcon />
-        </IconButton>
-        <IconButton
-          onClick={() => setPosition((prev) => prev + 1)}
-          className={classes.nextButton}
-        >
-          <ArrowForwardIosRoundedIcon />
-        </IconButton>
-      </div> */}
+      <div className={classes.buttonWrapper}>
+        {sm && (
+          <IconButton
+            onClick={() => handleClick("next")}
+            className={classes.nextButton}
+          >
+            <ArrowForwardIosRoundedIcon />
+          </IconButton>
+        )}
+      </div>
     </div>
   );
 };
 
 type UseStylesProps = {
   numberOfEvents: number;
-  position: number;
   itemWidth: number;
   itemHeight: number;
   itemPadding: number;
+  canScroll: boolean;
   showPrevious: boolean;
   showNext: boolean;
 };
 
 const useStyles = ({
   numberOfEvents,
-  position,
   itemWidth,
   itemHeight,
   itemPadding,
+  canScroll,
   showPrevious,
   showNext,
 }: UseStylesProps) =>
@@ -137,7 +177,6 @@ const useStyles = ({
         "&, &:focus, &:active": {
           backgroundColor: "white",
         },
-        boxShadow: theme.shadows[10],
         pointerEvents: show ? "all" : "none",
         opacity: show ? 0.95 : 0,
         transition: "opacity 0.8s",
@@ -145,17 +184,17 @@ const useStyles = ({
 
     return {
       container: {
-        position: "relative",
+        display: "flex",
+        alignItems: "center",
       },
       scrollContainer: {
-        overflow: "auto",
+        overflow: canScroll ? "auto" : "hidden",
         paddingBottom: 10,
       },
       scroll: {
         display: "grid",
         gridTemplateColumns: `repeat(${numberOfEvents}, ${itemWidth}px)`,
         position: "relative",
-        // left: `-${position * itemWidth}px`,
         transition: "left 0.5s ease-in-out",
       },
       item: {
@@ -163,11 +202,7 @@ const useStyles = ({
         width: itemWidth,
         padding: `0 ${itemPadding}px`,
       },
-      buttonWrapper: {
-        display: "flex",
-        justifyContent: "space-between",
-        width: "100%",
-      },
+      buttonWrapper: {},
       previousButton: button(showPrevious),
       nextButton: button(showNext),
     };
