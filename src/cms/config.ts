@@ -1,8 +1,8 @@
 import { CmsConfig } from "netlify-cms-core";
 
 const getBranch = () => {
-  const { NODE_ENV } = process.env;
-  if (NODE_ENV === "development") return "dev";
+  const { CMS_ENV } = process.env;
+  if (CMS_ENV === "dev") return "dev";
   return "master";
 };
 
@@ -509,7 +509,7 @@ const config: CmsConfig = {
           label: "Title",
           name: "title",
           widget: "string",
-          pattern: ["^.{3,40}$", "Must have between 3 and 40 characters"],
+          pattern: ["^.{3,60}$", "Must have between 3 and 60 characters"],
         },
         {
           label: "Subtitle",
