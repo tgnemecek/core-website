@@ -1,15 +1,9 @@
 import { CmsConfig } from "netlify-cms-core";
 
-const getBranch = () => {
-  const { CMS_ENV } = process.env;
-  if (CMS_ENV === "dev") return "dev";
-  return "master";
-};
-
 const config: CmsConfig = {
   backend: {
     name: "git-gateway",
-    branch: getBranch(),
+    branch: "dev",
     // commit_messages: {
     //   create: "Create {{collection}} “{{slug}}”",
     //   update: "Update {{collection}} “{{slug}}”",
