@@ -36,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
   button: {
     backgroundColor: "transparent",
     border: "none",
+    padding: 0,
   },
 }));
 

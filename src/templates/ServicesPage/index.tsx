@@ -85,7 +85,7 @@ const ServicesPage: React.FC<ServicesPageDTO> = ({
             downloadLink={getReportLink()}
           />
           <Benefits benefits={benefits} />
-          <CallToAction href="#contact-form" text="Send Us a message" />
+          <CallToAction targetId="contact-form" text="Send Us a message" />
         </Section>
         <Section>
           <PayPalButtons buttonTypes={getPayPalButtons()} />

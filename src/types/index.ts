@@ -102,11 +102,11 @@ export type LandingPageDTO = PagesDTO<{
 
 export type ServicesPageDTO = PagesDTO<{
   hero: HeroType;
-  benefits: {
+  explanation: {
     text: string;
     image: string;
   };
-  explanation: string;
+  benefits: string;
 }>;
 
 export type TeamPageDTO = PagesDTO<{
