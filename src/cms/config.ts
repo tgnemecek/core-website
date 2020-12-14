@@ -30,131 +30,6 @@ const config: CmsConfig = {
   },
   collections: [
     {
-      name: "information",
-      label: "Information",
-      editor: {
-        preview: false,
-      },
-      files: [
-        {
-          file: "src/collections/information/navigation/index.md",
-          label: "Navigation",
-          name: "navigation",
-          fields: [
-            {
-              label: "Collection",
-              name: "collection",
-              widget: "hidden",
-              default: "information",
-            },
-            {
-              label: "Key",
-              name: "key",
-              widget: "hidden",
-              default: "navigation",
-            },
-            {
-              label: "Links",
-              name: "links",
-              widget: "list",
-              allow_add: false,
-              collapsed: false,
-              fields: [
-                {
-                  label: "Label",
-                  name: "label",
-                  widget: "string",
-                },
-                {
-                  label: "Relative URL",
-                  name: "url",
-                  widget: "string",
-                },
-                {
-                  label: "Tooltip",
-                  name: "description",
-                  widget: "string",
-                },
-              ],
-            },
-          ],
-        },
-        {
-          file: "src/collections/information/contact/index.md",
-          label: "Contact Information",
-          name: "contact",
-          fields: [
-            {
-              label: "Collection",
-              name: "collection",
-              widget: "hidden",
-              default: "information",
-            },
-            {
-              label: "Key",
-              name: "key",
-              widget: "hidden",
-              default: "contact",
-            },
-            {
-              label: "Email",
-              name: "email",
-              widget: "string",
-              required: false,
-            },
-            {
-              label: "Phone 1",
-              name: "phone1",
-              widget: "string",
-              required: false,
-            },
-            {
-              label: "Phone 2",
-              name: "phone2",
-              widget: "string",
-              required: false,
-            },
-            {
-              label: "External Link",
-              name: "link",
-              widget: "string",
-              required: false,
-            },
-            {
-              label: "Address",
-              name: "address",
-              widget: "text",
-              required: false,
-            },
-          ],
-        },
-        {
-          file: "src/collections/information/settings/index.md",
-          label: "Settings",
-          name: "settings",
-          fields: [
-            {
-              label: "Collection",
-              name: "collection",
-              widget: "hidden",
-              default: "information",
-            },
-            {
-              label: "Key",
-              name: "key",
-              widget: "hidden",
-              default: "settings",
-            },
-            {
-              label: "Refund Policy",
-              name: "refundPolicy",
-              widget: "markdown",
-            },
-          ],
-        },
-      ],
-    },
-    {
       name: "pages",
       label: "Pages",
       editor: {
@@ -745,6 +620,132 @@ const config: CmsConfig = {
               name: "extra",
               widget: "string",
               required: false,
+            },
+          ],
+        },
+      ],
+    },
+
+    {
+      name: "settings",
+      label: "Settings",
+      editor: {
+        preview: false,
+      },
+      files: [
+        {
+          file: "src/collections/settings/navigation/index.md",
+          label: "Navigation",
+          name: "navigation",
+          fields: [
+            {
+              label: "Collection",
+              name: "collection",
+              widget: "hidden",
+              default: "settings",
+            },
+            {
+              label: "Key",
+              name: "key",
+              widget: "hidden",
+              default: "navigation",
+            },
+            {
+              label: "Links",
+              name: "links",
+              widget: "list",
+              allow_add: false,
+              collapsed: false,
+              fields: [
+                {
+                  label: "Label",
+                  name: "label",
+                  widget: "string",
+                },
+                {
+                  label: "Relative URL",
+                  name: "url",
+                  widget: "string",
+                },
+                {
+                  label: "Tooltip",
+                  name: "description",
+                  widget: "string",
+                },
+              ],
+            },
+          ],
+        },
+        {
+          file: "src/collections/settings/contact/index.md",
+          label: "Contact Information",
+          name: "contact",
+          fields: [
+            {
+              label: "Collection",
+              name: "collection",
+              widget: "hidden",
+              default: "settings",
+            },
+            {
+              label: "Key",
+              name: "key",
+              widget: "hidden",
+              default: "contact",
+            },
+            {
+              label: "Email",
+              name: "email",
+              widget: "string",
+              required: false,
+            },
+            {
+              label: "Phone 1",
+              name: "phone1",
+              widget: "string",
+              required: false,
+            },
+            {
+              label: "Phone 2",
+              name: "phone2",
+              widget: "string",
+              required: false,
+            },
+            {
+              label: "External Link",
+              name: "link",
+              widget: "string",
+              required: false,
+            },
+            {
+              label: "Address",
+              name: "address",
+              widget: "text",
+              required: false,
+            },
+          ],
+        },
+        {
+          file: "src/collections/settings/events/index.md",
+          label: "Events",
+          name: "events",
+          fields: [
+            {
+              label: "Collection",
+              name: "collection",
+              widget: "hidden",
+              default: "settings",
+            },
+            {
+              label: "Key",
+              name: "key",
+              widget: "hidden",
+              default: "events",
+            },
+            {
+              label: "Refund Policy",
+              name: "refundPolicy",
+              widget: "markdown",
             },
           ],
         },
