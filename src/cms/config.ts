@@ -535,7 +535,9 @@ const config: CmsConfig = {
         {
           label: "Date",
           name: "date",
-          widget: "date",
+          widget: "datetime",
+          date_format: "D/MM/YYYY",
+          time_format: "h:mma",
         },
         {
           label: "Duration (minutes)",
@@ -625,7 +627,6 @@ const config: CmsConfig = {
         },
       ],
     },
-
     {
       name: "settings",
       label: "Settings",
