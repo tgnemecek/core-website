@@ -37,16 +37,14 @@ const Language: React.FC<LanguageProps> = ({
     <>
       {codes.map((code) => (
         <Tooltip
+          key={code}
           title={
             <Typography variant="body1" className={classes.tooltip}>
               {formatLanguage(code)}
             </Typography>
           }
         >
-          <span
-            key={code}
-            className={`${className} ${classes.languageWrapper}`}
-          >
+          <span className={`${className} ${classes.languageWrapper}`}>
             {showFlag && (
               <Flag
                 code={code}
