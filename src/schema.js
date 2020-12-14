@@ -11,6 +11,7 @@ const MarkdownRemark = `
     events: EventPage
     contact: Contact
     navigation: Navigation
+    eventSettings: EventSettings
   }
   type Pages {
     landing: LandingPage
@@ -22,7 +23,6 @@ const MarkdownRemark = `
     learning: ServicesPage
 
   }
-
   type Contact {
     address: String
     email: String
@@ -37,6 +37,9 @@ const MarkdownRemark = `
     label: String!
     url: String!
     description: String
+  }
+  type EventSettings {
+    refundPolicy: String
   }
 `;
 
