@@ -100,10 +100,16 @@ products:
     link: https://www.amazon.com/Balancing-Act-Mastering-Elements-Relationships-ebook/dp/B07QGQG38H/ref=sr_1_1?dchild=1&keywords=the+balancing+act+seivert&qid=1600887520&s=books&sr=1-1
     subtitle: Mastering the 5 Elements of Success in Life, Work and Relationships
   - title: 6 Steps to Leading Your Life and Work
-    description:
-      The Balancing Act process can ensure that you lead your life and
-      work the way YOU want. If you follow these 6 steps you will transform
-      yourself so you are more confident and capable of achieving your dreams
+    description: >-
+      This book is a call to the quest, a practical guide to becoming a
+      real-life Hero at this crossroads in history. "How?" you ask...by using
+      The Balancing Act’s step-by-step systemic, holistic change process to
+      transform these “worst of times” (pandemic, recession, climate, & social
+      shifts) into the “best of times”. That is, rather than be defeated, you
+      will emerge on the other side of this global transition more powerful,
+      clear, purpose-driven, and happier than you imagined possible. 
+
+      I urge you to take heart, be courageous, and become pragmatically, carefully optimistic so you can immediately implement TBA’s 6-step COREvolutionary process. By deliberately changing yourself from the inside-out, you will be able to take complete responsibility for your whole life so your ability-to-respond to crises will be magnified many times over. What's more, you will create many positive ripple effects in your community, workplace, and world.
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600964000/6_Steps_LYL_W_cover_yatpeq.jpg
     link: https://www.amazon.com/dp/B08JYC63Y6/ref=sr_1_3?dchild=1&keywords=6+steps+to+leading+your+life+and+work&qid=1600964053&s=books&sr=1-3
     subtitle: (from the Inside Out)
@@ -157,23 +163,26 @@ videos:
   - link: https://www.youtube.com/watch?v=Drg9JUYrrrA
     title: Xavi Nova
     subtitle: '"The Balancing Act Changed My Life and Work"'
-  - link: https://www.youtube.com/watch?v=52Iv5hdqDxw
-    title: Intro to Career Coaching Program
-    subtitle: (Spanish & English)
   - title: Eva
     link: https://youtu.be/DIWW0Ln6FvA
     subtitle: '"Transformative"'
+  - link: https://www.youtube.com/watch?v=YK73aDweeV8
+    title: "Andrea: The course gave me great strategies..."
+    subtitle: To tap into my true talents, confidence & flow so everything works in sync
+  - link: https://www.youtube.com/watch?v=52Iv5hdqDxw
+    title: Intro to Career Coaching Program
+    subtitle: (Spanish & English)
   - link: https://www.youtube.com/watch?v=df2uZ3kqZt8
     title: Breakout Career Speech
-  - title: Organizational Change
-    link: https://www.youtube.com/watch?v=XQdlMuzwBAE
-    subtitle: (Brazil Banks)
   - link: https://youtu.be/jMqxETd1Y8w
     title: Noemi
     subtitle: '"I Changed Everything" (Spanish & English)'
   - link: https://youtu.be/zN_54BRtEYY
     title: Juame
     subtitle: '"Very Practical" (Spanish & English)'
+  - title: Organizational Change
+    link: https://www.youtube.com/watch?v=XQdlMuzwBAE
+    subtitle: (Brazil Banks)
   - link: https://www.youtube.com/watch?v=I3LmXgYoRLY
     title: "SOS: Switch Off Stress App"
     subtitle: Introduction to the Mobile App
@@ -188,4 +197,6 @@ videos:
     link: https://www.youtube.com/watch?v=PVwxrMku-xY
   - title: "Experience the Elements: Structure"
     link: https://www.youtube.com/watch?v=-UwqzjoubDA
+  - title: Experience Synerty
+    link: https://www.youtube.com/watch?v=V-NNyRtyfeY
 ---
