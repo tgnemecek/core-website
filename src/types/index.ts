@@ -132,6 +132,10 @@ export type ContactInfoDTO = GenericDTO<{
   contact: Record<"address" | "email" | "phone1" | "phone2" | "link", string>;
 }>;
 
+export type EventSettingsDTO = GenericDTO<{
+  events: Record<"refundPolicy", string>;
+}>;
+
 export type EventFeedType = Pick<
   EventType,
   | "date"
