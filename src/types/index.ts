@@ -133,7 +133,7 @@ export type ContactInfoDTO = GenericDTO<{
 }>;
 
 export type EventSettingsDTO = GenericDTO<{
-  events: Record<"refundPolicy", string>;
+  eventSettings: Record<"refundPolicy", string>;
 }>;
 
 export type EventFeedType = Pick<

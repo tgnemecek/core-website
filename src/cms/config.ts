@@ -726,9 +726,9 @@ const config: CmsConfig = {
           ],
         },
         {
-          file: "src/collections/settings/events/index.md",
+          file: "src/collections/settings/event-settings/index.md",
           label: "Events",
-          name: "events",
+          name: "eventSettings",
           fields: [
             {
               label: "Collection",

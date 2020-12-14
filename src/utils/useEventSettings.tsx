@@ -4,16 +4,16 @@ import { EventSettingsDTO } from "types";
 const useEventSettings = () => {
   const data: EventSettingsDTO["data"] = useStaticQuery(graphql`
     query EventSettingsQuery {
-      markdownRemark(fields: { slug: { eq: "/events/" } }) {
+      markdownRemark(fields: { slug: { eq: "/event-settings/" } }) {
         frontmatter {
-          events {
+          eventSettings {
             refundPolicy
           }
         }
       }
     }
   `);
-  return data.markdownRemark.frontmatter.events;
+  return data.markdownRemark.frontmatter.eventSettings;
 };
 
 export default useEventSettings;
