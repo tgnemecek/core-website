@@ -119,6 +119,30 @@
               "required": false
             }
           ]
+        },
+        {
+          "file": "src/collections/information/settings/index.md",
+          "label": "Settings",
+          "name": "settings",
+          "fields": [
+            {
+              "label": "Collection",
+              "name": "collection",
+              "widget": "hidden",
+              "default": "information"
+            },
+            {
+              "label": "Key",
+              "name": "key",
+              "widget": "hidden",
+              "default": "settings"
+            },
+            {
+              "label": "Refund Policy",
+              "name": "refundPolicy",
+              "widget": "markdown"
+            }
+          ]
         }
       ]
     },
