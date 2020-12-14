@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 import { Container, Typography, IconButton } from "@material-ui/core";
 import { Section, HorizontalFeed } from "components";
 import { useEventFeed } from "utils";
@@ -12,6 +13,19 @@ type EventFeedProps = {
 
 const EventFeed: React.FC<EventFeedProps> = ({ title, filter }) => {
   const events = useEventFeed().filter(filter || Boolean);
+
+  const sorter = (
+    { date: dateA }: EventFeedType,
+    { date: dateB }: EventFeedType
+  ) => {
+    const momentA = moment(dateA);
+    const momentB = moment(dateB);
+
+    if (momentA.isAfter(momentB)) return -1;
+    if (momentA.isBefore(momentB)) return 1;
+    return 0;
+  };
+
   return (
     <Section id="events">
       <Container>
@@ -22,7 +36,7 @@ const EventFeed: React.FC<EventFeedProps> = ({ title, filter }) => {
       </Container>
       <Container>
         <HorizontalFeed
-          items={events.map((event, i) => (
+          items={events.sort(sorter).map((event, i) => (
             <Event key={i} event={event} />
           ))}
         />
