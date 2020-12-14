@@ -503,7 +503,7 @@ const config: ExtendedConfig = {
           label: "Title",
           name: "title",
           widget: "string",
-          pattern: ["^.{3,60}$", "Must have between 3 and 60 characters"],
+          pattern: ["^.{3,80}$", "Must have between 3 and 80 characters"],
         },
         {
           label: "Subtitle",
