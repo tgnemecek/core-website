@@ -18,7 +18,7 @@ const config: CmsConfig = {
     //   deleteMedia: "[skip ci] Delete “{{path}}”",
     // },
   },
-  // load_config_file: false,
+  load_config_file: false,
   media_folder: "static/img",
   public_folder: "/img",
   media_library: {
