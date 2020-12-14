@@ -4,17 +4,14 @@ import ReactDOM from "react-dom";
 import cloudinary from "netlify-cms-media-library-cloudinary";
 import VideoWidget from "./VideoWidget";
 import config from "./config";
+import { ExtendedConfig } from "./types";
 
 const AdminConsole = () => {
   React.useEffect(() => {
     CMS.registerMediaLibrary(cloudinary);
     CMS.registerWidget("video", VideoWidget, null);
-    CMS.init({ config });
+    CMS.init({ config: config as ExtendedConfig });
   }, []);
-
-  console.log({
-    nodeEnv: process.env.NODE_ENV,
-  });
 
   return <div id="nc-root" />;
 };
