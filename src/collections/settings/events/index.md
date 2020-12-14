@@ -1,0 +1,4 @@
+---
+collection: settings
+refundPolicy: Something
+---
