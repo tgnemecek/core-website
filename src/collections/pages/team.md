@@ -7,23 +7,23 @@ members:
   - name: Sharon Seivert
     role: CEO & Founder
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1599227340/Sharon_for_website_cropped3_dgcvwi.jpg
-    bio:
-      'Sharon Seivert is leader of the Core Coaching & Consulting Team and author
-      of "The Balancing Act", the foundational book that first outlined the
-      6-point system CCC uses for all our work. As both a US and EU citizen,
+    bio: 'Sharon Seivert is the leader of Core Coaching & Consulting (CCC). Prior to
+      launching CCC, Seivert served as the CEO of a Group Health Plan that
+      established an industry record for earliest-ever break-even. Seivert
+      authored "The Balancing Act", the foundational book that first outlined
+      the 6-point system CCC uses for all its work. As both a US and EU citizen,
       Sharon loves few things more than spending time with her international
-      family, friends, colleagues and clients. She is pictured here in her front
-      yard on the North Shore of Boston where she enjoys spending her time while
-      not coaching leaders, working with global colleagues, or writing new
-      books; her latest ebooks are "Prospering: 6 Steps to Great Wealth" and  "6
+      family, friends, colleagues, and clients. She is pictured here in her
+      front yard on the North Shore of Boston where she enjoys spending her time
+      while not coaching leaders, working with global colleagues, or writing new
+      books. Her latest ebooks are "Prospering: 6 Steps to Great Wealth" and  "6
       Steps to Leading Your Life and Work (from the Inside Out)". '
     linkedin: https://www.linkedin.com/in/sharonseivert/
     video: https://www.youtube.com/watch?v=zVmDGM24baM
   - name: Rafael Medina
     role: Manager, Latin America
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1599228983/RafaCOREpic_cropped2_dtegib.jpg
-    bio:
-      Rafael Medina has been involved in The Balancing Act work, even before the
+    bio: Rafael Medina has been involved in The Balancing Act work, even before the
       official launch of Core Coaching and Consulting. Rafael and Sharon met
       while she and other colleagues were delivering the first Opportunity
       Knocking program for ex-prisoners at a half-way home where Rafael managed
@@ -39,8 +39,7 @@ members:
     role: Inventor & Manager, CORE Profiles System
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600615133/Fred_cropped_ka48fq.jpg
     video: ""
-    bio:
-      Fred lives in the beautiful Shenandoah Valley of Virginia, where he enjoys
+    bio: Fred lives in the beautiful Shenandoah Valley of Virginia, where he enjoys
       hiking, orienteering and running trails in the surrounding Blue Ridge and
       Allegheny Mountains. Fred is co-inventor of The Balancing Act's online
       profile and report system. He is CORE team's resident philosopher who also
@@ -87,8 +86,7 @@ members:
     linkedin: https://www.linkedin.com/in/mercedes-bellavista-9825681a/
   - name: Bonnie Koch
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1603402483/Bonnie2_ojiu5j.jpg
-    bio:
-      "Bonnie Koch is a Certified CORE Coach, founding member of the CORE Team,
+    bio: "Bonnie Koch is a Certified CORE Coach, founding member of the CORE Team,
       and graduate of the Leading Your Life and Work program.  She leads our
       marketing and communications initiatives globally.  Bonnie also teaches
       Advertising Management at Boston University, where she incorporates The
@@ -103,8 +101,7 @@ members:
   - name: Jordi Formiguera Macia
     role: Lead CORE Coach, Spanish Team
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600730640/Jordi_Formiguera_photo_1_ovy0xl.jpg
-    bio:
-      'Jordi lives in Barcelona and has worked for more than 15 years as a career
+    bio: 'Jordi lives in Barcelona and has worked for more than 15 years as a career
       and professional counselor. He is a systemic coach accredited by the
       University of Barcelona and currently serves on the Executive Council and
       as the Head of the Department of Labor for a Foundation dedicated to
@@ -134,8 +131,7 @@ members:
   - name: Dorothy Ginnett
     role: Teacher of CORE Teachers
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1601304340/CCC_Dorothy_qgw5r8.jpg
-    bio:
-      Dorothy Ginnett has benefited directly from Balancing Act coaching on two
+    bio: Dorothy Ginnett has benefited directly from Balancing Act coaching on two
       separate occasions when she transitioned to more fulfilling educational
       jobs.  Currently she teaches high school science in Barcelona, Spain and
       serves as a Teacher Consultant for a fully online US-based virtual
@@ -156,8 +152,7 @@ members:
     role: Manager, Holland
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1601302983/CCC_Auke_zrnfqf.png
     video: ""
-    bio:
-      Auke is an experienced businessman with 20 years of management experience
+    bio: Auke is an experienced businessman with 20 years of management experience
       in international organizations. He has been working with the developer of
       The Balancing Act, Sharon Seivert, since 2004. As a precondition for
       working on leadership in organizations, Auke starts from the principle
@@ -186,5 +181,15 @@ members:
       Mr. Reade is a founder &/or director of a dozen non profit arts organizations, and has managed many of these from startup to maturity.  For several years he was the Chair of the International Committee for the Northern Virginia Technology Council, the largest tech council in the US.  He graduated from Case Western Reserve University School of Law in 1987.
     linkedin: https://www.linkedin.com/in/randall-reade-1770035/
     video: ""
-    photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1602864078/Randy_CCC_photo_nacbxr.jpg
+    photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1605537039/CCC_Randy_uxsqxo.jpg
+  - name: Sam Turgeon
+    role: Social Media Advisor
+    photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1605792399/CCC_Sam_bkrxw9.jpg
+    bio: "As a middle-schooler from New Hampshire, Sam is the youngest member of the
+      international Core Team, leading our social media efforts on YouTube,
+      video production, and Instagram. Sam is an aspiring entrepreneur and
+      social media Influencer who has established his own YouTube channel: Turgs
+      The Skater, where he can be seen perfecting his skateboarding skills. "
+    linkedin: https://www.youtube.com/channel/UC8O4QZElBgrnvrOIWGHux6Q
+    video: https://www.youtube.com/channel/UC8O4QZElBgrnvrOIWGHux6Q
 ---
