@@ -54,7 +54,7 @@ const Event: React.FC<EventProps> = ({
           </div>
           {date && (
             <div className={classes.date}>
-              <EventStatus date={date} tickets={tickets} showDate />
+              {/* <EventStatus date={date} tickets={tickets} showDate /> */}
             </div>
           )}
         </CardContent>

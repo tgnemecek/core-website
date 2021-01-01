@@ -666,6 +666,7 @@ const config: ExtendedConfig = {
                   label: "Tooltip",
                   name: "description",
                   widget: "string",
+                  required: false,
                 },
               ],
             },
