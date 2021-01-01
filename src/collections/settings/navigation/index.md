@@ -13,5 +13,4 @@ links:
   - label: CORE Team
     url: /team
     description: ""
-meetingID: VnEE9Aiv
 ---

@@ -1,7 +1,31 @@
+function makeid(length) {
+  var result = "";
+  var characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  var charactersLength = characters.length;
+  for (var i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return result;
+}
+
 module.exports.handler = async (event, context) => {
-  const fetch = require("node-fetch");
+  // const fetch = require("node-fetch");
+  console.log("HERE!");
   try {
-    return true;
+    const body = JSON.parse(event.body);
+
+    const meetingID = makeid(8);
+    const calendarID = makeid(8);
+
+    return {
+      statusCode: 200,
+      body: JSON.stringify({
+        ...body,
+        meetingID,
+        calendarID,
+      }),
+    };
     // // Auth
     // const token = `token=${process.env.EVENTBRITE_API_TOKEN}`;
     // const orgId = process.env.EVENTBRITE_ORGANIZATION_ID;
@@ -51,6 +75,9 @@ module.exports.handler = async (event, context) => {
     // };
   } catch (err) {
     console.error(err);
-    return err;
+    return {
+      statusCode: 500,
+      body: "Server Error",
+    };
   }
 };

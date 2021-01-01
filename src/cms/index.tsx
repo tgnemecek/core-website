@@ -13,9 +13,22 @@ const AdminConsole = () => {
 
     (CMS as any).registerEventListener({
       name: "preSave",
-      handler: ({ entry }: any) => {
-        const str = JSON.stringify({ data: entry.get("data") });
-        console.log(JSON.parse(str));
+      handler: async ({ entry }: any) => {
+        const dataEntry = entry.get("data");
+        const str = JSON.stringify(dataEntry);
+        const { meetingID } = JSON.parse(str);
+
+        if (!meetingID) {
+          const res = await fetch("/.netlify/functions/create-new-event", {
+            method: "POST",
+            body: str,
+          });
+          const data = await res.json();
+
+          dataEntry.set("meetingID", data.meetingID);
+          dataEntry.set("calendarID", data.calendarID);
+          return dataEntry;
+        }
       },
     });
 
