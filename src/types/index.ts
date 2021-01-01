@@ -70,7 +70,7 @@ export type EventType = {
   tickets: {
     description: string;
     price: number;
-    endsOn: string;
+    endsOn: "startOfEvent" | "startOfDay" | "oneWeek";
   }[];
 };
 

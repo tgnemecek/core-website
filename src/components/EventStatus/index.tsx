@@ -2,41 +2,40 @@ import React from "react";
 import moment from "moment";
 import { makeStyles } from "@material-ui/core/styles";
 import { Chip } from "@material-ui/core";
+import { EventType } from "types";
+import { getEventStatus } from "utils";
 
 type EventStatusProps = {
-  date: Date;
-  duration: number;
+  tickets?: EventType["tickets"];
+  isEventValid?: boolean;
+  date?: Date;
+  showDate?: boolean;
 };
 
-const EventStatus: React.FC<EventStatusProps> = ({ date, duration }) => {
+const EventStatus: React.FC<EventStatusProps> = ({
+  tickets = [],
+  isEventValid,
+  date,
+  showDate,
+}) => {
   const classes = useStyles();
-  const dateStart = moment(date);
-  const dateEnd = moment(date).add(duration, "minutes");
-  const now = moment();
 
-  if (now.isBefore(dateStart)) {
+  if (isEventValid || getEventStatus({ tickets, date })) {
+    if (!showDate) return null;
     return (
       <Chip
-        label={dateStart.format("MMM D")}
+        label={moment(date).format("MMM D")}
         size="small"
         className={`${classes.eventStatus} ${classes.eventUpcoming}`}
       />
     );
   }
-  if (now.isAfter(dateEnd)) {
-    return (
-      <Chip
-        label="Event Ended"
-        size="small"
-        className={`${classes.eventStatus} ${classes.eventEnded}`}
-      />
-    );
-  }
+
   return (
     <Chip
-      label="Live"
+      label="Event Ended"
       size="small"
-      className={`${classes.eventStatus} ${classes.eventLive}`}
+      className={`${classes.eventStatus} ${classes.eventEnded}`}
     />
   );
 };
