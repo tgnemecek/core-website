@@ -14,7 +14,7 @@ const AdminConsole = () => {
     (CMS as any).registerEventListener({
       name: "preSave",
       handler: async ({ entry }: any) => {
-        const dataEntry = entry.get("data");
+        let dataEntry = entry.get("data");
         const str = JSON.stringify(dataEntry);
         const { meetingID } = JSON.parse(str);
 
@@ -25,8 +25,8 @@ const AdminConsole = () => {
           });
           const data = await res.json();
 
-          dataEntry.set("meetingID", data.meetingID);
-          dataEntry.set("calendarID", data.calendarID);
+          dataEntry = dataEntry.set("meetingID", data.meetingID);
+          dataEntry = dataEntry.set("calendarID", data.calendarID);
           return dataEntry;
         }
       },
