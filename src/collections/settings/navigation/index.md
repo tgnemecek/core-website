@@ -1,7 +1,7 @@
 ---
 collection: navigation
 links:
-  - label: CORE Leading1a1a
+  - label: CORE Leading1a1aaaaa
     url: /leading
     description: For leaders who want to transform themselves, their teams & companies
   - label: CORE Coaching
