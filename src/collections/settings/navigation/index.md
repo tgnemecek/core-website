@@ -1,7 +1,7 @@
 ---
 collection: navigation
 links:
-  - label: CORE Leading12511
+  - label: CORE Leading125114
     url: /leading
     description: For leaders who want to transform themselves, their teams & companies
   - label: CORE Coaching
