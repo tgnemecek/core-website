@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import { EventPageDTO } from "types";
 import { Layout, EventFeed, Footer, Navbar } from "components";
 import { Aside, FixedBar, Header, ContentGrid, Body, Video } from "./sections";
+import { getEventStatus, formatLanguage } from "utils";
 
 const EventPage: React.FC<EventPageDTO> = ({
   data: {
@@ -52,6 +53,7 @@ const EventPage: React.FC<EventPageDTO> = ({
         max: 0,
       }
     );
+    if (min === max) return `$${min}`;
     return `$${min} - $${max}`;
   };
 
@@ -69,8 +71,9 @@ const EventPage: React.FC<EventPageDTO> = ({
           date={date}
           image={image}
           isOnline={isOnline}
-          location={location}
+          duration={duration}
           priceRange={getPriceRange()}
+          isEventValid={getEventStatus({ tickets, date })}
           language={language}
         />
         <Video video={video} />
@@ -94,7 +97,10 @@ const EventPage: React.FC<EventPageDTO> = ({
           title="You might also like these events"
           filter={(event) => event.slug !== slug}
         />
-        <FixedBar toggleTicketsModal={toggleTicketsModal} />
+        <FixedBar
+          toggleTicketsModal={toggleTicketsModal}
+          isEventValid={getEventStatus({ tickets, date })}
+        />
       </main>
       <Footer paddingBottom={70} />
     </Layout>

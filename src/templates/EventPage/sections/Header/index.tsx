@@ -9,15 +9,16 @@ import {
   Typography,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { Image, Language } from "components";
+import { Image, Language, EventStatus } from "components";
 import { getTintedBackground } from "utils";
 import { EventType } from "types";
 
 type HeaderProps = Pick<
   EventType,
-  "title" | "subtitle" | "date" | "image" | "isOnline" | "location" | "language"
+  "title" | "subtitle" | "date" | "image" | "isOnline" | "duration" | "language"
 > & {
   priceRange: string;
+  isEventValid: boolean;
 };
 
 const Header: React.FC<HeaderProps> = ({
@@ -26,9 +27,9 @@ const Header: React.FC<HeaderProps> = ({
   date,
   image,
   isOnline,
-  location,
-  priceRange,
   language,
+  priceRange,
+  isEventValid,
 }) => {
   const classes = useStyles();
 
@@ -43,9 +44,12 @@ const Header: React.FC<HeaderProps> = ({
             <Card className={classes.card}>
               <CardContent className={classes.cardContent}>
                 <Typography variant="body1" color="textSecondary">
-                  {moment(date).format("MMMM D, YYYY")}
+                  {moment(date).format("MMMM D, YYYY")}{" "}
+                  <EventStatus isEventValid={isEventValid} />
                 </Typography>
-                <Typography variant="h4">{title}</Typography>
+                <Typography variant="h4" className={classes.title}>
+                  {title}
+                </Typography>
                 <Typography variant="body1">{subtitle}</Typography>
               </CardContent>
               <CardActions className={classes.cardActions}>
@@ -75,6 +79,9 @@ const Header: React.FC<HeaderProps> = ({
 
 export default Header;
 
+const cardMaxWidth = 600;
+const cardHeight = 350;
+
 const useStyles = makeStyles((theme) => ({
   section: {
     ...getTintedBackground(),
@@ -83,7 +90,7 @@ const useStyles = makeStyles((theme) => ({
   gridContainer: {
     display: "grid",
     gridTemplateColumns: "500px 500px",
-    gridTemplateRows: 300,
+    gridTemplateRows: cardHeight,
     justifyContent: "space-between",
     [theme.breakpoints.down("md")]: {
       gridTemplateColumns: "1fr",
@@ -94,6 +101,8 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: theme.shadows[5],
     width: "100%",
     height: "100%",
+    maxWidth: cardMaxWidth,
+    margin: "auto",
     "& > *": {
       width: "100%",
       height: "100%",
@@ -104,6 +113,12 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
     position: "relative",
     boxShadow: theme.shadows[5],
+    maxWidth: cardMaxWidth,
+    margin: "auto",
+  },
+  title: {
+    marginBottom: theme.spacing(2),
+    fontSize: "1.6rem",
   },
   cardContent: {
     padding: 20,

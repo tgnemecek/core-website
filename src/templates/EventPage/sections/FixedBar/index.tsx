@@ -16,20 +16,24 @@ import PlaceIcon from "@material-ui/icons/Place";
 import LanguageIcon from "@material-ui/icons/Language";
 import AlarmIcon from "@material-ui/icons/Alarm";
 import { makeStyles } from "@material-ui/core/styles";
-import { getTintedBackground, formatLanguage } from "utils";
 import { EventType } from "types";
 
 type FixedBarProps = {
   toggleTicketsModal: () => void;
+  isEventValid: boolean;
 };
 
-const FixedBar: React.FC<FixedBarProps> = ({ toggleTicketsModal }) => {
+const FixedBar: React.FC<FixedBarProps> = ({
+  toggleTicketsModal,
+  isEventValid,
+}) => {
   const classes = useStyles();
   return (
     <div className={classes.fixedBar}>
       <Button
         size="large"
         variant="contained"
+        disabled={!isEventValid}
         className={classes.buy}
         onClick={toggleTicketsModal}
       >
