@@ -9,6 +9,7 @@
   "license": "ISC",
   "dependencies": {
     "googleapis": "39",
-    "jsonwebtoken": "^8.5.1"
+    "jsonwebtoken": "^8.5.1",
+    "kloudless": "^1.0.7"
   }
 }

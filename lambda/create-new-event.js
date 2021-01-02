@@ -1,7 +1,6 @@
 const jwt = require("jsonwebtoken");
 const fetch = require("node-fetch");
-const readline = require("readline");
-const { google } = require("googleapis");
+const kloudless = require("kloudless")(process.env.KLOUDLESS_CALENDAR_API_KEY);
 
 // Zoom Documentation for this endpoint can be found here:
 // https://marketplace.zoom.us/docs/api-reference/zoom-api/meetings/meetingcreate
@@ -29,6 +28,53 @@ module.exports.handler = async (event, context) => {
       },
       process.env.ZOOM_API_SECRET
     );
+
+    console.log(context.clientContext);
+
+    const { identity, user } = context.clientContext;
+
+    const userReq = await fetch(
+      `https://core-website-2020-test.netlify.app/.netlify/identity/admin/users/{${user.sub}}`,
+      {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${identity.token}`,
+        },
+      }
+    );
+
+    const userData = await userReq.json();
+
+    console.log({
+      userReq,
+      userData,
+    });
+
+    return;
+
+    const cal = await fetch(
+      `https://api.kloudless.com/v1/accounts/${process.env.KLOUDLESS_ACCOUNT_ID}/cal/calendars/${process.env.GOOGLE_CALENDAR_ID}/events/`,
+      {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${process.env.KLOUDLESS_CALENDAR_BEARER_TOKEN}`,
+        },
+      }
+    );
+
+    const calData = await cal.json();
+
+    console.log(context.clientContext);
+
+    // console.dir(
+    //   {
+    //     status: cal.status,
+    //     calData,
+    //   },
+    //   { depth: null }
+    // );
+
+    return;
 
     const res = await fetch(
       `https://api.zoom.us/v2/users/${process.env.ZOOM_USER_ID}/meetings`,
