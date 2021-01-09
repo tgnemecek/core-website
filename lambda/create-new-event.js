@@ -4,6 +4,8 @@ const kloudless = require("kloudless")(process.env.KLOUDLESS_CALENDAR_API_KEY);
 const { google } = require("googleapis");
 const moment = require("moment");
 
+const googleCalendar = google.calendar({ version: "v3" });
+
 // Zoom Documentation for this endpoint can be found here:
 // https://marketplace.zoom.us/docs/api-reference/zoom-api/meetings/meetingcreate
 
@@ -22,6 +24,7 @@ module.exports.handler = async (event, context) => {
   try {
     const body = JSON.parse(event.body || "{}");
 
+    // Netlify:
     const verifyIdentity = async () => {
       // TODO: This is incomplete
       const { identity, user } = context.clientContext;
@@ -41,6 +44,7 @@ module.exports.handler = async (event, context) => {
       });
     };
 
+    // Zoom:
     const createZoomMeeting = async () => {
       const token = jwt.sign(
         {
@@ -87,6 +91,7 @@ module.exports.handler = async (event, context) => {
       }
     };
 
+    // Google Calendar:
     const googleAuthSetup = async () => {
       const auth = new google.auth.GoogleAuth({
         credentials: JSON.parse(process.env.GOOGLE_API_CREDENTIALS),
@@ -100,7 +105,6 @@ module.exports.handler = async (event, context) => {
     };
 
     const listCalendars = async () => {
-      const googleCalendar = google.calendar({ version: "v3" });
       const res = await googleCalendar.calendarList.list();
       if (res.statusText === "OK") {
         console.info({
@@ -111,8 +115,20 @@ module.exports.handler = async (event, context) => {
       }
     };
 
+    const getCalendar = async () => {
+      const res = await googleCalendar.calendars.get({
+        calendarId: process.env.CALENDAR_ID,
+      });
+      if (res.statusText === "OK") {
+        console.info({
+          calendar: res.data,
+        });
+      } else {
+        throw new Error(`Error while reading calendar.`, res);
+      }
+    };
+
     const deleteCalendar = async (calendarId) => {
-      const googleCalendar = google.calendar({ version: "v3" });
       const res = await googleCalendar.calendarList.delete({
         calendarId,
       });
@@ -124,9 +140,8 @@ module.exports.handler = async (event, context) => {
     };
 
     const setCalendarAccessControlRule = async () => {
-      const googleCalendar = google.calendar({ version: "v3" });
       const res = await googleCalendar.acl.insert({
-        calendarId: process.env.GOOGLE_CALENDAR_CALENDAR_ID,
+        calendarId: process.env.CALENDAR_ID,
         requestBody: {
           kind: "calendar#aclRule",
           role: "reader",
@@ -143,12 +158,8 @@ module.exports.handler = async (event, context) => {
     };
 
     const listCalendarEvents = async () => {
-      const googleCalendar = google.calendar({
-        version: "v3",
-      });
-
       const res = await googleCalendar.events.list({
-        calendarId: process.env.GOOGLE_CALENDAR_CALENDAR_ID,
+        calendarId: process.env.CALENDAR_ID,
       });
       if (res.statusText === "OK") {
         console.log(res.data);
@@ -158,12 +169,8 @@ module.exports.handler = async (event, context) => {
     };
 
     const getCalendarEvent = async (eventId) => {
-      const googleCalendar = google.calendar({
-        version: "v3",
-      });
-
       const res = await googleCalendar.events.get({
-        calendarId: process.env.GOOGLE_CALENDAR_CALENDAR_ID,
+        calendarId: process.env.CALENDAR_ID,
         eventId,
       });
       if (res.statusText === "OK") {
@@ -174,15 +181,11 @@ module.exports.handler = async (event, context) => {
     };
 
     const insertCalendarEvent = async () => {
-      const googleCalendar = google.calendar({
-        version: "v3",
-      });
-
       const start = moment().add(3, "months");
       const end = start.clone().add(1, "hour");
 
       const res = await googleCalendar.events.insert({
-        calendarId: process.env.GOOGLE_CALENDAR_CALENDAR_ID,
+        calendarId: process.env.CALENDAR_ID,
         sendUpdates: "all",
         requestBody: {
           start: {
@@ -245,21 +248,29 @@ module.exports.handler = async (event, context) => {
     };
 
     const updateCalendarEvent = async (eventId) => {
-      const googleCalendar = google.calendar({
-        version: "v3",
-      });
-
       const res = await googleCalendar.events.patch({
-        calendarId: process.env.GOOGLE_CALENDAR_CALENDAR_ID,
+        calendarId: process.env.CALENDAR_ID,
         eventId,
         sendUpdates: "all",
         requestBody: {
           location: `${makeid(4)} Main Street`,
-          attendees: [
-            {
-              email: "tgnemecek@gmail.com",
-            },
-          ],
+        },
+      });
+      if (res.statusText === "OK") {
+        console.log(res.data);
+      } else {
+        throw new Error(`Error while updating calendar event.`, res);
+      }
+    };
+
+    // Stripe:
+    const updateCalendarEvent = async (eventId) => {
+      const res = await googleCalendar.events.patch({
+        calendarId: process.env.CALENDAR_ID,
+        eventId,
+        sendUpdates: "all",
+        requestBody: {
+          location: `${makeid(4)} Main Street`,
         },
       });
       if (res.statusText === "OK") {
@@ -271,6 +282,7 @@ module.exports.handler = async (event, context) => {
 
     try {
       await googleAuthSetup();
+      await getCalendar();
       // await listCalendarEvents();
       await updateCalendarEvent("tqnm45cajm54poi6fp10gsqp10");
       // await insertCalendarEvent();
