@@ -8,8 +8,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "googleapis": "39",
+    "googleapis": "^67.0.0",
     "jsonwebtoken": "^8.5.1",
-    "kloudless": "^1.0.7"
+    "kloudless": "^1.0.7",
+    "moment": "^2.29.1"
   }
 }

@@ -1,6 +1,8 @@
 const jwt = require("jsonwebtoken");
 const fetch = require("node-fetch");
 const kloudless = require("kloudless")(process.env.KLOUDLESS_CALENDAR_API_KEY);
+const { google } = require("googleapis");
+const moment = require("moment");
 
 // Zoom Documentation for this endpoint can be found here:
 // https://marketplace.zoom.us/docs/api-reference/zoom-api/meetings/meetingcreate
@@ -17,123 +19,273 @@ function makeid(length) {
 }
 
 module.exports.handler = async (event, context) => {
-  console.log("HERE!");
   try {
     const body = JSON.parse(event.body || "{}");
 
-    const token = jwt.sign(
-      {
-        iss: process.env.ZOOM_API_KEY,
-        exp: 1496091964000,
-      },
-      process.env.ZOOM_API_SECRET
-    );
+    const verifyIdentity = async () => {
+      // TODO: This is incomplete
+      const { identity, user } = context.clientContext;
+      const userReq = await fetch(
+        `https://core-website-2020-test.netlify.app/.netlify/identity/admin/users/{${user.sub}}`,
+        {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${identity.token}`,
+          },
+        }
+      );
+      const userData = await userReq.json();
+      console.log({
+        userReq,
+        userData,
+      });
+    };
 
-    console.log(context.clientContext);
-
-    const { identity, user } = context.clientContext;
-
-    const userReq = await fetch(
-      `https://core-website-2020-test.netlify.app/.netlify/identity/admin/users/{${user.sub}}`,
-      {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${identity.token}`,
+    const createZoomMeeting = async () => {
+      const token = jwt.sign(
+        {
+          iss: process.env.ZOOM_API_KEY,
+          exp: 1496091964000,
         },
+        process.env.ZOOM_API_SECRET
+      );
+      const res = await fetch(
+        `https://api.zoom.us/v2/users/${process.env.ZOOM_USER_ID}/meetings`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "User-Agent": "Zoom-api-Jwt-Request",
+            "content-type": "application/json",
+          },
+          body: JSON.stringify({
+            topic: "Topic here",
+            type: 2,
+            start_time: "2021-09-28T23:00:00.000Z",
+            duration: 15,
+            timezone: "America/New_York",
+            password: "1234",
+            agenda: "agenda here",
+          }),
+        }
+      );
+      if (res.status === 201) {
+        const { id: meetingID } = await res.json();
+
+        const calendarID = makeid(8);
+
+        return {
+          statusCode: 200,
+          body: JSON.stringify({
+            ...body,
+            meetingID,
+            calendarID,
+          }),
+        };
+      } else {
+        throw new Error(`Error while creating Zoom meeting.`, res);
       }
-    );
+    };
 
-    const userData = await userReq.json();
+    const googleAuthSetup = async () => {
+      const auth = new google.auth.GoogleAuth({
+        credentials: JSON.parse(process.env.GOOGLE_API_CREDENTIALS),
+        scopes: [
+          "https://www.googleapis.com/auth/calendar",
+          "https://www.googleapis.com/auth/calendar.events",
+        ],
+      });
+      const client = await auth.getClient();
+      google.options({ auth: client });
+    };
 
-    console.log({
-      userReq,
-      userData,
-    });
+    const listCalendars = async () => {
+      const googleCalendar = google.calendar({ version: "v3" });
+      const res = await googleCalendar.calendarList.list();
+      if (res.statusText === "OK") {
+        console.info({
+          calendars: res.data.items,
+        });
+      } else {
+        throw new Error(`Error while reading calendars.`, res);
+      }
+    };
 
-    return;
+    const deleteCalendar = async (calendarId) => {
+      const googleCalendar = google.calendar({ version: "v3" });
+      const res = await googleCalendar.calendarList.delete({
+        calendarId,
+      });
+      if (res.statusText === "OK") {
+        console.info("Calendar Deleted");
+      } else {
+        throw new Error(`Error while deleting calendar.`, res);
+      }
+    };
 
-    const cal = await fetch(
-      `https://api.kloudless.com/v1/accounts/${process.env.KLOUDLESS_ACCOUNT_ID}/cal/calendars/${process.env.GOOGLE_CALENDAR_ID}/events/`,
-      {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${process.env.KLOUDLESS_CALENDAR_BEARER_TOKEN}`,
+    const setCalendarAccessControlRule = async () => {
+      const googleCalendar = google.calendar({ version: "v3" });
+      const res = await googleCalendar.acl.insert({
+        calendarId: process.env.GOOGLE_CALENDAR_CALENDAR_ID,
+        requestBody: {
+          kind: "calendar#aclRule",
+          role: "reader",
+          scope: {
+            type: "default",
+          },
         },
+      });
+      if (res.statusText === "OK") {
+        console.info("Rule added successfully.");
+      } else {
+        throw new Error(`Error while creating rule.`, res);
       }
-    );
+    };
 
-    const calData = await cal.json();
+    const listCalendarEvents = async () => {
+      const googleCalendar = google.calendar({
+        version: "v3",
+      });
 
-    console.log(context.clientContext);
+      const res = await googleCalendar.events.list({
+        calendarId: process.env.GOOGLE_CALENDAR_CALENDAR_ID,
+      });
+      if (res.statusText === "OK") {
+        console.log(res.data);
+      } else {
+        throw new Error(`Error while updating calendar event.`, res);
+      }
+    };
 
-    // console.dir(
-    //   {
-    //     status: cal.status,
-    //     calData,
-    //   },
-    //   { depth: null }
-    // );
+    const getCalendarEvent = async (eventId) => {
+      const googleCalendar = google.calendar({
+        version: "v3",
+      });
 
-    return;
+      const res = await googleCalendar.events.get({
+        calendarId: process.env.GOOGLE_CALENDAR_CALENDAR_ID,
+        eventId,
+      });
+      if (res.statusText === "OK") {
+        console.log(res.data);
+      } else {
+        throw new Error(`Error while updating calendar event.`, res);
+      }
+    };
 
-    const res = await fetch(
-      `https://api.zoom.us/v2/users/${process.env.ZOOM_USER_ID}/meetings`,
-      {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "User-Agent": "Zoom-api-Jwt-Request",
-          "content-type": "application/json",
+    const insertCalendarEvent = async () => {
+      const googleCalendar = google.calendar({
+        version: "v3",
+      });
+
+      const start = moment().add(3, "months");
+      const end = start.clone().add(1, "hour");
+
+      const res = await googleCalendar.events.insert({
+        calendarId: process.env.GOOGLE_CALENDAR_CALENDAR_ID,
+        sendUpdates: "all",
+        requestBody: {
+          start: {
+            dateTime: start.format(),
+          },
+          end: {
+            dateTime: end.format(),
+          },
+          description: "This is the event description",
+          guestsCanInviteOthers: false,
+          guestsCanSeeOtherGuests: false,
+          location: "123 Main Street",
+          summary: "Title of Event",
+          visibility: "public",
         },
-        body: JSON.stringify({
-          topic: "Topic here",
-          type: 2,
-          start_time: "2021-09-28T23:00:00.000Z",
-          duration: 15,
-          timezone: "America/New_York",
-          password: "1234",
-          agenda: "agenda here",
-        }),
+      });
+      if (res.statusText === "OK") {
+        console.log(res.data);
+      } else {
+        throw new Error(`Error while creating calendar event.`, res);
       }
-    );
 
-    if (res.status === 201) {
-      const { id: meetingID } = await res.json();
+      // const res = await fetch(
+      //   `https://oauth2.googleapis.com/token?${new URLSearchParams({
+      //     grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer",
+      //     assertion: jwtToken,
+      //   })}`,
+      //   {
+      //     method: "POST",
+      //     // body: JSON.stringify({
+      //     //   grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer",
+      //     //   assertion: jwtToken,
+      //     // }),
+      //   }
+      // );
 
-      // function initClient() {
-      //   google.client.init({
-      //     apiKey: API_KEY,
-      //     clientId: CLIENT_ID,
-      //     discoveryDocs: DISCOVERY_DOCS,
-      //     scope: SCOPES
-      //   }).then(function () {
-      //     // Listen for sign-in state changes.
-      //     gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+      // const res = await fetch(
+      //   `https://www.googleapis.com/calendar/v3/users/me/calendarList`,
+      //   {
+      //     method: "GET",
+      //     headers: {
+      //       Authorization: `Bearer ${token}`,
+      //       Host: "calendar.googleapis.com",
+      //     },
+      //   }
+      // );
 
-      //     // Handle the initial sign-in state.
-      //     updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
-      //     authorizeButton.onclick = handleAuthClick;
-      //     signoutButton.onclick = handleSignoutClick;
-      //   }, function(error) {
-      //     appendPre(JSON.stringify(error, null, 2));
-      //   });
-      // }
+      // const googleCalendar = google.calendar({
+      //   version: "v3",
+      //   auth: `Bearer ${token}`,
+      // });
+      // const res = await googleCalendar.calendarList.list({
+      //   auth: `Bearer ${token}`,
+      // });
+      // console.log({ res });
+      // const res = await googleCalendar.events.insert({
+      //   calendarId: process.env.GOOGLE_CALENDAR_CLIENT_ID,
 
-      console.log({ meetingID });
+      // })
+    };
 
-      const calendarID = makeid(8);
+    const updateCalendarEvent = async (eventId) => {
+      const googleCalendar = google.calendar({
+        version: "v3",
+      });
 
-      return {
-        statusCode: 200,
-        body: JSON.stringify({
-          ...body,
-          meetingID,
-          calendarID,
-        }),
-      };
+      const res = await googleCalendar.events.patch({
+        calendarId: process.env.GOOGLE_CALENDAR_CALENDAR_ID,
+        eventId,
+        sendUpdates: "all",
+        requestBody: {
+          location: `${makeid(4)} Main Street`,
+          attendees: [
+            {
+              email: "tgnemecek@gmail.com",
+            },
+          ],
+        },
+      });
+      if (res.statusText === "OK") {
+        console.log(res.data);
+      } else {
+        throw new Error(`Error while updating calendar event.`, res);
+      }
+    };
+
+    try {
+      await googleAuthSetup();
+      // await listCalendarEvents();
+      await updateCalendarEvent("tqnm45cajm54poi6fp10gsqp10");
+      // await insertCalendarEvent();
+      // await setCalendarAccessControlRule();
+    } catch (err) {
+      throw err;
     }
-
-    console.log({ res });
+    return {
+      statusCode: 200,
+      body: JSON.stringify({
+        ...body,
+        // meetingID,
+        // calendarID,
+      }),
+    };
 
     // // Auth
     // const token = `token=${process.env.EVENTBRITE_API_TOKEN}`;
