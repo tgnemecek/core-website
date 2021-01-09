@@ -11,6 +11,10 @@
     "googleapis": "^67.0.0",
     "jsonwebtoken": "^8.5.1",
     "kloudless": "^1.0.7",
-    "moment": "^2.29.1"
+    "moment": "^2.29.1",
+    "stripe": "^8.130.0"
+  },
+  "devDependencies": {
+    "@types/stripe-v3": "^3.1.23"
   }
 }

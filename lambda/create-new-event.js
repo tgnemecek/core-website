@@ -2,6 +2,7 @@ const jwt = require("jsonwebtoken");
 const fetch = require("node-fetch");
 const kloudless = require("kloudless")(process.env.KLOUDLESS_CALENDAR_API_KEY);
 const { google } = require("googleapis");
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const moment = require("moment");
 
 const googleCalendar = google.calendar({ version: "v3" });
@@ -264,27 +265,22 @@ module.exports.handler = async (event, context) => {
     };
 
     // Stripe:
-    const updateCalendarEvent = async (eventId) => {
-      const res = await googleCalendar.events.patch({
-        calendarId: process.env.CALENDAR_ID,
-        eventId,
-        sendUpdates: "all",
-        requestBody: {
-          location: `${makeid(4)} Main Street`,
-        },
-      });
-      if (res.statusText === "OK") {
-        console.log(res.data);
-      } else {
-        throw new Error(`Error while updating calendar event.`, res);
-      }
+    const stripeRun = async () => {
+      const res = await stripe.balance.retrieve();
+      console.log({ res });
+      // if (res.statusText === "OK") {
+      //   console.log(res.data);
+      // } else {
+      //   throw new Error(`Error while updating calendar event.`, res);
+      // }
     };
 
     try {
-      await googleAuthSetup();
-      await getCalendar();
+      await stripeRun();
+      // await googleAuthSetup();
+      // await getCalendar();
       // await listCalendarEvents();
-      await updateCalendarEvent("tqnm45cajm54poi6fp10gsqp10");
+      // await updateCalendarEvent("tqnm45cajm54poi6fp10gsqp10");
       // await insertCalendarEvent();
       // await setCalendarAccessControlRule();
     } catch (err) {
@@ -298,54 +294,6 @@ module.exports.handler = async (event, context) => {
         // calendarID,
       }),
     };
-
-    // // Auth
-    // const token = `token=${process.env.EVENTBRITE_API_TOKEN}`;
-    // const orgId = process.env.EVENTBRITE_ORGANIZATION_ID;
-
-    // const baseUrl = "https://www.eventbriteapi.com/v3/organizations";
-
-    // // Request Params
-    // const params = [
-    //   "order_by=start_desc",
-    //   "status=live,started,ended",
-    //   "show_series_parent=on",
-    // ];
-
-    // const res = await fetch(
-    //   `${baseUrl}/${orgId}/events/?${params.join("&")}&${token}`
-    // );
-
-    // if (res.status !== 200) {
-    //   return {
-    //     statusCode: res.status,
-    //     body: JSON.stringify({
-    //       error: "Eventbrite API Error",
-    //     }),
-    //   };
-    // }
-
-    // const data = await res.json();
-    // const events = data.events
-    //   .filter(({ locale, is_series, is_series_parent }) => {
-    //     return locale === "en_US";
-    //   })
-    //   .map(({ url, start, name, description, logo }) => {
-    //     return {
-    //       url,
-    //       date: start.utc,
-    //       title: name.text,
-    //       description: description.text,
-    //       image: logo.original.url,
-    //     };
-    //   });
-
-    // return {
-    //   statusCode: 200,
-    //   body: JSON.stringify({
-    //     events,
-    //   }),
-    // };
   } catch (err) {
     console.error(err);
     return {
