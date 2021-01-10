@@ -6,6 +6,7 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const moment = require("moment");
 
 const googleCalendar = google.calendar({ version: "v3" });
+const gmail = google.gmail({ version: "v1" });
 
 // Zoom Documentation for this endpoint can be found here:
 // https://marketplace.zoom.us/docs/api-reference/zoom-api/meetings/meetingcreate
@@ -92,19 +93,21 @@ module.exports.handler = async (event, context) => {
       }
     };
 
-    // Google Calendar:
+    // Google Auth:
     const googleAuthSetup = async () => {
       const auth = new google.auth.GoogleAuth({
         credentials: JSON.parse(process.env.GOOGLE_API_CREDENTIALS),
         scopes: [
           "https://www.googleapis.com/auth/calendar",
           "https://www.googleapis.com/auth/calendar.events",
+          // "https://www.googleapis.com/auth/gmail",
         ],
       });
       const client = await auth.getClient();
       google.options({ auth: client });
     };
 
+    // Google Calendar:
     const listCalendars = async () => {
       const res = await googleCalendar.calendarList.list();
       if (res.statusText === "OK") {
@@ -249,12 +252,21 @@ module.exports.handler = async (event, context) => {
     };
 
     const updateCalendarEvent = async (eventId) => {
+      const start = moment().add(3, "months");
+      const end = start.clone().add(1, "hour");
+
       const res = await googleCalendar.events.patch({
         calendarId: process.env.CALENDAR_ID,
         eventId,
         sendUpdates: "all",
         requestBody: {
           location: `${makeid(4)} Main Street`,
+          start: {
+            dateTime: start.format(),
+          },
+          end: {
+            dateTime: end.format(),
+          },
         },
       });
       if (res.statusText === "OK") {
@@ -265,27 +277,73 @@ module.exports.handler = async (event, context) => {
     };
 
     // Stripe:
-    const stripeRun = async () => {
-      const res = await stripe.balance.retrieve();
-      console.log({ res });
-      // if (res.statusText === "OK") {
-      //   console.log(res.data);
-      // } else {
-      //   throw new Error(`Error while updating calendar event.`, res);
-      // }
+    const listProducts = async () => {
+      try {
+        const res = await stripe.products.list();
+        console.info({
+          products: res.data,
+        });
+      } catch (err) {
+        console.error(`Error while retrieving products.`);
+        throw err;
+      }
+    };
+
+    const createProduct = async () => {
+      try {
+        const res = await stripe.products.create({
+          name: `Product name ${makeid(3)}`,
+          description: "Description here",
+        });
+        console.info(res);
+        return res.id;
+      } catch (err) {
+        console.error(`Error while retrieving products.`);
+        throw err;
+      }
+    };
+
+    const createPrice = async (productId) => {
+      try {
+        const res = await stripe.prices.create({
+          currency: "usd",
+          unit_amount: "1000", // USD 10.00
+          product: productId,
+        });
+        console.info(res);
+      } catch (err) {
+        console.error(`Error while retrieving products.`);
+        throw err;
+      }
+    };
+
+    // Google Mail:
+    const gmailRun = async () => {
+      const res = await gmail.users.messages.list({
+        userId: "me",
+      });
+      console.info({ res });
+      if (res.statusText === "OK") {
+        // console.info({res});
+      } else {
+        throw new Error(`Error while deleting calendar.`, res);
+      }
     };
 
     try {
-      await stripeRun();
-      // await googleAuthSetup();
+      // const productId = await createProduct();
+      // await createPrice(productId);
+      await googleAuthSetup();
+      // await gmailRun();
       // await getCalendar();
       // await listCalendarEvents();
-      // await updateCalendarEvent("tqnm45cajm54poi6fp10gsqp10");
+      await updateCalendarEvent("tqnm45cajm54poi6fp10gsqp10");
       // await insertCalendarEvent();
       // await setCalendarAccessControlRule();
     } catch (err) {
       throw err;
     }
+    console.info("Finished Running.");
     return {
       statusCode: 200,
       body: JSON.stringify({
