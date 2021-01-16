@@ -12,6 +12,7 @@
     "jsonwebtoken": "^8.5.1",
     "kloudless": "^1.0.7",
     "moment": "^2.29.1",
+    "shopify-api-node": "^3.6.1",
     "stripe": "^8.130.0"
   },
   "devDependencies": {
