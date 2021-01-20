@@ -76,18 +76,8 @@ module.exports.handler = async (event, context) => {
         }
       );
       if (res.status === 201) {
-        const { id: meetingID } = await res.json();
-
-        const calendarID = makeid(8);
-
-        return {
-          statusCode: 200,
-          body: JSON.stringify({
-            ...body,
-            meetingID,
-            calendarID,
-          }),
-        };
+        const { id } = await res.json();
+        return id;
       } else {
         throw new Error(`Error while creating Zoom meeting.`, res);
       }
@@ -279,21 +269,21 @@ module.exports.handler = async (event, context) => {
     // Stripe:
     const listProducts = async () => {
       try {
-        const res = await stripe.products.list();
-        console.info({
-          products: res.data,
-        });
+        return await stripe.products.list();
       } catch (err) {
         console.error(`Error while retrieving products.`);
         throw err;
       }
     };
 
-    const createProduct = async () => {
+    const createProduct = async (meetingId) => {
       try {
         const res = await stripe.products.create({
           name: `Product name ${makeid(3)}`,
           description: "Description here",
+          metadata: {
+            meetingId,
+          },
         });
         console.info(res);
         return res.id;
@@ -331,13 +321,16 @@ module.exports.handler = async (event, context) => {
     };
 
     try {
-      // const productId = await createProduct();
+      // const meetingId = await createZoomMeeting();
+      // const productId = await createProduct(meetingId);
       // await createPrice(productId);
-      await googleAuthSetup();
+      const res = await listProducts();
+      console.dir({ res }, { depth: null });
+      // await googleAuthSetup();
       // await gmailRun();
       // await getCalendar();
       // await listCalendarEvents();
-      await updateCalendarEvent("tqnm45cajm54poi6fp10gsqp10");
+      // await updateCalendarEvent("tqnm45cajm54poi6fp10gsqp10");
       // await insertCalendarEvent();
       // await setCalendarAccessControlRule();
     } catch (err) {

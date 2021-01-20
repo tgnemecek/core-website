@@ -8,6 +8,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@mailchimp/mailchimp_transactional": "^1.0.19",
     "googleapis": "^67.0.0",
     "jsonwebtoken": "^8.5.1",
     "kloudless": "^1.0.7",

@@ -585,6 +585,12 @@ const config: ExtendedConfig = {
           allow_add: true,
           fields: [
             {
+              label: "ID",
+              name: "id",
+              widget: "hidden",
+              default: "",
+            },
+            {
               label: "Description",
               name: "description",
               widget: "string",
