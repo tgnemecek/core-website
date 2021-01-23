@@ -7,15 +7,6 @@
   },
   "author": "",
   "license": "ISC",
-  "babel": {
-    "presets": [],
-    "plugins": [
-      "@babel/plugin-transform-react-jsx",
-      {
-        "pragma": "h"
-      }
-    ]
-  },
   "dependencies": {
     "googleapis": "^67.0.0",
     "jsonwebtoken": "^8.5.1",
@@ -26,12 +17,6 @@
     "stripe": "^8.130.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.10",
-    "@babel/core": "^7.12.10",
-    "@babel/plugin-transform-react-jsx": "^7.12.12",
-    "@babel/polyfill": "^7.12.1",
-    "@babel/preset-env": "^7.12.11",
-    "@types/stripe-v3": "^3.1.23",
-    "babel-plugin-transform-react-jsx": "^6.24.1"
+    "@types/stripe-v3": "^3.1.23"
   }
 }
