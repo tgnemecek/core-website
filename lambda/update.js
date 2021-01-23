@@ -1,11 +1,13 @@
 const Zoom = require("./services/Zoom");
 const Stripe = require("./services/Stripe");
-const Mailchimp = require("./services/Mailchimp");
+const Email = require("./services/Email");
 const Core = require("./services/Core");
 
 module.exports.handler = async (event, context) => {
   try {
     const body = JSON.parse(event.body || "{}");
+
+    await Email.send("Here's a text for you");
 
     // const product = await Stripe.getProduct(body.productId);
     // const prices = await Stripe.getPrices(body.productId);
@@ -14,7 +16,7 @@ module.exports.handler = async (event, context) => {
     // const hasDateChanged = Core.compareDates(body, meeting);
     // const hasPriceChanged = Core.comparePrices(body, prices);
 
-    await Mailchimp.callPing();
+    // await Mailchimp.callPing();
 
     // if (hasDateChanged) {
 
