@@ -1,6 +1,6 @@
 ---
 collection: events
-title: First ever!!
+title: First ever!!!
 subtitle: This is the subtitle
 description: |-
   Description goes here
