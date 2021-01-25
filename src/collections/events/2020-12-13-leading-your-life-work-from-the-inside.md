@@ -1,6 +1,6 @@
 ---
 collection: events
-title: Leading Your Life & Work From the Inside Out
+title: Leading Your Life & Work From the Inside Out!
 subtitle: Implement a powerful holistic strategy to recreate yourself, step by
   step, from the inside- out (your core gifts to an optimal work & life).
 description: >-
