@@ -1,39 +1,54 @@
 const Zoom = require("./services/Zoom");
 const Stripe = require("./services/Stripe");
 const Core = require("./services/Core");
+const moment = require("moment");
 
 module.exports.handler = async (event, context) => {
   try {
     const body = JSON.parse(event.body || "{}");
 
-    const { meetingId, url } = await Zoom.createWebinar();
-    const { productId, tickets } = await Stripe.createProduct({
-      name: "Product Name",
-      description: "Product Description",
-      tickets: [
-        {
-          price: 1,
-        },
-        {
-          price: 2,
-        },
-      ],
+    // const body = {
+    //   title: "This is my webinar 2",
+    //   subtitle: "We will discuss life in general.",
+    //   tickets: [
+    //     {
+    //       description: "Early Bird",
+    //       price: 15,
+    //     },
+    //     {
+    //       description: "General Admission",
+    //       price: 20,
+    //     },
+    //   ],
+    //   date: moment().add(1, "day"),
+    //   duration: 60,
+    // };
+
+    const { title, subtitle, tickets, duration } = body;
+
+    const startDate = moment(body.date).startOf("minute");
+
+    const { meetingId, url } = await Zoom.createWebinar({
+      title,
+      startDate,
+      duration,
+    });
+
+    const { productId, ticketsWithId } = await Stripe.createProduct({
+      name: title,
+      description: subtitle,
+      tickets,
       url,
       meetingId,
     });
 
-    // console.log({
-    //   ...body,
-    //   productId,
-    //   tickets,
-    // });
     console.info("Finished Running.");
     return {
       statusCode: 200,
       body: JSON.stringify({
         ...body,
         productId,
-        tickets,
+        tickets: ticketsWithId,
       }),
     };
   } catch (err) {

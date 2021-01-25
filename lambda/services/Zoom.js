@@ -1,5 +1,6 @@
 const jwt = require("jsonwebtoken");
 const fetch = require("node-fetch");
+const moment = require("moment");
 // Zoom Documentation can be found here:
 // https://marketplace.zoom.us/docs/api-reference/zoom-api/meetings/meetingcreate
 
@@ -27,7 +28,7 @@ module.exports = {
         body: JSON.stringify({
           topic: "Topic here",
           type: 2,
-          start_time: "2021-09-28T23:00:00.000Z",
+          // start_time: moment(startDate).utcOffset(0).format() "2021-09-28T23:00:00.000Z",
           duration: 15,
           timezone: "America/New_York",
           password: "1234",
@@ -42,7 +43,7 @@ module.exports = {
       throw new Error(`Error while creating Zoom meeting.`, res);
     }
   },
-  createWebinar: async () => {
+  createWebinar: async ({ title, startDate, duration }) => {
     const res = await fetch(
       `https://api.zoom.us/v2/users/${process.env.ZOOM_USER_ID}/meetings`,
       {
@@ -53,19 +54,18 @@ module.exports = {
           "content-type": "application/json",
         },
         body: JSON.stringify({
-          topic: "Topic here",
+          topic: title,
           type: 2,
-          start_time: "2021-09-28T23:00:00.000Z",
-          duration: 15,
+          start_time:
+            startDate.utcOffset(0).format("YYYY-MM-DDTHH:mm:ss") + "Z",
+          duration,
           timezone: "America/New_York",
-          password: "1234",
-          agenda: "agenda here",
         }),
       }
     );
     if (res.status === 201) {
-      const { join_url: url } = await res.json();
-      return url;
+      const { join_url: url, id: meetingId } = await res.json();
+      return { url, meetingId };
     } else {
       throw new Error(`Error while creating Zoom meeting.`, res);
     }

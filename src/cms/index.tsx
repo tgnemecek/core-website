@@ -21,7 +21,10 @@ const AdminConsole = () => {
           console.log("PRE-SAVE");
           let dataEntry = entry.get("data");
           const str = JSON.stringify(dataEntry);
-          const { meetingID } = JSON.parse(str);
+          const form = JSON.parse(str);
+          const { productId } = form;
+
+          console.log({ form });
 
           const identityToken = await netlifyIdentity.refresh();
 
@@ -38,8 +41,8 @@ const AdminConsole = () => {
 
           console.log({ access_token });
 
-          if (!meetingID) {
-            const res = await fetch("/.netlify/functions/create-new-event", {
+          if (!productId) {
+            const res = await fetch("/.netlify/functions/create", {
               method: "POST",
               body: str,
               headers: {
@@ -47,10 +50,20 @@ const AdminConsole = () => {
               },
               credentials: "include",
             });
-            const data = await res.json();
+            const { productId, tickets } = await res.json();
 
-            dataEntry = dataEntry.set("meetingID", data.meetingID);
-            dataEntry = dataEntry.set("calendarID", data.calendarID);
+            dataEntry = dataEntry.set("productId", productId);
+            dataEntry = dataEntry.set("tickets", tickets);
+            return dataEntry;
+          } else {
+            await fetch("/.netlify/functions/update", {
+              method: "POST",
+              body: str,
+              headers: {
+                Authorization: `Bearer ${access_token}`,
+              },
+              credentials: "include",
+            });
             return dataEntry;
           }
         } catch (err) {

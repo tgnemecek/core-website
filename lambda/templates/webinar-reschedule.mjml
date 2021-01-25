@@ -9,11 +9,19 @@
           padding="10px 25px"
           font-size="20px"
           color="#512d0b"
-          ><strong>Hey {{firstName}}!</strong></mj-text
+          ><strong>Hello {{firstName}},</strong></mj-text
         >
         <mj-text align="center" font-size="18px" font-family="Arial"
-          >Thank you for your interest in the
-          <strong>{{webinarName}}</strong> webinar.</mj-text
+          >We're sorry to inform you that the
+          <strong>{{webinarName}}</strong> webinar has been
+          rescheduled.</mj-text
+        >
+        <mj-text
+          align="center"
+          font-size="18px"
+          font-family="Arial"
+          padding-top="20px"
+          >Here&apos;s the updated time:</mj-text
         >
         <mj-text
           align="center"
@@ -22,9 +30,13 @@
           font-family="Arial, sans-serif"
           font-weight="bold"
           line-height="35px"
-          padding-top="20px"
-          >Here&apos;s your personal webinar access:
+          padding-bottom="20px"
+          >{{formattedDate}}
         </mj-text>
+        <mj-text align="center" font-size="18px" font-family="Arial"
+          >If you are unable to attend, please let us know by replying to this
+          email.</mj-text
+        >
         <mj-button
           background-color="#315cb0"
           color="white !important"
@@ -34,35 +46,6 @@
           font-weight="bold"
           font-size="16px"
           >Go to Webinar</mj-button
-        >
-        <mj-text
-          align="center"
-          color="#489BDA"
-          font-size="20px"
-          font-family="Arial, sans-serif"
-          font-weight="bold"
-          line-height="35px"
-          padding-top="20px"
-          >if you prefer, use this link:
-        </mj-text>
-        <mj-button
-          href="{{webinarLink}}"
-          target="_blank"
-          align="center"
-          background-color="transparent"
-          font-size="14px"
-          font-family="Arial, sans-serif"
-          text-decoration="underline"
-        >
-          {{webinarLink}}
-        </mj-button>
-        <mj-text
-          align="center"
-          font-size="18px"
-          font-family="Arial"
-          padding-top="40px"
-          >The webinar will start at {{formattedDate}}, and you can access it
-          using the methods above.</mj-text
         >
         <mj-button
           align="center"

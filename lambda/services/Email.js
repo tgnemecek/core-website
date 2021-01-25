@@ -2,6 +2,9 @@ const nodemailer = require("nodemailer");
 const fs = require("fs");
 const path = require("path");
 const mjml2html = require("mjml");
+const ical = require("ical-generator");
+const moment = require("moment");
+const Core = require("./Core");
 
 const { EMAIL_HOST, EMAIL_USERNAME, EMAIL_PASSWORD } = process.env;
 
@@ -17,6 +20,29 @@ const options = {
 const defaults = {};
 
 const transporter = nodemailer.createTransport(options, defaults);
+
+const templateSettings = {
+  "webinar-purchase": {
+    tags: ["firstName", "webinarName", "webinarLink", "startDate", "endDate"],
+    subject: "Here's your webinar link",
+    hasCalendarLink: true,
+    dateFormatter: (startDate) =>
+      `${startDate.format("h:mm A")} on ${startDate.format("MM/DD/YYYY")}`,
+  },
+  "webinar-reschedule": {
+    tags: ["firstName", "webinarName", "webinarLink", "startDate", "endDate"],
+    subject: "Webinar rescheduled",
+    hasCalendarLink: true,
+    dateFormatter: (startDate) =>
+      `${startDate.format("MMM D, YYYY")} - ${startDate.format("h:mm A")}`,
+  },
+  "webinar-cancel": {
+    tags: ["firstName", "webinarName"],
+    subject: "Webinar cancelled",
+    hasCalendarLink: false,
+    dateFormatter: () => null,
+  },
+};
 
 const Email = {
   verify: async () => {
@@ -43,17 +69,7 @@ const Email = {
   },
   useTemplate: (templateName, tags) => {
     // Check if all required fields are provided
-    const requiredMap = {
-      "webinar-purchase": [
-        "firstName",
-        "webinarName",
-        "webinarLink",
-        "formattedDate",
-        "googleCalendarLink",
-      ],
-    };
-
-    const requiredTags = requiredMap[templateName];
+    const requiredTags = templateSettings[templateName].tags;
     const invalid = requiredTags.filter((key) => !tags[key]);
 
     if (invalid.length > 0) {
@@ -71,21 +87,32 @@ const Email = {
       encoding: "utf-8",
     });
 
+    const { subject, hasCalendarLink, dateFormatter } = templateSettings[
+      templateName
+    ];
+
+    const formattedTags = {
+      ...tags,
+      formattedDate: dateFormatter(tags.startDate),
+      googleCalendarLink:
+        hasCalendarLink &&
+        Core.generateCalendarLink({
+          title: tags.webinarName,
+          description: `Here is the event link: ${tags.webinarLink}`,
+          startDate: tags.startDate,
+          endDate: tags.endDate,
+        }),
+    };
+
     // Replace tags
-    const replaced = requiredTags.reduce((acc, cur) => {
-      return acc.split(`{{${cur}}}`).join(tags[cur]);
+    const replaced = Object.keys(formattedTags).reduce((acc, key) => {
+      return acc.split(`{{${key}}}`).join(formattedTags[key]);
     }, file);
 
     // Add sections
     const finalString = Email.assembleSections(replaced);
 
     const { html } = mjml2html(finalString);
-
-    const subjectMap = {
-      "webinar-purchase": "Here's your webinar link",
-    };
-
-    const subject = subjectMap[templateName];
 
     if (!subject) {
       throw new Error(
@@ -121,7 +148,7 @@ const Email = {
         html,
       });
     } catch (err) {
-      console.error(`Error while verifying email host.`);
+      console.error(`Error while trying to send email.`);
       throw err;
     }
   },
