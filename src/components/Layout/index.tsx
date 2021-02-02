@@ -37,6 +37,7 @@ const Layout: React.FC = ({ children }) => {
           href={`${withPrefix("/")}img/favicon-16x16.png`}
           sizes="16x16"
         />
+        <script src="https://js.stripe.com/v3" async></script>
         <meta name="theme-color" content="#fff" />
 
         <meta property="og:type" content="business.business" />

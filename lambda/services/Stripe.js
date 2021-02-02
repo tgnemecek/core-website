@@ -18,6 +18,14 @@ const Stripe = {
       throw err;
     }
   },
+  getPrice: async (id) => {
+    try {
+      const price = await stripe.prices.retrieve(id);
+    } catch (err) {
+      console.error(`Error while retrieving price.`);
+      throw err;
+    }
+  },
   createPrice: async (ticket, productId) => {
     try {
       const { id } = await stripe.prices.create({
@@ -34,13 +42,12 @@ const Stripe = {
       throw err;
     }
   },
-  createProduct: async ({ name, description, tickets, url, meetingId }) => {
+  createProduct: async ({ name, description, tickets, meetingId }) => {
     try {
       const { id: productId } = await stripe.products.create({
         name,
         description,
         metadata: {
-          url,
           meetingId,
         },
       });
@@ -99,6 +106,50 @@ const Stripe = {
       return data;
     } catch (err) {
       console.error(`Error while retrieving prices.`);
+      throw err;
+    }
+  },
+  processPayment: async (args) => {
+    const { amount, title, currency, meetingId, productId } = args;
+    try {
+      const { data } = await stripe.orders.create({
+        currency,
+        items: [
+          {
+            amount,
+          },
+        ],
+        confirm: true,
+        payment_method_types: ["card"],
+        description: title,
+        metadata: {
+          meetingId,
+          productId,
+        },
+      });
+      return data;
+    } catch (err) {
+      console.error(`Error while processing payment.`);
+      throw err;
+    }
+  },
+  createCheckout: async (priceId) => {
+    try {
+      const session = await stripe.checkout.sessions.create({
+        cancel_url: "https://www.corecoachingconsole.com/#cancel",
+        success_url: "https://www.corecoachingconsole.com",
+        mode: "payment",
+        payment_method_types: ["card"],
+        line_items: [
+          {
+            price: priceId,
+            amount,
+          },
+        ],
+      });
+      return session;
+    } catch (err) {
+      console.error(`Error while creating checkout.`);
       throw err;
     }
   },

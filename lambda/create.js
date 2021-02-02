@@ -28,7 +28,7 @@ module.exports.handler = async (event, context) => {
 
     const startDate = moment(body.date).startOf("minute");
 
-    const { meetingId, url } = await Zoom.createWebinar({
+    const { meetingId } = await Zoom.createMeeting({
       title,
       startDate,
       duration,
@@ -38,7 +38,6 @@ module.exports.handler = async (event, context) => {
       name: title,
       description: subtitle,
       tickets,
-      url,
       meetingId,
     });
 

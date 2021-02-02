@@ -1,9 +1,12 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { loadStripe } from "@stripe/stripe-js";
 import { EventPageDTO } from "types";
 import { Layout, EventFeed, Footer, Navbar } from "components";
 import { Aside, FixedBar, Header, ContentGrid, Body, Video } from "./sections";
 import { getEventStatus, formatLanguage } from "utils";
+
+const stripePromise = loadStripe(process.env.GATSBY_STRIPE_PUBLIC_KEY);
 
 const EventPage: React.FC<EventPageDTO> = ({
   data: {
@@ -26,19 +29,20 @@ const EventPage: React.FC<EventPageDTO> = ({
     location,
     tickets,
   } = events;
-  console.log({
-    title,
-    subtitle,
-    description,
-    image,
-    video,
-    date,
-    duration,
-    language,
-    isOnline,
-    location,
-    tickets,
-  });
+  console.log({ GATSBY_API_URL: process.env.GATSBY_API_URL });
+  // console.log({
+  //   title,
+  //   subtitle,
+  //   description,
+  //   image,
+  //   video,
+  //   date,
+  //   duration,
+  //   language,
+  //   isOnline,
+  //   location,
+  //   tickets,
+  // });
 
   const getPriceRange = () => {
     const { min, max } = tickets.reduce(
@@ -57,7 +61,11 @@ const EventPage: React.FC<EventPageDTO> = ({
     return `$${min} - $${max}`;
   };
 
-  const toggleTicketsModal = () => {
+  const toggleTicketsModal = async () => {
+    const stripe = await stripePromise;
+
+    const response = await fetch(``);
+
     return;
   };
 
