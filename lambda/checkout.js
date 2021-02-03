@@ -2,35 +2,24 @@ const Zoom = require("./services/Zoom");
 const Stripe = require("./services/Stripe");
 const Core = require("./services/Core");
 const moment = require("moment");
+const { AssignmentReturnedOutlined } = require("@material-ui/icons");
+
+// const body = {
+//   ticketId: "string",
+//   redirectUrl: "string",
+// };
 
 module.exports.handler = async (event, context) => {
   try {
-    // const body = JSON.parse(event.body || "{}");
-
-    const body = {
-      ticketId: "MEYG9T6XK0FGiV7ZXA2EI",
-    };
+    const body = JSON.parse(event.body || "{}");
 
     const price = await Stripe.getPrice(body.ticketId);
 
-    await Stripe.createCheckout(price.id);
+    const session = await Stripe.createCheckout(price, body.redirectUrl);
 
-    return;
-
-    // const { joinUrl } = await Zoom.addRegistrant({
-    //   title,
-    //   startDate,
-    //   duration,
-    // });
-
-    console.info("Finished Running.");
     return {
       statusCode: 200,
-      body: JSON.stringify({
-        ...body,
-        productId,
-        tickets: ticketsWithId,
-      }),
+      body: JSON.stringify(session),
     };
   } catch (err) {
     console.error(err);

@@ -25,8 +25,11 @@ type AsideProps = Pick<
   EventType,
   "date" | "isOnline" | "location" | "duration" | "language"
 > & {
-  toggleTicketsModal: () => void;
+  openCheckout: () => void;
   priceRange: string;
+  alreadyPurchased: boolean;
+  loading: boolean;
+  isEventValid: boolean;
 };
 
 const Aside: React.FC<AsideProps> = ({
@@ -36,7 +39,10 @@ const Aside: React.FC<AsideProps> = ({
   duration,
   language,
   priceRange,
-  toggleTicketsModal,
+  openCheckout,
+  alreadyPurchased,
+  loading,
+  isEventValid,
 }) => {
   const classes = useStyles();
   const { refundPolicy } = useEventSettings();
@@ -111,9 +117,10 @@ const Aside: React.FC<AsideProps> = ({
               size="small"
               variant="contained"
               className={classes.buy}
-              onClick={toggleTicketsModal}
+              onClick={openCheckout}
+              disabled={alreadyPurchased || loading || !isEventValid}
             >
-              Buy
+              {alreadyPurchased ? "Ticket Purchased" : "Buy"}
             </Button>
           </CardActions>
         </Card>

@@ -1,6 +1,8 @@
 import React from "react";
-import { graphql } from "gatsby";
-import { loadStripe } from "@stripe/stripe-js";
+import { graphql, PageProps } from "gatsby";
+import { loadStripe, Stripe } from "@stripe/stripe-js";
+import { Backdrop, CircularProgress } from "@material-ui/core";
+import { useSnackbar, SnackbarProvider } from "notistack";
 import { EventPageDTO } from "types";
 import { Layout, EventFeed, Footer, Navbar } from "components";
 import { Aside, FixedBar, Header, ContentGrid, Body, Video } from "./sections";
@@ -8,13 +10,18 @@ import { getEventStatus, formatLanguage } from "utils";
 
 const stripePromise = loadStripe(process.env.GATSBY_STRIPE_PUBLIC_KEY);
 
-const EventPage: React.FC<EventPageDTO> = ({
+type EventPageWithLocation = EventPageDTO & {
+  location: PageProps["location"];
+};
+
+const EventPage: React.FC<EventPageWithLocation> = ({
   data: {
     markdownRemark: {
       fields: { slug },
       frontmatter: { events },
     },
   },
+  location: { search, origin, pathname },
 }) => {
   const {
     title,
@@ -29,7 +36,12 @@ const EventPage: React.FC<EventPageDTO> = ({
     location,
     tickets,
   } = events;
-  console.log({ GATSBY_API_URL: process.env.GATSBY_API_URL });
+
+  const [loading, setLoading] = React.useState(false);
+  const [stripe, setStripe] = React.useState<Stripe>();
+
+  const { enqueueSnackbar } = useSnackbar();
+
   // console.log({
   //   title,
   //   subtitle,
@@ -61,13 +73,61 @@ const EventPage: React.FC<EventPageDTO> = ({
     return `$${min} - $${max}`;
   };
 
-  const toggleTicketsModal = async () => {
-    const stripe = await stripePromise;
+  const openCheckout = async () => {
+    setLoading(true);
+    try {
+      const res = await fetch(`/.netlify/functions/checkout`, {
+        method: "POST",
+        body: JSON.stringify({
+          ticketId: "price_1IDMEYG9T6XK0FGiV7ZXA2EI",
+          redirectUrl: `${origin}${pathname}`,
+        }),
+      });
+      const session = await res.json();
 
-    const response = await fetch(``);
+      const result = await stripe.redirectToCheckout({
+        sessionId: session.id,
+      });
 
-    return;
+      if (result.error) {
+        throw result.error;
+      }
+    } catch (err) {
+      enqueueSnackbar("Something went wrong. Please try again later.", {
+        variant: "error",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
+
+  const prepareStripe = async () => {
+    const newStripe = await stripePromise;
+    setStripe(newStripe);
+  };
+
+  const alreadyPurchased = React.useMemo(() => {
+    if (search) {
+      const params = new URLSearchParams(search);
+      if (params.get("success") === "true") {
+        return true;
+      }
+    }
+    return false;
+  }, [search]);
+
+  React.useEffect(() => {
+    const body = document.body;
+    if (loading) {
+      body.style.overflowY = "hidden";
+    } else {
+      body.style.overflowY = "auto";
+    }
+  }, [loading]);
+
+  React.useEffect(() => {
+    prepareStripe();
+  }, []);
 
   return (
     <Layout>
@@ -85,6 +145,11 @@ const EventPage: React.FC<EventPageDTO> = ({
           language={language}
         />
         <Video video={video} />
+        {loading && (
+          <Backdrop open={true} style={{ zIndex: 2000 }}>
+            <CircularProgress />
+          </Backdrop>
+        )}
         <ContentGrid
           body={
             <Body title={title} subtitle={subtitle} description={description} />
@@ -97,7 +162,10 @@ const EventPage: React.FC<EventPageDTO> = ({
               duration={duration}
               language={language}
               priceRange={getPriceRange()}
-              toggleTicketsModal={toggleTicketsModal}
+              openCheckout={openCheckout}
+              alreadyPurchased={alreadyPurchased}
+              loading={loading}
+              isEventValid={getEventStatus({ tickets, date })}
             />
           }
         ></ContentGrid>
@@ -106,8 +174,10 @@ const EventPage: React.FC<EventPageDTO> = ({
           filter={(event) => event.slug !== slug}
         />
         <FixedBar
-          toggleTicketsModal={toggleTicketsModal}
+          openCheckout={openCheckout}
           isEventValid={getEventStatus({ tickets, date })}
+          alreadyPurchased={alreadyPurchased}
+          loading={loading}
         />
       </main>
       <Footer paddingBottom={70} />
@@ -115,7 +185,13 @@ const EventPage: React.FC<EventPageDTO> = ({
   );
 };
 
-export default EventPage;
+const EventPageWithSnackbar: React.FC<EventPageWithLocation> = (props) => (
+  <SnackbarProvider maxSnack={3}>
+    <EventPage {...props} />
+  </SnackbarProvider>
+);
+
+export default EventPageWithSnackbar;
 
 export const pageQuery = graphql`
   query EventQuery($id: String!) {

@@ -1,12 +1,11 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import { MuiThemeProvider } from "@material-ui/core";
 
 import "./reset.css";
 import "fontsource-roboto";
 
 import { GoogleAnalytics, theme } from "components";
-
-import { MuiThemeProvider } from "@material-ui/core";
 
 import { useSiteMetadata } from "utils";
 import { withPrefix } from "gatsby";

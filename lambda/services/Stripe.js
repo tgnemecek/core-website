@@ -20,7 +20,7 @@ const Stripe = {
   },
   getPrice: async (id) => {
     try {
-      const price = await stripe.prices.retrieve(id);
+      return await stripe.prices.retrieve(id);
     } catch (err) {
       console.error(`Error while retrieving price.`);
       throw err;
@@ -133,17 +133,18 @@ const Stripe = {
       throw err;
     }
   },
-  createCheckout: async (priceId) => {
+  createCheckout: async (price, redirectUrl) => {
     try {
       const session = await stripe.checkout.sessions.create({
-        cancel_url: "https://www.corecoachingconsole.com/#cancel",
-        success_url: "https://www.corecoachingconsole.com",
+        cancel_url: `${redirectUrl}?cancel=true`,
+        success_url: `${redirectUrl}?success=true`,
         mode: "payment",
         payment_method_types: ["card"],
         line_items: [
           {
-            price: priceId,
-            amount,
+            price: price.id,
+            amount: price.amount,
+            quantity: 1,
           },
         ],
       });

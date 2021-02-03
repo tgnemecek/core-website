@@ -19,13 +19,17 @@ import { makeStyles } from "@material-ui/core/styles";
 import { EventType } from "types";
 
 type FixedBarProps = {
-  toggleTicketsModal: () => void;
+  openCheckout: () => void;
   isEventValid: boolean;
+  alreadyPurchased: boolean;
+  loading: boolean;
 };
 
 const FixedBar: React.FC<FixedBarProps> = ({
-  toggleTicketsModal,
+  openCheckout,
   isEventValid,
+  alreadyPurchased,
+  loading,
 }) => {
   const classes = useStyles();
   return (
@@ -33,11 +37,11 @@ const FixedBar: React.FC<FixedBarProps> = ({
       <Button
         size="large"
         variant="contained"
-        disabled={!isEventValid}
         className={classes.buy}
-        onClick={toggleTicketsModal}
+        onClick={openCheckout}
+        disabled={alreadyPurchased || loading || !isEventValid}
       >
-        <div>Buy Tickets</div>
+        <div>{alreadyPurchased ? "Ticket Purchased" : "Buy Ticket"}</div>
       </Button>
     </div>
   );
