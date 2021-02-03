@@ -7,7 +7,7 @@ const Core = require("./services/Core");
 module.exports.handler = async (event, context) => {
   try {
     const body = JSON.parse(event.body || "{}");
-
+    return;
     // const webinarName = "101 Stress Techniques for Businesses";
     // const webinarLink = "http://www.google.com";
 

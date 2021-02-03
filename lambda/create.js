@@ -6,7 +6,7 @@ const moment = require("moment");
 module.exports.handler = async (event, context) => {
   try {
     const body = JSON.parse(event.body || "{}");
-
+    return;
     // const body = {
     //   title: "This is my webinar 2",
     //   subtitle: "We will discuss life in general.",
