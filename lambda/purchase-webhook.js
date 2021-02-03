@@ -8,16 +8,18 @@ module.exports.handler = async (event, context) => {
     const body = JSON.parse(event.body || "{}");
     const signature = event.headers["stripe-signature"];
 
-    console.dir(body.data, { depth: null });
-
-    const event = stripe.webhooks.constructEvent(
+    const stripeEvent = stripe.webhooks.constructEvent(
       body,
       signature,
       process.env.STRIPE_PURCHASE_ENDPOINT_SECRET
     );
 
-    if (event.type !== "payment_intent.succeeded") {
-      throw new Error(`Payment Intent type is incorrect, got: ${event.type}`);
+    console.dir(stripeEvent, { depth: null });
+
+    if (stripeEvent.type !== "payment_intent.succeeded") {
+      throw new Error(
+        `Payment Intent type is incorrect, got: ${stripeEvent.type}`
+      );
     }
 
     return {
