@@ -8,11 +8,7 @@ module.exports.handler = async (event, context) => {
     const body = JSON.parse(event.body || "{}");
     const signature = event.headers["stripe-signature"];
 
-    const stripeEvent = stripe.webhooks.constructEvent(
-      body,
-      signature,
-      process.env.STRIPE_PURCHASE_ENDPOINT_SECRET
-    );
+    const stripeEvent = Stripe.constructEvent(body, signature);
 
     console.dir(stripeEvent, { depth: null });
 

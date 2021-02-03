@@ -1,5 +1,7 @@
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
+const { STRIPE_PURCHASE_ENDPOINT_SECRET } = process.env;
+
 const Stripe = {
   formatPrice: (num) => num * 100,
   listProducts: async () => {
@@ -127,6 +129,18 @@ const Stripe = {
       return session;
     } catch (err) {
       console.error(`Error while creating checkout.`);
+      throw err;
+    }
+  },
+  constructEvent: async (body, signature) => {
+    try {
+      return stripe.webhooks.constructEvent(
+        body,
+        signature,
+        STRIPE_PURCHASE_ENDPOINT_SECRET
+      );
+    } catch (err) {
+      console.error(`Error while validating signature.`);
       throw err;
     }
   },
