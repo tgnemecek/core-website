@@ -8,7 +8,7 @@ module.exports.handler = async (event, context) => {
     const body = JSON.parse(event.body || "{}");
     const signature = event.headers["stripe-signature"];
 
-    const stripeEvent = Stripe.constructEvent(body, signature);
+    const stripeEvent = Stripe.constructEvent(event.body, signature);
 
     console.dir(stripeEvent, { depth: null });
 
