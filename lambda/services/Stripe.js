@@ -109,30 +109,6 @@ const Stripe = {
       throw err;
     }
   },
-  processPayment: async (args) => {
-    const { amount, title, currency, meetingId, productId } = args;
-    try {
-      const { data } = await stripe.orders.create({
-        currency,
-        items: [
-          {
-            amount,
-          },
-        ],
-        confirm: true,
-        payment_method_types: ["card"],
-        description: title,
-        metadata: {
-          meetingId,
-          productId,
-        },
-      });
-      return data;
-    } catch (err) {
-      console.error(`Error while processing payment.`);
-      throw err;
-    }
-  },
   createCheckout: async (price, redirectUrl) => {
     try {
       const session = await stripe.checkout.sessions.create({
