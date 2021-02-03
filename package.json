@@ -68,7 +68,7 @@
   "scripts": {
     "clean": "gatsby clean",
     "start": "netlify dev",
-    "prebuild": "node ./scripts/installer.js",
+    "prebuild": "cd ./functions && yarn && cd ..",
     "build": "npm run clean && gatsby build",
     "develop": "npm run clean && gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
