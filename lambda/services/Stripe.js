@@ -125,6 +125,9 @@ const Stripe = {
             quantity: 1,
           },
         ],
+        metadata: {
+          meetingId: "123123123123",
+        },
       });
       return session;
     } catch (err) {
