@@ -12,11 +12,11 @@ module.exports.handler = async (event, context) => {
       console.log("email sent");
     };
 
-    console.log({ checkout });
+    console.dir({ checkout }, { depth: null });
 
     switch (checkout.type) {
       case "checkout.session.completed":
-        if (checkout.payment_status !== "paid") break;
+        if (checkout.data.payment_status !== "paid") break;
       case "checkout.session.async_payment_succeeded":
         // sendEmail();
         break;
