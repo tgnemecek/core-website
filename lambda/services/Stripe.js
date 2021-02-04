@@ -135,10 +135,10 @@ const Stripe = {
       throw err;
     }
   },
-  constructEvent: async (body, signature) => {
+  constructEvent: async (rawBody, signature) => {
     try {
       return stripe.webhooks.constructEvent(
-        body,
+        rawBody,
         signature,
         STRIPE_PURCHASE_ENDPOINT_SECRET
       );

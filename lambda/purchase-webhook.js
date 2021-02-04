@@ -5,17 +5,29 @@ const moment = require("moment");
 
 module.exports.handler = async (event, context) => {
   try {
-    const body = JSON.parse(event.body || "{}");
     const signature = event.headers["stripe-signature"];
+    const checkout = Stripe.constructEvent(event.body, signature);
 
-    const stripeEvent = Stripe.constructEvent(event.body, signature);
+    const sendEmail = () => {
+      console.log("email sent");
+    };
 
-    console.dir(stripeEvent, { depth: null });
+    console.log(checkout.payment_status);
 
-    if (stripeEvent.type !== "payment_intent.succeeded") {
-      throw new Error(
-        `Payment Intent type is incorrect, got: ${stripeEvent.type}`
-      );
+    switch (checkout.type) {
+      case "checkout.session.completed":
+        if (checkout.payment_status !== "paid") break;
+      case "checkout.session.async_payment_succeeded":
+        // sendEmail();
+        break;
+
+      case "checkout.session.failed":
+        // sendErrorMessage()
+        break;
+      default:
+        throw new Error(
+          `Payment Intent type is incorrect, got: ${checkout.type}`
+        );
     }
 
     return {
