@@ -12,7 +12,7 @@ module.exports.handler = async (event, context) => {
       console.log("email sent");
     };
 
-    console.log(checkout.payment_status);
+    console.log({ checkout });
 
     switch (checkout.type) {
       case "checkout.session.completed":
