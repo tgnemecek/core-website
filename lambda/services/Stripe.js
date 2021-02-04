@@ -135,7 +135,7 @@ const Stripe = {
       throw err;
     }
   },
-  constructEvent: async (rawBody, signature) => {
+  constructEvent: (rawBody, signature) => {
     try {
       return stripe.webhooks.constructEvent(
         rawBody,
