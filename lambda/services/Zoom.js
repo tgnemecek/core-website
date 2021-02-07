@@ -27,7 +27,7 @@ const headers = {
 
 module.exports = {
   getMeeting: async (meetingId) => {
-    const res = await fetch(`${apiPrefix}/meetings/${meetingId}`, {
+    const res = await fetch(`https://api.zoom.us/v2/meetings/${meetingId}`, {
       method: "GET",
       headers,
     });
