@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const mjml2html = require("mjml");
 const Core = require("./Core");
-const meetingPurchaseTemplate = require("./templates/meeting-purchase");
+const meetingPurchaseTemplate = require("../templates/meeting-purchase");
 
 const { EMAIL_HOST, EMAIL_USERNAME, EMAIL_PASSWORD } = process.env;
 
