@@ -18,7 +18,7 @@ module.exports = `
         >
         <mj-text align="center" font-size="18px" font-family="Arial"
           >Thank you for your interest in the
-          <strong>{{webinarName}}</strong> webinar.</mj-text
+          <strong>{{meetingName}}</strong> event.</mj-text
         >
         <mj-text
           align="center"
@@ -28,17 +28,17 @@ module.exports = `
           font-weight="bold"
           line-height="35px"
           padding-top="20px"
-          >Here&apos;s your personal webinar access:
+          >Here&apos;s your personal meeting access:
         </mj-text>
         <mj-button
           background-color="#315cb0"
           color="white !important"
-          href="{{webinarLink}}"
+          href="{{meetingLink}}"
           font-family="Arial, sans-serif"
           padding="20px 0 0 0"
           font-weight="bold"
           font-size="16px"
-          >Go to Webinar</mj-button
+          >Join Meeting</mj-button
         >
         <mj-text
           align="center"
@@ -51,7 +51,7 @@ module.exports = `
           >if you prefer, use this link:
         </mj-text>
         <mj-button
-          href="{{webinarLink}}"
+          href="{{meetingLink}}"
           target="_blank"
           align="center"
           background-color="transparent"
@@ -59,14 +59,14 @@ module.exports = `
           font-family="Arial, sans-serif"
           text-decoration="underline"
         >
-          {{webinarLink}}
+          {{meetingLink}}
         </mj-button>
         <mj-text
           align="center"
           font-size="18px"
           font-family="Arial"
           padding-top="40px"
-          >The webinar will start at {{formattedDate}}, and you can access it
+          >The meeting will start at {{formattedDate}}, and you can access it
           using the methods above.</mj-text
         >
         <mj-button
