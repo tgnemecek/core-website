@@ -2,7 +2,7 @@ const nodemailer = require("nodemailer");
 const fs = require("fs");
 const path = require("path");
 const mjml2html = require("mjml");
-const ical = require("ical-generator");
+// const ical = require("ical-generator");
 const moment = require("moment");
 const Core = require("./Core");
 
