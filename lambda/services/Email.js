@@ -43,7 +43,8 @@ const templateSettings = {
 };
 
 const getPathToTemplate = (templateName) => {
-  return path.join(__dirname, "..", "templates", `${templateName}.mjml`);
+  return `./templates/${templateName}.mjml`;
+  // return path.join(__dirname, "..", "templates", `${templateName}.mjml`);
 };
 
 const assembleSections = (template) => {

@@ -10,8 +10,6 @@ module.exports.handler = async (event, context) => {
 
     const payment = stripeEvent.data.object;
 
-    console.dir({ payment }, { depth: null });
-
     if (payment.status !== "succeeded") {
       throw new Error("Payment has not succeeded");
     }
