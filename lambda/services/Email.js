@@ -70,11 +70,9 @@ const useTemplate = (templateName, tags) => {
     );
   }
 
-  console.log({
-    dir1: fs.readdirSync("./"),
-    dir2: fs.readdirSync("../"),
-    dir3: fs.readdirSync(__dirname),
-  });
+  console.log(fs.readdirSync("./src"));
+  console.log(fs.readdirSync(path.join(__dirname, "..")));
+  console.log(fs.readdirSync(path.join(__dirname, "..", "templates")));
 
   // Reads template file
   const pathToFile = getPathToTemplate(templateName);
