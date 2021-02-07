@@ -8,89 +8,169 @@ module.exports.handler = async (event, context) => {
     const signature = event.headers["stripe-signature"];
     const stripeEvent = Stripe.constructEvent(event.body, signature);
 
-    const checkout = stripeEvent.data.object;
+    const payment = stripeEvent.data.object;
 
     const sendEmail = () => {
       console.log("email sent");
     };
 
-    const a = {
-      checkout: {
-        id: "evt_1IHH0JG9T6XK0FGiUQuATvcW",
-        object: "event",
-        api_version: "2020-08-27",
-        created: 1612480371,
-        data: {
-          object: {
-            id:
-              "cs_test_a1uK0rlJbe4HxGOLPQCPpvWkOnmx5uvS7iNKWibFMH5PifKntfGxXLalO6",
-            object: "checkout.session",
-            allow_promotion_codes: null,
-            amount_subtotal: 2000,
-            amount_total: 2000,
-            billing_address_collection: null,
-            cancel_url:
-              "https://core-website-2020-test.netlify.app/event/2020-12-13-leading-your-life-work-from-the-inside/?cancel=true",
-            client_reference_id: null,
-            currency: "usd",
-            customer: "cus_It3659Dd3mRXvA",
-            customer_details: {
-              email: "asdasdas@asdasd.com",
-              tax_exempt: "none",
-              tax_ids: [],
-            },
-            customer_email: null,
-            livemode: false,
-            locale: null,
-            metadata: { meetingId: "123123123123" },
-            mode: "payment",
-            payment_intent: "pi_1IHGzvG9T6XK0FGir0NFQIfk",
-            payment_method_types: ["card"],
-            payment_status: "paid",
-            setup_intent: null,
-            shipping: null,
-            shipping_address_collection: null,
-            submit_type: null,
-            subscription: null,
-            success_url:
-              "https://core-website-2020-test.netlify.app/event/2020-12-13-leading-your-life-work-from-the-inside/?success=true",
-            total_details: { amount_discount: 0, amount_tax: 0 },
-          },
-        },
-        livemode: false,
-        pending_webhooks: 1,
-        request: { id: null, idempotency_key: null },
-        type: "checkout.session.completed",
-      },
-    };
+    // const a = {
+    //   payment: {
+    //     id: "pi_1IIGAzG9T6XK0FGitK1AsTq4",
+    //     object: "payment_intent",
+    //     amount: 2000,
+    //     amount_capturable: 0,
+    //     amount_received: 2000,
+    //     application: null,
+    //     application_fee_amount: null,
+    //     canceled_at: null,
+    //     cancellation_reason: null,
+    //     capture_method: "automatic",
+    //     charges: {
+    //       object: "list",
+    //       data: [
+    //         {
+    //           id: "ch_1IIGBRG9T6XK0FGiSVBBgt36",
+    //           object: "charge",
+    //           amount: 2000,
+    //           amount_captured: 2000,
+    //           amount_refunded: 0,
+    //           application: null,
+    //           application_fee: null,
+    //           application_fee_amount: null,
+    //           balance_transaction: "txn_1IIGBRG9T6XK0FGitJz4y8QN",
+    //           billing_details: {
+    //             address: {
+    //               city: null,
+    //               country: null,
+    //               line1: null,
+    //               line2: null,
+    //               postal_code: "10293",
+    //               state: null,
+    //             },
+    //             email: null,
+    //             name: null,
+    //             phone: null,
+    //           },
+    //           calculated_statement_descriptor: "Stripe",
+    //           captured: true,
+    //           created: 1612715545,
+    //           currency: "usd",
+    //           customer: null,
+    //           description: null,
+    //           destination: null,
+    //           dispute: null,
+    //           disputed: false,
+    //           failure_code: null,
+    //           failure_message: null,
+    //           fraud_details: {},
+    //           invoice: null,
+    //           livemode: false,
+    //           metadata: {},
+    //           on_behalf_of: null,
+    //           order: null,
+    //           outcome: {
+    //             network_status: "approved_by_network",
+    //             reason: null,
+    //             risk_level: "normal",
+    //             risk_score: 20,
+    //             seller_message: "Payment complete.",
+    //             type: "authorized",
+    //           },
+    //           paid: true,
+    //           payment_intent: "pi_1IIGAzG9T6XK0FGitK1AsTq4",
+    //           payment_method: "pm_1IIGBQG9T6XK0FGiojeGDj4a",
+    //           payment_method_details: {
+    //             card: {
+    //               brand: "visa",
+    //               checks: {
+    //                 address_line1_check: null,
+    //                 address_postal_code_check: "pass",
+    //                 cvc_check: "pass",
+    //               },
+    //               country: "US",
+    //               exp_month: 11,
+    //               exp_year: 2029,
+    //               fingerprint: "AIvkoQLIykQ6XJf5",
+    //               funding: "credit",
+    //               installments: null,
+    //               last4: "4242",
+    //               network: "visa",
+    //               three_d_secure: null,
+    //               wallet: null,
+    //             },
+    //             type: "card",
+    //           },
+    //           receipt_email: null,
+    //           receipt_number: null,
+    //           receipt_url:
+    //             "https://pay.stripe.com/receipts/acct_1I0WzRG9T6XK0FGi/ch_1IIGBRG9T6XK0FGiSVBBgt36/rcpt_Iu4KVsnMC9c7cvWb6XBGlm4RZuNn9SK",
+    //           refunded: false,
+    //           refunds: {
+    //             object: "list",
+    //             data: [],
+    //             has_more: false,
+    //             total_count: 0,
+    //             url: "/v1/charges/ch_1IIGBRG9T6XK0FGiSVBBgt36/refunds",
+    //           },
+    //           review: null,
+    //           shipping: null,
+    //           source: null,
+    //           source_transfer: null,
+    //           statement_descriptor: null,
+    //           statement_descriptor_suffix: null,
+    //           status: "succeeded",
+    //           transfer_data: null,
+    //           transfer_group: null,
+    //         },
+    //       ],
+    //       has_more: false,
+    //       total_count: 1,
+    //       url: "/v1/charges?payment_intent=pi_1IIGAzG9T6XK0FGitK1AsTq4",
+    //     },
+    //     client_secret:
+    //       "pi_1IIGAzG9T6XK0FGitK1AsTq4_secret_2Zgtx3P26l3fVwvXJlatw8PlI",
+    //     confirmation_method: "automatic",
+    //     created: 1612715517,
+    //     currency: "usd",
+    //     customer: null,
+    //     description: null,
+    //     invoice: null,
+    //     last_payment_error: null,
+    //     livemode: false,
+    //     metadata: {},
+    //     next_action: null,
+    //     on_behalf_of: null,
+    //     payment_method: "pm_1IIGBQG9T6XK0FGiojeGDj4a",
+    //     payment_method_options: {
+    //       card: {
+    //         installments: null,
+    //         network: null,
+    //         request_three_d_secure: "automatic",
+    //       },
+    //     },
+    //     payment_method_types: ["card"],
+    //     receipt_email: null,
+    //     review: null,
+    //     setup_future_usage: null,
+    //     shipping: null,
+    //     source: null,
+    //     statement_descriptor: null,
+    //     statement_descriptor_suffix: null,
+    //     status: "succeeded",
+    //     transfer_data: null,
+    //     transfer_group: null,
+    //   },
+    // };
 
-    console.dir({ checkout }, { depth: null });
+    console.dir({ payment }, { depth: null });
 
-    switch (stripeEvent.type) {
-      case "checkout.session.completed":
-        if (checkout.payment_status !== "paid") break;
-      case "checkout.session.async_payment_succeeded":
-        // await Email.send({
-        //   template: "meeting-purchase",
-        //   to: checkout.customer_details.email,
-        //   tags: {
-        //     // "firstName",
-        //     // "meetingName",
-        //     // "meetingLink",
-        //     // "startDate",
-        //     // "endDate"
-        //   },
-        // });
-        break;
-
-      case "checkout.session.failed":
-        // sendErrorMessage()
-        break;
-      default:
-        throw new Error(
-          `Payment Intent type is incorrect, got: ${checkout.type}`
-        );
+    if (payment.status !== "succeeded") {
+      throw new Error("Payment has not succeeded");
     }
+
+    // Send email here
+    console.log("Operation successful");
 
     return {
       statusCode: 200,

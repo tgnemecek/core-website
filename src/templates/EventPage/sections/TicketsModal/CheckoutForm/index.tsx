@@ -113,6 +113,11 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
     const payload = await stripe.confirmCardPayment(clientSecret, {
       payment_method: {
         card: elements.getElement(CardElement),
+        metadata: formState,
+        billing_details: {
+          email: formState.email,
+          name: `${formState.firstName} ${formState.lastName}`,
+        },
       },
     });
     console.log({ payload });
