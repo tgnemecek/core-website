@@ -50,12 +50,6 @@ const getPathToTemplate = (templateName) => {
 const assembleSections = (template) => {
   const sections = ["head", "hero", "footer"];
 
-  console.log({
-    dir1: fs.readdirSync("./"),
-    dir2: fs.readdirSync("../"),
-    dir3: fs.readdirSync(__dirname),
-  });
-
   return sections.reduce((acc, cur) => {
     const pathToFile = getPathToTemplate(cur);
     const file = fs.readFileSync(pathToFile, {
@@ -75,6 +69,12 @@ const useTemplate = (templateName, tags) => {
       `Error in useTemplate(). Required fields missing: ${invalid.join(", ")}.`
     );
   }
+
+  console.log({
+    dir1: fs.readdirSync("./"),
+    dir2: fs.readdirSync("../"),
+    dir3: fs.readdirSync(__dirname),
+  });
 
   // Reads template file
   const pathToFile = getPathToTemplate(templateName);
