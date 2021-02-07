@@ -27,9 +27,11 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
   goToSuccess,
   goToFailed,
 }) => {
-  const { setTicketsModalOpen, loading, setLoading } = React.useContext(
-    EventContext
-  );
+  const {
+    setTicketsModalOpen,
+    setAlreadyPurchased,
+    setLoading,
+  } = React.useContext(EventContext);
 
   const [disabled, setDisabled] = React.useState(true);
   const [clientSecret, setClientSecret] = React.useState("");
@@ -130,6 +132,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
     if (payload.error) {
       goToFailed();
     } else {
+      setAlreadyPurchased(true);
       goToSuccess();
     }
     setLoading(false);

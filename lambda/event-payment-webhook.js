@@ -14,23 +14,28 @@ module.exports.handler = async (event, context) => {
       throw new Error("Payment has not succeeded");
     }
 
-    // Get meeting information
-    const { meetingId } = payment.metadata;
-    const meeting = await Zoom.getMeeting(meetingId);
-
     // Get buyer information
     const { name, email } = payment.charges.data[0].billing_details;
-    const firstName = name.split("_")[0];
+    const [firstName, lastName] = name.split("_");
+
+    // Get meeting information
+    const { meetingId } = payment.metadata;
+    const { joinUrl, topic, startTime } = await Zoom.addRegistrant({
+      meetingId,
+      email,
+      firstName,
+      lastName,
+    });
 
     await Email.send({
       template: "meeting-purchase",
       to: email,
       tags: {
         firstName,
-        meetingName: meeting.topic,
-        meetingLink: meeting.join_url,
-        startDate: moment(meeting.start_time),
-        endDate: moment(meeting.start_time).add(meeting.duration, "minutes"),
+        meetingName: topic,
+        meetingLink: joinUrl,
+        startDate: moment(startTime),
+        endDate: moment(startTime).add(60, "minutes"),
       },
     });
     console.log("Operation successful");

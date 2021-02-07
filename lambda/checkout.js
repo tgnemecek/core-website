@@ -13,9 +13,12 @@ module.exports.handler = async (event, context) => {
   try {
     const body = JSON.parse(event.body || "{}");
 
-    const price = await Stripe.getPrice(body.ticketId);
-
-    const session = await Stripe.createCheckout(price, body.redirectUrl);
+    await Zoom.addRegistrant({
+      meetingId: "87527721758",
+      email: "email@email.com",
+      firstName: "First Name",
+      lastName: "Last Name",
+    });
 
     return {
       statusCode: 200,

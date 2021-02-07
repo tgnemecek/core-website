@@ -36,20 +36,7 @@ const EventPage: React.FC<EventPageWithLocation> = ({
   const [loading, setLoading] = React.useState(false);
   const [stripe, setStripe] = React.useState<Stripe>();
   const [ticketsModalOpen, setTicketsModalOpen] = React.useState(false);
-
-  // console.log({
-  //   title,
-  //   subtitle,
-  //   description,
-  //   image,
-  //   video,
-  //   date,
-  //   duration,
-  //   language,
-  //   isOnline,
-  //   location,
-  //   tickets,
-  // });
+  const [alreadyPurchased, setAlreadyPurchased] = React.useState(false);
 
   const getPriceRange = () => {
     const { min, max } = event.tickets.reduce(
@@ -68,83 +55,12 @@ const EventPage: React.FC<EventPageWithLocation> = ({
     return `$${min} - $${max}`;
   };
 
-  // const toggleTicketsModal = async () => {
-  //   setLoading(true);
-  //   try {
-  //     const res = await fetch(`/.netlify/functions/checkout`, {
-  //       method: "POST",
-  //       body: JSON.stringify({
-  //         ticketId: "price_1IDMEYG9T6XK0FGiV7ZXA2EI",
-  //         redirectUrl: `${origin}${pathname}`,
-  //       }),
-  //     });
-  //     const session = await res.json();
-
-  //     const result = await stripe.redirectToCheckout({
-  //       sessionId: session.id,
-  //     });
-
-  //     if (result.error) {
-  //       throw result.error;
-  //     }
-  //   } catch (err) {
-  //     enqueueSnackbar("Something went wrong. Please try again later.", {
-  //       variant: "error",
-  //     });
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
-
-  // const prepareStripe = async () => {
-  //   const newStripe = await stripePromise;
-  //   setStripe(newStripe);
-  // };
-
-  const alreadyPurchased = React.useMemo(() => {
-    if (search) {
-      const params = new URLSearchParams(search);
-      if (params.get("success") === "true") {
-        return true;
-      }
-    }
-    return false;
-  }, [search]);
-
-  const isTicketValid = ({ endsOn }: TicketType) => {
-    const now = moment();
-    const { date } = event;
-
-    if (endsOn === "oneWeek") {
-      return now.add(1, "week").isBefore(date);
-    }
-    if (endsOn === "startOfDay") {
-      return now.isBefore(moment(date).startOf("day"));
-    }
-    if (endsOn === "startOfEvent") {
-      return now.isBefore(date);
-    }
-    return false;
-  };
-
-  // React.useEffect(() => {
-  //   const body = document.body;
-  //   if (loading) {
-  //     body.style.overflowY = "hidden";
-  //   } else {
-  //     body.style.overflowY = "auto";
-  //   }
-  // }, [loading]);
-
-  // React.useEffect(() => {
-  //   prepareStripe();
-  // }, []);
-
   return (
     <EventContext.Provider
       value={{
         event,
         alreadyPurchased,
+        setAlreadyPurchased,
         loading,
         setLoading,
         priceRange: getPriceRange(),

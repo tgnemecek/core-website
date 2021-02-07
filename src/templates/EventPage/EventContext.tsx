@@ -5,6 +5,7 @@ export type EventContextType = {
   event: EventType;
   priceRange: string;
   alreadyPurchased: boolean;
+  setAlreadyPurchased: React.Dispatch<React.SetStateAction<boolean>>;
   loading: boolean;
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
   setTicketsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
