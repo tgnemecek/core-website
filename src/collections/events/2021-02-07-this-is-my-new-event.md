@@ -1,4 +1,5 @@
 ---
+collection: events
 meetingId: 87527721758
 productId: prod_Iu8MGvyTZNnZRo
 title: aaa
