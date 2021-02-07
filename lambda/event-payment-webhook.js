@@ -18,7 +18,7 @@ module.exports.handler = async (event, context) => {
 
     // Get meeting information
     const { meetingId } = payment.charges.data[0].metadata;
-    const meeting = Zoom.getMeeting(meetingId);
+    const meeting = await Zoom.getMeeting(meetingId);
 
     // Get buyer information
     const { name, email } = payment.charges.data[0].billing_details;
