@@ -1,25 +1,15 @@
 import React from "react";
-import moment from "moment";
-import { graphql, PageProps } from "gatsby";
-import { loadStripe, Stripe } from "@stripe/stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
-import {
-  Typography,
-  CircularProgress,
-  Modal,
-  Dialog,
-  IconButton,
-  Paper,
-} from "@material-ui/core";
+import { Dialog, IconButton, Paper } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import CloseIcon from "@material-ui/icons/Close";
 import { TicketType } from "types";
 import EventContext from "../../EventContext";
-import FeatureList from "../../FeatureList";
 import TicketsAside from "./TicketsAside";
 import TicketsMain from "./TicketsMain";
 import CheckoutForm from "./CheckoutForm";
-import SuccessMessage from "./SuccessMessage";
+import ResultMessage from "./ResultMessage";
 
 const stripePromise = loadStripe(process.env.GATSBY_STRIPE_PUBLIC_KEY);
 
@@ -71,7 +61,22 @@ const TicketsModal: React.FC<TicketsModalProps> = ({ open }) => {
             />
           </Elements>
         )}
-        {stage === "success" && <SuccessMessage />}
+        {stage === "success" && (
+          <ResultMessage
+            type="success"
+            title="Thank you for the purchase!"
+            subtitle="Please check your email for more information about the event and
+          instructions on how to join."
+            code="Confirmation code: #123123123"
+          />
+        )}
+        {stage === "failed" && (
+          <ResultMessage
+            type="failed"
+            title="Something went wrong."
+            subtitle="Please try again later."
+          />
+        )}
       </Paper>
     </Dialog>
   );

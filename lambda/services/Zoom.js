@@ -15,33 +15,25 @@ const generateToken = () => {
   );
 };
 
+const headers = {
+  Authorization: `Bearer ${generateToken()}`,
+  "User-Agent": "Zoom-api-Jwt-Request",
+  "content-type": "application/json",
+};
+
 module.exports = {
-  getMeeting: async () => {
+  getMeeting: async (meetingId) => {
     const res = await fetch(
-      `https://api.zoom.us/v2/users/${process.env.ZOOM_USER_ID}/meetings`,
+      `https://api.zoom.us/v2/users/${process.env.ZOOM_USER_ID}/meetings/${meetingId}`,
       {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${generateToken()}`,
-          "User-Agent": "Zoom-api-Jwt-Request",
-          "content-type": "application/json",
-        },
-        body: JSON.stringify({
-          topic: "Topic here",
-          type: 2,
-          // start_time: moment(startDate).utcOffset(0).format() "2021-09-28T23:00:00.000Z",
-          duration: 15,
-          timezone: "America/New_York",
-          password: "1234",
-          agenda: "agenda here",
-        }),
+        method: "GET",
+        headers,
       }
     );
     if (res.status === 201) {
-      const { join_url: url, id: meetingId } = await res.json();
-      return { url, meetingId };
+      return await res.json();
     } else {
-      throw new Error(`Error while creating Zoom meeting.`, res);
+      throw new Error(`Error while fetching Zoom meeting.`, res);
     }
   },
   createMeeting: async ({ title, startDate, duration }) => {
@@ -50,11 +42,7 @@ module.exports = {
       `https://api.zoom.us/v2/users/${process.env.ZOOM_USER_ID}/meetings`,
       {
         method: "POST",
-        headers: {
-          Authorization: `Bearer ${generateToken()}`,
-          "User-Agent": "Zoom-api-Jwt-Request",
-          "content-type": "application/json",
-        },
+        headers,
         body: JSON.stringify({
           topic: title,
           type: 2, // 2 = scheduled
@@ -104,11 +92,7 @@ module.exports = {
       `https://api.zoom.us/v2/users/${process.env.ZOOM_USER_ID}/meetings/${meetingId}/registrants`,
       {
         method: "POST",
-        headers: {
-          Authorization: `Bearer ${generateToken()}`,
-          "User-Agent": "Zoom-api-Jwt-Request",
-          "content-type": "application/json",
-        },
+        headers,
         body: JSON.stringify({
           email,
           first_name: firstName,

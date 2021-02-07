@@ -501,7 +501,12 @@ const config: ExtendedConfig = {
         },
         {
           label: "Meeting ID",
-          name: "meetingID",
+          name: "meetingId",
+          widget: "hidden",
+        },
+        {
+          label: "Product ID",
+          name: "productId",
           widget: "hidden",
         },
         {
@@ -523,7 +528,7 @@ const config: ExtendedConfig = {
         {
           label: "Image",
           name: "image",
-          widget: "string",
+          widget: "image",
         },
         {
           label: "Video",

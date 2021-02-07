@@ -7,23 +7,34 @@ import {
   Button,
   Paper,
 } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
 import CheckIcon from "@material-ui/icons/Check";
+import CloseIcon from "@material-ui/icons/Close";
+import { makeStyles } from "@material-ui/core/styles";
 import { useTransition, animated } from "react-spring";
 import EventContext from "./../../EventContext";
 import ModalFooter from "./ModalFooter";
 
-type SuccessMessageProps = {};
+type ResultMessageProps = {
+  title: string;
+  subtitle: string;
+  code?: string;
+  type: "success" | "failed";
+};
 
-const SuccessMessage: React.FC<SuccessMessageProps> = () => {
+const ResultMessage: React.FC<ResultMessageProps> = ({
+  title,
+  subtitle,
+  code,
+  type,
+}) => {
   const { setTicketsModalOpen } = React.useContext(EventContext);
 
   const classes = useStyles();
 
-  const [showCheckmark, setShowCheckmark] = React.useState(false);
+  const [showIcon, setShowIcon] = React.useState(false);
   const [showButton, setShowButton] = React.useState(false);
 
-  const checkmarkTransitions = useTransition(showCheckmark, null, {
+  const iconTransitions = useTransition(showIcon, null, {
     config: {
       friction: 100,
       tension: 200,
@@ -42,7 +53,7 @@ const SuccessMessage: React.FC<SuccessMessageProps> = () => {
   });
 
   React.useEffect(() => {
-    setShowCheckmark(true);
+    setShowIcon(true);
     setTimeout(() => {
       setShowButton(true);
     }, 1000);
@@ -52,27 +63,30 @@ const SuccessMessage: React.FC<SuccessMessageProps> = () => {
     <div className={classes.container}>
       <div className={classes.textWrapper}>
         <div>
-          {checkmarkTransitions.map(
+          {iconTransitions.map(
             ({ item, key, props }) =>
               item && (
                 <animated.div
                   key={key}
                   style={{ ...props, display: "inline-block" }}
                 >
-                  <CheckIcon className={classes.checkmark} />
+                  {type === "success" ? (
+                    <CheckIcon className={classes.checkmark} />
+                  ) : (
+                    <CloseIcon className={classes.x} />
+                  )}
                 </animated.div>
               )
           )}
         </div>
         <Typography variant="body1" className={classes.thanks}>
-          Thank you for the purchase!
+          {title}
         </Typography>
         <Typography variant="body1" className={classes.info}>
-          Please check your email for more information about the event and
-          instructions on how to join.
+          {subtitle}
         </Typography>
         <Typography variant="body1" className={classes.code}>
-          Confirmation code: #123123123
+          {code}
         </Typography>
       </div>
       <ModalFooter>
@@ -114,6 +128,12 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "100px",
     color: theme.palette.success.main,
   },
+  x: {
+    border: `5px solid ${theme.palette.error.main}`,
+    borderRadius: "50%",
+    fontSize: "100px",
+    color: theme.palette.error.main,
+  },
   thanks: {
     fontWeight: "bold",
   },
@@ -125,4 +145,4 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default SuccessMessage;
+export default ResultMessage;

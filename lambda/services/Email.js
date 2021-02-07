@@ -2,8 +2,6 @@ const nodemailer = require("nodemailer");
 const fs = require("fs");
 const path = require("path");
 const mjml2html = require("mjml");
-// const ical = require("ical-generator");
-const moment = require("moment");
 const Core = require("./Core");
 
 const { EMAIL_HOST, EMAIL_USERNAME, EMAIL_PASSWORD } = process.env;
@@ -44,6 +42,76 @@ const templateSettings = {
   },
 };
 
+const getPathToTemplate = (templateName) => {
+  return path.join(__dirname, "..", "templates", `${templateName}.mjml`);
+};
+
+const assembleSections = (template) => {
+  const sections = ["head", "hero", "footer"];
+
+  return sections.reduce((acc, cur) => {
+    const pathToFile = getPathToTemplate(cur);
+    const file = fs.readFileSync(pathToFile, {
+      encoding: "utf-8",
+    });
+    return acc.split(`{{${cur}}}`).join(file);
+  }, template);
+};
+
+const useTemplate = (templateName, tags) => {
+  // Check if all required fields are provided
+  const requiredTags = templateSettings[templateName].tags;
+  const invalid = requiredTags.filter((key) => !tags[key]);
+
+  if (invalid.length > 0) {
+    throw new Error(
+      `Error in useTemplate(). Required fields missing: ${invalid.join(", ")}.`
+    );
+  }
+
+  // Reads template file
+  const pathToFile = getPathToTemplate(templateName);
+
+  const file = fs.readFileSync(pathToFile, {
+    encoding: "utf-8",
+  });
+
+  const { subject, hasCalendarLink, dateFormatter } = templateSettings[
+    templateName
+  ];
+
+  const formattedTags = {
+    ...tags,
+    formattedDate: dateFormatter(tags.startDate),
+    googleCalendarLink:
+      hasCalendarLink &&
+      Core.generateCalendarLink({
+        title: tags.meetingName,
+        description: `Please join at the time of the event using your unique and personal link: ${tags.meetingLink}`,
+        startDate: tags.startDate,
+        endDate: tags.endDate,
+      }),
+  };
+
+  // Replace tags
+  const replaced = Object.keys(formattedTags).reduce((acc, key) => {
+    return acc.split(`{{${key}}}`).join(formattedTags[key]);
+  }, file);
+
+  // Add sections
+  const finalString = assembleSections(replaced);
+
+  const { html } = mjml2html(finalString);
+
+  if (!subject) {
+    throw new Error(
+      `Webinar Subject not found. Check the provided template name: ${templateName}.`
+    );
+  }
+
+  return { subject, html };
+};
+
 const Email = {
   verify: async () => {
     try {
@@ -52,75 +120,6 @@ const Email = {
       console.error(`Error while verifying email host.`);
       throw err;
     }
-  },
-  getPathToTemplate: (templateName) => {
-    return path.join(__dirname, "..", "templates", `${templateName}.mjml`);
-  },
-  assembleSections: (template) => {
-    const sections = ["head", "hero", "footer"];
-
-    return sections.reduce((acc, cur) => {
-      const pathToFile = Email.getPathToTemplate(cur);
-      const file = fs.readFileSync(pathToFile, {
-        encoding: "utf-8",
-      });
-      return acc.split(`{{${cur}}}`).join(file);
-    }, template);
-  },
-  useTemplate: (templateName, tags) => {
-    // Check if all required fields are provided
-    const requiredTags = templateSettings[templateName].tags;
-    const invalid = requiredTags.filter((key) => !tags[key]);
-
-    if (invalid.length > 0) {
-      throw new Error(
-        `Error in Email.useTemplate(). Required fields missing: ${invalid.join(
-          ", "
-        )}.`
-      );
-    }
-
-    // Reads template file
-    const pathToFile = Email.getPathToTemplate(templateName);
-
-    const file = fs.readFileSync(pathToFile, {
-      encoding: "utf-8",
-    });
-
-    const { subject, hasCalendarLink, dateFormatter } = templateSettings[
-      templateName
-    ];
-
-    const formattedTags = {
-      ...tags,
-      formattedDate: dateFormatter(tags.startDate),
-      googleCalendarLink:
-        hasCalendarLink &&
-        Core.generateCalendarLink({
-          title: tags.meetingName,
-          description: `Here is the event link: ${tags.meetingLink}`,
-          startDate: tags.startDate,
-          endDate: tags.endDate,
-        }),
-    };
-
-    // Replace tags
-    const replaced = Object.keys(formattedTags).reduce((acc, key) => {
-      return acc.split(`{{${key}}}`).join(formattedTags[key]);
-    }, file);
-
-    // Add sections
-    const finalString = Email.assembleSections(replaced);
-
-    const { html } = mjml2html(finalString);
-
-    if (!subject) {
-      throw new Error(
-        `Webinar Subject not found. Check the provided template name: ${templateName}.`
-      );
-    }
-
-    return { subject, html };
   },
   send: async (data) => {
     const { template, to, tags } = data;
@@ -134,7 +133,7 @@ const Email = {
       );
     }
 
-    const { html, subject } = Email.useTemplate(template, tags);
+    const { html, subject } = useTemplate(template, tags);
 
     try {
       await transporter.sendMail({

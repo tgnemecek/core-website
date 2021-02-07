@@ -42,7 +42,7 @@ const AdminConsole = () => {
           console.log({ access_token });
 
           if (!productId) {
-            const res = await fetch("/.netlify/functions/create", {
+            const res = await fetch("/.netlify/functions/event-create", {
               method: "POST",
               body: str,
               headers: {
@@ -50,9 +50,10 @@ const AdminConsole = () => {
               },
               credentials: "include",
             });
-            const { productId, tickets } = await res.json();
+            const { productId, meetingId, tickets } = await res.json();
 
             dataEntry = dataEntry.set("productId", productId);
+            dataEntry = dataEntry.set("meetingId", meetingId);
             dataEntry = dataEntry.set("tickets", tickets);
             return dataEntry;
           } else {

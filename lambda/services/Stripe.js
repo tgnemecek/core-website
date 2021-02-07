@@ -28,12 +28,15 @@ const Stripe = {
       throw err;
     }
   },
-  createPrice: async (ticket, productId) => {
+  createPrice: async (ticket, productId, meetingId) => {
     try {
       const { id } = await stripe.prices.create({
         currency: "usd",
         unit_amount: Stripe.formatPrice(ticket.price),
         product: productId,
+        metadata: {
+          meetingId,
+        },
       });
       return {
         ...ticket,
@@ -55,7 +58,7 @@ const Stripe = {
       });
       const ticketsWithId = await Promise.all(
         tickets.map((ticket) => {
-          return Stripe.createPrice(ticket, productId);
+          return Stripe.createPrice(ticket, productId, meetingId);
         })
       );
 
@@ -108,30 +111,6 @@ const Stripe = {
       return data;
     } catch (err) {
       console.error(`Error while retrieving prices.`);
-      throw err;
-    }
-  },
-  createCheckout: async (price, redirectUrl) => {
-    try {
-      const session = await stripe.checkout.sessions.create({
-        cancel_url: `${redirectUrl}?cancel=true`,
-        success_url: `${redirectUrl}?success=true`,
-        mode: "payment",
-        payment_method_types: ["card"],
-        line_items: [
-          {
-            price: price.id,
-            amount: price.amount,
-            quantity: 1,
-          },
-        ],
-        metadata: {
-          productId: price.product,
-        },
-      });
-      return session;
-    } catch (err) {
-      console.error(`Error while creating checkout.`);
       throw err;
     }
   },
