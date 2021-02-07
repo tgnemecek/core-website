@@ -31,7 +31,7 @@ module.exports = {
       method: "GET",
       headers,
     });
-    if (res.status === 201) {
+    if (res.status === 200) {
       return await res.json();
     } else {
       throw new Error(`Error while fetching Zoom meeting.`, res);
