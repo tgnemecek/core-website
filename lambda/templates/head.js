@@ -1,3 +1,4 @@
+module.exports = `
 <mj-head>
   <mj-attributes>
     <mj-all padding="0px"></mj-all>
@@ -13,3 +14,4 @@
     >a { text-decoration: none!important; color: inherit!important; }</mj-style
   >
 </mj-head>
+`;

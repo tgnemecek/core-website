@@ -1,7 +1,12 @@
+const head = require("./head");
+const hero = require("./hero");
+const footer = require("./footer");
+
+module.exports = `
 <mjml>
-  {{head}}
+  ${head}
   <mj-body background-color="#bedae6">
-    {{hero}}
+    ${hero}
     <mj-section padding-bottom="20px" padding-top="10px">
       <mj-column>
         <mj-text
@@ -94,8 +99,9 @@
           >
           Team
         </mj-text>
-        {{footer}}
+        ${footer}
       </mj-column>
     </mj-section>
   </mj-body>
 </mjml>
+`;

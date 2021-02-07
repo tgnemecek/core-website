@@ -3,6 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const mjml2html = require("mjml");
 const Core = require("./Core");
+const meetingPurchaseTemplate = require("./templates/meeting-purchase");
 
 const { EMAIL_HOST, EMAIL_USERNAME, EMAIL_PASSWORD } = process.env;
 
@@ -21,6 +22,7 @@ const transporter = nodemailer.createTransport(options, defaults);
 
 const templateSettings = {
   "meeting-purchase": {
+    template: meetingPurchaseTemplate,
     tags: ["firstName", "meetingName", "meetingLink", "startDate", "endDate"],
     subject: "Here's your meeting link",
     hasCalendarLink: true,
@@ -42,22 +44,22 @@ const templateSettings = {
   },
 };
 
-const getPathToTemplate = (templateName) => {
-  return `./templates/${templateName}.mjml`;
-  // return path.join(__dirname, "..", "templates", `${templateName}.mjml`);
-};
+// const getPathToTemplate = (templateName) => {
+//   return `./templates/${templateName}.mjml`;
+//   // return path.join(__dirname, "..", "templates", `${templateName}.mjml`);
+// };
 
-const assembleSections = (template) => {
-  const sections = ["head", "hero", "footer"];
+// const assembleSections = (template) => {
+//   const sections = ["head", "hero", "footer"];
 
-  return sections.reduce((acc, cur) => {
-    const pathToFile = getPathToTemplate(cur);
-    const file = fs.readFileSync(pathToFile, {
-      encoding: "utf-8",
-    });
-    return acc.split(`{{${cur}}}`).join(file);
-  }, template);
-};
+//   return sections.reduce((acc, cur) => {
+//     const pathToFile = getPathToTemplate(cur);
+//     const file = fs.readFileSync(pathToFile, {
+//       encoding: "utf-8",
+//     });
+//     return acc.split(`{{${cur}}}`).join(file);
+//   }, template);
+// };
 
 const useTemplate = (templateName, tags) => {
   // Check if all required fields are provided
@@ -70,20 +72,19 @@ const useTemplate = (templateName, tags) => {
     );
   }
 
-  console.log(fs.readdirSync("./src"));
-  console.log(fs.readdirSync(path.join(__dirname, "..")));
-  console.log(fs.readdirSync(path.join(__dirname, "..", "templates")));
-
   // Reads template file
-  const pathToFile = getPathToTemplate(templateName);
+  // const pathToFile = getPathToTemplate(templateName);
 
-  const file = fs.readFileSync(pathToFile, {
-    encoding: "utf-8",
-  });
+  // const file = fs.readFileSync(pathToFile, {
+  //   encoding: "utf-8",
+  // });
 
-  const { subject, hasCalendarLink, dateFormatter } = templateSettings[
-    templateName
-  ];
+  const {
+    subject,
+    hasCalendarLink,
+    dateFormatter,
+    template,
+  } = templateSettings[templateName];
 
   const formattedTags = {
     ...tags,
@@ -101,12 +102,9 @@ const useTemplate = (templateName, tags) => {
   // Replace tags
   const replaced = Object.keys(formattedTags).reduce((acc, key) => {
     return acc.split(`{{${key}}}`).join(formattedTags[key]);
-  }, file);
+  }, template);
 
-  // Add sections
-  const finalString = assembleSections(replaced);
-
-  const { html } = mjml2html(finalString);
+  const { html } = mjml2html(replaced);
 
   if (!subject) {
     throw new Error(

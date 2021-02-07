@@ -1,3 +1,4 @@
+module.exports = `
 <mj-section>
   <mj-column width="100%">
     <mj-image
@@ -7,3 +8,4 @@
     ></mj-image>
   </mj-column>
 </mj-section>
+`;
