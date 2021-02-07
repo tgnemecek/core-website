@@ -68,7 +68,8 @@ const AdminConsole = () => {
             return dataEntry;
           }
         } catch (err) {
-          throw err;
+          return null;
+          // throw err;
         }
       },
     });

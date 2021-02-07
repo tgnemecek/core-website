@@ -1,6 +1,5 @@
 const Zoom = require("./services/Zoom");
 const Stripe = require("./services/Stripe");
-const Core = require("./services/Core");
 const moment = require("moment");
 
 module.exports.handler = async (event, context) => {

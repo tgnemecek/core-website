@@ -1,6 +1,6 @@
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
-const { STRIPE_PURCHASE_ENDPOINT_SECRET } = process.env;
+const { STRIPE_PAYMENT_INTENT_SECRET } = process.env;
 
 const Stripe = {
   formatPrice: (num) => num * 100,
@@ -134,7 +134,7 @@ const Stripe = {
       return stripe.webhooks.constructEvent(
         rawBody,
         signature,
-        STRIPE_PURCHASE_ENDPOINT_SECRET
+        STRIPE_PAYMENT_INTENT_SECRET
       );
     } catch (err) {
       console.error(`Error while validating signature.`);
