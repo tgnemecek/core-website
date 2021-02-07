@@ -76,8 +76,15 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
 
   const handleChange = (key: keyof FormState) => {
     return (value: string) => {
+      let formattedValue: string;
+      if (["firstName", "lastName"].includes(key)) {
+        formattedValue = value.replace(/_/g, "");
+      }
       setFormErrors((prev) => ({ ...prev, [key]: "" }));
-      setFormState((prev) => ({ ...prev, [key]: value }));
+      setFormState((prev) => ({
+        ...prev,
+        [key]: formattedValue !== undefined ? formattedValue : value,
+      }));
     };
   };
 
@@ -113,10 +120,9 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
     const payload = await stripe.confirmCardPayment(clientSecret, {
       payment_method: {
         card: elements.getElement(CardElement),
-        metadata: formState,
         billing_details: {
           email: formState.email,
-          name: `${formState.firstName} ${formState.lastName}`,
+          name: `${formState.firstName}_${formState.lastName}`,
         },
       },
     });
@@ -145,12 +151,14 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
           <FormInput
             label="First Name"
             type="text"
+            value={formState.firstName}
             onChange={handleChange("firstName")}
             error={formErrors.firstName}
           />
           <FormInput
             label="Last Name"
             type="text"
+            value={formState.lastName}
             onChange={handleChange("lastName")}
             error={formErrors.lastName}
           />
@@ -158,6 +166,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
         <FormInput
           label="Email"
           type="email"
+          value={formState.email}
           onChange={handleChange("email")}
           error={formErrors.email}
         />

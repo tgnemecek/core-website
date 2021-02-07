@@ -140,6 +140,9 @@ const Stripe = {
       const paymentIntent = await stripe.paymentIntents.create({
         amount: price.unit_amount,
         currency: price.currency,
+        metadata: {
+          meetingId: "123123123",
+        },
       });
       return paymentIntent;
     } catch (err) {
