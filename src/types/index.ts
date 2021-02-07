@@ -55,6 +55,13 @@ export type MemberType = {
 
 export type LanguageType = "EN" | "ES";
 
+export type TicketType = {
+  id: string;
+  description: string;
+  price: number;
+  endsOn: "startOfEvent" | "startOfDay" | "oneWeek";
+};
+
 export type EventType = {
   slug?: string;
   title: string;
@@ -67,11 +74,7 @@ export type EventType = {
   language: LanguageType | LanguageType[];
   isOnline: boolean;
   location?: string;
-  tickets: {
-    description: string;
-    price: number;
-    endsOn: "startOfEvent" | "startOfDay" | "oneWeek";
-  }[];
+  tickets: TicketType[];
 };
 
 // Data Transfer Objects:

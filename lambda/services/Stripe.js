@@ -126,12 +126,24 @@ const Stripe = {
           },
         ],
         metadata: {
-          meetingId: "123123123123",
+          productId: price.product,
         },
       });
       return session;
     } catch (err) {
       console.error(`Error while creating checkout.`);
+      throw err;
+    }
+  },
+  createPaymentIntent: async (price) => {
+    try {
+      const paymentIntent = await stripe.paymentIntents.create({
+        amount: price.unit_amount,
+        currency: price.currency,
+      });
+      return paymentIntent;
+    } catch (err) {
+      console.error(`Error while creating Payment Intent.`);
       throw err;
     }
   },

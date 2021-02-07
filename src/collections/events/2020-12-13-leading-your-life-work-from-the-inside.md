@@ -54,7 +54,7 @@ description: >-
   **Plus much more including:**. Videos/audios of sessions; instructional materials; lifetime access to group's website portal where all resources are available.
 image: https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F108047217%2F306828581984%2F1%2Foriginal.20200807-184200?w=800&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C31%2C1000%2C500&s=adb8718dcecd2fa87215018fa3fb534f
 video: https://www.youtube.com/watch?v=Z2OPFWTLiHE
-date: 2021-02-11T23:36:30.604Z
+date: 2021-02-20T23:36:30.604Z
 duration: 60
 language:
   - EN
@@ -63,7 +63,13 @@ tickets:
   - description: Early Bird
     price: 10
     endsOn: oneWeek
-  - description: General Admission
+    id: price_1IDMEYG9T6XK0FGiV7ZXA2EI
+  - description: Random Admission
     price: 20
+    endsOn: startOfDay
+    id: price_1IDMEYG9T6XK0FGiV7ZXA2Eb
+  - description: General Admission
+    price: 30
     endsOn: startOfEvent
+    id: price_1IDMEYG9T6XK0FGiV7ZXA2Ea
 ---

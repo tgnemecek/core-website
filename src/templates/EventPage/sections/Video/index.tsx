@@ -4,10 +4,13 @@ import { makeStyles } from "@material-ui/core/styles";
 import YouTube from "react-youtube";
 import { getVideoId } from "utils";
 import { EventType } from "types";
+import EventContext from "../../EventContext";
 
-type VideoProps = Pick<EventType, "video">;
+const Video: React.FC = () => {
+  const {
+    event: { video },
+  } = React.useContext(EventContext);
 
-const Video: React.FC<VideoProps> = ({ video }) => {
   const classes = useStyles();
 
   if (!video) return null;

@@ -1,36 +1,17 @@
 import React from "react";
-import moment from "moment";
-import {
-  Container,
-  Button,
-  Card,
-  CardContent,
-  CardActions,
-  Typography,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-} from "@material-ui/core";
-import PlaceIcon from "@material-ui/icons/Place";
-import LanguageIcon from "@material-ui/icons/Language";
-import AlarmIcon from "@material-ui/icons/Alarm";
+import { Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { EventType } from "types";
+import { isEventValid } from "utils";
+import EventContext from "../../EventContext";
 
-type FixedBarProps = {
-  openCheckout: () => void;
-  isEventValid: boolean;
-  alreadyPurchased: boolean;
-  loading: boolean;
-};
+const FixedBar: React.FC = () => {
+  const {
+    setTicketsModalOpen,
+    alreadyPurchased,
+    loading,
+    event,
+  } = React.useContext(EventContext);
 
-const FixedBar: React.FC<FixedBarProps> = ({
-  openCheckout,
-  isEventValid,
-  alreadyPurchased,
-  loading,
-}) => {
   const classes = useStyles();
   return (
     <div className={classes.fixedBar}>
@@ -38,8 +19,8 @@ const FixedBar: React.FC<FixedBarProps> = ({
         size="large"
         variant="contained"
         className={classes.buy}
-        onClick={openCheckout}
-        disabled={alreadyPurchased || loading || !isEventValid}
+        onClick={() => setTicketsModalOpen(true)}
+        disabled={alreadyPurchased || loading || !isEventValid(event)}
       >
         <div>{alreadyPurchased ? "Ticket Purchased" : "Buy Ticket"}</div>
       </Button>

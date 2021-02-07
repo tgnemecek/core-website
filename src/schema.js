@@ -139,6 +139,7 @@ const EventPage = `
   }
 
   type Ticket {
+    id: String!
     description: String!
     price: Int!
     endsOn: String!

@@ -11,26 +11,14 @@ import {
 import { makeStyles } from "@material-ui/core/styles";
 import { Image, Language, EventStatus } from "components";
 import { getTintedBackground } from "utils";
-import { EventType } from "types";
+import EventContext from "../../EventContext";
 
-type HeaderProps = Pick<
-  EventType,
-  "title" | "subtitle" | "date" | "image" | "isOnline" | "duration" | "language"
-> & {
-  priceRange: string;
-  isEventValid: boolean;
-};
+const Header: React.FC = () => {
+  const {
+    event: { title, subtitle, date, image, isOnline, language, tickets },
+    priceRange,
+  } = React.useContext(EventContext);
 
-const Header: React.FC<HeaderProps> = ({
-  title,
-  subtitle,
-  date,
-  image,
-  isOnline,
-  language,
-  priceRange,
-  isEventValid,
-}) => {
   const classes = useStyles();
 
   return (
@@ -45,7 +33,7 @@ const Header: React.FC<HeaderProps> = ({
               <CardContent className={classes.cardContent}>
                 <Typography variant="body1" color="textSecondary">
                   {moment(date).format("MMMM D, YYYY")}{" "}
-                  <EventStatus isEventValid={isEventValid} />
+                  <EventStatus event={{ tickets, date }} />
                 </Typography>
                 <Typography variant="h4" className={classes.title}>
                   {title}

@@ -1,7 +1,6 @@
 import React from "react";
 import moment from "moment";
 import {
-  Container,
   Button,
   Card,
   CardContent,
@@ -12,56 +11,23 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@material-ui/core";
-import ConfirmationNumberIcon from "@material-ui/icons/ConfirmationNumber";
-import PlaceIcon from "@material-ui/icons/Place";
-import LanguageIcon from "@material-ui/icons/Language";
-import AlarmIcon from "@material-ui/icons/Alarm";
 import { makeStyles } from "@material-ui/core/styles";
-import { getTintedBackground, formatLanguage, useEventSettings } from "utils";
-import { EventType } from "types";
+import { getTintedBackground, isEventValid, useEventSettings } from "utils";
 import { Section } from "components";
+import EventContext from "../../EventContext";
+import FeatureList from "../../FeatureList";
 
-type AsideProps = Pick<
-  EventType,
-  "date" | "isOnline" | "location" | "duration" | "language"
-> & {
-  openCheckout: () => void;
-  priceRange: string;
-  alreadyPurchased: boolean;
-  loading: boolean;
-  isEventValid: boolean;
-};
+const Aside: React.FC = () => {
+  const {
+    event: { duration, date, tickets, isOnline, language },
+    priceRange,
+    setTicketsModalOpen,
+    alreadyPurchased,
+    loading,
+  } = React.useContext(EventContext);
 
-const Aside: React.FC<AsideProps> = ({
-  date,
-  isOnline,
-  location,
-  duration,
-  language,
-  priceRange,
-  openCheckout,
-  alreadyPurchased,
-  loading,
-  isEventValid,
-}) => {
   const classes = useStyles();
   const { refundPolicy } = useEventSettings();
-
-  const getDateWithDuration = () => {
-    const startDate = moment(date);
-    const endDate = startDate.clone().add(duration, "m");
-    const start = startDate.format("h:mma");
-    const end = endDate.format("h:mma");
-    const dur = duration >= 60 ? Math.round(duration / 60) : duration;
-    let durLabel = "minutes";
-    if (duration >= 60) {
-      durLabel = "hour";
-      if (duration >= 120) {
-        durLabel += "s";
-      }
-    }
-    return `${start} to ${end} (${dur} ${durLabel})`;
-  };
 
   return (
     <>
@@ -71,40 +37,7 @@ const Aside: React.FC<AsideProps> = ({
             <Typography variant="subtitle1">
               {moment(date).format("MMMM D, YYYY")}
             </Typography>
-            <List>
-              <ListItem className={classes.listItem}>
-                <ListItemIcon className={classes.listIcon}>
-                  <ConfirmationNumberIcon />
-                </ListItemIcon>
-                <ListItemText className={classes.listText}>
-                  {priceRange}
-                </ListItemText>
-              </ListItem>
-              <ListItem className={classes.listItem}>
-                <ListItemIcon className={classes.listIcon}>
-                  <PlaceIcon />
-                </ListItemIcon>
-                <ListItemText className={classes.listText}>
-                  {isOnline ? "Online" : location}
-                </ListItemText>
-              </ListItem>
-              <ListItem className={classes.listItem}>
-                <ListItemIcon className={classes.listIcon}>
-                  <LanguageIcon />
-                </ListItemIcon>
-                <ListItemText className={classes.listText}>
-                  {formatLanguage(language)}
-                </ListItemText>
-              </ListItem>
-              <ListItem className={classes.listItem}>
-                <ListItemIcon className={classes.listIcon}>
-                  <AlarmIcon />
-                </ListItemIcon>
-                <ListItemText className={classes.listText}>
-                  {getDateWithDuration()}
-                </ListItemText>
-              </ListItem>
-            </List>
+            <FeatureList />
             <Typography variant="body1" className={classes.refundHeader}>
               Refund Policy
             </Typography>
@@ -117,8 +50,10 @@ const Aside: React.FC<AsideProps> = ({
               size="small"
               variant="contained"
               className={classes.buy}
-              onClick={openCheckout}
-              disabled={alreadyPurchased || loading || !isEventValid}
+              onClick={() => setTicketsModalOpen(true)}
+              disabled={
+                alreadyPurchased || loading || !isEventValid({ date, tickets })
+              }
             >
               {alreadyPurchased ? "Ticket Purchased" : "Buy"}
             </Button>
@@ -159,18 +94,6 @@ const useStyles = makeStyles((theme) => ({
       width: "100%",
       borderBottom: `1px solid ${theme.palette.grey[200]}`,
       paddingBottom: theme.spacing(6),
-    },
-  },
-  listItem: {
-    paddingLeft: 0,
-    paddingRight: 0,
-  },
-  listIcon: {
-    minWidth: 30,
-  },
-  listText: {
-    "& > *": {
-      fontSize: "0.9rem",
     },
   },
   refundHeader: {

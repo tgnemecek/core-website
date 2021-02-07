@@ -22,22 +22,22 @@ const defaults = {};
 const transporter = nodemailer.createTransport(options, defaults);
 
 const templateSettings = {
-  "webinar-purchase": {
-    tags: ["firstName", "webinarName", "webinarLink", "startDate", "endDate"],
-    subject: "Here's your webinar link",
+  "meeting-purchase": {
+    tags: ["firstName", "meetingName", "meetingLink", "startDate", "endDate"],
+    subject: "Here's your meeting link",
     hasCalendarLink: true,
     dateFormatter: (startDate) =>
       `${startDate.format("h:mm A")} on ${startDate.format("MM/DD/YYYY")}`,
   },
-  "webinar-reschedule": {
-    tags: ["firstName", "webinarName", "webinarLink", "startDate", "endDate"],
+  "meeting-reschedule": {
+    tags: ["firstName", "meetingName", "meetingLink", "startDate", "endDate"],
     subject: "Webinar rescheduled",
     hasCalendarLink: true,
     dateFormatter: (startDate) =>
       `${startDate.format("MMM D, YYYY")} - ${startDate.format("h:mm A")}`,
   },
-  "webinar-cancel": {
-    tags: ["firstName", "webinarName"],
+  "meeting-cancel": {
+    tags: ["firstName", "meetingName"],
     subject: "Webinar cancelled",
     hasCalendarLink: false,
     dateFormatter: () => null,
@@ -97,8 +97,8 @@ const Email = {
       googleCalendarLink:
         hasCalendarLink &&
         Core.generateCalendarLink({
-          title: tags.webinarName,
-          description: `Here is the event link: ${tags.webinarLink}`,
+          title: tags.meetingName,
+          description: `Here is the event link: ${tags.meetingLink}`,
           startDate: tags.startDate,
           endDate: tags.endDate,
         }),

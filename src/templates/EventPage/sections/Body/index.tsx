@@ -9,12 +9,14 @@ import {
   Typography,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { EventType } from "types";
 import { Markdown } from "components";
+import EventContext from "../../EventContext";
 
-type BodyProps = Pick<EventType, "title" | "subtitle" | "description">;
+const Body: React.FC = () => {
+  const {
+    event: { title, subtitle, description },
+  } = React.useContext(EventContext);
 
-const Body: React.FC<BodyProps> = ({ title, subtitle, description }) => {
   const classes = useStyles();
 
   return (

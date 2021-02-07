@@ -103,7 +103,6 @@ const MemberModal: React.FC<MemberModalProps> = ({
                     rel="noopener noreferrer"
                   >
                     <svg
-                      xmlns="http://www.w3.org/2000/svg"
                       width="34"
                       height="34"
                       data-supported-dps="34x34"

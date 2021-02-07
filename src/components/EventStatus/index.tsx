@@ -3,24 +3,23 @@ import moment from "moment";
 import { makeStyles } from "@material-ui/core/styles";
 import { Chip } from "@material-ui/core";
 import { EventType } from "types";
-import { getEventStatus } from "utils";
+import { isEventValid } from "utils";
 
 type EventStatusProps = {
-  tickets?: EventType["tickets"];
-  isEventValid?: boolean;
-  date?: Date;
+  event: {
+    tickets: EventType["tickets"];
+    date: EventType["date"];
+  };
   showDate?: boolean;
 };
 
 const EventStatus: React.FC<EventStatusProps> = ({
-  tickets = [],
-  isEventValid,
-  date,
+  event: { tickets, date },
   showDate,
 }) => {
   const classes = useStyles();
 
-  if (isEventValid || getEventStatus({ tickets, date })) {
+  if (isEventValid({ tickets, date })) {
     if (!showDate) return null;
     return (
       <Chip
