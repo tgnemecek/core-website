@@ -2,7 +2,7 @@
 collection: events
 meetingId: 87527721758
 productId: prod_Iu8MGvyTZNnZRo
-title: new1
+title: new12
 subtitle: bbb
 description: sdasdadasdasd
 image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600785500/CCC_Leading_cropped_ue4zbu.jpg
