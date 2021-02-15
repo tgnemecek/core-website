@@ -1,7 +1,5 @@
 import { APIGatewayEvent, APIGatewayProxyResult, Context } from "aws-lambda";
 
-export * from "../src/types";
-
 export type ProcessEnvType = {
   ZOOM_API_KEY: string;
   ZOOM_API_SECRET: string;
@@ -127,4 +125,11 @@ export type ZoomRegistrantType = {
   first_name: string;
   last_name: string;
   join_url: string;
+};
+
+export type TicketType = {
+  id: string;
+  description: string;
+  price: number;
+  endsOn: "startOfEvent" | "startOfDay" | "oneWeek";
 };

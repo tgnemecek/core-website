@@ -55,6 +55,7 @@ export type MemberType = {
 
 export type LanguageType = "EN" | "ES";
 
+// If this gets updated, please update the one in lambda/types.ts as well
 export type TicketType = {
   id: string;
   description: string;
