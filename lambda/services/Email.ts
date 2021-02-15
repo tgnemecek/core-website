@@ -1,26 +1,57 @@
-const nodemailer = require("nodemailer");
-const fs = require("fs");
-const path = require("path");
-const mjml2html = require("mjml");
-const Core = require("./Core");
-const meetingPurchaseTemplate = require("../templates/meeting-purchase");
+import nodemailer from "nodemailer";
+import mjml2html from "mjml";
+import Core from "./Core";
+import meetingPurchaseTemplate from "../templates/meeting-purchase";
+import { ProcessEnvType } from "../types";
 
-const { EMAIL_HOST, EMAIL_USERNAME, EMAIL_PASSWORD } = process.env;
+type TemplateSettingsType = Record<
+  "meeting-purchase" | "meeting-update" | "meeting-cancel",
+  {
+    template: string;
+    tags: TagType[];
+    subject: string;
+    hasCalendarLink?: boolean;
+    dateFormatter: (startDate?: moment.Moment) => string;
+  }
+>;
 
-const options = {
+type TagType =
+  | "firstName"
+  | "meetingName"
+  | "meetingLink"
+  | "startDate"
+  | "endDate";
+
+type TagMap = {
+  firstName: string;
+  meetingName: string;
+  meetingLink: string;
+  startDate: moment.Moment;
+  endDate: moment.Moment;
+};
+
+type SendProps = {
+  template: keyof TemplateSettingsType;
+  to: string | string[];
+  tags: TagMap;
+};
+
+const {
+  EMAIL_HOST,
+  EMAIL_USERNAME,
+  EMAIL_PASSWORD,
+} = process.env as ProcessEnvType;
+
+const transporter = nodemailer.createTransport({
   host: EMAIL_HOST,
   auth: {
     type: "login",
     user: EMAIL_USERNAME,
     pass: EMAIL_PASSWORD,
   },
-};
+});
 
-const defaults = {};
-
-const transporter = nodemailer.createTransport(options, defaults);
-
-const templateSettings = {
+const templateSettings: TemplateSettingsType = {
   "meeting-purchase": {
     template: meetingPurchaseTemplate,
     tags: ["firstName", "meetingName", "meetingLink", "startDate", "endDate"],
@@ -29,14 +60,16 @@ const templateSettings = {
     dateFormatter: (startDate) =>
       `${startDate.format("h:mm A")} on ${startDate.format("MM/DD/YYYY")}`,
   },
-  "meeting-reschedule": {
+  "meeting-update": {
+    template: meetingPurchaseTemplate,
     tags: ["firstName", "meetingName", "meetingLink", "startDate", "endDate"],
-    subject: "Webinar rescheduled",
+    subject: "Meeting updated",
     hasCalendarLink: true,
     dateFormatter: (startDate) =>
       `${startDate.format("MMM D, YYYY")} - ${startDate.format("h:mm A")}`,
   },
   "meeting-cancel": {
+    template: meetingPurchaseTemplate,
     tags: ["firstName", "meetingName"],
     subject: "Webinar cancelled",
     hasCalendarLink: false,
@@ -44,10 +77,13 @@ const templateSettings = {
   },
 };
 
-const useTemplate = (templateName, tags) => {
+const useTemplate = (
+  templateName: keyof TemplateSettingsType,
+  tagMap: TagMap
+) => {
   // Check if all required fields are provided
   const requiredTags = templateSettings[templateName].tags;
-  const invalid = requiredTags.filter((key) => !tags[key]);
+  const invalid = requiredTags.filter((key) => !tagMap[key]);
 
   if (invalid.length > 0) {
     throw new Error(
@@ -63,15 +99,15 @@ const useTemplate = (templateName, tags) => {
   } = templateSettings[templateName];
 
   const formattedTags = {
-    ...tags,
-    formattedDate: dateFormatter(tags.startDate),
+    ...tagMap,
+    formattedDate: dateFormatter(tagMap.startDate),
     googleCalendarLink:
       hasCalendarLink &&
       Core.generateCalendarLink({
-        title: tags.meetingName,
-        description: `Please join at the time of the event using your unique and personal link: ${tags.meetingLink}`,
-        startDate: tags.startDate,
-        endDate: tags.endDate,
+        title: tagMap.meetingName,
+        description: `Please join at the time of the event using your unique and personal link: ${tagMap.meetingLink}`,
+        startDate: tagMap.startDate,
+        endDate: tagMap.endDate,
       }),
   };
 
@@ -95,16 +131,16 @@ const Email = {
   ping: async () => {
     try {
       await transporter.verify();
+      return true;
     } catch (err) {
-      console.error(`Error while verifying email host.`);
-      throw err;
+      throw new Error("Email servers are down");
     }
   },
-  send: async (data) => {
-    const { template, to, tags } = data;
+  send: async (props: SendProps) => {
+    const { template, to, tags } = props;
 
     const required = ["template", "to", "tags"];
-    const invalid = required.filter((key) => !data[key]);
+    const invalid = required.filter((key) => !props[key]);
 
     if (invalid.length > 0) {
       throw new Error(
@@ -114,22 +150,17 @@ const Email = {
 
     const { html, subject } = useTemplate(template, tags);
 
-    try {
-      await transporter.sendMail({
-        from: {
-          name: "CORE Team",
-          address: EMAIL_USERNAME,
-        },
-        sender: EMAIL_USERNAME,
-        to,
-        subject,
-        html,
-      });
-    } catch (err) {
-      console.error(`Error while trying to send email.`);
-      throw err;
-    }
+    await transporter.sendMail({
+      from: {
+        name: "CORE Team",
+        address: EMAIL_USERNAME,
+      },
+      sender: EMAIL_USERNAME,
+      to,
+      subject,
+      html,
+    });
   },
 };
 
-module.exports = Email;
+export default Email;

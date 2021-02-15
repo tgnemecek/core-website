@@ -1,4 +1,4 @@
-module.exports = `
+const hero = `
 <mj-section>
   <mj-column width="100%">
     <mj-image
@@ -9,3 +9,5 @@ module.exports = `
   </mj-column>
 </mj-section>
 `;
+
+export default hero;

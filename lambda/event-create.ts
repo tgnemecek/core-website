@@ -1,8 +1,9 @@
-const Zoom = require("./services/Zoom");
-const Stripe = require("./services/Stripe");
-const moment = require("moment");
+import Zoom from "./services/Zoom";
+import Stripe from "./services/Stripe";
+import moment from "moment";
+import { NetlifyLambdaHandler } from "./types";
 
-module.exports.handler = async (event, context) => {
+const eventCreate: NetlifyLambdaHandler = async (event, context) => {
   if (!context.clientContext.user) {
     // Restricted route
     return {
@@ -54,3 +55,5 @@ module.exports.handler = async (event, context) => {
     };
   }
 };
+
+module.exports.handler = eventCreate;

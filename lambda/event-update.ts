@@ -1,9 +1,11 @@
-const Core = require("./services/Core");
-const Zoom = require("./services/Zoom");
-const Stripe = require("./services/Stripe");
-const moment = require("moment");
+import Core from "./services/Core";
+import Email from "./services/Email";
+import Zoom from "./services/Zoom";
+import Stripe from "./services/Stripe";
+import moment from "moment";
+import { NetlifyLambdaHandler } from "./types";
 
-module.exports.handler = async (event, context) => {
+const eventUpdate: NetlifyLambdaHandler = async (event, context) => {
   if (!context.clientContext.user) {
     // Restricted route
     return {
@@ -28,10 +30,14 @@ module.exports.handler = async (event, context) => {
 
   try {
     const meeting = await Zoom.getMeeting(meetingId);
-    const dateChanged = Core.compareDates(startDate, meeting.start_time);
+    const dateChanged = Core.compareDates(
+      startDate,
+      moment(meeting.start_time)
+    );
     const durationChanged = duration !== meeting.duration;
 
     await Zoom.updateMeeting({
+      meetingId,
       title,
       startDate,
       duration,
@@ -40,8 +46,8 @@ module.exports.handler = async (event, context) => {
     const updatedTickets = await Stripe.updateProduct({
       productId,
       meetingId,
-      name: title,
-      description: subtitle,
+      title,
+      subtitle,
       tickets,
     });
 
@@ -57,7 +63,7 @@ module.exports.handler = async (event, context) => {
               meetingName: title,
               meetingLink: registrant.join_url,
               startDate,
-              endDate: moment(startTime).add(duration, "minutes"),
+              endDate: startDate.add(duration, "minutes"),
             },
           });
         })
@@ -79,3 +85,5 @@ module.exports.handler = async (event, context) => {
     };
   }
 };
+
+module.exports.handler = eventUpdate;

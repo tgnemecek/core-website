@@ -1,8 +1,8 @@
-const head = require("./head");
-const hero = require("./hero");
-const footer = require("./footer");
+import head from "./head";
+import hero from "./hero";
+import footer from "./footer";
 
-module.exports = `
+const meetingUpdate = `
 <mjml>
   ${head}
   <mj-body background-color="#bedae6">
@@ -88,3 +88,5 @@ module.exports = `
   </mj-body>
 </mjml>
 `;
+
+export default meetingUpdate;

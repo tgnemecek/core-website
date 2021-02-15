@@ -1,4 +1,4 @@
-module.exports = `
+const head = `
 <mj-head>
   <mj-attributes>
     <mj-all padding="0px"></mj-all>
@@ -15,3 +15,5 @@ module.exports = `
   >
 </mj-head>
 `;
+
+export default head;

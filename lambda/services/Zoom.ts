@@ -1,10 +1,31 @@
-const jwt = require("jsonwebtoken");
-const fetch = require("node-fetch");
-const Core = require("./Core");
+import fetch from "node-fetch";
+import jwt from "jsonwebtoken";
+import Core from "./Core";
+import moment from "moment";
+import { ProcessEnvType, ZoomMeetingType, ZoomRegistrantType } from "../types";
 // Zoom Documentation can be found here:
 // https://marketplace.zoom.us/docs/api-reference/zoom-api/meetings/meetingcreate
 
-const { ZOOM_API_KEY, ZOOM_API_SECRET, ZOOM_USER_ID } = process.env;
+const {
+  ZOOM_API_KEY,
+  ZOOM_API_SECRET,
+  ZOOM_USER_ID,
+} = process.env as ProcessEnvType;
+
+type CreateMeetingProps = {
+  title: string;
+  startDate: moment.Moment;
+  duration: number;
+};
+
+type UpdateMeetingProps = CreateMeetingProps & {
+  meetingId: string;
+};
+
+type AddRegistrantProps = Record<
+  "meetingId" | "email" | "firstName" | "lastName",
+  string
+>;
 
 const generateToken = () => {
   return jwt.sign(
@@ -22,7 +43,7 @@ const headers = {
   "content-type": "application/json",
 };
 
-module.exports = {
+const Zoom = {
   ping: async () => {
     const res = await fetch(
       `https://api.zoom.us/v2/users/${ZOOM_USER_ID}/meetings`,
@@ -37,18 +58,18 @@ module.exports = {
       throw new Error("Zoom servers are down");
     }
   },
-  getMeeting: async (meetingId) => {
+  getMeeting: async (meetingId: string) => {
     const res = await fetch(`https://api.zoom.us/v2/meetings${meetingId}`, {
       method: "GET",
       headers,
     });
     if (res.status === 200) {
-      return await res.json();
+      return (await res.json()) as ZoomMeetingType;
     } else {
       throw new Error("Error while getting Zoom meeting.");
     }
   },
-  createMeeting: async ({ title, startDate, duration }) => {
+  createMeeting: async ({ title, startDate, duration }: CreateMeetingProps) => {
     // Docs: https://marketplace.zoom.us/docs/api-reference/zoom-api/meetings/meetingcreate
     const res = await fetch(
       `https://api.zoom.us/v2/users/${ZOOM_USER_ID}/meetings`,
@@ -71,17 +92,25 @@ module.exports = {
             show_share_button: false,
             registrants_email_notification: false,
           },
-        }),
+        } as Partial<ZoomMeetingType>),
       }
     );
     if (res.status === 201) {
-      const { join_url: url, id: meetingId } = await res.json();
+      const {
+        join_url: url,
+        id: meetingId,
+      } = (await res.json()) as ZoomMeetingType;
       return { url, meetingId };
     } else {
       throw new Error("Error while creating Zoom meeting.");
     }
   },
-  updateMeeting: async ({ meetingId, title, startDate, duration }) => {
+  updateMeeting: async ({
+    meetingId,
+    title,
+    startDate,
+    duration,
+  }: UpdateMeetingProps) => {
     // Docs: https://marketplace.zoom.us/docs/api-reference/zoom-api/meetings/meetingcreate
     const res = await fetch(`https://api.zoom.us/v2/meetings/${meetingId}`, {
       method: "POST",
@@ -90,7 +119,7 @@ module.exports = {
         topic: title,
         start_time: startDate.utcOffset(0).format("YYYY-MM-DDTHH:mm:ss") + "Z",
         duration,
-      }),
+      } as Partial<ZoomMeetingType>),
     });
     if (res.status === 204) {
       await res.json();
@@ -99,13 +128,15 @@ module.exports = {
       throw new Error("Error while updating Zoom meeting.");
     }
   },
-  addRegistrant: async (args) => {
+  addRegistrant: async (props: AddRegistrantProps) => {
     // Docs: https://marketplace.zoom.us/docs/api-reference/zoom-api/meetings/meetingregistrantcreate
-    const { meetingId, email, firstName, lastName } = args;
+    const { meetingId, email, firstName, lastName } = props;
 
-    const errors = Object.keys(args).filter((key) => {
-      return !args[key].trim();
-    });
+    const errors = (Object.keys(props) as (keyof AddRegistrantProps)[]).filter(
+      (key) => {
+        return !props[key].trim();
+      }
+    );
 
     if (errors.length) {
       throw new Error(
@@ -128,7 +159,7 @@ module.exports = {
           email,
           first_name: firstName,
           last_name: lastName,
-        }),
+        } as ZoomRegistrantType),
       }
     );
 
@@ -137,14 +168,17 @@ module.exports = {
         join_url: joinUrl,
         topic,
         start_time: startTime,
-      } = await res.json();
+      } = (await res.json()) as ZoomMeetingType;
       return { joinUrl, topic, startTime };
     } else {
-      throw new Error(`Error while adding Zoom registrant.`, res);
+      throw new Error("Error while adding Zoom registrant.");
     }
   },
-  listRegistrants: async (meetingId) => {
-    const getRegistrantPages = async (registrants = [], pageToken) => {
+  listRegistrants: async (meetingId: string) => {
+    const getRegistrantPages = async (
+      registrants?: ZoomRegistrantType[],
+      pageToken?: string
+    ): Promise<ZoomRegistrantType[]> => {
       const tokenStr = pageToken ? `&next_page_token=${pageToken}` : "";
       const res = await fetch(
         `https://api.zoom.us/v2/meetings${meetingId}/registrants?page_size=300${tokenStr}`,
@@ -154,10 +188,13 @@ module.exports = {
         }
       );
       if (res.status === 200) {
-        const data = await res.json();
-        const newRegistrants = [...registrants, data.registrants];
+        const data = (await res.json()) as {
+          registrants: ZoomRegistrantType;
+          next_page_token?: string;
+        };
+        const newRegistrants = [...(registrants || []), data.registrants];
         if (data.next_page_token) {
-          return await getPage(newRegistrants, data.next_page_token);
+          return await getRegistrantPages(newRegistrants, data.next_page_token);
         }
         return newRegistrants;
       } else {
@@ -168,3 +205,5 @@ module.exports = {
     return await getRegistrantPages();
   },
 };
+
+export default Zoom;

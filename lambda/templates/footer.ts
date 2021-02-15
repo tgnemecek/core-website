@@ -1,4 +1,4 @@
-module.exports = `
+const footer = `
 <mj-image
   src="https://corecoachingconsulting.com/static/logo-6ea06274778be66ade36c9a9dc367bbb.png"
   width="100px"
@@ -7,3 +7,5 @@ module.exports = `
   href="https://www.corecoachingconsulting.com"
 ></mj-image>
 `;
+
+export default footer;

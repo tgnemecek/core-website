@@ -1,13 +1,18 @@
-const moment = require("moment");
-const Stripe = require("./Stripe");
+import moment from "moment";
 
-module.exports = {
-  compareDates: (startDate, meeting) => {
-    const currentDate = moment(meeting.start_time);
-    const newDate = moment(startDate);
-    return !currentDate.isSame(newDate);
+type GenerateCalendarLinkProps = {
+  title: string;
+  description: string;
+  startDate: moment.Moment;
+  endDate: moment.Moment;
+  location?: string;
+};
+
+const Core = {
+  compareDates: (newDate: moment.Moment, oldDate: moment.Moment) => {
+    return !newDate.isSame(oldDate);
   },
-  generateCalendarLink: (event) => {
+  generateCalendarLink: (event: GenerateCalendarLinkProps) => {
     const required = ["title", "description", "startDate", "endDate"];
 
     const invalid = required.filter((key) => !event[key]);
@@ -20,7 +25,7 @@ module.exports = {
       );
     }
 
-    const formatDate = (input) => {
+    const formatDate = (input: moment.Moment) => {
       return moment(input).utcOffset(0).format("YYYYMMDDTHHmmss") + "Z";
     };
 
@@ -37,8 +42,10 @@ module.exports = {
 
     return `${prefix}${searchParams.toString()}`;
   },
-  verifyEmail: (email) => {
+  verifyEmail: (email: string) => {
     const regex = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
     return regex.test(email);
   },
 };
+
+export default Core;

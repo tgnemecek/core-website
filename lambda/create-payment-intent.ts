@@ -1,6 +1,7 @@
-const Stripe = require("./services/Stripe");
+import Stripe from "./services/Stripe";
+import { NetlifyLambdaHandler } from "./types";
 
-module.exports.handler = async (event, context) => {
+const createPaymentIntent: NetlifyLambdaHandler = async (event, context) => {
   try {
     const body = JSON.parse(event.body || "{}");
 
@@ -21,3 +22,5 @@ module.exports.handler = async (event, context) => {
     };
   }
 };
+
+module.exports.handler = createPaymentIntent;

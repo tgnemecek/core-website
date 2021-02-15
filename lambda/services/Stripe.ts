@@ -1,10 +1,30 @@
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+import StripeAPI from "stripe";
+import { ProcessEnvType, TicketType } from "../types";
 
-const { STRIPE_PAYMENT_INTENT_SECRET } = process.env;
+type CreateProductProps = {
+  meetingId: number;
+  title: string;
+  subtitle: string;
+  tickets: TicketType[];
+};
 
-const formatPrice = (num) => num * 100;
+type UpdateProductProps = CreateProductProps & {
+  productId: string;
+};
 
-const createPrice = async (ticket, productId, meetingId) => {
+const stripe = new StripeAPI("sk_test_...", {
+  apiVersion: "2020-08-27",
+});
+
+const { STRIPE_PAYMENT_INTENT_SECRET } = process.env as ProcessEnvType;
+
+const formatPrice = (num: number) => num * 100;
+
+const createPrice = async (
+  ticket: TicketType,
+  productId: string,
+  meetingId: number
+) => {
   const { id } = await stripe.prices.create({
     currency: "usd",
     unit_amount: formatPrice(ticket.price),
@@ -16,10 +36,14 @@ const createPrice = async (ticket, productId, meetingId) => {
   return {
     ...ticket,
     id,
-  };
+  } as TicketType;
 };
 
-const updatePrice = async (ticket, productId, meetingId) => {
+const updatePrice = async (
+  ticket: TicketType,
+  productId: string,
+  meetingId: number
+) => {
   // You can't really update a price in Stripe,
   // so we delete the old one and create a brand new
   await stripe.prices.update(ticket.id, { active: false });
@@ -28,15 +52,21 @@ const updatePrice = async (ticket, productId, meetingId) => {
 
 const Stripe = {
   ping: async () => {
-    return Promise.all([
+    await Promise.all([
       stripe.products.list({ limit: 1 }),
       stripe.prices.list({ limit: 1 }),
     ]);
+    return true;
   },
-  getPrice: async (id) => {
+  getPrice: async (id: string) => {
     return await stripe.prices.retrieve(id);
   },
-  createProduct: async ({ meetingId, title, subtitle, tickets }) => {
+  createProduct: async ({
+    meetingId,
+    title,
+    subtitle,
+    tickets,
+  }: CreateProductProps) => {
     const { id: productId } = await stripe.products.create({
       name: title,
       description: subtitle,
@@ -51,17 +81,23 @@ const Stripe = {
     );
     return { productId, ticketsWithId };
   },
-  updateProduct: async ({ productId, meetingId, title, subtitle, tickets }) => {
+  updateProduct: async ({
+    productId,
+    meetingId,
+    title,
+    subtitle,
+    tickets,
+  }: UpdateProductProps) => {
     // Update product, we don't need to await
     stripe.products.update(productId, {
       name: title,
       description: subtitle,
     });
 
-    const prices = await stripe.prices.list({
+    const prices: StripeAPI.Price[] = (await stripe.prices.list({
       product: productId,
       active: true,
-    });
+    })) as any;
 
     // Deactivate deleted prices, we don't need to await
     prices.forEach((price) => {
@@ -91,14 +127,14 @@ const Stripe = {
 
     return updatedTickets;
   },
-  createPaymentIntent: async (price) => {
+  createPaymentIntent: async (price: StripeAPI.Price) => {
     return await stripe.paymentIntents.create({
       amount: price.unit_amount,
       currency: price.currency,
       metadata: price.metadata,
     });
   },
-  constructEvent: (rawBody, signature) => {
+  constructEvent: (rawBody: string, signature: string) => {
     return stripe.webhooks.constructEvent(
       rawBody,
       signature,
@@ -107,4 +143,4 @@ const Stripe = {
   },
 };
 
-module.exports = Stripe;
+export default Stripe;

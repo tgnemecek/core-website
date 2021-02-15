@@ -1,14 +1,16 @@
-const Zoom = require("./services/Zoom");
-const Stripe = require("./services/Stripe");
-const Email = require("./services/Email");
-const moment = require("moment");
+import StripeApi from "stripe";
+import Email from "./services/Email";
+import Zoom from "./services/Zoom";
+import Stripe from "./services/Stripe";
+import moment from "moment";
+import { NetlifyLambdaHandler } from "./types";
 
-module.exports.handler = async (event, context) => {
+const eventPaymentWebhook: NetlifyLambdaHandler = async (event, context) => {
   try {
     const signature = event.headers["stripe-signature"];
     const stripeEvent = Stripe.constructEvent(event.body, signature);
 
-    const payment = stripeEvent.data.object;
+    const payment: StripeApi.PaymentIntent = stripeEvent.data.object as any;
 
     if (payment.status !== "succeeded") {
       throw new Error("Payment has not succeeded");
@@ -41,6 +43,7 @@ module.exports.handler = async (event, context) => {
 
     return {
       statusCode: 200,
+      body: "",
     };
   } catch (err) {
     console.error(err);
@@ -50,3 +53,5 @@ module.exports.handler = async (event, context) => {
     };
   }
 };
+
+module.exports.handler = eventPaymentWebhook;
