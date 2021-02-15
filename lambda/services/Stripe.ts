@@ -12,11 +12,14 @@ type UpdateProductProps = CreateProductProps & {
   productId: string;
 };
 
-const stripe = new StripeAPI("sk_test_...", {
+const {
+  STRIPE_PAYMENT_INTENT_SECRET,
+  STRIPE_SECRET_KEY,
+} = process.env as ProcessEnvType;
+
+const stripe = new StripeAPI(STRIPE_SECRET_KEY, {
   apiVersion: "2020-08-27",
 });
-
-const { STRIPE_PAYMENT_INTENT_SECRET } = process.env as ProcessEnvType;
 
 const formatPrice = (num: number) => num * 100;
 
