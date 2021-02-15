@@ -59,8 +59,8 @@ const MemberModal: React.FC<MemberModalProps> = ({
                   <Image
                     alt={name}
                     src={photo}
-                    width="550"
-                    height="500"
+                    width={550}
+                    height={500}
                     gravity="faces"
                   />
                 </div>
@@ -74,8 +74,8 @@ const MemberModal: React.FC<MemberModalProps> = ({
                       alt={name}
                       className={classes.thumbnail}
                       src={photo}
-                      width="70"
-                      height="70"
+                      width={70}
+                      height={70}
                       gravity="faces"
                     />
                     <div>

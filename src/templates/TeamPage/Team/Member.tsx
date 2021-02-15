@@ -44,7 +44,7 @@ const Member: React.FC<MemberProps> = ({
               alt={name}
               className={classes.image}
               src={photo}
-              height="520"
+              height={520}
               gravity="faces"
             />
             <div className={classes.shadow}></div>

@@ -22,7 +22,9 @@ const Team: React.FC<TeamProps> = ({ members }) => {
                 <Member
                   {...member}
                   idx={i}
-                  setMemberToView={(idx) => setMemberToView(members[idx])}
+                  setMemberToView={(idx: number) =>
+                    setMemberToView(members[idx])
+                  }
                   delay={i * 100}
                 />
               </Grid>

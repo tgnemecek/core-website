@@ -106,8 +106,8 @@ const Services: React.FC<ServicesProps> = ({ services }) => {
                 alt={title}
                 className={classes.img}
                 src={image}
-                width="366"
-                height="700"
+                width={366}
+                height={700}
                 {...imgProps(name)}
               />
               <div className={classes.textBox} style={boxStyle(name)}>

@@ -151,6 +151,7 @@ export type EventFeedType = Pick<
   | "title"
   | "slug"
   | "isOnline"
+  | "tickets"
 >;
 
 export type EventFeedDTO = {

@@ -16,6 +16,5 @@ export { default as useEventSettings } from "./useEventSettings";
 export { default as useContactInfo } from "./useContactInfo";
 export { default as useNavigation } from "./useNavigation";
 export { default as useSiteMetadata } from "./useSiteMetadata";
-export { default as useTeamPage } from "./useTeamPage";
 
 export { default as youtubeRegex } from "./youtubeRegex";

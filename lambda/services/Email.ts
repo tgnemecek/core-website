@@ -11,7 +11,7 @@ type TemplateSettingsType = Record<
     tags: TagType[];
     subject: string;
     hasCalendarLink?: boolean;
-    dateFormatter: (startDate?: moment.Moment) => string;
+    dateFormatter: (startDate?: moment.Moment) => string | undefined;
   }
 >;
 
@@ -28,6 +28,11 @@ type TagMap = {
   meetingLink: string;
   startDate: moment.Moment;
   endDate: moment.Moment;
+};
+
+type FormattedTagMap = TagMap & {
+  formattedDate: string | undefined;
+  googleCalendarLink?: string;
 };
 
 type SendProps = {
@@ -58,7 +63,7 @@ const templateSettings: TemplateSettingsType = {
     subject: "Here's your meeting link",
     hasCalendarLink: true,
     dateFormatter: (startDate) =>
-      `${startDate.format("h:mm A")} on ${startDate.format("MM/DD/YYYY")}`,
+      `${startDate?.format("h:mm A")} on ${startDate?.format("MM/DD/YYYY")}`,
   },
   "meeting-update": {
     template: meetingPurchaseTemplate,
@@ -66,14 +71,14 @@ const templateSettings: TemplateSettingsType = {
     subject: "Meeting updated",
     hasCalendarLink: true,
     dateFormatter: (startDate) =>
-      `${startDate.format("MMM D, YYYY")} - ${startDate.format("h:mm A")}`,
+      `${startDate?.format("MMM D, YYYY")} - ${startDate?.format("h:mm A")}`,
   },
   "meeting-cancel": {
     template: meetingPurchaseTemplate,
     tags: ["firstName", "meetingName"],
     subject: "Webinar cancelled",
     hasCalendarLink: false,
-    dateFormatter: () => null,
+    dateFormatter: () => undefined,
   },
 };
 
@@ -98,22 +103,24 @@ const useTemplate = (
     template,
   } = templateSettings[templateName];
 
-  const formattedTags = {
+  const formattedTags: FormattedTagMap = {
     ...tagMap,
     formattedDate: dateFormatter(tagMap.startDate),
-    googleCalendarLink:
-      hasCalendarLink &&
-      Core.generateCalendarLink({
-        title: tagMap.meetingName,
-        description: `Please join at the time of the event using your unique and personal link: ${tagMap.meetingLink}`,
-        startDate: tagMap.startDate,
-        endDate: tagMap.endDate,
-      }),
+    googleCalendarLink: hasCalendarLink
+      ? Core.generateCalendarLink({
+          title: tagMap.meetingName,
+          description: `Please join at the time of the event using your unique and personal link: ${tagMap.meetingLink}`,
+          startDate: tagMap.startDate,
+          endDate: tagMap.endDate,
+        })
+      : undefined,
   };
 
   // Replace tags
-  const replaced = Object.keys(formattedTags).reduce((acc, key) => {
-    return acc.split(`{{${key}}}`).join(formattedTags[key]);
+  const replaced = (Object.keys(
+    formattedTags
+  ) as (keyof FormattedTagMap)[]).reduce((acc, key) => {
+    return acc.split(`{{${key}}}`).join(formattedTags[key]?.toString());
   }, template);
 
   const { html } = mjml2html(replaced);
@@ -139,7 +146,7 @@ const Email = {
   send: async (props: SendProps) => {
     const { template, to, tags } = props;
 
-    const required = ["template", "to", "tags"];
+    const required: (keyof SendProps)[] = ["template", "to", "tags"];
     const invalid = required.filter((key) => !props[key]);
 
     if (invalid.length > 0) {

@@ -13,7 +13,7 @@ const Core = {
     return !newDate.isSame(oldDate);
   },
   generateCalendarLink: (event: GenerateCalendarLinkProps) => {
-    const required = ["title", "description", "startDate", "endDate"];
+    const required = ["title", "description", "startDate", "endDate"] as const;
 
     const invalid = required.filter((key) => !event[key]);
 

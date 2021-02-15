@@ -129,7 +129,7 @@ const Stripe = {
   },
   createPaymentIntent: async (price: StripeAPI.Price) => {
     return await stripe.paymentIntents.create({
-      amount: price.unit_amount,
+      amount: price.unit_amount!,
       currency: price.currency,
       metadata: price.metadata,
     });
