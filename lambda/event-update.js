@@ -4,6 +4,14 @@ const Stripe = require("./services/Stripe");
 const moment = require("moment");
 
 module.exports.handler = async (event, context) => {
+  if (!context.clientContext.user) {
+    // Restricted route
+    return {
+      statusCode: 403,
+      body: "Unauthorized",
+    };
+  }
+
   const body = JSON.parse(event.body || "{}");
 
   const { meetingId, productId, title, subtitle, tickets, duration } = body;
@@ -20,7 +28,7 @@ module.exports.handler = async (event, context) => {
 
   try {
     const meeting = await Zoom.getMeeting(meetingId);
-    const dateChanged = Core.compareDates(startDate, meeting.start_time)
+    const dateChanged = Core.compareDates(startDate, meeting.start_time);
     const durationChanged = duration !== meeting.duration;
 
     await Zoom.updateMeeting({
@@ -39,10 +47,9 @@ module.exports.handler = async (event, context) => {
 
     if (dateChanged || durationChanged) {
       const registrants = await Zoom.listRegistrants(meetingId);
-
       await Promise.all(
         registrants.map((registrant) => {
-          await Email.send({
+          return Email.send({
             template: "meeting-update",
             to: registrant.email,
             tags: {
@@ -54,7 +61,7 @@ module.exports.handler = async (event, context) => {
             },
           });
         })
-      )
+      );
     }
 
     return {

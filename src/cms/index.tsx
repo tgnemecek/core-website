@@ -1,9 +1,6 @@
 import React from "react";
 import CMS from "netlify-cms-app";
 import { CmsEventListener } from "netlify-cms-core";
-import jwt from "jsonwebtoken";
-import GoTrue from "gotrue-js";
-import netlifyIdentity from "netlify-identity-widget";
 import ReactDOM from "react-dom";
 import cloudinary from "netlify-cms-media-library-cloudinary";
 import VideoWidget from "./VideoWidget";
@@ -31,13 +28,12 @@ const AdminConsole = () => {
           if (!form.productId) {
             newData = await eventCreate(form);
           } else {
-            newData = await eventCreate(form);
-            // newData = await eventUpdate(form);
+            newData = await eventUpdate(form);
           }
 
           const { productId, meetingId, tickets } = newData;
 
-          throw new Error("dont save");
+          throw new Error("success");
 
           dataEntry = dataEntry.set("productId", productId);
           dataEntry = dataEntry.set("meetingId", meetingId);

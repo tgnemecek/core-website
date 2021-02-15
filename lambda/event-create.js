@@ -3,6 +3,13 @@ const Stripe = require("./services/Stripe");
 const moment = require("moment");
 
 module.exports.handler = async (event, context) => {
+  if (!context.clientContext.user) {
+    // Restricted route
+    return {
+      statusCode: 403,
+      body: "Unauthorized",
+    };
+  }
   const body = JSON.parse(event.body || "{}");
 
   const { title, subtitle, tickets, duration } = body;
