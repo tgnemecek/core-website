@@ -1,6 +1,5 @@
 const jwt = require("jsonwebtoken");
 const fetch = require("node-fetch");
-const moment = require("moment");
 const Core = require("./Core");
 // Zoom Documentation can be found here:
 // https://marketplace.zoom.us/docs/api-reference/zoom-api/meetings/meetingcreate
@@ -24,15 +23,29 @@ const headers = {
 };
 
 module.exports = {
+  ping: async () => {
+    const res = await fetch(
+      `https://api.zoom.us/v2/users/${ZOOM_USER_ID}/meetings`,
+      {
+        method: "GET",
+        headers,
+      }
+    );
+    if (res.status === 200) {
+      return true;
+    } else {
+      throw new Error("Zoom servers are down");
+    }
+  },
   getMeeting: async (meetingId) => {
-    const res = await fetch(`https://api.zoom.us/v2/meetings/${meetingId}`, {
+    const res = await fetch(`https://api.zoom.us/v2/meetings${meetingId}`, {
       method: "GET",
       headers,
     });
     if (res.status === 200) {
       return await res.json();
     } else {
-      throw new Error(`Error while fetching Zoom meeting.`, res);
+      throw new Error("Error while getting Zoom meeting.");
     }
   },
   createMeeting: async ({ title, startDate, duration }) => {
@@ -56,6 +69,7 @@ module.exports = {
             approval_type: 0, // 1 = automatic approval
             close_registration: true,
             show_share_button: false,
+            registrants_email_notification: false,
           },
         }),
       }
@@ -64,7 +78,25 @@ module.exports = {
       const { join_url: url, id: meetingId } = await res.json();
       return { url, meetingId };
     } else {
-      throw new Error(`Error while creating Zoom meeting.`, res);
+      throw new Error("Error while creating Zoom meeting.");
+    }
+  },
+  updateMeeting: async ({ meetingId, title, startDate, duration }) => {
+    // Docs: https://marketplace.zoom.us/docs/api-reference/zoom-api/meetings/meetingcreate
+    const res = await fetch(`https://api.zoom.us/v2/meetings/${meetingId}`, {
+      method: "POST",
+      headers,
+      body: JSON.stringify({
+        topic: title,
+        start_time: startDate.utcOffset(0).format("YYYY-MM-DDTHH:mm:ss") + "Z",
+        duration,
+      }),
+    });
+    if (res.status === 204) {
+      await res.json();
+      return true;
+    } else {
+      throw new Error("Error while updating Zoom meeting.");
     }
   },
   addRegistrant: async (args) => {
@@ -110,5 +142,29 @@ module.exports = {
     } else {
       throw new Error(`Error while adding Zoom registrant.`, res);
     }
+  },
+  listRegistrants: async (meetingId) => {
+    const getRegistrantPages = async (registrants = [], pageToken) => {
+      const tokenStr = pageToken ? `&next_page_token=${pageToken}` : "";
+      const res = await fetch(
+        `https://api.zoom.us/v2/meetings${meetingId}/registrants?page_size=300${tokenStr}`,
+        {
+          method: "GET",
+          headers,
+        }
+      );
+      if (res.status === 200) {
+        const data = await res.json();
+        const newRegistrants = [...registrants, data.registrants];
+        if (data.next_page_token) {
+          return await getPage(newRegistrants, data.next_page_token);
+        }
+        return newRegistrants;
+      } else {
+        throw new Error("Error while listing Zoom meeting registrants.");
+      }
+    };
+
+    return await getRegistrantPages();
   },
 };

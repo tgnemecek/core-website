@@ -42,27 +42,6 @@ module.exports = `
         >
         <mj-text
           align="center"
-          color="#489BDA"
-          font-size="20px"
-          font-family="Arial, sans-serif"
-          font-weight="bold"
-          line-height="35px"
-          padding-top="20px"
-          >if you prefer, use this link:
-        </mj-text>
-        <mj-button
-          href="{{meetingLink}}"
-          target="_blank"
-          align="center"
-          background-color="transparent"
-          font-size="14px"
-          font-family="Arial, sans-serif"
-          text-decoration="underline"
-        >
-          {{meetingLink}}
-        </mj-button>
-        <mj-text
-          align="center"
           font-size="18px"
           font-family="Arial"
           padding-top="40px"

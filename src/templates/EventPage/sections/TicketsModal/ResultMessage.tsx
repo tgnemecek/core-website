@@ -17,14 +17,12 @@ import ModalFooter from "./ModalFooter";
 type ResultMessageProps = {
   title: string;
   subtitle: string;
-  code?: string;
   type: "success" | "failed";
 };
 
 const ResultMessage: React.FC<ResultMessageProps> = ({
   title,
   subtitle,
-  code,
   type,
 }) => {
   const { setTicketsModalOpen } = React.useContext(EventContext);
@@ -85,9 +83,6 @@ const ResultMessage: React.FC<ResultMessageProps> = ({
         <Typography variant="body1" className={classes.info}>
           {subtitle}
         </Typography>
-        <Typography variant="body1" className={classes.code}>
-          {code}
-        </Typography>
       </div>
       <ModalFooter>
         {buttonTransitions.map(
@@ -139,9 +134,6 @@ const useStyles = makeStyles((theme) => ({
   },
   info: {
     fontSize: "0.9rem",
-  },
-  code: {
-    fontSize: "0.8rem",
   },
 }));
 

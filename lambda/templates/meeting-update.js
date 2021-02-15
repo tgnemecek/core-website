@@ -1,7 +1,12 @@
+const head = require("./head");
+const hero = require("./hero");
+const footer = require("./footer");
+
+module.exports = `
 <mjml>
-  {{head}}
+  ${head}
   <mj-body background-color="#bedae6">
-    {{hero}}
+    ${hero}
     <mj-section padding-bottom="20px" padding-top="10px">
       <mj-column>
         <mj-text
@@ -12,9 +17,9 @@
           ><strong>Hello {{firstName}},</strong></mj-text
         >
         <mj-text align="center" font-size="18px" font-family="Arial"
-          >We're sorry to inform you that the
-          <strong>{{webinarName}}</strong> webinar has been
-          rescheduled.</mj-text
+          >The meeting: 
+          <strong>{{meetingName}}</strong> has been
+          updated.</mj-text
         >
         <mj-text
           align="center"
@@ -33,19 +38,19 @@
           padding-bottom="20px"
           >{{formattedDate}}
         </mj-text>
+        <mj-button
+        background-color="#315cb0"
+        color="white !important"
+        href="{{meetingLink}}"
+        font-family="Arial, sans-serif"
+        padding="0 0 20px 0"
+        font-weight="bold"
+        font-size="16px"
+        >Join Meeting</mj-button
+      >
         <mj-text align="center" font-size="18px" font-family="Arial"
           >If you are unable to attend, please let us know by replying to this
           email.</mj-text
-        >
-        <mj-button
-          background-color="#315cb0"
-          color="white !important"
-          href="{{webinarLink}}"
-          font-family="Arial, sans-serif"
-          padding="20px 0 0 0"
-          font-weight="bold"
-          font-size="16px"
-          >Go to Webinar</mj-button
         >
         <mj-button
           align="center"
@@ -77,8 +82,9 @@
           >
           Team
         </mj-text>
-        {{footer}}
+        ${footer}
       </mj-column>
     </mj-section>
   </mj-body>
 </mjml>
+`;

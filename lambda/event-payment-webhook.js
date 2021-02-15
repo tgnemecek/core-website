@@ -38,7 +38,7 @@ module.exports.handler = async (event, context) => {
         endDate: moment(startTime).add(60, "minutes"),
       },
     });
-    console.log("Operation successful");
+
     return {
       statusCode: 200,
     };

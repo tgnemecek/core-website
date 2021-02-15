@@ -64,10 +64,9 @@ const TicketsModal: React.FC<TicketsModalProps> = ({ open }) => {
         {stage === "success" && (
           <ResultMessage
             type="success"
-            title="Thank you for the purchase!"
-            subtitle="Please check your email for more information about the event and
+            title="Thank you for your order!"
+            subtitle="As soon as we verify your payment we'll send you an email with information about the event and
           instructions on how to join."
-            code="Confirmation code: #123123123"
           />
         )}
         {stage === "failed" && (

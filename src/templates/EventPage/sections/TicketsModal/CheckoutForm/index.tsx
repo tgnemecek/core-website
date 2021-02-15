@@ -1,9 +1,8 @@
 import React from "react";
-import { uniq } from "lodash";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { useSnackbar } from "notistack";
-import { Button, Typography, CircularProgress } from "@material-ui/core";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { Button, Typography } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 import { TicketType } from "types";
 import { verifyEmail } from "utils";
 import EventContext from "../../../EventContext";
@@ -31,14 +30,13 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
     setTicketsModalOpen,
     setAlreadyPurchased,
     setLoading,
+    event: { meetingId },
   } = React.useContext(EventContext);
 
-  const [disabled, setDisabled] = React.useState(true);
   const [clientSecret, setClientSecret] = React.useState("");
   const stripe = useStripe();
   const elements = useElements();
   const { enqueueSnackbar } = useSnackbar();
-  const theme = useTheme();
 
   const [formState, setFormState] = React.useState<FormState>({
     firstName: "",
@@ -119,21 +117,47 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
     e.preventDefault();
     if (hasErrors()) return;
     setLoading(true);
-    const payload = await stripe.confirmCardPayment(clientSecret, {
-      payment_method: {
-        card: elements.getElement(CardElement),
-        billing_details: {
-          email: formState.email,
-          name: `${formState.firstName}_${formState.lastName}`,
+
+    try {
+      // const res = await fetch(
+      //   "/.netlify/functions/event-check-existing-registrant",
+      //   {
+      //     method: "POST",
+      //     body: JSON.stringify({
+      //       email: formState.email,
+      //       meetingId,
+      //     }),
+      //   }
+      // );
+
+      // const { result } = await res.json();
+
+      // if (result === "registrant-found") {
+      //   setLoading(false);
+      //   goToFailed();
+      //   return;
+      // }
+
+      const payload = await stripe.confirmCardPayment(clientSecret, {
+        payment_method: {
+          card: elements.getElement(CardElement),
+          billing_details: {
+            email: formState.email,
+            name: `${formState.firstName}_${formState.lastName}`,
+          },
         },
-      },
-    });
-    console.log({ payload });
-    if (payload.error) {
+      });
+
+      console.log({ payload });
+
+      if (payload.error) {
+        goToFailed();
+      } else {
+        setAlreadyPurchased(true);
+        goToSuccess();
+      }
+    } catch (err) {
       goToFailed();
-    } else {
-      setAlreadyPurchased(true);
-      goToSuccess();
     }
     setLoading(false);
   };

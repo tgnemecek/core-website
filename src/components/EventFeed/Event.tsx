@@ -17,13 +17,13 @@ import { useBreakpoint } from "utils";
 type EventProps = {
   event: Pick<
     EventType,
-    "title" | "date" | "image" | "language" | "slug" | "isOnline" | "duration"
+    "title" | "date" | "image" | "language" | "slug" | "isOnline" | "tickets"
   >;
 };
 
-const Event: React.FC<EventProps> = ({
-  event: { title, date, image, language, slug, isOnline, duration },
-}) => {
+const Event: React.FC<EventProps> = ({ event }) => {
+  const { title, date, image, language, slug, isOnline } = event;
+
   const breakpoints = useBreakpoint();
   const classes = useStyles({ breakpoints })();
 
@@ -54,7 +54,7 @@ const Event: React.FC<EventProps> = ({
           </div>
           {date && (
             <div className={classes.date}>
-              {/* <EventStatus date={date} tickets={tickets} showDate /> */}
+              <EventStatus event={event} showDate />
             </div>
           )}
         </CardContent>

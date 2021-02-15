@@ -75,6 +75,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "center",
     height: "100%",
+    padding: "25px 0",
     ...getTintedBackground(),
     boxShadow: "inset 27px 0px 14px -17px rgb(0 0 0 / 24%)",
     [theme.breakpoints.down("sm")]: {

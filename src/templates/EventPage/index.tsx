@@ -1,12 +1,11 @@
 import React from "react";
 import { graphql, PageProps } from "gatsby";
-import { loadStripe, Stripe } from "@stripe/stripe-js";
+import { Stripe } from "@stripe/stripe-js";
 import { Backdrop, CircularProgress, Dialog } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { SnackbarProvider } from "notistack";
-import { EventPageDTO, TicketType } from "types";
+import { EventPageDTO } from "types";
 import { Layout, EventFeed, Footer, Navbar } from "components";
-import { isEventValid, formatLanguage } from "utils";
 import {
   Aside,
   FixedBar,
@@ -109,6 +108,7 @@ export const pageQuery = graphql`
       }
       frontmatter {
         events {
+          meetingId
           title
           subtitle
           description

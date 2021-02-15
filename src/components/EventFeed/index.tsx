@@ -18,12 +18,27 @@ const EventFeed: React.FC<EventFeedProps> = ({ title, filter }) => {
     { date: dateA }: EventFeedType,
     { date: dateB }: EventFeedType
   ) => {
+    const now = moment();
     const momentA = moment(dateA);
     const momentB = moment(dateB);
 
-    if (momentA.isAfter(momentB)) return -1;
-    if (momentA.isBefore(momentB)) return 1;
-    return 0;
+    let aIsPast = false;
+    let bIsPast = false;
+
+    if (momentA.isBefore(now)) aIsPast = true;
+    if (momentB.isBefore(now)) bIsPast = true;
+
+    if (aIsPast && bIsPast) {
+      if (momentA.isAfter(momentB)) return -1;
+      return 1;
+    }
+    if (!aIsPast && !bIsPast) {
+      if (momentA.isAfter(momentB)) return 1;
+      return -1;
+    }
+
+    if (bIsPast) return -1;
+    return 1;
   };
 
   return (
@@ -36,7 +51,7 @@ const EventFeed: React.FC<EventFeedProps> = ({ title, filter }) => {
       </Container>
       <Container>
         <HorizontalFeed
-          items={events.sort(sorter).map((event, i) => (
+          items={[...events].sort(sorter).map((event, i) => (
             <Event key={i} event={event} />
           ))}
         />

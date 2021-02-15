@@ -7,16 +7,6 @@ module.exports = {
     const newDate = moment(startDate);
     return !currentDate.isSame(newDate);
   },
-  comparePrices: (tickets, prices) => {
-    return tickets.some((ticket) => {
-      if (!ticket.id) return true;
-      const foundPrice = prices.find((price) => price.id === ticket.id);
-
-      if (!foundPrice) return true;
-
-      return Stripe.formatPrice(ticket.price) != foundPrice.unit_amount;
-    });
-  },
   generateCalendarLink: (event) => {
     const required = ["title", "description", "startDate", "endDate"];
 

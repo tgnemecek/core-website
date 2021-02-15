@@ -44,23 +44,6 @@ const templateSettings = {
   },
 };
 
-// const getPathToTemplate = (templateName) => {
-//   return `./templates/${templateName}.mjml`;
-//   // return path.join(__dirname, "..", "templates", `${templateName}.mjml`);
-// };
-
-// const assembleSections = (template) => {
-//   const sections = ["head", "hero", "footer"];
-
-//   return sections.reduce((acc, cur) => {
-//     const pathToFile = getPathToTemplate(cur);
-//     const file = fs.readFileSync(pathToFile, {
-//       encoding: "utf-8",
-//     });
-//     return acc.split(`{{${cur}}}`).join(file);
-//   }, template);
-// };
-
 const useTemplate = (templateName, tags) => {
   // Check if all required fields are provided
   const requiredTags = templateSettings[templateName].tags;
@@ -71,13 +54,6 @@ const useTemplate = (templateName, tags) => {
       `Error in useTemplate(). Required fields missing: ${invalid.join(", ")}.`
     );
   }
-
-  // Reads template file
-  // const pathToFile = getPathToTemplate(templateName);
-
-  // const file = fs.readFileSync(pathToFile, {
-  //   encoding: "utf-8",
-  // });
 
   const {
     subject,
@@ -116,7 +92,7 @@ const useTemplate = (templateName, tags) => {
 };
 
 const Email = {
-  verify: async () => {
+  ping: async () => {
     try {
       await transporter.verify();
     } catch (err) {

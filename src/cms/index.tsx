@@ -1,5 +1,6 @@
 import React from "react";
 import CMS from "netlify-cms-app";
+import { CmsEventListener } from "netlify-cms-core";
 import jwt from "jsonwebtoken";
 import GoTrue from "gotrue-js";
 import netlifyIdentity from "netlify-identity-widget";
@@ -8,6 +9,10 @@ import cloudinary from "netlify-cms-media-library-cloudinary";
 import VideoWidget from "./VideoWidget";
 import config from "./config";
 import { ExtendedConfig } from "./types";
+import { eventCreate, eventUpdate } from "./api";
+import { EventType } from "types";
+
+type EventHandlerProps = CmsEventListener["handler"];
 
 const AdminConsole = () => {
   React.useEffect(() => {
@@ -16,60 +21,34 @@ const AdminConsole = () => {
 
     (CMS as any).registerEventListener({
       name: "preSave",
-      handler: async ({ entry }: any) => {
+      handler: async ({ entry }: EventHandlerProps) => {
         try {
-          console.log("PRE-SAVE");
-          let dataEntry = entry.get("data");
-          const str = JSON.stringify(dataEntry);
-          const form = JSON.parse(str);
-          const { productId } = form;
+          let dataEntry: Map<string, any> = entry.get("data");
+          const form = Object.fromEntries(dataEntry) as EventType;
 
-          console.log({ form });
+          let newData;
 
-          const identityToken = await netlifyIdentity.refresh();
-
-          const auth = new GoTrue({
-            APIUrl:
-              "https://core-website-2020-test.netlify.app/.netlify/identity",
-            audience: "",
-            setCookie: false,
-          });
-
-          const {
-            token: { access_token },
-          } = auth.currentUser();
-
-          console.log({ access_token });
-
-          if (!productId) {
-            const res = await fetch("/.netlify/functions/event-create", {
-              method: "POST",
-              body: str,
-              headers: {
-                Authorization: `Bearer ${access_token}`,
-              },
-              credentials: "include",
-            });
-            const { productId, meetingId, tickets } = await res.json();
-
-            dataEntry = dataEntry.set("productId", productId);
-            dataEntry = dataEntry.set("meetingId", meetingId);
-            dataEntry = dataEntry.set("tickets", tickets);
-            return dataEntry;
+          if (!form.productId) {
+            newData = await eventCreate(form);
           } else {
-            await fetch("/.netlify/functions/update", {
-              method: "POST",
-              body: str,
-              headers: {
-                Authorization: `Bearer ${access_token}`,
-              },
-              credentials: "include",
-            });
-            return dataEntry;
+            newData = await eventCreate(form);
+            // newData = await eventUpdate(form);
           }
+
+          const { productId, meetingId, tickets } = newData;
+
+          throw new Error("dont save");
+
+          dataEntry = dataEntry.set("productId", productId);
+          dataEntry = dataEntry.set("meetingId", meetingId);
+          dataEntry = dataEntry.set("tickets", tickets);
+          return dataEntry;
         } catch (err) {
-          return null;
-          // throw err;
+          return Promise.resolve({
+            toJS: () => {
+              throw err;
+            },
+          });
         }
       },
     });

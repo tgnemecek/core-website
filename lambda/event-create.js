@@ -3,30 +3,21 @@ const Stripe = require("./services/Stripe");
 const moment = require("moment");
 
 module.exports.handler = async (event, context) => {
+  const body = JSON.parse(event.body || "{}");
+
+  const { title, subtitle, tickets, duration } = body;
+  const startDate = moment(body.date).startOf("minute");
+
   try {
-    const body = JSON.parse(event.body || "{}");
+    await Promise.all([Zoom.ping(), Stripe.ping()]);
+  } catch (err) {
+    return {
+      statusCode: 503,
+      body: "External Service Providers are down. Please try again later.",
+    };
+  }
 
-    // const body = {
-    //   title: "This is my webinar 2",
-    //   subtitle: "We will discuss life in general.",
-    //   tickets: [
-    //     {
-    //       description: "Early Bird",
-    //       price: 15,
-    //     },
-    //     {
-    //       description: "General Admission",
-    //       price: 20,
-    //     },
-    //   ],
-    //   date: moment().add(1, "day"),
-    //   duration: 60,
-    // };
-
-    const { title, subtitle, tickets, duration } = body;
-
-    const startDate = moment(body.date).startOf("minute");
-
+  try {
     const { meetingId } = await Zoom.createMeeting({
       title,
       startDate,
@@ -34,8 +25,8 @@ module.exports.handler = async (event, context) => {
     });
 
     const { productId, ticketsWithId } = await Stripe.createProduct({
-      name: title,
-      description: subtitle,
+      title,
+      subtitle,
       tickets,
       meetingId,
     });
@@ -43,17 +34,16 @@ module.exports.handler = async (event, context) => {
     return {
       statusCode: 200,
       body: JSON.stringify({
-        ...body,
         productId,
         meetingId,
         tickets: ticketsWithId,
       }),
     };
   } catch (err) {
-    console.error(err);
+    console.error(err.message);
     return {
       statusCode: 500,
-      body: "Server Error",
+      body: "Internal Server Error",
     };
   }
 };
