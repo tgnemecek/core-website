@@ -33,8 +33,6 @@ const AdminConsole = () => {
 
           const { productId, meetingId, tickets } = newData;
 
-          throw new Error("success");
-
           dataEntry = dataEntry.set("productId", productId);
           dataEntry = dataEntry.set("meetingId", meetingId);
           dataEntry = dataEntry.set("tickets", tickets);
