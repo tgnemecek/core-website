@@ -6,7 +6,7 @@ const createPaymentIntent: NetlifyLambdaHandler = async (event, context) => {
     const body: CreatePaymentIntentBody = JSON.parse(event.body || "{}");
 
     const price = await Stripe.getPrice(body.ticketId);
-    const paymentIntent = await Stripe.createPaymentIntent(price);
+    const paymentIntent = await Stripe.createPaymentIntent(price, body.title);
 
     return {
       statusCode: 200,

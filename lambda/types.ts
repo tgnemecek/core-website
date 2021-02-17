@@ -41,6 +41,7 @@ export type EventUpdateBody = EventCreateBody;
 
 export type CreatePaymentIntentBody = {
   ticketId: string;
+  title: string;
 };
 
 // https://marketplace.zoom.us/docs/api-reference/zoom-api/meetings/meeting

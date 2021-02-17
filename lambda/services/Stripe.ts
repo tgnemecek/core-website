@@ -34,6 +34,7 @@ const createPrice = async (
     product: productId,
     metadata: {
       meetingId,
+      productId,
     },
   });
   return {
@@ -51,6 +52,29 @@ const updatePrice = async (
   // so we delete the old one and create a brand new
   await stripe.prices.update(ticket.id, { active: false });
   return createPrice(ticket, productId, meetingId);
+};
+
+const listAllPaymentIntents = async (productId: string) => {
+  const getPage = async (
+    paymentIntents: StripeAPI.PaymentIntent[],
+    startingAfter?: string
+  ): Promise<StripeAPI.PaymentIntent[]> => {
+    const { data, has_more } = await stripe.paymentIntents.list({
+      limit: 100,
+      starting_after: startingAfter,
+    });
+
+    const newPaymentIntents = [...paymentIntents, ...data];
+
+    if (has_more) {
+      return await getPage(newPaymentIntents, data[data.length - 1].id);
+    }
+    return newPaymentIntents;
+  };
+  const allPaymentIntents = await getPage([]);
+  return allPaymentIntents.filter(({ status, metadata }) => {
+    return status === "succeeded" && metadata.productId === productId;
+  });
 };
 
 const Stripe = {
@@ -140,14 +164,35 @@ const Stripe = {
     const promises = prices.map((price) => {
       return stripe.prices.update(price.id, { active: false });
     });
-    await Promise.all(promises);
+
+    // Get all paymentIntents associated with the product
+    const [paymentIntents] = await Promise.all([
+      listAllPaymentIntents(productId),
+      Promise.all(promises),
+    ]);
+
+    // For each paymentIntent, create a refund
+    await Promise.all(
+      paymentIntents.map((paymentIntent) => {
+        return stripe.refunds.create({
+          payment_intent: paymentIntent.id,
+          reason: "requested_by_customer",
+          metadata: paymentIntent.metadata,
+        });
+      })
+    );
+
     return;
   },
-  createPaymentIntent: async (price: StripeAPI.Price) => {
+  getPaymentIntent: async (id: string) => {
+    return await stripe.paymentIntents.retrieve(id);
+  },
+  createPaymentIntent: async (price: StripeAPI.Price, title: string) => {
     return await stripe.paymentIntents.create({
       amount: price.unit_amount!,
       currency: price.currency,
       metadata: price.metadata,
+      description: title,
     });
   },
   constructEvent: (rawBody: string, signature: string) => {

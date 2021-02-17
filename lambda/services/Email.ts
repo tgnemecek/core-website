@@ -1,11 +1,16 @@
 import nodemailer from "nodemailer";
 import mjml2html from "mjml";
 import Core from "./Core";
-import meetingPurchaseTemplate from "../templates/meeting-purchase";
+import {
+  meetingCancelTemplate,
+  meetingPurchaseTemplate,
+  meetingRefundTemplate,
+  meetingUpdateTemplate,
+} from "../templates";
 import { ProcessEnvType } from "../types";
 
 type TemplateSettingsType = Record<
-  "meeting-purchase" | "meeting-update" | "meeting-cancel",
+  "meeting-purchase" | "meeting-update" | "meeting-cancel" | "meeting-refund",
   {
     template: string;
     tags: TagType[];
@@ -60,23 +65,30 @@ const templateSettings: TemplateSettingsType = {
   "meeting-purchase": {
     template: meetingPurchaseTemplate,
     tags: ["firstName", "meetingName", "meetingLink", "startDate", "endDate"],
-    subject: "Here's your meeting link",
+    subject: "Here's your event link",
     hasCalendarLink: true,
     dateFormatter: (startDate) =>
       `${startDate?.format("h:mm A")} on ${startDate?.format("MM/DD/YYYY")}`,
   },
   "meeting-update": {
-    template: meetingPurchaseTemplate,
+    template: meetingUpdateTemplate,
     tags: ["firstName", "meetingName", "meetingLink", "startDate", "endDate"],
-    subject: "Meeting updated",
+    subject: "Event updated",
     hasCalendarLink: true,
     dateFormatter: (startDate) =>
       `${startDate?.format("MMM D, YYYY")} - ${startDate?.format("h:mm A")}`,
   },
   "meeting-cancel": {
-    template: meetingPurchaseTemplate,
+    template: meetingCancelTemplate,
     tags: ["firstName", "meetingName"],
-    subject: "Webinar cancelled",
+    subject: "Event cancelled",
+    hasCalendarLink: false,
+    dateFormatter: () => undefined,
+  },
+  "meeting-refund": {
+    template: meetingRefundTemplate,
+    tags: ["firstName", "meetingName"],
+    subject: "Event refunded",
     hasCalendarLink: false,
     dateFormatter: () => undefined,
   },
