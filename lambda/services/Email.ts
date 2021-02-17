@@ -23,11 +23,11 @@ type TagType =
   | "endDate";
 
 type TagMap = {
-  firstName: string;
-  meetingName: string;
-  meetingLink: string;
-  startDate: moment.Moment;
-  endDate: moment.Moment;
+  firstName?: string;
+  meetingName?: string;
+  meetingLink?: string;
+  startDate?: moment.Moment;
+  endDate?: moment.Moment;
 };
 
 type FormattedTagMap = TagMap & {
@@ -108,10 +108,10 @@ const useTemplate = (
     formattedDate: dateFormatter(tagMap.startDate),
     googleCalendarLink: hasCalendarLink
       ? Core.generateCalendarLink({
-          title: tagMap.meetingName,
+          title: tagMap.meetingName!,
           description: `Please join at the time of the event using your unique and personal link: ${tagMap.meetingLink}`,
-          startDate: tagMap.startDate,
-          endDate: tagMap.endDate,
+          startDate: tagMap.startDate!,
+          endDate: tagMap.endDate!,
         })
       : undefined,
   };

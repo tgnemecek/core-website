@@ -3,7 +3,7 @@ import Email from "./services/Email";
 import Zoom from "./services/Zoom";
 import Stripe from "./services/Stripe";
 import moment from "moment";
-import { NetlifyLambdaHandler } from "./types";
+import { NetlifyLambdaHandler, EventUpdateBody } from "./types";
 
 const eventUpdate: NetlifyLambdaHandler = async (event, context) => {
   if (!context.clientContext.user) {
@@ -14,7 +14,7 @@ const eventUpdate: NetlifyLambdaHandler = async (event, context) => {
     };
   }
 
-  const body = JSON.parse(event.body || "{}");
+  const body: EventUpdateBody = JSON.parse(event.body || "{}");
 
   const { meetingId, productId, title, subtitle, tickets, duration } = body;
   const startDate = moment(body.date).startOf("minute");

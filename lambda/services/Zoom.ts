@@ -19,13 +19,20 @@ type CreateMeetingProps = {
 };
 
 type UpdateMeetingProps = CreateMeetingProps & {
-  meetingId: string;
+  meetingId: number;
 };
 
-type AddRegistrantProps = Record<
-  "meetingId" | "email" | "firstName" | "lastName",
-  string
->;
+type AddRegistrantProps = Record<"email" | "firstName" | "lastName", string> & {
+  meetingId: number;
+};
+
+type RemoveRegistrantsProps = {
+  meetingId: number;
+  registrants: {
+    id: string;
+    email: string;
+  }[];
+};
 
 const generateToken = () => {
   return jwt.sign(
@@ -58,7 +65,7 @@ const Zoom = {
       throw new Error("Zoom servers are down");
     }
   },
-  getMeeting: async (meetingId: string) => {
+  getMeeting: async (meetingId: number) => {
     const res = await fetch(`https://api.zoom.us/v2/meetings${meetingId}`, {
       method: "GET",
       headers,
@@ -128,13 +135,26 @@ const Zoom = {
       throw new Error("Error while updating Zoom meeting.");
     }
   },
+  deleteMeeting: async (meetingId: number) => {
+    // Docs: https://marketplace.zoom.us/docs/api-reference/zoom-api/meetings/meetingdelete
+    const res = await fetch(`https://api.zoom.us/v2/meetings/${meetingId}`, {
+      method: "DELETE",
+      headers,
+    });
+    if (res.status === 204) {
+      await res.json();
+      return true;
+    } else {
+      throw new Error("Error while deleting Zoom meeting.");
+    }
+  },
   addRegistrant: async (props: AddRegistrantProps) => {
     // Docs: https://marketplace.zoom.us/docs/api-reference/zoom-api/meetings/meetingregistrantcreate
     const { meetingId, email, firstName, lastName } = props;
 
     const errors = (Object.keys(props) as (keyof AddRegistrantProps)[]).filter(
       (key) => {
-        return !props[key].trim();
+        return !props[key].toString().trim();
       }
     );
 
@@ -174,7 +194,7 @@ const Zoom = {
       throw new Error("Error while adding Zoom registrant.");
     }
   },
-  listRegistrants: async (meetingId: string) => {
+  listRegistrants: async (meetingId: number) => {
     const getRegistrantPages = async (
       registrants?: ZoomRegistrantType[],
       pageToken?: string
@@ -203,6 +223,27 @@ const Zoom = {
     };
 
     return await getRegistrantPages();
+  },
+  removeRegistrants: async ({
+    meetingId,
+    registrants,
+  }: RemoveRegistrantsProps) => {
+    const res = await fetch(
+      `https://api.zoom.us/v2/meetings${meetingId}/registrants/status`,
+      {
+        method: "GET",
+        headers,
+        body: JSON.stringify({
+          action: "cancel",
+          registrants: registrants.map(({ id, email }) => ({ id, email })),
+        }),
+      }
+    );
+    if (res.status === 204) {
+      return await res.json();
+    } else {
+      throw new Error("Error while removing Zoom meeting registrants.");
+    }
   },
 };
 

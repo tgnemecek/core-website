@@ -130,6 +130,19 @@ const Stripe = {
 
     return updatedTickets;
   },
+  deleteProduct: async (productId: string) => {
+    const prices: StripeAPI.Price[] = (await stripe.prices.list({
+      product: productId,
+      active: true,
+    })) as any;
+
+    // Deactivate deleted prices, we don't need to await
+    const promises = prices.map((price) => {
+      return stripe.prices.update(price.id, { active: false });
+    });
+    await Promise.all(promises);
+    return;
+  },
   createPaymentIntent: async (price: StripeAPI.Price) => {
     return await stripe.paymentIntents.create({
       amount: price.unit_amount!,

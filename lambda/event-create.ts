@@ -1,7 +1,7 @@
 import Zoom from "./services/Zoom";
 import Stripe from "./services/Stripe";
 import moment from "moment";
-import { NetlifyLambdaHandler } from "./types";
+import { NetlifyLambdaHandler, EventCreateBody } from "./types";
 
 const eventCreate: NetlifyLambdaHandler = async (event, context) => {
   if (!context.clientContext.user) {
@@ -11,7 +11,7 @@ const eventCreate: NetlifyLambdaHandler = async (event, context) => {
       body: "Unauthorized",
     };
   }
-  const body = JSON.parse(event.body || "{}");
+  const body: EventCreateBody = JSON.parse(event.body || "{}");
 
   const { title, subtitle, tickets, duration } = body;
   const startDate = moment(body.date).startOf("minute");

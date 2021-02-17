@@ -1,9 +1,9 @@
 import Stripe from "./services/Stripe";
-import { NetlifyLambdaHandler } from "./types";
+import { NetlifyLambdaHandler, CreatePaymentIntentBody } from "./types";
 
 const createPaymentIntent: NetlifyLambdaHandler = async (event, context) => {
   try {
-    const body = JSON.parse(event.body || "{}");
+    const body: CreatePaymentIntentBody = JSON.parse(event.body || "{}");
 
     const price = await Stripe.getPrice(body.ticketId);
     const paymentIntent = await Stripe.createPaymentIntent(price);

@@ -41,6 +41,8 @@ const EventFeed: React.FC<EventFeedProps> = ({ title, filter }) => {
     return 1;
   };
 
+  if (!events.length) return null;
+
   return (
     <Section id="events">
       <Container>

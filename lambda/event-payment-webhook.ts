@@ -23,7 +23,7 @@ const eventPaymentWebhook: NetlifyLambdaHandler = async (event, context) => {
     // Get meeting information
     const { meetingId } = payment.metadata;
     const { joinUrl, topic, startTime } = await Zoom.addRegistrant({
-      meetingId,
+      meetingId: Number(meetingId),
       email: email!,
       firstName,
       lastName,

@@ -24,6 +24,25 @@ export type NetlifyLambdaHandler = (
   context: NetlifyContext
 ) => Promise<APIGatewayProxyResult>;
 
+export type EventDeleteBody = {
+  meetingId: number;
+  productId: string;
+};
+
+export type EventCreateBody = EventDeleteBody & {
+  title: string;
+  subtitle: string;
+  tickets: TicketType[];
+  duration: number;
+  date: Date;
+};
+
+export type EventUpdateBody = EventCreateBody;
+
+export type CreatePaymentIntentBody = {
+  ticketId: string;
+};
+
 // https://marketplace.zoom.us/docs/api-reference/zoom-api/meetings/meeting
 export type ZoomMeetingType = {
   uuid: string;
@@ -123,6 +142,7 @@ export type ZoomMeetingType = {
 // This is incomplete:
 // https://marketplace.zoom.us/docs/api-reference/zoom-api/meetings/meetingregistrantcreate
 export type ZoomRegistrantType = {
+  id: string;
   email: string;
   first_name: string;
   last_name: string;

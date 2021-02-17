@@ -6,7 +6,7 @@ import cloudinary from "netlify-cms-media-library-cloudinary";
 import VideoWidget from "./VideoWidget";
 import config from "./config";
 import { ExtendedConfig } from "./types";
-import { eventCreate, eventUpdate } from "./api";
+import { eventCreate, eventUpdate, eventDelete } from "./api";
 import { EventType } from "types";
 
 type EventHandlerProps = CmsEventListener["handler"];
@@ -39,6 +39,24 @@ const AdminConsole = () => {
           dataEntry = dataEntry.set("meetingId", meetingId);
           dataEntry = dataEntry.set("tickets", tickets);
           return dataEntry;
+        } catch (err) {
+          return Promise.resolve({
+            toJS: () => {
+              throw err;
+            },
+          });
+        }
+      },
+    });
+
+    (CMS as any).registerEventListener({
+      name: "preUnpublish",
+      handler: async ({ entry }: EventHandlerProps) => {
+        try {
+          let dataEntry: Map<string, any> = entry.get("data");
+          const form = Object.fromEntries(dataEntry) as EventType;
+
+          await eventDelete(form);
         } catch (err) {
           return Promise.resolve({
             toJS: () => {

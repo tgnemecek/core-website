@@ -21,7 +21,12 @@ const useEventFeed = () => {
                 subtitle
                 title
                 isOnline
-                tickets
+                tickets {
+                  id
+                  description
+                  price
+                  endsOn
+                }
               }
             }
           }
