@@ -27,15 +27,13 @@ const eventDelete: NetlifyLambdaHandler = async (event, context) => {
 
   try {
     const [meeting, registrants] = await Promise.all([
-      Zoom.getMeeting(meetingId),
-      Zoom.listRegistrants(meetingId),
-      Zoom.deleteMeeting(meetingId),
-      Stripe.deleteProduct(productId),
+      Zoom.getMeeting(meetingId), // Gets meeting data
+      Zoom.listRegistrants(meetingId), // Gets meeting registrants
     ]);
 
     if (registrants.length) {
       await Promise.all([
-        Zoom.removeRegistrants({ meetingId, registrants }),
+        // Zoom.removeRegistrants({ meetingId, registrants }),
         ...registrants.map((registrant) => {
           return Email.send({
             template: "meeting-cancel",
@@ -48,6 +46,9 @@ const eventDelete: NetlifyLambdaHandler = async (event, context) => {
         }),
       ]);
     }
+
+    await Zoom.deleteMeeting(meetingId); // Deletes meeting in Zoom
+    await Stripe.deleteProduct(productId); // Deactivates prices in Stripe, creates refunds
 
     return {
       statusCode: 200,

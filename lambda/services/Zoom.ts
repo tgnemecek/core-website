@@ -66,13 +66,14 @@ const Zoom = {
     }
   },
   getMeeting: async (meetingId: number) => {
-    const res = await fetch(`https://api.zoom.us/v2/meetings${meetingId}`, {
+    const res = await fetch(`https://api.zoom.us/v2/meetings/${meetingId}`, {
       method: "GET",
       headers,
     });
     if (res.status === 200) {
       return (await res.json()) as ZoomMeetingType;
     } else {
+      console.error(res);
       throw new Error("Error while getting Zoom meeting.");
     }
   },

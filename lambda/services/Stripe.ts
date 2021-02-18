@@ -160,7 +160,7 @@ const Stripe = {
       active: true,
     })) as any;
 
-    // Deactivate deleted prices, we don't need to await
+    // Deactivate deleted prices
     const promises = prices.map((price) => {
       return stripe.prices.update(price.id, { active: false });
     });

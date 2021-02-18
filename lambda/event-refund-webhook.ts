@@ -2,7 +2,6 @@ import StripeApi from "stripe";
 import Email from "./services/Email";
 import Zoom from "./services/Zoom";
 import Stripe from "./services/Stripe";
-import moment from "moment";
 import { NetlifyLambdaHandler } from "./types";
 
 // This webhook is called when a single user is refunded and also
@@ -27,13 +26,22 @@ const eventPaymentWebhook: NetlifyLambdaHandler = async (event, context) => {
 
     // Get buyer information
     const { name, email } = charge.billing_details;
-    const [firstName, lastName] = name!.split("_");
+    const [firstName] = name!.split("_");
 
     // Get meeting information
     const {
       metadata: { meetingId },
       description,
     } = paymentIntent;
+
+    let isMeetingDeleted = false;
+
+    try {
+      await Zoom.getMeeting(Number(meetingId));
+    } catch (err) {
+      isMeetingDeleted = true;
+    }
+
     const registrants = await Zoom.listRegistrants(Number(meetingId));
 
     const foundRegistrant = registrants.find(
@@ -43,12 +51,14 @@ const eventPaymentWebhook: NetlifyLambdaHandler = async (event, context) => {
     // This check is needed in case the webhook is being triggered by a event-delete action
     // In this case the registrant has already been removed from the meeting as the
     // Zoom.listRegistrants method only lists approved users.
-    if (foundRegistrant) {
+    if (foundRegistrant && !isMeetingDeleted) {
       await Promise.all([
-        Zoom.removeRegistrants({
-          meetingId: Number(meetingId),
-          registrants: [foundRegistrant],
-        }),
+        !isMeetingDeleted
+          ? Zoom.removeRegistrants({
+              meetingId: Number(meetingId),
+              registrants: [foundRegistrant],
+            })
+          : null,
         await Email.send({
           template: "meeting-refund",
           to: email!,
