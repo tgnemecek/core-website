@@ -2,7 +2,7 @@
 collection: events
 meetingId: 89246158732
 productId: prod_IyHlFihjbZnmgX
-title: Just a Test!!!! (Please ignore)
+title: Just a Test!!!!! (Please ignore)
 subtitle: test
 description: test
 image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600812431/happy%20group.jpg
