@@ -121,7 +121,7 @@ const Zoom = {
   }: UpdateMeetingProps) => {
     // Docs: https://marketplace.zoom.us/docs/api-reference/zoom-api/meetings/meetingcreate
     const res = await fetch(`https://api.zoom.us/v2/meetings/${meetingId}`, {
-      method: "POST",
+      method: "PATCH",
       headers,
       body: JSON.stringify({
         topic: title,
