@@ -16,4 +16,8 @@ tickets:
     description: General Admission!!!
     price: 5
     endsOn: startOfEvent
+  - id: price_1IMLrbG9T6XK0FGiLsEdLMcp
+    description: Premium
+    price: 50
+    endsOn: startOfEvent
 ---
