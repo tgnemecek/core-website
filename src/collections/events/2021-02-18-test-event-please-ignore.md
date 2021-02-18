@@ -2,7 +2,7 @@
 collection: events
 meetingId: 82646162549
 productId: prod_Ixwc7oaYLpSXJI
-title: Test Event 18(Please ignore)
+title: Test Event 19(Please ignore)
 subtitle: Please ignore
 description: Please ignore
 image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600812431/happy%20group.jpg
@@ -78,77 +78,11 @@ tickets:
           entry:
             - description
             - fdsgsdfgsdfg
-    __ownerID: null
+    price: 1
     __hash: null
-    __altered: false
-    extra: 0
-  - size: 9
-    _root:
-      ownerID: {}
-      bitmap: 279003650
-      nodes:
-        - ownerID: {}
-          bitmap: 16385
-          nodes:
-            - ownerID: {}
-              keyHash: 3530753
-              entry:
-                - size
-                - 4
-            - ownerID: {}
-              keyHash: 91240897
-              entry:
-                - _root
-                - ownerID: {}
-                  entries:
-                    - - id
-                      - price_1IM1IlG9T6XK0FGieuRXaFgH
-                    - - description
-                      - General Admission
-                    - - price
-                      - 20
-                    - - endsOn
-                      - startOfEvent
-        - ownerID: {}
-          keyHash: 106934601
-          entry:
-            - price
-            - 23
-        - ownerID: {}
-          bitmap: 33554560
-          nodes:
-            - ownerID: {}
-              keyHash: -410526482
-              entry:
-                - __hash
-                - null
-            - ownerID: {}
-              keyHash: 320271150
-              entry:
-                - __ownerID
-                - null
-        - ownerID: {}
-          keyHash: 96965648
-          entry:
-            - extra
-            - 1
-        - ownerID: {}
-          keyHash: 470742869
-          entry:
-            - __altered
-            - false
-        - ownerID: {}
-          keyHash: -225001737
-          entry:
-            - endsOn
-            - startOfDay
-        - ownerID: {}
-          keyHash: -650804228
-          entry:
-            - description
-            - sdfgsdgfsdfgsdfgsdfg
     __ownerID: null
-    __hash: null
+    extra: "1"
     __altered: false
-    extra: 1
+    endsOn: startOfEvent
+    description: a
 ---
