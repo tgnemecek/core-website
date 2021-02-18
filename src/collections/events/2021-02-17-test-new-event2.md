@@ -2,7 +2,7 @@
 collection: events
 meetingId: 89839813704
 productId: prod_IvMdAJGvu2On6A
-title: Test New Event21123411211122212112313131
+title: Test New Event21123
 subtitle: Subtitle
 description: |-
   Description:
@@ -17,7 +17,7 @@ language:
   - EN
 isOnline: true
 tickets:
-  - id: "0.7424229975382883"
+  - id: "0.758178276190858"
     description: General Admission!
     price: 20
     endsOn: startOfEvent
