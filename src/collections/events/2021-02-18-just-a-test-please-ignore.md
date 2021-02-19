@@ -7,7 +7,7 @@ subtitle: test123
 description: test123
 image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600812431/happy%20group.jpg
 date: 2021-02-25T17:00:13.775Z
-duration: 33
+duration: 34
 language:
   - EN
 isOnline: true
