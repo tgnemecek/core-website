@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment-timezone";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { useSnackbar } from "notistack";
 import { Button, Typography } from "@material-ui/core";
@@ -143,7 +144,12 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
           card: elements.getElement(CardElement),
           billing_details: {
             email: formState.email,
-            name: `${formState.firstName}_${formState.lastName}`,
+            name: `${formState.firstName} ${formState.lastName}`,
+          },
+          metadata: {
+            firstName: formState.firstName,
+            lastName: formState.lastName,
+            timezone: moment.tz.guess(),
           },
         },
       });

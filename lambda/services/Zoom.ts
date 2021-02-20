@@ -2,7 +2,12 @@ import fetch from "node-fetch";
 import jwt from "jsonwebtoken";
 import Core from "./Core";
 import moment from "moment";
-import { ProcessEnvType, ZoomMeetingType, ZoomRegistrantType } from "../types";
+import {
+  ProcessEnvType,
+  ZoomMeetingType,
+  ZoomRegistrantType,
+  ZoomAddRegistrantType,
+} from "../types";
 // Zoom Documentation can be found here:
 // https://marketplace.zoom.us/docs/api-reference/zoom-api/meetings/meetingcreate
 
@@ -22,7 +27,10 @@ type UpdateMeetingProps = CreateMeetingProps & {
   meetingId: number;
 };
 
-type AddRegistrantProps = Record<"email" | "firstName" | "lastName", string> & {
+type AddRegistrantProps = Record<
+  "email" | "firstName" | "lastName" | "timezone",
+  string
+> & {
   meetingId: number;
 };
 
@@ -151,7 +159,7 @@ const Zoom = {
   },
   addRegistrant: async (props: AddRegistrantProps) => {
     // Docs: https://marketplace.zoom.us/docs/api-reference/zoom-api/meetings/meetingregistrantcreate
-    const { meetingId, email, firstName, lastName } = props;
+    const { meetingId, email, firstName, lastName, timezone } = props;
 
     const errors = (Object.keys(props) as (keyof AddRegistrantProps)[]).filter(
       (key) => {
@@ -180,7 +188,13 @@ const Zoom = {
           email,
           first_name: firstName,
           last_name: lastName,
-        } as ZoomRegistrantType),
+          auto_approve: true,
+          custom_questions: [
+            {
+              timezone,
+            },
+          ],
+        } as ZoomAddRegistrantType),
       }
     );
 

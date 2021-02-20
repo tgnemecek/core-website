@@ -142,11 +142,20 @@ export type ZoomMeetingType = {
 
 // This is incomplete:
 // https://marketplace.zoom.us/docs/api-reference/zoom-api/meetings/meetingregistrantcreate
-export type ZoomRegistrantType = {
-  id: string;
+export type ZoomAddRegistrantType = {
   email: string;
   first_name: string;
   last_name: string;
+  auto_approve: boolean;
+  custom_questions: [
+    {
+      timezone: string;
+    }
+  ];
+};
+
+export type ZoomRegistrantType = ZoomAddRegistrantType & {
+  id: string;
   join_url: string;
 };
 

@@ -2,7 +2,7 @@ import StripeApi from "stripe";
 import Email from "./services/Email";
 import Zoom from "./services/Zoom";
 import Stripe from "./services/Stripe";
-import moment from "moment";
+import moment from "moment-timezone";
 import { NetlifyLambdaHandler } from "./types";
 
 const eventPaymentWebhook: NetlifyLambdaHandler = async (event, context) => {
@@ -17,8 +17,8 @@ const eventPaymentWebhook: NetlifyLambdaHandler = async (event, context) => {
     }
 
     // Get buyer information
-    const { name, email } = payment.charges.data[0].billing_details;
-    const [firstName, lastName] = name!.split("_");
+    const { email } = payment.charges.data[0].billing_details;
+    const { firstName, lastName, timezone } = payment.charges.data[0].metadata;
 
     // Get meeting information
     const { meetingId } = payment.metadata;
@@ -27,7 +27,10 @@ const eventPaymentWebhook: NetlifyLambdaHandler = async (event, context) => {
       email: email!,
       firstName,
       lastName,
+      timezone,
     });
+
+    const startDate = moment(startTime).tz(timezone);
 
     await Email.send({
       template: "meeting-purchase",
@@ -36,8 +39,8 @@ const eventPaymentWebhook: NetlifyLambdaHandler = async (event, context) => {
         firstName,
         meetingName: topic,
         meetingLink: joinUrl,
-        startDate: moment(startTime),
-        endDate: moment(startTime).add(60, "minutes"),
+        startDate,
+        endDate: startDate.clone().add(60, "minutes"),
       },
     });
 

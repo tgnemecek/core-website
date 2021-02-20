@@ -3,7 +3,7 @@ import StripeApi from "stripe";
 import Email from "./services/Email";
 import Zoom from "./services/Zoom";
 import Stripe from "./services/Stripe";
-import moment from "moment";
+import moment from "moment-timezone";
 import {
   NetlifyLambdaHandler,
   EventUpdateBody,
@@ -49,13 +49,6 @@ const eventUpdate: NetlifyLambdaHandler = async (event, context) => {
 
     const haveTicketsChanged = Core.compareTickets(tickets, prices);
 
-    console.log({
-      titleChanged,
-      dateChanged,
-      durationChanged,
-      haveTicketsChanged,
-    });
-
     const promises: Promise<any>[] = [];
 
     if (titleChanged || haveTicketsChanged) {
@@ -85,8 +78,12 @@ const eventUpdate: NetlifyLambdaHandler = async (event, context) => {
     if (dateChanged || durationChanged) {
       const sendEmails = async () => {
         const registrants = await Zoom.listRegistrants(meetingId);
+
         return await Promise.all(
           registrants.map((registrant) => {
+            const { timezone } = registrant.custom_questions[0];
+            const tzStartDate = startDate.clone().tz(timezone);
+
             return Email.send({
               template: "meeting-update",
               to: registrant.email,
@@ -94,8 +91,8 @@ const eventUpdate: NetlifyLambdaHandler = async (event, context) => {
                 firstName: registrant.first_name,
                 meetingName: title,
                 meetingLink: registrant.join_url,
-                startDate,
-                endDate: startDate.clone().add(duration, "minutes"),
+                startDate: tzStartDate,
+                endDate: tzStartDate.clone().add(duration, "minutes"),
               },
             });
           })
