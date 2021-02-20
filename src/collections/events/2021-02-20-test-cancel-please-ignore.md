@@ -7,7 +7,7 @@ subtitle: test
 description: test
 image: https://cdn.mos.cms.futurecdn.net/ntFmJUZ8tw3ULD3tkBaAtf.jpg
 date: 2021-03-18T23:40:41.078Z
-duration: 30
+duration: 32
 language:
   - EN
 isOnline: true
