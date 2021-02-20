@@ -71,7 +71,9 @@ const templateSettings: TemplateSettingsType = {
     subject: "Here's your event link",
     hasCalendarLink: true,
     dateFormatter: (startDate) =>
-      `${startDate?.format("h:mm A")} on ${startDate?.format("MM/DD/YYYY")}`,
+      `${startDate?.format("h:mm A (z)")} on ${startDate?.format(
+        "MM/DD/YYYY"
+      )}`,
   },
   "meeting-update": {
     template: meetingUpdateTemplate,
@@ -80,8 +82,8 @@ const templateSettings: TemplateSettingsType = {
     hasCalendarLink: true,
     dateFormatter: (startDate, endDate) =>
       `${startDate?.format("MMM D, YYYY")}<br/>${startDate?.format(
-        "h:mm A"
-      )} - ${endDate?.local().format("h:mm A")}`,
+        "h:mm A (z)"
+      )} - ${endDate?.local().format("h:mm A (z)")}`,
   },
   "meeting-cancel": {
     template: meetingCancelTemplate,

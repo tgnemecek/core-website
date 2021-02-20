@@ -81,18 +81,8 @@ const eventUpdate: NetlifyLambdaHandler = async (event, context) => {
 
         return await Promise.all(
           registrants.map((registrant) => {
-            console.dir(
-              {
-                registrant,
-              },
-              { depth: null }
-            );
-            const timezone = registrant.address || "America/Toronto";
+            const timezone = registrant.address;
             const tzStartDate = startDate.clone().tz(timezone);
-
-            console.log({
-              timezone,
-            });
 
             return Email.send({
               template: "meeting-update",
