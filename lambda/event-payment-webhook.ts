@@ -19,10 +19,14 @@ const eventPaymentWebhook: NetlifyLambdaHandler = async (event, context) => {
     // Get buyer information, created in the checkout form
     const {
       metadata: { firstName, lastName, timezone },
-      billing_details: { email },
+      billing_details: { email, name },
     } = payment.charges.data[0];
 
     console.log({
+      email,
+      name,
+      firstName,
+      lastName,
       timezone,
     });
 
