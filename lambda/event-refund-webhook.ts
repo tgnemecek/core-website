@@ -14,6 +14,7 @@ const eventPaymentWebhook: NetlifyLambdaHandler = async (event, context) => {
     const charge: StripeApi.Charge = stripeEvent.data.object as any;
 
     if (!charge.refunded) {
+      console.log("charge-not-refunded");
       return {
         statusCode: 200,
         body: "",
@@ -47,6 +48,12 @@ const eventPaymentWebhook: NetlifyLambdaHandler = async (event, context) => {
     const foundRegistrant = registrants.find(
       (registrant) => registrant.email === email
     );
+
+    console.log({
+      isMeetingDeleted,
+      registrants,
+      foundRegistrant,
+    });
 
     // This check is needed in case the webhook is being triggered by a event-delete action
     // In this case the registrant has already been removed from the meeting as the

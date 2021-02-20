@@ -31,6 +31,10 @@ const eventDelete: NetlifyLambdaHandler = async (event, context) => {
       Zoom.listRegistrants(meetingId), // Gets meeting registrants
     ]);
 
+    console.log({
+      registrants,
+    });
+
     if (registrants.length) {
       await Promise.all([
         // Zoom.removeRegistrants({ meetingId, registrants }),
