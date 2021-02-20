@@ -87,7 +87,9 @@ const eventUpdate: NetlifyLambdaHandler = async (event, context) => {
               },
               { depth: null }
             );
-            const { timezone } = registrant.custom_questions[0];
+            const { value: timezone } = registrant.custom_questions.find(
+              ({ title }) => title === "timezone"
+            )!;
             const tzStartDate = startDate.clone().tz(timezone);
 
             console.log({

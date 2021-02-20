@@ -195,7 +195,8 @@ const Zoom = {
           auto_approve: true,
           custom_questions: [
             {
-              timezone,
+              title: "timezone",
+              value: timezone,
             },
           ],
         } as ZoomAddRegistrantType),

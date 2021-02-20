@@ -101,11 +101,10 @@ export type ZoomAddRegistrantType = {
   first_name: string;
   last_name: string;
   auto_approve: boolean;
-  custom_questions: [
-    {
-      timezone: string;
-    }
-  ];
+  custom_questions: {
+    title: "timezone";
+    value: string;
+  }[];
 };
 
 export type ZoomRegistrantType = ZoomAddRegistrantType & {
