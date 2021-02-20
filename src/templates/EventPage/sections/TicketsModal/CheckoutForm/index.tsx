@@ -139,6 +139,10 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
       //   return;
       // }
 
+      console.log({
+        timezone: moment.tz.guess(),
+      });
+
       const payload = await stripe.confirmCardPayment(clientSecret, {
         payment_method: {
           card: elements.getElement(CardElement),

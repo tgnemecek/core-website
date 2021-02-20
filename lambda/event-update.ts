@@ -84,6 +84,10 @@ const eventUpdate: NetlifyLambdaHandler = async (event, context) => {
             const { timezone } = registrant.custom_questions[0];
             const tzStartDate = startDate.clone().tz(timezone);
 
+            console.log({
+              timezone,
+            });
+
             return Email.send({
               template: "meeting-update",
               to: registrant.email,

@@ -16,9 +16,15 @@ const eventPaymentWebhook: NetlifyLambdaHandler = async (event, context) => {
       throw new Error("Payment has not succeeded");
     }
 
-    // Get buyer information
-    const { email } = payment.charges.data[0].billing_details;
-    const { firstName, lastName, timezone } = payment.charges.data[0].metadata;
+    // Get buyer information, created in the checkout form
+    const {
+      metadata: { firstName, lastName, timezone },
+      billing_details: { email },
+    } = payment.charges.data[0];
+
+    console.log({
+      timezone,
+    });
 
     // Get meeting information
     const { meetingId } = payment.metadata;
