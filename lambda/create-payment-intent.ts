@@ -3,10 +3,16 @@ import { NetlifyLambdaHandler, CreatePaymentIntentBody } from "./types";
 
 const createPaymentIntent: NetlifyLambdaHandler = async (event, context) => {
   try {
-    const body: CreatePaymentIntentBody = JSON.parse(event.body || "{}");
+    const { ticketId, timezone, title }: CreatePaymentIntentBody = JSON.parse(
+      event.body || "{}"
+    );
 
-    const price = await Stripe.getPrice(body.ticketId);
-    const paymentIntent = await Stripe.createPaymentIntent(price, body.title);
+    const price = await Stripe.getPrice(ticketId);
+    const paymentIntent = await Stripe.createPaymentIntent({
+      price,
+      title,
+      timezone,
+    });
 
     return {
       statusCode: 200,

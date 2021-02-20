@@ -11,6 +11,12 @@ type UpdateProductProps = CreateProductProps & {
   productId: string;
 };
 
+type CreatePaymentIntentProps = {
+  price: StripeAPI.Price;
+  title: string;
+  timezone: string;
+};
+
 const {
   STRIPE_PAYMENT_INTENT_SECRET,
   STRIPE_SECRET_KEY,
@@ -214,11 +220,18 @@ const Stripe = {
   getPaymentIntent: async (id: string) => {
     return await stripe.paymentIntents.retrieve(id);
   },
-  createPaymentIntent: async (price: StripeAPI.Price, title: string) => {
+  createPaymentIntent: async ({
+    price,
+    title,
+    timezone,
+  }: CreatePaymentIntentProps) => {
     return await stripe.paymentIntents.create({
       amount: price.unit_amount!,
       currency: price.currency,
-      metadata: price.metadata,
+      metadata: {
+        ...price.metadata,
+        timezone,
+      },
       description: title,
     });
   },
