@@ -11,9 +11,10 @@ const eventCreate: NetlifyLambdaHandler = async (event, context) => {
       body: "Unauthorized",
     };
   }
+
   const body: EventCreateBody = JSON.parse(event.body || "{}");
 
-  const { title, subtitle, tickets, duration } = body;
+  const { title, tickets, duration } = body;
   const startDate = moment(body.date).startOf("minute");
 
   try {
@@ -34,7 +35,6 @@ const eventCreate: NetlifyLambdaHandler = async (event, context) => {
 
     const { productId, ticketsWithId } = await Stripe.createProduct({
       title,
-      subtitle,
       tickets,
       meetingId,
     });

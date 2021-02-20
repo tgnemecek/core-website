@@ -16,5 +16,12 @@ export type ExtendedConfig = Omit<CmsConfig, "backend"> & {
 
 export type FormType = Pick<
   EventType,
-  "title" | "subtitle" | "tickets" | "isOnline" | "date" | "duration"
+  | "meetingId"
+  | "productId"
+  | "title"
+  | "subtitle"
+  | "tickets"
+  | "isOnline"
+  | "date"
+  | "duration"
 >;

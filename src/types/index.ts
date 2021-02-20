@@ -61,11 +61,12 @@ export type TicketType = {
   description: string;
   price: number;
   endsOn: "startOfEvent" | "startOfDay" | "oneWeek";
+  extra: string;
 };
 
 export type EventType = {
   productId: string;
-  meetingId: string;
+  meetingId: number;
   slug?: string;
   title: string;
   subtitle: string;

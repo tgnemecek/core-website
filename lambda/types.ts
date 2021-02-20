@@ -155,4 +155,5 @@ export type TicketType = {
   description: string;
   price: number;
   endsOn: "startOfEvent" | "startOfDay" | "oneWeek";
+  extra: string;
 };

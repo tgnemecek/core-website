@@ -4,7 +4,6 @@ import { ProcessEnvType, TicketType } from "../types";
 type CreateProductProps = {
   meetingId: number;
   title: string;
-  subtitle: string;
   tickets: TicketType[];
 };
 
@@ -88,15 +87,33 @@ const Stripe = {
   getPrice: async (id: string) => {
     return await stripe.prices.retrieve(id);
   },
-  createProduct: async ({
-    meetingId,
-    title,
-    subtitle,
-    tickets,
-  }: CreateProductProps) => {
+  listProductPrices: async (productId: string) => {
+    const getPage = async (
+      prices: StripeAPI.Price[],
+      startingAfter?: string
+    ): Promise<StripeAPI.Price[]> => {
+      const { data, has_more } = await stripe.prices.list({
+        active: true,
+        product: productId,
+        limit: 100,
+        starting_after: startingAfter,
+      });
+
+      const newPrices = [...prices, ...data];
+
+      if (has_more) {
+        return await getPage(newPrices, data[data.length - 1].id);
+      }
+      return newPrices;
+    };
+    return await getPage([]);
+  },
+  getProduct: async (id: string) => {
+    return await stripe.products.retrieve(id);
+  },
+  createProduct: async ({ meetingId, title, tickets }: CreateProductProps) => {
     const { id: productId } = await stripe.products.create({
       name: title,
-      description: subtitle,
       metadata: {
         meetingId,
       },
@@ -112,31 +129,30 @@ const Stripe = {
     productId,
     meetingId,
     title,
-    subtitle,
     tickets,
   }: UpdateProductProps) => {
     // Update product, we don't need to await
     stripe.products.update(productId, {
       name: title,
-      description: subtitle,
     });
 
-    const prices: StripeAPI.Price[] = (await stripe.prices.list({
-      product: productId,
-      active: true,
-    })) as any;
+    const prices = await Stripe.listProductPrices(productId);
 
-    // Deactivate deleted prices, we don't need to await
-    prices.forEach((price) => {
-      const found = tickets.find((ticket) => ticket.id === price.id);
-      if (!found) {
-        stripe.prices.update(price.id, { active: false });
-      }
-    });
+    // Deactivate deleted prices
+    await Promise.all(
+      prices.map((price) => {
+        const found = tickets.find((ticket) => ticket.id === price.id);
+        if (!found) {
+          console.log(`deactivating price: ${price.id}`);
+          return stripe.prices.update(price.id, { active: false });
+        }
+      })
+    );
 
     const ticketsPromises = tickets.map((ticket) => {
       // If the ticket has no id, that means it's a new one
       if (!ticket.id) {
+        console.log("creating-new-price");
         return createPrice(ticket, productId, meetingId);
       }
       // Tries to find a price in Stripe with that id
@@ -145,12 +161,23 @@ const Stripe = {
       // If the price wasn't found, it means something went wrong
       // As a safety measure we should still create a price and get a different id
       if (!found) {
+        console.log("creating-new-price-b");
         return createPrice(ticket, productId, meetingId);
       }
-      return updatePrice(ticket, productId, meetingId);
+
+      if (found.unit_amount !== formatPrice(ticket.price)) {
+        console.log("updating-price");
+        return updatePrice(ticket, productId, meetingId);
+      }
+      console.log("not-touching-price");
+      return ticket;
     });
 
     const updatedTickets = await Promise.all(ticketsPromises);
+
+    console.log({
+      insideStripeUpdate: updatedTickets,
+    });
 
     return updatedTickets;
   },

@@ -16,7 +16,10 @@ type TemplateSettingsType = Record<
     tags: TagType[];
     subject: string;
     hasCalendarLink?: boolean;
-    dateFormatter: (startDate?: moment.Moment) => string | undefined;
+    dateFormatter: (
+      startDate?: moment.Moment,
+      endDate?: moment.Moment
+    ) => string | undefined;
   }
 >;
 
@@ -68,15 +71,21 @@ const templateSettings: TemplateSettingsType = {
     subject: "Here's your event link",
     hasCalendarLink: true,
     dateFormatter: (startDate) =>
-      `${startDate?.format("h:mm A")} on ${startDate?.format("MM/DD/YYYY")}`,
+      `${startDate?.local().format("h:mm A")} on ${startDate
+        ?.local()
+        .format("MM/DD/YYYY")}`,
   },
   "meeting-update": {
     template: meetingUpdateTemplate,
     tags: ["firstName", "meetingName", "meetingLink", "startDate", "endDate"],
     subject: "Event updated",
     hasCalendarLink: true,
-    dateFormatter: (startDate) =>
-      `${startDate?.format("MMM D, YYYY")} - ${startDate?.format("h:mm A")}`,
+    dateFormatter: (startDate, endDate) =>
+      `${startDate
+        ?.local()
+        .format("MMM D, YYYY")}<br/>${startDate
+        ?.local()
+        .format("h:mm A")} - ${endDate?.local().format("h:mm A")}`,
   },
   "meeting-cancel": {
     template: meetingCancelTemplate,
@@ -117,7 +126,7 @@ const useTemplate = (
 
   const formattedTags: FormattedTagMap = {
     ...tagMap,
-    formattedDate: dateFormatter(tagMap.startDate),
+    formattedDate: dateFormatter(tagMap.startDate, tagMap.endDate),
     googleCalendarLink: hasCalendarLink
       ? Core.generateCalendarLink({
           title: tagMap.meetingName!,

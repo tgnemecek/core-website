@@ -1,4 +1,6 @@
 import moment from "moment";
+import StripeApi from "stripe";
+import { TicketType } from "../types";
 
 type GenerateCalendarLinkProps = {
   title: string;
@@ -9,6 +11,15 @@ type GenerateCalendarLinkProps = {
 };
 
 const Core = {
+  compareTickets: (tickets: TicketType[], prices: StripeApi.Price[]) => {
+    if (tickets.length !== prices.length) return true;
+    const hasChanged = tickets.some((ticket) => {
+      const found = prices.find((price) => price.id === ticket.id);
+      if (!found) return true;
+      return ticket.price * 100 !== found.unit_amount;
+    });
+    return hasChanged;
+  },
   compareDates: (newDate: moment.Moment, oldDate: moment.Moment) => {
     return !newDate.isSame(oldDate);
   },

@@ -130,9 +130,9 @@ const Zoom = {
       } as Partial<ZoomMeetingType>),
     });
     if (res.status === 204) {
-      await res.json();
       return true;
     } else {
+      console.log(res);
       throw new Error("Error while updating Zoom meeting.");
     }
   },
@@ -202,7 +202,7 @@ const Zoom = {
     ): Promise<ZoomRegistrantType[]> => {
       const tokenStr = pageToken ? `&next_page_token=${pageToken}` : "";
       const res = await fetch(
-        `https://api.zoom.us/v2/meetings${meetingId}/registrants?page_size=300${tokenStr}`,
+        `https://api.zoom.us/v2/meetings/${meetingId}/registrants?page_size=300${tokenStr}`,
         {
           method: "GET",
           headers,
@@ -210,10 +210,10 @@ const Zoom = {
       );
       if (res.status === 200) {
         const data = (await res.json()) as {
-          registrants: ZoomRegistrantType;
+          registrants: ZoomRegistrantType[];
           next_page_token?: string;
         };
-        const newRegistrants = [...(registrants || []), data.registrants];
+        const newRegistrants = [...(registrants || []), ...data.registrants];
         if (data.next_page_token) {
           return await getRegistrantPages(newRegistrants, data.next_page_token);
         }

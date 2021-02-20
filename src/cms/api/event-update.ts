@@ -3,7 +3,7 @@ import generateHeaders from "./generateHeaders";
 
 type ReturnType = {
   productId: string;
-  meetingId: string;
+  meetingId: number;
   tickets: FormType["tickets"];
 };
 

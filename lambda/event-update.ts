@@ -1,9 +1,15 @@
 import Core from "./services/Core";
+import StripeApi from "stripe";
 import Email from "./services/Email";
 import Zoom from "./services/Zoom";
 import Stripe from "./services/Stripe";
 import moment from "moment";
-import { NetlifyLambdaHandler, EventUpdateBody } from "./types";
+import {
+  NetlifyLambdaHandler,
+  EventUpdateBody,
+  ZoomMeetingType,
+  TicketType,
+} from "./types";
 
 const eventUpdate: NetlifyLambdaHandler = async (event, context) => {
   if (!context.clientContext.user) {
@@ -16,11 +22,19 @@ const eventUpdate: NetlifyLambdaHandler = async (event, context) => {
 
   const body: EventUpdateBody = JSON.parse(event.body || "{}");
 
-  const { meetingId, productId, title, subtitle, tickets, duration } = body;
+  const { meetingId, productId, title, tickets, duration } = body;
   const startDate = moment(body.date).startOf("minute");
 
+  let meeting: ZoomMeetingType;
+  let product: StripeApi.Product;
+  let prices: StripeApi.Price[];
+
   try {
-    await Promise.all([Zoom.ping(), Stripe.ping()]);
+    [meeting, product, prices] = await Promise.all([
+      Zoom.getMeeting(meetingId),
+      Stripe.getProduct(productId),
+      Stripe.listProductPrices(productId),
+    ]);
   } catch (err) {
     return {
       statusCode: 503,
@@ -29,52 +43,74 @@ const eventUpdate: NetlifyLambdaHandler = async (event, context) => {
   }
 
   try {
-    const meeting = await Zoom.getMeeting(meetingId);
-    const dateChanged = Core.compareDates(
-      startDate,
-      moment(meeting.start_time)
-    );
+    const titleChanged = title !== meeting.topic || title !== product.name;
+    const dateChanged = !startDate.isSame(moment(meeting.start_time), "minute");
     const durationChanged = duration !== meeting.duration;
 
-    await Zoom.updateMeeting({
-      meetingId,
-      title,
-      startDate,
-      duration,
+    const haveTicketsChanged = Core.compareTickets(tickets, prices);
+
+    console.log({
+      titleChanged,
+      dateChanged,
+      durationChanged,
+      haveTicketsChanged,
     });
 
-    const updatedTickets = await Stripe.updateProduct({
-      productId,
-      meetingId,
-      title,
-      subtitle,
-      tickets,
-    });
+    const promises: Promise<any>[] = [];
 
-    if (dateChanged || durationChanged) {
-      const registrants = await Zoom.listRegistrants(meetingId);
-      await Promise.all(
-        registrants.map((registrant) => {
-          return Email.send({
-            template: "meeting-update",
-            to: registrant.email,
-            tags: {
-              firstName: registrant.first_name,
-              meetingName: title,
-              meetingLink: registrant.join_url,
-              startDate,
-              endDate: startDate.add(duration, "minutes"),
-            },
-          });
+    if (titleChanged || haveTicketsChanged) {
+      promises.push(
+        Stripe.updateProduct({
+          productId,
+          meetingId,
+          title,
+          tickets,
+        })
+      );
+    } else {
+      promises.push(Promise.resolve(undefined));
+    }
+
+    if (titleChanged || dateChanged || durationChanged) {
+      promises.push(
+        Zoom.updateMeeting({
+          meetingId,
+          title,
+          startDate,
+          duration,
         })
       );
     }
+
+    if (dateChanged || durationChanged) {
+      const sendEmails = async () => {
+        const registrants = await Zoom.listRegistrants(meetingId);
+        return await Promise.all(
+          registrants.map((registrant) => {
+            return Email.send({
+              template: "meeting-update",
+              to: registrant.email,
+              tags: {
+                firstName: registrant.first_name,
+                meetingName: title,
+                meetingLink: registrant.join_url,
+                startDate,
+                endDate: startDate.clone().add(duration, "minutes"),
+              },
+            });
+          })
+        );
+      };
+      promises.push(sendEmails());
+    }
+
+    const [updatedTickets] = await Promise.all<TicketType[]>(promises);
 
     return {
       statusCode: 200,
       body: JSON.stringify({
         ...body,
-        tickets: updatedTickets,
+        tickets: updatedTickets || tickets,
       }),
     };
   } catch (err) {
