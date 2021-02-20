@@ -193,12 +193,7 @@ const Zoom = {
           first_name: firstName,
           last_name: lastName,
           auto_approve: true,
-          custom_questions: [
-            {
-              title: "timezone",
-              value: timezone,
-            },
-          ],
+          address: timezone,
         } as ZoomAddRegistrantType),
       }
     );
