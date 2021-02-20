@@ -81,6 +81,12 @@ const eventUpdate: NetlifyLambdaHandler = async (event, context) => {
 
         return await Promise.all(
           registrants.map((registrant) => {
+            console.dir(
+              {
+                registrant,
+              },
+              { depth: null }
+            );
             const { timezone } = registrant.custom_questions[0];
             const tzStartDate = startDate.clone().tz(timezone);
 

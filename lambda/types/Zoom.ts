@@ -1,50 +1,3 @@
-import { APIGatewayEvent, APIGatewayProxyResult, Context } from "aws-lambda";
-
-export type ProcessEnvType = {
-  ZOOM_API_KEY: string;
-  ZOOM_API_SECRET: string;
-  ZOOM_USER_ID: string;
-  STRIPE_SECRET_KEY: string;
-  STRIPE_PAYMENT_INTENT_SECRET: string;
-  EMAIL_HOST: string;
-  EMAIL_USERNAME: string;
-  EMAIL_PASSWORD: string;
-  GATSBY_STRIPE_PUBLIC_KEY: string;
-};
-
-type NetlifyContext = Omit<Context, "clientContext"> & {
-  clientContext: Context["clientContext"] & {
-    identity?: any;
-    user?: any;
-  };
-};
-
-export type NetlifyLambdaHandler = (
-  event: APIGatewayEvent,
-  context: NetlifyContext
-) => Promise<APIGatewayProxyResult>;
-
-export type EventDeleteBody = {
-  meetingId: number;
-  productId: string;
-};
-
-export type EventCreateBody = EventDeleteBody & {
-  title: string;
-  subtitle: string;
-  tickets: TicketType[];
-  duration: number;
-  date: Date;
-};
-
-export type EventUpdateBody = EventCreateBody;
-
-export type CreatePaymentIntentBody = {
-  ticketId: string;
-  title: string;
-  timezone: string;
-};
-
 // https://marketplace.zoom.us/docs/api-reference/zoom-api/meetings/meeting
 export type ZoomMeetingType = {
   uuid: string;
@@ -158,12 +111,4 @@ export type ZoomAddRegistrantType = {
 export type ZoomRegistrantType = ZoomAddRegistrantType & {
   id: string;
   join_url: string;
-};
-
-export type TicketType = {
-  id: string;
-  description: string;
-  price: number;
-  endsOn: "startOfEvent" | "startOfDay" | "oneWeek";
-  extra: string;
 };

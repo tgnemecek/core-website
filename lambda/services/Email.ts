@@ -71,9 +71,7 @@ const templateSettings: TemplateSettingsType = {
     subject: "Here's your event link",
     hasCalendarLink: true,
     dateFormatter: (startDate) =>
-      `${startDate?.local().format("h:mm A")} on ${startDate
-        ?.local()
-        .format("MM/DD/YYYY")}`,
+      `${startDate?.format("h:mm A")} on ${startDate?.format("MM/DD/YYYY")}`,
   },
   "meeting-update": {
     template: meetingUpdateTemplate,

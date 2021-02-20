@@ -179,6 +179,10 @@ const Zoom = {
       throw new Error(`Invalid email address: ${email}`);
     }
 
+    console.log({
+      timezone,
+    });
+
     const res = await fetch(
       `https://api.zoom.us/v2/meetings/${meetingId}/registrants`,
       {
