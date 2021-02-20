@@ -1,6 +1,6 @@
 // import StripeApi from "stripe";
 // import Email from "./services/Email";
-// import Zoom from "./services/Zoom";
+import Zoom from "./services/Zoom";
 // import Stripe from "./services/Stripe";
 // import moment from "moment";
 import { NetlifyLambdaHandler } from "./types";
@@ -12,9 +12,9 @@ const test: NetlifyLambdaHandler = async (event, context) => {
     // const meetingId = 88075727483;
 
     // const meeting = await Zoom.getMeeting(meetingId);
-    // // const registrants = await Zoom.listRegistrants(meetingId);
+    const registrants = await Zoom.listRegistrants(89255887425);
 
-    // console.log({ meeting });
+    console.dir({ registrants }, { depth: null });
 
     // const foundRegistrant = registrants.find(
     //   (registrant) => registrant.email === email

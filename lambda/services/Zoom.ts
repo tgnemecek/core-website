@@ -116,7 +116,28 @@ const Zoom = {
         join_url: url,
         id: meetingId,
       } = (await res.json()) as ZoomMeetingType;
-      return { url, meetingId };
+
+      const newFieldsRes = await fetch(
+        `https://api.zoom.us/v2/meetings/${meetingId}/registrants/questions`,
+        {
+          method: "PATCH",
+          headers,
+          body: JSON.stringify({
+            questions: [
+              {
+                field_name: "address",
+                required: true,
+              },
+            ],
+          }),
+        }
+      );
+
+      if (newFieldsRes.status === 204) {
+        return { url, meetingId };
+      } else {
+        throw new Error("Error while updating Zoom registrant questions.");
+      }
     } else {
       throw new Error("Error while creating Zoom meeting.");
     }
