@@ -18,27 +18,12 @@ const eventPaymentWebhook: NetlifyLambdaHandler = async (event, context) => {
 
     // Get buyer information, created in the checkout form
     const {
-      metadata: { firstName, lastName, timezone },
       billing_details: { email, name },
     } = payment.charges.data[0];
 
-    console.log({
-      email,
-      name,
-      firstName,
-      lastName,
-      timezone,
-    });
+    const [firstName, lastName] = name!.split("_");
+    const { meetingId, timezone } = payment.metadata;
 
-    console.dir(
-      {
-        payment,
-      },
-      { depth: null }
-    );
-
-    // Get meeting information
-    const { meetingId } = payment.metadata;
     const { joinUrl, topic, startTime } = await Zoom.addRegistrant({
       meetingId: Number(meetingId),
       email: email!,

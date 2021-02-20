@@ -63,7 +63,10 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ ticketId: chosenTicket.id }),
+        body: JSON.stringify({
+          ticketId: chosenTicket.id,
+          timezone: moment.tz.guess(),
+        }),
       });
       const data = await res.json();
       setClientSecret(data.clientSecret);
@@ -120,40 +123,12 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
     setLoading(true);
 
     try {
-      // const res = await fetch(
-      //   "/.netlify/functions/event-check-existing-registrant",
-      //   {
-      //     method: "POST",
-      //     body: JSON.stringify({
-      //       email: formState.email,
-      //       meetingId,
-      //     }),
-      //   }
-      // );
-
-      // const { result } = await res.json();
-
-      // if (result === "registrant-found") {
-      //   setLoading(false);
-      //   goToFailed();
-      //   return;
-      // }
-
-      console.log({
-        timezone: moment.tz.guess(),
-      });
-
       const payload = await stripe.confirmCardPayment(clientSecret, {
         payment_method: {
           card: elements.getElement(CardElement),
           billing_details: {
             email: formState.email,
-            name: `${formState.firstName} ${formState.lastName}`,
-          },
-          metadata: {
-            firstName: formState.firstName,
-            lastName: formState.lastName,
-            timezone: moment.tz.guess(),
+            name: `${formState.firstName}_${formState.lastName}`,
           },
         },
       });
