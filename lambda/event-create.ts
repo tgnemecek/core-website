@@ -1,3 +1,4 @@
+import Core from "./services/Core";
 import Zoom from "./services/Zoom";
 import Stripe from "./services/Stripe";
 import moment from "moment";
@@ -39,11 +40,12 @@ const eventCreate: NetlifyLambdaHandler = async (event, context) => {
       meetingId,
     });
 
+    const id = Core.encodeEventId(productId, meetingId);
+
     return {
       statusCode: 200,
       body: JSON.stringify({
-        productId,
-        meetingId,
+        id,
         tickets: ticketsWithId,
       }),
     };

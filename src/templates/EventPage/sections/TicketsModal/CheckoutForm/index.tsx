@@ -31,7 +31,6 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
     setTicketsModalOpen,
     setAlreadyPurchased,
     setLoading,
-    event: { meetingId },
   } = React.useContext(EventContext);
 
   const [clientSecret, setClientSecret] = React.useState("");

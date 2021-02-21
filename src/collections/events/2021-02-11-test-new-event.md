@@ -1,7 +1,6 @@
 ---
 collection: events
-meetingId: 89839813704
-productId: prod_IvMdAJGvu2On6A
+id: fake_IvMdAJGvu2On6A
 title: Test New Event
 subtitle: Subtitle
 description: |-

@@ -500,13 +500,8 @@ const config: ExtendedConfig = {
           default: "events",
         },
         {
-          label: "Meeting ID",
-          name: "meetingId",
-          widget: "hidden",
-        },
-        {
-          label: "Product ID",
-          name: "productId",
+          label: "id",
+          name: "id",
           widget: "hidden",
         },
         {

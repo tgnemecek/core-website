@@ -124,8 +124,7 @@ const ServicesPage = `
 
 const EventPage = `
   type EventPage {
-    productId: String!
-    meetingId: String!
+    id: String!
     collection: String!
     title: String!
     subtitle: String!

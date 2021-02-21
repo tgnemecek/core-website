@@ -1,6 +1,9 @@
 import moment from "moment-timezone";
+import jwt from "jsonwebtoken";
 import StripeApi from "stripe";
 import { TicketType } from "../types";
+
+const { JWT_SECRET } = process.env;
 
 type GenerateCalendarLinkProps = {
   title: string;
@@ -11,6 +14,23 @@ type GenerateCalendarLinkProps = {
 };
 
 const Core = {
+  encodeEventId: (productId: string, meetingId: number) => {
+    return jwt.sign(
+      {
+        meetingId,
+        productId,
+      },
+      JWT_SECRET!
+    );
+  },
+  decodeEventId: (token: string) => {
+    const payload = jwt.verify(token, JWT_SECRET!) as any;
+
+    return {
+      productId: payload.productId as string,
+      meetingId: Number(payload.meetingId),
+    };
+  },
   generatePassword: () => {
     const charset =
       "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";

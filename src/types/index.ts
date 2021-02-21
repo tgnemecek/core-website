@@ -65,8 +65,7 @@ export type TicketType = {
 };
 
 export type EventType = {
-  productId: string;
-  meetingId: number;
+  id: string;
   slug?: string;
   title: string;
   subtitle: string;

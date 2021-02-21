@@ -1,6 +1,5 @@
 export type EventDeleteBody = {
-  meetingId: number;
-  productId: string;
+  id: string;
   isOnline: boolean;
 };
 

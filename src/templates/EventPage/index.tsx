@@ -108,7 +108,7 @@ export const pageQuery = graphql`
       }
       frontmatter {
         events {
-          meetingId
+          id
           title
           subtitle
           description

@@ -12,8 +12,7 @@ import { EventType, TicketType } from "types";
 type EventHandlerProps = CmsEventListener["handler"];
 
 type StoredDataType = {
-  productId: string;
-  meetingId: number;
+  id: string;
   ticketIds: string[];
 };
 
@@ -49,8 +48,7 @@ const ticketsToMap = (tickets: TicketType[], dataEntry: Map<string, any>) => {
 // that means that trying to save again will upload old values.
 // With this object we can store data received from the server to make sure its up to date.
 const initStoredData: StoredDataType = {
-  productId: undefined,
-  meetingId: undefined,
+  id: undefined,
   ticketIds: undefined,
 };
 
@@ -70,15 +68,12 @@ const AdminConsole = () => {
 
           let newData;
 
-          console.log({ storedData });
-
-          if (!form.productId && !storedData.productId) {
+          if (!form.id) {
             newData = await eventCreate(form);
           } else {
             newData = await eventUpdate({
               ...form,
-              productId: storedData.productId || form.productId,
-              meetingId: storedData.meetingId || form.meetingId,
+              id: storedData.id || form.id,
               tickets: storedData.ticketIds
                 ? form.tickets.map((ticket, i) => {
                     return { ...ticket, id: storedData.ticketIds[i] };
@@ -87,18 +82,16 @@ const AdminConsole = () => {
             });
           }
 
-          const { productId, meetingId, tickets } = newData;
+          const { id, tickets } = newData;
 
           storedData = {
-            productId,
-            meetingId,
+            id,
             ticketIds: tickets.map(({ id }) => id),
           };
 
           const newTickets = ticketsToMap(tickets, dataEntry);
 
-          dataEntry = dataEntry.set("productId", productId);
-          dataEntry = dataEntry.set("meetingId", meetingId);
+          dataEntry = dataEntry.set("id", id);
           dataEntry = dataEntry.set("tickets", newTickets);
           return dataEntry;
         } catch (err) {

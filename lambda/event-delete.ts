@@ -1,3 +1,4 @@
+import Core from "./services/Core";
 import Email from "./services/Email";
 import Zoom from "./services/Zoom";
 import Stripe from "./services/Stripe";
@@ -22,7 +23,9 @@ const eventDelete: NetlifyLambdaHandler = async (event, context) => {
 
   const body: EventDeleteBody = JSON.parse(event.body || "{}");
 
-  const { meetingId, productId, isOnline } = body;
+  const { id, isOnline } = body;
+
+  const { meetingId, productId } = Core.decodeEventId(id);
 
   try {
     await Promise.all([Zoom.ping(), Stripe.ping()]);

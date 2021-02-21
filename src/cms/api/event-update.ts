@@ -2,8 +2,7 @@ import { FormType } from "../types";
 import generateHeaders from "./generateHeaders";
 
 type ReturnType = {
-  productId: string;
-  meetingId: number;
+  id: string;
   tickets: FormType["tickets"];
 };
 
@@ -24,10 +23,8 @@ const eventUpdate: EventUpdateType = async (form) => {
 
   const result: ReturnType = await res.json();
 
-  if (!result.productId) throw new Error("Couldn't update product in Stripe");
-  if (!result.meetingId) throw new Error("Couldn't update product in Zoom");
-  if (result.tickets.some(({ id }) => !id)) {
-    throw new Error("Couldn't update prices in Stripe");
+  if (!result.id) {
+    throw new Error("Couldn't update product");
   }
 
   return result;

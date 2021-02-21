@@ -22,7 +22,10 @@ const eventUpdate: NetlifyLambdaHandler = async (event, context) => {
 
   const body: EventUpdateBody = JSON.parse(event.body || "{}");
 
-  const { meetingId, productId, title, tickets, duration } = body;
+  const { id, title, tickets, duration } = body;
+
+  const { meetingId, productId } = Core.decodeEventId(id);
+
   const startDate = moment(body.date).startOf("minute");
 
   let meeting: ZoomMeetingType;

@@ -1,6 +1,8 @@
 // import StripeApi from "stripe";
 // import Email from "./services/Email";
-import Zoom from "./services/Zoom";
+
+// import jwt from "jsonwebtoken";
+// import Zoom from "./services/Zoom";
 // import Stripe from "./services/Stripe";
 // import moment from "moment";
 import { NetlifyLambdaHandler } from "./types";
@@ -9,20 +11,34 @@ import { NetlifyLambdaHandler } from "./types";
 // when a event-delete method is called, as it triggers multiple refunds
 const test: NetlifyLambdaHandler = async (event, context) => {
   try {
-    const result = await Zoom.addRegistrant({
-      meetingId: 85765050686,
-      email: "tgnemecek+test@gmail.com",
-      firstName: "Thiago",
-      lastName: "Nemecek",
-      timezone: "America/Toronto",
-    });
+    // const token = jwt.sign(
+    //   {
+    //     meetingId: "12345",
+    //     productId: "addRegistrantaddRegistrantaddRegistrant",
+    //   },
+    //   "keyhere123"
+    // );
 
-    console.dir(
-      {
-        result,
-      },
-      { depth: null }
-    );
+    // console.log({ token });
+
+    // const verification = jwt.verify(token, "keyhere123");
+
+    // console.log({ verification });
+
+    // const result = await Zoom.addRegistrant({
+    //   meetingId: 85765050686,
+    //   email: "tgnemecek+test@gmail.com",
+    //   firstName: "Thiago",
+    //   lastName: "Nemecek",
+    //   timezone: "America/Toronto",
+    // });
+
+    // console.dir(
+    //   {
+    //     result,
+    //   },
+    //   { depth: null }
+    // );
 
     // const meetingId = 88075727483;
 
