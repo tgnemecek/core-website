@@ -276,7 +276,7 @@ const Zoom = {
       }
     );
     if (res.status === 204) {
-      return await res.json();
+      return true;
     } else {
       throw new Error("Error while removing Zoom meeting registrants.");
     }
