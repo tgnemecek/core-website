@@ -267,7 +267,7 @@ const Zoom = {
     const res = await fetch(
       `https://api.zoom.us/v2/meetings${meetingId}/registrants/status`,
       {
-        method: "GET",
+        method: "PUT",
         headers,
         body: JSON.stringify({
           action: "cancel",
