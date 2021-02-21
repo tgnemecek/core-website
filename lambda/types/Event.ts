@@ -1,6 +1,7 @@
 export type EventDeleteBody = {
   meetingId: number;
   productId: string;
+  isOnline: boolean;
 };
 
 export type EventCreateBody = EventDeleteBody & {

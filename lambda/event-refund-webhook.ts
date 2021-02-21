@@ -25,13 +25,6 @@ const eventPaymentWebhook: NetlifyLambdaHandler = async (event, context) => {
       };
     }
 
-    console.dir(
-      {
-        charge,
-      },
-      { depth: null }
-    );
-
     const { meetingId } = charge.metadata;
 
     // Get buyer information

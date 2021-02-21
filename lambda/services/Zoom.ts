@@ -99,6 +99,7 @@ const Zoom = {
             startDate.utcOffset(0).format("YYYY-MM-DDTHH:mm:ss") + "Z",
           duration,
           timezone: "America/New_York",
+          password: Core.generatePassword(),
           settings: {
             host_video: true,
             participant_video: true,
@@ -198,10 +199,6 @@ const Zoom = {
     if (!Core.verifyEmail(email)) {
       throw new Error(`Invalid email address: ${email}`);
     }
-
-    console.log({
-      timezone,
-    });
 
     const res = await fetch(
       `https://api.zoom.us/v2/meetings/${meetingId}/registrants`,

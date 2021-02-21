@@ -3,6 +3,14 @@ import Zoom from "./services/Zoom";
 import Stripe from "./services/Stripe";
 import { NetlifyLambdaHandler, EventDeleteBody } from "./types";
 
+// const processOnlineEvent = await (meetingId: number, productId: string) => {
+//   return
+// }
+
+// const processInPersonEvent = await () => {
+
+// }
+
 const eventDelete: NetlifyLambdaHandler = async (event, context) => {
   if (!context.clientContext.user) {
     // Restricted route
@@ -14,7 +22,7 @@ const eventDelete: NetlifyLambdaHandler = async (event, context) => {
 
   const body: EventDeleteBody = JSON.parse(event.body || "{}");
 
-  const { meetingId, productId } = body;
+  const { meetingId, productId, isOnline } = body;
 
   try {
     await Promise.all([Zoom.ping(), Stripe.ping()]);
@@ -30,10 +38,6 @@ const eventDelete: NetlifyLambdaHandler = async (event, context) => {
       Zoom.getMeeting(meetingId), // Gets meeting data
       Zoom.listRegistrants(meetingId), // Gets meeting registrants
     ]);
-
-    console.log({
-      registrants,
-    });
 
     if (registrants.length) {
       await Promise.all([

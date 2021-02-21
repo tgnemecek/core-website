@@ -11,6 +11,17 @@ type GenerateCalendarLinkProps = {
 };
 
 const Core = {
+  generatePassword: () => {
+    const charset =
+      "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    const length = 10;
+    let result = "";
+    for (let i = 0; i < length; i++) {
+      const chosenIndex = Math.floor(Math.random() * charset.length);
+      result += charset[chosenIndex];
+    }
+    return result;
+  },
   compareTickets: (tickets: TicketType[], prices: StripeApi.Price[]) => {
     if (tickets.length !== prices.length) return true;
     const hasChanged = tickets.some((ticket) => {
