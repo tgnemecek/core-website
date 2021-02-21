@@ -4,6 +4,7 @@ export type ProcessEnvType = {
   ZOOM_USER_ID: string;
   STRIPE_SECRET_KEY: string;
   STRIPE_PAYMENT_INTENT_SECRET: string;
+  STRIPE_CHARGE_REFUNDED_SECRET: string;
   EMAIL_HOST: string;
   EMAIL_USERNAME: string;
   EMAIL_PASSWORD: string;

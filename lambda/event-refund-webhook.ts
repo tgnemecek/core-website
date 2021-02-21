@@ -9,7 +9,11 @@ import { NetlifyLambdaHandler } from "./types";
 const eventPaymentWebhook: NetlifyLambdaHandler = async (event, context) => {
   try {
     const signature = event.headers["stripe-signature"];
-    const stripeEvent = Stripe.constructEvent(event.body!, signature!);
+    const stripeEvent = Stripe.constructEvent(
+      event.body!,
+      signature!,
+      "charge"
+    );
 
     const charge: StripeApi.Charge = stripeEvent.data.object as any;
 

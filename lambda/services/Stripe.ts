@@ -19,6 +19,7 @@ type CreatePaymentIntentProps = {
 
 const {
   STRIPE_PAYMENT_INTENT_SECRET,
+  STRIPE_CHARGE_REFUNDED_SECRET,
   STRIPE_SECRET_KEY,
 } = process.env as ProcessEnvType;
 
@@ -235,12 +236,17 @@ const Stripe = {
       description: title,
     });
   },
-  constructEvent: (rawBody: string, signature: string) => {
-    return stripe.webhooks.constructEvent(
-      rawBody,
-      signature,
-      STRIPE_PAYMENT_INTENT_SECRET
-    );
+  constructEvent: (
+    rawBody: string,
+    signature: string,
+    type: "payment_intent" | "charge"
+  ) => {
+    const secret =
+      type === "payment_intent"
+        ? STRIPE_PAYMENT_INTENT_SECRET
+        : STRIPE_CHARGE_REFUNDED_SECRET;
+
+    return stripe.webhooks.constructEvent(rawBody, signature, secret);
   },
 };
 

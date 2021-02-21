@@ -82,8 +82,8 @@ const templateSettings: TemplateSettingsType = {
     hasCalendarLink: true,
     dateFormatter: (startDate, endDate) =>
       `${startDate?.format("MMM D, YYYY")}<br/>${startDate?.format(
-        "h:mm A (z)"
-      )} - ${endDate?.local().format("h:mm A (z)")}`,
+        "h:mm A"
+      )} - ${endDate?.format("h:mm A (z)")}`,
   },
   "meeting-cancel": {
     template: meetingCancelTemplate,

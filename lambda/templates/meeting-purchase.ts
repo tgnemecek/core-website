@@ -1,6 +1,4 @@
-import head from "./head";
-import hero from "./hero";
-import footer from "./footer";
+import { head, hero, footer } from "./components";
 
 const meetingPurchase = `
 <mjml>
