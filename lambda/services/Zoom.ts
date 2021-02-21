@@ -265,7 +265,7 @@ const Zoom = {
     registrants,
   }: RemoveRegistrantsProps) => {
     const res = await fetch(
-      `https://api.zoom.us/v2/meetings${meetingId}/registrants/status`,
+      `https://api.zoom.us/v2/meetings/${meetingId}/registrants/status`,
       {
         method: "PUT",
         headers,
