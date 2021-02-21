@@ -172,7 +172,6 @@ const Zoom = {
       headers,
     });
     if (res.status === 204) {
-      await res.json();
       return true;
     } else {
       throw new Error("Error while deleting Zoom meeting.");

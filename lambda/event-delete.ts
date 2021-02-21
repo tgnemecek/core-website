@@ -37,7 +37,6 @@ const eventDelete: NetlifyLambdaHandler = async (event, context) => {
 
     if (registrants.length) {
       await Promise.all([
-        // Zoom.removeRegistrants({ meetingId, registrants }),
         ...registrants.map((registrant) => {
           return Email.send({
             template: "meeting-cancel",
