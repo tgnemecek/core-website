@@ -6,7 +6,7 @@ title: New Test Event (ignore)
 subtitle: aaa
 description: bbb
 image: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYT7T1-UKWZJuDSxWL5dxaualmoTCy466tKQ&usqp=CAU
-date: 2021-10-21T22:01:17.741Z
+date: 2021-10-21T22:03:17.741Z
 duration: 30
 language:
   - EN
