@@ -2,7 +2,7 @@ import StripeApi from "stripe";
 import Email from "./services/Email";
 import Zoom from "./services/Zoom";
 import Stripe from "./services/Stripe";
-import { NetlifyLambdaHandler } from "./types";
+import { NetlifyLambdaHandler, ZoomMeetingType } from "./types";
 
 // This webhook is called when a single user is refunded and also
 // when a event-delete method is called, as it triggers multiple refunds
@@ -25,24 +25,24 @@ const eventPaymentWebhook: NetlifyLambdaHandler = async (event, context) => {
       };
     }
 
-    const paymentIntent = await Stripe.getPaymentIntent(
-      charge.payment_intent as string
+    console.dir(
+      {
+        charge,
+      },
+      { depth: null }
     );
+
+    const { meetingId } = charge.metadata;
 
     // Get buyer information
     const { name, email } = charge.billing_details;
     const [firstName] = name!.split("_");
 
-    // Get meeting information
-    const {
-      metadata: { meetingId },
-      description,
-    } = paymentIntent;
-
     let isMeetingDeleted = false;
+    let meeting: ZoomMeetingType;
 
     try {
-      await Zoom.getMeeting(Number(meetingId));
+      meeting = await Zoom.getMeeting(Number(meetingId));
     } catch (err) {
       isMeetingDeleted = true;
     }
@@ -75,7 +75,7 @@ const eventPaymentWebhook: NetlifyLambdaHandler = async (event, context) => {
           to: email!,
           tags: {
             firstName,
-            meetingName: description!,
+            meetingName: meeting!.topic,
           },
         }),
       ]);

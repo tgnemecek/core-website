@@ -133,8 +133,6 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
         },
       });
 
-      console.log({ payload });
-
       if (payload.error) {
         goToFailed();
       } else {
