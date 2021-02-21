@@ -23,7 +23,7 @@ const eventDelete: NetlifyLambdaHandler = async (event, context) => {
 
   const body: EventDeleteBody = JSON.parse(event.body || "{}");
 
-  const { id, isOnline } = body;
+  const { id } = body;
 
   const { meetingId, productId } = Core.decodeEventId(id);
 
