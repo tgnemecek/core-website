@@ -2,14 +2,14 @@ import React from "react";
 import ReactGA from "react-ga";
 import { useLocation } from "@reach/router";
 
-const ID = "UA-178536442-1";
+const { GATSBY_GA_TRACKING_ID } = process.env;
 
 const GoogleAnalytics: React.FC = () => {
   const { pathname } = useLocation();
 
   React.useEffect(() => {
-    if (typeof window !== "undefined") {
-      ReactGA.initialize(ID);
+    if (typeof window !== "undefined" && GATSBY_GA_TRACKING_ID) {
+      ReactGA.initialize(GATSBY_GA_TRACKING_ID);
       ReactGA.pageview(pathname);
     }
   }, []);
