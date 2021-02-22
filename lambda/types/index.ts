@@ -9,7 +9,7 @@ export type ProcessEnvType = {
   EMAIL_USERNAME: string;
   EMAIL_PASSWORD: string;
   GATSBY_STRIPE_PUBLIC_KEY: string;
-  JWT_SECRET: string;
+  CORE_SECRET_KEY: string;
 };
 
 export { NetlifyLambdaHandler } from "./Netlify";

@@ -1,9 +1,31 @@
 import moment from "moment-timezone";
-import jwt from "jsonwebtoken";
+import crypto from "crypto";
 import StripeApi from "stripe";
-import { TicketType } from "../types";
+import { TicketType, ProcessEnvType } from "../types";
 
-const { JWT_SECRET } = process.env;
+const { CORE_SECRET_KEY } = process.env as ProcessEnvType;
+const IV = "12102hr01h2fhvca";
+const algorithm = "aes-256-cbc";
+
+const secretToBytes = (salt: string, iterations: number, len: number) => {
+  const sha1 = (input: Buffer) => {
+    return crypto.createHash("sha1").update(input).digest();
+  };
+  let key = Buffer.from(CORE_SECRET_KEY + salt);
+  for (let i = 0; i < iterations; i++) {
+    key = sha1(key);
+  }
+  if (key.length < len) {
+    const hx = secretToBytes(salt, iterations - 1, 20);
+    for (let counter = 1; key.length < len; ++counter) {
+      key = Buffer.concat([
+        key,
+        sha1(Buffer.concat([Buffer.from(counter.toString()), hx])),
+      ]);
+    }
+  }
+  return Buffer.alloc(len, key);
+};
 
 type GenerateCalendarLinkProps = {
   title: string;
@@ -14,21 +36,25 @@ type GenerateCalendarLinkProps = {
 };
 
 const Core = {
-  encodeEventId: (productId: string, meetingId: number) => {
-    return jwt.sign(
-      {
-        meetingId,
-        productId,
-      },
-      JWT_SECRET!
-    );
+  encryptEventIds: (productId: string, meetingId: number) => {
+    const payload = `${productId}_${meetingId}`;
+    const key = secretToBytes("", 100, 32);
+    const cipher = crypto.createCipheriv(algorithm, key, IV);
+    const part1 = cipher.update(JSON.stringify(payload), "utf8");
+    const part2 = cipher.final();
+    return Buffer.concat([part1, part2]).toString("base64");
   },
-  decodeEventId: (token: string) => {
-    const payload = jwt.verify(token, JWT_SECRET!) as any;
+  decryptEventIds: (code: string) => {
+    const key = secretToBytes("", 100, 32);
+    const decipher = crypto.createDecipheriv(algorithm, key, IV);
+    let decrypted = decipher.update(code, "base64", "utf8");
+    decrypted += decipher.final();
+
+    const [productId, meetingId] = (JSON.parse(decrypted) as string).split("_");
 
     return {
-      productId: payload.productId as string,
-      meetingId: Number(payload.meetingId),
+      productId: productId as string,
+      meetingId: Number(meetingId),
     };
   },
   generatePassword: () => {

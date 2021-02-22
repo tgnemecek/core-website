@@ -24,7 +24,7 @@ const eventUpdate: NetlifyLambdaHandler = async (event, context) => {
 
   const { id, title, tickets, duration } = body;
 
-  const { meetingId, productId } = Core.decodeEventId(id);
+  const { meetingId, productId } = Core.decryptEventIds(id);
 
   const startDate = moment(body.date).startOf("minute");
 

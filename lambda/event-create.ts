@@ -40,7 +40,7 @@ const eventCreate: NetlifyLambdaHandler = async (event, context) => {
       meetingId,
     });
 
-    const id = Core.encodeEventId(productId, meetingId);
+    const id = Core.encryptEventIds(productId, meetingId);
 
     return {
       statusCode: 200,

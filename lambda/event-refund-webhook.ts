@@ -46,12 +46,6 @@ const eventPaymentWebhook: NetlifyLambdaHandler = async (event, context) => {
       (registrant) => registrant.email === email
     );
 
-    console.log({
-      isMeetingDeleted,
-      registrants,
-      foundRegistrant,
-    });
-
     // This check is needed in case the webhook is being triggered by a event-delete action
     // In this case the registrant has already been removed from the meeting as the
     // Zoom.listRegistrants method only lists approved users.

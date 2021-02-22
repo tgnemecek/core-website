@@ -25,7 +25,7 @@ const eventDelete: NetlifyLambdaHandler = async (event, context) => {
 
   const { id } = body;
 
-  const { meetingId, productId } = Core.decodeEventId(id);
+  const { meetingId, productId } = Core.decryptEventIds(id);
 
   try {
     await Promise.all([Zoom.ping(), Stripe.ping()]);
