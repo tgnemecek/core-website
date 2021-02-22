@@ -21,7 +21,7 @@ const Gallery: React.FC<GalleryProps> = ({
   itemHeight: staticHeight,
 }) => {
   const [resizeListener, sizes] = useResizeAware();
-  const { xs, sm, md } = useBreakpoint();
+  const { sm } = useBreakpoint();
   const [initialScroll, setInitialScroll] = React.useState(null);
   const [showPrevious, setShowPrevious] = React.useState(false);
   const [showNext, setShowNext] = React.useState(true);

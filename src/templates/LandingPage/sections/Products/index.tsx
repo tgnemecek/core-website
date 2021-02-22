@@ -3,7 +3,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import {
   Container,
   Typography,
-  Grid,
   Card,
   CardContent,
   CardHeader,
@@ -25,20 +24,9 @@ const Products: React.FC<ProductsProps> = ({ products }) => {
   const classes = useStyles();
   const [activeindex, setActiveIndex] = React.useState(0);
 
-  const ImageWrapper: React.FC<{ className?: string }> = ({ className }) => {
-    return (
-      <div className={className}>
-        <Fade duration={200} key={activeindex}>
-          <Image
-            alt="Featured product"
-            className={classes.image}
-            src={products[activeindex].image || ""}
-            width={400}
-          />
-        </Fade>
-      </div>
-    );
-  };
+  React.useEffect(() => {
+    console.log(products[activeindex]);
+  }, [activeindex]);
 
   if (!products) return null;
 
@@ -57,7 +45,14 @@ const Products: React.FC<ProductsProps> = ({ products }) => {
           rel="noopener noreferrer"
         >
           <div className={classes.featured}>
-            <ImageWrapper className={classes.leftSide} />
+            <div className={classes.leftSide}>
+              <Image
+                alt="Featured product"
+                className={classes.image}
+                src={products[activeindex].image}
+                width="auto"
+              />
+            </div>
             <Card className={classes.rightSide}>
               <Fade bottom duration={300} key={activeindex}>
                 <CardHeader
@@ -72,6 +67,8 @@ const Products: React.FC<ProductsProps> = ({ products }) => {
                   <Image
                     alt="Featured Product"
                     className={classes.insideImage}
+                    src={products[activeindex].image}
+                    width="auto"
                   />
                   <Typography variant="body1" className={classes.paragraph}>
                     {products[activeindex].description}
@@ -132,6 +129,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   insideImage: {
+    width: "100%",
+    objectFit: "contain",
     [theme.breakpoints.up("md")]: {
       display: "none",
     },

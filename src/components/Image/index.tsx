@@ -9,22 +9,26 @@ type ImageProps = {
   alt?: string;
   className?: string;
   gravity?: string;
-  height?: number;
-  width?: number;
+  height?: number | string;
+  width?: number | string;
+  responsive?: boolean;
 };
 
 const Image: React.FC<ImageProps> = ({ src = "", ...props }) => {
   const publicId = getImageId(src);
 
+  if (props.alt === "Featured Product") {
+    console.log({ publicId, src });
+  }
+
   if (publicId) {
     return (
       <CloudinaryImage
         cloudName="core-coaching-consulting"
-        publicId={getImageId(src)}
+        publicId={publicId}
         crop="fill"
         fetchFormat="auto"
         secure
-        responsive
         {...props}
       />
     );
