@@ -99,10 +99,14 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     maxHeight: 476,
     overflow: "auto",
-    margin: "50px 0",
+    margin: "30px 0",
+    padding: 50,
+    [theme.breakpoints.down("sm")]: {
+      padding: 25,
+    },
   },
   list: {
-    width: "calc(100% - 100px)",
+    width: "100%",
     boxShadow: theme.shadows[2],
   },
   listItem: {

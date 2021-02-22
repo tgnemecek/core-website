@@ -28,12 +28,8 @@ const EventPage: React.FC<EventPageWithLocation> = ({
       frontmatter: { events: event },
     },
   },
-  location: { search, origin, pathname },
 }) => {
-  const classes = useStyles();
-
   const [loading, setLoading] = React.useState(false);
-  const [stripe, setStripe] = React.useState<Stripe>();
   const [ticketsModalOpen, setTicketsModalOpen] = React.useState(false);
   const [alreadyPurchased, setAlreadyPurchased] = React.useState(false);
 
@@ -50,8 +46,8 @@ const EventPage: React.FC<EventPageWithLocation> = ({
         max: 0,
       }
     );
-    if (min === max) return `$${min}`;
-    return `$${min} - $${max}`;
+    if (min === max) return `$${min} (USD)`;
+    return `$${min} - $${max} (USD)`;
   };
 
   return (

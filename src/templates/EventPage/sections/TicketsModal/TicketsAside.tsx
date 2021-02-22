@@ -16,8 +16,6 @@ import { Image } from "components";
 import EventContext from "../../EventContext";
 import FeatureList from "../../FeatureList";
 
-const imageWidth = 320;
-
 const TicketsAside: React.FC = () => {
   const {
     event: { title, subtitle, image, date },
@@ -28,22 +26,24 @@ const TicketsAside: React.FC = () => {
   return (
     <div>
       <div className={classes.imageWrapper}>
-        <Image src={image} width={imageWidth} />
+        <Image src={image} width="auto" />
       </div>
       <div className={classes.info}>
-        <Typography
-          variant="body2"
-          color="textSecondary"
-          className={classes.date}
-        >
-          {moment(date).format("MMMM D, YYYY")}
-        </Typography>
-        <Typography variant="h5" gutterBottom>
-          {title}
-        </Typography>
-        <Typography variant="body1" className={classes.subtitle}>
-          {subtitle}
-        </Typography>
+        <div>
+          <Typography
+            variant="body2"
+            color="textSecondary"
+            className={classes.date}
+          >
+            {moment(date).format("MMMM D, YYYY")}
+          </Typography>
+          <Typography variant="h5" gutterBottom>
+            {title}
+          </Typography>
+          <Typography variant="body1" className={classes.subtitle}>
+            {subtitle}
+          </Typography>
+        </div>
         <FeatureList dense />
       </div>
     </div>
@@ -52,9 +52,10 @@ const TicketsAside: React.FC = () => {
 
 const useStyles = makeStyles((theme) => ({
   imageWrapper: {
-    width: imageWidth,
-    height: imageWidth / 2,
+    width: "100%",
+    height: 160,
     "& > *": {
+      width: "100%",
       height: "100%",
       objectFit: "cover",
     },
@@ -62,6 +63,11 @@ const useStyles = makeStyles((theme) => ({
   info: {
     backgroundColor: theme.palette.grey[200],
     padding: "30px 15px",
+    display: "grid",
+    alignContent: "space-between",
+    [theme.breakpoints.up("sm")]: {
+      height: "400px",
+    },
   },
   date: {
     fontSize: "0.9rem",
@@ -69,7 +75,6 @@ const useStyles = makeStyles((theme) => ({
   subtitle: {
     fontSize: "0.9rem",
     lineHeight: "1rem",
-    marginBottom: 60,
   },
 }));
 

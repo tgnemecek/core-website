@@ -37,6 +37,7 @@ const TicketsModal: React.FC<TicketsModalProps> = ({ open }) => {
       open={open}
       onClose={() => setTicketsModalOpen(false)}
       maxWidth="md"
+      fullWidth
     >
       <Paper className={classes.paper} square elevation={10}>
         <IconButton
@@ -84,8 +85,13 @@ const TicketsModal: React.FC<TicketsModalProps> = ({ open }) => {
 const useStyles = makeStyles((theme) => ({
   paper: {
     display: "grid",
-    gridTemplateColumns: "1fr 3fr",
+    gridTemplateColumns: "35% 1fr",
     position: "relative",
+    gridTemplateRows: "auto",
+    [theme.breakpoints.down("xs")]: {
+      gridTemplateColumns: "1fr",
+      gridTemplateRows: "auto 400px",
+    },
   },
   closeIcon: {
     position: "absolute",
@@ -94,6 +100,10 @@ const useStyles = makeStyles((theme) => ({
     width: 40,
     height: 40,
     padding: 10,
+    [theme.breakpoints.down("xs")]: {
+      position: "fixed",
+      margin: 35,
+    },
   },
 }));
 
