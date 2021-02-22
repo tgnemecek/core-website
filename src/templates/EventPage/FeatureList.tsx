@@ -1,5 +1,5 @@
 import React from "react";
-import moment from "moment";
+import moment from "moment-timezone";
 import {
   Button,
   Card,
@@ -36,15 +36,7 @@ const FeatureList: React.FC<FeatureListProps> = ({ dense }) => {
     const endDate = startDate.clone().add(duration, "m");
     const start = startDate.format("h:mma");
     const end = endDate.format("h:mma");
-    const dur = duration >= 60 ? Math.round(duration / 60) : duration;
-    let durLabel = "minutes";
-    if (duration >= 60) {
-      durLabel = "hour";
-      if (duration >= 120) {
-        durLabel += "s";
-      }
-    }
-    return `${start} to ${end} (${dur} ${durLabel})`;
+    return `${start} to ${end} (${moment.tz(moment.tz.guess()).zoneAbbr()})`;
   };
 
   return (
