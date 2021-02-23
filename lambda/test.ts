@@ -1,6 +1,6 @@
 // import StripeApi from "stripe";
 // import Email from "./services/Email";
-import Core from "./services/Core";
+// import Core from "./services/Core";
 
 // import jwt from "jsonwebtoken";
 // import Zoom from "./services/Zoom";
