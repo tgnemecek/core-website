@@ -1,6 +1,6 @@
 // import StripeApi from "stripe";
 // import Email from "./services/Email";
-// import Core from "./services/Core";
+import Core from "./services/Core";
 
 // import jwt from "jsonwebtoken";
 // import Zoom from "./services/Zoom";
@@ -13,11 +13,13 @@ import { NetlifyLambdaHandler } from "./types";
 // when a event-delete method is called, as it triggers multiple refunds
 const test: NetlifyLambdaHandler = async (event, context) => {
   try {
-    // const code = Core.encryptEventId("prodIdHere", 1920428);
+    // const code = Core.encryptEventIds("prodIdHere", 1920428);
 
     // console.log({ code });
 
-    // const decoded = Core.decryptEventId(code);
+    // const decoded = Core.decryptEventIds(
+    //   "brEWUEQbyqPSg9jpMEl/NLCOX8y1v+qlBJGf+WOdT3nqL/IYFLVOcegdNxg/vF9m"
+    // );
 
     // console.log({
     //   decoded,

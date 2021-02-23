@@ -37,7 +37,7 @@ type GenerateCalendarLinkProps = {
 
 const Core = {
   encryptEventIds: (productId: string, meetingId: number) => {
-    const payload = `${productId}_${meetingId}`;
+    const payload = `${productId}.${meetingId}`;
     const key = secretToBytes("", 100, 32);
     const cipher = crypto.createCipheriv(algorithm, key, IV);
     const part1 = cipher.update(JSON.stringify(payload), "utf8");
@@ -50,7 +50,7 @@ const Core = {
     let decrypted = decipher.update(code, "base64", "utf8");
     decrypted += decipher.final();
 
-    const [productId, meetingId] = (JSON.parse(decrypted) as string).split("_");
+    const [productId, meetingId] = (JSON.parse(decrypted) as string).split(".");
 
     return {
       productId: productId as string,
