@@ -11,7 +11,7 @@ description: |-
      b
 image: https://images.dailyhive.com/20200611093355/DH-WOODBINE.jpg
 video: https://www.youtube.com/watch?v=fj4-J-6aiq4
-date: 2021-11-02T18:40:50.018Z
+date: 2021-11-02T18:50:50.018Z
 duration: 30
 language:
   - EN
