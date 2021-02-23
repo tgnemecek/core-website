@@ -104,7 +104,7 @@ const Zoom = {
             host_video: true,
             participant_video: true,
             mute_upon_entry: true,
-            approval_type: 0, // 1 = automatic approval
+            approval_type: 1,
             close_registration: true,
             show_share_button: false,
             registrants_email_notification: false,
