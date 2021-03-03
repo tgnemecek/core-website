@@ -6,7 +6,7 @@ subtitle: 6 Kinds of Wealth for a Balanced Portfolio
 description: This 8-week course will show you how to create a life with every
   kind of wealth.
 image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600804098/ariel-pilotto-a-l0rMCZh2o-unsplash_h5qyvr.jpg
-date: 2021-04-05T19:00:56.093Z
+date: 2021-04-12T19:00:56.093Z
 duration: 60
 language:
   - EN
