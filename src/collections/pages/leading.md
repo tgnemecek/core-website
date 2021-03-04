@@ -8,19 +8,19 @@ hero:
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596493058/pexels-pixabay-161154_uftaqi.jpg
 explanation:
   text: >-
-    **Why face business challenges alone when you could have an expert partner**
-    from our international  Leadership team help you quickly solve old problems,
-    leverage new opportunities for growth, and bypass derailers that could
-    sabotage success? [Contact us](mailto:sseivert@thecoreporation.com) to
+    **Why face business challenges alone? Get an expert Partner** from our
+    international Leadership team who will stand by you to quickly solve old
+    problems, leverage new opportunities for growth, and bypass derailers that
+    could sabotage success. [Contact us](mailto:sseivert@thecoreporation.com) to
     explore how our data-driven, agile, holistic business approach can create a
     great ROI by building a solid, systemic strategy & removing obstacles to its
-    implementation. We provide proven diagnostics to help you set a new
-    trajectory, plus pragmatic tools that align and connect the dots of all
-    efforts so you create a whole new level of effectiveness, healthy balance,
-    ease, and success for yourself, your teams, and your entire business.
+    implementation. We provide proven diagnostics to set a clear trajectory,
+    plus pragmatic tools that align and connect the dots of all efforts so you
+    create a new level of effectiveness, healthy balance, ease, and success for
+    yourself, your teams, and your entire business.
 
 
-    ## **For Free:**
+    # **For Free:**
 
 
     1. [Assessment](http://profiles.thecoreporation.com/sample/welcome) of your greatest leadership strength and liability
@@ -30,7 +30,7 @@ explanation:
     3. SOS: Switch Off Stress app (free version in App stores).
 
 
-    ## For a Great ROI:
+    # For a Great ROI:
 
 
     Take a **Premium Profile** (below) for a full report on leader strengths & weaknesses. 
@@ -39,7 +39,7 @@ explanation:
     [Contact us](mailto:sseivert@thecoreporation.com) to speak directly to a member of our Core Team. 
 
 
-    Check out **practical programs** for yourself and your employees: improve Productivity, reduce Procrastination, eliminate Stress and build a new kind of Leadership.
+    Check out **practical programs** for yourself and your employees: improve Productivity, reduce Procrastination, eliminate Stress and build a new kind of power for Leadership.
 
 
     - - -
