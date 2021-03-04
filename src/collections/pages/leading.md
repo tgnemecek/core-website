@@ -14,7 +14,7 @@ explanation:
     engagement, and bypass derailers that could sabotage your success. 
 
 
-    [Contact us](mailto:sseivert@thecoreporation.com) to learn how our data-driven, agile, holistic approach will build a solid, systemic strategy, then remove obstacles to its implementation. Get pragmatic diagnostics and proven processes that will connect the dots of your company's values, vision, and mission, and then integrate all your efforts to increase effectiveness and optimize results for your business, teams, and yourself.
+    [Contact us](mailto:sseivert@thecoreporation.com) to learn how our data-driven, agile, holistic approach will build a solid, systemic strategy, then remove obstacles to its implementation. Get pragmatic diagnostics and processes that will connect the dots of your company's values, vision, and mission--then integrate your efforts to increase effectiveness and optimize results for your business, teams, and yourself.
 
 
     **FOR FREE:**
