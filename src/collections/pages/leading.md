@@ -8,31 +8,41 @@ hero:
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596493058/pexels-pixabay-161154_uftaqi.jpg
 explanation:
   text: >-
-    Why face leadership challenges alone? Partner with our **Holistic
-    Leadership** experts to shed new light on old problems, get diagnostic tools
-    that reveal where you and your organization are in-balance versus
-    out-of-balance. And then we will provide **pragmatic** tools so you can
-    create a whole new level of healthy Balance, Ease and Success for yourself,
-    your teams & business.
+    Why face business challenges alone? Partner with our **Holistic Leadership**
+    experts to quickly solve old problems, help your teams & company leverage
+    new opportunities for growth, and bypass derailers that could sabotage
+    success. [Contact us](mailto:sseivert@thecoreporation.com) to explore how
+    our data-driven, agile coaching can create a great ROI by building a solid
+    strategy & removing obstacles to its implementation. We provide
+    **pragmatic** tools that will strategically align and systemically connect
+    the dots of all your efforts so you create a whole new level of healthy
+    balance, ease, and success for yourself, your teams, and your whole
+    business.
 
 
-    > **For Free:**
+    #### **For Free:**
 
 
-    1. [Assessment](http://profiles.thecoreporation.com/sample/welcome) of your greatest leadership strength and liability;
+    1. [Assessment](http://profiles.thecoreporation.com/sample/welcome) of your greatest leadership strength and liability
 
-    2. Leader Compass Report;
+    2. Leadership Compass Report
 
     3. SOS: Switch Off Stress app.
 
 
-    Take a **Premium Profile** for a full report on your leadership strengths and weaknesses. [Contact us](mailto:sseivert@thecoreporation.com) to explore how our data-driven, agile coaching can create a great ROI by building yourself, your team & company from the inside out. Check out **practical programs** on Productivity, Stress, Prospering, and Leading Your Life & Work (seminar or 3-month implementation program).
+    #### For a Great ROI: 
 
+
+    1. Take a **Premium Profile** (see below) for a full report on your leadership strengths and weaknesses. 
+
+       2. [Contact us](mailto:sseivert@thecoreporation.com) to speak directly to a member of our CORE Team about your unique issues. 
+
+       3. Check out **practical programs** for yourself and your employees to improve Productivity, reduce Procrastination, eliminate Stress, and generating a new kind of Leadership.
 
     - - -
 
 
-    **For executive coaches & business consultants**: Get certified to use *The Balancing Act's* powerful processes, programs, and diagnostic profiles for leaders, teams and organizations.
+    **For executive coaches & business consultants**: Get certified to use *The Balancing Act's* powerful processes, programs, and diagnostic profiles for leaders, teams, and organizations.
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1598279113/Core_Leading_2_dh5xd8.jpg
 benefits: >-
   <ul>
