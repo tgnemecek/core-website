@@ -20,17 +20,17 @@ explanation:
     success for yourself, your teams, and your entire business.
 
 
-    ### **For Free:**
+    ## **For Free:**
 
 
     1. [Assessment](http://profiles.thecoreporation.com/sample/welcome) of your greatest leadership strength and liability
 
-    2. Leadership Compass Report
+    2. Leadership Compass Report (below)
 
-    3. SOS: Switch Off Stress app.
+    3. SOS: Switch Off Stress app (free version in App stores).
 
 
-    ### For a Great ROI:
+    ## For a Great ROI:
 
 
     Take a **Premium Profile** (below) for a full report on leader strengths & weaknesses. 
