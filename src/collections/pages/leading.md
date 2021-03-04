@@ -8,16 +8,13 @@ hero:
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596493058/pexels-pixabay-161154_uftaqi.jpg
 explanation:
   text: >-
-    **Why face business challenges alone? Get an expert Partner** from our
-    international business team who will work alongside you to quickly solve old
-    problems, leverage new opportunities for growth, and bypass derailers that
-    could sabotage success. [Contact us](mailto:sseivert@thecoreporation.com) to
-    explore how our data-driven, agile, holistic business approach can create a
-    great ROI by building a solid, systemic strategy & removing obstacles to its
-    implementation. We provide proven diagnostics to set a clear trajectory,
-    plus pragmatic tools that align and connect the dots of all efforts so you
-    create a new level of effectiveness, healthy balance, ease, and success for
-    your business, teams, and yourself.
+    **Why face business challenges alone? Get an expert Partner** who will work
+    alongside you to solve resistant problems, leverage new opportunities,
+    rejuvenate employee engagement, and bypass derailers that would otherwise
+    sabotage your success. 
+
+
+    [Contact us](mailto:sseivert@thecoreporation.com) to learn how our data-driven, agile, holistic business approach will create a great ROI by building a solid, systemic strategy and removing obstacles to its implementation. We provide pragmatic diagnostics and proven processes that will connect the dots of your business' values, vision, and mission, and then integrate all your efforts to produce a higher level of effectiveness and optimal results for your business, teams, and yourself.
 
 
     **FOR FREE:**
@@ -30,7 +27,7 @@ explanation:
     3. SOS: Switch Off Stress app (in App stores).
 
 
-    **FOR A GREAT RO!:**
+    **FOR A GREAT ROI:**
 
 
     Take a **Premium Profile** (below) for a full report on leader strengths & weaknesses. 
