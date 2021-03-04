@@ -4,19 +4,20 @@ category: services
 key: leading
 component: LeadingPage
 hero:
-  title: CORE Leading & Business
+  title: CORE Leading
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596493058/pexels-pixabay-161154_uftaqi.jpg
 explanation:
   text: >-
-    Why face business challenges alone? Partner with our **Holistic Leadership**
-    experts to quickly solve old problems, leverage new opportunities for
-    growth, and bypass derailers that could sabotage success. [Contact
-    us](mailto:sseivert@thecoreporation.com) to explore how our data-driven,
-    agile approach can create a great ROI by building a solid strategy &
-    removing obstacles to its implementation. We provide **pragmatic** tools
-    that align and systemically connect the dots of all efforts to create a
-    whole new level of healthy balance, ease, and success for yourself, your
-    teams, and your whole business.
+    **Why face business challenges alone?** Partner with our international team
+    of Leadership experts to quickly solve old problems, leverage new
+    opportunities for growth, and bypass derailers that could sabotage success.
+    [Contact us](mailto:sseivert@thecoreporation.com) to explore how our
+    data-driven, agile, holistic business approach can create a great ROI by
+    building a solid, systemic strategy & removing obstacles to its
+    implementation. We provide proven diagnostics to help you set a new
+    trajectory, plus pragmatic tools that align and connect the dots of all
+    efforts so you create a whole new level of healthy balance, ease, and
+    success for yourself, your teams, and your entire business.
 
 
     ### **For Free:**
