@@ -43,7 +43,7 @@ explanation:
 
 
     **For executive coaches & business consultants**: Get certified to use *The Balancing Act's* powerful processes, programs, and diagnostic profiles for leaders, teams, and organizations.
-  image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1614898355/0_tiVzvGOkbuxL2MWm_bfyb1d.png
+  image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1614900692/team_leaders_zfbah0.png
 benefits: >-
   <ul>
 
