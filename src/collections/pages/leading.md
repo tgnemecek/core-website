@@ -9,7 +9,7 @@ hero:
 explanation:
   text: >-
     **Why face business challenges alone? Get an expert Partner** from our
-    international Leadership team who will stand by you to quickly solve old
+    international Leadership team who will work with you to quickly solve old
     problems, leverage new opportunities for growth, and bypass derailers that
     could sabotage success. [Contact us](mailto:sseivert@thecoreporation.com) to
     explore how our data-driven, agile, holistic business approach can create a
@@ -17,10 +17,10 @@ explanation:
     implementation. We provide proven diagnostics to set a clear trajectory,
     plus pragmatic tools that align and connect the dots of all efforts so you
     create a new level of effectiveness, healthy balance, ease, and success for
-    yourself, your teams, and your entire business.
+    yourself, your teams, and your business.
 
 
-    # **For Free:**
+    **FOR FREE:**
 
 
     1. [Assessment](http://profiles.thecoreporation.com/sample/welcome) of your greatest leadership strength and liability
@@ -30,7 +30,7 @@ explanation:
     3. SOS: Switch Off Stress app (free version in App stores).
 
 
-    # For a Great ROI:
+    **FOR A GREAT RO!:**
 
 
     Take a **Premium Profile** (below) for a full report on leader strengths & weaknesses. 
