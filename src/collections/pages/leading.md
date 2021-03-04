@@ -9,7 +9,7 @@ hero:
 explanation:
   text: >-
     **Why face business challenges alone? Get an expert Partner** from our
-    international business team who will work with you to quickly solve old
+    international business team who will work alongside you to quickly solve old
     problems, leverage new opportunities for growth, and bypass derailers that
     could sabotage success. [Contact us](mailto:sseivert@thecoreporation.com) to
     explore how our data-driven, agile, holistic business approach can create a
@@ -17,7 +17,7 @@ explanation:
     implementation. We provide proven diagnostics to set a clear trajectory,
     plus pragmatic tools that align and connect the dots of all efforts so you
     create a new level of effectiveness, healthy balance, ease, and success for
-    yourself, your teams, and your business.
+    your business, teams, and yourself.
 
 
     **FOR FREE:**
@@ -46,7 +46,7 @@ explanation:
 
 
     **For executive coaches & business consultants**: Get certified to use *The Balancing Act's* powerful processes, programs, and diagnostic profiles for leaders, teams, and organizations.
-  image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1598279113/Core_Leading_2_dh5xd8.jpg
+  image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1614877284/leader_walkwithyou_bq5det.jpg
 benefits: >-
   <ul>
 
