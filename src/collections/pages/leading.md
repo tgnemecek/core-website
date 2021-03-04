@@ -4,23 +4,22 @@ category: services
 key: leading
 component: LeadingPage
 hero:
-  title: CORE Leading Business
+  title: CORE Leading & Business
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596493058/pexels-pixabay-161154_uftaqi.jpg
 explanation:
   text: >-
     Why face business challenges alone? Partner with our **Holistic Leadership**
-    experts to quickly solve old problems, help your teams & company leverage
-    new opportunities for growth, and bypass derailers that could sabotage
-    success. [Contact us](mailto:sseivert@thecoreporation.com) to explore how
-    our data-driven, agile coaching can create a great ROI by building a solid
-    strategy & removing obstacles to its implementation. We provide
-    **pragmatic** tools that will strategically align and systemically connect
-    the dots of all your efforts so you create a whole new level of healthy
-    balance, ease, and success for yourself, your teams, and your whole
-    business.
+    experts to quickly solve old problems, leverage new opportunities for
+    growth, and bypass derailers that could sabotage success. [Contact
+    us](mailto:sseivert@thecoreporation.com) to explore how our data-driven,
+    agile approach can create a great ROI by building a solid strategy &
+    removing obstacles to its implementation. We provide **pragmatic** tools
+    that align and systemically connect the dots of all efforts to create a
+    whole new level of healthy balance, ease, and success for yourself, your
+    teams, and your whole business.
 
 
-    #### **For Free:**
+    ### **For Free:**
 
 
     1. [Assessment](http://profiles.thecoreporation.com/sample/welcome) of your greatest leadership strength and liability
@@ -30,14 +29,17 @@ explanation:
     3. SOS: Switch Off Stress app.
 
 
-    #### For a Great ROI: 
+    ### For a Great ROI:
 
 
-    1. Take a **Premium Profile** (see below) for a full report on your leadership strengths and weaknesses. 
+    Take a **Premium Profile** (below) for a full report on leader strengths & weaknesses. 
 
-       2. [Contact us](mailto:sseivert@thecoreporation.com) to speak directly to a member of our CORE Team about your unique issues. 
 
-       3. Check out **practical programs** for yourself and your employees to improve Productivity, reduce Procrastination, eliminate Stress, and generating a new kind of Leadership.
+    [Contact us](mailto:sseivert@thecoreporation.com) to speak directly to a member of our Core Team. 
+
+
+    Check out **practical programs** for yourself and your employees: improve Productivity, reduce Procrastination, eliminate Stress and build a new kind of Leadership.
+
 
     - - -
 
