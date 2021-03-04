@@ -9,12 +9,12 @@ hero:
 explanation:
   text: >-
     **Why face business challenges alone? Get expert Partners** from our
-    international team who will work with you to solve resistant problems,
-    leverage new opportunities, rejuvenate employee engagement, and bypass
-    derailers that would otherwise sabotage your success. 
+    international team who will provide a great ROI by working with you to solve
+    resistant problems, leverage new opportunities, rejuvenate employee
+    engagement, and bypass derailers that could sabotage your success. 
 
 
-    [Contact us](mailto:sseivert@thecoreporation.com) to learn how our data-driven, agile, holistic business approach will generate a great ROI by building a solid, systemic strategy and removing obstacles to its implementation. We provide pragmatic diagnostics and proven processes that will connect the dots of your company's values, vision, and mission, and then integrate all your efforts to produce a higher level of effectiveness and optimize results for your business, teams, and yourself.
+    [Contact us](mailto:sseivert@thecoreporation.com) to learn how our data-driven, agile, holistic approach will build a solid, systemic strategy, then remove obstacles to its implementation. Get pragmatic diagnostics and proven processes that will connect the dots of your company's values, vision, and mission, and then integrate all your efforts to increase effectiveness and optimize results for your business, teams, and yourself.
 
 
     **FOR FREE:**
