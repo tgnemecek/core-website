@@ -9,7 +9,7 @@ hero:
 explanation:
   text: >-
     **Why face business challenges alone? Get an expert Partner** from our
-    international Leadership team who will work with you to quickly solve old
+    international business team who will work with you to quickly solve old
     problems, leverage new opportunities for growth, and bypass derailers that
     could sabotage success. [Contact us](mailto:sseivert@thecoreporation.com) to
     explore how our data-driven, agile, holistic business approach can create a
@@ -27,7 +27,7 @@ explanation:
 
     2. Leadership Compass Report (below)
 
-    3. SOS: Switch Off Stress app (free version in App stores).
+    3. SOS: Switch Off Stress app (in App stores).
 
 
     **FOR A GREAT RO!:**
@@ -36,7 +36,7 @@ explanation:
     Take a **Premium Profile** (below) for a full report on leader strengths & weaknesses. 
 
 
-    [Contact us](mailto:sseivert@thecoreporation.com) to speak directly to a member of our Core Team. 
+    [Contact us](mailto:sseivert@thecoreporation.com) to speak directly to a member of our Core Business Team. 
 
 
     Check out **practical programs** for yourself and your employees: improve Productivity, reduce Procrastination, eliminate Stress and build a new kind of power for Leadership.
