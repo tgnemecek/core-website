@@ -8,13 +8,13 @@ hero:
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596493058/pexels-pixabay-161154_uftaqi.jpg
 explanation:
   text: >-
-    **Why face business challenges alone? Get an expert Partner** who will work
-    alongside you to solve resistant problems, leverage new opportunities,
-    rejuvenate employee engagement, and bypass derailers that would otherwise
-    sabotage your success. 
+    **Why face business challenges alone? Get expert Partners** from our
+    international team who will work with you to solve resistant problems,
+    leverage new opportunities, rejuvenate employee engagement, and bypass
+    derailers that would otherwise sabotage your success. 
 
 
-    [Contact us](mailto:sseivert@thecoreporation.com) to learn how our data-driven, agile, holistic business approach will create a great ROI by building a solid, systemic strategy and removing obstacles to its implementation. We provide pragmatic diagnostics and proven processes that will connect the dots of your business' values, vision, and mission, and then integrate all your efforts to produce a higher level of effectiveness and optimal results for your business, teams, and yourself.
+    [Contact us](mailto:sseivert@thecoreporation.com) to learn how our data-driven, agile, holistic business approach will generate a great ROI by building a solid, systemic strategy and removing obstacles to its implementation. We provide pragmatic diagnostics and proven processes that will connect the dots of your company's values, vision, and mission, and then integrate all your efforts to produce a higher level of effectiveness and optimize results for your business, teams, and yourself.
 
 
     **FOR FREE:**
@@ -43,7 +43,7 @@ explanation:
 
 
     **For executive coaches & business consultants**: Get certified to use *The Balancing Act's* powerful processes, programs, and diagnostic profiles for leaders, teams, and organizations.
-  image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1614877284/leader_walkwithyou_bq5det.jpg
+  image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1614898355/0_tiVzvGOkbuxL2MWm_bfyb1d.png
 benefits: >-
   <ul>
 
