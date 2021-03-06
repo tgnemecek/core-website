@@ -16,7 +16,7 @@ description: >-
 
   In this program you will be able to participate in 8 group courses and have one full individual session.
 image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600804098/ariel-pilotto-a-l0rMCZh2o-unsplash_h5qyvr.jpg
-date: 2021-04-26T19:00:56.093Z
+date: 2021-04-26T17:00:12.493Z
 duration: 60
 language:
   - EN
