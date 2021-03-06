@@ -14,9 +14,6 @@ import { NetlifyLambdaHandler } from "./types";
 const test: NetlifyLambdaHandler = async (event, context) => {
   try {
     // const code = Core.encryptEventIds("prodIdHere", 1920428);
-
-    // console.log({ code });
-
     // const decoded = Core.decryptEventIds(
     //   "brEWUEQbyqPSg9jpMEl/NLCOX8y1v+qlBJGf+WOdT3nqL/IYFLVOcegdNxg/vF9m"
     // );

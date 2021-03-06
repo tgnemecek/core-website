@@ -28,7 +28,8 @@ const eventDelete: NetlifyLambdaHandler = async (event, context) => {
   const { meetingId, productId } = Core.decryptEventIds(id);
 
   try {
-    await Promise.all([Zoom.ping(), Stripe.ping()]);
+    // We only need to ping Stripe as Zoom starts with a GET request
+    await Stripe.ping();
   } catch (err) {
     return {
       statusCode: 503,
@@ -43,8 +44,8 @@ const eventDelete: NetlifyLambdaHandler = async (event, context) => {
     ]);
 
     if (registrants.length) {
-      await Promise.all([
-        ...registrants.map((registrant) => {
+      await Promise.all(
+        registrants.map((registrant) => {
           return Email.send({
             template: "meeting-cancel",
             to: registrant.email,
@@ -53,8 +54,8 @@ const eventDelete: NetlifyLambdaHandler = async (event, context) => {
               meetingName: meeting.topic,
             },
           });
-        }),
-      ]);
+        })
+      );
     }
 
     await Zoom.deleteMeeting(meetingId); // Deletes meeting in Zoom

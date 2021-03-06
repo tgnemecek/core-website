@@ -78,7 +78,7 @@
     "start": "netlify dev",
     "prebuild": "",
     "build": "npm run clean && npm i -g typescript && tsc --build lambda && gatsby build",
-    "develop": "npm run clean && gatsby develop",
+    "develop": "gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

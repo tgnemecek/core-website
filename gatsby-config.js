@@ -11,6 +11,11 @@ module.exports = {
     prefix: "/.netlify/functions",
     url: "http://localhost:8888",
   },
+  flags: {
+    PRESERVE_WEBPACK_CACHE: true,
+    DEV_SSR: true,
+    FAST_REFRESH: true,
+  },
   plugins: [
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-material-ui",
