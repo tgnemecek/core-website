@@ -27,7 +27,7 @@ explanation:
     3. SOS: Switch Off Stress app (in App stores).
 
 
-    **FOR A GREAT ROI:**
+    **FOR A GREAT VALUE:**
 
 
     Take a **Premium Profile** (below) for a full report on leader strengths & weaknesses. 
