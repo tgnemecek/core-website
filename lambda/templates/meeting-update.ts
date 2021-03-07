@@ -13,7 +13,7 @@ const meetingUpdate = `
         <mj-text align="center" font-size="18px" font-family="Arial" padding="10px 0"><strong>{{meetingName}}</strong>
         </mj-text>
         <mj-text align="center" font-size="18px" font-family="Arial" padding-bottom="50px">has been
-          updated
+          changed
         </mj-text>
         <mj-text align="center" font-size="18px" font-family="Arial">Here&apos;s the updated time:</mj-text>
         <mj-text align="center" color="#489BDA" font-size="25px" font-family="Arial, sans-serif" font-weight="bold" line-height="25px" padding="20px 0">{{formattedDate}}
