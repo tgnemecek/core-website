@@ -4,14 +4,6 @@ import Zoom from "./services/Zoom";
 import Stripe from "./services/Stripe";
 import { NetlifyLambdaHandler, EventDeleteBody } from "./types";
 
-// const processOnlineEvent = await (meetingId: number, productId: string) => {
-//   return
-// }
-
-// const processInPersonEvent = await () => {
-
-// }
-
 const eventDelete: NetlifyLambdaHandler = async (event, context) => {
   if (!context.clientContext.user) {
     // Restricted route

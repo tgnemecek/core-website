@@ -55,6 +55,11 @@ const initStoredData: StoredDataType = {
 let storedData: StoredDataType = { ...initStoredData };
 
 const AdminConsole = () => {
+  const isEventsCollection = () => {
+    const { href } = window.location;
+    return href.includes("/collections/events/");
+  };
+
   React.useEffect(() => {
     CMS.registerMediaLibrary(cloudinary);
     CMS.registerWidget("video", VideoWidget, null);
@@ -62,6 +67,8 @@ const AdminConsole = () => {
     (CMS as any).registerEventListener({
       name: "preSave",
       handler: async ({ entry }: EventHandlerProps) => {
+        if (!isEventsCollection()) return;
+
         try {
           let dataEntry: Map<string, any> = entry.get("data");
           const form = convertFromMap(dataEntry);
@@ -108,6 +115,7 @@ const AdminConsole = () => {
     (CMS as any).registerEventListener({
       name: "preUnpublish",
       handler: async ({ entry }: EventHandlerProps) => {
+        if (!isEventsCollection()) return;
         try {
           let dataEntry: Map<string, any> = entry.get("data");
           const form = convertFromMap(dataEntry);
