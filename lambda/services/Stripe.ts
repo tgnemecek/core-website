@@ -123,6 +123,7 @@ const Stripe = {
       name: title,
       metadata: {
         meetingId,
+        type: "zoom_meeting",
       },
     });
     const ticketsWithId = await Promise.all(
