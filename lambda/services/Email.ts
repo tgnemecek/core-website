@@ -53,6 +53,7 @@ const {
   EMAIL_HOST,
   EMAIL_USERNAME,
   EMAIL_PASSWORD,
+  EMAIL_REPLY_TO,
 } = process.env as ProcessEnvType;
 
 const transporter = nodemailer.createTransport({
@@ -183,6 +184,7 @@ const Email = {
       },
       sender: EMAIL_USERNAME,
       to,
+      replyTo: EMAIL_REPLY_TO,
       subject,
       html,
     });

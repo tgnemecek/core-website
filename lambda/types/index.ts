@@ -8,6 +8,7 @@ export type ProcessEnvType = {
   EMAIL_HOST: string;
   EMAIL_USERNAME: string;
   EMAIL_PASSWORD: string;
+  EMAIL_REPLYTO: string;
   GATSBY_STRIPE_PUBLIC_KEY: string;
   CORE_SECRET_KEY: string;
 };
