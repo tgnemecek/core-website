@@ -3,7 +3,7 @@ import { ExtendedConfig } from "./types";
 const config: ExtendedConfig = {
   backend: {
     name: "git-gateway",
-    branch: "master",
+    branch: "dev",
     commit_messages: {
       create: "Create {{collection}} “{{slug}}”",
       update: "Update {{collection}} “{{slug}}”",
