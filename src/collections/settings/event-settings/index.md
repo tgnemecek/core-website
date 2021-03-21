@@ -1,9 +1,7 @@
 ---
 collection: eventSettings
-refundPolicy: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-  nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis
-  sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce
-  nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget
-  nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-  inceptos himenaeos. Curabitur sodales ligula in libero......
+refundPolicy: Please notify us in writing (at sseivert@thecoreporaton.com) 24
+  hours or more before the start of the program to receive a full refund.  If we
+  do not receive this notice by that time and you cannot attend the event, we
+  will forward the value of your payment to a future event. Thank you!
 ---
