@@ -50,7 +50,7 @@ description: >-
 
   **THIS HANDS-ON PROGRAM INCLUDES:**
 
-   **Three (3) private one-on-one half-hour sessions with a senior Coach:**  Benefit from an individual onboarding jumpstart sessionimmediately upon signing up, a mid-term session to ensure you're on track, a post-program session to solidfy your results.
+   **Three (3) private one-on-one half-hour sessions with a senior Coach:**  Benefit from an individual onboarding jumpstart session immediately upon signing up, a mid-term session to ensure you're on track, a post-program session to solidify your results.
 
   **Eight (8) group sessions** by Zoom: Thursdays 1-2:30 pm Eastern time starting April 8th, immediately after Easter.  Sessions will be simultaneously translated on separate channels (English and Spanish).
 
@@ -75,11 +75,11 @@ language:
 isOnline: true
 tickets:
   - id: price_1IXUWuC6qmFvoaW6iQenMcJT
-    description: General Admission
+    description: Early Bird Admission
     price: 20
-    endsOn: startOfEvent
-  - id: price_1IXUazC6qmFvoaW63Ax8pMN2
+    endsOn: oneWeek
+  - id: price_1IXZ1HC6qmFvoaW62Cn6Gwdu
     description: General Admission
-    price: 20
+    price: 30
     endsOn: startOfEvent
 ---
