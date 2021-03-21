@@ -48,9 +48,9 @@ description: >-
   OR, develop a strategy to launch your own business.
 
 
-  This hands-on program includes:
+  **THIS HANDS-ON PROGRAM INCLUDES:**
 
-   **Three (3) private one-on-one half-hour sessions with a senior Coach:**  An onboarding jumpstart sessionimmediately upon signing up, a mid-term session to ensure you're on track, a post-program session to solidfy results.
+   **Three (3) private one-on-one half-hour sessions with a senior Coach:**  Benefit from an individual onboarding jumpstart sessionimmediately upon signing up, a mid-term session to ensure you're on track, a post-program session to solidfy your results.
 
   **Eight (8) group sessions** by Zoom: Thursdays 1-2:30 pm Eastern time starting April 8th, immediately after Easter.  Sessions will be simultaneously translated on separate channels (English and Spanish).
 
