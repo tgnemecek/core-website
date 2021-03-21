@@ -8,32 +8,42 @@ hero:
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596493058/pexels-pixabay-161154_uftaqi.jpg
 explanation:
   text: >-
-    Why face leadership challenges alone? Partner with our **Holistic
-    Leadership** experts to shed new light on old problems, get diagnostic tools
-    that reveal where you and your organization are in-balance versus
-    out-of-balance. And then we will provide **pragmatic** tools so you can
-    create a whole new level of healthy Balance, Ease and Success for yourself,
-    your teams & business.
+    **Why face business challenges alone? Get expert Partners** from our
+    international team who will provide a great ROI by working with you to solve
+    resistant problems, leverage new opportunities, rejuvenate employee
+    engagement, and bypass derailers that could sabotage your success. 
 
 
-    > **For Free:**
+    [Contact us](mailto:sseivert@thecoreporation.com) to learn how our data-driven, agile, holistic *Balancing Act* approach will build a solid, systemic strategy, then remove obstacles to its implementation. Get pragmatic diagnostics and processes that will connect the dots of your company's values, vision, and mission--then integrate your efforts to increase effectiveness and optimize results for your business, teams, and yourself.
 
 
-    1. [Assessment](http://profiles.thecoreporation.com/sample/welcome) of your greatest leadership strength and liability;
-
-    2. Leader Compass Report;
-
-    3. SOS: Switch Off Stress app.
+    **FOR FREE:**
 
 
-    Take a **Premium Profile** for a full report on your leadership strengths and weaknesses. [Contact us](mailto:sseivert@thecoreporation.com) to explore how our data-driven, agile coaching can create a great ROI by building yourself, your team & company from the inside out. Check out **practical programs** on Productivity, Stress, Prospering, and Leading Your Life & Work (seminar or 3-month implementation program).
+    1. [Assessment](http://profiles.thecoreporation.com/sample/welcome) of your greatest leadership strength and liability
+
+    2. Leadership Compass Report (below)
+
+    3. SOS: Switch Off Stress app (in App stores).
+
+
+    **FOR A GREAT VALUE:**
+
+
+    Take a **Premium Profile** (below) for a full report on leader strengths & weaknesses. 
+
+
+    [Contact us](mailto:sseivert@thecoreporation.com) to speak directly to a member of our Core Business Team. 
+
+
+    Check out **practical programs** for yourself and your employees: improve Productivity, reduce Procrastination, eliminate Stress and build a new kind of power for Leadership.
 
 
     - - -
 
 
-    **For executive coaches & business consultants**: Get certified to use *The Balancing Act's* powerful processes, programs, and diagnostic profiles for leaders, teams and organizations.
-  image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600812431/eean-chen-5hz5hpjFIro-unsplash_aie6fn.jpg
+    **For executive coaches & business consultants**: Get certified to use *The Balancing Act's* powerful processes, programs, and diagnostic profiles for leaders, teams, and organizations.
+  image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1615059260/2_people_on_Mountain_summit_fojmga.jpg
 benefits: >-
   <ul>
 
