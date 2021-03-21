@@ -1,9 +1,9 @@
 ---
 collection: eventSettings
-refundPolicy: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-  nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis
-  sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce
-  nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget
-  nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-  inceptos himenaeos. Curabitur sodales ligula in libero......
+refundPolicy: To receive a full refund for an event you cannot attend, you must
+  notify us at SSeivert@thecoreporation.com more than 24 hours preceding the
+  start of the event. If you cannot attend the event, but have not notified us,
+  we will credit your payment to a future event of your choice.  If Core
+  Coaching & Consulting cancels or postpones an event, you have the choice of
+  receiving a full refund or forwarding your payment to a future event.
 ---
