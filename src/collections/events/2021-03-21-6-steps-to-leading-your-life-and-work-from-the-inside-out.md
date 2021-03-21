@@ -21,7 +21,47 @@ description: >-
   In this updated 20-hour live on-line transition program, you will work with expert coaches (in life, career, and business) to generate these **PRACTICAL & IMMEDIATE RESULTS:** 
 
 
+  Re-craft your life and work to overcome post-pandemic economic challenges 
+
+
+  Gain clarity & confidence about your new direction
+
+
+  Discover your best gifts & how to use these in your future work
+
+
+  Determine immediate priorities and launch specific next action steps 
+
+
+  Test the viability of new work possibilities
+
+
+  Expand your network and community support systems
+
+
+  Permanently remove obstacles that have sabotaged you in the past
+
+
+  Build the habits you need for success
+
+
+  OR, develop a strategy to launch your own business.
+
+
   This hands-on program includes:
+
+   **Three (3) private one-on-one half-hour sessions with a senior Coach:**  An onboarding jumpstart sessionimmediately upon signing up, a mid-term session to ensure you're on track, a post-program session to solidfy results.
+
+  **Eight (8) group sessions** by Zoom: Thursdays 1-2:30 pm Eastern time starting April 8th, immediately after Easter.  Sessions will be simultaneously translated on separate channels (English and Spanish).
+
+
+  **One proprietary assessment** to reveal your strengths and weaknesses
+
+
+  **Just-in-time coaching:**  Q&A via emails/texts between sessions
+
+
+  **Session Audios for replay and a Guidebook** so you can work at your own pace AND continue your progress post-program
 
 
   **Plus much more including** many instructional materials; lifetime access to the group's website portal where all resources are available.
@@ -35,6 +75,10 @@ language:
 isOnline: true
 tickets:
   - id: price_1IXUWuC6qmFvoaW6iQenMcJT
+    description: General Admission
+    price: 20
+    endsOn: startOfEvent
+  - id: price_1IXUazC6qmFvoaW63Ax8pMN2
     description: General Admission
     price: 20
     endsOn: startOfEvent
