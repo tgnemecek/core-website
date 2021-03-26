@@ -77,12 +77,12 @@ language:
   - ES
 isOnline: true
 tickets:
-  - id: price_1IZGVqC6qmFvoaW6HlbQcenP
+  - id: price_1IZGWfC6qmFvoaW62boiAJ4t
     description: Early Bird Admission
-    price: 437
+    price: 447
     endsOn: oneWeek
-  - id: price_1IZGVqC6qmFvoaW64dItetn7
+  - id: price_1IZGWfC6qmFvoaW6Muf0cada
     description: General Admission
-    price: 492
+    price: 497
     endsOn: startOfEvent
 ---
