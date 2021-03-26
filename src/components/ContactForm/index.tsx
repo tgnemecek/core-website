@@ -171,7 +171,7 @@ const useStyles = ({ showThanks }: UseStylesProps) =>
       marginBottom: 40,
     },
     paper: {
-      backgroundColor: "#fffcec",
+      backgroundColor: "#e6edfb",
       padding: theme.spacing(3),
       display: "grid",
       gap: "15px",
