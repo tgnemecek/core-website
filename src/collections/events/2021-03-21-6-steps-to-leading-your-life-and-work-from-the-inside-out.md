@@ -53,7 +53,9 @@ description: >-
 
   **THIS HANDS-ON PROGRAM INCLUDES:**
 
-   **Three (3) private one-on-one half-hour sessions with a senior Coach:**  Benefit from an individual onboarding jumpstart session immediately upon signing up, a mid-term session to ensure you're on track, a post-program session to solidify your results.
+
+  **Three (3) private one-on-one half-hour sessions with a senior Coach:**  Benefit from an individual onboarding jumpstart session immediately upon signing up, a mid-term session to ensure you're on track, a post-program session to solidify your results.
+
 
   **Eight (8) group sessions** by Zoom: Thursdays 1-2:30 pm Eastern time starting April 8th, immediately after Easter.  Sessions will be simultaneously translated on separate channels (English and Spanish).
 
