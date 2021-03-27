@@ -76,6 +76,8 @@ language:
   - EN
   - ES
 isOnline: true
+location: "This is an 8-session implementation program that meets on consecutive
+  Thursdays starting April 15th. "
 tickets:
   - id: price_1IZGWfC6qmFvoaW62boiAJ4t
     description: Early Bird Admission
