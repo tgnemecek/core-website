@@ -17,7 +17,7 @@ description: >-
   This seminar is a stand-alone offering for those who are feeling discouraged because they are stalled by procrastination -- and a bonus for participants of the Productivity Seminar or the Leading Your Life and Work Seminar.
 
 
-  You will also receive detailed instructions of the procrastination process so you can return whenever you wish to blast through procrastination.
+  You will also receive detailed instructions on the procrastination process so you can return whenever you wish to blast through procrastination.
 image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1617725563/procrastination_anjsoj.jpg
 date: 2021-05-11T17:00:00.248Z
 duration: 30
