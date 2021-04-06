@@ -18,7 +18,7 @@ description: >-
   This comprehensive program can help you dramatically increase your odds of success if you: a) want to make big changes in your life or work, b) would like to explore the viability of starting your own business, c) want to become a more effective leader, or d) would like to rebalance your life and work when it is time to emerge into a new normal.
 
 
-  In this updated 20-hour live on-line transition program, you will work with expert coaches (in life, career, and business) to generate these... 
+  In this updated 20-hour live online transition program, you will work with expert coaches (in life, career, and business) to generate these... 
 
 
   **PRACTICAL & IMMEDIATE RESULTS:** 
@@ -57,7 +57,7 @@ description: >-
   **Three (3) private one-on-one half-hour sessions with a senior Coach:**  Benefit from an individual onboarding jumpstart session immediately upon signing up, a mid-term session to ensure you're on track, a post-program session to solidify your results.
 
 
-  **Eight (8) group sessions** by Zoom: Thursdays 1-2:30 pm Eastern time starting April 8th, immediately after Easter.  Sessions will be simultaneously translated on separate channels (English and Spanish).
+  **Eight (8) group sessions** by Zoom: Thursdays 1-2:30 pm Eastern time starting April 15th.  Sessions will be simultaneously translated on separate channels (English and Spanish).
 
 
   **One proprietary assessment** to reveal your strengths and weaknesses
