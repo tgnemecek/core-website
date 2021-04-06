@@ -1,7 +1,7 @@
 ---
 collection: events
 id: Ulix44j10tr5rFYvfuG3VgiOcDHK4bzyAIXlVmPKmLu+7SuxaLySb21x3Qqeo6uP
-title: A New Normal for Productivity in 2021
+title: A New Normal for Greater Productivity in 2021
 subtitle: "Learn the CORE ZONE -- a more effective, balanced and healthy way to
   be productive "
 description: >-
