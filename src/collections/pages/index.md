@@ -21,9 +21,9 @@ about:
     use the holistic system of The Balancing Act with individuals, leaders, and
     organizations to improve Balance, well-being, and flow. We create lasting
     transformation with powerful tools that reveal where people or systems are
-    out-of-balance, then implement pragmatic processes that remove barriers so
-    they can re-balance from the inside-out. Our interventions are rooted in
-    science and the ancient healing method of 5 elements & Synergy.  "
+    out-of-balance, then implement pragmatic processes to remove barriers so
+    they can re-balance from inside-out. Our interventions are rooted in science
+    and the ancient healing model of 5 elements & Synergy.  "
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1595111411/logo_feamvb.png
 services:
   - title: CORE Leading
