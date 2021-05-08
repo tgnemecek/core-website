@@ -1,7 +1,7 @@
 ---
 collection: events
 id: Ulix44j10tr5rFYvfuG3VgiOcDHK4bzyAIXlVmPKmLu+7SuxaLySb21x3Qqeo6uP
-title: For Greater Productivity in 2021...
+title: For Greater Productivity
 subtitle: "Learn the CORE ZONE -- a more effective, balanced and healthy way to
   be productive "
 description: >-
@@ -20,7 +20,7 @@ description: >-
 
   We hope you use this experience and these tools to increase your productivity, health and well-being during these challenging times.
 image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1617726389/productivity_rsmqax.jpg
-date: 2021-05-18T17:00:14.295Z
+date: 2021-06-22T17:00:14.295Z
 duration: 30
 language:
   - EN
