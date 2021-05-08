@@ -1,6 +1,6 @@
 ---
 collection: events
-id: 8Igzlxl4dfPnmfaLD6upTAeL3wI1MJpFlMrHYkTBv4hJZcKp3yRrjrG+nPh1akQp
+id: Ulix44j10tr5rFYvfuG3VgiOcDHK4bzyAIXlVmPKmLu+7SuxaLySb21x3Qqeo6uP
 title: Blasting through Procrastination
 subtitle: The Good, the Bad, and the Ugly
 description: >-
@@ -19,22 +19,22 @@ description: >-
 
   You will also receive detailed instructions on the procrastination process so you can return whenever you wish to blast through procrastination.
 image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1617725563/procrastination_anjsoj.jpg
-date: 2021-05-11T17:00:00.248Z
+date: 2021-06-29T17:00:00.248Z
 duration: 30
 language:
   - EN
   - ES
 isOnline: true
 tickets:
-  - id: price_1IdHaxC6qmFvoaW6X4H0xDlB
+  - id: price_1IoqawC6qmFvoaW64wk0tzLp
     description: General Admission
     price: 20
     endsOn: startOfEvent
-  - id: price_1IdHaxC6qmFvoaW6qvb9Zf9Y
+  - id: price_1IoqavC6qmFvoaW6AqOurJsp
     description: General Admission
     price: 45
     endsOn: startOfEvent
-  - id: price_1IdHaxC6qmFvoaW6dfVAADts
+  - id: price_1IoqavC6qmFvoaW6BF4RT8EN
     description: Early Bird
     price: 35
     endsOn: oneWeek
