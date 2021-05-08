@@ -20,7 +20,7 @@ description: >-
   You will also receive detailed instructions on the procrastination process so you can return whenever you wish to blast through procrastination.
 image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1617725563/procrastination_anjsoj.jpg
 date: 2021-06-29T17:00:00.248Z
-duration: 30
+duration: 90
 language:
   - EN
   - ES
