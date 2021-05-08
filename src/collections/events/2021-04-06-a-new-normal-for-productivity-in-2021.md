@@ -21,17 +21,17 @@ description: >-
   We hope you use this experience and these tools to increase your productivity, health and well-being during these challenging times.
 image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1617726389/productivity_rsmqax.jpg
 date: 2021-06-22T17:00:14.295Z
-duration: 30
+duration: 1
 language:
   - EN
   - ES
 isOnline: true
 tickets:
-  - id: price_1IdHloC6qmFvoaW6NW2jfcj5
+  - id: price_1IoqbvC6qmFvoaW6A2Gc5G4W
     description: General Admission
     price: 45
     endsOn: startOfEvent
-  - id: price_1IfPrnC6qmFvoaW6KqY7cKnh
+  - id: price_1IoqbvC6qmFvoaW6JpCnJHlB
     description: Early Bird
     price: 35
     endsOn: oneWeek
