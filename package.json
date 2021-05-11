@@ -39,7 +39,7 @@
     "gotrue-js": "^0.9.28",
     "html-react-parser": "^0.13.0",
     "jsonwebtoken": "^8.5.1",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.21",
     "lodash-webpack-plugin": "^0.11.4",
     "mjml": "^4.8.1",
     "moment": "^2.27.0",
