@@ -22,17 +22,12 @@ const contactForm: NetlifyLambdaHandler = async (event, context) => {
       },
     }: Body = JSON.parse(event.body || "{}");
 
-    console.log({
-      name,
-      email,
-      message,
-      page,
-    });
+    const formattedMessage = message.replaceAll("\n", "<br />");
 
     await Email.send({
       template: "contact-form-client",
       tags: {
-        message,
+        message: formattedMessage,
       },
       to: email,
     });
@@ -43,9 +38,10 @@ const contactForm: NetlifyLambdaHandler = async (event, context) => {
         name,
         email,
         page,
-        message,
+        message: formattedMessage,
       },
       to: CONTACT_FORM_EMAIL,
+      replyTo: email,
     });
 
     return {

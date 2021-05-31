@@ -37,6 +37,7 @@ type SendProps<T extends keyof TemplateSettingsType> = {
   template: T;
   to: string | string[];
   tags: Tags<T>;
+  replyTo?: string;
 };
 
 const {
@@ -174,7 +175,7 @@ const Email = {
     }
   },
   send: async <T extends keyof TemplateSettingsType>(props: SendProps<T>) => {
-    const { template, to, tags } = props;
+    const { template, to, tags, replyTo } = props;
 
     const required: (keyof SendProps<T>)[] = ["template", "to", "tags"];
     const invalid = required.filter((key) => !props[key]);
@@ -194,7 +195,7 @@ const Email = {
       },
       sender: EMAIL_USERNAME,
       to,
-      replyTo: EMAIL_REPLY_TO,
+      replyTo: replyTo || EMAIL_REPLY_TO,
       subject,
       html,
     });
