@@ -24,10 +24,6 @@ const Products: React.FC<ProductsProps> = ({ products }) => {
   const classes = useStyles();
   const [activeindex, setActiveIndex] = React.useState(0);
 
-  React.useEffect(() => {
-    console.log(products[activeindex]);
-  }, [activeindex]);
-
   if (!products) return null;
 
   return (

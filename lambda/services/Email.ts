@@ -20,6 +20,7 @@ type TagMap = {
   name: string;
   email: string;
   message: string;
+  page: string;
 };
 
 type FormattedTagMap = TagMap & {
@@ -91,7 +92,7 @@ const templateSettings = {
   },
   "contact-form-core": {
     template: contactFormCore,
-    tags: ["name", "email", "message"],
+    tags: ["name", "email", "message", "page"],
     subject: "Contact Form",
     hasCalendarLink: false,
     dateFormatter: () => undefined,
