@@ -22,7 +22,9 @@ const contactForm: NetlifyLambdaHandler = async (event, context) => {
       },
     }: Body = JSON.parse(event.body || "{}");
 
-    const formattedMessage = message.replace(/\\n/g, "<br />");
+    const formattedMessage = message.replace(/\\n/g, "<br/>");
+
+    console.log(formattedMessage);
 
     await Email.send({
       template: "contact-form-client",
