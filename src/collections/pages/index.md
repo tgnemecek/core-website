@@ -17,13 +17,13 @@ hero:
     </span>
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596493058/pexels-pixabay-161154_uftaqi.jpg
 about:
-  text: "Core Coaching & Consulting (CCC) is a global group of change agents who
-    use the holistic system of The Balancing Act to create Balance, Well-being,
-    and Flow for individuals, leaders, and organizations. CCC creates lasting
-    transformation from the CORE with powerful tools that reveal where people
-    and systems are out-of-balance--and pragmatic processes that quickly
-    re-balance them from the inside-out. CCC's programs are rooted in science,
-    data, and TBA's ancient healing method of the 5 elements & Synergy.  "
+  text: "Core Coaching & Consulting, LLC is a global group of change agents who
+    use the holistic system of The Balancing Act with individuals, leaders, and
+    organizations to improve Balance, well-being, and flow. We create lasting
+    transformation with powerful tools that reveal where people or systems are
+    out-of-balance, then implement pragmatic processes to remove barriers so
+    they can re-balance from inside-out. Our interventions are rooted in science
+    and the ancient healing model of 5 elements & Synergy.  "
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1595111411/logo_feamvb.png
 services:
   - title: CORE Leading
@@ -46,8 +46,7 @@ testimonials:
       results with patients I've since referred to her.
     author: Tais Moriyama
     role: M.D., Psychiatrist; Instituto Bairral Hospital, Brazil
-  - testimonial:
-      Leading Your Life & Work helped me to find myself in this changing
+  - testimonial: Leading Your Life & Work helped me to find myself in this changing
       world. I learned wonderful techniques to remove obstacles, find my center
       and my purpose, connect with real and achievable goals. I feel like I had
       a puzzle with some missing pieces and The Balancing Act program has helped
@@ -55,8 +54,7 @@ testimonials:
       discovering my own path.
     author: Ana Martinez
     role: Art Teacher, American School of Barcelona
-  - testimonial:
-      I feel more hopeful and confident about being able to make changes
+  - testimonial: I feel more hopeful and confident about being able to make changes
       in my life because I have the tools to make them happen. I was reminded
       that life is too short not to deal with personal issues that can make me a
       happier and more fulfilled person. I have a better understanding of the
@@ -71,16 +69,14 @@ testimonials:
       advisor.
     author: Cristiane Beira
     role: Founder, Espaço Integral
-  - testimonial:
-      "Over the past decade, I have used the Core Leadership program to
+  - testimonial: "Over the past decade, I have used the Core Leadership program to
       help hundreds of leaders positively transform themselves, and therefore
       their teams, companies (and families.) The ancient philosophy of The
       Balancing Act is the most systemic, powerful and comprehensive leadership
       development process I know. And it leads to miracles; they do happen! "
     author: Auke van Keulen
     role: Consultant, Exec Coach, DeCoreporation, The Netherlands
-  - testimonial:
-      Sharon has a remarkable ability to manage difficult entrepreneurs
+  - testimonial: Sharon has a remarkable ability to manage difficult entrepreneurs
       with ease and humor, keeping them on track to deliver tangible results.
       She has a gift for quickly identifying exactly how leaders get in their
       own way AND helping them remove obstacles to success.
@@ -150,8 +146,7 @@ products:
     subtitle: 101 Really Fast Ways
   - title: Working from Your Core
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600888032/wfyccover_msrx27.jpg
-    description:
-      Ten Heroic Core Types that can help you more confidently Lead Your
+    description: Ten Heroic Core Types that can help you more confidently Lead Your
       Life and Work from the inside out. WFYC compliments The Balancing Act
       processes of CORE Coaching and Consulting by showing how we can become
       more heroic despite the challenging times in which we live.

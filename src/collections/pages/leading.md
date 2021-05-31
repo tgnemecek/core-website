@@ -6,9 +6,10 @@ hero:
 explanation:
   text: >-
     **Why face business challenges alone? Get expert Partners** from our
-    international team who will provide a great ROI by working with you to solve
+    international team who will provide a great ROI by helping you solve
     resistant problems, leverage new opportunities, rejuvenate employee
-    engagement, and bypass derailers that could sabotage your success. 
+    engagement, develop core skills, bypass derailers, and remove barriers that
+    could sabotage success. 
 
 
     [Contact us](mailto:sseivert@thecoreporation.com) to learn how our data-driven, agile, holistic *Balancing Act* approach will build a solid, systemic strategy, then remove obstacles to its implementation. Get pragmatic diagnostics and processes that will connect the dots of your company's values, vision, and mission--then integrate your efforts to increase effectiveness and optimize results for your business, teams, and yourself.
@@ -33,7 +34,7 @@ explanation:
     [Contact us](mailto:sseivert@thecoreporation.com) to speak directly to a member of our Core Business Team. 
 
 
-    Check out **practical programs** for yourself and your employees: improve Productivity, reduce Procrastination, eliminate Stress and build a new kind of power for Leadership.
+    Check out **practical programs** for yourself and your employees: improve Productivity, reduce Procrastination, eliminate Stress, and build core skills to super-charge your leadership power.
 
 
     - - -
