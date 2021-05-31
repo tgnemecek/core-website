@@ -24,8 +24,6 @@ const contactForm: NetlifyLambdaHandler = async (event, context) => {
 
     const formattedMessage = message.replace(/\n/g, "<br>");
 
-    console.log(formattedMessage);
-
     await Email.send({
       template: "contact-form-client",
       tags: {
