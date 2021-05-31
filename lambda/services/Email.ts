@@ -6,36 +6,20 @@ import {
   meetingPurchaseTemplate,
   meetingRefundTemplate,
   meetingUpdateTemplate,
+  contactFormCore,
+  contactFormClient,
 } from "../templates";
 import { ProcessEnvType } from "../types";
 
-type TemplateSettingsType = Record<
-  "meeting-purchase" | "meeting-update" | "meeting-cancel" | "meeting-refund",
-  {
-    template: string;
-    tags: TagType[];
-    subject: string;
-    hasCalendarLink?: boolean;
-    dateFormatter: (
-      startDate?: moment.Moment,
-      endDate?: moment.Moment
-    ) => string | undefined;
-  }
->;
-
-type TagType =
-  | "firstName"
-  | "meetingName"
-  | "meetingLink"
-  | "startDate"
-  | "endDate";
-
 type TagMap = {
-  firstName?: string;
-  meetingName?: string;
-  meetingLink?: string;
-  startDate?: moment.Moment;
-  endDate?: moment.Moment;
+  firstName: string;
+  meetingName: string;
+  meetingLink: string;
+  startDate: moment.Moment;
+  endDate: moment.Moment;
+  name: string;
+  email: string;
+  message: string;
 };
 
 type FormattedTagMap = TagMap & {
@@ -43,10 +27,15 @@ type FormattedTagMap = TagMap & {
   googleCalendarLink?: string;
 };
 
-type SendProps = {
-  template: keyof TemplateSettingsType;
+type Tags<T extends keyof TemplateSettingsType> = Pick<
+  TagMap,
+  TemplateSettingsType[T]["tags"][number]
+>;
+
+type SendProps<T extends keyof TemplateSettingsType> = {
+  template: T;
   to: string | string[];
-  tags: TagMap;
+  tags: Tags<T>;
 };
 
 const {
@@ -65,13 +54,13 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-const templateSettings: TemplateSettingsType = {
+const templateSettings = {
   "meeting-purchase": {
     template: meetingPurchaseTemplate,
     tags: ["firstName", "meetingName", "meetingLink", "startDate", "endDate"],
     subject: "Here's your event link",
     hasCalendarLink: true,
-    dateFormatter: (startDate) =>
+    dateFormatter: (startDate: moment.Moment) =>
       `${startDate?.format("h:mm A (z)")} on ${startDate?.format(
         "MM/DD/YYYY"
       )}`,
@@ -81,7 +70,7 @@ const templateSettings: TemplateSettingsType = {
     tags: ["firstName", "meetingName", "meetingLink", "startDate", "endDate"],
     subject: "Event updated",
     hasCalendarLink: true,
-    dateFormatter: (startDate, endDate) =>
+    dateFormatter: (startDate: moment.Moment, endDate: moment.Moment) =>
       `${startDate?.format("MMM D, YYYY")}<br/>${startDate?.format(
         "h:mm A"
       )} - ${endDate?.format("h:mm A (z)")}`,
@@ -100,15 +89,33 @@ const templateSettings: TemplateSettingsType = {
     hasCalendarLink: false,
     dateFormatter: () => undefined,
   },
-};
+  "contact-form-core": {
+    template: contactFormCore,
+    tags: ["name", "email", "message"],
+    subject: "Contact Form",
+    hasCalendarLink: false,
+    dateFormatter: () => undefined,
+  },
+  "contact-form-client": {
+    template: contactFormClient,
+    tags: ["message"],
+    subject: "Contact Form Sent",
+    hasCalendarLink: false,
+    dateFormatter: () => undefined,
+  },
+} as const;
 
-const useTemplate = (
-  templateName: keyof TemplateSettingsType,
-  tagMap: TagMap
+type TemplateSettingsType = typeof templateSettings;
+
+const useTemplate = <T extends keyof TemplateSettingsType>(
+  templateName: T,
+  tags: Tags<T>
 ) => {
   // Check if all required fields are provided
   const requiredTags = templateSettings[templateName].tags;
-  const invalid = requiredTags.filter((key) => !tagMap[key]);
+  const invalid = (requiredTags as readonly (keyof Tags<T>)[]).filter(
+    (key) => !tags[key]
+  );
 
   if (invalid.length > 0) {
     throw new Error(
@@ -123,15 +130,17 @@ const useTemplate = (
     template,
   } = templateSettings[templateName];
 
+  const genericTags = tags as TagMap;
+
   const formattedTags: FormattedTagMap = {
-    ...tagMap,
-    formattedDate: dateFormatter(tagMap.startDate, tagMap.endDate),
+    ...genericTags,
+    formattedDate: dateFormatter(genericTags.startDate, genericTags.endDate),
     googleCalendarLink: hasCalendarLink
       ? Core.generateCalendarLink({
-          title: tagMap.meetingName!,
-          description: `Please join at the time of the event using your unique and personal link: ${tagMap.meetingLink}`,
-          startDate: tagMap.startDate!,
-          endDate: tagMap.endDate!,
+          title: genericTags.meetingName,
+          description: `Please join at the time of the event using your unique and personal link: ${genericTags.meetingLink}`,
+          startDate: genericTags.startDate,
+          endDate: genericTags.endDate,
         })
       : undefined,
   };
@@ -163,10 +172,10 @@ const Email = {
       throw new Error("Email servers are down");
     }
   },
-  send: async (props: SendProps) => {
+  send: async <T extends keyof TemplateSettingsType>(props: SendProps<T>) => {
     const { template, to, tags } = props;
 
-    const required: (keyof SendProps)[] = ["template", "to", "tags"];
+    const required: (keyof SendProps<T>)[] = ["template", "to", "tags"];
     const invalid = required.filter((key) => !props[key]);
 
     if (invalid.length > 0) {
