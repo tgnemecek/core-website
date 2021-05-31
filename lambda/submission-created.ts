@@ -4,18 +4,30 @@ import { NetlifyLambdaHandler, ProcessEnvType } from "./types";
 const { CONTACT_FORM_EMAIL } = process.env as ProcessEnvType;
 
 type Body = {
-  name: string;
-  email: string;
-  message: string;
-  page: string;
+  payload: {
+    data: {
+      name: string;
+      email: string;
+      message: string;
+      page: string;
+    };
+  };
 };
 
 const contactForm: NetlifyLambdaHandler = async (event, context) => {
-  console.log("RUNNING!!");
   try {
-    console.log(JSON.parse(event.body || "{}"));
+    const {
+      payload: {
+        data: { name, email, message, page },
+      },
+    }: Body = JSON.parse(event.body || "{}");
 
-    const { name, email, message, page }: Body = JSON.parse(event.body || "{}");
+    console.log({
+      name,
+      email,
+      message,
+      page,
+    });
 
     await Email.send({
       template: "contact-form-client",
