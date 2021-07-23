@@ -5,10 +5,13 @@ const deploySucceeded: NetlifyLambdaHandler = async (event, context) => {
   try {
     const body = JSON.parse(event.body || "{}");
 
-    console.log({
-      body,
-      context,
-    });
+    console.dir(
+      {
+        body,
+        context,
+      },
+      { depth: null }
+    );
 
     return {
       statusCode: 200,
