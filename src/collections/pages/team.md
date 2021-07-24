@@ -190,6 +190,6 @@ members:
       video production, and Instagram. Sam is an aspiring entrepreneur and
       social media Influencer who has established his own YouTube channel: Turgs
       The Skater, where he can be seen perfecting his skateboarding skills. "
-    linkedin: https://www.youtube.com/channel/UC8O4QZElBgrnvrOIWGHux6Q
+    linkedin: ""
     video: https://www.youtube.com/channel/UC8O4QZElBgrnvrOIWGHux6Q
 ---
