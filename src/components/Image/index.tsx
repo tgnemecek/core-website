@@ -17,10 +17,6 @@ type ImageProps = {
 const Image: React.FC<ImageProps> = ({ src = "", ...props }) => {
   const publicId = getImageId(src);
 
-  if (props.alt === "Featured Product") {
-    console.log({ publicId, src });
-  }
-
   if (publicId) {
     return (
       <CloudinaryImage

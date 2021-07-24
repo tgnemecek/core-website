@@ -7,6 +7,7 @@ import {
   TextField,
   IconButton,
   Snackbar,
+  CircularProgress,
 } from "@material-ui/core";
 import Alert from "@material-ui/lab/Alert";
 import SendIcon from "@material-ui/icons/Send";
@@ -19,15 +20,18 @@ const initialForm = (pathname: string): Record<string, string> => ({
   page: pathname,
 });
 
+type Status = "idle" | "loading" | "success" | "error";
+
 const ContactForm: React.FC = () => {
-  const [status, setStatus] = React.useState<"success" | "error">("success");
+  const [status, setStatus] = React.useState<Status>("idle");
   const [submitted, setSubmitted] = React.useState(false);
 
   const { pathname } = useLocation();
   const [form, setForm] = React.useState(initialForm(pathname));
 
   const classes = useStyles({
-    showThanks: status === "success" && submitted,
+    showThanks: status === "success",
+    loading: status === "loading",
   })();
 
   const handleChange = (key: keyof typeof form) => {
@@ -37,30 +41,31 @@ const ContactForm: React.FC = () => {
     };
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const body = new URLSearchParams({
       "form-name": "contact",
       ...form,
     }).toString();
 
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body,
-    })
-      .then(() => {
-        setSubmitted(true);
-        setStatus("success");
-        setForm(initialForm(pathname));
-      })
-      .catch((err) => {
-        setSubmitted(true);
-        setStatus("error");
-        if (process.env.NODE_ENV === "development") {
-          throw err;
-        }
+    setStatus("loading");
+
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body,
       });
+      setSubmitted(true);
+      setStatus("success");
+      setForm(initialForm(pathname));
+    } catch (err) {
+      setSubmitted(true);
+      setStatus("error");
+      if (process.env.NODE_ENV === "development") {
+        throw err;
+      }
+    }
   };
 
   const { name, email, message } = form;
@@ -109,6 +114,9 @@ const ContactForm: React.FC = () => {
               required
             />
             <input type="hidden" name="page" />
+            <div className={classes.loading}>
+              <CircularProgress />
+            </div>
             <div className={classes.thankYou}>
               <div>
                 <div>
@@ -124,7 +132,11 @@ const ContactForm: React.FC = () => {
               </div>
             </div>
             <div className={classes.buttonWrapper}>
-              <IconButton className={classes.button} type="submit">
+              <IconButton
+                className={classes.button}
+                type="submit"
+                disabled={status !== "idle"}
+              >
                 <SendIcon />
               </IconButton>
             </div>
@@ -140,7 +152,10 @@ const ContactForm: React.FC = () => {
           }
         }}
       >
-        <Alert severity={status} className={classes.alert}>
+        <Alert
+          severity={status === "success" ? status : "error"}
+          className={classes.alert}
+        >
           {status === "success"
             ? "Message sent successfully!"
             : `The form could not be sent, please check your connection and try
@@ -155,9 +170,10 @@ export default ContactForm;
 
 type UseStylesProps = {
   showThanks: boolean;
+  loading: boolean;
 };
 
-const useStyles = ({ showThanks }: UseStylesProps) =>
+const useStyles = ({ showThanks, loading }: UseStylesProps) =>
   makeStyles((theme) => ({
     container: {
       maxWidth: 600,
@@ -171,11 +187,27 @@ const useStyles = ({ showThanks }: UseStylesProps) =>
       marginBottom: 40,
     },
     paper: {
-      backgroundColor: "#e6edfb",
+      backgroundColor: "#fffcec",
       padding: theme.spacing(3),
       display: "grid",
       gap: "15px",
       position: "relative",
+    },
+    loading: {
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+      backgroundColor: "#1d1d1dc9",
+      zIndex: 1,
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      opacity: Number(loading),
+      pointerEvents: loading ? "initial" : "none",
+      transition: "opacity 1s",
+      borderRadius: theme.shape.borderRadius,
     },
     thankYou: {
       position: "absolute",
@@ -206,6 +238,7 @@ const useStyles = ({ showThanks }: UseStylesProps) =>
       color: "white",
       boxShadow: theme.shadows[10],
       opacity: Number(!showThanks),
+      zIndex: 2,
       transition: "all 0.2s",
       "&:hover": {
         backgroundColor: theme.palette.primary.dark,

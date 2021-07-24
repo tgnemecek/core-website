@@ -183,10 +183,6 @@ const Stripe = {
 
     const updatedTickets = await Promise.all(ticketsPromises);
 
-    console.log({
-      insideStripeUpdate: updatedTickets,
-    });
-
     return updatedTickets;
   },
   deleteProduct: async (productId: string) => {

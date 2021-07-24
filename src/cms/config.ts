@@ -3,7 +3,7 @@ import { ExtendedConfig } from "./types";
 const config: ExtendedConfig = {
   backend: {
     name: "git-gateway",
-    branch: "master",
+    branch: process.env.GATSBY_NETLIFY_CMS_BRANCH,
     commit_messages: {
       create: "Create {{collection}} “{{slug}}”",
       update: "Update {{collection}} “{{slug}}”",
@@ -19,7 +19,7 @@ const config: ExtendedConfig = {
     name: "cloudinary",
     config: {
       cloud_name: "core-coaching-consulting",
-      api_key: 934769914928744,
+      api_key: process.env.GATSBY_CLOUDINARY_API,
     },
   },
   collections: [

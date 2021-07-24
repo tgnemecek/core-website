@@ -6,4 +6,3 @@ refundPolicy: To receive a full refund for an event you cannot attend, you must
   we will credit your payment to a future event of your choice.  If Core
   Coaching & Consulting cancels or postpones an event, you have the choice of
   receiving a full refund or forwarding your payment to a future event.
----
