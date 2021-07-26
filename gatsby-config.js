@@ -3,9 +3,8 @@ const path = require("path");
 module.exports = {
   siteMetadata: {
     title: "CORE Coaching & Consulting",
-    siteUrl: "https://core-website-2020-test.netlify.app/",
-    description:
-      "This repo contains CORE Coaching & Consulting website's source code",
+    siteUrl: process.env.GATSBY_SITE_URL,
+    description: "CORE Coaching & Consulting",
   },
   proxy: {
     prefix: "/.netlify/functions",
