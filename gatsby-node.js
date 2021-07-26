@@ -1,7 +1,6 @@
-const _ = require("lodash");
 const path = require("path");
 const { createFilePath } = require("gatsby-source-filesystem");
-const schema = require("./src/schema");
+const fs = require("fs");
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
@@ -155,5 +154,8 @@ exports.createPages = ({ actions, graphql }) => {
 
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
+  const schema = fs.readFileSync("./src/schema.gql", {
+    encoding: "utf-8",
+  });
   createTypes(schema);
 };
