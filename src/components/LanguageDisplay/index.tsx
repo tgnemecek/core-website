@@ -5,7 +5,7 @@ import { formatLanguage } from "utils";
 import { Language } from "types";
 import Flag from "./Flag";
 
-type LanguageProps = {
+type LanguageDisplayProps = {
   code: Language | Language[];
   showFlag?: boolean;
   showCode?: boolean;
@@ -15,7 +15,7 @@ type LanguageProps = {
   flagSize?: number;
 };
 
-const Language: React.FC<LanguageProps> = ({
+const LanguageDisplay: React.FC<LanguageDisplayProps> = ({
   code: rawCode,
   showFlag,
   showCode,
@@ -80,4 +80,4 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default Language;
+export default LanguageDisplay;

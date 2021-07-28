@@ -7,18 +7,20 @@ import { Link } from "gatsby";
 import streak from "src/img/streak1.jpg";
 import { About } from "types";
 
-type AboutProps = {
+type AboutSectionProps = {
   about: About;
 };
 
-const About: React.FC<AboutProps> = ({ about: { text, image } }) => {
+const AboutSection: React.FC<AboutSectionProps> = ({
+  about: { text, image },
+}) => {
   const classes = useStyles();
 
   return (
     <Section className={classes.about}>
       <Container>
         <Typography variant="srOnly" component="h2">
-          About
+          AboutSection
         </Typography>
         <Grid
           container
@@ -48,7 +50,7 @@ const About: React.FC<AboutProps> = ({ about: { text, image } }) => {
   );
 };
 
-export default About;
+export default AboutSection;
 
 const useStyles = makeStyles((theme) => ({
   about: {

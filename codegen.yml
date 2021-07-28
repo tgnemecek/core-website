@@ -5,4 +5,5 @@ generates:
       - typescript
     config:
       scalars:
-        Date: Date
+        DateTime: Date
+        Node: any

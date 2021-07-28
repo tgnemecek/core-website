@@ -9,7 +9,13 @@ import {
   Navbar,
   Footer,
 } from "components";
-import { About, Testimonials, Services, Products, Videos } from "./sections";
+import {
+  AboutSection,
+  Testimonials,
+  Services,
+  Products,
+  Videos,
+} from "./sections";
 
 const LandingPage: React.FC<LandingPageDTO> = ({
   data: {
@@ -28,7 +34,7 @@ const LandingPage: React.FC<LandingPageDTO> = ({
         <HeroSection hero={hero} />
         <EventFeed title="What's new" />
         <EventFeed title="Leading Your Life &amp; Work Events" />
-        <About about={about} />
+        <AboutSection about={about} />
         <Testimonials testimonials={testimonials} />
         <Services services={services} />
         <Products products={products} />

@@ -1,19 +1,13 @@
-scalar Date
-scalar Node
+scalar DateTime
 
-type MarkdownRemark implements Node {
-  frontmatter: Frontmatter
-  fields: Fields
-}
-type Fields {
-  slug: String
-}
 type Frontmatter {
   pages: Pages
   events: EventPage
   contact: Contact
   navigation: Navigation
   eventSettings: EventSettings
+  component: String
+  collection: String
 }
 type Pages {
   landing: LandingPage
@@ -125,7 +119,7 @@ type EventPage {
   description: String!
   image: String!
   video: String
-  date: Date!
+  date: DateTime!
   duration: Int!
   language: [Language!]!
   isOnline: Boolean!

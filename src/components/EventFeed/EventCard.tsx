@@ -10,7 +10,7 @@ import {
   Chip,
 } from "@material-ui/core";
 import { Link } from "gatsby";
-import { Language, EventStatus } from "components";
+import { LanguageDisplay, EventStatus } from "components";
 import { Event } from "types";
 import { useBreakpoint } from "utils";
 
@@ -21,7 +21,7 @@ type EventProps = {
   >;
 };
 
-const Event: React.FC<EventProps> = ({ event }) => {
+const EventCard: React.FC<EventProps> = ({ event }) => {
   const { title, date, image, language, slug, isOnline } = event;
 
   const breakpoints = useBreakpoint();
@@ -47,7 +47,7 @@ const Event: React.FC<EventProps> = ({ event }) => {
             {title}
           </Typography>
           <div className={classes.extra}>
-            <Language code={language} showFlag />
+            <LanguageDisplay code={language} showFlag />
             <Typography variant="body1">
               {isOnline ? "Online" : "In Person"}
             </Typography>
@@ -63,7 +63,7 @@ const Event: React.FC<EventProps> = ({ event }) => {
   );
 };
 
-export default Event;
+export default EventCard;
 
 type UseStylesProps = {
   breakpoints: Record<string, boolean>;

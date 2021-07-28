@@ -10,6 +10,8 @@ export const onCreateNode: GatsbyNode["onCreateNode"] = ({
 }) => {
   const { createNodeField } = actions;
 
+  console.log(node.internal.type);
+
   if (node.internal.type === "MarkdownRemark") {
     const pageMap = {
       "/": {
@@ -78,12 +80,10 @@ export const createPages: GatsbyNode["createPages"] = async ({
 }) => {
   const { createPage } = actions;
 
-  const createMainPages = () => {
-    return graphql(`
+  const createMainPages = async () => {
+    const { data, errors } = await graphql(`
       {
-        allMarkdownRemark(
-          filter: { frontmatter: { collection: { eq: "pages" } } }
-        ) {
+        allMarkdownRemark {
           edges {
             node {
               id
@@ -92,35 +92,66 @@ export const createPages: GatsbyNode["createPages"] = async ({
               }
               frontmatter {
                 component
+                collection
               }
             }
           }
         }
       }
-    `).then((result) => {
-      if (result.errors) {
-        result.errors.forEach((e: any) => console.error(e.toString()));
-        return Promise.reject(result.errors);
+    `);
+
+    if (errors) return console.error(errors);
+
+    console.log({ data });
+
+    const pages = (data as any).allMarkdownRemark.edges.filter(
+      ({ node }: any) => {
+        return node.frontmatter.collection === "pages";
       }
+    );
 
-      const edges = (result.data as any).allMarkdownRemark.edges;
+    console.log({ pages });
 
-      edges.forEach((edge: any) => {
-        const {
+    pages.forEach(({ node }: any) => {
+      const {
+        id,
+        fields: { slug },
+        frontmatter: { component },
+      } = node;
+      createPage({
+        path: slug,
+        component: path.resolve(`src/templates/${component}/index.tsx`),
+        context: {
           id,
-          fields: { slug },
-          frontmatter: { component },
-        } = edge.node;
-        createPage({
-          path: slug,
-          component: path.resolve(`src/templates/${component}/index.tsx`),
-          context: {
-            id,
-            slug,
-          },
-        });
+          slug,
+        },
       });
     });
+
+    // .then((result) => {
+    //   // if (result.errors) {
+    //   //   result.errors.forEach((e: any) => console.error(e.toString()));
+    //   //   return Promise.reject(result.errors);
+    //   // }
+
+    //   const edges = (result.data as any).allMarkdownRemark.edges;
+
+    //   edges.forEach((edge: any) => {
+    //     const {
+    //       id,
+    //       fields: { slug },
+    //       frontmatter: { component },
+    //     } = edge.node;
+    //     createPage({
+    //       path: slug,
+    //       component: path.resolve(`src/templates/${component}/index.tsx`),
+    //       context: {
+    //         id,
+    //         slug,
+    //       },
+    //     });
+    //   });
+    // });
   };
 
   const createEventPage = () => {
@@ -171,7 +202,9 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
     encoding: "utf-8",
   });
 
-  console.log({ schema });
+  const gatsbySchema = fs.readFileSync("./src/gatsby-schema.gql", {
+    encoding: "utf-8",
+  });
 
-  createTypes(schema);
+  createTypes(schema + gatsbySchema);
 };
