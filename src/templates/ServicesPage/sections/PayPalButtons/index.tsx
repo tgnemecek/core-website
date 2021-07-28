@@ -14,10 +14,10 @@ import { PayPalButtonName } from "types";
 import buttons from "./buttons";
 
 type PayPalButtonsProps = {
-  buttonTypes: PayPalButtonName[];
+  buttonNames: PayPalButtonName[];
 };
 
-const PayPalButtons: React.FC<PayPalButtonsProps> = ({ buttonTypes }) => {
+const PayPalButtons: React.FC<PayPalButtonsProps> = ({ buttonNames }) => {
   const classes = useStyles();
   const sm = useMediaQuery(theme.breakpoints.down("sm"));
 
@@ -31,7 +31,7 @@ const PayPalButtons: React.FC<PayPalButtonsProps> = ({ buttonTypes }) => {
       </Container>
       <Container maxWidth="md">
         <Grid container alignItems="center" spacing={sm ? 2 : 8}>
-          {buttonTypes.map((key) => {
+          {buttonNames.map((key) => {
             const { label, description, value, price, button } = buttons[key];
 
             return (

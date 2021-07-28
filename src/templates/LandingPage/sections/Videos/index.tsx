@@ -5,25 +5,20 @@ import Fade from "react-reveal/Fade";
 import YouTube from "react-youtube";
 import { Section, Gallery } from "components";
 import { getVideoId } from "utils";
+import { Video } from "types";
 
 type VideosProps = {
-  videos: RawVideoType[];
+  videos: Video[];
 };
 
-type RawVideoType = {
-  title: string;
-  subtitle?: string;
-  link: string;
-};
-
-type VideoType = RawVideoType & {
+type FormattedVideo = Video & {
   videoId: string;
   image: string;
 };
 
 const Videos: React.FC<VideosProps> = ({ videos: rawVideos }) => {
   const classes = useStyles();
-  const [videos, setVideos] = React.useState<VideoType[]>(null);
+  const [videos, setVideos] = React.useState<FormattedVideo[]>(null);
   const [activeindex, setActiveIndex] = React.useState(0);
 
   React.useEffect(() => {

@@ -3,21 +3,18 @@ import moment from "moment";
 import { Container, Typography, IconButton } from "@material-ui/core";
 import { Section, HorizontalFeed } from "components";
 import { useEventFeed } from "utils";
-import { EventFeedType } from "types";
+import { EventFeed } from "types";
 import Event from "./Event";
 
 type EventFeedProps = {
   title: string;
-  filter?: (event: EventFeedType) => boolean;
+  filter?: (event: EventFeed) => boolean;
 };
 
 const EventFeed: React.FC<EventFeedProps> = ({ title, filter }) => {
   const events = useEventFeed().filter(filter || Boolean);
 
-  const sorter = (
-    { date: dateA }: EventFeedType,
-    { date: dateB }: EventFeedType
-  ) => {
+  const sorter = ({ date: dateA }: EventFeed, { date: dateB }: EventFeed) => {
     const now = moment();
     const momentA = moment(dateA);
     const momentB = moment(dateB);

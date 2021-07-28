@@ -9,15 +9,10 @@ import {
 } from "@material-ui/core";
 import Fade from "react-reveal/Fade";
 import { Section, Gallery, Image } from "components";
+import { Product } from "types";
 
 type ProductsProps = {
-  products: {
-    title: string;
-    subtitle?: string;
-    description: string;
-    image: string;
-    link?: string;
-  }[];
+  products: Product[];
 };
 
 const Products: React.FC<ProductsProps> = ({ products }) => {

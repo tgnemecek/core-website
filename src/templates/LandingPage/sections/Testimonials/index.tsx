@@ -1,25 +1,21 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography, Grid, IconButton } from "@material-ui/core";
-import { Skeleton } from "@material-ui/lab";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import VisuallyHidden from "@reach/visually-hidden";
 import { Section, theme } from "components";
 import { shuffleArray } from "utils";
-
-import Testimonial from "./Testimonial";
-import { TestimonialType } from "./types";
+import TestimonialItem from "./TestimonialItem";
+import { Testimonial } from "types";
 
 type TestimonialsProps = {
-  testimonials: TestimonialType[];
+  testimonials: Testimonial[];
 };
 
 const Testimonials: React.FC<TestimonialsProps> = (props) => {
   const classes = useStyles();
-  const [testimonials, setTestimonials] = React.useState(
-    shuffleArray(props.testimonials)
-  );
+  const testimonials = shuffleArray(props.testimonials) as Testimonial[];
   const [index, setIndex] = React.useState(0);
 
   const changeIndex = (value: number) => {
@@ -47,7 +43,7 @@ const Testimonials: React.FC<TestimonialsProps> = (props) => {
           </Grid>
           <Grid item className={classes.testimonial}>
             {testimonials && (
-              <Testimonial key={index} {...testimonials[index]} />
+              <TestimonialItem key={index} {...testimonials[index]} />
             )}
           </Grid>
           <Grid item>

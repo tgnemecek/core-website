@@ -96,10 +96,10 @@ type TeamPage {
   members: [Member]
 }
 type Member {
-  name: String
-  role: String
-  photo: String
-  bio: String
+  name: String!
+  role: String!
+  photo: String!
+  bio: String!
   linkedin: String
   video: String
 }
@@ -119,6 +119,7 @@ type Explanation {
 type EventPage {
   id: String!
   collection: String!
+  slug: String!
   title: String!
   subtitle: String!
   description: String!
@@ -126,10 +127,15 @@ type EventPage {
   video: String
   date: Date!
   duration: Int!
-  language: [String!]!
+  language: [Language!]!
   isOnline: Boolean!
   location: String
   tickets: [Ticket!]!
+}
+
+enum Language {
+  EN
+  ES
 }
 
 type Ticket {

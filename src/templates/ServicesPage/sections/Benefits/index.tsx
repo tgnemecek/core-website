@@ -24,7 +24,7 @@ const Benefits: React.FC<BenefitsProps> = ({ benefits }) => {
       <Paper elevation={3} square className={classes.paper}>
         <Typography variant="h2">Schedule a time with us if you:</Typography>
         {parse(benefits, {
-          replace: ({ name, children }) => {
+          replace: ({ name, children }: any) => {
             if (name === "ul")
               return (
                 <List>

@@ -2,13 +2,13 @@ import React from "react";
 import moment from "moment";
 import { makeStyles } from "@material-ui/core/styles";
 import { Chip } from "@material-ui/core";
-import { EventType } from "types";
+import { Event } from "types";
 import { isEventValid } from "utils";
 
 type EventStatusProps = {
   event: {
-    tickets: EventType["tickets"];
-    date: EventType["date"];
+    tickets: Event["tickets"];
+    date: Event["date"];
   };
   showDate?: boolean;
 };

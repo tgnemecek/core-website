@@ -69,7 +69,6 @@
     "react-youtube": "^7.11.2",
     "reflect-metadata": "^0.1.13",
     "stripe": "^8.165.0",
-    "type-graphql": "^1.1.1",
     "typescript": "^4.3.5",
     "uuid": "^8.3.2"
   },
@@ -80,11 +79,11 @@
   "main": "n/a",
   "scripts": {
     "clean": "gatsby clean",
-    "start": "netlify dev",
+    "start": "yarn codegen && netlify dev",
     "prebuild": "",
     "build": "npm run clean && npm i -g typescript && tsc --build lambda && gatsby build",
     "develop": "gatsby develop",
-    "generate": "graphql-codegen",
+    "codegen": "graphql-codegen",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

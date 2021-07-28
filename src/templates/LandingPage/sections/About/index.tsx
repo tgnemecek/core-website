@@ -5,10 +5,10 @@ import Fade from "react-reveal/Fade";
 import { Section } from "components";
 import { Link } from "gatsby";
 import streak from "src/img/streak1.jpg";
-import { AboutType } from "types";
+import { About } from "types";
 
 type AboutProps = {
-  about: AboutType;
+  about: About;
 };
 
 const About: React.FC<AboutProps> = ({ about: { text, image } }) => {

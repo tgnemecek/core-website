@@ -2,7 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import { LandingPageDTO } from "types";
 import {
-  Hero,
+  HeroSection,
   EventFeed,
   ContactForm,
   Layout,
@@ -25,7 +25,7 @@ const LandingPage: React.FC<LandingPageDTO> = ({
     <Layout>
       <Navbar />
       <main>
-        <Hero hero={hero} />
+        <HeroSection hero={hero} />
         <EventFeed title="What's new" />
         <EventFeed title="Leading Your Life &amp; Work Events" />
         <About about={about} />

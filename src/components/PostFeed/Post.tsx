@@ -11,12 +11,12 @@ import {
 } from "@material-ui/core";
 import { Link } from "gatsby";
 import { Language, EventStatus } from "components";
-import { EventType } from "types";
+import { Event } from "types";
 import { useBreakpoint } from "utils";
 
 type EventProps = {
   event: Pick<
-    EventType,
+    Event,
     "title" | "date" | "image" | "language" | "slug" | "isOnline" | "tickets"
   >;
 };

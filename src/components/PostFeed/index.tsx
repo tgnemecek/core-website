@@ -3,12 +3,12 @@ import moment from "moment";
 import { Container, Typography, IconButton } from "@material-ui/core";
 import { Section, HorizontalFeed } from "components";
 // import { usePostFeed } from "utils";
-import { PostFeedType } from "types";
+import { PostFeed } from "types";
 import Post from "./Post";
 
 type PostFeedProps = {
   title: string;
-  filter?: (post: PostFeedType) => boolean;
+  filter?: (post: PostFeed) => boolean;
 };
 
 const PostFeed: React.FC<any> = ({ title, filter }) => {
@@ -16,10 +16,7 @@ const PostFeed: React.FC<any> = ({ title, filter }) => {
 
   const posts = [];
 
-  const sorter = (
-    { date: dateA }: PostFeedType,
-    { date: dateB }: PostFeedType
-  ) => {
+  const sorter = ({ date: dateA }: PostFeed, { date: dateB }: PostFeed) => {
     const now = moment();
     const momentA = moment(dateA);
     const momentB = moment(dateB);

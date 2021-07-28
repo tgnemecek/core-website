@@ -1,13 +1,9 @@
-require("reflect-metadata");
-const path = require("path");
-const { createFilePath } = require("gatsby-source-filesystem");
-const fs = require("fs");
-
-import * as typegraphqlSchema from "../src/schema/index";
-import { buildSchema } from "type-graphql";
+import path from "path";
+import { createFilePath } from "gatsby-source-filesystem";
+import fs from "fs";
 import { GatsbyNode } from "gatsby";
 
-const onCreateNode: GatsbyNode["onCreateNode"] = ({
+export const onCreateNode: GatsbyNode["onCreateNode"] = ({
   node,
   actions,
   getNode,
@@ -76,7 +72,10 @@ const onCreateNode: GatsbyNode["onCreateNode"] = ({
   }
 };
 
-const createPages: GatsbyNode["createPages"] = async ({ actions, graphql }) => {
+export const createPages: GatsbyNode["createPages"] = async ({
+  actions,
+  graphql,
+}) => {
   const { createPage } = actions;
 
   const createMainPages = () => {
@@ -163,31 +162,16 @@ const createPages: GatsbyNode["createPages"] = async ({ actions, graphql }) => {
   await Promise.all([createMainPages(), createEventPage()]);
 };
 
-const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = async ({
+export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = async ({
   actions,
 }) => {
-  const { createTypes, addThirdPartySchema } = actions;
+  const { createTypes } = actions;
 
-  const schemaFilePath = "./config/generated-schema.gql";
-
-  await buildSchema({
-    resolvers: Object.values(typegraphqlSchema) as any,
-    emitSchemaFile: schemaFilePath,
-  });
-
-  const schema = fs.readFileSync(schemaFilePath, {
+  const schema = fs.readFileSync("./src/schema.gql", {
     encoding: "utf-8",
   });
 
   console.log({ schema });
 
-  // addThirdPartySchema({
-  //   schema,
-  // });
-
   createTypes(schema);
 };
-
-exports.createSchemaCustomization = createSchemaCustomization;
-exports.createPages = createPages;
-exports.onCreateNode = onCreateNode;

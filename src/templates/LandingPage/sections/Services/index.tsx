@@ -4,16 +4,12 @@ import { Typography, Grid } from "@material-ui/core";
 import { Link } from "gatsby";
 import { useBreakpoint } from "utils";
 import { Image, theme } from "components";
+import { Service } from "types";
 
 const hoverGrowth = 10; // Percent
 
 type ServicesProps = {
-  services: {
-    title: string;
-    image: string;
-    name: string;
-    description: string;
-  }[];
+  services: Service[];
 };
 
 const Services: React.FC<ServicesProps> = ({ services }) => {

@@ -1,19 +1,12 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import {
-  Typography,
-  Tooltip,
-  Card,
-  CardActionArea,
-  CardMedia,
-  CardContent,
-} from "@material-ui/core";
+import { Typography, Tooltip } from "@material-ui/core";
 import { formatLanguage } from "utils";
-import { LanguageType } from "types";
+import { Language } from "types";
 import Flag from "./Flag";
 
 type LanguageProps = {
-  code: LanguageType | LanguageType[];
+  code: Language | Language[];
   showFlag?: boolean;
   showCode?: boolean;
   showLanguage?: boolean;
