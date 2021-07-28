@@ -1,3 +1,6 @@
+scalar Date
+scalar Node
+
 type MarkdownRemark implements Node {
   frontmatter: Frontmatter
   fields: Fields

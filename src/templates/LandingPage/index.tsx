@@ -26,6 +26,7 @@ const LandingPage: React.FC<LandingPageDTO> = ({
       <Navbar />
       <main>
         <Hero hero={hero} />
+        <EventFeed title="What's new" />
         <EventFeed title="Leading Your Life &amp; Work Events" />
         <About about={about} />
         <Testimonials testimonials={testimonials} />

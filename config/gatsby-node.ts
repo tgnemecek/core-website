@@ -1,13 +1,20 @@
+require("reflect-metadata");
 const path = require("path");
 const { createFilePath } = require("gatsby-source-filesystem");
 const fs = require("fs");
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
+import * as typegraphqlSchema from "../src/schema/index";
+import { buildSchema } from "type-graphql";
+import { GatsbyNode } from "gatsby";
+
+const onCreateNode: GatsbyNode["onCreateNode"] = ({
+  node,
+  actions,
+  getNode,
+}) => {
   const { createNodeField } = actions;
 
   if (node.internal.type === "MarkdownRemark") {
-    const value = createFilePath({ node, getNode });
-
     const pageMap = {
       "/": {
         key: "landing",
@@ -29,9 +36,13 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         key: "team",
         component: "TeamPage",
       },
-    };
+    } as const;
 
-    if (node.frontmatter.collection === "pages") {
+    const value = createFilePath({ node, getNode }) as keyof typeof pageMap;
+
+    const { frontmatter } = node as any;
+
+    if (frontmatter.collection === "pages") {
       const { key, component } = pageMap[value];
       createNodeField({
         name: "slug",
@@ -41,10 +52,10 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
             component,
             pages: {
               [key]: {
-                ...node.frontmatter,
+                ...frontmatter,
               },
             },
-            collection: node.frontmatter.collection,
+            collection: frontmatter.collection,
           },
         },
         value,
@@ -55,8 +66,8 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         node: {
           ...node,
           frontmatter: {
-            [node.frontmatter.collection]: node.frontmatter,
-            collection: node.frontmatter.collection,
+            [frontmatter.collection]: node.frontmatter,
+            collection: frontmatter.collection,
           },
         },
         value,
@@ -65,7 +76,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 };
 
-exports.createPages = ({ actions, graphql }) => {
+const createPages: GatsbyNode["createPages"] = async ({ actions, graphql }) => {
   const { createPage } = actions;
 
   const createMainPages = () => {
@@ -89,13 +100,13 @@ exports.createPages = ({ actions, graphql }) => {
       }
     `).then((result) => {
       if (result.errors) {
-        result.errors.forEach((e) => console.error(e.toString()));
+        result.errors.forEach((e: any) => console.error(e.toString()));
         return Promise.reject(result.errors);
       }
 
-      const edges = result.data.allMarkdownRemark.edges;
+      const edges = (result.data as any).allMarkdownRemark.edges;
 
-      edges.forEach((edge) => {
+      edges.forEach((edge: any) => {
         const {
           id,
           fields: { slug },
@@ -131,13 +142,13 @@ exports.createPages = ({ actions, graphql }) => {
       }
     `).then((result) => {
       if (result.errors) {
-        result.errors.forEach((e) => console.error(e.toString()));
+        result.errors.forEach((e: any) => console.error(e.toString()));
         return Promise.reject(result.errors);
       }
 
-      const edges = result.data.allMarkdownRemark.edges;
+      const edges = (result.data as any).allMarkdownRemark.edges;
 
-      edges.forEach((edge) => {
+      edges.forEach((edge: any) => {
         const id = edge.node.id;
         createPage({
           path: `/event${edge.node.fields.slug}`,
@@ -149,13 +160,34 @@ exports.createPages = ({ actions, graphql }) => {
       });
     });
   };
-  return Promise.all([createMainPages(), createEventPage()]);
+  await Promise.all([createMainPages(), createEventPage()]);
 };
 
-exports.createSchemaCustomization = ({ actions }) => {
-  const { createTypes } = actions;
-  const schema = fs.readFileSync("./src/schema.gql", {
+const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = async ({
+  actions,
+}) => {
+  const { createTypes, addThirdPartySchema } = actions;
+
+  const schemaFilePath = "./config/generated-schema.gql";
+
+  await buildSchema({
+    resolvers: Object.values(typegraphqlSchema) as any,
+    emitSchemaFile: schemaFilePath,
+  });
+
+  const schema = fs.readFileSync(schemaFilePath, {
     encoding: "utf-8",
   });
+
+  console.log({ schema });
+
+  // addThirdPartySchema({
+  //   schema,
+  // });
+
   createTypes(schema);
 };
+
+exports.createSchemaCustomization = createSchemaCustomization;
+exports.createPages = createPages;
+exports.onCreateNode = onCreateNode;
