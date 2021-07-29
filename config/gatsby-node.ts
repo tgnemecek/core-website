@@ -10,8 +10,6 @@ export const onCreateNode: GatsbyNode["onCreateNode"] = ({
 }) => {
   const { createNodeField } = actions;
 
-  console.log(node.internal.type);
-
   if (node.internal.type === "MarkdownRemark") {
     const pageMap = {
       "/": {
@@ -102,15 +100,11 @@ export const createPages: GatsbyNode["createPages"] = async ({
 
     if (errors) return console.error(errors);
 
-    console.log({ data });
-
     const pages = (data as any).allMarkdownRemark.edges.filter(
       ({ node }: any) => {
         return node.frontmatter.collection === "pages";
       }
     );
-
-    console.log({ pages });
 
     pages.forEach(({ node }: any) => {
       const {
@@ -127,31 +121,6 @@ export const createPages: GatsbyNode["createPages"] = async ({
         },
       });
     });
-
-    // .then((result) => {
-    //   // if (result.errors) {
-    //   //   result.errors.forEach((e: any) => console.error(e.toString()));
-    //   //   return Promise.reject(result.errors);
-    //   // }
-
-    //   const edges = (result.data as any).allMarkdownRemark.edges;
-
-    //   edges.forEach((edge: any) => {
-    //     const {
-    //       id,
-    //       fields: { slug },
-    //       frontmatter: { component },
-    //     } = edge.node;
-    //     createPage({
-    //       path: slug,
-    //       component: path.resolve(`src/templates/${component}/index.tsx`),
-    //       context: {
-    //         id,
-    //         slug,
-    //       },
-    //     });
-    //   });
-    // });
   };
 
   const createEventPage = () => {
@@ -190,7 +159,44 @@ export const createPages: GatsbyNode["createPages"] = async ({
       });
     });
   };
-  await Promise.all([createMainPages(), createEventPage()]);
+  const createPostPage = () => {
+    return graphql(`
+      {
+        allMarkdownRemark(
+          filter: { frontmatter: { collection: { eq: "posts" } } }
+        ) {
+          edges {
+            node {
+              id
+              fields {
+                slug
+              }
+            }
+          }
+        }
+      }
+    `).then((result) => {
+      if (result.errors) {
+        result.errors.forEach((e: any) => console.error(e.toString()));
+        return Promise.reject(result.errors);
+      }
+
+      const edges = (result.data as any).allMarkdownRemark.edges;
+
+      edges.forEach((edge: any) => {
+        console.log({ edge });
+        const id = edge.node.id;
+        createPage({
+          path: `/post${edge.node.fields.slug}`,
+          component: path.resolve(`src/templates/PostPage/index.tsx`),
+          context: {
+            id,
+          },
+        });
+      });
+    });
+  };
+  await Promise.all([createMainPages(), createEventPage(), createPostPage()]);
 };
 
 export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = async ({

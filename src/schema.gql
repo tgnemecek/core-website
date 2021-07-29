@@ -1,8 +1,11 @@
 scalar DateTime
 
+# Main, Settings
+
 type Frontmatter {
   pages: Pages
   events: EventPage
+  posts: PostPage
   contact: Contact
   navigation: Navigation
   eventSettings: EventSettings
@@ -36,6 +39,8 @@ type NavigationLink {
 type EventSettings {
   refundPolicy: String
 }
+
+# Pages
 
 type LandingPage {
   collection: String
@@ -89,6 +94,7 @@ type TeamPage {
   hero: Hero
   members: [Member]
 }
+
 type Member {
   name: String!
   role: String!
@@ -109,6 +115,8 @@ type Explanation {
   text: String!
   image: String!
 }
+
+# Events
 
 type EventPage {
   id: String!
@@ -137,4 +145,17 @@ type Ticket {
   description: String!
   price: Int!
   endsOn: String!
+}
+
+# Posts
+
+type PostPage {
+  id: String!
+  collection: String!
+  slug: String!
+  title: String!
+  body: String!
+  image: String!
+  video: String
+  date: DateTime!
 }

@@ -1,64 +1,56 @@
 import React from "react";
 import moment from "moment";
-import { Container, Typography, IconButton } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import { Container, Typography } from "@material-ui/core";
 import { Section, HorizontalFeed } from "components";
-// import { usePostFeed } from "utils";
-import { PostFeed } from "types";
-import Post from "./Post";
+import { usePostFeed } from "utils";
+import { Post } from "types";
+import PostCard from "./PostCard";
 
 type PostFeedProps = {
   title: string;
-  filter?: (post: PostFeed) => boolean;
+  filter?: (post: Post) => boolean;
 };
 
-const PostFeed: React.FC<any> = ({ title, filter }) => {
-  // const posts = usePostFeed().filter(filter || Boolean);
+const PostFeed: React.FC<PostFeedProps> = ({ title, filter }) => {
+  const posts = usePostFeed().filter(filter || Boolean);
 
-  const posts = [];
+  const classes = useStyles();
 
-  const sorter = ({ date: dateA }: PostFeed, { date: dateB }: PostFeed) => {
-    const now = moment();
+  const sorter = ({ date: dateA }: Post, { date: dateB }: Post) => {
     const momentA = moment(dateA);
     const momentB = moment(dateB);
 
-    let aIsPast = false;
-    let bIsPast = false;
-
-    if (momentA.isBefore(now)) aIsPast = true;
-    if (momentB.isBefore(now)) bIsPast = true;
-
-    if (aIsPast && bIsPast) {
-      if (momentA.isAfter(momentB)) return -1;
-      return 1;
-    }
-    if (!aIsPast && !bIsPast) {
-      if (momentA.isAfter(momentB)) return 1;
+    if (momentA.isBefore(momentB)) {
       return -1;
     }
-
-    if (bIsPast) return -1;
     return 1;
   };
 
   if (!posts.length) return null;
 
-  // return (
-  //   <Section id="posts">
-  //     <Container>
-  //       <Typography variant="h2">{title}</Typography>
-  //       <Typography variant="subtitle1" component="p">
-  //         Latest updates about our online and in person posts
-  //       </Typography>
-  //     </Container>
-  //     <Container>
-  //       <HorizontalFeed
-  //         items={[...posts].sort(sorter).map((post, i) => (
-  //           <Post key={i} post={post} />
-  //         ))}
-  //       />
-  //     </Container>
-  //   </Section>
-  // );
+  return (
+    <Section id="posts">
+      <Container>
+        <Typography variant="h2" className={classes.heading}>
+          What's new
+        </Typography>
+      </Container>
+      <Container>
+        <HorizontalFeed
+          items={[...posts].sort(sorter).map((post, i) => (
+            <PostCard key={i} post={post} />
+          ))}
+        />
+      </Container>
+    </Section>
+  );
 };
 
 export default PostFeed;
+
+const useStyles = makeStyles((theme) => ({
+  heading: {
+    marginBottom: 32,
+  },
+}));

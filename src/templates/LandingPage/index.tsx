@@ -4,6 +4,7 @@ import { LandingPageDTO } from "types";
 import {
   HeroSection,
   EventFeed,
+  PostFeed,
   ContactForm,
   Layout,
   Navbar,
@@ -32,7 +33,7 @@ const LandingPage: React.FC<LandingPageDTO> = ({
       <Navbar />
       <main>
         <HeroSection hero={hero} />
-        <EventFeed title="What's new" />
+        <PostFeed />
         <EventFeed title="Leading Your Life &amp; Work Events" />
         <AboutSection about={about} />
         <Testimonials testimonials={testimonials} />

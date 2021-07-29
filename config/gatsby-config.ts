@@ -75,6 +75,13 @@ const config = ({ projectRoot }: Record<string, string>) => {
       {
         resolve: "gatsby-source-filesystem",
         options: {
+          path: `${projectRoot}/src/collections/posts`,
+          name: "posts",
+        },
+      },
+      {
+        resolve: "gatsby-source-filesystem",
+        options: {
           path: `${projectRoot}/src/img`,
           name: "images",
         },

@@ -48,7 +48,7 @@ const EventFeed: React.FC<EventFeedProps> = ({ title, filter }) => {
       <Container>
         <Typography variant="h2">{title}</Typography>
         <Typography variant="subtitle1" component="p">
-          Latest updates about our online and in person events
+          Latest updates about our online events
         </Typography>
       </Container>
       <Container>

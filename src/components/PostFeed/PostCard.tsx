@@ -7,23 +7,18 @@ import {
   CardActionArea,
   CardMedia,
   CardContent,
-  Chip,
 } from "@material-ui/core";
 import { Link } from "gatsby";
-import { LanguageDisplay, EventStatus } from "components";
-import { Event } from "types";
+import { Post } from "types";
 import { useBreakpoint } from "utils";
 
-type EventProps = {
-  event: Pick<
-    Event,
-    "title" | "date" | "image" | "language" | "slug" | "isOnline" | "tickets"
-  >;
+type PostCardProps = {
+  post: Post;
 };
 
-const Event: React.FC<EventProps> = ({ event }) => {
-  const { title, date, image, language, slug, isOnline } = event;
-
+const PostCard: React.FC<PostCardProps> = ({
+  post: { title, date, image, body, video, slug },
+}) => {
   const breakpoints = useBreakpoint();
   const classes = useStyles({ breakpoints })();
 
@@ -31,14 +26,14 @@ const Event: React.FC<EventProps> = ({ event }) => {
     <Card className={classes.card} elevation={3} square>
       <CardActionArea
         component={Link}
-        to={`/event${slug}`}
+        to={`/post${slug}`}
         className={classes.cardActionArea}
       >
         <div className={classes.imageWrapper}>
           <CardMedia
             image={image}
             className={classes.image}
-            title="Event"
+            title="Post"
             component="img"
           />
         </div>
@@ -46,24 +41,13 @@ const Event: React.FC<EventProps> = ({ event }) => {
           <Typography variant="body1" className={classes.title}>
             {title}
           </Typography>
-          <div className={classes.extra}>
-            <LanguageDisplay code={language} showFlag />
-            <Typography variant="body1">
-              {isOnline ? "Online" : "In Person"}
-            </Typography>
-          </div>
-          {date && (
-            <div className={classes.date}>
-              <EventStatus event={event} showDate />
-            </div>
-          )}
         </CardContent>
       </CardActionArea>
     </Card>
   );
 };
 
-export default Event;
+export default PostCard;
 
 type UseStylesProps = {
   breakpoints: Record<string, boolean>;

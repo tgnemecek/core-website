@@ -7,6 +7,7 @@ import {
   Video,
   EventPage,
   Member,
+  PostPage,
 } from "./__generated__";
 
 export * from "./__generated__";
@@ -82,6 +83,12 @@ export type EventSettingsDTO = GenericDTO<{
   eventSettings: Record<"refundPolicy", string>;
 }>;
 
+export type Post = PostPage;
+
+export type PostPageDTO = GenericDTO<{
+  posts: Post;
+}>;
+
 export type EventFeed = Pick<
   Event,
   | "date"
@@ -124,3 +131,20 @@ export type PostFeed = Pick<
   | "isOnline"
   | "tickets"
 >;
+
+export type PostFeedDTO = {
+  data: {
+    allMarkdownRemark: {
+      edges: {
+        node: {
+          fields: {
+            slug: string;
+          };
+          frontmatter: {
+            posts: Post;
+          };
+        };
+      }[];
+    };
+  };
+};
