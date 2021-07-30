@@ -25,7 +25,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
         <Grid
           container
           spacing={5}
-          justify="center"
+          justifyContent="center"
           className={classes.aboutGrid}
         >
           <Grid item xs={12} md={6} className={classes.leftSide}>

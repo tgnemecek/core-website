@@ -22,12 +22,16 @@ const Videos: React.FC<VideosProps> = ({ videos: rawVideos }) => {
   const [activeindex, setActiveIndex] = React.useState(0);
 
   React.useEffect(() => {
+    const {
+      location: { protocol },
+    } = window;
+
     setVideos(
       rawVideos.map(({ title, subtitle, link }) => {
         const videoId = getVideoId(link);
         return {
           videoId,
-          image: `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`,
+          image: `${protocol}://img.youtube.com/vi/${videoId}/mqdefault.jpg`,
           link,
           title,
           subtitle,

@@ -1,8 +1,8 @@
 export { default as ContactForm } from "./ContactForm";
 export { default as EventFeed } from "./EventFeed";
 export { default as EventStatus } from "./EventStatus";
+export { default as Ellipsis } from "./Ellipsis";
 export { default as Footer } from "./Footer";
-export { default as FreeReport } from "../templates/ServicesPage/sections/FreeReport";
 export { default as Gallery } from "./Gallery";
 export { default as GoogleAnalytics } from "./GoogleAnalytics";
 export { default as HeroSection } from "./HeroSection";

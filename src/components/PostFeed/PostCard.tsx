@@ -9,8 +9,10 @@ import {
   CardContent,
 } from "@material-ui/core";
 import { Link } from "gatsby";
+import removeMarkdown from "markdown-to-text";
+import { Ellipsis } from "components";
 import { Post } from "types";
-import { useBreakpoint } from "utils";
+import { useBreakpoint, UseBreakpointState } from "utils";
 
 type PostCardProps = {
   post: Post;
@@ -19,8 +21,17 @@ type PostCardProps = {
 const PostCard: React.FC<PostCardProps> = ({
   post: { title, date, image, body, video, slug },
 }) => {
-  const breakpoints = useBreakpoint();
-  const classes = useStyles({ breakpoints })();
+  const { xs, sm, md, lg } = useBreakpoint();
+  const classes = useStyles({ sm, lg })();
+
+  const getEllipsisMaxCount = () => {
+    if (lg) return 200;
+    if (md) return 130;
+    if (sm) return 270;
+    if (xs) return 200;
+
+    return 80;
+  };
 
   return (
     <Card className={classes.card} elevation={3} square>
@@ -37,9 +48,24 @@ const PostCard: React.FC<PostCardProps> = ({
             component="img"
           />
         </div>
-        <CardContent className={classes.cardContent}>
+        <CardContent>
           <Typography variant="body1" className={classes.title}>
-            {title}
+            <Ellipsis text={title} max={60} component="span" />
+          </Typography>
+          <Typography variant="body1" className={classes.body}>
+            <Ellipsis
+              text={removeMarkdown(body)}
+              component="span"
+              max={getEllipsisMaxCount()}
+              ellipsis={
+                <span>
+                  ...<span className={classes.readMore}> Read more</span>
+                </span>
+              }
+            />
+          </Typography>
+          <Typography variant="body1" className={classes.date}>
+            {moment(date).format("MMM DD, YYYY")}
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -49,14 +75,11 @@ const PostCard: React.FC<PostCardProps> = ({
 
 export default PostCard;
 
-type UseStylesProps = {
-  breakpoints: Record<string, boolean>;
-};
+type UseStylesProps = Partial<UseBreakpointState>;
 
-const useStyles = ({ breakpoints }: UseStylesProps) =>
+const useStyles = ({ sm, lg }: UseStylesProps) =>
   makeStyles((theme) => {
     const getTitleFontSize = () => {
-      const { sm } = breakpoints;
       if (sm) return "1.2rem";
       return "0.9rem";
     };
@@ -87,19 +110,18 @@ const useStyles = ({ breakpoints }: UseStylesProps) =>
         objectFit: "cover",
         transition: "all 0.5s ease-in-out",
       },
-      cardContent: {
-        display: "grid",
-        gridTemplateColumns: "1fr 1fr",
-        gridAutoRows: "1fr auto",
-        padding: "10px 15px",
-        height: "100%",
-      },
       title: {
         fontSize: getTitleFontSize(),
         gridColumnEnd: "span 2",
         minHeight: `calc(${getTitleFontSize()} * 2)`,
         lineHeight: 1,
         marginBottom: 10,
+      },
+      body: {
+        fontSize: lg ? 13 : 12,
+      },
+      readMore: {
+        color: "blue",
       },
       extra: {
         display: "flex",
@@ -109,9 +131,7 @@ const useStyles = ({ breakpoints }: UseStylesProps) =>
       },
       date: {
         textAlign: "right",
-        "& > *": {
-          fontSize: "0.9rem",
-        },
+        fontSize: lg ? 13 : 12,
       },
       eventUpcoming: {
         backgroundColor: "#03a9f4",

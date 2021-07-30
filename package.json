@@ -43,6 +43,7 @@
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
     "lodash-webpack-plugin": "^0.11.4",
+    "markdown-to-text": "^0.1.1",
     "mjml": "^4.10.2",
     "moment": "^2.27.0",
     "moment-timezone": "^0.5.33",

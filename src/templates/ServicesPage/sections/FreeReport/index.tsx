@@ -19,7 +19,7 @@ const FreeReport: React.FC<FreeReportProps> = ({
     <div className={classes.reportWrapper}>
       <Grid
         container
-        justify="center"
+        justifyContent="center"
         alignItems="center"
         spacing={5}
         className={classes.reportGridContainer}
