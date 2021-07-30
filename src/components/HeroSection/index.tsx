@@ -45,7 +45,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         </Container>
       </div>
       {!small && (
-        <SmoothScroll targetId="events" className={classes.explore}>
+        <SmoothScroll targetId="posts" className={classes.explore}>
           <Button
             variant="contained"
             component="a"
