@@ -3,36 +3,35 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography } from "@material-ui/core";
 import Fade from "react-reveal/Fade";
 import YouTube from "react-youtube";
-import { Section, Gallery } from "components";
+import { Section, Gallery, Heading } from "components";
 import { getVideoId } from "utils";
+import { Video } from "types";
 
 type VideosProps = {
-  videos: RawVideoType[];
+  videos: Video[];
 };
 
-type RawVideoType = {
-  title: string;
-  subtitle?: string;
-  link: string;
-};
-
-type VideoType = RawVideoType & {
+type FormattedVideo = Video & {
   videoId: string;
   image: string;
 };
 
 const Videos: React.FC<VideosProps> = ({ videos: rawVideos }) => {
   const classes = useStyles();
-  const [videos, setVideos] = React.useState<VideoType[]>(null);
+  const [videos, setVideos] = React.useState<FormattedVideo[]>(null);
   const [activeindex, setActiveIndex] = React.useState(0);
 
   React.useEffect(() => {
+    const {
+      location: { protocol },
+    } = window;
+
     setVideos(
       rawVideos.map(({ title, subtitle, link }) => {
         const videoId = getVideoId(link);
         return {
           videoId,
-          image: `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`,
+          image: `${protocol}://img.youtube.com/vi/${videoId}/mqdefault.jpg`,
           link,
           title,
           subtitle,
@@ -46,19 +45,12 @@ const Videos: React.FC<VideosProps> = ({ videos: rawVideos }) => {
   return (
     <Section className={classes.videos}>
       <Container>
-        <Typography variant="srOnly" component="h2">
-          Videos
-        </Typography>
-        <Fade duration={200} key={activeindex}>
-          <Typography variant="h2">{videos[activeindex].title}</Typography>
-          <Typography
-            variant="subtitle1"
-            component="p"
-            className={classes.subtitle}
-          >
-            {videos[activeindex].subtitle}
-          </Typography>
-        </Fade>
+        <Heading hidden>Videos</Heading>
+        <Heading subheading={videos[activeindex].subtitle}>
+          <Fade duration={200} key={activeindex}>
+            {videos[activeindex].title}
+          </Fade>
+        </Heading>
         <div className={classes.videoWrapper}>
           <YouTube
             className={classes.video}

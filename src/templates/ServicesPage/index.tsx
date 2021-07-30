@@ -3,9 +3,16 @@ import { graphql } from "gatsby";
 import leadingReport from "src/downloads/free-reports/leading.pdf";
 import coachingReport from "src/downloads/free-reports/coaching.pdf";
 import learningReport from "src/downloads/free-reports/learning.pdf";
-import { ServicesPageDTO, ServiceNameType, PayPalButtonName } from "types";
+import { ServicesPageDTO, ServiceName, PayPalButtonName } from "types";
 
-import { Hero, Section, ContactForm, Layout, Navbar, Footer } from "components";
+import {
+  HeroSection,
+  Section,
+  ContactForm,
+  Layout,
+  Navbar,
+  Footer,
+} from "components";
 
 import {
   Benefits,
@@ -27,7 +34,7 @@ const ServicesPage: React.FC<ServicesPageDTO> = ({
 }) => {
   const { hero, benefits, explanation } = services;
 
-  const service = slug.replace(/\//g, "") as ServiceNameType;
+  const service = slug.replace(/\//g, "") as ServiceName;
 
   const getReportText = () => {
     switch (service) {
@@ -77,7 +84,7 @@ const ServicesPage: React.FC<ServicesPageDTO> = ({
     <Layout>
       <Navbar />
       <main>
-        <Hero hero={hero} small={true} />
+        <HeroSection hero={hero} small={true} />
         <Section>
           <Explanation explanation={explanation} />
           <FreeReport
@@ -88,7 +95,7 @@ const ServicesPage: React.FC<ServicesPageDTO> = ({
           <CallToAction targetId="contact-form" text="Send Us a message" />
         </Section>
         <Section>
-          <PayPalButtons buttonTypes={getPayPalButtons()} />
+          <PayPalButtons buttonNames={getPayPalButtons()} />
         </Section>
         <ContactForm />
       </main>

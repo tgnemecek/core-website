@@ -1,10 +1,10 @@
 import React from "react";
-import { LanguageType } from "types";
+import { Language } from "types";
 import flagLibrary from "./flagLibrary";
 import { JSXFlagProps } from "./types";
 
 type FlagProps = JSXFlagProps & {
-  code: LanguageType;
+  code: Language;
 };
 
 const Flag: React.FC<FlagProps> = ({ code, ...props }) => {

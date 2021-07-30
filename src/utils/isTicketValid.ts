@@ -1,12 +1,12 @@
 import moment from "moment";
-import { TicketType } from "types";
+import { Ticket } from "types";
 
-type IsTicketValidType = (
-  endsOn: TicketType["endsOn"],
+type IsTicketValid = (
+  endsOn: Ticket["endsOn"],
   eventDate: Date | moment.Moment
 ) => boolean;
 
-const isTicketValid: IsTicketValidType = (endsOn, eventDate) => {
+const isTicketValid: IsTicketValid = (endsOn, eventDate) => {
   const now = moment();
 
   if (endsOn === "oneWeek") {

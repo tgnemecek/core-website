@@ -6,22 +6,20 @@ import {
   IconButton,
   Divider,
   Typography,
-  Grid,
   Paper,
-  Hidden,
 } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
+import ReplyIcon from "@material-ui/icons/Reply";
 import YouTube from "react-youtube";
 import Fade from "@material-ui/core/Fade";
 import { getVideoId } from "utils";
 import { Modal, Image } from "components";
-import ReplyIcon from "@material-ui/icons/Reply";
-import { MemberType } from "./types";
+import { Member } from "types";
 
 const timeout = 2000;
 
 type MemberModalProps = {
-  memberToView: MemberType;
+  memberToView: Member;
   onClose: () => void;
 };
 

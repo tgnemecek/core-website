@@ -1,16 +1,16 @@
-type MarkdownRemark implements Node {
-  frontmatter: Frontmatter
-  fields: Fields
-}
-type Fields {
-  slug: String
-}
+scalar DateTime
+
+# Main, Settings
+
 type Frontmatter {
   pages: Pages
   events: EventPage
+  posts: PostPage
   contact: Contact
   navigation: Navigation
   eventSettings: EventSettings
+  component: String
+  collection: String
 }
 type Pages {
   landing: LandingPage
@@ -39,6 +39,8 @@ type NavigationLink {
 type EventSettings {
   refundPolicy: String
 }
+
+# Pages
 
 type LandingPage {
   collection: String
@@ -92,11 +94,12 @@ type TeamPage {
   hero: Hero
   members: [Member]
 }
+
 type Member {
-  name: String
-  role: String
-  photo: String
-  bio: String
+  name: String!
+  role: String!
+  photo: String!
+  bio: String!
   linkedin: String
   video: String
 }
@@ -113,20 +116,28 @@ type Explanation {
   image: String!
 }
 
+# Events
+
 type EventPage {
   id: String!
   collection: String!
+  slug: String!
   title: String!
   subtitle: String!
   description: String!
   image: String!
   video: String
-  date: Date!
+  date: DateTime!
   duration: Int!
-  language: [String!]!
+  language: [Language!]!
   isOnline: Boolean!
   location: String
   tickets: [Ticket!]!
+}
+
+enum Language {
+  EN
+  ES
 }
 
 type Ticket {
@@ -134,4 +145,17 @@ type Ticket {
   description: String!
   price: Int!
   endsOn: String!
+}
+
+# Posts
+
+type PostPage {
+  id: String!
+  collection: String!
+  slug: String!
+  title: String!
+  body: String!
+  image: String!
+  video: String
+  date: DateTime!
 }

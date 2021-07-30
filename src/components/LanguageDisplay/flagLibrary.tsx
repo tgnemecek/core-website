@@ -1,16 +1,13 @@
 import React from "react";
-import { LanguageType } from "types";
+import { Language } from "types";
 import { JSXFlagProps } from "./types";
 
 const defaultWidth = 20;
 const defaultHeight = 20;
 
-type FlagLibraryType = Record<
-  LanguageType,
-  (props: JSXFlagProps) => JSX.Element
->;
+type FlagLibrary = Record<Language, (props: JSXFlagProps) => JSX.Element>;
 
-const flagLibrary: FlagLibraryType = {
+const flagLibrary: FlagLibrary = {
   EN: ({ width = defaultWidth, height = defaultHeight, className = "" }) => (
     <svg
       viewBox="0 0 512 512"

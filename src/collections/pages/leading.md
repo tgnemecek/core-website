@@ -48,6 +48,4 @@ benefits: |-
   * Are not aligned with others about best actions to take.
   * Are not communicating as powerfully or confidently as wish.
   * Are losing money; have inefficient processes or inadequate capital.
-  * Are working too hard for results; not leveraging efforts to next success.
-  * A Business Coach or Consultant whose clients say yes to these questions.
 ---

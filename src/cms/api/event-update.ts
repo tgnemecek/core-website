@@ -1,14 +1,14 @@
-import { FormType } from "../types";
+import { Form } from "../types";
 import generateHeaders from "./generateHeaders";
 
-type ReturnType = {
+type Return = {
   id: string;
-  tickets: FormType["tickets"];
+  tickets: Form["tickets"];
 };
 
-type EventUpdateType = (form: FormType) => Promise<ReturnType>;
+type EventUpdate = (form: Form) => Promise<Return>;
 
-const eventUpdate: EventUpdateType = async (form) => {
+const eventUpdate: EventUpdate = async (form) => {
   const res = await fetch("/.netlify/functions/event-update", {
     method: "POST",
     body: JSON.stringify(form),
@@ -21,7 +21,7 @@ const eventUpdate: EventUpdateType = async (form) => {
     throw new Error(errorMessage);
   }
 
-  const result: ReturnType = await res.json();
+  const result: Return = await res.json();
 
   if (!result.id) {
     throw new Error("Couldn't update product");

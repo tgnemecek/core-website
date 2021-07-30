@@ -1,0 +1,9 @@
+schema: ./src/schema.gql
+generates:
+  ./src/types/__generated__.ts:
+    plugins:
+      - typescript
+    config:
+      scalars:
+        DateTime: Date
+        Node: any
