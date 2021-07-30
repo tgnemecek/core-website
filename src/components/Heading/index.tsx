@@ -7,6 +7,7 @@ type HeadingProps = {
   showLine?: boolean;
   textAlign?: "left" | "center";
   hidden?: boolean;
+  noMargin?: boolean;
 };
 
 const Heading: React.FC<HeadingProps> = ({
@@ -15,8 +16,9 @@ const Heading: React.FC<HeadingProps> = ({
   showLine,
   textAlign,
   hidden,
+  noMargin,
 }) => {
-  const classes = useStyles({ showLine, subheading })();
+  const classes = useStyles({ showLine, subheading, noMargin })();
 
   return (
     <>
@@ -44,15 +46,15 @@ export default Heading;
 
 const marginBottom = 35;
 
-const useStyles = ({ showLine, subheading }: Partial<HeadingProps>) =>
+const useStyles = ({ showLine, subheading, noMargin }: Partial<HeadingProps>) =>
   makeStyles((theme) => {
     return {
       h2: {
         borderBottom: showLine ? `2px solid ${theme.palette.primary.main}` : "",
-        marginBottom: subheading ? 0 : marginBottom,
+        marginBottom: subheading || noMargin ? 0 : marginBottom,
       },
       subheading: {
-        marginBottom: subheading ? marginBottom : 0,
+        marginBottom: subheading && !noMargin ? marginBottom : 0,
       },
     };
   });

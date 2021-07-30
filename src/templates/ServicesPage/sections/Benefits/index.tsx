@@ -11,6 +11,7 @@ import {
   ListItemIcon,
 } from "@material-ui/core";
 import ErrorOutlineIcon from "@material-ui/icons/ErrorOutline";
+import { Heading, Markdown } from "components";
 
 type BenefitsProps = {
   benefits: string;
@@ -22,8 +23,23 @@ const Benefits: React.FC<BenefitsProps> = ({ benefits }) => {
   return (
     <Container>
       <Paper elevation={3} square className={classes.paper}>
-        <Typography variant="h2">Schedule a time with us if you:</Typography>
-        {parse(benefits, {
+        <Heading showLine textAlign="center" noMargin>
+          Schedule a time with us if you:
+        </Heading>
+        <Markdown
+          text={benefits}
+          components={{
+            li: (props) => (
+              <ListItem>
+                <ListItemIcon>
+                  <ErrorOutlineIcon />
+                </ListItemIcon>
+                <ListItemText {...props} />
+              </ListItem>
+            ),
+          }}
+        />
+        {/* {parse(benefits, {
           replace: ({ name, children }: any) => {
             if (name === "ul")
               return (
@@ -42,7 +58,7 @@ const Benefits: React.FC<BenefitsProps> = ({ benefits }) => {
                 </List>
               );
           },
-        })}
+        })} */}
       </Paper>
     </Container>
   );
