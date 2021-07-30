@@ -31,7 +31,6 @@ const themeObject = {
       fontSize: "3rem",
       fontWeight: 400,
       color: baseFontColor,
-      borderBottom: `2px solid ${primaryColor}`,
     },
     h3: {
       fontSize: "1.5rem",
@@ -49,7 +48,6 @@ const themeObject = {
     subtitle1: {
       fontSize: "1.2rem",
       color: baseFontColor,
-      marginBottom: "2rem",
     },
     subtitle2: {
       fontSize: "1.2rem",

@@ -35,7 +35,19 @@ const Explanation: React.FC<ExplanationProps> = ({
         alignItems="center"
       >
         <Grid item xs={12} md={8}>
-          <Markdown text={text} />
+          <Markdown
+            text={text}
+            components={{
+              li: ({ children, ...props }) => (
+                <ListItem {...props}>
+                  <ListItemIcon>
+                    <StarIcon />
+                  </ListItemIcon>
+                  <Typography variant="body1">{children}</Typography>
+                </ListItem>
+              ),
+            }}
+          />
         </Grid>
         <Grid item xs={12} md={4} className={classes.imgContainer}>
           <Image

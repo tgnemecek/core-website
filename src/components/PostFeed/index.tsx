@@ -1,8 +1,7 @@
 import React from "react";
 import moment from "moment";
-import { makeStyles } from "@material-ui/core/styles";
-import { Container, Typography } from "@material-ui/core";
-import { Section, HorizontalFeed } from "components";
+import { Container } from "@material-ui/core";
+import { Section, HorizontalFeed, Heading } from "components";
 import { usePostFeed } from "utils";
 import { Post } from "types";
 import PostCard from "./PostCard";
@@ -14,8 +13,6 @@ type PostFeedProps = {
 
 const PostFeed: React.FC<PostFeedProps> = ({ title, filter }) => {
   const posts = usePostFeed().filter(filter || Boolean);
-
-  const classes = useStyles();
 
   const sorter = ({ date: dateA }: Post, { date: dateB }: Post) => {
     const momentA = moment(dateA);
@@ -32,9 +29,7 @@ const PostFeed: React.FC<PostFeedProps> = ({ title, filter }) => {
   return (
     <Section id="posts">
       <Container>
-        <Typography variant="h2" className={classes.heading}>
-          What's new
-        </Typography>
+        <Heading showLine>What's new</Heading>
       </Container>
       <Container>
         <HorizontalFeed
@@ -48,9 +43,3 @@ const PostFeed: React.FC<PostFeedProps> = ({ title, filter }) => {
 };
 
 export default PostFeed;
-
-const useStyles = makeStyles((theme) => ({
-  heading: {
-    marginBottom: 32,
-  },
-}));
