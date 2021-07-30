@@ -9,7 +9,7 @@ import {
   CardContent,
   CardActionArea,
 } from "@material-ui/core";
-import { theme } from "components";
+import { theme, Heading } from "components";
 import { PayPalButtonName } from "types";
 import buttons from "./buttons";
 
@@ -24,10 +24,12 @@ const PayPalButtons: React.FC<PayPalButtonsProps> = ({ buttonNames }) => {
   return (
     <>
       <Container>
-        <Typography variant="h2">Premium Reports</Typography>
-        <Typography variant="subtitle1">
-          For invaluable in-depth knowledge
-        </Typography>
+        <Heading
+          subheading="For invaluable in-depth knowledge"
+          textAlign="center"
+        >
+          Premium Reports
+        </Heading>
       </Container>
       <Container maxWidth="md">
         <Grid container alignItems="center" spacing={sm ? 2 : 8}>

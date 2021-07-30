@@ -1,13 +1,12 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Container, Typography, Grid, IconButton } from "@material-ui/core";
+import { Container, Grid, IconButton } from "@material-ui/core";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
-import VisuallyHidden from "@reach/visually-hidden";
-import { Section, theme } from "components";
+import { Section, Heading, theme } from "components";
 import { shuffleArray } from "utils";
-import TestimonialItem from "./TestimonialItem";
 import { Testimonial } from "types";
+import TestimonialItem from "./TestimonialItem";
 
 type TestimonialsProps = {
   testimonials: Testimonial[];
@@ -32,9 +31,7 @@ const Testimonials: React.FC<TestimonialsProps> = (props) => {
   return (
     <Section backgroundColor={theme.palette.primary.main} small={true}>
       <Container>
-        <VisuallyHidden>
-          <Typography variant="h2">Testimonials</Typography>
-        </VisuallyHidden>
+        <Heading hidden>Testimonials</Heading>
         <Grid container className={classes.testimonialWrapper}>
           <Grid item>
             <IconButton onClick={() => changeIndex(-1)}>

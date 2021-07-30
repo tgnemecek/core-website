@@ -31,7 +31,7 @@ const Benefits: React.FC<BenefitsProps> = ({ benefits }) => {
           components={{
             li: (props) => (
               <ListItem>
-                <ListItemIcon>
+                <ListItemIcon style={{ minWidth: 34 }}>
                   <ErrorOutlineIcon />
                 </ListItemIcon>
                 <ListItemText {...props} />
@@ -39,26 +39,6 @@ const Benefits: React.FC<BenefitsProps> = ({ benefits }) => {
             ),
           }}
         />
-        {/* {parse(benefits, {
-          replace: ({ name, children }: any) => {
-            if (name === "ul")
-              return (
-                <List>
-                  {children.map(({ name, children }: any, i: number) => {
-                    if (name === "li")
-                      return (
-                        <ListItem key={i}>
-                          <ListItemIcon>
-                            <ErrorOutlineIcon />
-                          </ListItemIcon>
-                          <ListItemText primary={children[0].data} />
-                        </ListItem>
-                      );
-                  })}
-                </List>
-              );
-          },
-        })} */}
       </Paper>
     </Container>
   );
@@ -68,7 +48,7 @@ export default Benefits;
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    maxWidth: 750,
+    maxWidth: 700,
     margin: "50px auto",
     "& h2": {
       padding: theme.spacing(2),
