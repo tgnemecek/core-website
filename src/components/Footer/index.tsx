@@ -41,7 +41,7 @@ const Footer: React.FC<FooterProps> = ({ paddingBottom = 0 }) => {
   return (
     <footer className={classes.footer}>
       <Container>
-        <Grid container justify="space-between">
+        <Grid container justifyContent="space-between">
           <Grid item className={classes.leftSide} xs={12} md={6}>
             <List>
               {email && (

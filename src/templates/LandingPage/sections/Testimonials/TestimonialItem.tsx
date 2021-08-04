@@ -2,11 +2,11 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography } from "@material-ui/core";
 import Fade from "react-reveal/Fade";
-import { TestimonialType } from "./types";
+import { Testimonial } from "types";
 
-type TestimonialProps = TestimonialType;
+type TestimonialItemProps = Testimonial;
 
-const Testimonial: React.FC<TestimonialProps> = ({
+const TestimonialItem: React.FC<TestimonialItemProps> = ({
   testimonial,
   author,
   role,
@@ -27,7 +27,7 @@ const Testimonial: React.FC<TestimonialProps> = ({
   );
 };
 
-export default Testimonial;
+export default TestimonialItem;
 
 const useStyles = makeStyles((theme) => ({
   text: {
