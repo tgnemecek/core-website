@@ -86,7 +86,8 @@
     "develop": "gatsby develop",
     "codegen": "graphql-codegen",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "patch-package"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^1.21.8",
