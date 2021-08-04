@@ -9,7 +9,11 @@ const config = ({ projectRoot }: Record<string, string>) => {
     },
     proxy: {
       prefix: "/.netlify/functions",
-      url: "http://localhost:8888",
+      url: `${
+        process.env.NODE_ENV === "develop"
+          ? "http://localhost"
+          : process.env.GATSBY_SITE_URL
+      }:8888`,
     },
     flags: {
       PRESERVE_WEBPACK_CACHE: true,
@@ -31,7 +35,7 @@ const config = ({ projectRoot }: Record<string, string>) => {
       {
         resolve: "gatsby-plugin-robots-txt",
         options: {
-          host: "https://www.corecoachingconsulting.com",
+          host: process.env.GATSBY_SITE_URL,
         },
       },
       {

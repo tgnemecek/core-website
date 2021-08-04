@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Container, Typography } from "@material-ui/core";
+import { Container } from "@material-ui/core";
 import Fade from "react-reveal/Fade";
 import YouTube from "react-youtube";
 import { Section, Gallery, Heading } from "components";
@@ -31,7 +31,7 @@ const Videos: React.FC<VideosProps> = ({ videos: rawVideos }) => {
         const videoId = getVideoId(link);
         return {
           videoId,
-          image: `${protocol}://img.youtube.com/vi/${videoId}/mqdefault.jpg`,
+          image: `${protocol}//img.youtube.com/vi/${videoId}/mqdefault.jpg`,
           link,
           title,
           subtitle,

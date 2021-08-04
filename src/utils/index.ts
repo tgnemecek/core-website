@@ -10,7 +10,8 @@ export { default as formatLanguage } from "./formatLanguage";
 export { default as verifyEmail } from "./verifyEmail";
 
 // Hooks:
-export { default as useBreakpoint, UseBreakpointState } from "./useBreakpoint";
+export { default as useBreakpoint } from "./useBreakpoint";
+export type { UseBreakpointState } from "./useBreakpoint";
 export { default as useEventFeed } from "./useEventFeed";
 export { default as usePostFeed } from "./usePostFeed";
 export { default as useEventSettings } from "./useEventSettings";
