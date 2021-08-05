@@ -17,5 +17,6 @@ export { default as Navbar } from "./Navbar";
 export { default as Section } from "./Section";
 export { default as SmoothScroll } from "./SmoothScroll";
 export { default as PostFeed } from "./PostFeed";
+export { default as VideoPlayer } from "./VideoPlayer";
 
 export { default as theme } from "./theme";

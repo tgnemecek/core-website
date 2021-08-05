@@ -1,6 +1,7 @@
 export { default as breakpoints } from "./breakpoints";
 export { default as getImageId } from "./getImageId";
 export { default as getVideoId } from "./getVideoId";
+export { default as getVideoImage } from "./getVideoImage";
 export { default as isVideoValid } from "./isVideoValid";
 export { default as isTicketValid } from "./isTicketValid";
 export { default as isEventValid } from "./isEventValid";

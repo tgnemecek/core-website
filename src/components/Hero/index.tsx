@@ -9,10 +9,11 @@ import { useGeneralSettings } from "utils";
 
 type HeroProps = {
   title?: string;
+  image?: string;
   small?: boolean;
 };
 
-const Hero: React.FC<HeroProps> = ({ title, small = false }) => {
+const Hero: React.FC<HeroProps> = ({ title, image, small = false }) => {
   const classes = useStyles({ small })();
 
   const { brandName, heroImage } = useGeneralSettings();
@@ -21,7 +22,7 @@ const Hero: React.FC<HeroProps> = ({ title, small = false }) => {
     <section className={classes.hero} id="hero">
       <Image
         className={classes.image}
-        src={heroImage}
+        src={image || heroImage}
         width={1920}
         alt="Main illustration of the page"
       />
