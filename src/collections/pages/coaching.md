@@ -1,8 +1,6 @@
 ---
 collection: pages
-hero:
-  title: CORE Coaching
-  image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596493058/pexels-pixabay-161154_uftaqi.jpg
+title: CORE Coaching
 explanation:
   text: >-
     **What** do you want to change about your life or work? **Why** is that

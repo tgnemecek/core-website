@@ -1,21 +1,5 @@
 ---
 collection: pages
-hero:
-  title: |-
-    <span>
-
-    CORE
-
-    <br/>
-
-    Coaching &amp;
-
-    <br/>
-
-    Consulting
-
-    </span>
-  image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596493058/pexels-pixabay-161154_uftaqi.jpg
 about:
   text: "Core Coaching & Consulting, LLC is a global group of change agents who
     use the holistic system of The Balancing Act with individuals, leaders, and

@@ -11,7 +11,7 @@ import TicketsMain from "./TicketsMain";
 import CheckoutForm from "./CheckoutForm";
 import ResultMessage from "./ResultMessage";
 
-const stripePromise = loadStripe(process.env.GATSBY_STRIPE_PUBLIC_KEY);
+const stripePromise = loadStripe(process.env.GATSBY_STRIPE_PUBLIC_KEY!);
 
 type TicketsModalProps = {
   open: boolean;
@@ -25,7 +25,7 @@ type Stage =
   | "failed";
 
 const TicketsModal: React.FC<TicketsModalProps> = ({ open }) => {
-  const { setTicketsModalOpen } = React.useContext(EventContext);
+  const { setTicketsModalOpen } = React.useContext(EventContext)!;
 
   const [stage, setStage] = React.useState<Stage>("chooseTicket");
   const [chosenTicket, setChosenTicket] = React.useState<Ticket>();

@@ -9,6 +9,7 @@ type Frontmatter {
   contact: Contact
   navigation: Navigation
   eventSettings: EventSettings
+  generalSettings: GeneralSettings
   component: String
   collection: String
 }
@@ -28,6 +29,10 @@ type Contact {
   phone2: String
   link: String
 }
+type GeneralSettings {
+  brandName: String!
+  heroImage: String!
+}
 type Navigation {
   links: [NavigationLink!]!
 }
@@ -44,7 +49,6 @@ type EventSettings {
 
 type LandingPage {
   collection: String
-  hero: Hero!
   about: About!
   services: [Service!]!
   products: [Product!]!
@@ -53,46 +57,41 @@ type LandingPage {
   videos: [Video!]!
 }
 
-type Hero {
-  title: String
-  image: String
-}
-
 type About {
   text: String
   image: String
 }
 
 type Service {
-  title: String
-  image: String
-  name: String
-  description: String
+  title: String!
+  image: String!
+  name: String!
+  description: String!
 }
 
 type Product {
-  description: String
-  image: String
-  title: String
+  description: String!
+  image: String!
+  title: String!
   subtitle: String
   link: String
 }
 
 type Testimonial {
-  author: String
-  role: String
-  testimonial: String
+  author: String!
+  role: String!
+  testimonial: String!
 }
 type Video {
-  link: String
-  title: String
+  link: String!
+  title: String!
   subtitle: String
 }
 
 type TeamPage {
-  collection: String
-  hero: Hero
-  members: [Member]
+  collection: String!
+  title: String!
+  members: [Member!]!
 }
 
 type Member {
@@ -105,10 +104,10 @@ type Member {
 }
 
 type ServicesPage {
-  collection: String
-  hero: Hero
-  explanation: Explanation
-  benefits: String
+  collection: String!
+  explanation: Explanation!
+  benefits: String!
+  title: String!
 }
 
 type Explanation {
@@ -155,7 +154,7 @@ type PostPage {
   slug: String!
   title: String!
   body: String!
-  image: String!
+  image: String
   video: String
   date: DateTime!
 }

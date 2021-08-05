@@ -1,13 +1,15 @@
 import React from "react";
 import { CardElement, CardElementProps } from "@stripe/react-stripe-js";
 
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 
-type FormInputProps<T = void> = {
+type OnChange<T> = T extends "card"
+  ? CardElementProps["onChange"]
+  : (value: string) => void;
+
+type FormInputProps<T = unknown> = {
   type?: T;
-  onChange?: T extends "card"
-    ? CardElementProps["onChange"]
-    : (value: string) => void;
+  onChange?: OnChange<T>;
   value?: string;
   label?: string;
   error?: boolean | string;
@@ -20,7 +22,6 @@ const FormInput = <T extends "card" | "email" | "text">({
   label,
   error,
 }: FormInputProps<T>) => {
-  const theme = useTheme();
   const [cardError, setCardError] = React.useState("");
   const classes = useStyles({ error: error || cardError })();
 
@@ -28,10 +29,8 @@ const FormInput = <T extends "card" | "email" | "text">({
     if (type === "card") {
       return (
         <CardElement
-          // onChange={({ target: { value: v } }) => onChange(v)}
-          // value={value}
           onChange={(e) => {
-            (onChange as CardElementProps["onChange"])(e);
+            (onChange as OnChange<"card">)?.(e);
             // Listen for changes in the CardElement
             // and display any errors as the customer types their card details
             // setDisabled(event.empty);

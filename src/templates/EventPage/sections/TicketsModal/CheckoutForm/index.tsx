@@ -31,7 +31,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
     setTicketsModalOpen,
     setAlreadyPurchased,
     setLoading,
-  } = React.useContext(EventContext);
+  } = React.useContext(EventContext)!;
 
   const [clientSecret, setClientSecret] = React.useState("");
   const stripe = useStripe();
@@ -122,9 +122,9 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
     setLoading(true);
 
     try {
-      const payload = await stripe.confirmCardPayment(clientSecret, {
+      const payload = await stripe!.confirmCardPayment(clientSecret, {
         payment_method: {
-          card: elements.getElement(CardElement),
+          card: elements!.getElement(CardElement)!,
           billing_details: {
             email: formState.email,
             name: `${formState.firstName}_${formState.lastName}`,

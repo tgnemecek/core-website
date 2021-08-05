@@ -19,7 +19,6 @@ const usePostFeed = () => {
                 date
                 image
                 video
-                id
               }
             }
           }

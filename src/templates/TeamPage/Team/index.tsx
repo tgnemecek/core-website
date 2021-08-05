@@ -10,7 +10,7 @@ type TeamProps = {
 };
 
 const Team: React.FC<TeamProps> = ({ members }) => {
-  const [memberToView, setMemberToView] = React.useState(null);
+  const [memberToView, setMemberToView] = React.useState<Member | null>(null);
 
   return (
     <Section>
@@ -34,7 +34,7 @@ const Team: React.FC<TeamProps> = ({ members }) => {
       </Container>
       {memberToView && (
         <MemberModal
-          memberToView={memberToView}
+          memberToView={memberToView!}
           onClose={() => setMemberToView(null)}
         />
       )}

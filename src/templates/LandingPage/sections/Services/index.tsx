@@ -13,7 +13,7 @@ type ServicesProps = {
 };
 
 const Services: React.FC<ServicesProps> = ({ services }) => {
-  const [hover, setHover] = React.useState(null);
+  const [hover, setHover] = React.useState<string | null>(null);
   const classes = useStyles();
   const { md } = useBreakpoint();
 

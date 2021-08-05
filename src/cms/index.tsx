@@ -11,8 +11,8 @@ import { Event, Ticket } from "types";
 type EventHandlerProps = { entry: Map<string, any> };
 
 type StoredData = {
-  id: string;
-  ticketIds: string[];
+  id?: string;
+  ticketIds?: string[];
 };
 
 const convertFromMap = (map: Map<string, any>) => {
@@ -68,7 +68,7 @@ const AdminConsole = () => {
 
   React.useEffect(() => {
     CMS.registerMediaLibrary(cloudinary);
-    CMS.registerWidget("video", VideoWidget, null);
+    CMS.registerWidget("video", VideoWidget, undefined);
 
     (CMS as any).registerEventListener({
       name: "preSave",
@@ -89,7 +89,7 @@ const AdminConsole = () => {
               id: storedData.id || form.id,
               tickets: storedData.ticketIds
                 ? form.tickets.map((ticket, i) => {
-                    return { ...ticket, id: storedData.ticketIds[i] };
+                    return { ...ticket, id: storedData.ticketIds![i] };
                   })
                 : form.tickets,
             });

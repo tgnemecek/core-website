@@ -733,6 +733,29 @@ const config: ExtendedConfig = {
           ],
         },
         {
+          file: "src/collections/settings/general-settings/index.md",
+          label: "General",
+          name: "generalSettings",
+          fields: [
+            {
+              label: "Collection",
+              name: "collection",
+              widget: "hidden",
+              default: "generalSettings",
+            },
+            {
+              label: "Brand Name",
+              name: "brandName",
+              widget: "text",
+            },
+            {
+              label: "Hero Image",
+              name: "heroImage",
+              widget: "image",
+            },
+          ],
+        },
+        {
           file: "src/collections/settings/event-settings/index.md",
           label: "Events",
           name: "eventSettings",
@@ -741,7 +764,7 @@ const config: ExtendedConfig = {
               label: "Collection",
               name: "collection",
               widget: "hidden",
-              default: "settings",
+              default: "eventSettings",
             },
             {
               label: "Key",

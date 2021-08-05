@@ -6,7 +6,7 @@ export { default as Footer } from "./Footer";
 export { default as Gallery } from "./Gallery";
 export { default as GoogleAnalytics } from "./GoogleAnalytics";
 export { default as Heading } from "./Heading";
-export { default as HeroSection } from "./HeroSection";
+export { default as Hero } from "./Hero";
 export { default as HorizontalFeed } from "./HorizontalFeed";
 export { default as Image } from "./Image";
 export { default as LanguageDisplay } from "./LanguageDisplay";
@@ -17,5 +17,6 @@ export { default as Navbar } from "./Navbar";
 export { default as Section } from "./Section";
 export { default as SmoothScroll } from "./SmoothScroll";
 export { default as PostFeed } from "./PostFeed";
+export { default as VideoPlayer } from "./VideoPlayer";
 
 export { default as theme } from "./theme";

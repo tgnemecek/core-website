@@ -1,5 +1,4 @@
 import React from "react";
-import ReactMarkdown from "react-markdown";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   Container,
@@ -38,7 +37,7 @@ const Explanation: React.FC<ExplanationProps> = ({
           <Markdown
             text={text}
             components={{
-              li: ({ children, ...props }) => (
+              li: ({ children, ...props }: any) => (
                 <ListItem {...props}>
                   <ListItemIcon>
                     <StarIcon />

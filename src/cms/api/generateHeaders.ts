@@ -11,7 +11,7 @@ const generateHeaders = () => {
 
   const {
     token: { access_token },
-  } = auth.currentUser();
+  } = auth.currentUser()!;
 
   return {
     Authorization: `Bearer ${access_token}`,

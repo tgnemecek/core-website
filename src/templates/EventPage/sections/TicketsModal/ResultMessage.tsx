@@ -1,16 +1,9 @@
 import React from "react";
-import {
-  Typography,
-  CircularProgress,
-  Modal,
-  Dialog,
-  Button,
-  Paper,
-} from "@material-ui/core";
+import { Typography, Button } from "@material-ui/core";
 import CheckIcon from "@material-ui/icons/Check";
 import CloseIcon from "@material-ui/icons/Close";
 import { makeStyles } from "@material-ui/core/styles";
-import { useTransition, animated } from "react-spring";
+import { useSpring, animated } from "react-spring";
 import EventContext from "./../../EventContext";
 import ModalFooter from "./ModalFooter";
 
@@ -25,61 +18,53 @@ const ResultMessage: React.FC<ResultMessageProps> = ({
   subtitle,
   type,
 }) => {
-  const { setTicketsModalOpen } = React.useContext(EventContext);
+  const { setTicketsModalOpen } = React.useContext(EventContext)!;
 
   const classes = useStyles();
 
-  const [showIcon, setShowIcon] = React.useState(false);
-  const [showButton, setShowButton] = React.useState(false);
+  const [iconStyles, iconTransition] = useSpring(() => ({
+    transform: "rotateZ(-40deg)",
+    opacity: 0,
+    config: {
+      friction: 100,
+      tension: 200,
+    },
+  }));
 
-  const iconTransitions = useTransition(showIcon, null, [
-    {
-      config: {
-        friction: 100,
-        tension: 200,
-      },
-      from: { transform: "rotateZ(-40deg)", opacity: 0 },
-      enter: { transform: "rotateZ(0deg)", opacity: 1 },
+  const [buttonStyles, buttonTransition] = useSpring(() => ({
+    left: -50,
+    opacity: 0,
+    config: {
+      friction: 50,
+      mass: 1,
+      tension: 200,
     },
-  ]);
-  const buttonTransitions = useTransition(showButton, null, [
-    {
-      config: {
-        friction: 50,
-        mass: 1,
-        tension: 200,
-      },
-      from: { left: -50, opacity: 0 },
-      enter: { left: 0, opacity: 1 },
-    },
-  ]);
+  }));
 
   React.useEffect(() => {
-    setShowIcon(true);
-    setTimeout(() => {
-      setShowButton(true);
-    }, 1000);
+    iconTransition.start({
+      transform: "rotateZ(0deg)",
+      opacity: 1,
+    });
+
+    buttonTransition.start({
+      left: 0,
+      opacity: 1,
+      delay: 1000,
+    });
   }, []);
 
   return (
     <div className={classes.container}>
       <div className={classes.textWrapper}>
         <div>
-          {iconTransitions.map(
-            ({ item, key, props }) =>
-              item && (
-                <animated.div
-                  key={key}
-                  style={{ ...props, display: "inline-block" }}
-                >
-                  {type === "success" ? (
-                    <CheckIcon className={classes.checkmark} />
-                  ) : (
-                    <CloseIcon className={classes.x} />
-                  )}
-                </animated.div>
-              )
-          )}
+          <animated.div style={{ ...iconStyles, display: "inline-block" }}>
+            {type === "success" ? (
+              <CheckIcon className={classes.checkmark} />
+            ) : (
+              <CloseIcon className={classes.x} />
+            )}
+          </animated.div>
         </div>
         <Typography variant="body1" className={classes.thanks}>
           {title}
@@ -89,23 +74,15 @@ const ResultMessage: React.FC<ResultMessageProps> = ({
         </Typography>
       </div>
       <ModalFooter>
-        {buttonTransitions.map(
-          ({ item, key, props }) =>
-            item && (
-              <animated.div
-                key={key}
-                style={{ ...props, position: "relative" }}
-              >
-                <Button
-                  variant="contained"
-                  color="primary"
-                  onClick={() => setTicketsModalOpen(false)}
-                >
-                  Go Back
-                </Button>
-              </animated.div>
-            )
-        )}
+        <animated.div style={{ ...buttonStyles, position: "relative" }}>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => setTicketsModalOpen(false)}
+          >
+            Go Back
+          </Button>
+        </animated.div>
       </ModalFooter>
     </div>
   );

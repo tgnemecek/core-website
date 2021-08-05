@@ -5,14 +5,7 @@ import coachingReport from "src/downloads/free-reports/coaching.pdf";
 import learningReport from "src/downloads/free-reports/learning.pdf";
 import { ServicesPageDTO, ServiceName, PayPalButtonName } from "types";
 
-import {
-  HeroSection,
-  Section,
-  ContactForm,
-  Layout,
-  Navbar,
-  Footer,
-} from "components";
+import { Hero, Section, ContactForm, Layout, Navbar, Footer } from "components";
 
 import {
   Benefits,
@@ -32,7 +25,7 @@ const ServicesPage: React.FC<ServicesPageDTO> = ({
     },
   },
 }) => {
-  const { hero, benefits, explanation } = services;
+  const { benefits, explanation, title } = services;
 
   const service = slug.replace(/\//g, "") as ServiceName;
 
@@ -84,7 +77,7 @@ const ServicesPage: React.FC<ServicesPageDTO> = ({
     <Layout>
       <Navbar />
       <main>
-        <HeroSection hero={hero} small={true} />
+        <Hero title={title} small={true} />
         <Section>
           <Explanation explanation={explanation} />
           <FreeReport
@@ -116,13 +109,10 @@ export const pageQuery = graphql`
       frontmatter {
         pages {
           services {
+            title
             benefits
             explanation {
               text
-              image
-            }
-            hero {
-              title
               image
             }
           }

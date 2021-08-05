@@ -17,7 +17,7 @@ const Header: React.FC = () => {
   const {
     event: { title, subtitle, date, image, isOnline, language, tickets },
     priceRange,
-  } = React.useContext(EventContext);
+  } = React.useContext(EventContext)!;
 
   const classes = useStyles();
 

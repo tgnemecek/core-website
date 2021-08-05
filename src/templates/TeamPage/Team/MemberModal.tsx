@@ -126,9 +126,11 @@ const MemberModal: React.FC<MemberModalProps> = ({
               )}
               <Typography variant="body1" className={classes.watchVideo}>
                 <ReplyIcon />
-                <Link to={video} target="_blank" rel="noopener noreferrer">
-                  Watch Video
-                </Link>
+                {video && (
+                  <Link to={video} target="_blank" rel="noopener noreferrer">
+                    Watch Video
+                  </Link>
+                )}
               </Typography>
               <ButtonBase className={classes.bottomButton} onClick={onClose}>
                 Back

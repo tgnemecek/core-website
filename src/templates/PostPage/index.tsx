@@ -1,7 +1,8 @@
 import React from "react";
 import { graphql, PageProps } from "gatsby";
 import { PostPageDTO } from "types";
-import { Layout, Footer, Navbar } from "components";
+import { Hero, Layout, Footer, Navbar, Section, PostFeed } from "components";
+import { Body, Video } from "./sections";
 
 type PostPageWithLocation = PostPageDTO & {
   location: PageProps["location"];
@@ -15,27 +16,19 @@ const PostPage: React.FC<PostPageWithLocation> = ({
     },
   },
 }) => {
-  console.log({ post });
+  const { title, body, image, video, date } = post;
 
   return (
     <Layout>
       <Navbar />
-      {/* <main>
-          <Header />
-          <Video />
-          {loading && (
-            <Backdrop open={true} style={{ zIndex: 2000 }}>
-              <CircularProgress />
-            </Backdrop>
-          )}
-          <ContentGrid body={<Body />} aside={<Aside />}></ContentGrid>
-          <EventFeed
-            title="You might also like these events"
-            filter={(currEvent) => currEvent.slug !== slug}
-          />
-          <FixedBar />
-        </main>
-        {ticketsModalOpen && <TicketsModal open />} */}
+      <main>
+        <Hero title={title} small image={image} />
+        <Section>
+          <Body title={title} body={body} date={date} />
+          {video && <Video video={video} />}
+        </Section>
+        <PostFeed title="Learn more" filter={(post) => post.slug !== slug} />
+      </main>
       <Footer paddingBottom={70} />
     </Layout>
   );
@@ -51,7 +44,6 @@ export const pageQuery = graphql`
       }
       frontmatter {
         posts {
-          id
           title
           body
           image
