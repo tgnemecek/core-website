@@ -84,12 +84,8 @@
     "prebuild": "",
     "build": "npm run clean && npm i -g typescript && tsc --build lambda && gatsby build",
     "develop": "gatsby develop",
-    "codegen": "graphql-codegen",
-    "check-types": "tsc"
+    "codegen": "graphql-codegen"
   },
-  "pre-commit": [
-    "check-types"
-  ],
   "devDependencies": {
     "@graphql-codegen/cli": "^1.21.8",
     "@graphql-codegen/typescript": "^1.23.0",
