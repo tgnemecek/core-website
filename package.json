@@ -86,7 +86,9 @@
     "develop": "gatsby develop",
     "codegen": "graphql-codegen"
   },
-  "pre-commit": "tsc",
+  "pre-commit": [
+    "tsc"
+  ],
   "devDependencies": {
     "@graphql-codegen/cli": "^1.21.8",
     "@graphql-codegen/typescript": "^1.23.0",
