@@ -3,6 +3,7 @@ import { isVideoValid } from "utils";
 
 type VideoWidgetProps = {
   value?: string;
+  field: string;
   forID: string;
   classNameWrapper: string;
   onChange: (value?: string) => void;
@@ -10,6 +11,7 @@ type VideoWidgetProps = {
 
 const VideoWidget: React.FC<VideoWidgetProps> = ({
   value = "",
+  field,
   forID,
   classNameWrapper,
   onChange,

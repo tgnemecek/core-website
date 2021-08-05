@@ -32,27 +32,23 @@ const ResultMessage: React.FC<ResultMessageProps> = ({
   const [showIcon, setShowIcon] = React.useState(false);
   const [showButton, setShowButton] = React.useState(false);
 
-  const iconTransitions = useTransition(showIcon, null, [
-    {
-      config: {
-        friction: 100,
-        tension: 200,
-      },
-      from: { transform: "rotateZ(-40deg)", opacity: 0 },
-      enter: { transform: "rotateZ(0deg)", opacity: 1 },
+  const iconTransitions = useTransition(showIcon, null, {
+    config: {
+      friction: 100,
+      tension: 200,
     },
-  ]);
-  const buttonTransitions = useTransition(showButton, null, [
-    {
-      config: {
-        friction: 50,
-        mass: 1,
-        tension: 200,
-      },
-      from: { left: -50, opacity: 0 },
-      enter: { left: 0, opacity: 1 },
+    from: { transform: "rotateZ(-40deg)", opacity: 0 },
+    enter: { transform: "rotateZ(0deg)", opacity: 1 },
+  });
+  const buttonTransitions = useTransition(showButton, null, {
+    config: {
+      friction: 50,
+      mass: 1,
+      tension: 200,
     },
-  ]);
+    from: { left: -50, opacity: 0 },
+    enter: { left: 0, opacity: 1 },
+  });
 
   React.useEffect(() => {
     setShowIcon(true);

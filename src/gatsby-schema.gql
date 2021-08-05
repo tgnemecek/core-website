@@ -1,7 +1,0 @@
-type MarkdownRemark implements Node {
-  frontmatter: Frontmatter
-  fields: Fields
-}
-type Fields {
-  slug: String
-}

@@ -1,7 +1,7 @@
 import moment from "moment-timezone";
 import crypto from "crypto";
 import StripeApi from "stripe";
-import { Ticket, ProcessEnvType } from "../types";
+import { TicketType, ProcessEnvType } from "../types";
 
 const { CORE_SECRET_KEY } = process.env as ProcessEnvType;
 const IV = "12102hr01h2fhvca";
@@ -68,7 +68,7 @@ const Core = {
     }
     return result;
   },
-  compareTickets: (tickets: Ticket[], prices: StripeApi.Price[]) => {
+  compareTickets: (tickets: TicketType[], prices: StripeApi.Price[]) => {
     if (tickets.length !== prices.length) return true;
     const hasChanged = tickets.some((ticket) => {
       const found = prices.find((price) => price.id === ticket.id);

@@ -14,15 +14,13 @@ const HorizontalFeed: React.FC<HorizontalFeedProps> = ({ items = [] }) => {
   const [resizeListener, sizes] = useResizeAware();
   const { sm, md } = useBreakpoint();
   const [initialScroll, setInitialScroll] = React.useState(null);
-  const scrollAmount = md ? 3 : 1;
+  const [showPrevious, setShowPrevious] = React.useState(false);
+  const [showNext, setShowNext] = React.useState(true);
+  const scrollRef = React.useRef<HTMLDivElement>(null);
+
   const canScroll = Boolean(initialScroll !== null);
 
-  const [scrollData, setScrollData] = React.useState({
-    scrollLeft: 0,
-    scrollWidth: 0,
-  });
-  // const [showNext, setShowNext] = React.useState(canScroll);
-  const [scrollEl, setScrollEl] = React.useState<HTMLDivElement>(null);
+  const scrollAmount = md ? 3 : 1;
 
   const { itemWidth, itemHeight, itemPadding } = React.useMemo(() => {
     const { width: containerWidth } = sizes;
@@ -67,41 +65,41 @@ const HorizontalFeed: React.FC<HorizontalFeedProps> = ({ items = [] }) => {
     });
 
     setInitialScroll(null);
-    setScrollData({
-      scrollLeft: e.currentTarget.scrollLeft,
-      scrollWidth: e.currentTarget.scrollWidth,
-    });
   };
 
   const onScroll = () => {
-    setScrollData({
-      scrollLeft: scrollEl.scrollLeft,
-      scrollWidth: scrollEl.scrollWidth,
-    });
+    if (!scrollRef.current) return;
+    const { scrollLeft, scrollWidth, scroll } = scrollRef.current;
+
+    if (!scrollLeft) {
+      setShowPrevious(false);
+      setShowNext(true);
+    } else {
+      setShowPrevious(true);
+
+      const scrollPos = Math.round((scrollLeft + sizes.width) / 10);
+      const roundedWith = Math.round(scrollWidth / 10);
+
+      if (scrollPos === roundedWith) {
+        setShowNext(false);
+      }
+    }
   };
 
   const handleClick = (type: "previous" | "next") => {
-    const { scrollLeft } = scrollData;
+    if (!scrollRef.current) return;
 
-    let targetScroll = scrollLeft;
+    let targetScroll = scrollRef.current.scrollLeft;
     const amount = itemWidth * scrollAmount;
 
     if (type === "previous") targetScroll -= amount;
     else targetScroll += amount;
 
-    scrollEl.scrollTo({
+    scrollRef.current.scrollTo({
       left: targetScroll,
       behavior: "smooth",
     });
   };
-
-  const isAtScrollEnd =
-    Math.abs(scrollData.scrollLeft + sizes.width - scrollData.scrollWidth) <=
-    itemWidth / 2;
-
-  const showNext = scrollData.scrollWidth > sizes.width && !isAtScrollEnd;
-
-  const showPrevious = scrollData.scrollLeft > 0;
 
   const classes = useStyles({
     numberOfItems: items.length,
@@ -112,15 +110,6 @@ const HorizontalFeed: React.FC<HorizontalFeedProps> = ({ items = [] }) => {
     showPrevious,
     showNext,
   })();
-
-  React.useEffect(() => {
-    if (scrollEl) {
-      setScrollData({
-        scrollLeft: scrollEl.scrollLeft,
-        scrollWidth: scrollEl.scrollWidth,
-      });
-    }
-  }, [scrollEl, sizes]);
 
   return (
     <div className={classes.container}>
@@ -137,7 +126,7 @@ const HorizontalFeed: React.FC<HorizontalFeedProps> = ({ items = [] }) => {
       <div
         className={classes.scrollContainer}
         draggable
-        ref={setScrollEl}
+        ref={scrollRef}
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
         onScroll={onScroll}

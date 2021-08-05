@@ -1,14 +1,14 @@
-import { Form } from "../types";
+import { FormType } from "../types";
 import generateHeaders from "./generateHeaders";
 
-type Return = {
+type ReturnType = {
   id: string;
-  tickets: Form["tickets"];
+  tickets: FormType["tickets"];
 };
 
-type EventUpdate = (form: Form) => Promise<Return>;
+type EventUpdateType = (form: FormType) => Promise<ReturnType>;
 
-const eventUpdate: EventUpdate = async (form) => {
+const eventUpdate: EventUpdateType = async (form) => {
   const res = await fetch("/.netlify/functions/event-delete", {
     method: "POST",
     body: JSON.stringify(form),
@@ -21,7 +21,7 @@ const eventUpdate: EventUpdate = async (form) => {
     throw new Error(errorMessage);
   }
 
-  const result: Return = await res.json();
+  const result: ReturnType = await res.json();
 
   return result;
 };

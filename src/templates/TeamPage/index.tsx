@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { HeroSection, ContactForm, Layout, Navbar, Footer } from "components";
+import { Hero, ContactForm, Layout, Navbar, Footer } from "components";
 import { TeamPageDTO } from "types";
 import Team from "./Team";
 
@@ -19,7 +19,7 @@ const TeamPage: React.FC<TeamPageDTO> = ({
     <Layout>
       <Navbar />
       <main>
-        <HeroSection hero={hero} small />
+        <Hero hero={hero} small />
         <Team members={members} />
         <ContactForm />
       </main>
