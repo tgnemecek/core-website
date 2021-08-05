@@ -20,7 +20,7 @@ const Aside: React.FC = () => {
     setTicketsModalOpen,
     alreadyPurchased,
     loading,
-  } = React.useContext(EventContext);
+  } = React.useContext(EventContext)!;
 
   const classes = useStyles();
   const { refundPolicy } = useEventSettings();

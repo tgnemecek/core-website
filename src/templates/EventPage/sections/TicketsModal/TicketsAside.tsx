@@ -1,17 +1,7 @@
 import React from "react";
 import moment from "moment";
-import { graphql, PageProps } from "gatsby";
-import { loadStripe, Stripe } from "@stripe/stripe-js";
-import {
-  Typography,
-  CircularProgress,
-  Modal,
-  Dialog,
-  IconButton,
-  Paper,
-} from "@material-ui/core";
+import { Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import CloseIcon from "@material-ui/icons/Close";
 import { Image } from "components";
 import EventContext from "../../EventContext";
 import FeatureList from "../../FeatureList";
@@ -19,7 +9,7 @@ import FeatureList from "../../FeatureList";
 const TicketsAside: React.FC = () => {
   const {
     event: { title, subtitle, image, date },
-  } = React.useContext(EventContext);
+  } = React.useContext(EventContext)!;
 
   const classes = useStyles();
 

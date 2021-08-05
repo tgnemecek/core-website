@@ -3,11 +3,13 @@ import { makeStyles } from "@material-ui/core/styles";
 import YouTube from "react-youtube";
 
 type VideoPlayerProps = {
-  videoId: string;
+  videoId?: string;
 };
 
 const VideoPlayer: React.FC<VideoPlayerProps> = ({ videoId }) => {
   const classes = useStyles();
+
+  if (!videoId) return null;
 
   return (
     <div className={classes.videoWrapper}>

@@ -5,7 +5,7 @@ import {
   Service,
   Product,
   Video,
-  Member,
+  EventPage,
   ServicesPage,
   TeamPage,
 } from "./__generated__";
@@ -15,7 +15,7 @@ export type GenericDTO<Frontmatter> = {
   data: {
     markdownRemark: {
       fields: {
-        slug?: string;
+        slug: string;
       };
       frontmatter: Frontmatter;
     };
@@ -43,7 +43,7 @@ export type ServicesPageDTO = PagesDTO<ServicesPage>;
 export type TeamPageDTO = PagesDTO<TeamPage>;
 
 export type EventPageDTO = GenericDTO<{
-  events: Event;
+  events: EventPage;
 }>;
 
 export type NavigationInfoDTO = GenericDTO<{

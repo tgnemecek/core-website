@@ -11,6 +11,6 @@ export type EventContext = {
   setTicketsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const EventContext = React.createContext<EventContext>(null);
+const EventContext = React.createContext<EventContext | null>(null);
 
 export default EventContext;

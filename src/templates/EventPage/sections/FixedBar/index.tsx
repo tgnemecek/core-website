@@ -10,7 +10,7 @@ const FixedBar: React.FC = () => {
     alreadyPurchased,
     loading,
     event,
-  } = React.useContext(EventContext);
+  } = React.useContext(EventContext)!;
 
   const classes = useStyles();
   return (

@@ -17,7 +17,7 @@ const TicketsMain: React.FC<TicketsMainProps> = ({
 }) => {
   const {
     event: { tickets, date },
-  } = React.useContext(EventContext);
+  } = React.useContext(EventContext)!;
 
   const classes = useStyles();
 

@@ -9,7 +9,7 @@ import EventContext from "../../EventContext";
 const Video: React.FC = () => {
   const {
     event: { video },
-  } = React.useContext(EventContext);
+  } = React.useContext(EventContext)!;
 
   const classes = useStyles();
 

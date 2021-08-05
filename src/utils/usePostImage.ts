@@ -8,7 +8,7 @@ const usePostImage = ({ image, video }: Post) => {
 
   if (video) {
     const videoId = getVideoId(video);
-    return getVideoImage(videoId);
+    if (videoId) return getVideoImage(videoId);
   }
 
   return heroImage;

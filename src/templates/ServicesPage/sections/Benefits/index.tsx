@@ -1,11 +1,8 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import parse from "html-react-parser";
 import {
   Container,
   Paper,
-  Typography,
-  List,
   ListItem,
   ListItemText,
   ListItemIcon,
@@ -29,7 +26,7 @@ const Benefits: React.FC<BenefitsProps> = ({ benefits }) => {
         <Markdown
           text={benefits}
           components={{
-            li: (props) => (
+            li: (props: any) => (
               <ListItem>
                 <ListItemIcon style={{ minWidth: 34 }}>
                   <ErrorOutlineIcon />

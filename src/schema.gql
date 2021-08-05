@@ -63,16 +63,16 @@ type About {
 }
 
 type Service {
-  title: String
-  image: String
-  name: String
-  description: String
+  title: String!
+  image: String!
+  name: String!
+  description: String!
 }
 
 type Product {
-  description: String
-  image: String
-  title: String
+  description: String!
+  image: String!
+  title: String!
   subtitle: String
   link: String
 }
@@ -104,10 +104,10 @@ type Member {
 }
 
 type ServicesPage {
-  collection: String
-  explanation: Explanation
-  benefits: String
-  title: String
+  collection: String!
+  explanation: Explanation!
+  benefits: String!
+  title: String!
 }
 
 type Explanation {

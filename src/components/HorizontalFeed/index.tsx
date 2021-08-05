@@ -13,7 +13,7 @@ type HorizontalFeedProps = {
 const HorizontalFeed: React.FC<HorizontalFeedProps> = ({ items = [] }) => {
   const [resizeListener, sizes] = useResizeAware();
   const { sm, md } = useBreakpoint();
-  const [initialScroll, setInitialScroll] = React.useState(null);
+  const [initialScroll, setInitialScroll] = React.useState<number | null>(null);
   const scrollAmount = md ? 3 : 1;
   const canScroll = Boolean(initialScroll !== null);
 
@@ -21,15 +21,15 @@ const HorizontalFeed: React.FC<HorizontalFeedProps> = ({ items = [] }) => {
     scrollLeft: 0,
     scrollWidth: 0,
   });
-  // const [showNext, setShowNext] = React.useState(canScroll);
-  const [scrollEl, setScrollEl] = React.useState<HTMLDivElement>(null);
+
+  const [scrollEl, setScrollEl] = React.useState<HTMLDivElement | null>(null);
 
   const { itemWidth, itemHeight, itemPadding } = React.useMemo(() => {
     const { width: containerWidth } = sizes;
     let width;
 
-    if (md) width = containerWidth / 3;
-    else width = containerWidth - 60;
+    if (md) width = containerWidth! / 3;
+    else width = containerWidth! - 60;
 
     const minHeight = 200;
     const maxHeight = 400;
@@ -51,7 +51,7 @@ const HorizontalFeed: React.FC<HorizontalFeedProps> = ({ items = [] }) => {
     let gridValue;
 
     if (
-      initialScroll <= e.currentTarget.scrollLeft &&
+      initialScroll! <= e.currentTarget.scrollLeft &&
       e.currentTarget.scrollLeft
     ) {
       gridValue = Math.ceil(e.currentTarget.scrollLeft / itemWidth);
@@ -75,8 +75,8 @@ const HorizontalFeed: React.FC<HorizontalFeedProps> = ({ items = [] }) => {
 
   const onScroll = () => {
     setScrollData({
-      scrollLeft: scrollEl.scrollLeft,
-      scrollWidth: scrollEl.scrollWidth,
+      scrollLeft: scrollEl!.scrollLeft,
+      scrollWidth: scrollEl!.scrollWidth,
     });
   };
 
@@ -89,17 +89,17 @@ const HorizontalFeed: React.FC<HorizontalFeedProps> = ({ items = [] }) => {
     if (type === "previous") targetScroll -= amount;
     else targetScroll += amount;
 
-    scrollEl.scrollTo({
+    scrollEl!.scrollTo({
       left: targetScroll,
       behavior: "smooth",
     });
   };
 
   const isAtScrollEnd =
-    Math.abs(scrollData.scrollLeft + sizes.width - scrollData.scrollWidth) <=
+    Math.abs(scrollData.scrollLeft + sizes.width! - scrollData.scrollWidth) <=
     itemWidth / 2;
 
-  const showNext = scrollData.scrollWidth > sizes.width && !isAtScrollEnd;
+  const showNext = scrollData.scrollWidth > sizes.width! && !isAtScrollEnd;
 
   const showPrevious = scrollData.scrollLeft > 0;
 

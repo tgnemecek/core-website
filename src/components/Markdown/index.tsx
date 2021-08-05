@@ -9,7 +9,7 @@ type MarkdownProps = {
 };
 
 const Markdown: React.FC<MarkdownProps> = ({ text, components }) => {
-  const TextComponent = (props: React.ComponentProps<typeof Typography>) => (
+  const TextComponent = (props: any) => (
     <Typography {...props} variant="body1" style={{ marginBottom: 10 }} />
   );
 
@@ -18,16 +18,16 @@ const Markdown: React.FC<MarkdownProps> = ({ text, components }) => {
       components={{
         p: TextComponent,
         span: TextComponent,
-        a: (props) => (
+        a: (props: any) => (
           <a {...props} target="_blank" rel="noopener noreferrer" />
         ),
         strong: (props) => <strong style={{ fontWeight: "bold" }} {...props} />,
-        blockquote: (props) => (
+        blockquote: (props: any) => (
           <Typography {...props} variant="h4" style={{ marginTop: 15 }} />
         ),
-        ol: (props) => <List {...props} style={{ marginBottom: 15 }} />,
-        ul: (props) => <List {...props} style={{ marginBottom: 15 }} />,
-        li: ({ children, ...props }) => (
+        ol: (props: any) => <List {...props} style={{ marginBottom: 15 }} />,
+        ul: (props: any) => <List {...props} style={{ marginBottom: 15 }} />,
+        li: ({ children, ...props }: any) => (
           <ListItem {...props}>
             <ListItemIcon>
               <FiberManualRecordIcon />

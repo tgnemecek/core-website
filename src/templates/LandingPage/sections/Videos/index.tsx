@@ -19,7 +19,7 @@ const Videos: React.FC<VideosProps> = ({ videos: rawVideos }) => {
       const videoId = getVideoId(link);
       return {
         videoId,
-        image: getVideoImage(videoId),
+        image: videoId ? getVideoImage(videoId) : "",
         link,
         title,
         subtitle,

@@ -7,7 +7,7 @@ import EventContext from "../../EventContext";
 const Body: React.FC = () => {
   const {
     event: { title, subtitle, description },
-  } = React.useContext(EventContext);
+  } = React.useContext(EventContext)!;
 
   const classes = useStyles();
 

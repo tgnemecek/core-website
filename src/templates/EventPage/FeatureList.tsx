@@ -27,7 +27,7 @@ const FeatureList: React.FC<FeatureListProps> = ({ dense }) => {
   const {
     event: { duration, date, location, isOnline, language },
     priceRange,
-  } = React.useContext(EventContext);
+  } = React.useContext(EventContext)!;
 
   const classes = useStyles();
 
