@@ -19,7 +19,6 @@ module.exports = {
   },
   flags: {
     PRESERVE_WEBPACK_CACHE: true,
-    DEV_SSR: true,
     FAST_REFRESH: true,
   },
   plugins: [

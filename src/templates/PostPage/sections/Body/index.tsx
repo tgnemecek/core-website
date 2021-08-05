@@ -13,7 +13,10 @@ type BodyProps = {
 const Body: React.FC<BodyProps> = ({ title, body, date }) => {
   return (
     <Container>
-      <Heading subheading={moment(date).format("MMMM DD, YYYY")} showLine>
+      <Heading
+        subheading={`Published on ${moment(date).format("MMMM DD, YYYY")}`}
+        showLine
+      >
         <Fade left distance="100px">
           {title}
         </Fade>

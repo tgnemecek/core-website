@@ -25,7 +25,7 @@ const PostPage: React.FC<PostPageWithLocation> = ({
         <Hero title={title} small image={image} />
         <Section>
           <Body title={title} body={body} date={date} />
-          <Video video={video} />
+          {video && <Video video={video} />}
         </Section>
         <PostFeed title="Learn more" filter={(post) => post.slug !== slug} />
       </main>
@@ -44,7 +44,6 @@ export const pageQuery = graphql`
       }
       frontmatter {
         posts {
-          id
           title
           body
           image

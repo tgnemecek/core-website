@@ -19,9 +19,9 @@ const PostFeed: React.FC<PostFeedProps> = ({ title, filter }) => {
     const momentB = moment(dateB);
 
     if (momentA.isBefore(momentB)) {
-      return -1;
+      return 1;
     }
-    return 1;
+    return -1;
   };
 
   if (!posts.length) return null;

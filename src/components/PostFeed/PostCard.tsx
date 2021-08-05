@@ -12,15 +12,14 @@ import { Link } from "gatsby";
 import removeMarkdown from "markdown-to-text";
 import { Ellipsis } from "components";
 import { Post } from "types";
-import { useBreakpoint, UseBreakpointState } from "utils";
+import { usePostImage, useBreakpoint, UseBreakpointState } from "utils";
 
 type PostCardProps = {
   post: Post;
 };
 
-const PostCard: React.FC<PostCardProps> = ({
-  post: { title, date, image, body, video, slug },
-}) => {
+const PostCard: React.FC<PostCardProps> = ({ post }) => {
+  const { title, date, image, body, slug } = post;
   const { xs, sm, md, lg } = useBreakpoint();
   const classes = useStyles({ sm, lg })();
 
@@ -33,6 +32,8 @@ const PostCard: React.FC<PostCardProps> = ({
     return 80;
   };
 
+  const thumbnail = usePostImage(post);
+
   return (
     <Card className={classes.card} elevation={3} square>
       <CardActionArea
@@ -42,7 +43,7 @@ const PostCard: React.FC<PostCardProps> = ({
       >
         <div className={classes.imageWrapper}>
           <CardMedia
-            image={image}
+            image={thumbnail}
             className={classes.image}
             title="Post"
             component="img"

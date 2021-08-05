@@ -113,7 +113,6 @@ export const createPages: GatsbyNode["createPages"] = async ({
       const edges = (result.data as any).allMarkdownRemark.edges;
 
       edges.forEach((edge: any) => {
-        console.log({ edge });
         const id = edge.node.id;
         createPage({
           path: `/post${edge.node.fields.slug}`,

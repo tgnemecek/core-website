@@ -4,6 +4,8 @@ generates:
     plugins:
       - typescript
     config:
+      maybeValue: T | undefined
+      skipTypename: true
       scalars:
         DateTime: Date
         Node: any

@@ -78,20 +78,20 @@ type Product {
 }
 
 type Testimonial {
-  author: String
-  role: String
-  testimonial: String
+  author: String!
+  role: String!
+  testimonial: String!
 }
 type Video {
-  link: String
-  title: String
+  link: String!
+  title: String!
   subtitle: String
 }
 
 type TeamPage {
-  collection: String
-  title: String
-  members: [Member]
+  collection: String!
+  title: String!
+  members: [Member!]!
 }
 
 type Member {
@@ -154,7 +154,7 @@ type PostPage {
   slug: String!
   title: String!
   body: String!
-  image: String!
+  image: String
   video: String
   date: DateTime!
 }

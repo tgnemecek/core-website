@@ -112,5 +112,6 @@ const useStyles = ({ isHovering }: UseStylesProps) =>
         color: isHovering ? "black" : theme.palette.common.white,
         transition,
       },
+      minHeight: 132,
     },
   }));
