@@ -1,8 +1,6 @@
 ---
 collection: pages
-hero:
-  title: CORE Learning
-  image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596493058/pexels-pixabay-161154_uftaqi.jpg
+title: CORE Learning
 explanation:
   text: >-
     **Teachers**, **Students** and **Parents**: Use *The Balancing Act's*

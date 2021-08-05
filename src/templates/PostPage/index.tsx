@@ -1,7 +1,8 @@
 import React from "react";
 import { graphql, PageProps } from "gatsby";
 import { PostPageDTO } from "types";
-import { Layout, Footer, Navbar } from "components";
+import { Hero, Layout, Footer, Navbar } from "components";
+import { Body } from "./sections";
 
 type PostPageWithLocation = PostPageDTO & {
   location: PageProps["location"];
@@ -15,11 +16,16 @@ const PostPage: React.FC<PostPageWithLocation> = ({
     },
   },
 }) => {
+  const { title, body, image, video, date } = post;
   console.log({ post });
 
   return (
     <Layout>
       <Navbar />
+      <main>
+        <Hero title={title} small />
+        <Body body={body} />
+      </main>
       {/* <main>
           <Header />
           <Video />

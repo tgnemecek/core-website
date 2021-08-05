@@ -2,7 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import { LandingPageDTO } from "types";
 import {
-  HeroSection,
+  Hero,
   EventFeed,
   PostFeed,
   ContactForm,
@@ -27,13 +27,13 @@ const LandingPage: React.FC<LandingPageDTO> = ({
     },
   },
 }) => {
-  const { hero, about, testimonials, products, services, videos } = landing;
+  const { about, testimonials, products, services, videos } = landing;
   return (
     <Layout>
       <Navbar />
       <main>
-        <HeroSection hero={hero} />
-        <PostFeed />
+        <Hero />
+        <PostFeed title="What's new" />
         <EventFeed title="Leading Your Life &amp; Work Events" />
         <AboutSection about={about} />
         <Testimonials testimonials={testimonials} />
@@ -56,10 +56,6 @@ export const pageQuery = graphql`
       frontmatter {
         pages {
           landing {
-            hero {
-              title
-              image
-            }
             about {
               text
               image

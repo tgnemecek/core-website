@@ -5,24 +5,23 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography, Grid, Button } from "@material-ui/core";
 import logo from "src/img/logo.png";
 import { Image, SmoothScroll } from "components";
-import { Hero } from "types";
+import { useGeneralSettings } from "utils";
 
-type HeroSectionProps = {
-  hero: Hero;
+type HeroProps = {
+  title?: string;
   small?: boolean;
 };
 
-const HeroSection: React.FC<HeroSectionProps> = ({
-  hero: { title, image },
-  small = false,
-}) => {
+const Hero: React.FC<HeroProps> = ({ title, small = false }) => {
   const classes = useStyles({ small })();
+
+  const { brandName, heroImage } = useGeneralSettings();
 
   return (
     <section className={classes.hero} id="hero">
       <Image
         className={classes.image}
-        src={image}
+        src={heroImage}
         width={1920}
         alt="Main illustration of the page"
       />
@@ -38,7 +37,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             )}
             <Grid item>
               <Fade>
-                <Typography variant="h1">{parse(title)}</Typography>
+                <Typography variant="h1">
+                  {title || parse(brandName)}
+                </Typography>
               </Fade>
             </Grid>
           </Grid>
@@ -60,7 +61,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   );
 };
 
-export default HeroSection;
+export default Hero;
 
 type UseStylesProps = {
   small?: boolean;

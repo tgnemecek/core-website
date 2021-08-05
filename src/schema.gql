@@ -9,6 +9,7 @@ type Frontmatter {
   contact: Contact
   navigation: Navigation
   eventSettings: EventSettings
+  generalSettings: GeneralSettings
   component: String
   collection: String
 }
@@ -28,6 +29,10 @@ type Contact {
   phone2: String
   link: String
 }
+type GeneralSettings {
+  brandName: String!
+  heroImage: String!
+}
 type Navigation {
   links: [NavigationLink!]!
 }
@@ -44,18 +49,12 @@ type EventSettings {
 
 type LandingPage {
   collection: String
-  hero: Hero!
   about: About!
   services: [Service!]!
   products: [Product!]!
   testimonials: [Testimonial!]!
   title: String
   videos: [Video!]!
-}
-
-type Hero {
-  title: String
-  image: String
 }
 
 type About {
@@ -91,7 +90,7 @@ type Video {
 
 type TeamPage {
   collection: String
-  hero: Hero
+  title: String
   members: [Member]
 }
 
@@ -106,9 +105,9 @@ type Member {
 
 type ServicesPage {
   collection: String
-  hero: Hero
   explanation: Explanation
   benefits: String
+  title: String
 }
 
 type Explanation {
