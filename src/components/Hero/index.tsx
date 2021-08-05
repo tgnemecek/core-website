@@ -1,18 +1,21 @@
 import React from "react";
+import PropTypes from "prop-types";
 import parse from "html-react-parser";
 import Fade from "react-reveal/Fade";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography, Grid, Button } from "@material-ui/core";
 import logo from "src/img/logo.png";
 import { Image, SmoothScroll } from "components";
-import { Hero } from "types";
 
-type HeroSectionProps = {
-  hero: Hero;
+type HeroProps = {
+  hero: {
+    title: string;
+    image: string;
+  };
   small?: boolean;
 };
 
-const HeroSection: React.FC<HeroSectionProps> = ({
+const Hero: React.FC<HeroProps> = ({
   hero: { title, image },
   small = false,
 }) => {
@@ -45,7 +48,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         </Container>
       </div>
       {!small && (
-        <SmoothScroll targetId="posts" className={classes.explore}>
+        <SmoothScroll targetId="events" className={classes.explore}>
           <Button
             variant="contained"
             component="a"
@@ -60,7 +63,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   );
 };
 
-export default HeroSection;
+export default Hero;
 
 type UseStylesProps = {
   small?: boolean;

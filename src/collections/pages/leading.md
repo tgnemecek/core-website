@@ -42,10 +42,20 @@ explanation:
 
     **For executive coaches & business consultants**: Get certified to use *The Balancing Act's* powerful processes, programs, and diagnostic profiles for leaders, teams, and organizations.
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1615059260/2_people_on_Mountain_summit_fojmga.jpg
-benefits: |-
-  * Feel frustrated, anxious about all the problems you have to fix ASAP.
-  * Are unclear about company's vision and how to achieve it.
-  * Are not aligned with others about best actions to take.
-  * Are not communicating as powerfully or confidently as wish.
-  * Are losing money; have inefficient processes or inadequate capital.
+benefits: >-
+  <ul>
+
+
+  <li>Feel frustrated, anxious about all the problems you have to fix ASAP.</li>
+    <li>Are unclear about company's vision and how to achieve it.</li>
+    <li>Are not aligned with others about best actions to take.</li>
+    <li>Are not communicating as powerfully or confidently as wish.</li>
+    <li>Are losing money; have inefficient processes or inadequate capital.</li>
+  <ll>Are working too hard for results; not leveraging efforts to next success.</li>
+
+
+  <ll>A Business Coach or Consultant whose clients say yes to these questions. </li>
+
+
+  </ul>
 ---

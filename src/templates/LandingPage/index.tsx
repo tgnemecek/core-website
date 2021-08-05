@@ -2,21 +2,14 @@ import React from "react";
 import { graphql } from "gatsby";
 import { LandingPageDTO } from "types";
 import {
-  HeroSection,
+  Hero,
   EventFeed,
-  PostFeed,
   ContactForm,
   Layout,
   Navbar,
   Footer,
 } from "components";
-import {
-  AboutSection,
-  Testimonials,
-  Services,
-  Products,
-  Videos,
-} from "./sections";
+import { About, Testimonials, Services, Products, Videos } from "./sections";
 
 const LandingPage: React.FC<LandingPageDTO> = ({
   data: {
@@ -32,10 +25,9 @@ const LandingPage: React.FC<LandingPageDTO> = ({
     <Layout>
       <Navbar />
       <main>
-        <HeroSection hero={hero} />
-        <PostFeed />
+        <Hero hero={hero} />
         <EventFeed title="Leading Your Life &amp; Work Events" />
-        <AboutSection about={about} />
+        <About about={about} />
         <Testimonials testimonials={testimonials} />
         <Services services={services} />
         <Products products={products} />

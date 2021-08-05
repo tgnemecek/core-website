@@ -8,11 +8,16 @@ import {
   CardHeader,
 } from "@material-ui/core";
 import Fade from "react-reveal/Fade";
-import { Section, Gallery, Image, Heading } from "components";
-import { Product } from "types";
+import { Section, Gallery, Image } from "components";
 
 type ProductsProps = {
-  products: Product[];
+  products: {
+    title: string;
+    subtitle?: string;
+    description: string;
+    image: string;
+    link?: string;
+  }[];
 };
 
 const Products: React.FC<ProductsProps> = ({ products }) => {
@@ -24,12 +29,12 @@ const Products: React.FC<ProductsProps> = ({ products }) => {
   return (
     <Section>
       <Container>
-        <Heading
-          subheading="From books to apps, use these resources to assist you in your journey"
-          showLine
-        >
+        <Typography variant="h2">
           Leading Your Life &amp; Work Products
-        </Heading>
+        </Typography>
+        <Typography variant="subtitle1" component="p">
+          From books to apps, use these resources to assist you in your journey
+        </Typography>
         <a
           href={products[activeindex].link || ""}
           target="_blank"

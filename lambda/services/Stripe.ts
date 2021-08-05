@@ -1,10 +1,10 @@
 import StripeAPI from "stripe";
-import { ProcessEnvType, Ticket } from "../types";
+import { ProcessEnvType, TicketType } from "../types";
 
 type CreateProductProps = {
   meetingId: number;
   title: string;
-  tickets: Ticket[];
+  tickets: TicketType[];
 };
 
 type UpdateProductProps = CreateProductProps & {
@@ -30,7 +30,7 @@ const stripe = new StripeAPI(STRIPE_SECRET_KEY, {
 const formatPrice = (num: number) => num * 100;
 
 const createPrice = async (
-  ticket: Ticket,
+  ticket: TicketType,
   productId: string,
   meetingId: number
 ) => {
@@ -46,11 +46,11 @@ const createPrice = async (
   return {
     ...ticket,
     id,
-  } as Ticket;
+  } as TicketType;
 };
 
 const updatePrice = async (
-  ticket: Ticket,
+  ticket: TicketType,
   productId: string,
   meetingId: number
 ) => {

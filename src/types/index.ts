@@ -1,16 +1,25 @@
-import {
-  Hero,
-  About,
-  Testimonial,
-  Service,
-  Product,
-  Video,
-  EventPage,
-  Member,
-  PostPage,
-} from "./__generated__";
+export type HeroType = {
+  title: string;
+  image: string;
+};
 
-export * from "./__generated__";
+export type AboutType = {
+  text: string;
+  image: string;
+};
+
+export type TestimonialType = {
+  author: string;
+  role: string;
+  testimonial: string;
+};
+
+export type ServiceType = {
+  title: string;
+  name: string;
+  description: string;
+  image: string;
+};
 
 export type PayPalButtonName =
   | "careerStrengths"
@@ -19,36 +28,86 @@ export type PayPalButtonName =
   | "personalStrengths"
   | "donation";
 
-export type ServiceName = "leading" | "coaching" | "learning";
+export type ProductType = {
+  description: string;
+  image: string;
+  title: string;
+  subtitle: string;
+  link: string;
+};
 
-export type Event = EventPage;
+export type VideoType = {
+  title: string;
+  subtitle: string;
+  link: string;
+};
 
-export type GenericDTO<Frontmatter> = {
+export type ServiceNameType = "leading" | "coaching" | "learning";
+
+export type MemberType = {
+  name: string;
+  role: string;
+  photo: string;
+  bio: string;
+  video: string;
+  linkedin?: string;
+};
+
+export type LanguageType = "EN" | "ES";
+
+// If this gets updated, please update the one in lambda/types.ts as well
+export type TicketType = {
+  id: string;
+  description: string;
+  price: number;
+  endsOn: "startOfEvent" | "startOfDay" | "oneWeek";
+  extra: string;
+};
+
+export type EventType = {
+  id: string;
+  slug?: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  image: string;
+  video?: string;
+  date: Date;
+  duration: number;
+  language: LanguageType | LanguageType[];
+  isOnline: boolean;
+  location?: string;
+  tickets: TicketType[];
+};
+
+// Data Transfer Objects:
+
+export type GenericDTO<FrontmatterType> = {
   data: {
     markdownRemark: {
       fields: {
         slug?: string;
       };
-      frontmatter: Frontmatter;
+      frontmatter: FrontmatterType;
     };
   };
 };
 
-export type PagesDTO<Page> = GenericDTO<{
-  pages: Record<string, Page>;
+export type PagesDTO<PageType> = GenericDTO<{
+  pages: Record<string, PageType>;
 }>;
 
 export type LandingPageDTO = PagesDTO<{
-  hero: Hero;
-  about: About;
-  testimonials: Testimonial[];
-  services: Service[];
-  products: Product[];
-  videos: Video[];
+  hero: HeroType;
+  about: AboutType;
+  testimonials: TestimonialType[];
+  services: ServiceType[];
+  products: ProductType[];
+  videos: VideoType[];
 }>;
 
 export type ServicesPageDTO = PagesDTO<{
-  hero: Hero;
+  hero: HeroType;
   explanation: {
     text: string;
     image: string;
@@ -57,12 +116,12 @@ export type ServicesPageDTO = PagesDTO<{
 }>;
 
 export type TeamPageDTO = PagesDTO<{
-  hero: Hero;
-  members: Member[];
+  hero: HeroType;
+  members: MemberType[];
 }>;
 
 export type EventPageDTO = GenericDTO<{
-  events: Event;
+  events: EventType;
 }>;
 
 export type NavigationInfoDTO = GenericDTO<{
@@ -83,14 +142,8 @@ export type EventSettingsDTO = GenericDTO<{
   eventSettings: Record<"refundPolicy", string>;
 }>;
 
-export type Post = PostPage;
-
-export type PostPageDTO = GenericDTO<{
-  posts: Post;
-}>;
-
-export type EventFeed = Pick<
-  Event,
+export type EventFeedType = Pick<
+  EventType,
   | "date"
   | "duration"
   | "image"
@@ -111,37 +164,7 @@ export type EventFeedDTO = {
             slug: string;
           };
           frontmatter: {
-            events: EventFeed;
-          };
-        };
-      }[];
-    };
-  };
-};
-
-export type PostFeed = Pick<
-  Event,
-  | "date"
-  | "duration"
-  | "image"
-  | "language"
-  | "subtitle"
-  | "title"
-  | "slug"
-  | "isOnline"
-  | "tickets"
->;
-
-export type PostFeedDTO = {
-  data: {
-    allMarkdownRemark: {
-      edges: {
-        node: {
-          fields: {
-            slug: string;
-          };
-          frontmatter: {
-            posts: Post;
+            events: EventFeedType;
           };
         };
       }[];

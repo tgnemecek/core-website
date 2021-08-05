@@ -5,27 +5,25 @@ import Fade from "react-reveal/Fade";
 import { Section } from "components";
 import { Link } from "gatsby";
 import streak from "src/img/streak1.jpg";
-import { About } from "types";
+import { AboutType } from "types";
 
-type AboutSectionProps = {
-  about: About;
+type AboutProps = {
+  about: AboutType;
 };
 
-const AboutSection: React.FC<AboutSectionProps> = ({
-  about: { text, image },
-}) => {
+const About: React.FC<AboutProps> = ({ about: { text, image } }) => {
   const classes = useStyles();
 
   return (
     <Section className={classes.about}>
       <Container>
         <Typography variant="srOnly" component="h2">
-          AboutSection
+          About
         </Typography>
         <Grid
           container
           spacing={5}
-          justifyContent="center"
+          justify="center"
           className={classes.aboutGrid}
         >
           <Grid item xs={12} md={6} className={classes.leftSide}>
@@ -50,7 +48,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
   );
 };
 
-export default AboutSection;
+export default About;
 
 const useStyles = makeStyles((theme) => ({
   about: {

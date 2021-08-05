@@ -1,8 +1,8 @@
 import React from "react";
-import { Event } from "types";
+import { EventType } from "types";
 
-export type EventContext = {
-  event: Event;
+export type EventContextType = {
+  event: EventType;
   priceRange: string;
   alreadyPurchased: boolean;
   setAlreadyPurchased: React.Dispatch<React.SetStateAction<boolean>>;
@@ -11,6 +11,6 @@ export type EventContext = {
   setTicketsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const EventContext = React.createContext<EventContext>(null);
+const EventContext = React.createContext<EventContextType>(null);
 
 export default EventContext;

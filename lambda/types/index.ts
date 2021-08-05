@@ -21,7 +21,7 @@ export {
   EventCreateBody,
   EventUpdateBody,
   CreatePaymentIntentBody,
-  Ticket,
+  TicketType,
 } from "./Event";
 
 export {

@@ -11,7 +11,7 @@ import {
 } from "@material-ui/core";
 import Alert from "@material-ui/lab/Alert";
 import SendIcon from "@material-ui/icons/Send";
-import { Section, Heading, theme } from "components";
+import { Section, theme } from "components";
 
 const initialForm = (pathname: string): Record<string, string> => ({
   name: "",
@@ -72,7 +72,9 @@ const ContactForm: React.FC = () => {
 
   return (
     <Section id="contact-form" backgroundColor={theme.palette.grey[50]}>
-      <Heading textAlign="center">Send us a message</Heading>
+      <Typography variant="h2" className={classes.heading}>
+        Send us a message
+      </Typography>
       <div className={classes.container}>
         <form
           name="contact"

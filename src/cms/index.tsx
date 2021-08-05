@@ -1,46 +1,40 @@
 import React from "react";
 import CMS from "netlify-cms-app";
+import { CmsEventListener } from "netlify-cms-core";
 import ReactDOM from "react-dom";
 import cloudinary from "netlify-cms-media-library-cloudinary";
 import VideoWidget from "./VideoWidget";
 import config from "./config";
 import { ExtendedConfig } from "./types";
 import { eventCreate, eventUpdate, eventDelete } from "./api";
-import { Event, Ticket } from "types";
+import { EventType, TicketType } from "types";
 
-type EventHandlerProps = { entry: Map<string, any> };
+type EventHandlerProps = CmsEventListener["handler"];
 
-type StoredData = {
+type StoredDataType = {
   id: string;
   ticketIds: string[];
 };
 
-const convertFromMap = (map: Map<string, any>) => {
-  const form: any = {};
-  for (let [key, value] of map.entries()) {
-    form[key] = value;
-  }
-  return form;
-};
-
-const getForm = (dataEntry: Map<string, any>) => {
-  const form = convertFromMap(dataEntry);
+const convertFromMap = (dataEntry: Map<string, any>) => {
+  const form = Object.fromEntries(dataEntry);
   return {
     ...form,
     tickets: Array.from(form.tickets).map((ticket: Map<string, any>) => {
-      const obj = convertFromMap(ticket) as Ticket;
+      const obj = Object.fromEntries(ticket) as TicketType;
       return {
         id: obj.id,
         description: obj.description,
         price: obj.price,
         endsOn: obj.endsOn,
-      } as Ticket;
+        extra: obj.extra,
+      } as TicketType;
     }),
     language: Array.from(form.language),
-  } as Event;
+  } as EventType;
 };
 
-const ticketsToMap = (tickets: Ticket[], dataEntry: Map<string, any>) => {
+const ticketsToMap = (tickets: TicketType[], dataEntry: Map<string, any>) => {
   let newTickets = dataEntry.get("tickets");
 
   tickets.forEach((ticket, i) => {
@@ -53,12 +47,12 @@ const ticketsToMap = (tickets: Ticket[], dataEntry: Map<string, any>) => {
 // the form, only the saved value. So as soon as you save the form is outdated,
 // that means that trying to save again will upload old values.
 // With this object we can store data received from the server to make sure its up to date.
-const initStoredData: StoredData = {
+const initStoredData: StoredDataType = {
   id: undefined,
   ticketIds: undefined,
 };
 
-let storedData: StoredData = { ...initStoredData };
+let storedData: StoredDataType = { ...initStoredData };
 
 const AdminConsole = () => {
   const isEventsCollection = () => {
@@ -77,7 +71,7 @@ const AdminConsole = () => {
 
         try {
           let dataEntry: Map<string, any> = entry.get("data");
-          const form = getForm(dataEntry);
+          const form = convertFromMap(dataEntry);
 
           let newData;
 
@@ -124,7 +118,7 @@ const AdminConsole = () => {
         if (!isEventsCollection()) return;
         try {
           let dataEntry: Map<string, any> = entry.get("data");
-          const form = getForm(dataEntry);
+          const form = convertFromMap(dataEntry);
 
           await eventDelete(form);
         } catch (err) {

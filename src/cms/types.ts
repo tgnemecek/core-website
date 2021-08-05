@@ -1,5 +1,5 @@
 import { CmsConfig, CmsBackend } from "netlify-cms-core";
-import { Event } from "types";
+import { EventType } from "types";
 
 export type ExtendedConfig = Omit<CmsConfig, "backend"> & {
   backend: CmsBackend & {
@@ -14,7 +14,7 @@ export type ExtendedConfig = Omit<CmsConfig, "backend"> & {
   load_config_file?: boolean;
 };
 
-export type Form = Pick<
-  Event,
+export type FormType = Pick<
+  EventType,
   "id" | "title" | "subtitle" | "tickets" | "isOnline" | "date" | "duration"
 >;

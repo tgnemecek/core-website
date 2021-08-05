@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
-    "lib": ["es2018", "esnext.asynciterable"],
     "paths": {
       "src/*": ["./src/*"],
       "components": ["./src/components/index.ts"],
@@ -12,15 +12,12 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "noImplicitAny": true,
-    "module": "commonjs",
+    "module": "esnext",
     "moduleResolution": "node",
     "jsx": "react",
     "target": "esnext",
     "esModuleInterop": true,
     "noEmit": true,
-    "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
     "plugins": [
       {
         "name": "typescript-styled-plugin"

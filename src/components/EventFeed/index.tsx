@@ -1,10 +1,10 @@
 import React from "react";
 import moment from "moment";
-import { Container, Typography } from "@material-ui/core";
-import { Section, HorizontalFeed, Heading } from "components";
+import { Container, Typography, IconButton } from "@material-ui/core";
+import { Section, HorizontalFeed } from "components";
 import { useEventFeed } from "utils";
-import { EventFeed as EventFeedType } from "types";
-import EventCard from "./EventCard";
+import { EventFeedType } from "types";
+import Event from "./Event";
 
 type EventFeedProps = {
   title: string;
@@ -46,14 +46,15 @@ const EventFeed: React.FC<EventFeedProps> = ({ title, filter }) => {
   return (
     <Section id="events">
       <Container>
-        <Heading subheading="Latest updates about our online events" showLine>
-          {title}
-        </Heading>
+        <Typography variant="h2">{title}</Typography>
+        <Typography variant="subtitle1" component="p">
+          Latest updates about our online and in person events
+        </Typography>
       </Container>
       <Container>
         <HorizontalFeed
           items={[...events].sort(sorter).map((event, i) => (
-            <EventCard key={i} event={event} />
+            <Event key={i} event={event} />
           ))}
         />
       </Container>
