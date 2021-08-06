@@ -17,35 +17,30 @@ const AboutSection: React.FC<AboutSectionProps> = ({
   const classes = useStyles();
 
   return (
-    <Section className={classes.about}>
-      <Container>
-        <Typography variant="srOnly" component="h2">
-          AboutSection
-        </Typography>
-        <Grid
-          container
-          spacing={5}
-          justifyContent="center"
-          className={classes.aboutGrid}
-        >
-          <Grid item xs={12} md={6} className={classes.leftSide}>
-            <img src={streak} className={classes.streak} alt="Streak" />
-            <div className={classes.textWrapper}>
-              <Fade left>
-                <Typography variant="body2">{text}</Typography>
-                <div>
-                  <Link to="/team" className={classes.link}>
-                    <Typography variant="body1">Meet the Team</Typography>
-                  </Link>
-                </div>
-              </Fade>
-            </div>
-          </Grid>
-          <Grid item xs={6} className={classes.imgWrapper}>
+    <Section>
+      <Typography variant="srOnly" component="h2">
+        AboutSection
+      </Typography>
+      <div className={classes.gridWrapper}>
+        <Container className={classes.aboutGrid}>
+          <div className={classes.textWrapper}>
+            <Fade left>
+              <Typography variant="body2" className={classes.text}>
+                {text}
+              </Typography>
+              <div>
+                <Link to="/team" className={classes.link}>
+                  <Typography variant="body1">Meet the Team</Typography>
+                </Link>
+              </div>
+            </Fade>
+          </div>
+          <div className={classes.imgWrapper}>
             <img className={classes.image} src={image} alt="CORE Logo" />
-          </Grid>
-        </Grid>
-      </Container>
+          </div>
+        </Container>
+        <div className={classes.bg} />
+      </div>
     </Section>
   );
 };
@@ -53,38 +48,31 @@ const AboutSection: React.FC<AboutSectionProps> = ({
 export default AboutSection;
 
 const useStyles = makeStyles((theme) => ({
-  about: {
+  gridWrapper: {
     position: "relative",
   },
   aboutGrid: {
-    minHeight: 500,
-    "& > div": {
-      zIndex: 1,
-    },
-  },
-  streak: {
-    position: "absolute",
-    left: "-2vw",
-    height: "calc(100% - 220px)",
-    width: "54vw",
-    top: "110px",
-  },
-  [theme.breakpoints.down("sm")]: {
-    leftSide: {
-      position: "relative",
-    },
-    streak: {
-      width: "110vw",
-      minWidth: 700,
-      height: "110%",
-      top: "-5%",
-    },
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+    justifyItems: "center",
+    justifyContent: "center",
   },
   textWrapper: {
+    padding: "25px 0",
+    margin: "auto",
+    zIndex: 1,
+  },
+  text: {
+    fontSize: 22,
+  },
+  bg: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
     height: "100%",
-    display: "flex",
-    justifyContent: "center",
-    flexDirection: "column",
+    background:
+      "linear-gradient(90deg, #a6b9df 0%, #a6b9df 20%, rgba(255,255,255,0) 60%)",
   },
   link: {
     "& p": {
@@ -92,11 +80,7 @@ const useStyles = makeStyles((theme) => ({
       textDecoration: "underline",
     },
   },
-  imgWrapper: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  },
+  imgWrapper: {},
   image: {
     width: "100%",
     height: "100%",

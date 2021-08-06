@@ -46,7 +46,7 @@ const EventFeed: React.FC<EventFeedProps> = ({ title, filter }) => {
   return (
     <Section id="events">
       <Container>
-        <Heading subheading="Latest updates about our online events" showLine>
+        <Heading subheading="Learn more about our online events" showLine>
           {title}
         </Heading>
       </Container>
