@@ -30,7 +30,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-sitemap",
       options: {
-        output: "/sitemap",
+        output: "/public/sitemap",
       },
     },
     {
