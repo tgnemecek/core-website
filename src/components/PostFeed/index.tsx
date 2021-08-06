@@ -29,7 +29,12 @@ const PostFeed: React.FC<PostFeedProps> = ({ title, filter }) => {
   return (
     <Section id="posts">
       <Container>
-        <Heading showLine>{title}</Heading>
+        <Heading
+          showLine
+          subheading="Keep updated with our latest posts and news"
+        >
+          {title}
+        </Heading>
       </Container>
       <Container>
         <HorizontalFeed

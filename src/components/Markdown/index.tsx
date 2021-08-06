@@ -6,15 +6,17 @@ import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 type MarkdownProps = {
   text: string;
   components?: ReactMarkdownOptions["components"];
+  className?: string;
 };
 
-const Markdown: React.FC<MarkdownProps> = ({ text, components }) => {
+const Markdown: React.FC<MarkdownProps> = ({ text, components, className }) => {
   const TextComponent = (props: any) => (
     <Typography {...props} variant="body1" style={{ marginBottom: 10 }} />
   );
 
   return (
     <ReactMarkdown
+      className={className}
       components={{
         p: TextComponent,
         span: TextComponent,
