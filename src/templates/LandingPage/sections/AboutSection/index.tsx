@@ -17,7 +17,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
   const classes = useStyles();
 
   return (
-    <Section>
+    <Section className={classes.section}>
       <Typography variant="srOnly" component="h2">
         AboutSection
       </Typography>
@@ -35,11 +35,10 @@ const AboutSection: React.FC<AboutSectionProps> = ({
               </div>
             </Fade>
           </div>
-          <div className={classes.imgWrapper}>
+          <div>
             <img className={classes.image} src={image} alt="CORE Logo" />
           </div>
         </Container>
-        <div className={classes.bg} />
       </div>
     </Section>
   );
@@ -48,31 +47,29 @@ const AboutSection: React.FC<AboutSectionProps> = ({
 export default AboutSection;
 
 const useStyles = makeStyles((theme) => ({
+  section: {
+    background:
+      "linear-gradient(90deg, #b9c9ea 0%, #b9c9ea 20%, rgba(255,255,255,0) 60%)",
+  },
   gridWrapper: {
     position: "relative",
   },
   aboutGrid: {
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-    justifyItems: "center",
+    display: "flex",
+    flexWrap: "wrap",
     justifyContent: "center",
   },
   textWrapper: {
+    maxWidth: 650,
     padding: "25px 0",
     margin: "auto",
     zIndex: 1,
   },
   text: {
-    fontSize: 22,
-  },
-  bg: {
-    position: "absolute",
-    top: 0,
-    left: 0,
-    width: "100%",
-    height: "100%",
-    background:
-      "linear-gradient(90deg, #a6b9df 0%, #a6b9df 20%, rgba(255,255,255,0) 60%)",
+    fontSize: 20,
+    [theme.breakpoints.down("xs")]: {
+      fontSize: 15,
+    },
   },
   link: {
     "& p": {
@@ -80,7 +77,6 @@ const useStyles = makeStyles((theme) => ({
       textDecoration: "underline",
     },
   },
-  imgWrapper: {},
   image: {
     width: "100%",
     height: "100%",
