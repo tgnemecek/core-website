@@ -29,9 +29,9 @@ module.exports = {
 
     {
       resolve: "gatsby-plugin-sitemap",
-      options: {
-        output: "",
-      },
+      // options: {
+      //   output: "",
+      // },
     },
     {
       resolve: "gatsby-plugin-robots-txt",
