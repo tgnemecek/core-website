@@ -1,9 +1,15 @@
-const getVideoImage = (videoId: string, location: Location) => {
-  if (!location) return "";
+const getVideoImage = (videoId: string) => {
+  let url = `//img.youtube.com/vi/${videoId}/mqdefault.jpg`;
 
-  const { protocol } = location;
+  if (typeof window !== "undefined") {
+    const {
+      location: { protocol },
+    } = window;
 
-  return `${protocol}//img.youtube.com/vi/${videoId}/mqdefault.jpg`;
+    return `${protocol}${url}`;
+  }
+
+  return `https:${url}`;
 };
 
 export default getVideoImage;
