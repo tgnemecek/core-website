@@ -1,4 +1,5 @@
 import React, { useMemo } from "react";
+import { useLocation } from "@reach/router";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container } from "@material-ui/core";
 import Fade from "react-reveal/Fade";
@@ -14,12 +15,14 @@ const Videos: React.FC<VideosProps> = ({ videos: rawVideos }) => {
   const classes = useStyles();
   const [activeindex, setActiveIndex] = React.useState(0);
 
+  const location = useLocation();
+
   const videos = useMemo(() => {
     return rawVideos.map(({ title, subtitle, link }) => {
       const videoId = getVideoId(link);
       return {
         videoId,
-        image: videoId ? getVideoImage(videoId) : "",
+        image: videoId ? getVideoImage(videoId, location) : "",
         link,
         title,
         subtitle,
