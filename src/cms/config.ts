@@ -54,23 +54,6 @@ const config: ExtendedConfig = {
               default: "LandingPage",
             },
             {
-              label: "Hero Section",
-              name: "hero",
-              widget: "object",
-              fields: [
-                {
-                  label: "Title",
-                  name: "title",
-                  widget: "markdown",
-                },
-                {
-                  label: "Hero Image",
-                  name: "image",
-                  widget: "image",
-                },
-              ],
-            },
-            {
               label: "About Section",
               name: "about",
               widget: "object",
@@ -230,23 +213,6 @@ const config: ExtendedConfig = {
               default: 3,
             },
             {
-              label: "Hero Section",
-              name: "hero",
-              widget: "object",
-              fields: [
-                {
-                  label: "Title",
-                  name: "title",
-                  widget: "string",
-                },
-                {
-                  label: "Hero Image",
-                  name: "image",
-                  widget: "image",
-                },
-              ],
-            },
-            {
               label: "Members",
               name: "members",
               widget: "list",
@@ -313,23 +279,6 @@ const config: ExtendedConfig = {
               default: "CoachingPage",
             },
             {
-              label: "Hero Section",
-              name: "hero",
-              widget: "object",
-              fields: [
-                {
-                  label: "Title",
-                  name: "title",
-                  widget: "string",
-                },
-                {
-                  label: "Hero Image",
-                  name: "image",
-                  widget: "image",
-                },
-              ],
-            },
-            {
               label: "Explanation",
               name: "explanation",
               widget: "object",
@@ -377,23 +326,6 @@ const config: ExtendedConfig = {
               default: "LeadingPage",
             },
             {
-              label: "Hero Section",
-              name: "hero",
-              widget: "object",
-              fields: [
-                {
-                  label: "Title",
-                  name: "title",
-                  widget: "string",
-                },
-                {
-                  label: "Hero Image",
-                  name: "image",
-                  widget: "image",
-                },
-              ],
-            },
-            {
               label: "Explanation",
               name: "explanation",
               widget: "object",
@@ -439,23 +371,6 @@ const config: ExtendedConfig = {
               name: "component",
               widget: "hidden",
               default: "LearningPage",
-            },
-            {
-              label: "Hero Section",
-              name: "hero",
-              widget: "object",
-              fields: [
-                {
-                  label: "Title",
-                  name: "title",
-                  widget: "string",
-                },
-                {
-                  label: "Hero Image",
-                  name: "image",
-                  widget: "image",
-                },
-              ],
             },
             {
               label: "Explanation",
