@@ -1,6 +1,6 @@
 import React from "react";
 import moment from "moment";
-import { Container, Typography } from "@material-ui/core";
+import { Container } from "@material-ui/core";
 import { Section, HorizontalFeed, Heading } from "components";
 import { useEventFeed } from "utils";
 import { EventFeed as EventFeedType } from "types";
