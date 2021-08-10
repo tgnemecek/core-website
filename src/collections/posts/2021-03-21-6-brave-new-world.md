@@ -1,6 +1,6 @@
 ---
 collection: posts
-title: Brave New World!!!
+title: Brave New World!!!!
 image: https://media-exp1.licdn.com/dms/image/C4E12AQHYrcljgGNPVg/article-cover_image-shrink_720_1280/0/1606076373892?e=1633564800&v=beta&t=uRypD8_HfnyOF2-J9dJgH7hNmySJwT848xkbnBbaCJ8
 date: 2021-05-28T17:00:00.000Z
 ---
