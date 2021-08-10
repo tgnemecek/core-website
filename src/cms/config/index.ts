@@ -2,6 +2,7 @@ import { ExtendedConfig } from "../types";
 import PageCollection from "./PageCollection";
 import EventCollection from "./EventCollection";
 import SettingsCollection from "./SettingsCollection";
+import PostCollection from "./PostCollection";
 
 const config: ExtendedConfig = {
   backend: {
@@ -25,7 +26,12 @@ const config: ExtendedConfig = {
       api_key: process.env.GATSBY_CLOUDINARY_API,
     },
   },
-  collections: [PageCollection, EventCollection, SettingsCollection],
+  collections: [
+    PageCollection,
+    EventCollection,
+    PostCollection,
+    SettingsCollection,
+  ],
 };
 
 export default config;
