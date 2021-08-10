@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useLocation } from "@reach/router";
 import CMS from "netlify-cms-app";
 import { eventCreate, eventUpdate, eventDelete } from "./api";
 import { Event, Ticket } from "types";
@@ -130,11 +131,9 @@ const useEventsConfig = () => {
     });
   }, []);
 
-  const { href } = location;
+  const { href } = useLocation();
 
   useEffect(() => {
-    if (!isEventsCollection()) return;
-
     storedData = { ...initStoredData };
   }, [href]);
 };

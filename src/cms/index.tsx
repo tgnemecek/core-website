@@ -17,14 +17,6 @@ const AdminConsole = () => {
     CMS.registerWidget("currentDate", CurrentDateWidget);
 
     CMS.init({ config: config as ExtendedConfig });
-
-    (CMS as any).registerEventListener({
-      name: "preSave",
-      handler: async ({ entry }: any) => {
-        let dataEntry: Map<string, any> = entry.get("data");
-        console.log({ dataEntry });
-      },
-    });
   }, []);
 
   return <div id="nc-root" />;
