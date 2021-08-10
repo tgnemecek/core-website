@@ -2,8 +2,8 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography, Grid } from "@material-ui/core";
 import Fade from "react-reveal/Fade";
-import { Section } from "components";
-import { Link } from "gatsby";
+import { Section, Link } from "components";
+// import { Link } from "gatsby";
 import streak from "src/img/streak1.jpg";
 import { About } from "types";
 
@@ -29,9 +29,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
                 {text}
               </Typography>
               <div>
-                <Link to="/team" className={classes.link}>
-                  <Typography variant="body1">Meet the Team</Typography>
-                </Link>
+                <Link to="/team">Meet the Team</Link>
               </div>
             </Fade>
           </div>

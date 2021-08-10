@@ -9,3 +9,4 @@ generates:
       scalars:
         DateTime: Date
         Node: any
+      declarationKind: class

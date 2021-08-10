@@ -8,22 +8,21 @@ import {
   Typography,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { getTintedBackground, isEventValid, useEventSettings } from "utils";
+import { getTintedBackground, isEventValid, useGeneralSettings } from "utils";
 import { Section } from "components";
 import EventContext from "../../EventContext";
 import FeatureList from "../../FeatureList";
 
 const Aside: React.FC = () => {
   const {
-    event: { duration, date, tickets, isOnline, language },
-    priceRange,
+    event: { date, tickets },
     setTicketsModalOpen,
     alreadyPurchased,
     loading,
   } = React.useContext(EventContext)!;
 
   const classes = useStyles();
-  const { refundPolicy } = useEventSettings();
+  const { refundPolicy } = useGeneralSettings();
 
   return (
     <>

@@ -3,7 +3,8 @@ import moment from "moment";
 import { makeStyles } from "@material-ui/core";
 import { Container, Typography } from "@material-ui/core";
 import Fade from "react-reveal/Fade";
-import { Markdown, Heading } from "components";
+import { Markdown } from "components";
+import PageWrapper from "../../PageWrapper";
 
 type BodyProps = {
   title: string;
@@ -24,11 +25,14 @@ const Body: React.FC<BodyProps> = ({ title, body, date }) => {
       <Typography variant="h2" className={classes.heading}>
         <Fade {...fadeCommonProps}>{title}</Fade>
       </Typography>
-      <Typography variant="body1" className={classes.subheading}>
-        {`Published on ${moment(date).format("MMMM DD, YYYY")}`}
-      </Typography>
+      <PageWrapper>
+        <Typography variant="body1" className={classes.subheading}>
+          {`Published on ${moment(date).format("MMMM DD, YYYY")}`}
+        </Typography>
+      </PageWrapper>
+
       <Container>
-        <div className={classes.body}>
+        <PageWrapper>
           <Fade {...fadeCommonProps} delay={500}>
             <Markdown text={body} />
           </Fade>
@@ -37,7 +41,7 @@ const Body: React.FC<BodyProps> = ({ title, body, date }) => {
               — CORE Coaching &amp; Consulting Team
             </Typography>
           </Fade>
-        </div>
+        </PageWrapper>
       </Container>
     </div>
   );
@@ -55,17 +59,8 @@ const useStyles = makeStyles(() => ({
     marginBottom: 50,
     fontStyle: "italic",
     fontSize: 14,
-    width: "100%",
-    maxWidth: 700,
-    margin: "auto",
     display: "block",
     textAlign: "center",
-  },
-  body: {
-    width: "100%",
-    maxWidth: 700,
-    margin: "auto",
-    textAlign: "justify",
   },
   author: {
     textAlign: "right",
