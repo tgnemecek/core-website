@@ -1,5 +1,8 @@
 ---
 collection: pages
+hero:
+  image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1595801147/icon_hcpkac.jpg
+  title: Announcing New SOS Program
 about:
   text: "Core Coaching & Consulting, LLC is a global group of change agents who
     use the holistic system of The Balancing Act with individuals, leaders, and
