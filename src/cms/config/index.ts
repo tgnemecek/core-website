@@ -2,11 +2,13 @@ import { ExtendedConfig } from "../types";
 import PageCollection from "./PageCollection";
 import EventCollection from "./EventCollection";
 import SettingsCollection from "./SettingsCollection";
+import PostCollection from "./PostCollection";
 
 const config: ExtendedConfig = {
   backend: {
     name: "git-gateway",
-    branch: process.env.GATSBY_NETLIFY_CMS_BRANCH,
+    branch: "cms-posts",
+    // branch: process.env.GATSBY_NETLIFY_CMS_BRANCH,
     commit_messages: {
       create: "Create {{collection}} “{{slug}}”",
       update: "Update {{collection}} “{{slug}}”",
@@ -25,7 +27,12 @@ const config: ExtendedConfig = {
       api_key: process.env.GATSBY_CLOUDINARY_API,
     },
   },
-  collections: [PageCollection, EventCollection, SettingsCollection],
+  collections: [
+    PageCollection,
+    EventCollection,
+    PostCollection,
+    SettingsCollection,
+  ],
 };
 
 export default config;
