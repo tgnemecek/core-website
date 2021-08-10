@@ -15,7 +15,7 @@ const usePostFeed = () => {
             frontmatter {
               posts {
                 title
-                body
+                text
                 date
                 image
                 video
