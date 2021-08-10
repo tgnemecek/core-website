@@ -1,4 +1,4 @@
-import { CmsConfig, CmsBackend } from "netlify-cms-core";
+import { CmsConfig, CmsBackend, CmsField } from "netlify-cms-core";
 import { Event } from "types";
 
 export type ExtendedConfig = Omit<CmsConfig, "backend"> & {

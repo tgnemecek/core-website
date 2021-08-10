@@ -15,7 +15,6 @@ export { default as useBreakpoint } from "./useBreakpoint";
 export type { UseBreakpointState } from "./useBreakpoint";
 export { default as useEventFeed } from "./useEventFeed";
 export { default as usePostFeed } from "./usePostFeed";
-export { default as useEventSettings } from "./useEventSettings";
 export { default as useGeneralSettings } from "./useGeneralSettings";
 export { default as usePostImage } from "./usePostImage";
 export { default as useContactInfo } from "./useContactInfo";

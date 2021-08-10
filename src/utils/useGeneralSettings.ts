@@ -9,6 +9,7 @@ const useGeneralSettings = () => {
           generalSettings {
             brandName
             heroImage
+            refundPolicy
           }
         }
       }

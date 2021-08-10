@@ -8,7 +8,6 @@ type Frontmatter {
   posts: PostPage
   contact: Contact
   navigation: Navigation
-  eventSettings: EventSettings
   generalSettings: GeneralSettings
   component: String
   collection: String
@@ -32,6 +31,7 @@ type Contact {
 type GeneralSettings {
   brandName: String!
   heroImage: String!
+  refundPolicy: String
 }
 type Navigation {
   links: [NavigationLink!]!
@@ -40,9 +40,6 @@ type NavigationLink {
   label: String!
   url: String!
   description: String
-}
-type EventSettings {
-  refundPolicy: String
 }
 
 # Pages

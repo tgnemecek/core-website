@@ -109,18 +109,10 @@ const SettingsCollection: CmsCollection = {
           name: "heroImage",
           widget: "image",
         },
-      ],
-    },
-    {
-      file: "src/collections/settings/event-settings/index.md",
-      label: "Events",
-      name: "eventSettings",
-      fields: [
-        ...commonFields("events", "eventSettings"),
         {
           label: "Refund Policy",
           name: "refundPolicy",
-          widget: "markdown",
+          widget: "text",
         },
       ],
     },
