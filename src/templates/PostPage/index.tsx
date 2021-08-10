@@ -2,7 +2,7 @@ import React from "react";
 import { graphql, PageProps } from "gatsby";
 import { PostPageDTO } from "types";
 import { Hero, Layout, Footer, Navbar, Section, PostFeed } from "components";
-import { Body, Video } from "./sections";
+import { Body, Video, BackLink } from "./sections";
 
 type PostPageWithLocation = PostPageDTO & {
   location: PageProps["location"];
@@ -26,6 +26,7 @@ const PostPage: React.FC<PostPageWithLocation> = ({
         <Section>
           <Body title={title} body={body} date={date} />
           {video && <Video video={video} />}
+          <BackLink />
         </Section>
         <PostFeed title="Learn more" filter={(post) => post.slug !== slug} />
       </main>

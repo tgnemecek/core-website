@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   ButtonBase,
@@ -13,7 +12,7 @@ import ReplyIcon from "@material-ui/icons/Reply";
 import YouTube from "react-youtube";
 import Fade from "@material-ui/core/Fade";
 import { getVideoId } from "utils";
-import { Modal, Image } from "components";
+import { Modal, Image, Link } from "components";
 import { Member } from "types";
 
 const timeout = 2000;
