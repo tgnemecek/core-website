@@ -80,7 +80,7 @@
   "main": "n/a",
   "scripts": {
     "start": "yarn codegen && netlify dev",
-    "build": "gatsby clean && graphql-codegen && tsc --build lambda && gatsby build",
+    "build": "graphql-codegen && tsc --build lambda && gatsby build",
     "codegen": "graphql-codegen"
   },
   "devDependencies": {
