@@ -16,7 +16,7 @@ const PostPage: React.FC<PostPageWithLocation> = ({
     },
   },
 }) => {
-  const { title, body, image, video, date } = post;
+  const { title, text, image, video, date } = post;
 
   return (
     <Layout>
@@ -24,7 +24,7 @@ const PostPage: React.FC<PostPageWithLocation> = ({
       <main>
         <Hero title={title} small image={image} />
         <Section>
-          <Body title={title} body={body} date={date} />
+          <Body title={title} body={text} date={date} />
           {video && <Video video={video} />}
           <BackLink />
         </Section>
@@ -46,7 +46,7 @@ export const pageQuery = graphql`
       frontmatter {
         posts {
           title
-          body
+          text
           image
           video
           date

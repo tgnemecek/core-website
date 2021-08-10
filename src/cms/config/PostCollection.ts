@@ -23,8 +23,8 @@ const PostCollection: CmsCollection = {
       pattern: ["^.{3,80}$", "Must have between 3 and 80 characters"],
     },
     {
-      label: "Body",
-      name: "body",
+      label: "Text",
+      name: "text",
       widget: "markdown",
     },
     {

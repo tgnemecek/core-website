@@ -150,7 +150,7 @@ type PostPage {
   collection: String!
   slug: String!
   title: String!
-  body: String!
+  text: String!
   image: String
   video: String
   date: DateTime!

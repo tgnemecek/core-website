@@ -19,7 +19,7 @@ type PostCardProps = {
 };
 
 const PostCard: React.FC<PostCardProps> = ({ post }) => {
-  const { title, date, image, body, slug } = post;
+  const { title, date, text, slug } = post;
   const { xs, sm, md, lg } = useBreakpoint();
   const classes = useStyles({ sm, lg })();
 
@@ -55,7 +55,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
           </Typography>
           <Typography variant="body1" className={classes.body}>
             <Ellipsis
-              text={removeMarkdown(body)}
+              text={removeMarkdown(text)}
               component="span"
               max={getEllipsisMaxCount()}
               ellipsis={
