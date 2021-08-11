@@ -23,8 +23,9 @@ const initStoredData: StoredData = {
 let storedData: StoredData = { ...initStoredData };
 
 const useEventsConfig = () => {
+  const { href } = useLocation();
+
   const isEventsCollection = () => {
-    const { href } = window.location;
     return href.includes("/collections/events/");
   };
 
@@ -130,8 +131,6 @@ const useEventsConfig = () => {
       },
     });
   }, []);
-
-  const { href } = useLocation();
 
   useEffect(() => {
     storedData = { ...initStoredData };
