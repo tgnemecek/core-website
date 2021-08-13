@@ -20,9 +20,21 @@ const Markdown: React.FC<MarkdownProps> = ({ text, components, className }) => {
       components={{
         p: TextComponent,
         span: TextComponent,
-        a: (props: any) => (
-          <a {...props} target="_blank" rel="noopener noreferrer" />
-        ),
+        a: (props: any) => {
+          let href: string = props.href || "";
+
+          if (!href.startsWith("/") && !href.startsWith("http")) {
+            href = `http://${href}`;
+          }
+          return (
+            <a
+              {...props}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+            />
+          );
+        },
         strong: (props) => <strong style={{ fontWeight: "bold" }} {...props} />,
         blockquote: (props: any) => (
           <Typography {...props} variant="h4" style={{ marginTop: 15 }} />
