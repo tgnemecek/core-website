@@ -3,7 +3,7 @@ import { EventFeedDTO } from "types";
 
 const useEventFeed = () => {
   const data: EventFeedDTO["data"] = useStaticQuery(graphql`
-    query EventFeedQuery {
+    query TestQuery {
       allMarkdownRemark(
         filter: { frontmatter: { collection: { eq: "events" } } }
       ) {

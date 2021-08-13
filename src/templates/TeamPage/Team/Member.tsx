@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   Typography,
@@ -9,17 +10,17 @@ import {
 import LaunchIcon from "@material-ui/icons/Launch";
 import Fade from "react-reveal/Fade";
 import { Image } from "components";
-import { Member } from "types";
+import { MemberType } from "./types";
 
 const transition = "all 0.3s ease-in-out";
 
-type MemberCardProps = Member & {
+type MemberProps = MemberType & {
   delay?: number;
   idx: number;
   setMemberToView: React.Dispatch<React.SetStateAction<number>>;
 };
 
-const MemberCard: React.FC<MemberCardProps> = ({
+const Member: React.FC<MemberProps> = ({
   idx,
   name,
   role,
@@ -61,7 +62,7 @@ const MemberCard: React.FC<MemberCardProps> = ({
   );
 };
 
-export default MemberCard;
+export default Member;
 
 type UseStylesProps = {
   isHovering: boolean;

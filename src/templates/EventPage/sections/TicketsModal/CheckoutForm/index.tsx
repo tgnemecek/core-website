@@ -4,7 +4,7 @@ import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { useSnackbar } from "notistack";
 import { Button, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { Ticket } from "types";
+import { TicketType } from "types";
 import { verifyEmail } from "utils";
 import EventContext from "../../../EventContext";
 import ModalFooter from "../ModalFooter";
@@ -14,13 +14,13 @@ const serverErrorMessage = "Something went wrong. Please try again later.";
 const cardIncompleteErrorMessage = "Please fill all required card fields.";
 
 type CheckoutFormProps = {
-  chosenTicket: Ticket;
+  chosenTicket: TicketType;
   goToSuccess: () => void;
   goToFailed: () => void;
 };
 
 type FormState = Record<"firstName" | "lastName" | "email", string>;
-type FormErrors = Record<keyof FormState | "card", string>;
+type FormErrorsType = Record<keyof FormState | "card", string>;
 
 const CheckoutForm: React.FC<CheckoutFormProps> = ({
   chosenTicket,
@@ -48,7 +48,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
     cardIncompleteErrorMessage
   );
 
-  const [formErrors, setFormErrors] = React.useState<FormErrors>({
+  const [formErrors, setFormErrors] = React.useState<FormErrorsType>({
     firstName: "",
     lastName: "",
     email: "",
@@ -92,7 +92,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
   };
 
   const hasErrors = () => {
-    const newErrors: Partial<FormErrors> = (Object.keys(
+    const newErrors: Partial<FormErrorsType> = (Object.keys(
       formState
     ) as (keyof FormState)[])
       .filter((key) => !formState[key])
@@ -111,7 +111,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
     setFormErrors({
       ...newErrors,
       card: newErrors.card || "",
-    } as FormErrors);
+    } as FormErrorsType);
 
     return Object.values(newErrors).some(Boolean);
   };

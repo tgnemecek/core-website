@@ -1,14 +1,26 @@
 import React from "react";
-import { Typography, List, ListItem, ListItemIcon } from "@material-ui/core";
+import moment from "moment";
+import { graphql, PageProps } from "gatsby";
+import { loadStripe, Stripe } from "@stripe/stripe-js";
+import {
+  Typography,
+  CircularProgress,
+  Modal,
+  Dialog,
+  IconButton,
+  List,
+  ListItem,
+  ListItemIcon,
+} from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import BookmarkIcon from "@material-ui/icons/Bookmark";
-import { Ticket } from "types";
+import { TicketType } from "types";
 import { isTicketValid } from "utils";
 import EventContext from "../../EventContext";
 
 type TicketsMainProps = {
   goToCheckout: () => void;
-  setChosenTicket: React.Dispatch<React.SetStateAction<Ticket>>;
+  setChosenTicket: React.Dispatch<React.SetStateAction<TicketType>>;
 };
 
 const TicketsMain: React.FC<TicketsMainProps> = ({
@@ -21,7 +33,7 @@ const TicketsMain: React.FC<TicketsMainProps> = ({
 
   const classes = useStyles();
 
-  const getEndsOnText = (endsOn: Ticket["endsOn"]) => {
+  const getEndsOnText = (endsOn: TicketType["endsOn"]) => {
     if (endsOn === "startOfEvent") {
       return "Sale ends at the start of the event";
     }
@@ -42,7 +54,7 @@ const TicketsMain: React.FC<TicketsMainProps> = ({
     return baseClassName;
   };
 
-  const handleClick = (ticket: Ticket) => {
+  const handleClick = (ticket: TicketType) => {
     setChosenTicket(ticket);
     goToCheckout();
   };

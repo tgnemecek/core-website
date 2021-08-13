@@ -1,10 +1,12 @@
 import React from "react";
+import PropTypes from "prop-types";
 import parse from "html-react-parser";
 import Fade from "react-reveal/Fade";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography, Grid, Button } from "@material-ui/core";
 import logo from "src/img/logo.png";
 import { Image, SmoothScroll } from "components";
+<<<<<<< HEAD:src/components/Hero/index.tsx
 import { useGeneralSettings } from "utils";
 
 type HeroProps = {
@@ -14,6 +16,21 @@ type HeroProps = {
 };
 
 const Hero: React.FC<HeroProps> = ({ title, image, small = false }) => {
+=======
+
+type HeroProps = {
+  hero: {
+    title: string;
+    image: string;
+  };
+  small?: boolean;
+};
+
+const Hero: React.FC<HeroProps> = ({
+  hero: { title, image },
+  small = false,
+}) => {
+>>>>>>> @{-1}:src/components/HeroSection/index.tsx
   const classes = useStyles({ small })();
 
   const { brandName, heroImage } = useGeneralSettings();
@@ -47,7 +64,7 @@ const Hero: React.FC<HeroProps> = ({ title, image, small = false }) => {
         </Container>
       </div>
       {!small && (
-        <SmoothScroll targetId="posts" className={classes.explore}>
+        <SmoothScroll targetId="events" className={classes.explore}>
           <Button
             variant="contained"
             component="a"

@@ -5,18 +5,17 @@ import Fade from "react-reveal/Fade";
 import { Section, Link } from "components";
 // import { Link } from "gatsby";
 import streak from "src/img/streak1.jpg";
-import { About } from "types";
+import { AboutType } from "types";
 
-type AboutSectionProps = {
-  about: About;
+type AboutProps = {
+  about: AboutType;
 };
 
-const AboutSection: React.FC<AboutSectionProps> = ({
-  about: { text, image },
-}) => {
+const About: React.FC<AboutProps> = ({ about: { text, image } }) => {
   const classes = useStyles();
 
   return (
+<<<<<<< HEAD:src/templates/LandingPage/sections/AboutSection/index.tsx
     <Section className={classes.section}>
       <Typography variant="srOnly" component="h2">
         AboutSection
@@ -34,6 +33,33 @@ const AboutSection: React.FC<AboutSectionProps> = ({
             </Fade>
           </div>
           <div>
+=======
+    <Section className={classes.about}>
+      <Container>
+        <Typography variant="srOnly" component="h2">
+          About
+        </Typography>
+        <Grid
+          container
+          spacing={5}
+          justify="center"
+          className={classes.aboutGrid}
+        >
+          <Grid item xs={12} md={6} className={classes.leftSide}>
+            <img src={streak} className={classes.streak} alt="Streak" />
+            <div className={classes.textWrapper}>
+              <Fade left>
+                <Typography variant="body2">{text}</Typography>
+                <div>
+                  <Link to="/team" className={classes.link}>
+                    <Typography variant="body1">Meet the Team</Typography>
+                  </Link>
+                </div>
+              </Fade>
+            </div>
+          </Grid>
+          <Grid item xs={6} className={classes.imgWrapper}>
+>>>>>>> @{-1}:src/templates/LandingPage/sections/About/index.tsx
             <img className={classes.image} src={image} alt="CORE Logo" />
           </div>
         </Container>
@@ -42,7 +68,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
   );
 };
 
-export default AboutSection;
+export default About;
 
 const useStyles = makeStyles((theme) => ({
   section: {

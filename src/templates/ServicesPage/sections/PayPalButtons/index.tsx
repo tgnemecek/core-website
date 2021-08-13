@@ -9,31 +9,29 @@ import {
   CardContent,
   CardActionArea,
 } from "@material-ui/core";
-import { theme, Heading } from "components";
+import { theme } from "components";
 import { PayPalButtonName } from "types";
 import buttons from "./buttons";
 
 type PayPalButtonsProps = {
-  buttonNames: PayPalButtonName[];
+  buttonTypes: PayPalButtonName[];
 };
 
-const PayPalButtons: React.FC<PayPalButtonsProps> = ({ buttonNames }) => {
+const PayPalButtons: React.FC<PayPalButtonsProps> = ({ buttonTypes }) => {
   const classes = useStyles();
   const sm = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
     <>
       <Container>
-        <Heading
-          subheading="For invaluable in-depth knowledge"
-          textAlign="center"
-        >
-          Premium Reports
-        </Heading>
+        <Typography variant="h2">Premium Reports</Typography>
+        <Typography variant="subtitle1">
+          For invaluable in-depth knowledge
+        </Typography>
       </Container>
       <Container maxWidth="md">
         <Grid container alignItems="center" spacing={sm ? 2 : 8}>
-          {buttonNames.map((key) => {
+          {buttonTypes.map((key) => {
             const { label, description, value, price, button } = buttons[key];
 
             return (

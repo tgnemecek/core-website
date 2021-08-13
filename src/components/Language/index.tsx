@@ -1,12 +1,19 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Typography, Tooltip } from "@material-ui/core";
+import {
+  Typography,
+  Tooltip,
+  Card,
+  CardActionArea,
+  CardMedia,
+  CardContent,
+} from "@material-ui/core";
 import { formatLanguage } from "utils";
-import { Language } from "types";
+import { LanguageType } from "types";
 import Flag from "./Flag";
 
-type LanguageDisplayProps = {
-  code: Language | Language[];
+type LanguageProps = {
+  code: LanguageType | LanguageType[];
   showFlag?: boolean;
   showCode?: boolean;
   showLanguage?: boolean;
@@ -15,7 +22,7 @@ type LanguageDisplayProps = {
   flagSize?: number;
 };
 
-const LanguageDisplay: React.FC<LanguageDisplayProps> = ({
+const Language: React.FC<LanguageProps> = ({
   code: rawCode,
   showFlag,
   showCode,
@@ -80,4 +87,4 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default LanguageDisplay;
+export default Language;

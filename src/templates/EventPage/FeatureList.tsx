@@ -16,7 +16,7 @@ import PlaceIcon from "@material-ui/icons/Place";
 import LanguageIcon from "@material-ui/icons/Language";
 import AlarmIcon from "@material-ui/icons/Alarm";
 import { makeStyles } from "@material-ui/core/styles";
-import { formatLanguage } from "utils";
+import { getTintedBackground, formatLanguage, useEventSettings } from "utils";
 import EventContext from "./EventContext";
 
 type FeatureListProps = {

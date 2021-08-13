@@ -29,11 +29,18 @@ explanation:
 
     **For career & life coaches**: We can certify you to enrich your clients with *The Balancing Act's* holistic processes, programs and diagnostic profiles.
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600816113/Coaching_cropped_ibup02.jpg
-benefits: |-
-  * Feel Stuck, anxious, frustrated, bored; lack direction; job is poor fit.
-  * Lack Clarity. Don't see better options (or how to get there).
-  * Feel Unmotivated. Change seems too hard; why try?
-  * Are not sure who can help - and feel reluctant to ask for favors.
-  * Don't have enough money to meet your needs &/or desires.
-  * Are a Career or Life Coach whose clients say yes to these questions.
+benefits: >-
+  <ul>
+    <li>
+      Feel Stuck, anxious, frustrated, bored; lack direction; job is poor fit.</li>
+    <li>Lack Clarity. Don't see better options (or how to get there).</li>
+    <li>Feel Unmotivated. Change seems too hard; why try?</li>
+    <li>Are not sure who can help - and feel reluctant to ask for favors.</li>
+    <li>Don't have enough money to meet your needs &/or desires.</li>
+
+   <li>Are a Career or Life Coach whose clients say yes to these questions.</li>
+  </ul>
+
+
+  <!--EndFragment-->
 ---
