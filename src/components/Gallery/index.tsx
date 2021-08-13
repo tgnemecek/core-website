@@ -22,7 +22,7 @@ const Gallery: React.FC<GalleryProps> = ({
 }) => {
   const [resizeListener, sizes] = useResizeAware();
   const { sm } = useBreakpoint();
-  const [initialScroll, setInitialScroll] = React.useState(null);
+  const [initialScroll, setInitialScroll] = React.useState<number | null>(null);
   const [showPrevious, setShowPrevious] = React.useState(false);
   const [showNext, setShowNext] = React.useState(true);
   const scrollRef = React.useRef<HTMLDivElement>(null);
@@ -34,7 +34,7 @@ const Gallery: React.FC<GalleryProps> = ({
     let width = 200;
     let height = 300;
 
-    if (containerWidth < 700) height = 200;
+    if (containerWidth && containerWidth < 700) height = 200;
 
     const minHeight = 200;
     const maxHeight = 400;
@@ -56,7 +56,7 @@ const Gallery: React.FC<GalleryProps> = ({
     let gridValue;
 
     if (
-      initialScroll <= e.currentTarget.scrollLeft &&
+      initialScroll! <= e.currentTarget.scrollLeft &&
       e.currentTarget.scrollLeft
     ) {
       gridValue = Math.ceil(e.currentTarget.scrollLeft / itemWidth);
@@ -84,7 +84,7 @@ const Gallery: React.FC<GalleryProps> = ({
     } else {
       setShowPrevious(true);
 
-      const scrollPos = Math.round((scrollLeft + sizes.width) / 10);
+      const scrollPos = Math.round((scrollLeft + sizes.width!) / 10);
       const roundedWith = Math.round(scrollWidth / 10);
 
       if (scrollPos === roundedWith) {

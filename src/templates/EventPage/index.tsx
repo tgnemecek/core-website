@@ -1,8 +1,6 @@
 import React from "react";
 import { graphql, PageProps } from "gatsby";
-import { Stripe } from "@stripe/stripe-js";
-import { Backdrop, CircularProgress, Dialog } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { Backdrop, CircularProgress } from "@material-ui/core";
 import { SnackbarProvider } from "notistack";
 import { EventPageDTO } from "types";
 import { Layout, EventFeed, Footer, Navbar } from "components";
@@ -93,8 +91,6 @@ const EventPageWithSnackbar: React.FC<EventPageWithLocation> = (props) => (
 );
 
 export default EventPageWithSnackbar;
-
-const useStyles = makeStyles((theme) => ({}));
 
 export const pageQuery = graphql`
   query EventQuery($id: String!) {

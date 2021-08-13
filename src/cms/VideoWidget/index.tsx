@@ -1,17 +1,9 @@
 import React from "react";
 import { isVideoValid } from "utils";
+import { CustomWidget } from "../types";
 
-type VideoWidgetProps = {
-  value?: string;
-  field: string;
-  forID: string;
-  classNameWrapper: string;
-  onChange: (value?: string) => void;
-};
-
-const VideoWidget: React.FC<VideoWidgetProps> = ({
+const VideoWidget: CustomWidget = ({
   value = "",
-  field,
   forID,
   classNameWrapper,
   onChange,

@@ -1,0 +1,12 @@
+schema: ./src/schema.gql
+generates:
+  ./src/types/__generated__.ts:
+    plugins:
+      - typescript
+    config:
+      maybeValue: T | undefined
+      skipTypename: true
+      scalars:
+        DateTime: Date
+        Node: any
+      declarationKind: class

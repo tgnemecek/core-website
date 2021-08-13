@@ -1,8 +1,6 @@
 ---
 collection: pages
-hero:
-  title: Meet the Team
-  image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596493058/pexels-pixabay-161154_uftaqi.jpg
+title: Meet the Team
 members:
   - name: Sharon Seivert
     role: CEO & Founder

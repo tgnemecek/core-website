@@ -4,12 +4,19 @@ import { LandingPageDTO } from "types";
 import {
   Hero,
   EventFeed,
+  PostFeed,
   ContactForm,
   Layout,
   Navbar,
   Footer,
 } from "components";
-import { About, Testimonials, Services, Products, Videos } from "./sections";
+import {
+  AboutSection,
+  Testimonials,
+  Services,
+  Products,
+  Videos,
+} from "./sections";
 
 const LandingPage: React.FC<LandingPageDTO> = ({
   data: {
@@ -20,14 +27,15 @@ const LandingPage: React.FC<LandingPageDTO> = ({
     },
   },
 }) => {
-  const { hero, about, testimonials, products, services, videos } = landing;
+  const { about, testimonials, products, services, videos } = landing;
   return (
     <Layout>
       <Navbar />
       <main>
-        <Hero hero={hero} />
+        <Hero />
+        <PostFeed title="What's new" />
         <EventFeed title="Leading Your Life &amp; Work Events" />
-        <About about={about} />
+        <AboutSection about={about} />
         <Testimonials testimonials={testimonials} />
         <Services services={services} />
         <Products products={products} />
@@ -48,10 +56,6 @@ export const pageQuery = graphql`
       frontmatter {
         pages {
           landing {
-            hero {
-              title
-              image
-            }
             about {
               text
               image

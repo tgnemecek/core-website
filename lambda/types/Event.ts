@@ -6,7 +6,7 @@ export type EventDeleteBody = {
 export type EventCreateBody = EventDeleteBody & {
   title: string;
   subtitle: string;
-  tickets: TicketType[];
+  tickets: Ticket[];
   duration: number;
   date: Date;
 };
@@ -19,7 +19,7 @@ export type CreatePaymentIntentBody = {
   timezone: string;
 };
 
-export type TicketType = {
+export type Ticket = {
   id: string;
   description: string;
   price: number;

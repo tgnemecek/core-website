@@ -3,13 +3,13 @@ import { Container } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import YouTube from "react-youtube";
 import { getVideoId } from "utils";
-import { EventType } from "types";
+import { Event } from "types";
 import EventContext from "../../EventContext";
 
 const Video: React.FC = () => {
   const {
     event: { video },
-  } = React.useContext(EventContext);
+  } = React.useContext(EventContext)!;
 
   const classes = useStyles();
 

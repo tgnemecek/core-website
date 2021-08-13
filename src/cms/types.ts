@@ -1,5 +1,6 @@
-import { CmsConfig, CmsBackend } from "netlify-cms-core";
-import { EventType } from "types";
+import { FC } from "react";
+import { CmsConfig, CmsBackend, CmsField } from "netlify-cms-core";
+import { Event } from "types";
 
 export type ExtendedConfig = Omit<CmsConfig, "backend"> & {
   backend: CmsBackend & {
@@ -14,7 +15,16 @@ export type ExtendedConfig = Omit<CmsConfig, "backend"> & {
   load_config_file?: boolean;
 };
 
-export type FormType = Pick<
-  EventType,
+export type CustomWidgetProps<ValueType = string> = {
+  classNameWrapper: string;
+  forID: string;
+  value?: ValueType;
+  onChange: (value?: ValueType) => void;
+};
+
+export type CustomWidget<ValueType = string> = FC<CustomWidgetProps<ValueType>>;
+
+export type Form = Pick<
+  Event,
   "id" | "title" | "subtitle" | "tickets" | "isOnline" | "date" | "duration"
 >;

@@ -1,13 +1,13 @@
 import moment from "moment";
-import { EventType } from "types";
+import { Event } from "types";
 import isTicketValid from "./isTicketValid";
 
-type IsEventValidType = (event: {
-  tickets: EventType["tickets"];
-  date: EventType["date"];
+type IsEventValid = (event: {
+  tickets: Event["tickets"];
+  date: Event["date"];
 }) => boolean;
 
-const isEventValid: IsEventValidType = ({ tickets, date }) => {
+const isEventValid: IsEventValid = ({ tickets, date }) => {
   return tickets.some(({ endsOn }) => isTicketValid(endsOn, date));
 };
 

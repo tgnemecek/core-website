@@ -16,7 +16,7 @@ import PlaceIcon from "@material-ui/icons/Place";
 import LanguageIcon from "@material-ui/icons/Language";
 import AlarmIcon from "@material-ui/icons/Alarm";
 import { makeStyles } from "@material-ui/core/styles";
-import { getTintedBackground, formatLanguage, useEventSettings } from "utils";
+import { formatLanguage } from "utils";
 import EventContext from "./EventContext";
 
 type FeatureListProps = {
@@ -27,7 +27,7 @@ const FeatureList: React.FC<FeatureListProps> = ({ dense }) => {
   const {
     event: { duration, date, location, isOnline, language },
     priceRange,
-  } = React.useContext(EventContext);
+  } = React.useContext(EventContext)!;
 
   const classes = useStyles();
 

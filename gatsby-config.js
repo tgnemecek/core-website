@@ -1,4 +1,7 @@
 const path = require("path");
+// const { generateConfig } = require("gatsby-plugin-ts-config");
+
+const projectRoot = __dirname;
 
 module.exports = {
   siteMetadata: {
@@ -8,11 +11,14 @@ module.exports = {
   },
   proxy: {
     prefix: "/.netlify/functions",
-    url: "http://localhost:8888",
+    url: `${
+      process.env.NODE_ENV === "develop"
+        ? "http://localhost"
+        : process.env.GATSBY_SITE_URL
+    }:8888`,
   },
   flags: {
     PRESERVE_WEBPACK_CACHE: true,
-    DEV_SSR: true,
     FAST_REFRESH: true,
   },
   plugins: [
@@ -26,61 +32,62 @@ module.exports = {
         allExtensions: true,
       },
     },
-
-    {
-      resolve: "gatsby-plugin-sitemap",
-      // options: {
-      //   output: "",
-      // },
-    },
+    // "gatsby-plugin-sitemap",
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: "https://www.corecoachingconsulting.com",
+        host: process.env.GATSBY_SITE_URL,
       },
     },
     {
       resolve: "gatsby-plugin-root-import",
       options: {
-        components: path.join(__dirname, "src/components"),
-        src: path.join(__dirname, "src"),
-        utils: path.join(__dirname, "src/utils"),
-        types: path.join(__dirname, "src/types"),
+        components: path.join(projectRoot, "src/components"),
+        src: path.join(projectRoot, "src"),
+        utils: path.join(projectRoot, "src/utils"),
+        types: path.join(projectRoot, "src/types"),
       },
     },
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/static/img`,
+        path: `${projectRoot}/static/img`,
         name: "uploads",
       },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/src/collections/pages`,
+        path: `${projectRoot}/src/collections/pages`,
         name: "pages",
       },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/src/collections/settings`,
+        path: `${projectRoot}/src/collections/settings`,
         name: "settings",
       },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/src/collections/events`,
+        path: `${projectRoot}/src/collections/events`,
         name: "events",
       },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/src/img`,
+        path: `${projectRoot}/src/collections/posts`,
+        name: "posts",
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${projectRoot}/src/img`,
         name: "images",
       },
     },
@@ -102,7 +109,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-netlify-cms",
       options: {
-        modulePath: `${__dirname}/src/cms/index.tsx`,
+        modulePath: `${projectRoot}/src/cms/index.tsx`,
         manualInit: true,
       },
     },

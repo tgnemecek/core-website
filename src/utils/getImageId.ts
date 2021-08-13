@@ -1,5 +1,7 @@
 const getImageId = (link: string) => {
-  const matches = link.match(/image\/upload\/.*\/(.*)/);
+  const matches = link.match(
+    /core-coaching-consulting\/image\/upload\/.*\/(.*)/
+  );
   return matches ? matches[1] : "";
 };
 

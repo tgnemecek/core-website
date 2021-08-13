@@ -1,8 +1,6 @@
 ---
 collection: pages
-hero:
-  title: CORE Learning
-  image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1596493058/pexels-pixabay-161154_uftaqi.jpg
+title: CORE Learning
 explanation:
   text: >-
     **Teachers**, **Students** and **Parents**: Use *The Balancing Act's*
@@ -30,18 +28,11 @@ explanation:
 
     **Become a Certified Teacher** who enriches students with TBA programs such as *The Compass Course*. [Send us a message](mailto:sseivert@thecoreporation.com) to find out more.
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600804117/abdelkader-ft-CcZzQcYGYC4-unsplash_jvaahu.jpg
-benefits: >-
-
-
-  <ul>
-    <li>
-      Want to help your students overcome anxiety, frustration, feeling stuck.
-    </li>
-    <li>Increase their clarity to create a bright future.</li>
-    <li>Help them become more motivated to breakthrough obstacles.</li>
-    <li>Make it easier for them to ask for help and form healthy relationships.</li>
-
-    <li>Show them how to form new habits to improve health, learning, finances.</li>
-    <li>Guide them create a happy life by giving their native gifts to the world.</li>
-  </ul>
+benefits: |-
+  * Want to help your students overcome anxiety, frustration, feeling stuck.
+  * Increase their clarity to create a bright future.
+  * Help them become more motivated to breakthrough obstacles.
+  * Make it easier for them to ask for help and form healthy relationships.
+  * Show them how to form new habits to improve health, learning, finances.
+  * Guide them create a happy life by giving their native gifts to the world.
 ---

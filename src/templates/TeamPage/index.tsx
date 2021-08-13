@@ -13,13 +13,13 @@ const TeamPage: React.FC<TeamPageDTO> = ({
     },
   },
 }) => {
-  const { hero, members } = team;
+  const { title, members } = team;
 
   return (
     <Layout>
       <Navbar />
       <main>
-        <Hero hero={hero} small />
+        <Hero title={title} small />
         <Team members={members} />
         <ContactForm />
       </main>
@@ -36,10 +36,7 @@ export const pageQuery = graphql`
       frontmatter {
         pages {
           team {
-            hero {
-              title
-              image
-            }
+            title
             members {
               name
               role

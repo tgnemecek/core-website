@@ -12,6 +12,7 @@ import { withPrefix } from "gatsby";
 
 const Layout: React.FC = ({ children }) => {
   const { title, description } = useSiteMetadata();
+
   return (
     <div>
       <Helmet>
