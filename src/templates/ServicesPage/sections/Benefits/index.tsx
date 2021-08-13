@@ -8,6 +8,7 @@ import {
   ListItemIcon,
 } from "@material-ui/core";
 import ErrorOutlineIcon from "@material-ui/icons/ErrorOutline";
+import { Heading, Markdown } from "components";
 
 type BenefitsProps = {
   benefits: string;
@@ -19,7 +20,6 @@ const Benefits: React.FC<BenefitsProps> = ({ benefits }) => {
   return (
     <Container>
       <Paper elevation={3} square className={classes.paper}>
-<<<<<<< HEAD
         <Heading showLine textAlign="center" noMargin>
           Schedule a time with us if you:
         </Heading>
@@ -36,29 +36,6 @@ const Benefits: React.FC<BenefitsProps> = ({ benefits }) => {
             ),
           }}
         />
-=======
-        <Typography variant="h2">Schedule a time with us if you:</Typography>
-        {parse(benefits, {
-          replace: ({ name, children }) => {
-            if (name === "ul")
-              return (
-                <List>
-                  {children.map(({ name, children }: any, i: number) => {
-                    if (name === "li")
-                      return (
-                        <ListItem key={i}>
-                          <ListItemIcon>
-                            <ErrorOutlineIcon />
-                          </ListItemIcon>
-                          <ListItemText primary={children[0].data} />
-                        </ListItem>
-                      );
-                  })}
-                </List>
-              );
-          },
-        })}
->>>>>>> @{-1}
       </Paper>
     </Container>
   );
@@ -68,7 +45,7 @@ export default Benefits;
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    maxWidth: 750,
+    maxWidth: 700,
     margin: "50px auto",
     "& h2": {
       padding: theme.spacing(2),

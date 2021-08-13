@@ -22,44 +22,24 @@ const ResultMessage: React.FC<ResultMessageProps> = ({
 
   const classes = useStyles();
 
-<<<<<<< HEAD
   const [iconStyles, iconTransition] = useSpring(() => ({
     transform: "rotateZ(-40deg)",
     opacity: 0,
-=======
-  const [showIcon, setShowIcon] = React.useState(false);
-  const [showButton, setShowButton] = React.useState(false);
-
-  const iconTransitions = useTransition(showIcon, null, {
->>>>>>> @{-1}
     config: {
       friction: 100,
       tension: 200,
     },
-<<<<<<< HEAD
   }));
 
   const [buttonStyles, buttonTransition] = useSpring(() => ({
     left: -50,
     opacity: 0,
-=======
-    from: { transform: "rotateZ(-40deg)", opacity: 0 },
-    enter: { transform: "rotateZ(0deg)", opacity: 1 },
-  });
-  const buttonTransitions = useTransition(showButton, null, {
->>>>>>> @{-1}
     config: {
       friction: 50,
       mass: 1,
       tension: 200,
     },
-<<<<<<< HEAD
   }));
-=======
-    from: { left: -50, opacity: 0 },
-    enter: { left: 0, opacity: 1 },
-  });
->>>>>>> @{-1}
 
   React.useEffect(() => {
     iconTransition.start({

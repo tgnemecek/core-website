@@ -1,14 +1,14 @@
-import { FormType } from "../types";
+import { Form } from "../types";
 import generateHeaders from "./generateHeaders";
 
-type ReturnType = {
+type Return = {
   id: string;
-  tickets: FormType["tickets"];
+  tickets: Form["tickets"];
 };
 
-type EventCreateType = (form: FormType) => Promise<ReturnType>;
+type EventCreate = (form: Form) => Promise<Return>;
 
-const eventCreate: EventCreateType = async (form) => {
+const eventCreate: EventCreate = async (form) => {
   const res = await fetch("/.netlify/functions/event-create", {
     method: "POST",
     body: JSON.stringify(form),
@@ -21,7 +21,7 @@ const eventCreate: EventCreateType = async (form) => {
     throw new Error(errorMessage);
   }
 
-  const result: ReturnType = await res.json();
+  const result: Return = await res.json();
 
   if (!result.id) {
     throw new Error("Couldn't create product");

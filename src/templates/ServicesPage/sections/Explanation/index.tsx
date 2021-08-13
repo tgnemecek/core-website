@@ -34,7 +34,6 @@ const Explanation: React.FC<ExplanationProps> = ({
         alignItems="center"
       >
         <Grid item xs={12} md={8}>
-<<<<<<< HEAD
           <Markdown
             text={text}
             components={{
@@ -48,9 +47,6 @@ const Explanation: React.FC<ExplanationProps> = ({
               ),
             }}
           />
-=======
-          <Markdown text={text} />
->>>>>>> @{-1}
         </Grid>
         <Grid item xs={12} md={4} className={classes.imgContainer}>
           <Image

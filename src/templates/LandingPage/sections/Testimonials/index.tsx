@@ -1,25 +1,20 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Container, Typography, Grid, IconButton } from "@material-ui/core";
-import { Skeleton } from "@material-ui/lab";
+import { Container, Grid, IconButton } from "@material-ui/core";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
-import VisuallyHidden from "@reach/visually-hidden";
-import { Section, theme } from "components";
+import { Section, Heading, theme } from "components";
 import { shuffleArray } from "utils";
-
-import Testimonial from "./Testimonial";
-import { TestimonialType } from "./types";
+import { Testimonial } from "types";
+import TestimonialItem from "./TestimonialItem";
 
 type TestimonialsProps = {
-  testimonials: TestimonialType[];
+  testimonials: Testimonial[];
 };
 
 const Testimonials: React.FC<TestimonialsProps> = (props) => {
   const classes = useStyles();
-  const [testimonials, setTestimonials] = React.useState(
-    shuffleArray(props.testimonials)
-  );
+  const testimonials = shuffleArray(props.testimonials) as Testimonial[];
   const [index, setIndex] = React.useState(0);
 
   const changeIndex = (value: number) => {
@@ -36,9 +31,7 @@ const Testimonials: React.FC<TestimonialsProps> = (props) => {
   return (
     <Section backgroundColor={theme.palette.primary.main} small={true}>
       <Container>
-        <VisuallyHidden>
-          <Typography variant="h2">Testimonials</Typography>
-        </VisuallyHidden>
+        <Heading hidden>Testimonials</Heading>
         <Grid container className={classes.testimonialWrapper}>
           <Grid item>
             <IconButton onClick={() => changeIndex(-1)}>
@@ -47,7 +40,7 @@ const Testimonials: React.FC<TestimonialsProps> = (props) => {
           </Grid>
           <Grid item className={classes.testimonial}>
             {testimonials && (
-              <Testimonial key={index} {...testimonials[index]} />
+              <TestimonialItem key={index} {...testimonials[index]} />
             )}
           </Grid>
           <Grid item>

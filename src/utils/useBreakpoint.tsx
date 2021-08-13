@@ -3,7 +3,10 @@ import { breakpoints } from "utils";
 
 const breakpointMap = breakpoints.values;
 
-type UseBreakpointState = Record<"xs" | "sm" | "md" | "lg" | "xl", boolean>;
+export type UseBreakpointState = Record<
+  "xs" | "sm" | "md" | "lg" | "xl",
+  boolean
+>;
 
 const useBreakpoint = () => {
   const [state, setState] = React.useState<UseBreakpointState>({

@@ -1,12 +1,12 @@
 import React from "react";
 import { Container, Grid } from "@material-ui/core";
 import { Section } from "components";
-import Member from "./Member";
+import MemberCard from "./MemberCard";
 import MemberModal from "./MemberModal";
-import { MemberType } from "./types";
+import { Member } from "types";
 
 type TeamProps = {
-  members: MemberType[];
+  members: Member[];
 };
 
 const Team: React.FC<TeamProps> = ({ members }) => {
@@ -19,7 +19,7 @@ const Team: React.FC<TeamProps> = ({ members }) => {
           {members.map((member, i) => {
             return (
               <Grid item key={i} xs={12} sm={6} md={4}>
-                <Member
+                <MemberCard
                   {...member}
                   idx={i}
                   setMemberToView={(idx: number) =>

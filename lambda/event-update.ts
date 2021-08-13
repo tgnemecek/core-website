@@ -8,7 +8,7 @@ import {
   NetlifyLambdaHandler,
   EventUpdateBody,
   ZoomMeetingType,
-  TicketType,
+  Ticket,
 } from "./types";
 
 const eventUpdate: NetlifyLambdaHandler = async (event, context) => {
@@ -104,7 +104,7 @@ const eventUpdate: NetlifyLambdaHandler = async (event, context) => {
       promises.push(sendEmails());
     }
 
-    const [updatedTickets] = await Promise.all<TicketType[]>(promises);
+    const [updatedTickets] = await Promise.all<Ticket[]>(promises);
 
     return {
       statusCode: 200,

@@ -4,12 +4,19 @@ import { LandingPageDTO } from "types";
 import {
   Hero,
   EventFeed,
+  PostFeed,
   ContactForm,
   Layout,
   Navbar,
   Footer,
 } from "components";
-import { About, Testimonials, Services, Products, Videos } from "./sections";
+import {
+  AboutSection,
+  Testimonials,
+  Services,
+  Products,
+  Videos,
+} from "./sections";
 
 const LandingPage: React.FC<LandingPageDTO> = ({
   data: {
@@ -25,14 +32,10 @@ const LandingPage: React.FC<LandingPageDTO> = ({
     <Layout>
       <Navbar />
       <main>
-<<<<<<< HEAD
         <Hero />
         <PostFeed title="What's new" />
-=======
-        <Hero hero={hero} />
->>>>>>> @{-1}
         <EventFeed title="Leading Your Life &amp; Work Events" />
-        <About about={about} />
+        <AboutSection about={about} />
         <Testimonials testimonials={testimonials} />
         <Services services={services} />
         <Products products={products} />

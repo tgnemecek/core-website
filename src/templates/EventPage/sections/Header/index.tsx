@@ -9,7 +9,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { Image, Language, EventStatus } from "components";
+import { Image, LanguageDisplay, EventStatus } from "components";
 import { getTintedBackground } from "utils";
 import EventContext from "../../EventContext";
 
@@ -44,7 +44,7 @@ const Header: React.FC = () => {
                 <Grid container justify="space-between">
                   <Grid item>
                     <div className={classes.extra}>
-                      <Language code={language} showFlag flagSize={24} />
+                      <LanguageDisplay code={language} showFlag flagSize={24} />
                       <Typography variant="body1">
                         {isOnline ? "Online" : "In Person"}
                       </Typography>

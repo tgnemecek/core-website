@@ -4,7 +4,7 @@ import { Elements } from "@stripe/react-stripe-js";
 import { Dialog, IconButton, Paper } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import CloseIcon from "@material-ui/icons/Close";
-import { TicketType } from "types";
+import { Ticket } from "types";
 import EventContext from "../../EventContext";
 import TicketsAside from "./TicketsAside";
 import TicketsMain from "./TicketsMain";
@@ -17,7 +17,7 @@ type TicketsModalProps = {
   open: boolean;
 };
 
-type StageType =
+type Stage =
   | "chooseTicket"
   | "checkoutForm"
   | "processingPayment"
@@ -27,8 +27,8 @@ type StageType =
 const TicketsModal: React.FC<TicketsModalProps> = ({ open }) => {
   const { setTicketsModalOpen } = React.useContext(EventContext)!;
 
-  const [stage, setStage] = React.useState<StageType>("chooseTicket");
-  const [chosenTicket, setChosenTicket] = React.useState<TicketType>();
+  const [stage, setStage] = React.useState<Stage>("chooseTicket");
+  const [chosenTicket, setChosenTicket] = React.useState<Ticket>();
 
   const classes = useStyles();
 

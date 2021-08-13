@@ -19,11 +19,7 @@ const TeamPage: React.FC<TeamPageDTO> = ({
     <Layout>
       <Navbar />
       <main>
-<<<<<<< HEAD
         <Hero title={title} small />
-=======
-        <Hero hero={hero} small />
->>>>>>> @{-1}
         <Team members={members} />
         <ContactForm />
       </main>

@@ -1,15 +1,7 @@
 import React from "react";
-import moment from "moment";
-import {
-  Container,
-  Grid,
-  Card,
-  CardContent,
-  CardActions,
-  Typography,
-} from "@material-ui/core";
+import { Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { Markdown } from "components";
+import { Markdown, Heading } from "components";
 import EventContext from "../../EventContext";
 
 const Body: React.FC = () => {
@@ -21,9 +13,7 @@ const Body: React.FC = () => {
 
   return (
     <section className={classes.section}>
-      <Typography variant="h2" className={classes.title}>
-        {title}
-      </Typography>
+      <Heading showLine>{title}</Heading>
       <Typography variant="body1" className={classes.subtitle}>
         {subtitle}
       </Typography>
@@ -41,9 +31,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     padding: "120px 0",
-  },
-  title: {
-    marginLeft: 25,
   },
   subtitle: {
     backgroundColor: theme.palette.grey[400],

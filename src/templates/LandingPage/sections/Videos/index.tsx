@@ -2,21 +2,14 @@ import React, { useMemo } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container } from "@material-ui/core";
 import Fade from "react-reveal/Fade";
-<<<<<<< HEAD
 import { Section, Gallery, Heading, VideoPlayer } from "components";
 import { getVideoId, getVideoImage } from "utils";
 import { Video } from "types";
-=======
-import YouTube from "react-youtube";
-import { Section, Gallery } from "components";
-import { getVideoId } from "utils";
->>>>>>> @{-1}
 
 type VideosProps = {
-  videos: RawVideoType[];
+  videos: Video[];
 };
 
-<<<<<<< HEAD
 const Videos: React.FC<VideosProps> = ({ videos: rawVideos }) => {
   const classes = useStyles();
   const [activeindex, setActiveIndex] = React.useState(0);
@@ -33,45 +26,12 @@ const Videos: React.FC<VideosProps> = ({ videos: rawVideos }) => {
       };
     });
   }, [rawVideos]);
-=======
-type RawVideoType = {
-  title: string;
-  subtitle?: string;
-  link: string;
-};
-
-type VideoType = RawVideoType & {
-  videoId: string;
-  image: string;
-};
-
-const Videos: React.FC<VideosProps> = ({ videos: rawVideos }) => {
-  const classes = useStyles();
-  const [videos, setVideos] = React.useState<VideoType[]>(null);
-  const [activeindex, setActiveIndex] = React.useState(0);
-
-  React.useEffect(() => {
-    setVideos(
-      rawVideos.map(({ title, subtitle, link }) => {
-        const videoId = getVideoId(link);
-        return {
-          videoId,
-          image: `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`,
-          link,
-          title,
-          subtitle,
-        };
-      })
-    );
-  }, []);
->>>>>>> @{-1}
 
   if (!videos) return null;
 
   return (
     <Section className={classes.videos}>
       <Container>
-<<<<<<< HEAD
         <Heading hidden>Videos</Heading>
         <Heading subheading={videos[activeindex].subtitle}>
           <Fade duration={200} key={activeindex}>
@@ -79,27 +39,6 @@ const Videos: React.FC<VideosProps> = ({ videos: rawVideos }) => {
           </Fade>
         </Heading>
         <VideoPlayer videoId={videos[activeindex].videoId} />
-=======
-        <Typography variant="srOnly" component="h2">
-          Videos
-        </Typography>
-        <Fade duration={200} key={activeindex}>
-          <Typography variant="h2">{videos[activeindex].title}</Typography>
-          <Typography
-            variant="subtitle1"
-            component="p"
-            className={classes.subtitle}
-          >
-            {videos[activeindex].subtitle}
-          </Typography>
-        </Fade>
-        <div className={classes.videoWrapper}>
-          <YouTube
-            className={classes.video}
-            videoId={videos[activeindex].videoId}
-          />
-        </div>
->>>>>>> @{-1}
         <Gallery
           images={videos.map(({ image }) => image)}
           activeIndex={activeindex}
