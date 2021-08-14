@@ -26,7 +26,7 @@ const Hero: React.FC<HeroProps> = ({ title, image, small = false }) => {
   const cldImage = useCloudinary(image || heroImage || "");
 
   const memoizedImg = useMemo(() => {
-    if (!cldImage) return null;
+    if (!cldImage || typeof window === "undefined") return null;
 
     const cropHeight = small ? SMALL_HEIGHT : window.innerHeight;
 
