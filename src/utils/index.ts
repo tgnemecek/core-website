@@ -13,6 +13,7 @@ export { default as verifyEmail } from "./verifyEmail";
 // Hooks:
 export { default as useBreakpoint } from "./useBreakpoint";
 export type { UseBreakpointState } from "./useBreakpoint";
+export { default as useCloudinary } from "./useCloudinary";
 export { default as useEventFeed } from "./useEventFeed";
 export { default as usePostFeed } from "./usePostFeed";
 export { default as useGeneralSettings } from "./useGeneralSettings";
