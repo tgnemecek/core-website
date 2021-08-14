@@ -5,12 +5,11 @@ import {
   Typography,
   Card,
   CardActionArea,
-  CardMedia,
   CardContent,
 } from "@material-ui/core";
 import { Link } from "gatsby";
 import removeMarkdown from "markdown-to-text";
-import { Ellipsis } from "components";
+import { Ellipsis, Image } from "components";
 import { Post } from "types";
 import { usePostImage, useBreakpoint, UseBreakpointState } from "utils";
 
@@ -34,6 +33,12 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
 
   const thumbnail = usePostImage(post);
 
+  const imageSize = () => {
+    if (md) return 400;
+    if (sm) return 720;
+    return 420;
+  };
+
   return (
     <Card className={classes.card} elevation={3} square>
       <CardActionArea
@@ -42,11 +47,11 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
         className={classes.cardActionArea}
       >
         <div className={classes.imageWrapper}>
-          <CardMedia
-            image={thumbnail}
+          <Image
+            src={thumbnail}
             className={classes.image}
-            title="Post"
-            component="img"
+            width={imageSize()}
+            alt={`Post created on ${moment(date).format("MMM D")}`}
           />
         </div>
         <CardContent>

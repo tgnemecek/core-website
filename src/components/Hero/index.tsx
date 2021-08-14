@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useLayoutEffect, useMemo } from "react";
 import parse from "html-react-parser";
+import { AdvancedImage, placeholder } from "@cloudinary/react";
+import { crop, scale } from "@cloudinary/base/actions/resize";
 import Fade from "react-reveal/Fade";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography, Grid, Button } from "@material-ui/core";
 import logo from "src/img/logo.png";
 import { Image, SmoothScroll } from "components";
-import { useGeneralSettings } from "utils";
+import { useGeneralSettings, useCloudinary, useBreakpoint } from "utils";
 
 type HeroProps = {
   title?: string;
@@ -13,19 +15,44 @@ type HeroProps = {
   small?: boolean;
 };
 
+const SMALL_HEIGHT = 400;
+
 const Hero: React.FC<HeroProps> = ({ title, image, small = false }) => {
   const classes = useStyles({ small })();
+  const breakpoints = useBreakpoint();
 
   const { brandName, heroImage } = useGeneralSettings();
 
+  const cldImage = useCloudinary(image || heroImage || "");
+
+  const memoizedImg = useMemo(() => {
+    if (!cldImage) return null;
+
+    const cropHeight = small ? SMALL_HEIGHT : window.innerHeight;
+
+    return cldImage.resize(scale().width(1920)).resize(
+      crop()
+        .width(window.innerWidth + 300)
+        .height(cropHeight)
+    );
+  }, [breakpoints, cldImage]);
+
+  const commonImageProps = {
+    className: classes.image,
+    alt: "The main CORE Elements",
+  };
+
   return (
     <section className={classes.hero} id="hero">
-      <Image
-        className={classes.image}
-        src={image || heroImage}
-        width={1920}
-        alt="Main illustration of the page"
-      />
+      {memoizedImg ? (
+        <AdvancedImage
+          cldImg={memoizedImg}
+          plugins={[placeholder("blur")]}
+          {...commonImageProps}
+        />
+      ) : (
+        <img src={image || heroImage || ""} {...commonImageProps} />
+      )}
       <div className={classes.logoBarBackground}>
         <Container>
           <Grid container className={classes.logoBar}>
@@ -71,7 +98,7 @@ type UseStylesProps = {
 const useStyles = ({ small }: UseStylesProps) =>
   makeStyles((theme) => ({
     hero: {
-      height: small ? "400px" : "100vh",
+      height: small ? SMALL_HEIGHT : "100vh",
       display: "flex",
       alignItems: small ? "flex-start" : "center",
       justifyContent: "center",
@@ -108,7 +135,7 @@ const useStyles = ({ small }: UseStylesProps) =>
       position: "fixed",
       zIndex: -1,
       top: 0,
-      height: "100%",
+      height: small ? SMALL_HEIGHT : "100%",
       width: "100%",
       maxWidth: "100vw",
       objectFit: "cover",

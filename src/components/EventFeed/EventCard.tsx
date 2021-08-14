@@ -5,12 +5,10 @@ import {
   Typography,
   Card,
   CardActionArea,
-  CardMedia,
   CardContent,
-  Chip,
 } from "@material-ui/core";
 import { Link } from "gatsby";
-import { LanguageDisplay, EventStatus } from "components";
+import { LanguageDisplay, EventStatus, Image } from "components";
 import { Event } from "types";
 import { useBreakpoint } from "utils";
 
@@ -27,6 +25,14 @@ const EventCard: React.FC<EventProps> = ({ event }) => {
   const breakpoints = useBreakpoint();
   const classes = useStyles({ breakpoints })();
 
+  const imageSize = () => {
+    const { md, sm } = breakpoints;
+
+    if (md) return 400;
+    if (sm) return 720;
+    return 420;
+  };
+
   return (
     <Card className={classes.card} elevation={3} square>
       <CardActionArea
@@ -35,11 +41,11 @@ const EventCard: React.FC<EventProps> = ({ event }) => {
         className={classes.cardActionArea}
       >
         <div className={classes.imageWrapper}>
-          <CardMedia
-            image={image}
+          <Image
+            src={image}
             className={classes.image}
-            title="Event"
-            component="img"
+            width={imageSize()}
+            alt={`Event that happens on ${moment(date).format("MMM D")}`}
           />
         </div>
         <CardContent className={classes.cardContent}>
