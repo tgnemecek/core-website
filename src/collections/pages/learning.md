@@ -25,7 +25,7 @@ explanation:
 
 
     - - -
-  image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1629041321/CORE_slide_cropped_l8deoi.jpg
+  image: https://res.cloudinary.com/core-coaching-consulting/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1629042515/CORE_resized_eivptv.jpg
 benefits: >-
   * **Create business Change** that is systemic, holistic, self-directed,
   centered in CORE values, and integrated/aligned from the inside-out
