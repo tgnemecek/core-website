@@ -22,8 +22,8 @@ services:
       certifications.
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1598279507/Core_Coaching_cropped2_i4vxi2.jpg
     name: coaching
-  - title: CORE Learning
-    description: Educational services for teachers, students and adults in transition.
+  - title: CORE Business
+    description: For companies, leaders, and teams in transition.
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1598276673/Core_learning_4_1_u3aepv.jpg
     name: learning
 testimonials:
