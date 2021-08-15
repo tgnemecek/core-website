@@ -20,7 +20,7 @@ explanation:
 
     4. Employee Effectiveness [](mailto:sseivert@thecoreporation.com)
 
-       [Contact us](mailto:sseivert@thecoreporation.com) to get more information about implementing lasting organizational, team and leadership changes. We offer direct one-on-one interventions and excellent business seminars to increase Productivity, reduce on-the-job Stress, eliminate work procrastination, and encourage everyone, at every level of your company, to take full responsibiity for outcomes. 
+       [Contact us](mailto:sseivert@thecoreporation.com) to get more information about implementing lasting organizational, team, and leadership changes. We offer one-on-one consulting and coaching interventions, plus excellent business seminars to increase Productivity, reduce on-the-job Stress, eliminate procrastination for difficult tasks, and encourage every person, at every level of your company, to take full responsibility for outcomes. 
 
     - - -
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1629033274/CORE_eggkig.jpg
