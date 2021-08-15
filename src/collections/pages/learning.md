@@ -5,8 +5,8 @@ explanation:
   text: >-
     **We help businesses change from the Core** by using T*he Balancing Act's*
     holistic, systemic interventions and implementing our agile, pragmatic
-    tools. In this way we help you change your teams, leaders, and whole system
-    from the inside out.
+    tools. In this way, CCC helps organizations align and improve their teams,
+    leaders, and systems from the inside out.
 
 
     > **What we Do**
@@ -20,7 +20,9 @@ explanation:
 
     4. Employee Effectiveness [](mailto:sseivert@thecoreporation.com)
 
-       [Contact us](mailto:sseivert@thecoreporation.com) to get more information about implementing lasting organizational, team, and leadership changes. We offer one-on-one consulting and coaching interventions, plus excellent business seminars to increase Productivity, reduce on-the-job Stress, eliminate procrastination for difficult tasks, and encourage every person, at every level of your company, to take full responsibility for outcomes. 
+
+    [Contact us](mailto:sseivert@thecoreporation.com) to get more information about implementing lasting organizational, team, and leadership changes. We offer one-on-one consulting and coaching interventions, plus excellent business seminars to increase Productivity, reduce on-the-job Stress, eliminate procrastination for difficult tasks, and encourage every person, at every level of the company, to take full responsibility for outcomes. 
+
 
     - - -
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1629033274/CORE_eggkig.jpg
