@@ -25,7 +25,7 @@ explanation:
 
 
     - - -
-  image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1629033274/CORE_eggkig.jpg
+  image: https://www.dropbox.com/s/gfn7di4z4ixlvag/CCC%205th%20Draft%20Business%20Presentation_06-17-2021.pdf?dl=0
 benefits: |-
   * Want to help your students overcome anxiety, frustration, feeling stuck.
   * Increase their clarity to create a bright future.
