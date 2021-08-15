@@ -9,7 +9,7 @@ explanation:
     leaders, and systems from the inside out.
 
 
-    > **What we Do**
+    > **What we Can Do for You**
 
 
     1. Executive Coaching & Leadership Mastery
@@ -21,7 +21,7 @@ explanation:
     4. Employee Effectiveness [](mailto:sseivert@thecoreporation.com)
 
 
-    [Contact us](mailto:sseivert@thecoreporation.com) to get more information about implementing lasting organizational, team, and leadership changes. We offer one-on-one consulting and coaching interventions, plus excellent business seminars to increase Productivity, reduce on-the-job Stress, eliminate procrastination for difficult tasks, and encourage every person, at every level of the company, to take full responsibility for outcomes. 
+    [Contact us](sseivert@thecoreporation.com) to get more information about implementing lasting organizational, team, and leadership changes. We offer one-on-one consulting and coaching interventions, plus excellent business seminars to increase Productivity, reduce on-the-job Stress, eliminate procrastination for difficult tasks, and encourage every person, at every level of the company, to take full responsibility for outcomes. 
 
 
     - - -
