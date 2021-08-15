@@ -26,11 +26,13 @@ explanation:
 
     - - -
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1629041321/CORE_slide_cropped_l8deoi.jpg
-benefits: |-
-  * Want to help your students overcome anxiety, frustration, feeling stuck.
-  * Increase their clarity to create a bright future.
-  * Help them become more motivated to breakthrough obstacles.
-  * Make it easier for them to ask for help and form healthy relationships.
-  * Show them how to form new habits to improve health, learning, finances.
-  * Guide them create a happy life by giving their native gifts to the world.
+benefits: >-
+  * **Create business Change** that is systemic, holistic, self-directed,
+  centered in CORE values, and integrated/aligned from the inside-out
+
+  * **Make Changes Organic:** That is, changes that are natural, easy-to-understand, and based on principles that have historically proven effective for individuals, leaders, teams & organizations
+
+  * **Reduce** Noise (inside or outside the system), conflict, stress, second-guessing, wasted effort, long-standing obstacles & self-sabotage.
+
+  * **And do so with Ease:** The Balancing Act moves organizations, teams, and leaders from unease or disease into Ease, Flow, Synergy--and sets the direction of an upward evolutionary spiral.
 ---
