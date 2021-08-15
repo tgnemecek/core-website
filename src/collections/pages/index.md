@@ -14,12 +14,13 @@ about:
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1595111411/logo_feamvb.png
 services:
   - title: CORE Leading
-    description: "For leaders who want to transform themselves, their teams & companies. "
-    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1598279113/Core_Leading_2_dh5xd8.jpg
+    description: "For leaders who want to transform themselves, their teams &
+      companies from the inside out. "
+    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1629034127/business_high_5s_u2ze7k.jpg
     name: leading
   - title: CORE Coaching
-    description: Transformational Coaching services and professional coaching
-      certifications.
+    description: Transformational Coaching services for executives and individuals
+      in transition.
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1598279507/Core_Coaching_cropped2_i4vxi2.jpg
     name: coaching
   - title: CORE Business
