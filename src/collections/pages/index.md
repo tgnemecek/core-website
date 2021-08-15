@@ -24,7 +24,7 @@ services:
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1598279507/Core_Coaching_cropped2_i4vxi2.jpg
     name: coaching
   - title: CORE Business
-    description: For companies, leaders, and teams in transition.
+    description: For companies, leaders, and teams who want lasting, systemic change.
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1629034103/two_business_men_ygvehx.jpg
     name: learning
 testimonials:
