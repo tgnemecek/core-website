@@ -27,8 +27,9 @@ explanation:
     - - -
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1629034103/two_business_men_ygvehx.jpg
 benefits: >-
-  * **Create business Change** that is systemic, holistic, self-directed,
-  centered in CORE values, and integrated/aligned from the inside-out
+  * **Want to Create Business Change** that is systemic, holistic,
+  self-directed, centered in CORE values, and integrated/aligned from the
+  inside-out
 
   * **Make Changes Organic:** That is, changes that are natural, easy-to-understand, and based on principles that have historically proven effective for individuals, leaders, teams & organizations
 
