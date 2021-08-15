@@ -3,30 +3,25 @@ collection: pages
 title: CORE Learning
 explanation:
   text: >-
-    **Teachers**, **Students** and **Parents**: Use *The Balancing Act's*
-    holistic, systemic learning methodology and pragmatic tools to meet the
-    extraordinary challenges of this topsy-turvy world where Teachers have
-    become front-line workers, Parents are now at-home teachers, and Students
-    are struggling to continue learning.
+    **We help businesses change from the Core** by using T*he Balancing Act's*
+    holistic, systemic interventions and implementing our agile, pragmatic
+    tools.
 
 
-    > **For Free:**
+    > **What we Do**
 
 
-    1. [Assessment](http://profiles.thecoreporation.com/sample/welcome) of your greatest strength and liability;
+    1. Executive Coaching & Leadership Mastery
 
-    2. Special Learning Report;
+    2. Team development
 
-    3. SOS: Switch Off Stress app.
+    3. Organizational Change implementation
 
+    4. Employee Effectiveness [](mailto:sseivert@thecoreporation.com)
 
-    [Go here](https://core.coachesconsole.com/core-learning-services_0.html) to learn more about Core Learning's many excellent programs. [Contact us](mailto:sseivert@thecoreporation.com) to get more information or take a **Premium Profile** to get a full report on your personal strengths and weaknesses. Attend one of our **excellent seminars**: Productivity, Stress, Prospering, a Leading Your Life & Work seminar or the 3-month implementation program. And please **donate** (below) so we can bring TBA programs to at-risk youth around the world.
-
+       [Contact us](mailto:sseivert@thecoreporation.com) to get more information about implementing lasting organizational, team and leadership changes. We offer direct one-on-one interventions and **excellent business seminars to increase** Productivity, reduce on-the-job Stress, eliminate work procrastination, and encourage everyone, at every level of your business to take full responsibiity for outcomes. 
 
     - - -
-
-
-    **Become a Certified Teacher** who enriches students with TBA programs such as *The Compass Course*. [Send us a message](mailto:sseivert@thecoreporation.com) to find out more.
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600804117/abdelkader-ft-CcZzQcYGYC4-unsplash_jvaahu.jpg
 benefits: |-
   * Want to help your students overcome anxiety, frustration, feeling stuck.
