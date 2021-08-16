@@ -3,36 +3,35 @@ collection: pages
 title: CORE Learning
 explanation:
   text: >-
-    **Teachers**, **Students** and **Parents**: Use *The Balancing Act's*
-    holistic, systemic learning methodology and pragmatic tools to meet the
-    extraordinary challenges of this topsy-turvy world where Teachers have
-    become front-line workers, Parents are now at-home teachers, and Students
-    are struggling to continue learning.
+    **We help businesses change from the Core** by using the holistic system of
+    *The Balancing Act* to show them where they are in balance versus out of
+    balance—and why. With this new clarity, companies can use our pragmatic
+    tools and logical, agile strategy to ensure that their employees, leaders,
+    teams, departments, and the whole system can implement sustainable,
+    self-directed improvements over time.
 
 
-    > **For Free:**
+    > **What we Can Do for You**
 
 
-    1. [Assessment](http://profiles.thecoreporation.com/sample/welcome) of your greatest strength and liability;
+    1. Executive Coaching & Leadership Mastery
 
-    2. Special Learning Report;
+    2. Team development
 
-    3. SOS: Switch Off Stress app.
+    3. Organizational Change implementation
 
-
-    [Go here](https://core.coachesconsole.com/core-learning-services_0.html) to learn more about Core Learning's many excellent programs. [Contact us](mailto:sseivert@thecoreporation.com) to get more information or take a **Premium Profile** to get a full report on your personal strengths and weaknesses. Attend one of our **excellent seminars**: Productivity, Stress, Prospering, a Leading Your Life & Work seminar or the 3-month implementation program. And please **donate** (below) so we can bring TBA programs to at-risk youth around the world.
-
-
-    - - -
+    4. Employee Effectiveness [](mailto:sseivert@thecoreporation.com)
 
 
-    **Become a Certified Teacher** who enriches students with TBA programs such as *The Compass Course*. [Send us a message](mailto:sseivert@thecoreporation.com) to find out more.
+    [Contact us](sseivert@thecoreporation.com) to get more information about implementing lasting organizational, team, and leadership changes that will powerfully transform your company from the inside out. We offer one-on-one executive coaching, leadership consultations, plus excellent business seminars that are guaranteed to increase productivity, reduce on-the-job stress, eliminate resistance and procrastination for tackling difficult tasks, and encourage every person, at every level of the company, to take full responsibility for outcomes.
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600804117/abdelkader-ft-CcZzQcYGYC4-unsplash_jvaahu.jpg
-benefits: |-
-  * Want to help your students overcome anxiety, frustration, feeling stuck.
-  * Increase their clarity to create a bright future.
-  * Help them become more motivated to breakthrough obstacles.
-  * Make it easier for them to ask for help and form healthy relationships.
-  * Show them how to form new habits to improve health, learning, finances.
-  * Guide them create a happy life by giving their native gifts to the world.
+benefits: >-
+  * **C: Want to Create Change** that is systemic, holistic, self-directed,
+  centered in CORE values, and integrated/aligned from the inside-out
+
+  * **O: Make Changes Organic:** That is, a transformation that is natural, easy-to-understand, and based on principles that have historically proven effective for individuals, leaders, teams & organizations
+
+  * **R: Reduce** Noise (inside or outside the person or system), conflict, stress, second-guessing, wasted effort, long-standing obstacles & avoidable self-sabotage.
+
+  *
 ---
