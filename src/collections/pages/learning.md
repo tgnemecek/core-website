@@ -24,7 +24,7 @@ explanation:
 
 
     [Contact us](sseivert@thecoreporation.com) to get more information about implementing lasting organizational, team, and leadership changes that will powerfully transform your company from the inside out. We offer one-on-one executive coaching, leadership consultations, plus excellent business seminars that are guaranteed to increase productivity, reduce on-the-job stress, eliminate resistance and procrastination for tackling difficult tasks, and encourage every person, at every level of the company, to take full responsibility for outcomes.
-  image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1629033274/CORE_eggkig.jpg
+  image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1629150140/business_ymjyh3.jpg
 benefits: >-
   * **C: Want to Create Change** that is systemic, holistic, self-directed,
   centered in CORE values, and integrated/aligned from the inside-out
