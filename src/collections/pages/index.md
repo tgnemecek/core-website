@@ -15,7 +15,7 @@ about:
 services:
   - title: CORE Leading
     description: "For leaders who want to transform themselves, their teams & companies. "
-    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1598279113/Core_Leading_2_dh5xd8.jpg
+    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1629034127/business_high_5s_u2ze7k.jpg
     name: leading
   - title: CORE Coaching
     description: Transformational Coaching services and professional coaching
