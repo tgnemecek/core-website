@@ -33,7 +33,7 @@ explanation:
 
 
     Check out **practical programs** for yourself and your employees: Improve Productivity, reduce Procrastination, eliminate Stress, and build core skills to super-charge their effectiveness and your leadership power.
-  image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1615059260/2_people_on_Mountain_summit_fojmga.jpg
+  image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1629034127/business_high_5s_u2ze7k.jpg
 benefits: >-
   * Feel frustrated, anxious about all the problems you have to fix ASAP.
 
