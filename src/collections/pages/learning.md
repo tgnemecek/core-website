@@ -3,12 +3,12 @@ collection: pages
 title: CORE Learning
 explanation:
   text: >-
-    **We help businesses change from the Core!** Core Coaching & Consulting uses
-    the holistic system of *The Balancing Act* so businesses can clearly see
-    where they are in balance versus out of balance—and why. With this new
-    clarity, companies can use our pragmatic tools and logical, agile strategy
-    to ensure that their leaders, teams, departments, and the whole system can
-    implement sustainable improvements over time.
+    **We help businesses change from the Core** by using the holistic system of
+    *The Balancing Act* to show them where they are in balance versus out of
+    balance—and why. With this new clarity, companies can use our pragmatic
+    tools and logical, agile strategy to ensure that their employees, leaders,
+    teams, departments, and the whole system can implement sustainable,
+    self-directed improvements over time.
 
 
     > **What we Can Do for You**
