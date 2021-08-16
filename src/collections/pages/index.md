@@ -18,12 +18,12 @@ services:
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1629034127/business_high_5s_u2ze7k.jpg
     name: leading
   - title: CORE Coaching
-    description: Transformational Coaching services for career and life transitions.
+    description: Transformational Coaching to ensure successful career and life transitions.
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1598279507/Core_Coaching_cropped2_i4vxi2.jpg
     name: coaching
   - title: CORE Business
-    description: Helping Companies Navigate these Difficult Times
-    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1598276673/Core_learning_4_1_u3aepv.jpg
+    description: Helping Organizations, Teams & Leaders Navigate these Difficult Times
+    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1629150140/business_ymjyh3.jpg
     name: learning
 testimonials:
   - testimonial: During a crossroads in my career, Sharon coached me to overcome
