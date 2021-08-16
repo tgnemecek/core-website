@@ -24,7 +24,7 @@ explanation:
 
 
     [Contact us](sseivert@thecoreporation.com) to get more information about implementing lasting organizational, team, and leadership changes that will powerfully transform your company from the inside out. We offer one-on-one executive coaching, leadership consultations, plus excellent business seminars that are guaranteed to increase productivity, reduce on-the-job stress, eliminate resistance and procrastination for tackling difficult tasks, and encourage every person, at every level of the company, to take full responsibility for outcomes.
-  image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600804117/abdelkader-ft-CcZzQcYGYC4-unsplash_jvaahu.jpg
+  image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1629033274/CORE_eggkig.jpg
 benefits: >-
   * **C: Want to Create Change** that is systemic, holistic, self-directed,
   centered in CORE values, and integrated/aligned from the inside-out
@@ -33,5 +33,5 @@ benefits: >-
 
   * **R: Reduce** Noise (inside or outside the person or system), conflict, stress, second-guessing, wasted effort, long-standing obstacles & avoidable self-sabotage.
 
-  *
+  * **E: And to do so with Ease:** The Balancing Act moves organizations, teams, and leaders from unease or disease into lasting Ease, Flow, Synergy--and sets the direction of an upward evolutionary spiral.
 ---
