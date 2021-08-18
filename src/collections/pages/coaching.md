@@ -5,7 +5,7 @@ explanation:
   text: >-
     **Core Coaching & Consulting will provide you with an expert coach** to
     discover where you are in balance or out-of-balance, then support you in
-    taking full command of your life, work, and relationships. With *The
+    taking full control of your life, work, and relationships. With *The
     Balancing Act's* holistic strategy and multi-dimensional pragmatic tools,
     your coach will guide you safely through difficult transitions and past
     obstacles until you become the confident leader of every aspect of your life
