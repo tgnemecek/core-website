@@ -5,10 +5,10 @@ hero:
   title: Announcing New SOS Program
 about:
   text: Core Coaching & Consulting, LLC uses the holistic system of The Balancing
-    Act with leaders, organizations, and individuals to improve their Balance,
+    Act with leaders, businesses, and individuals to improve their Balance,
     well-being, effectiveness, and flow. We create lasting transformation with
-    powerful multi-dimensional tools that reveal where systems or people are
-    out-of-balance, then implement pragmatic processes to remove barriers so
+    powerful multi-dimensional tools that reveal where organizations or people
+    are out-of-balance, then implement pragmatic processes to remove barriers so
     they can re-balance themselves from the inside out. Our interventions are
     rooted in science, data, experience, and the ancient healing model of the 5
     elements & Synergy.
