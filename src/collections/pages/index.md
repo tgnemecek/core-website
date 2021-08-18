@@ -23,7 +23,7 @@ services:
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1598279507/Core_Coaching_cropped2_i4vxi2.jpg
     name: coaching
   - title: CORE Business
-    description: Helping Organizations, Teams & Leaders Navigate these Difficult Times
+    description: Helping Organizations, Teams & Leaders Navigate Difficult Times
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1629150140/business_ymjyh3.jpg
     name: learning
 testimonials:
