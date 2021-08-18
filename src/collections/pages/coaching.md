@@ -25,7 +25,7 @@ explanation:
     3. SOS: Switch Off Stress app (1-2 min relief at your fingertips).
 
 
-    You can also take a **Premium Profile** (below) for a comprehensive report on your strengths and weaknesses, plus specific ways to improve. And check out our **excellent seminars:** *Improving Productivity, Removing Stress, Increasing Prosperity, Reducing Procrastination*, and the *Leading Your Life and Work* coaching program. Click the message link below to ask questions & explore how CORE Coaching could transform your life, work & relationships, now and forever.
+    You can also take a **Premium Profile** for a comprehensive report on your strengths and weaknesses, plus specific ways to improve. And check out our **excellent seminars:** *Improving Productivity, Removing Stress, Increasing Prosperity, Reducing Procrastination*, and the *Leading Your Life and Work* coaching program. Click the message link below to ask questions & explore how CORE Coaching could transform your life, work & relationships, now and forever.
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600816113/Coaching_cropped_ibup02.jpg
 benefits: |-
   * Feel Stuck, anxious, frustrated, bored; lack direction; job is poor fit.
