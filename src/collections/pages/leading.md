@@ -3,9 +3,9 @@ collection: pages
 title: CORE Leading
 explanation:
   text: >-
-    **Why face leadership challenges alone? Get expert business Partners** from
-    our international team who will provide a great ROI to you and your company
-    by helping you solve resistant problems, leverage new opportunities,
+    **Why face leadership challenges alone? Get an expert business Partner**
+    from our international team who will provide a great ROI to you and your
+    company by helping you solve resistant problems, leverage new opportunities,
     rejuvenate employee engagement, develop core skills, bypass derailers, and
     remove barriers that could sabotage success. 
 
@@ -26,7 +26,7 @@ explanation:
     **FOR A GREAT VALUE:**
 
 
-    Take a **Premium Profile** (below) for a full report on your leader strengths & weaknesses. 
+    Take a **Premium Profile** (below) for a full report on your leadership strengths & weaknesses. 
 
 
     [Contact us](mailto:sseivert@thecoreporation.com) to speak directly to a member of our Core Business Team. 
@@ -41,7 +41,9 @@ benefits: >-
 
   * Are not aligned with other leaders or team members about the best actions to take.
 
-  * Are not communicating as powerfully or confidently as wish.
+  * Can not communicate as powerfully or confidently as wish.
 
   * Are losing money; have inefficient processes or inadequate capital.
+
+  * You and others are working too hard for the results you get.
 ---
