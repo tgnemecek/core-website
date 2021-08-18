@@ -25,7 +25,7 @@ explanation:
     [Contact us](sseivert@thecoreporation.com) to get more information about powerfully transforming your company from the CORE. We offer one-on-one executive coaching, leadership consultations, plus excellent business seminars that are guaranteed to increase productivity, reduce on-the-job stress, eliminate resistance and procrastination for tackling difficult tasks, and encourage every person, at every level of the company, to take full responsibility for outcomes.
 
 
-    Click the message link below to explore how CCC could transform your company, team & leadership.
+    Click the message link below to explore what we can do for you.
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1629150140/business_ymjyh3.jpg
 benefits: >-
   * **C: Want to Create Change** that is systemic, holistic, self-directed,
