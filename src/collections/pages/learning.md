@@ -3,12 +3,12 @@ collection: pages
 title: CORE Learning
 explanation:
   text: >-
-    **We help businesses change from the Core** by using the holistic system of
-    *The Balancing Act* to show them where they are in balance versus out of
-    balance—and why. With this new clarity, companies can use our pragmatic
+    **We help businesses implement sustainable change** by using the holistic
+    system of *The Balancing Act* to assess where they are in balance versus out
+    of balance—and why. With this new clarity, companies can use our pragmatic
     tools and logical, agile strategy to ensure that their employees, leaders,
-    teams, departments, and the whole system can implement sustainable,
-    self-directed improvements over time.
+    teams, departments, and the whole system can implement self-directed
+    improvements over time.
 
 
     > **What We Can Do for You**
