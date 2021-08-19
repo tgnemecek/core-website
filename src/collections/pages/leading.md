@@ -29,7 +29,7 @@ explanation:
     Take a **Premium Profile** (below) for a full report on your leadership strengths & weaknesses. 
 
 
-    [Contact us](mailto:sseivert@thecoreporation.com) to speak directly to a member of our Core Business Team. 
+    [Contact us](/leading#contact-form) to speak directly to a member of our Core Business Team. 
 
 
     Check out **practical programs** for yourself and your employees: Improve Productivity, reduce Procrastination, eliminate Stress, and build core skills to super-charge their effectiveness and your leadership power.
