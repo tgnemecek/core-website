@@ -27,7 +27,7 @@ explanation:
 
 
     - - -
-  image: https://res.cloudinary.com/core-coaching-consulting/image/upload/c_thumb,w_200,g_face/v1629042515/CORE_resized_eivptv.jpg
+  image: https://res.cloudinary.com/core-coaching-consulting/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1629577636/BusinessPage_for_Website_bwrwyb.jpg
 benefits: >-
   * **C: Want to Create Change** that is systemic, holistic, self-directed,
   centered in CORE values, and integrated/aligned from the inside-out
