@@ -1,10 +1,8 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Container, Typography, Grid } from "@material-ui/core";
+import { Container, Typography } from "@material-ui/core";
 import Fade from "react-reveal/Fade";
 import { Section, Link } from "components";
-// import { Link } from "gatsby";
-import streak from "src/img/streak1.jpg";
 import { About } from "types";
 import AboutImage from "./AboutImage";
 
@@ -12,9 +10,7 @@ type AboutSectionProps = {
   about: About;
 };
 
-const AboutSection: React.FC<AboutSectionProps> = ({
-  about: { text, image },
-}) => {
+const AboutSection: React.FC<AboutSectionProps> = ({ about: { text } }) => {
   const classes = useStyles();
 
   return (

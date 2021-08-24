@@ -1,5 +1,4 @@
 import React from "react";
-import loadable from "@loadable/component";
 import { graphql } from "gatsby";
 import { LandingPageDTO } from "types";
 import {
@@ -11,12 +10,13 @@ import {
   Navbar,
   Footer,
 } from "components";
-
-const AboutSection = loadable(() => import("./sections/AboutSection"));
-const Testimonials = loadable(() => import("./sections/Testimonials"));
-const Services = loadable(() => import("./sections/Services"));
-const Products = loadable(() => import("./sections/Products"));
-const Videos = loadable(() => import("./sections/Videos"));
+import {
+  AboutSection,
+  Testimonials,
+  Services,
+  Products,
+  Videos,
+} from "./sections";
 
 const LandingPage: React.FC<LandingPageDTO> = ({
   data: {
