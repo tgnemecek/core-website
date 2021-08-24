@@ -23,6 +23,7 @@
     "fontsource-roboto": "^4.0.0",
     "gatsby": "3.11.0",
     "gatsby-image": "^3.10.0",
+    "gatsby-plugin-loadable-components-ssr": "^3.3.0",
     "gatsby-plugin-material-ui": "^3.0.1",
     "gatsby-plugin-netlify": "^3.10.0",
     "gatsby-plugin-netlify-cms": "^5.10.0",

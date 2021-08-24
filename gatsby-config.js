@@ -19,6 +19,7 @@ module.exports = {
     FAST_REFRESH: true,
   },
   plugins: [
+    "gatsby-plugin-loadable-components-ssr",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-material-ui",
     "gatsby-plugin-sass",

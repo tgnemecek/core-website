@@ -1,4 +1,5 @@
 import React, { Suspense } from "react";
+import loadable from "@loadable/component";
 import { graphql } from "gatsby";
 import { LandingPageDTO } from "types";
 import {
@@ -11,11 +12,11 @@ import {
   Footer,
 } from "components";
 
-const AboutSection = React.lazy(() => import("./sections/AboutSection"));
-const Testimonials = React.lazy(() => import("./sections/Testimonials"));
-const Services = React.lazy(() => import("./sections/Services"));
-const Products = React.lazy(() => import("./sections/Products"));
-const Videos = React.lazy(() => import("./sections/Videos"));
+const AboutSection = loadable(() => import("./sections/AboutSection"));
+const Testimonials = loadable(() => import("./sections/Testimonials"));
+const Services = loadable(() => import("./sections/Services"));
+const Products = loadable(() => import("./sections/Products"));
+const Videos = loadable(() => import("./sections/Videos"));
 
 const LandingPage: React.FC<LandingPageDTO> = ({
   data: {
