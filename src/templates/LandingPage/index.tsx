@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { graphql } from "gatsby";
 import { LandingPageDTO } from "types";
 import {
@@ -10,13 +10,12 @@ import {
   Navbar,
   Footer,
 } from "components";
-import {
-  AboutSection,
-  Testimonials,
-  Services,
-  Products,
-  Videos,
-} from "./sections";
+
+const AboutSection = React.lazy(() => import("./sections/AboutSection"));
+const Testimonials = React.lazy(() => import("./sections/Testimonials"));
+const Services = React.lazy(() => import("./sections/Services"));
+const Products = React.lazy(() => import("./sections/Products"));
+const Videos = React.lazy(() => import("./sections/Videos"));
 
 const LandingPage: React.FC<LandingPageDTO> = ({
   data: {
@@ -28,6 +27,7 @@ const LandingPage: React.FC<LandingPageDTO> = ({
   },
 }) => {
   const { about, testimonials, products, services, videos } = landing;
+
   return (
     <Layout>
       <Navbar />
@@ -35,11 +35,13 @@ const LandingPage: React.FC<LandingPageDTO> = ({
         <Hero />
         <PostFeed title="What's new" />
         <EventFeed title="Leading Your Life &amp; Work Events" />
-        <AboutSection about={about} />
-        <Testimonials testimonials={testimonials} />
-        <Services services={services} />
-        <Products products={products} />
-        <Videos videos={videos} />
+        <Suspense fallback={<div>LOADING...</div>}>
+          <AboutSection about={about} />
+          <Testimonials testimonials={testimonials} />
+          <Services services={services} />
+          <Products products={products} />
+          <Videos videos={videos} />
+        </Suspense>
         <ContactForm />
       </main>
       <Footer />
