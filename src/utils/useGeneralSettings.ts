@@ -8,6 +8,7 @@ const useGeneralSettings = () => {
         frontmatter {
           generalSettings {
             brandName
+            logo
             heroImage
             refundPolicy
           }

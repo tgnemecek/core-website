@@ -1,13 +1,12 @@
-import React, { useLayoutEffect, useMemo } from "react";
+import React from "react";
 import parse from "html-react-parser";
-import { AdvancedImage, placeholder } from "@cloudinary/react";
-import { crop, scale } from "@cloudinary/base/actions/resize";
 import Fade from "react-reveal/Fade";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography, Grid, Button } from "@material-ui/core";
-import logo from "src/img/logo.png";
-import { Image, SmoothScroll } from "components";
-import { useGeneralSettings, useCloudinary, useBreakpoint } from "utils";
+import { SmoothScroll } from "components";
+import { useGeneralSettings } from "utils";
+import HeroImage from "./HeroImage";
+import Logo from "./Logo";
 
 type HeroProps = {
   title?: string;
@@ -19,47 +18,24 @@ const SMALL_HEIGHT = 400;
 
 const Hero: React.FC<HeroProps> = ({ title, image, small = false }) => {
   const classes = useStyles({ small })();
-  const breakpoints = useBreakpoint();
 
   const { brandName, heroImage } = useGeneralSettings();
 
-  const cldImage = useCloudinary(image || heroImage || "");
-
-  const memoizedImg = useMemo(() => {
-    if (!cldImage || typeof window === "undefined") return null;
-
-    const cropHeight = small ? SMALL_HEIGHT : window.innerHeight;
-
-    return cldImage.resize(scale().width(1920)).resize(
-      crop()
-        .width(window.innerWidth + 300)
-        .height(cropHeight)
-    );
-  }, [breakpoints, cldImage]);
-
-  const commonImageProps = {
-    className: classes.image,
-    alt: "The main CORE Elements",
-  };
-
   return (
     <section className={classes.hero} id="hero">
-      {memoizedImg ? (
-        <AdvancedImage
-          cldImg={memoizedImg}
-          plugins={[placeholder("blur")]}
-          {...commonImageProps}
-        />
-      ) : (
-        <img src={image || heroImage || ""} {...commonImageProps} />
-      )}
+      <HeroImage
+        image={image || heroImage}
+        smallHeight={SMALL_HEIGHT}
+        small={small}
+        className={classes.image}
+      />
       <div className={classes.logoBarBackground}>
         <Container>
           <Grid container className={classes.logoBar}>
             {!small && (
               <Grid item>
                 <Fade left>
-                  <img src={logo} className={classes.logo} alt="CORE Logo" />
+                  <Logo />
                 </Fade>
               </Grid>
             )}
@@ -112,18 +88,6 @@ const useStyles = ({ small }: UseStylesProps) =>
     logoBar: {
       justifyContent: small ? "flex-start" : "center",
       alignItems: "center",
-    },
-    logo: {
-      height: 260,
-      [theme.breakpoints.down("md")]: {
-        height: 200,
-      },
-      [theme.breakpoints.down("sm")]: {
-        height: 180,
-      },
-      [theme.breakpoints.down("xs")]: {
-        height: 130,
-      },
     },
     explore: {
       position: "relative",

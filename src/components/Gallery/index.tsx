@@ -6,6 +6,7 @@ import ArrowForwardIosRoundedIcon from "@material-ui/icons/ArrowForwardIosRounde
 import useResizeAware from "react-resize-aware";
 import { useBreakpoint } from "utils";
 import { Image } from "components";
+import GalleryImage from "./GalleryImage";
 
 type GalleryProps = {
   images?: string[];
@@ -148,7 +149,7 @@ const Gallery: React.FC<GalleryProps> = ({
               }`}
               onMouseEnter={() => setActiveIndex(i)}
             >
-              <Image src={image} />
+              <GalleryImage src={image} alt={`Featured Item #${i + 1}`} />
             </div>
           ))}
         </div>

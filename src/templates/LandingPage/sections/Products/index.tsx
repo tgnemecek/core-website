@@ -10,6 +10,7 @@ import {
 import Fade from "react-reveal/Fade";
 import { Section, Gallery, Image, Heading } from "components";
 import { Product } from "types";
+import ProductImage from "./ProductImage";
 
 type ProductsProps = {
   products: Product[];
@@ -37,11 +38,9 @@ const Products: React.FC<ProductsProps> = ({ products }) => {
         >
           <div className={classes.featured}>
             <div className={classes.leftSide}>
-              <Image
-                alt="Featured product"
-                className={classes.image}
+              <ProductImage
                 src={products[activeindex].image}
-                width="auto"
+                alt={products[activeindex].title}
               />
             </div>
             <Card className={classes.rightSide}>
@@ -85,6 +84,7 @@ const useStyles = makeStyles((theme) => ({
   featured: {
     display: "grid",
     "grid-template-columns": "1fr 1fr",
+    "grid-column-gap": 25,
     [theme.breakpoints.down("sm")]: {
       "grid-template-columns": "1fr",
     },
@@ -95,14 +95,6 @@ const useStyles = makeStyles((theme) => ({
     },
     display: "flex",
     justifyContent: "center",
-    "& img": {
-      height: 500,
-      maxWidth: 400,
-    },
-  },
-  image: {
-    width: "100%",
-    objectFit: "contain",
   },
   rightSide: {
     boxShadow: "0px 0px 31px -3px rgba(0,0,0,0.24)",

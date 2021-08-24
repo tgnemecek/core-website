@@ -1,6 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import { MuiThemeProvider } from "@material-ui/core";
+import { MuiThemeProvider } from "@material-ui/core/styles";
 
 import "./reset.css";
 import "fontsource-roboto";
@@ -37,7 +37,6 @@ const Layout: React.FC = ({ children }) => {
           href={`${withPrefix("/")}img/favicon-16x16.png`}
           sizes="16x16"
         />
-        <script src="https://js.stripe.com/v3" async></script>
         <meta name="theme-color" content="#fff" />
 
         <meta property="og:type" content="business.business" />

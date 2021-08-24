@@ -2,11 +2,9 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography, Grid } from "@material-ui/core";
 import { Link } from "gatsby";
-import { useBreakpoint } from "utils";
-import { Image, theme } from "components";
+import { theme } from "components";
 import { Service } from "types";
-
-const hoverGrowth = 10; // Percent
+import ServiceImage from "./ServiceImage";
 
 type ServicesProps = {
   services: Service[];
@@ -15,7 +13,6 @@ type ServicesProps = {
 const Services: React.FC<ServicesProps> = ({ services }) => {
   const [hover, setHover] = React.useState<string | null>(null);
   const classes = useStyles();
-  const { md } = useBreakpoint();
 
   const onMouseEnter = (name: string) => {
     setHover(name);
@@ -25,34 +22,6 @@ const Services: React.FC<ServicesProps> = ({ services }) => {
     if (hover === name) {
       setHover(null);
     }
-  };
-
-  const imgProps = (name: string) => {
-    let result = {};
-    if (hover === name) {
-      result = {
-        style: {
-          height: `${100 + hoverGrowth}%`,
-          width: `${100 + hoverGrowth}%`,
-          top: `-${hoverGrowth / 2}%`,
-          left: `-${hoverGrowth / 2}%`,
-        },
-      };
-    } else if (hover) {
-      result = {
-        style: {
-          filter: "grayscale(100%) contrast(50%)",
-        },
-      };
-    }
-    if (!md) {
-      result = {
-        ...result,
-        width: "900",
-        height: "220",
-      };
-    }
-    return result;
   };
 
   const boxStyle = (name: string) => {
@@ -98,13 +67,11 @@ const Services: React.FC<ServicesProps> = ({ services }) => {
               md={4}
               className={classes.serviceWrapper}
             >
-              <Image
+              <ServiceImage
                 alt={title}
-                className={classes.img}
                 src={image}
-                width={366}
-                height={700}
-                {...imgProps(name)}
+                isHovering={hover === name}
+                isHoveringAnotherItem={Boolean(hover && hover !== name)}
               />
               <div className={classes.textBox} style={boxStyle(name)}>
                 <Typography variant="h3">{title}</Typography>
@@ -152,15 +119,6 @@ const useStyles = makeStyles((theme) => {
       "& button": {
         fontSize: "1rem",
       },
-    },
-    img: {
-      width: "100%",
-      height: "100%",
-      objectFit: "cover",
-      position: "absolute",
-      top: 0,
-      left: 0,
-      transition: "all 0.5s",
     },
     textBox: {
       zIndex: 1,

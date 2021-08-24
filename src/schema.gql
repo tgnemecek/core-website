@@ -30,6 +30,7 @@ type Contact {
 }
 type GeneralSettings {
   brandName: String!
+  logo: String!
   heroImage: String!
   refundPolicy: String
 }

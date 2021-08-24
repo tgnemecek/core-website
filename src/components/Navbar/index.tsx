@@ -15,11 +15,12 @@ import {
   Box,
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
-import logo from "src/img/logo.png";
 import { theme } from "components";
-import { useNavigation } from "utils";
+import { useNavigation, useGeneralSettings } from "utils";
+import LogoIcon from "./LogoIcon";
 
 const Navbar: React.FC = () => {
+  const { logo } = useGeneralSettings();
   const { links } = useNavigation();
   const [isOnTop, setOnTop] = React.useState(true);
   const [isDrawerOpen, setDrawerOpen] = React.useState(false);
@@ -77,11 +78,11 @@ const Navbar: React.FC = () => {
       <Toolbar className={classes.toolbar}>
         {getPath() === "/" ? (
           <a href="#hero">
-            <img src={logo} alt="CORE Logo" className={classes.logo} />
+            <LogoIcon />
           </a>
         ) : (
           <Link to="/">
-            <img src={logo} alt="CORE Logo" className={classes.logo} />
+            <LogoIcon />
           </Link>
         )}
         <Hidden smDown>{renderNavContent()}</Hidden>
@@ -118,9 +119,6 @@ const useStyles = ({ isOnTop }: UseStylesProps) =>
       justifyContent: "space-between",
       minHeight: "inherit",
       height: theme.spacing(9),
-    },
-    logo: {
-      width: "50px",
     },
     list: {
       display: "flex",

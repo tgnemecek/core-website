@@ -6,6 +6,7 @@ import { Section, Link } from "components";
 // import { Link } from "gatsby";
 import streak from "src/img/streak1.jpg";
 import { About } from "types";
+import AboutImage from "./AboutImage";
 
 type AboutSectionProps = {
   about: About;
@@ -34,7 +35,8 @@ const AboutSection: React.FC<AboutSectionProps> = ({
             </Fade>
           </div>
           <div>
-            <img className={classes.image} src={image} alt="CORE Logo" />
+            <AboutImage />
+            {/* <img className={classes.image} src={image} alt="CORE Logo" /> */}
           </div>
         </Container>
       </div>

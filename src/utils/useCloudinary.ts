@@ -1,4 +1,5 @@
-import { Cloudinary } from "@cloudinary/base";
+import { useMemo, useEffect, useState } from "react";
+import { Cloudinary, CloudinaryImage } from "@cloudinary/base";
 import getImageId from "./getImageId";
 
 const cld = new Cloudinary({
@@ -7,14 +8,26 @@ const cld = new Cloudinary({
   },
 });
 
-const useCloudinary = (src: string) => {
+type UseCloudinary = (
+  src: string,
+  callback?: (cldImage: CloudinaryImage) => void,
+  deps?: any[]
+) => CloudinaryImage | null;
+
+const useCloudinary: UseCloudinary = (src, callback, deps = []) => {
   const imageId = getImageId(src);
 
-  if (imageId) {
-    return cld.image(imageId);
-  }
+  const [cldImage, setCldImage] = useState<CloudinaryImage | null>(() => {
+    return cld.image(imageId ?? undefined);
+  });
 
-  return null;
+  useEffect(() => {
+    const newImage = cld.image(imageId ?? undefined);
+    setCldImage(newImage);
+    callback?.(newImage);
+  }, [imageId, ...deps]);
+
+  return cldImage;
 };
 
 export default useCloudinary;
