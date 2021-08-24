@@ -1,4 +1,4 @@
-import { useMemo, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Cloudinary, CloudinaryImage } from "@cloudinary/base";
 import getImageId from "./getImageId";
 

@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 import loadable from "@loadable/component";
 import { graphql } from "gatsby";
 import { LandingPageDTO } from "types";
@@ -36,13 +36,11 @@ const LandingPage: React.FC<LandingPageDTO> = ({
         <Hero />
         <PostFeed title="What's new" />
         <EventFeed title="Leading Your Life &amp; Work Events" />
-        <Suspense fallback={<div>LOADING...</div>}>
-          <AboutSection about={about} />
-          <Testimonials testimonials={testimonials} />
-          <Services services={services} />
-          <Products products={products} />
-          <Videos videos={videos} />
-        </Suspense>
+        <AboutSection about={about} />
+        <Testimonials testimonials={testimonials} />
+        <Services services={services} />
+        <Products products={products} />
+        <Videos videos={videos} />
         <ContactForm />
       </main>
       <Footer />
