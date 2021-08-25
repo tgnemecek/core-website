@@ -2,6 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/styles";
 import { scale } from "@cloudinary/base/actions/resize";
 import { AdvancedImage, placeholder } from "@cloudinary/react";
+import LazyLoad from "react-lazyload";
 import { useCloudinary, useGeneralSettings, useBreakpoint } from "utils";
 
 const SIZE_LARGE = 400;
@@ -36,12 +37,14 @@ const AboutImage: React.FC = () => {
   })();
 
   return (
-    <AdvancedImage
-      cldImg={image!}
-      plugins={[placeholder("blur")]}
-      alt="CORE Logo"
-      className={className}
-    />
+    <LazyLoad once height="100%">
+      <AdvancedImage
+        cldImg={image!}
+        plugins={[placeholder("blur")]}
+        alt="CORE Logo"
+        className={className}
+      />
+    </LazyLoad>
   );
 };
 

@@ -8,6 +8,7 @@ import {
   CardHeader,
 } from "@material-ui/core";
 import Fade from "react-reveal/Fade";
+import LazyLoad from "react-lazyload";
 import { Section, Gallery, Image, Heading } from "components";
 import { Product } from "types";
 import ProductImage from "./ProductImage";
@@ -54,12 +55,14 @@ const Products: React.FC<ProductsProps> = ({ products }) => {
                   subheader={<div>{products[activeindex].subtitle}</div>}
                 />
                 <CardContent className={classes.content}>
-                  <Image
-                    alt="Featured Product"
-                    className={classes.insideImage}
-                    src={products[activeindex].image}
-                    width="auto"
-                  />
+                  <LazyLoad height="100%" once>
+                    <Image
+                      alt="Featured Product"
+                      className={classes.insideImage}
+                      src={products[activeindex].image}
+                      width="auto"
+                    />
+                  </LazyLoad>
                   <Typography variant="body1" className={classes.paragraph}>
                     {products[activeindex].description}
                   </Typography>

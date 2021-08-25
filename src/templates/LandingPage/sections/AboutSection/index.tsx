@@ -32,7 +32,6 @@ const AboutSection: React.FC<AboutSectionProps> = ({ about: { text } }) => {
           </div>
           <div>
             <AboutImage />
-            {/* <img className={classes.image} src={image} alt="CORE Logo" /> */}
           </div>
         </Container>
       </div>

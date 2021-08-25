@@ -10,7 +10,7 @@ export { default as Hero } from "./Hero";
 export { default as HorizontalFeed } from "./HorizontalFeed";
 export { default as Image } from "./Image";
 export { default as LanguageDisplay } from "./LanguageDisplay";
-export { default as Layout } from "./Layout";
+export { default as Layout, ResizeListenerContext } from "./Layout";
 export { default as Link } from "./Link";
 export { default as Markdown } from "./Markdown";
 export { default as Modal } from "./Modal";

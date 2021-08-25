@@ -1,5 +1,7 @@
 import React from "react";
 import moment from "moment";
+import { AdvancedImage } from "@cloudinary/react";
+import { fill } from "@cloudinary/base/actions/resize";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   Typography,
@@ -9,9 +11,16 @@ import {
 } from "@material-ui/core";
 import { Link } from "gatsby";
 import removeMarkdown from "markdown-to-text";
+import LazyLoad from "react-lazyload";
 import { Ellipsis, Image } from "components";
 import { Post } from "types";
-import { usePostImage, useBreakpoint, UseBreakpointState } from "utils";
+import {
+  usePostImage,
+  UseBreakpointState,
+  useCloudinary,
+  useBreakpoint,
+  getImageId,
+} from "utils";
 
 type PostCardProps = {
   post: Post;
@@ -32,12 +41,38 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
   };
 
   const thumbnail = usePostImage(post);
+  const isCloudinaryImage = Boolean(getImageId(thumbnail));
 
-  const imageSize = () => {
-    if (md) return 400;
-    if (sm) return 720;
-    return 420;
+  const getImageSize = () => {
+    let width = 360;
+    let height = 205;
+
+    if (!xs) {
+      width = 269;
+      height = 146;
+    } else if (!sm) {
+      width = 464;
+      height = 257;
+    } else if (!md) {
+      width = 713;
+      height = 265;
+    }
+
+    return {
+      width,
+      height,
+    };
   };
+
+  const cldImage = useCloudinary(
+    thumbnail,
+    (cld) => {
+      const { width, height } = getImageSize();
+
+      cld.resize(fill(width, height));
+    },
+    [xs, sm, md]
+  );
 
   return (
     <Card className={classes.card} elevation={3} square>
@@ -46,14 +81,23 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
         to={`/post${slug}`}
         className={classes.cardActionArea}
       >
-        <div className={classes.imageWrapper}>
-          <Image
-            src={thumbnail}
-            className={classes.image}
-            width={imageSize()}
-            alt={`Post created on ${moment(date).format("MMM D")}`}
-          />
-        </div>
+        <LazyLoad
+          height="100%"
+          once
+          classNamePrefix={`${classes.imageWrapper} lazyload`}
+        >
+          {isCloudinaryImage ? (
+            cldImage && (
+              <AdvancedImage cldImg={cldImage} className={classes.image} />
+            )
+          ) : (
+            <Image
+              src={thumbnail}
+              className={classes.image}
+              alt={`Post created on ${moment(date).format("MMM D")}`}
+            />
+          )}
+        </LazyLoad>
         <CardContent>
           <Typography variant="body1" className={classes.title}>
             <Ellipsis text={title} max={60} component="span" />

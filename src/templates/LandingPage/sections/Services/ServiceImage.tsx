@@ -2,6 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/styles";
 import { AdvancedImage } from "@cloudinary/react";
 import { fill } from "@cloudinary/base/actions/resize";
+import LazyLoad from "react-lazyload";
 import { useCloudinary, useBreakpoint } from "utils";
 
 type ServiceImageProps = {
@@ -69,12 +70,14 @@ const ServiceImage: React.FC<ServiceImageProps> = ({
   })();
 
   return (
-    <AdvancedImage
-      alt={alt}
-      cldImg={image!}
-      className={className}
-      style={getStyle()}
-    />
+    <LazyLoad height="100%" once>
+      <AdvancedImage
+        alt={alt}
+        cldImg={image!}
+        className={className}
+        style={getStyle()}
+      />
+    </LazyLoad>
   );
 };
 

@@ -2,6 +2,7 @@ import React, { useMemo } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container } from "@material-ui/core";
 import Fade from "react-reveal/Fade";
+import LazyLoad from "react-lazyload";
 import { Section, Gallery, Heading, VideoPlayer } from "components";
 import { getVideoId, getVideoImage } from "utils";
 import { Video } from "types";
@@ -38,7 +39,9 @@ const Videos: React.FC<VideosProps> = ({ videos: rawVideos }) => {
             {videos[activeindex].title}
           </Fade>
         </Heading>
-        <VideoPlayer videoId={videos[activeindex].videoId} />
+        <LazyLoad height="100%" once>
+          <VideoPlayer videoId={videos[activeindex].videoId} />
+        </LazyLoad>
         <Gallery
           images={videos.map(({ image }) => image)}
           activeIndex={activeindex}

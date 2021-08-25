@@ -10,6 +10,8 @@ import { GoogleAnalytics, theme } from "components";
 import { useSiteMetadata } from "utils";
 import { withPrefix } from "gatsby";
 
+import { ResizeListenerProvider } from "./ResizeListener";
+
 const Layout: React.FC = ({ children }) => {
   const { title, description } = useSiteMetadata();
 
@@ -45,9 +47,12 @@ const Layout: React.FC = ({ children }) => {
         <meta property="og:image" content={`${withPrefix("/")}img/logo.png`} />
       </Helmet>
       <GoogleAnalytics />
-      <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>
+      <MuiThemeProvider theme={theme}>
+        <ResizeListenerProvider>{children}</ResizeListenerProvider>
+      </MuiThemeProvider>
     </div>
   );
 };
 
+export { default as ResizeListenerContext } from "./ResizeListener";
 export default Layout;
