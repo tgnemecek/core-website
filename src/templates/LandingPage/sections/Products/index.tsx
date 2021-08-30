@@ -30,7 +30,7 @@ const Products: React.FC<ProductsProps> = ({ products }) => {
           subheading="From books to apps, use these resources to assist you in your journey"
           showLine
         >
-          Leading Your Life &amp; Work Products
+          Core Coaching Books &amp; Apps
         </Heading>
         <a
           href={products[activeindex].link || ""}
