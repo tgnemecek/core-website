@@ -3,7 +3,8 @@ import { graphql } from "gatsby";
 import leadingReport from "src/downloads/free-reports/leading.pdf";
 import coachingReport from "src/downloads/free-reports/coaching.pdf";
 import learningReport from "src/downloads/free-reports/learning.pdf";
-import { ServicesPageDTO, ServiceName, PayPalButtonName } from "types";
+import businessReport from "src/downloads/free-reports/business.pdf";
+import { ServicesPageDTO, ServiceName } from "types";
 import { recursivelyFormatDate } from "utils";
 import { Hero, Section, ContactForm, Layout, Navbar, Footer } from "components";
 
@@ -33,6 +34,7 @@ const ServicesPage: React.FC<ServicesPageDTO> = ({
     switch (service) {
       case "leading":
       case "coaching":
+      case "business":
         return "Get a Free Leader Compass Report!";
       case "learning":
         return "Get a Free Report to Improve Learning!";
@@ -51,24 +53,11 @@ const ServicesPage: React.FC<ServicesPageDTO> = ({
         return coachingReport;
       case "learning":
         return learningReport;
+      case "business":
+        return businessReport;
       default:
         throw new Error(
           `Service name unrecognized in getReportLink(): ${service}`
-        );
-    }
-  };
-
-  const getPayPalButtons = (): PayPalButtonName[] => {
-    switch (service) {
-      case "leading":
-        return ["leaderStrengths", "entrepreneuerStrengths"];
-      case "coaching":
-        return ["careerStrengths", "personalStrengths"];
-      case "learning":
-        return ["personalStrengths", "donation"];
-      default:
-        throw new Error(
-          `Service name unrecognized in getPayPalButtons(): ${service}`
         );
     }
   };
@@ -88,7 +77,7 @@ const ServicesPage: React.FC<ServicesPageDTO> = ({
           <CallToAction targetId="contact-form" text="Send Us a message" />
         </Section>
         <Section>
-          <PayPalButtons buttonNames={getPayPalButtons()} />
+          <PayPalButtons service={service} />
         </Section>
         <ContactForm />
       </main>
