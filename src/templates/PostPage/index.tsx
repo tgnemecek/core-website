@@ -2,7 +2,7 @@ import React from "react";
 import { graphql, PageProps } from "gatsby";
 import { PostPageDTO } from "types";
 import { Hero, Layout, Footer, Navbar, Section, PostFeed } from "components";
-import { usePostImage } from "utils";
+import { usePostImage, recursivelyFormatDate } from "utils";
 import { Body, Video, BackLink } from "./sections";
 
 type PostPageWithLocation = PostPageDTO & {
@@ -17,7 +17,7 @@ const PostPage: React.FC<PostPageWithLocation> = ({
     },
   },
 }) => {
-  const { title, text, video, date } = post;
+  const { title, text, video, date } = recursivelyFormatDate(post);
 
   const postImage = usePostImage(post);
 

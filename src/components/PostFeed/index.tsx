@@ -1,5 +1,5 @@
 import React from "react";
-import moment from "moment";
+import { isBefore } from "date-fns";
 import { Container } from "@material-ui/core";
 import { Section, HorizontalFeed, Heading } from "components";
 import { usePostFeed } from "utils";
@@ -15,12 +15,10 @@ const PostFeed: React.FC<PostFeedProps> = ({ title, filter }) => {
   const posts = usePostFeed().filter(filter || Boolean);
 
   const sorter = ({ date: dateA }: Post, { date: dateB }: Post) => {
-    const momentA = moment(dateA);
-    const momentB = moment(dateB);
-
-    if (momentA.isBefore(momentB)) {
+    if (isBefore(dateA, dateB)) {
       return 1;
     }
+
     return -1;
   };
 

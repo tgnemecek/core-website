@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import { Hero, ContactForm, Layout, Navbar, Footer } from "components";
 import { TeamPageDTO } from "types";
+import { recursivelyFormatDate } from "utils";
 import Team from "./Team";
 
 const TeamPage: React.FC<TeamPageDTO> = ({
@@ -13,7 +14,7 @@ const TeamPage: React.FC<TeamPageDTO> = ({
     },
   },
 }) => {
-  const { title, members } = team;
+  const { title, members } = recursivelyFormatDate(team);
 
   return (
     <Layout>

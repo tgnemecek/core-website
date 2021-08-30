@@ -1,5 +1,5 @@
 import React from "react";
-import moment from "moment";
+import { format } from "date-fns";
 import { AdvancedImage } from "@cloudinary/react";
 import { fill } from "@cloudinary/base/actions/resize";
 import { makeStyles } from "@material-ui/core/styles";
@@ -71,6 +71,8 @@ const EventCard: React.FC<EventProps> = ({ event }) => {
     [breakpoints]
   );
 
+  const alt = `Event happening on ${format(date, "MMM, d")}`;
+
   return (
     <Card className={classes.card} elevation={3} square>
       <CardActionArea
@@ -81,14 +83,14 @@ const EventCard: React.FC<EventProps> = ({ event }) => {
         <LazyLoad once classNamePrefix={`${classes.imageWrapper} lazyload`}>
           {isCloudinaryImage ? (
             cldImage && (
-              <AdvancedImage cldImg={cldImage} className={classes.image} />
+              <AdvancedImage
+                cldImg={cldImage}
+                className={classes.image}
+                alt={alt}
+              />
             )
           ) : (
-            <Image
-              src={image}
-              className={classes.image}
-              alt={`Post created on ${moment(date).format("MMM D")}`}
-            />
+            <Image src={image} className={classes.image} alt={alt} />
           )}
         </LazyLoad>
         <CardContent className={classes.cardContent}>

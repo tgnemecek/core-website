@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { LandingPageDTO } from "types";
+import { recursivelyFormatDate } from "utils";
 import {
   Hero,
   EventFeed,
@@ -27,7 +28,8 @@ const LandingPage: React.FC<LandingPageDTO> = ({
     },
   },
 }) => {
-  const { about, testimonials, products, services, videos } = landing;
+  const { about, testimonials, products, services, videos } =
+    recursivelyFormatDate(landing);
 
   return (
     <Layout>

@@ -1,5 +1,5 @@
 import React from "react";
-import moment from "moment";
+import { isBefore } from "date-fns";
 import { Container } from "@material-ui/core";
 import { Section, HorizontalFeed, Heading } from "components";
 import { useEventFeed } from "utils";
@@ -18,22 +18,20 @@ const EventFeed: React.FC<EventFeedProps> = ({ title, filter }) => {
     { date: dateA }: EventFeedType,
     { date: dateB }: EventFeedType
   ) => {
-    const now = moment();
-    const momentA = moment(dateA);
-    const momentB = moment(dateB);
+    const now = new Date();
 
     let aIsPast = false;
     let bIsPast = false;
 
-    if (momentA.isBefore(now)) aIsPast = true;
-    if (momentB.isBefore(now)) bIsPast = true;
+    if (isBefore(dateA, now)) aIsPast = true;
+    if (isBefore(dateB, now)) bIsPast = true;
 
     if (aIsPast && bIsPast) {
-      if (momentA.isAfter(momentB)) return -1;
+      if (isBefore(dateB, dateA)) return -1;
       return 1;
     }
     if (!aIsPast && !bIsPast) {
-      if (momentA.isAfter(momentB)) return 1;
+      if (isBefore(dateB, dateA)) return 1;
       return -1;
     }
 

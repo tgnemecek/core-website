@@ -4,7 +4,7 @@ import leadingReport from "src/downloads/free-reports/leading.pdf";
 import coachingReport from "src/downloads/free-reports/coaching.pdf";
 import learningReport from "src/downloads/free-reports/learning.pdf";
 import { ServicesPageDTO, ServiceName, PayPalButtonName } from "types";
-
+import { recursivelyFormatDate } from "utils";
 import { Hero, Section, ContactForm, Layout, Navbar, Footer } from "components";
 
 import {
@@ -25,7 +25,7 @@ const ServicesPage: React.FC<ServicesPageDTO> = ({
     },
   },
 }) => {
-  const { benefits, explanation, title } = services;
+  const { benefits, explanation, title } = recursivelyFormatDate(services);
 
   const service = slug.replace(/\//g, "") as ServiceName;
 

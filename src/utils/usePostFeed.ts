@@ -1,5 +1,6 @@
 import { useStaticQuery, graphql } from "gatsby";
 import { PostFeedDTO } from "types";
+import { recursivelyFormatDate } from "utils";
 
 const usePostFeed = () => {
   const data: PostFeedDTO["data"] = useStaticQuery(graphql`
@@ -27,7 +28,7 @@ const usePostFeed = () => {
     }
   `);
   return data.allMarkdownRemark.edges.map(({ node }) => ({
-    ...node.frontmatter.posts,
+    ...recursivelyFormatDate(node.frontmatter.posts),
     slug: node.fields.slug,
   }));
 };

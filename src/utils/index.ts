@@ -9,10 +9,10 @@ export { default as shuffleArray } from "./shuffleArray";
 export { default as getTintedBackground } from "./getTintedBackground";
 export { default as formatLanguage } from "./formatLanguage";
 export { default as verifyEmail } from "./verifyEmail";
+export { default as recursivelyFormatDate } from "./recursivelyFormatDate";
 
 // Hooks:
 export { default as useBreakpoint } from "./useBreakpoint";
-export type { UseBreakpointState } from "./useBreakpoint";
 export { default as useCloudinary } from "./useCloudinary";
 export { default as useEventFeed } from "./useEventFeed";
 export { default as usePostFeed } from "./usePostFeed";

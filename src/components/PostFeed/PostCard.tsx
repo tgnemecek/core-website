@@ -1,5 +1,5 @@
 import React from "react";
-import moment from "moment";
+import { format } from "date-fns";
 import { AdvancedImage } from "@cloudinary/react";
 import { fill } from "@cloudinary/base/actions/resize";
 import { makeStyles } from "@material-ui/core/styles";
@@ -14,13 +14,7 @@ import removeMarkdown from "markdown-to-text";
 import LazyLoad from "react-lazyload";
 import { Ellipsis, Image } from "components";
 import { Post } from "types";
-import {
-  usePostImage,
-  UseBreakpointState,
-  useCloudinary,
-  useBreakpoint,
-  getImageId,
-} from "utils";
+import { usePostImage, useCloudinary, useBreakpoint, getImageId } from "utils";
 
 type PostCardProps = {
   post: Post;
@@ -94,7 +88,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
             <Image
               src={thumbnail}
               className={classes.image}
-              alt={`Post created on ${moment(date).format("MMM D")}`}
+              alt={`Post created on ${format(date, "MMM d")}`}
             />
           )}
         </LazyLoad>
@@ -115,7 +109,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
             />
           </Typography>
           <Typography variant="body1" className={classes.date}>
-            {moment(date).format("MMM DD, YYYY")}
+            {format(date, "MMM dd, yyyy")}
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -125,7 +119,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
 
 export default PostCard;
 
-type UseStylesProps = Partial<UseBreakpointState>;
+type UseStylesProps = Partial<ReturnType<typeof useBreakpoint>>;
 
 const useStyles = ({ sm, lg }: UseStylesProps) =>
   makeStyles((theme) => {

@@ -111,6 +111,12 @@ module.exports = {
         manualInit: true,
       },
     },
+    {
+      resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
+      options: {
+        analyzerPort: "9999",
+      },
+    },
     "gatsby-plugin-netlify", // make sure to keep it last in the array
   ],
 };

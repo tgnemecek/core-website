@@ -1,16 +1,6 @@
 import React from "react";
 import moment from "moment-timezone";
-import {
-  Button,
-  Card,
-  CardContent,
-  CardActions,
-  Typography,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-} from "@material-ui/core";
+import { List, ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
 import ConfirmationNumberIcon from "@material-ui/icons/ConfirmationNumber";
 import PlaceIcon from "@material-ui/icons/Place";
 import LanguageIcon from "@material-ui/icons/Language";

@@ -1,5 +1,5 @@
 import React from "react";
-import moment from "moment";
+import { format } from "date-fns";
 import { Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { Image } from "components";
@@ -25,7 +25,7 @@ const TicketsAside: React.FC = () => {
             color="textSecondary"
             className={classes.date}
           >
-            {moment(date).format("MMMM D, YYYY")}
+            {format(date, "MMMM d, yyyy")}
           </Typography>
           <Typography variant="h5" gutterBottom>
             {title}
