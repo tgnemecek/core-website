@@ -42,9 +42,6 @@ const onCreateNode: GatsbyNode["onCreateNode"] = ({
 
     if (frontmatter.collection === "pages") {
       const { key, component } = pageMap[value];
-
-      // throw new Error(key);
-      console.log({ key });
       createNodeField({
         name: "slug",
         node: {
