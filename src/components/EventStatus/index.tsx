@@ -1,5 +1,5 @@
 import React from "react";
-import moment from "moment";
+import { format } from "date-fns";
 import { makeStyles } from "@material-ui/core/styles";
 import { Chip } from "@material-ui/core";
 import { Event } from "types";
@@ -23,7 +23,7 @@ const EventStatus: React.FC<EventStatusProps> = ({
     if (!showDate) return null;
     return (
       <Chip
-        label={moment(date).format("MMM D")}
+        label={format(date, "MMM d")}
         size="small"
         className={`${classes.eventStatus} ${classes.eventUpcoming}`}
       />

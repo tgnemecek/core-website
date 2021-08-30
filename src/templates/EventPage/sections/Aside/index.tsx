@@ -1,5 +1,5 @@
 import React from "react";
-import moment from "moment";
+import { format } from "date-fns";
 import {
   Button,
   Card,
@@ -30,7 +30,7 @@ const Aside: React.FC = () => {
         <Card raised className={classes.card}>
           <CardContent>
             <Typography variant="subtitle1">
-              {moment(date).format("MMMM D, YYYY")}
+              {format(date, "MMMM d, yyyy")}
             </Typography>
             <FeatureList />
             <Typography variant="body1" className={classes.refundHeader}>

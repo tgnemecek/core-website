@@ -1,5 +1,5 @@
 import React from "react";
-import moment from "moment";
+import { format } from "date-fns";
 import {
   Container,
   Grid,
@@ -32,7 +32,7 @@ const Header: React.FC = () => {
             <Card className={classes.card}>
               <CardContent className={classes.cardContent}>
                 <Typography variant="body1" color="textSecondary">
-                  {moment(date).format("MMMM D, YYYY")}{" "}
+                  {format(date, "MMMM d, yyyy")}{" "}
                   <EventStatus event={{ tickets, date }} />
                 </Typography>
                 <Typography variant="h4" className={classes.title}>

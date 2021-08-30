@@ -1,7 +1,5 @@
 import React from "react";
-import moment from "moment";
-import { Container } from "@material-ui/core";
-import { VideoPlayer, Section } from "components";
+import { VideoPlayer } from "components";
 import { getVideoId } from "utils";
 
 type VideoProps = {

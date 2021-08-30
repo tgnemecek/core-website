@@ -1,4 +1,3 @@
-import moment from "moment";
 import { Event } from "types";
 import isTicketValid from "./isTicketValid";
 

@@ -5,7 +5,9 @@ const baseFontColor = "#595959";
 const primaryColor = "#315cb0";
 
 const themeObject = {
-  breakpoints,
+  breakpoints: {
+    values: breakpoints,
+  },
   overrides: {
     MuiFilledInput: {
       root: {

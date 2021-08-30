@@ -1,9 +1,9 @@
 import React from "react";
 import { breakpoints } from "utils";
 
-type ResizeListenerContext = Record<"xs" | "sm" | "md" | "lg" | "xl", boolean>;
+export type Breakpoints = Record<keyof typeof breakpoints, boolean>;
 
-const initState: ResizeListenerContext = {
+const initState: Breakpoints = {
   xs: true,
   sm: true,
   md: true,
@@ -11,13 +11,12 @@ const initState: ResizeListenerContext = {
   xl: true,
 };
 
-const breakpointMap = breakpoints.values;
+const breakpointMap = breakpoints;
 
-const ResizeListenerContext =
-  React.createContext<ResizeListenerContext>(initState);
+const ResizeListenerContext = React.createContext<Breakpoints>(initState);
 
 export const ResizeListenerProvider: React.FC = ({ children }) => {
-  const [state, setState] = React.useState<ResizeListenerContext>(initState);
+  const [state, setState] = React.useState<Breakpoints>(initState);
 
   const onResize = () => {
     setState((prevState) => {
@@ -26,7 +25,7 @@ export const ResizeListenerProvider: React.FC = ({ children }) => {
 
       const newState = { ...prevState };
 
-      Object.keys(breakpointMap).forEach((key: keyof ResizeListenerContext) => {
+      Object.keys(breakpointMap).forEach((key: keyof Breakpoints) => {
         const point = breakpointMap[key];
         const result = width >= point;
         if (result !== prevState[key]) hasChanged = true;
