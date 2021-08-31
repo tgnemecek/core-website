@@ -49,6 +49,8 @@ const Logo: React.FC = () => {
       plugins={[placeholder("blur")]}
       alt={alt}
       className={className}
+      height={height}
+      width={height}
     />
   );
 };

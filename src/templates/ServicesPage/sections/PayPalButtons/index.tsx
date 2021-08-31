@@ -4,7 +4,6 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 import {
   Container,
   Typography,
-  Grid,
   Card,
   CardContent,
   CardActionArea,
@@ -30,7 +29,7 @@ const PayPalButtons: React.FC<PayPalButtonsProps> = ({ service }) => {
       case "learning":
         return ["personalStrengths", "donation"];
       case "business":
-        return ["leaderStrengths", "entrepreneurStrengths"];
+        return ["leaderStrengths", "organizationAndTeamProfiles"];
       default:
         throw new Error(
           `Service name unrecognized in getPayPalButtons(): ${service}`
@@ -49,53 +48,52 @@ const PayPalButtons: React.FC<PayPalButtonsProps> = ({ service }) => {
         </Heading>
       </Container>
       <Container maxWidth="md">
-        <Grid container alignItems="center" spacing={sm ? 2 : 8}>
+        <div className={classes.grid}>
           {getButtonNames().map((key) => {
             const { label, description, value, price, button } = buttons[key];
 
             return (
-              <Grid item key={key} xs={12} sm={6}>
-                <Card raised className={classes.card}>
-                  <CardContent className={classes.cardContent}>
-                    <Typography variant="h3">{label}</Typography>
-                    <Typography variant="body1">{description}</Typography>
-                  </CardContent>
-                  <form
-                    action="https://www.paypal.com/cgi-bin/webscr"
-                    method="post"
-                    target="_blank"
+              <Card raised className={classes.card}>
+                <CardContent>
+                  <Typography variant="h3">{label}</Typography>
+                  <Typography variant="body1">{description}</Typography>
+                </CardContent>
+                <form
+                  action="https://www.paypal.com/cgi-bin/webscr"
+                  method="post"
+                  target="_blank"
+                >
+                  <CardActionArea
+                    type="submit"
+                    className={classes.cardActionArea}
                   >
-                    <CardActionArea
-                      type="submit"
-                      className={classes.cardActionArea}
-                    >
-                      <input name="cmd" type="hidden" value="_s-xclick" />
-                      <input
-                        name="hosted_button_id"
-                        type="hidden"
-                        value={value}
-                      />
-                      <input
-                        alt="PayPal - The safer, easier way to pay online!"
-                        name="submit"
-                        src={button}
-                        type="image"
-                      />
-                      {price && (
-                        <Typography
-                          variant="subtitle1"
-                          className={classes.price}
-                        >
-                          ${price}
-                        </Typography>
-                      )}
-                    </CardActionArea>
-                  </form>
-                </Card>
-              </Grid>
+                    {button && value && (
+                      <>
+                        <input name="cmd" type="hidden" value="_s-xclick" />
+                        <input
+                          name="hosted_button_id"
+                          type="hidden"
+                          value={value}
+                        />
+                        <input
+                          alt="PayPal - The safer, easier way to pay online!"
+                          name="submit"
+                          src={button}
+                          type="image"
+                        />
+                      </>
+                    )}
+                    {price && (
+                      <Typography variant="subtitle1" className={classes.price}>
+                        ${price}
+                      </Typography>
+                    )}
+                  </CardActionArea>
+                </form>
+              </Card>
             );
           })}
-        </Grid>
+        </div>
       </Container>
     </>
   );
@@ -104,10 +102,15 @@ const PayPalButtons: React.FC<PayPalButtonsProps> = ({ service }) => {
 export default PayPalButtons;
 
 const useStyles = makeStyles((theme) => ({
-  card: {},
-  cardContent: {
-    height: "250px",
-    color: "white",
+  grid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+    gridTemplateRows: "auto",
+    gap: 50,
+  },
+  card: {
+    display: "grid",
+    gridTemplateRows: "1fr 90px",
   },
   cardActionArea: {
     padding: theme.spacing(2),

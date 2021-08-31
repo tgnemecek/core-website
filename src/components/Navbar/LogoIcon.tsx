@@ -22,6 +22,8 @@ const LogoIcon: React.FC = () => {
       cldImg={cldImage}
       plugins={[placeholder("blur")]}
       alt={ALT}
+      width={WIDTH}
+      height={WIDTH}
     />
   );
 };

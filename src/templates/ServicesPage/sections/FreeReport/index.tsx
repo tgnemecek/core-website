@@ -1,17 +1,54 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography, Button, Grid } from "@material-ui/core";
+import leadingReport from "src/downloads/free-reports/leading.pdf";
+import coachingReport from "src/downloads/free-reports/coaching.pdf";
+import learningReport from "src/downloads/free-reports/learning.pdf";
+import businessReport from "src/downloads/free-reports/business.pdf";
+import { ServiceName } from "types";
 
 type FreeReportProps = {
-  reportText: string;
-  downloadLink?: string;
+  service: ServiceName;
 };
 
-const FreeReport: React.FC<FreeReportProps> = ({
-  reportText,
-  downloadLink,
-}) => {
+const FreeReport: React.FC<FreeReportProps> = ({ service }) => {
   const classes = useStyles();
+
+  const getReportText = () => {
+    switch (service) {
+      case "leading":
+      case "coaching":
+        return "Get a Free Leader Compass Report!";
+      case "business":
+        return "Get a Free Business Report";
+      case "learning":
+        return "Get a Free Report to Improve Learning!";
+      default:
+        throw new Error(
+          `Service name unrecognized in getReportText(): ${service}`
+        );
+    }
+  };
+
+  const getReportLink = () => {
+    switch (service) {
+      case "leading":
+        return leadingReport;
+      case "coaching":
+        return coachingReport;
+      case "learning":
+        return learningReport;
+      case "business":
+        return businessReport;
+      default:
+        throw new Error(
+          `Service name unrecognized in getReportLink(): ${service}`
+        );
+    }
+  };
+
+  const reportText = getReportText();
+  const downloadLink = getReportLink();
 
   if (!downloadLink) return null;
 
