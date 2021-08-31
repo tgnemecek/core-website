@@ -37,7 +37,7 @@ const LandingPage: React.FC<LandingPageDTO> = ({
       <main>
         <Hero />
         <PostFeed title="What's new" />
-        <EventFeed title="Leading Your Life &amp; Work Events" />
+        <EventFeed title="Upcoming Events" />
         <AboutSection about={about} />
         <Testimonials testimonials={testimonials} />
         <Services services={services} />

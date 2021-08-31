@@ -5,9 +5,9 @@ import { PayPalButtonName } from "types";
 type ButtonData = {
   label: string;
   description: string;
-  value: string;
+  value?: string;
   price?: number;
-  button: "*jpg";
+  button?: "*jpg";
 };
 
 type Buttons = Record<PayPalButtonName, ButtonData>;
@@ -44,6 +44,11 @@ const buttons: Buttons = {
     value: "D2ZV5ASMDUXQG",
     price: 24,
     button: paypalBuyNow,
+  },
+  organizationAndTeamProfiles: {
+    label: "Organization & Team Profiles",
+    description:
+      "Assess where your business or teams are in balance or out-of-balance--why--and what you can do to implement sustainable improvements. Contact us for a free 1-hour consultation.",
   },
   donation: {
     label: "Make a Difference!",

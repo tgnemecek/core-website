@@ -5,6 +5,7 @@ export type PayPalButtonName =
   | "leaderStrengths"
   | "entrepreneurStrengths"
   | "personalStrengths"
+  | "organizationAndTeamProfiles"
   | "donation";
 
 export type ServiceName = "leading" | "coaching" | "learning" | "business";
