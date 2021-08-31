@@ -4,13 +4,13 @@ hero:
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1595801147/icon_hcpkac.jpg
   title: Announcing New SOS Program
 about:
-  text: "Core Coaching & Consulting, LLC is a global group of change agents who
-    use the holistic system of The Balancing Act with individuals, leaders, and
-    organizations to improve Balance, well-being, and flow. We create lasting
-    transformation with powerful tools that reveal where people or systems are
-    out-of-balance, then implement pragmatic processes to remove barriers so
-    they can re-balance from inside-out. Our interventions are rooted in science
-    and the ancient healing model of 5 elements & Synergy.  "
+  text: "Core Coaching & Consulting, LLC is a global group of expert change agents
+    who use the holistic system of The Balancing Act with leaders, teams,
+    organizations, and individuals to improve their Balance, well-being, and
+    flow. We create lasting transformation with powerful tools that assess and
+    remove external and internal barriers to success. Our interventions are
+    rooted in science, first-hand experience, data, and the ancient healing
+    model of the 5 elements & Synergy.  "
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1595111411/logo_feamvb.png
 services:
   - title: CORE Leading
