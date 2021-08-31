@@ -1,6 +1,6 @@
 import { NetlifyLambdaHandler } from "./types";
 
-const test: NetlifyLambdaHandler = async (event, context) => {
+export const test: NetlifyLambdaHandler = async (event, context) => {
   try {
     // const something = JSON.parse(event.body || "{}");
 

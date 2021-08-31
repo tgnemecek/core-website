@@ -1,6 +1,5 @@
 export type EventDeleteBody = {
   id: string;
-  isOnline: boolean;
 };
 
 export type EventCreateBody = EventDeleteBody & {
