@@ -4,7 +4,7 @@ import Zoom from "./services/Zoom";
 import Stripe from "./services/Stripe";
 import { NetlifyLambdaHandler, EventDeleteBody } from "./types";
 
-const eventDelete: NetlifyLambdaHandler = async (event, context) => {
+export const eventDelete: NetlifyLambdaHandler = async (event, context) => {
   if (!context.clientContext.user) {
     // Restricted route
     return {
@@ -16,6 +16,13 @@ const eventDelete: NetlifyLambdaHandler = async (event, context) => {
   const body: EventDeleteBody = JSON.parse(event.body || "{}");
 
   const { id } = body;
+
+  if (!id) {
+    return {
+      statusCode: 400,
+      body: `Missing id`,
+    };
+  }
 
   const { meetingId, productId } = Core.decryptEventIds(id);
 

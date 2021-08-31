@@ -1,6 +1,6 @@
 import { APIGatewayEvent, APIGatewayProxyResult, Context } from "aws-lambda";
 
-type NetlifyContext = Omit<Context, "clientContext"> & {
+export type NetlifyContext = Omit<Context, "clientContext"> & {
   clientContext: Context["clientContext"] & {
     identity?: any;
     user?: any;
