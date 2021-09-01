@@ -6,7 +6,7 @@ export const test: NetlifyLambdaHandler = async (event, context) => {
 
     return {
       statusCode: 200,
-      body: "",
+      body: "yes!",
     };
   } catch (err) {
     console.error(err);

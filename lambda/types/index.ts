@@ -12,6 +12,8 @@ export type ProcessEnvType = {
   CONTACT_FORM_EMAIL: string;
   GATSBY_STRIPE_PUBLIC_KEY: string;
   CORE_SECRET_KEY: string;
+  THINKIFIC_API_KEY: string;
+  THINKIFIC_SUBDOMAIN: string;
 };
 
 export { NetlifyLambdaHandler } from "./Netlify";
@@ -23,6 +25,8 @@ export {
   CreatePaymentIntentBody,
   Ticket,
 } from "./Event";
+
+export { Course } from "./Thinkific";
 
 export {
   ZoomMeetingType,

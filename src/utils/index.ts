@@ -14,6 +14,7 @@ export { default as recursivelyFormatDate } from "./recursivelyFormatDate";
 // Hooks:
 export { default as useBreakpoint } from "./useBreakpoint";
 export { default as useCloudinary } from "./useCloudinary";
+export { default as useCourseFeed } from "./useCourseFeed";
 export { default as useEventFeed } from "./useEventFeed";
 export { default as usePostFeed } from "./usePostFeed";
 export { default as useGeneralSettings } from "./useGeneralSettings";
