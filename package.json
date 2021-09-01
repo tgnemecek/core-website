@@ -86,7 +86,7 @@
     "start": "yarn codegen && netlify dev",
     "build": "graphql-codegen && tsc --build lambda && gatsby build",
     "codegen": "graphql-codegen",
-    "test": "ts-mocha -p lambda/tsconfig.json lambda/**/*.spec.ts"
+    "test": "ts-mocha -p lambda/tsconfig.json lambda/**/*.spec.ts && exit 1"
   },
   "pre-commit": [
     "test"
@@ -111,6 +111,7 @@
     "babel-preset-gatsby": "^1.12.0",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.24",
     "mocha": "^9.1.1",
+    "pre-commit": "^1.2.2",
     "prettier": "^2.3.2",
     "sinon": "^11.1.2",
     "source-map-support": "^0.5.19",
