@@ -1,6 +1,6 @@
 import React from "react";
-import moment from "moment";
-import { makeStyles } from "@material-ui/core";
+import { format } from "date-fns";
+import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography } from "@material-ui/core";
 import Fade from "react-reveal/Fade";
 import { Markdown } from "components";
@@ -27,7 +27,7 @@ const Body: React.FC<BodyProps> = ({ title, body, date }) => {
       </Typography>
       <PageWrapper>
         <Typography variant="body1" className={classes.subheading}>
-          {`Published on ${moment(date).format("MMMM DD, YYYY")}`}
+          {`Published on ${format(date, "MMMM dd, yyyy")}`}
         </Typography>
       </PageWrapper>
 

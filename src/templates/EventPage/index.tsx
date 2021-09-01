@@ -4,6 +4,7 @@ import { Backdrop, CircularProgress } from "@material-ui/core";
 import { SnackbarProvider } from "notistack";
 import { EventPageDTO } from "types";
 import { Layout, EventFeed, Footer, Navbar } from "components";
+import { recursivelyFormatDate } from "utils";
 import {
   Aside,
   FixedBar,
@@ -23,10 +24,12 @@ const EventPage: React.FC<EventPageWithLocation> = ({
   data: {
     markdownRemark: {
       fields: { slug },
-      frontmatter: { events: event },
+      frontmatter: { events },
     },
   },
 }) => {
+  const event = recursivelyFormatDate(events);
+
   const [loading, setLoading] = React.useState(false);
   const [ticketsModalOpen, setTicketsModalOpen] = React.useState(false);
   const [alreadyPurchased, setAlreadyPurchased] = React.useState(false);

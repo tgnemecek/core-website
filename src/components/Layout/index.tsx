@@ -1,6 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import { MuiThemeProvider } from "@material-ui/core";
+import { MuiThemeProvider } from "@material-ui/core/styles";
 
 import "./reset.css";
 import "fontsource-roboto";
@@ -9,6 +9,8 @@ import { GoogleAnalytics, theme } from "components";
 
 import { useSiteMetadata } from "utils";
 import { withPrefix } from "gatsby";
+
+import { ResizeListenerProvider } from "./ResizeListener";
 
 const Layout: React.FC = ({ children }) => {
   const { title, description } = useSiteMetadata();
@@ -37,7 +39,6 @@ const Layout: React.FC = ({ children }) => {
           href={`${withPrefix("/")}img/favicon-16x16.png`}
           sizes="16x16"
         />
-        <script src="https://js.stripe.com/v3" async></script>
         <meta name="theme-color" content="#fff" />
 
         <meta property="og:type" content="business.business" />
@@ -46,9 +47,12 @@ const Layout: React.FC = ({ children }) => {
         <meta property="og:image" content={`${withPrefix("/")}img/logo.png`} />
       </Helmet>
       <GoogleAnalytics />
-      <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>
+      <MuiThemeProvider theme={theme}>
+        <ResizeListenerProvider>{children}</ResizeListenerProvider>
+      </MuiThemeProvider>
     </div>
   );
 };
 
+export { default as ResizeListenerContext } from "./ResizeListener";
 export default Layout;

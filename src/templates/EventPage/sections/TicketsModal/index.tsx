@@ -38,6 +38,7 @@ const TicketsModal: React.FC<TicketsModalProps> = ({ open }) => {
       onClose={() => setTicketsModalOpen(false)}
       maxWidth="md"
       fullWidth
+      disablePortal
     >
       <Paper className={classes.paper} square elevation={10}>
         <IconButton

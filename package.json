@@ -4,7 +4,8 @@
   "version": "1.1.3",
   "author": "Thiago Nemecek",
   "dependencies": {
-    "@loadable/component": "^5.15.0",
+    "@cloudinary/base": "^1.0.0-beta.4",
+    "@cloudinary/react": "^1.0.0-beta.8",
     "@material-ui/core": "^4.12.2",
     "@material-ui/icons": "^4.9.1",
     "@material-ui/lab": "^4.0.0-alpha.60",
@@ -18,6 +19,8 @@
     "class-validator": "^0.13.1",
     "cloudinary-react": "^1.7.0",
     "crypto": "^1.0.1",
+    "date-fns": "^2.23.0",
+    "date-fns-tz": "^1.1.6",
     "fontsource-roboto": "^4.0.0",
     "gatsby": "3.11.0",
     "gatsby-image": "^3.10.0",
@@ -60,6 +63,7 @@
     "react-dom": "^17.0.2",
     "react-ga": "^3.1.2",
     "react-helmet": "^6.0.0",
+    "react-lazyload": "^3.2.0",
     "react-lines-ellipsis": "^0.15.0",
     "react-markdown": "^6.0.2",
     "react-material-ui-carousel": "^2.2.7",
@@ -81,22 +85,37 @@
   "scripts": {
     "start": "yarn codegen && netlify dev",
     "build": "graphql-codegen && tsc --build lambda && gatsby build",
-    "codegen": "graphql-codegen"
+    "codegen": "graphql-codegen",
+    "test": "ts-mocha -p lambda/tsconfig.json lambda/**/*.spec.ts"
   },
+  "pre-commit": [
+    "test"
+  ],
   "devDependencies": {
     "@graphql-codegen/cli": "^1.21.8",
     "@graphql-codegen/typescript": "^1.23.0",
     "@types/aws-lambda": "^8.10.81",
+    "@types/expect": "^24.3.0",
     "@types/loadable__component": "^5.13.4",
     "@types/mjml": "^4.7.0",
+    "@types/mocha": "^9.0.0",
     "@types/nodemailer": "^6.4.4",
     "@types/react": "^17.0.15",
     "@types/react-dom": "^17.0.9",
     "@types/react-helmet": "^6.1.2",
+    "@types/react-lazyload": "^3.1.1",
     "@types/react-youtube": "^7.10.0",
+    "@types/sinon": "^10.0.2",
     "@types/stripe-v3": "^3.1.25",
+    "babel-plugin-import": "^1.13.3",
+    "babel-preset-gatsby": "^1.12.0",
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.24",
+    "mocha": "^9.1.1",
+    "pre-commit": "^1.2.2",
     "prettier": "^2.3.2",
+    "sinon": "^11.1.2",
     "source-map-support": "^0.5.19",
+    "ts-mocha": "^8.0.0",
     "ts-node": "^10.1.0"
   }
 }

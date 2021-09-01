@@ -1,11 +1,22 @@
 import Stripe from "./services/Stripe";
 import { NetlifyLambdaHandler, CreatePaymentIntentBody } from "./types";
 
-const createPaymentIntent: NetlifyLambdaHandler = async (event, context) => {
+export const createPaymentIntent: NetlifyLambdaHandler = async (event, c) => {
   try {
-    const { ticketId, timezone, title }: CreatePaymentIntentBody = JSON.parse(
-      event.body || "{}"
+    const body: CreatePaymentIntentBody = JSON.parse(event.body || "{}");
+
+    const { ticketId, timezone, title } = body;
+
+    const missingInputs = (["ticketId", "timezone", "title"] as const).filter(
+      (key) => !body[key]
     );
+
+    if (missingInputs.length) {
+      return {
+        statusCode: 400,
+        body: `Missing inputs: ${missingInputs.join(",")}`,
+      };
+    }
 
     const price = await Stripe.getPrice(ticketId);
     const paymentIntent = await Stripe.createPaymentIntent({

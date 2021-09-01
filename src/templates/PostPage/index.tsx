@@ -2,6 +2,7 @@ import React from "react";
 import { graphql, PageProps } from "gatsby";
 import { PostPageDTO } from "types";
 import { Hero, Layout, Footer, Navbar, Section, PostFeed } from "components";
+import { usePostImage, recursivelyFormatDate } from "utils";
 import { Body, Video, BackLink } from "./sections";
 
 type PostPageWithLocation = PostPageDTO & {
@@ -16,13 +17,15 @@ const PostPage: React.FC<PostPageWithLocation> = ({
     },
   },
 }) => {
-  const { title, text, image, video, date } = post;
+  const { title, text, video, date } = recursivelyFormatDate(post);
+
+  const postImage = usePostImage(post);
 
   return (
     <Layout>
       <Navbar />
       <main>
-        <Hero title={title} small image={image} />
+        <Hero title={title} small image={postImage} />
         <Section>
           <Body title={title} body={text} date={date} />
           {video && <Video video={video} />}

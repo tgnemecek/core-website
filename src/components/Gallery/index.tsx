@@ -3,9 +3,10 @@ import { makeStyles } from "@material-ui/core/styles";
 import { IconButton } from "@material-ui/core";
 import ArrowBackIosRoundedIcon from "@material-ui/icons/ArrowBackIosRounded";
 import ArrowForwardIosRoundedIcon from "@material-ui/icons/ArrowForwardIosRounded";
+import LazyLoad from "react-lazyload";
 import useResizeAware from "react-resize-aware";
 import { useBreakpoint } from "utils";
-import { Image } from "components";
+import GalleryImage from "./GalleryImage";
 
 type GalleryProps = {
   images?: string[];
@@ -138,20 +139,22 @@ const Gallery: React.FC<GalleryProps> = ({
         onTouchEnd={onTouchEnd}
         onScroll={onScroll}
       >
-        <div className={classes.scroll}>
-          {resizeListener}
-          {images.map((image, i) => (
-            <div
-              key={i}
-              className={`${classes.item} ${
-                activeIndex === i && classes.activeItem
-              }`}
-              onMouseEnter={() => setActiveIndex(i)}
-            >
-              <Image src={image} />
-            </div>
-          ))}
-        </div>
+        <LazyLoad height="100%" once>
+          <div className={classes.scroll}>
+            {resizeListener}
+            {images.map((image, i) => (
+              <div
+                key={i}
+                className={`${classes.item} ${
+                  activeIndex === i && classes.activeItem
+                }`}
+                onMouseEnter={() => setActiveIndex(i)}
+              >
+                <GalleryImage src={image} alt={`Featured Item #${i + 1}`} />
+              </div>
+            ))}
+          </div>
+        </LazyLoad>
       </div>
       <div>
         {sm && (

@@ -1,7 +1,9 @@
 import { Post } from "types";
 import { getVideoId, getVideoImage, useGeneralSettings } from "utils";
 
-const usePostImage = ({ image, video }: Post) => {
+type UsePostImage = (props: Pick<Post, "image" | "video">) => string;
+
+const usePostImage: UsePostImage = ({ image, video }) => {
   const { heroImage } = useGeneralSettings();
 
   if (image) return image;

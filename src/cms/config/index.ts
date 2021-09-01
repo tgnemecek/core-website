@@ -22,7 +22,7 @@ const config: ExtendedConfig = {
   media_library: {
     name: "cloudinary",
     config: {
-      cloud_name: "core-coaching-consulting",
+      cloud_name: process.env.GATSBY_CLOUDINARY_NAME,
       api_key: process.env.GATSBY_CLOUDINARY_API,
     },
   },

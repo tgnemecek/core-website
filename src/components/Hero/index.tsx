@@ -3,15 +3,18 @@ import parse from "html-react-parser";
 import Fade from "react-reveal/Fade";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography, Grid, Button } from "@material-ui/core";
-import logo from "src/img/logo.png";
-import { Image, SmoothScroll } from "components";
+import { SmoothScroll } from "components";
 import { useGeneralSettings } from "utils";
+import HeroImage from "./HeroImage";
+import Logo from "./Logo";
 
 type HeroProps = {
   title?: string;
   image?: string;
   small?: boolean;
 };
+
+const SMALL_HEIGHT = 400;
 
 const Hero: React.FC<HeroProps> = ({ title, image, small = false }) => {
   const classes = useStyles({ small })();
@@ -20,11 +23,11 @@ const Hero: React.FC<HeroProps> = ({ title, image, small = false }) => {
 
   return (
     <section className={classes.hero} id="hero">
-      <Image
+      <HeroImage
+        image={image || heroImage}
+        smallHeight={SMALL_HEIGHT}
+        small={small}
         className={classes.image}
-        src={image || heroImage}
-        width={1920}
-        alt="Main illustration of the page"
       />
       <div className={classes.logoBarBackground}>
         <Container>
@@ -32,7 +35,7 @@ const Hero: React.FC<HeroProps> = ({ title, image, small = false }) => {
             {!small && (
               <Grid item>
                 <Fade left>
-                  <img src={logo} className={classes.logo} alt="CORE Logo" />
+                  <Logo />
                 </Fade>
               </Grid>
             )}
@@ -71,7 +74,7 @@ type UseStylesProps = {
 const useStyles = ({ small }: UseStylesProps) =>
   makeStyles((theme) => ({
     hero: {
-      height: small ? "400px" : "100vh",
+      height: small ? SMALL_HEIGHT : "100vh",
       display: "flex",
       alignItems: small ? "flex-start" : "center",
       justifyContent: "center",
@@ -86,18 +89,6 @@ const useStyles = ({ small }: UseStylesProps) =>
       justifyContent: small ? "flex-start" : "center",
       alignItems: "center",
     },
-    logo: {
-      height: 260,
-      [theme.breakpoints.down("md")]: {
-        height: 200,
-      },
-      [theme.breakpoints.down("sm")]: {
-        height: 180,
-      },
-      [theme.breakpoints.down("xs")]: {
-        height: 130,
-      },
-    },
     explore: {
       position: "relative",
       top: "20%",
@@ -108,7 +99,7 @@ const useStyles = ({ small }: UseStylesProps) =>
       position: "fixed",
       zIndex: -1,
       top: 0,
-      height: "100%",
+      height: small ? SMALL_HEIGHT : "100%",
       width: "100%",
       maxWidth: "100vw",
       objectFit: "cover",

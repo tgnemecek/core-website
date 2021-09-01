@@ -1,11 +1,13 @@
-import { createTheme, responsiveFontSizes } from "@material-ui/core";
+import { createTheme, responsiveFontSizes } from "@material-ui/core/styles";
 import { breakpoints } from "utils";
 
 const baseFontColor = "#595959";
 const primaryColor = "#315cb0";
 
 const themeObject = {
-  breakpoints,
+  breakpoints: {
+    values: breakpoints,
+  },
   overrides: {
     MuiFilledInput: {
       root: {

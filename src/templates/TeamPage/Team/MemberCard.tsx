@@ -8,6 +8,7 @@ import {
 } from "@material-ui/core";
 import LaunchIcon from "@material-ui/icons/Launch";
 import Fade from "react-reveal/Fade";
+import LazyLoad from "react-lazyload";
 import { Image } from "components";
 import { Member } from "types";
 
@@ -38,7 +39,11 @@ const MemberCard: React.FC<MemberCardProps> = ({
           onMouseEnter={() => setIsHovering(true)}
           onMouseLeave={() => setIsHovering(false)}
         >
-          <div className={classes.imageWrapper}>
+          <LazyLoad
+            height="100%"
+            once
+            classNamePrefix={`${classes.imageWrapper} lazyload`}
+          >
             <Image
               alt={name}
               className={classes.image}
@@ -50,7 +55,7 @@ const MemberCard: React.FC<MemberCardProps> = ({
             <Typography variant="subtitle2" className={classes.showMore}>
               Show More <LaunchIcon />
             </Typography>
-          </div>
+          </LazyLoad>
           <CardContent className={classes.content}>
             <Typography variant="h3">{name}</Typography>
             <Typography variant="body1">{role}</Typography>

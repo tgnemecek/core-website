@@ -1,18 +1,19 @@
 import React from "react";
-import moment from "moment";
+import { format } from "date-fns";
+import { AdvancedImage } from "@cloudinary/react";
+import { fill } from "@cloudinary/base/actions/resize";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   Typography,
   Card,
   CardActionArea,
-  CardMedia,
   CardContent,
-  Chip,
 } from "@material-ui/core";
 import { Link } from "gatsby";
-import { LanguageDisplay, EventStatus } from "components";
+import LazyLoad from "react-lazyload";
+import { LanguageDisplay, EventStatus, Image } from "components";
 import { Event } from "types";
-import { useBreakpoint } from "utils";
+import { useBreakpoint, useCloudinary, getImageId } from "utils";
 
 type EventProps = {
   event: Pick<
@@ -27,6 +28,51 @@ const EventCard: React.FC<EventProps> = ({ event }) => {
   const breakpoints = useBreakpoint();
   const classes = useStyles({ breakpoints })();
 
+  // const imageSize = () => {
+  //   const { md, sm } = breakpoints;
+
+  //   if (md) return 400;
+  //   if (sm) return 720;
+  //   return 420;
+  // };
+
+  const isCloudinaryImage = Boolean(getImageId(image));
+
+  const getImageSize = () => {
+    let width = 361;
+    let height = 288;
+
+    const { xs, sm, md } = breakpoints;
+
+    if (!xs) {
+      width = 264;
+      height = 201;
+    } else if (!sm) {
+      width = 465;
+      height = 317;
+    } else if (!md) {
+      width = 712;
+      height = 307;
+    }
+
+    return {
+      width,
+      height,
+    };
+  };
+
+  const cldImage = useCloudinary(
+    image,
+    (cld) => {
+      const { width, height } = getImageSize();
+
+      cld.resize(fill(width, height));
+    },
+    [breakpoints]
+  );
+
+  const alt = `Event happening on ${format(date, "MMM, d")}`;
+
   return (
     <Card className={classes.card} elevation={3} square>
       <CardActionArea
@@ -34,14 +80,19 @@ const EventCard: React.FC<EventProps> = ({ event }) => {
         to={`/event${slug}`}
         className={classes.cardActionArea}
       >
-        <div className={classes.imageWrapper}>
-          <CardMedia
-            image={image}
-            className={classes.image}
-            title="Event"
-            component="img"
-          />
-        </div>
+        <LazyLoad once classNamePrefix={`${classes.imageWrapper} lazyload`}>
+          {isCloudinaryImage ? (
+            cldImage && (
+              <AdvancedImage
+                cldImg={cldImage}
+                className={classes.image}
+                alt={alt}
+              />
+            )
+          ) : (
+            <Image src={image} className={classes.image} alt={alt} />
+          )}
+        </LazyLoad>
         <CardContent className={classes.cardContent}>
           <Typography variant="body1" className={classes.title}>
             {title}

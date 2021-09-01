@@ -1,8 +1,9 @@
+require("dotenv").config({
+  path: ".env",
+});
 const path = require("path");
-// const { generateConfig } = require("gatsby-plugin-ts-config");
 
 const projectRoot = __dirname;
-
 module.exports = {
   siteMetadata: {
     title: "CORE Coaching & Consulting",
@@ -11,11 +12,7 @@ module.exports = {
   },
   proxy: {
     prefix: "/.netlify/functions",
-    url: `${
-      process.env.NODE_ENV === "develop"
-        ? "http://localhost"
-        : process.env.GATSBY_SITE_URL
-    }:8888`,
+    url: `${process.env.GATSBY_SITE_URL}:8888`,
   },
   flags: {
     PRESERVE_WEBPACK_CACHE: true,
@@ -32,11 +29,12 @@ module.exports = {
         allExtensions: true,
       },
     },
-    // "gatsby-plugin-sitemap",
+    "gatsby-plugin-sitemap",
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         host: process.env.GATSBY_SITE_URL,
+        sitemap: `${process.env.GATSBY_SITE_URL}/sitemap/sitemap-index.xml`,
       },
     },
     {
@@ -111,6 +109,12 @@ module.exports = {
       options: {
         modulePath: `${projectRoot}/src/cms/index.tsx`,
         manualInit: true,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
+      options: {
+        analyzerPort: "9999",
       },
     },
     "gatsby-plugin-netlify", // make sure to keep it last in the array

@@ -26,6 +26,10 @@ const onCreateNode: GatsbyNode["onCreateNode"] = ({
         key: "services",
         component: "ServicesPage",
       },
+      "/business/": {
+        key: "services",
+        component: "ServicesPage",
+      },
       "/team/": {
         key: "team",
         component: "TeamPage",

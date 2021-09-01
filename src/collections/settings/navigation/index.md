@@ -7,9 +7,9 @@ links:
   - label: CORE Coaching
     url: /coaching
     description: Transformational Coaching services and professional coaching certifications
-  - label: CORE Learning
-    url: /learning
-    description: Educational services for teachers, students and adults in transition
+  - label: CORE Business
+    url: /business
+    description: Helping Organizations, Teams and Leaders Navigate These Difficult Times
   - label: CORE Team
     url: /team
     description: ""

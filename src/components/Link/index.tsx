@@ -1,6 +1,7 @@
 import React from "react";
 import { Link as GatsbyLink } from "gatsby";
-import { makeStyles, Typography } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import { Typography } from "@material-ui/core";
 
 type LinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
   to: string;

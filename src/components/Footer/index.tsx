@@ -1,5 +1,5 @@
 import React from "react";
-import moment from "moment";
+import { format } from "date-fns";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   Container,
@@ -91,7 +91,7 @@ const Footer: React.FC<FooterProps> = ({ paddingBottom = 0 }) => {
       </Container>
       <div className={classes.copyright}>
         <Typography variant="body1">
-          © {moment().format("YYYY")} Core Coaching &amp; Consulting
+          © {format(new Date(), "yyyy")} Core Coaching &amp; Consulting
         </Typography>
       </div>
     </footer>

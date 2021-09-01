@@ -1,22 +1,25 @@
-import moment from "moment";
+import { isBefore, startOfDay, add } from "date-fns";
 import { Ticket } from "types";
 
-type IsTicketValid = (
-  endsOn: Ticket["endsOn"],
-  eventDate: Date | moment.Moment
-) => boolean;
+type IsTicketValid = (endsOn: Ticket["endsOn"], eventDate: Date) => boolean;
 
 const isTicketValid: IsTicketValid = (endsOn, eventDate) => {
-  const now = moment();
+  const now = new Date();
 
   if (endsOn === "oneWeek") {
-    return now.add(1, "week").isBefore(eventDate);
+    const afterOneWeek = add(now, {
+      weeks: 1,
+    });
+
+    return isBefore(afterOneWeek, eventDate);
   }
   if (endsOn === "startOfDay") {
-    return now.isBefore(moment(eventDate).startOf("day"));
+    const startOfThisDay = startOfDay(eventDate);
+
+    return isBefore(now, startOfThisDay);
   }
   if (endsOn === "startOfEvent") {
-    return now.isBefore(eventDate);
+    return isBefore(now, eventDate);
   }
   return false;
 };

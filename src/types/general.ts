@@ -3,11 +3,12 @@ import { EventPage, PostPage } from "./__generated__";
 export type PayPalButtonName =
   | "careerStrengths"
   | "leaderStrengths"
-  | "entrepreneuerStrengths"
+  | "entrepreneurStrengths"
   | "personalStrengths"
+  | "organizationAndTeamProfiles"
   | "donation";
 
-export type ServiceName = "leading" | "coaching" | "learning";
+export type ServiceName = "leading" | "coaching" | "learning" | "business";
 
 export type Event = EventPage;
 

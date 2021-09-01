@@ -4,7 +4,7 @@ import Stripe from "./services/Stripe";
 import moment from "moment";
 import { NetlifyLambdaHandler, EventCreateBody } from "./types";
 
-const eventCreate: NetlifyLambdaHandler = async (event, context) => {
+export const eventCreate: NetlifyLambdaHandler = async (event, context) => {
   if (!context.clientContext.user) {
     // Restricted route
     return {
@@ -17,6 +17,21 @@ const eventCreate: NetlifyLambdaHandler = async (event, context) => {
 
   const { title, tickets, duration } = body;
   const startDate = moment(body.date).startOf("minute");
+
+  const missingFields = (
+    ["title", "tickets", "duration", "date"] as const
+  ).filter((key) => !body[key]);
+
+  if (tickets?.length === 0) {
+    missingFields.push("tickets");
+  }
+
+  if (missingFields.length) {
+    return {
+      statusCode: 400,
+      body: `Missing inputs: ${missingFields.join(",")}`,
+    };
+  }
 
   try {
     await Promise.all([Zoom.ping(), Stripe.ping()]);

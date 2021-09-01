@@ -5,9 +5,9 @@ import { PayPalButtonName } from "types";
 type ButtonData = {
   label: string;
   description: string;
-  value: string;
+  value?: string;
   price?: number;
-  button: "*jpg";
+  button?: "*jpg";
 };
 
 type Buttons = Record<PayPalButtonName, ButtonData>;
@@ -29,8 +29,8 @@ const buttons: Buttons = {
     price: 49,
     button: paypalBuyNow,
   },
-  entrepreneuerStrengths: {
-    label: "Entrepreneuer Strengths Scale",
+  entrepreneurStrengths: {
+    label: "Entrepreneur Strengths Scale",
     description:
       "If you want to start and lead your own business, the Entrepreneur Strengths Scale will reveal your strengths and weaknesses in 6 key factors--plus provide valuable tips to increase your odds of a successful launch.",
     value: "Z86XSVPCFP6H6",
@@ -44,6 +44,11 @@ const buttons: Buttons = {
     value: "D2ZV5ASMDUXQG",
     price: 24,
     button: paypalBuyNow,
+  },
+  organizationAndTeamProfiles: {
+    label: "Organization & Team Profiles",
+    description:
+      "Assess where your business or teams are in balance or out-of-balance--why--and what you can do to implement sustainable improvements. Contact us for a free 1-hour consultation.",
   },
   donation: {
     label: "Make a Difference!",

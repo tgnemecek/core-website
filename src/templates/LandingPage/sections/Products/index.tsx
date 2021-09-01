@@ -8,8 +8,10 @@ import {
   CardHeader,
 } from "@material-ui/core";
 import Fade from "react-reveal/Fade";
+import LazyLoad from "react-lazyload";
 import { Section, Gallery, Image, Heading } from "components";
 import { Product } from "types";
+import ProductImage from "./ProductImage";
 
 type ProductsProps = {
   products: Product[];
@@ -28,7 +30,7 @@ const Products: React.FC<ProductsProps> = ({ products }) => {
           subheading="From books to apps, use these resources to assist you in your journey"
           showLine
         >
-          Leading Your Life &amp; Work Products
+          Core Coaching Books &amp; Apps
         </Heading>
         <a
           href={products[activeindex].link || ""}
@@ -37,11 +39,9 @@ const Products: React.FC<ProductsProps> = ({ products }) => {
         >
           <div className={classes.featured}>
             <div className={classes.leftSide}>
-              <Image
-                alt="Featured product"
-                className={classes.image}
+              <ProductImage
                 src={products[activeindex].image}
-                width="auto"
+                alt={products[activeindex].title}
               />
             </div>
             <Card className={classes.rightSide}>
@@ -55,12 +55,14 @@ const Products: React.FC<ProductsProps> = ({ products }) => {
                   subheader={<div>{products[activeindex].subtitle}</div>}
                 />
                 <CardContent className={classes.content}>
-                  <Image
-                    alt="Featured Product"
-                    className={classes.insideImage}
-                    src={products[activeindex].image}
-                    width="auto"
-                  />
+                  <LazyLoad height="100%" once>
+                    <Image
+                      alt="Featured Product"
+                      className={classes.insideImage}
+                      src={products[activeindex].image}
+                      width="auto"
+                    />
+                  </LazyLoad>
                   <Typography variant="body1" className={classes.paragraph}>
                     {products[activeindex].description}
                   </Typography>
@@ -85,6 +87,7 @@ const useStyles = makeStyles((theme) => ({
   featured: {
     display: "grid",
     "grid-template-columns": "1fr 1fr",
+    "grid-column-gap": 25,
     [theme.breakpoints.down("sm")]: {
       "grid-template-columns": "1fr",
     },
@@ -95,14 +98,6 @@ const useStyles = makeStyles((theme) => ({
     },
     display: "flex",
     justifyContent: "center",
-    "& img": {
-      height: 500,
-      maxWidth: 400,
-    },
-  },
-  image: {
-    width: "100%",
-    objectFit: "contain",
   },
   rightSide: {
     boxShadow: "0px 0px 31px -3px rgba(0,0,0,0.24)",
