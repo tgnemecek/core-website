@@ -86,7 +86,7 @@
     "start": "yarn codegen && netlify dev",
     "build": "graphql-codegen && tsc --build lambda && gatsby build",
     "codegen": "graphql-codegen",
-    "test": "ts-mocha -p lambda/tsconfig.json lambda/**/*.spec.ts && exit 1"
+    "test": "ts-mocha -p lambda/tsconfig.json lambda/**/*.spec.ts"
   },
   "pre-commit": [
     "test"
