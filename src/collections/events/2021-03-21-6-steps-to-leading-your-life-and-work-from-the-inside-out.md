@@ -72,7 +72,7 @@ description: >-
   **Plus much more including** many instructional materials; lifetime access to the group's website portal where all resources are available.
 image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600812431/happy%20group.jpg
 video: https://www.youtube.com/watch?v=Z2OPFWTLiHE&list=UULCMeAbMEtT3P8es6rrT7Wg&index=2
-date: 2021-04-22T17:00:00.000Z
+date: 2021-10-19T17:00:00.000Z
 duration: 90
 language:
   - EN

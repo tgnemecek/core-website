@@ -4,27 +4,28 @@ hero:
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1595801147/icon_hcpkac.jpg
   title: Announcing New SOS Program
 about:
-  text: "Core Coaching & Consulting, LLC is a global group of expert change agents
-    who use the holistic system of The Balancing Act with leaders, teams,
-    organizations, and individuals to improve their Balance, well-being, and
-    flow. We create lasting transformation with powerful tools that assess and
-    remove external and internal barriers to success. Our interventions are
-    rooted in science, first-hand experience, data, and the ancient healing
-    model of the 5 elements & Synergy.  "
+  text: >-
+    Core Coaching & Consulting, LLC uses the holistic system of The Balancing
+    Act with leaders, businesses, and individuals to improve their Balance,
+    well-being, effectiveness, and flow. 
+
+
+    We create lasting transformation with powerful multi-dimensional tools that reveal where organizations or people are out-of-balance, then implement pragmatic processes to remove barriers so they can re-balance themselves from the inside out. 
+
+
+    Our interventions are rooted in science, data, experience, and the ancient healing model of the 5 elements & Synergy.
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1595111411/logo_feamvb.png
 services:
   - title: CORE Leading
-    description: "For leaders who want to transform themselves, their teams &
-      companies from the inside out. "
+    description: "For leaders who want to transform themselves, their teams & companies. "
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1629034127/business_high_5s_u2ze7k.jpg
     name: leading
   - title: CORE Coaching
-    description: Transformational Coaching services for executives and individuals
-      in transition.
+    description: Transformational Coaching to ensure successful career and life transitions.
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1598279507/Core_Coaching_cropped2_i4vxi2.jpg
     name: coaching
   - title: CORE Business
-    description: "Helping Organizations, Teams and Leaders Navigate These Difficult Times "
+    description: Helping Organizations, Teams & Leaders Navigate These Difficult Times
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1629577636/BusinessPage_for_Website_bwrwyb.jpg
     name: learning
 testimonials:
