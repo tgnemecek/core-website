@@ -88,9 +88,12 @@
     "codegen": "graphql-codegen",
     "test": "ts-mocha -p lambda/tsconfig.json lambda/**/*.spec.ts"
   },
-  "pre-commit": [
-    "test"
-  ],
+  "pre-commit": {
+    "colors": true,
+    "run": [
+      "test"
+    ]
+  },
   "devDependencies": {
     "@graphql-codegen/cli": "^1.21.8",
     "@graphql-codegen/typescript": "^1.23.0",
