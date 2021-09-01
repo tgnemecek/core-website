@@ -63,32 +63,33 @@ const PayPalButtons: React.FC<PayPalButtonsProps> = ({ service }) => {
                   method="post"
                   target="_blank"
                 >
-                  <CardActionArea
-                    type="submit"
-                    className={classes.cardActionArea}
-                  >
-                    {button && value && (
-                      <>
-                        <input name="cmd" type="hidden" value="_s-xclick" />
-                        <input
-                          name="hosted_button_id"
-                          type="hidden"
-                          value={value}
-                        />
-                        <input
-                          alt="PayPal - The safer, easier way to pay online!"
-                          name="submit"
-                          src={button}
-                          type="image"
-                        />
-                      </>
-                    )}
-                    {price && (
-                      <Typography variant="subtitle1" className={classes.price}>
-                        ${price}
-                      </Typography>
-                    )}
-                  </CardActionArea>
+                  {button && value && (
+                    <CardActionArea
+                      type="submit"
+                      className={classes.cardActionArea}
+                    >
+                      <input name="cmd" type="hidden" value="_s-xclick" />
+                      <input
+                        name="hosted_button_id"
+                        type="hidden"
+                        value={value}
+                      />
+                      <input
+                        alt="PayPal - The safer, easier way to pay online!"
+                        name="submit"
+                        src={button}
+                        type="image"
+                      />
+                      {price && (
+                        <Typography
+                          variant="subtitle1"
+                          className={classes.price}
+                        >
+                          ${price}
+                        </Typography>
+                      )}
+                    </CardActionArea>
+                  )}
                 </form>
               </Card>
             );
