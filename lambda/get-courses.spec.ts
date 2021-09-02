@@ -2,22 +2,24 @@ import assert from "assert";
 import sinon from "sinon";
 import { Thinkific } from "./services";
 import {
-  MockThinkificCourse,
+  MockCourse,
   MockAPIEvent,
   MockNetlifyContext,
 } from "./mocks/index.mock";
 import { getCourses } from "./get-courses";
+
+const sandbox = sinon.createSandbox();
 
 describe("#getCourses", () => {
   const event = new MockAPIEvent();
   const context = new MockNetlifyContext();
 
   afterEach(() => {
-    sinon.restore();
+    sandbox.restore();
   });
 
   it("responds with status code 200", async () => {
-    Thinkific.getCourses = sinon.stub().resolves([]);
+    sandbox.stub(Thinkific, "getCourses").resolves([]);
     const res = await getCourses(event, context);
     assert.strictEqual(res.statusCode, 200);
   });
@@ -25,9 +27,9 @@ describe("#getCourses", () => {
   it("returns the correct data", async () => {
     const courses = new Array(10)
       .fill(null)
-      .map(() => new MockThinkificCourse().toObject());
+      .map(() => new MockCourse().toObject());
 
-    Thinkific.getCourses = sinon.stub().resolves(courses);
+    sandbox.stub(Thinkific, "getCourses").resolves(courses);
 
     const res = await getCourses(event, context);
 
