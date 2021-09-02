@@ -22,7 +22,7 @@ services:
     name: leading
   - title: CORE Coaching
     description: Transformational Coaching to ensure successful career and life transitions.
-    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1598279507/Core_Coaching_cropped2_i4vxi2.jpg
+    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1630620175/Coaching_step_up_shokhs.png
     name: coaching
   - title: CORE Business
     description: Helping Organizations, Teams & Leaders Navigate These Difficult Times
