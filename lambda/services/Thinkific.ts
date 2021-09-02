@@ -1,10 +1,10 @@
 import fetch from "node-fetch";
-import { ProcessEnvType, Course } from "../types";
+import { ProcessEnvType, ThinkificProduct, Course } from "../types";
 
 const { THINKIFIC_API_KEY, THINKIFIC_SUBDOMAIN } =
   process.env as ProcessEnvType;
 
-const toDTO = (rawData: any) => {
+const toDTO = (rawData: ThinkificProduct) => {
   const result: Course = {
     id: rawData.id,
     name: rawData.name,
@@ -30,7 +30,7 @@ const Thinkific = {
     );
     if (res.status === 200) {
       const data = await res.json();
-      return (data.items as any[])
+      return (data.items as ThinkificProduct[])
         .filter(({ status, hidden }) => status !== "draft" && !hidden)
         .map(toDTO);
     }
@@ -38,23 +38,6 @@ const Thinkific = {
       `Error while getting Thinkific courses. Status: ${res.status}`
     );
   },
-  // getCourses: async () => {
-  //   const res = await fetch("https://api.thinkific.com/api/public/v1/courses", {
-  //     method: "GET",
-  //     headers: {
-  //       "X-Auth-API-Key": THINKIFIC_API_KEY,
-  //       "X-Auth-Subdomain": THINKIFIC_SUBDOMAIN,
-  //       "Content-Type": "application/json",
-  //     },
-  //   });
-  //   if (res.status === 200) {
-  //     const data = await res.json();
-  //     return (data.items as any[]).map(toDTO);
-  //   }
-  //   throw new Error(
-  //     `Error while getting Thinkific courses. Status: ${res.status}`
-  //   );
-  // },
 };
 
 export default Thinkific;

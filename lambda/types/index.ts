@@ -26,7 +26,7 @@ export {
   Ticket,
 } from "./Event";
 
-export { Course } from "./Thinkific";
+export * from "./Thinkific";
 
 export {
   ZoomMeetingType,
