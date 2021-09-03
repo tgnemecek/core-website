@@ -1,5 +1,6 @@
 import React from "react";
 import { Container } from "@material-ui/core";
+import { Skeleton } from "@material-ui/lab";
 import { Section, HorizontalFeed, Heading } from "components";
 import { useCourseFeed } from "utils";
 import CourseCard from "./CourseCard";
@@ -9,9 +10,9 @@ type CourseFeedProps = {
 };
 
 const CourseFeed: React.FC<CourseFeedProps> = ({ title }) => {
-  const courses = useCourseFeed();
+  const { courses, error } = useCourseFeed();
 
-  if (!courses.length) return null;
+  if (error) return null;
 
   return (
     <Section id="courses">
@@ -21,11 +22,19 @@ const CourseFeed: React.FC<CourseFeedProps> = ({ title }) => {
         </Heading>
       </Container>
       <Container>
-        <HorizontalFeed
-          items={courses.map((course, i) => (
-            <CourseCard key={i} course={course} />
-          ))}
-        />
+        {courses.length === 0 ? (
+          <HorizontalFeed
+            items={new Array(3).fill(null).map((_, i) => (
+              <Skeleton key={i} variant="rect" height="100%" width="100%" />
+            ))}
+          />
+        ) : (
+          <HorizontalFeed
+            items={courses.map((course, i) => (
+              <CourseCard key={i} course={course} />
+            ))}
+          />
+        )}
       </Container>
     </Section>
   );
