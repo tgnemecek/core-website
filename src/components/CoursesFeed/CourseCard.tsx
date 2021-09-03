@@ -1,7 +1,4 @@
 import React from "react";
-import { format } from "date-fns";
-import { AdvancedImage } from "@cloudinary/react";
-import { fill } from "@cloudinary/base/actions/resize";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   Typography,
@@ -33,6 +30,22 @@ const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
     return 80;
   };
 
+  const getImageWithSize = () => {
+    if (!image) return undefined;
+
+    let width = 360;
+
+    if (!xs) {
+      width = 269;
+    } else if (!sm) {
+      width = 464;
+    } else if (!md) {
+      width = 713;
+    }
+
+    return `${image}?width=${width}`;
+  };
+
   const link = `https://www.corelearningzone.com/courses/${slug}`;
 
   return (
@@ -49,7 +62,11 @@ const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
           once
           classNamePrefix={`${classes.imageWrapper} lazyload`}
         >
-          <Image src={image} className={classes.image} alt="Course" />
+          <Image
+            src={getImageWithSize()}
+            className={classes.image}
+            alt="Course"
+          />
         </LazyLoad>
         <CardContent>
           <Typography variant="body1" className={classes.title}>
