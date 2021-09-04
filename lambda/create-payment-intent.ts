@@ -5,8 +5,6 @@ export const createPaymentIntent: NetlifyLambdaHandler = async (event, c) => {
   try {
     const body: CreatePaymentIntentBody = JSON.parse(event.body || "{}");
 
-    console.log({ body, a: "1" });
-
     const { ticketId, timezone, title } = body;
 
     const missingInputs = (["ticketId", "timezone", "title"] as const).filter(
