@@ -31,6 +31,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
     setTicketsModalOpen,
     setAlreadyPurchased,
     setLoading,
+    event: { title },
   } = React.useContext(EventContext)!;
 
   const [clientSecret, setClientSecret] = React.useState("");
@@ -63,6 +64,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
+          title,
           ticketId: chosenTicket.id,
           timezone: moment.tz.guess(),
         }),
@@ -92,9 +94,9 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
   };
 
   const hasErrors = () => {
-    const newErrors: Partial<FormErrors> = (Object.keys(
-      formState
-    ) as (keyof FormState)[])
+    const newErrors: Partial<FormErrors> = (
+      Object.keys(formState) as (keyof FormState)[]
+    )
       .filter((key) => !formState[key])
       .reduce((acc, key) => {
         return { ...acc, [key]: "This is a required field" };
