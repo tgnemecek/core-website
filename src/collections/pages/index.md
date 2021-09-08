@@ -142,6 +142,9 @@ products:
     link: https://www.amazon.com/Working-Your-Core-Sharon-Seivert-ebook/dp/B00J4BUQ2S/ref=sr_1_1?dchild=1&keywords=Working+from+Your+Core+seivert&qid=1600888309&s=books&sr=1-1
     subtitle: Personal and corporate wisdom in a world of change
 videos:
+  - link: https://youtu.be/ZLraNI9Amu4
+    subtitle: Why we formed CCC & how it can help you
+    title: Introducing Core Coaching & Consulting, LLC
   - link: https://www.youtube.com/watch?v=zVmDGM24baM
     title: Introducing Core Coaching & Consulting
   - link: https://www.youtube.com/watch?v=Drg9JUYrrrA
