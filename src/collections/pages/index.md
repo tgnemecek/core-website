@@ -145,8 +145,6 @@ videos:
   - link: https://youtu.be/ZLraNI9Amu4
     subtitle: Why we formed CCC & how it can help you
     title: Introducing Core Coaching & Consulting, LLC
-  - link: https://www.youtube.com/watch?v=zVmDGM24baM
-    title: Introducing Core Coaching & Consulting
   - link: https://www.youtube.com/watch?v=Drg9JUYrrrA
     title: Xavi Nova
     subtitle: '"The Balancing Act Changed My Life and Work"'
@@ -170,6 +168,8 @@ videos:
   - title: Organizational Change
     link: https://www.youtube.com/watch?v=XQdlMuzwBAE
     subtitle: (Brazil Banks)
+  - link: https://www.youtube.com/watch?v=zVmDGM24baM
+    title: Core Coaching & Consulting
   - link: https://www.youtube.com/watch?v=I3LmXgYoRLY
     title: "SOS: Switch Off Stress App"
     subtitle: Introduction to the Mobile App
