@@ -21,6 +21,7 @@ export { default as useGeneralSettings } from "./useGeneralSettings";
 export { default as usePostImage } from "./usePostImage";
 export { default as useContactInfo } from "./useContactInfo";
 export { default as useNavigation } from "./useNavigation";
+export { default as usePayPalButtons } from "./usePayPalButtons";
 export { default as useSiteMetadata } from "./useSiteMetadata";
 
 export { default as youtubeRegex } from "./youtubeRegex";

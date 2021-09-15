@@ -9,8 +9,8 @@ import {
   CardActionArea,
 } from "@material-ui/core";
 import { theme, Heading } from "components";
-import { PayPalButtonName, ServiceName } from "types";
-import buttons from "./buttons";
+import { ServiceName } from "types";
+import { usePayPalButtons } from "utils";
 
 type PayPalButtonsProps = {
   service: ServiceName;
@@ -19,23 +19,7 @@ type PayPalButtonsProps = {
 const PayPalButtons: React.FC<PayPalButtonsProps> = ({ service }) => {
   const classes = useStyles();
   const sm = useMediaQuery(theme.breakpoints.down("sm"));
-
-  const getButtonNames = (): PayPalButtonName[] => {
-    switch (service) {
-      case "leading":
-        return ["leaderStrengths", "entrepreneurStrengths"];
-      case "coaching":
-        return ["careerStrengths", "personalStrengths"];
-      case "learning":
-        return ["personalStrengths", "donation"];
-      case "business":
-        return ["leaderStrengths", "organizationAndTeamProfiles"];
-      default:
-        throw new Error(
-          `Service name unrecognized in getPayPalButtons(): ${service}`
-        );
-    }
-  };
+  const buttons = usePayPalButtons(service);
 
   return (
     <>
@@ -49,9 +33,7 @@ const PayPalButtons: React.FC<PayPalButtonsProps> = ({ service }) => {
       </Container>
       <Container maxWidth="md">
         <div className={classes.grid}>
-          {getButtonNames().map((key) => {
-            const { label, description, value, price, button } = buttons[key];
-
+          {buttons.map(({ label, description, value, price, button }) => {
             return (
               <Card raised className={classes.card}>
                 <CardContent>

@@ -23,7 +23,7 @@ const Footer: React.FC<FooterProps> = ({ paddingBottom = 0 }) => {
   const classes = useStyles({ paddingBottom })();
 
   const renderPhone = (phone: string) => {
-    const href = `tel:${phone.replace(/\D/g, "")}`;
+    const href = `tel:${phone.replace(/[^\d\+]/g, "")}`;
     return (
       <ListItem>
         <ListItemIcon>

@@ -23,15 +23,22 @@ const Markdown: React.FC<MarkdownProps> = ({ text, components, className }) => {
         a: (props: any) => {
           let href: string = props.href || "";
 
-          if (!href.startsWith("/") && !href.startsWith("http")) {
+          const internalLink = href.startsWith("/");
+          const isMailto = href.startsWith("mailto");
+
+          if (!internalLink && !isMailto && !href.startsWith("http")) {
             href = `http://${href}`;
           }
+
           return (
             <a
               {...props}
               href={href}
-              target="_blank"
-              rel="noopener noreferrer"
+              {...(!internalLink &&
+                !isMailto && {
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                })}
             />
           );
         },
