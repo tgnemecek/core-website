@@ -1,8 +1,8 @@
 ---
 collection: posts
 title: The pandemic has had an enormous effect on all of us...so what's next?
-text: "It's time to take charge & start moving forward, despite the difficulties
-  during this historical time of transition. To learn more about how you can
+text: "It's time to take charge & start moving forward, despite the many
+  difficulties of this historical transition. To learn more about how you can
   better lead your own  life and work--OR become a better leader in your
   organization, go here:"
 video: https://youtu.be/9lKcJEPrZFQ
