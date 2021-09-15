@@ -7,6 +7,7 @@ text: >-
 
   \
 
-  It's time to take charge & start moving forward. To learn more about how you can lead a new life and work, or become a better leader, go here:
+  It's time to take charge & start moving forward, despite the difficulties during this historical time of transition. To learn more about how you can better lead your ow  life and work--and become a better leader, go here:
+video: https://youtu.be/9lKcJEPrZFQ
 date: 2021-09-15T15:04:29.449Z
 ---
