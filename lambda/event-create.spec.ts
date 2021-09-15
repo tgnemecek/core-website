@@ -1,5 +1,5 @@
 import assert from "assert";
-import sinon, { SinonSpy } from "sinon";
+import sinon from "sinon";
 import Stripe from "./services/Stripe";
 import Zoom from "./services/Zoom";
 import Core from "./services/Core";
@@ -10,7 +10,6 @@ import { eventCreate } from "./event-create";
 describe("#eventCreate", () => {
   const body: EventCreateBody = {
     id: "this-is-the-id",
-    isOnline: true,
     title: "10 Steps to Cure Stress",
     subtitle: "An amazing event for you",
     duration: 30,
