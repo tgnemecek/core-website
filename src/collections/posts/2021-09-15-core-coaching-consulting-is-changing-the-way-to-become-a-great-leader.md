@@ -1,6 +1,6 @@
 ---
 collection: posts
-title: Core Coaching & Consulting is changing the way to become a great leader!
+title: We're changing the way you become a great leader!
 text: " Are you ready to start your leadership journey? If so, sign up for one
   of our programs today!. Check out the upcoming live events and practical
   online programs below to more powerfully take charge of your own life and
