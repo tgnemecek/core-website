@@ -14,12 +14,14 @@ export { default as recursivelyFormatDate } from "./recursivelyFormatDate";
 // Hooks:
 export { default as useBreakpoint } from "./useBreakpoint";
 export { default as useCloudinary } from "./useCloudinary";
+export { default as useCourseFeed } from "./useCourseFeed";
 export { default as useEventFeed } from "./useEventFeed";
 export { default as usePostFeed } from "./usePostFeed";
 export { default as useGeneralSettings } from "./useGeneralSettings";
 export { default as usePostImage } from "./usePostImage";
 export { default as useContactInfo } from "./useContactInfo";
 export { default as useNavigation } from "./useNavigation";
+export { default as usePayPalButtons } from "./usePayPalButtons";
 export { default as useSiteMetadata } from "./useSiteMetadata";
 
 export { default as youtubeRegex } from "./youtubeRegex";

@@ -4,6 +4,7 @@ import { LandingPageDTO } from "types";
 import { recursivelyFormatDate } from "utils";
 import {
   Hero,
+  CoursesFeed,
   EventFeed,
   PostFeed,
   ContactForm,
@@ -37,6 +38,7 @@ const LandingPage: React.FC<LandingPageDTO> = ({
       <main>
         <Hero />
         <PostFeed title="What's new" />
+        <CoursesFeed />
         <EventFeed title="Upcoming Events" />
         <AboutSection about={about} />
         <Testimonials testimonials={testimonials} />

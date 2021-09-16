@@ -76,7 +76,7 @@ const PageCollection: CmsCollection = {
             {
               label: "Name",
               name: "name",
-              widget: "hidden",
+              widget: "string",
             },
           ],
         },

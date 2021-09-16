@@ -1,4 +1,5 @@
 export { default as ContactForm } from "./ContactForm";
+export { default as CoursesFeed } from "./CoursesFeed";
 export { default as EventFeed } from "./EventFeed";
 export { default as EventStatus } from "./EventStatus";
 export { default as Ellipsis } from "./Ellipsis";

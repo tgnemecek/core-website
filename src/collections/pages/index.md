@@ -27,7 +27,7 @@ services:
   - title: CORE Business
     description: Helping Organizations, Teams & Leaders Navigate These Difficult Times
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1629577636/BusinessPage_for_Website_bwrwyb.jpg
-    name: learning
+    name: business
 testimonials:
   - testimonial: During a crossroads in my career, Sharon coached me to overcome
       obstacles and doubts, and then supported me in making a bold decision that

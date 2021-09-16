@@ -1,7 +1,7 @@
 import { NetlifyContext } from "../types/Netlify";
 
 class MockNetlifyContext implements NetlifyContext {
-  constructor(partial?: NetlifyContext) {
+  constructor(partial?: Partial<NetlifyContext>) {
     if (partial) {
       Object.assign(this, partial);
     }
