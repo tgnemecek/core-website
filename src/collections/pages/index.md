@@ -22,7 +22,7 @@ services:
     name: leading
   - title: CORE Coaching
     description: Transformational Coaching to ensure successful career and life transitions.
-    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1598279507/Core_Coaching_cropped2_i4vxi2.jpg
+    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1630620175/Coaching_step_up_shokhs.png
     name: coaching
   - title: CORE Business
     description: Helping Organizations, Teams & Leaders Navigate These Difficult Times
@@ -142,8 +142,9 @@ products:
     link: https://www.amazon.com/Working-Your-Core-Sharon-Seivert-ebook/dp/B00J4BUQ2S/ref=sr_1_1?dchild=1&keywords=Working+from+Your+Core+seivert&qid=1600888309&s=books&sr=1-1
     subtitle: Personal and corporate wisdom in a world of change
 videos:
-  - link: https://www.youtube.com/watch?v=zVmDGM24baM
-    title: Introducing Core Coaching & Consulting
+  - link: https://youtu.be/ZLraNI9Amu4
+    subtitle: Why we formed CCC & how it can help you
+    title: Introducing Core Coaching & Consulting, LLC
   - link: https://www.youtube.com/watch?v=Drg9JUYrrrA
     title: Xavi Nova
     subtitle: '"The Balancing Act Changed My Life and Work"'
@@ -167,6 +168,8 @@ videos:
   - title: Organizational Change
     link: https://www.youtube.com/watch?v=XQdlMuzwBAE
     subtitle: (Brazil Banks)
+  - link: https://www.youtube.com/watch?v=zVmDGM24baM
+    title: Core Coaching & Consulting
   - link: https://www.youtube.com/watch?v=I3LmXgYoRLY
     title: "SOS: Switch Off Stress App"
     subtitle: Introduction to the Mobile App

@@ -32,7 +32,7 @@ explanation:
 
 
     Click the message link below to ask questions about how CORE Coaching could transform your life, work & relationships - now and forever.
-  image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600816113/Coaching_cropped_ibup02.jpg
+  image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1630620175/Coaching_step_up_shokhs.png
 benefits: |-
   * Feel Stuck, anxious, frustrated, bored; lack direction; job is poor fit.
   * Lack Clarity. Don't see better options (or how to get there).
