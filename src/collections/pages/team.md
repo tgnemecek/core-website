@@ -110,22 +110,6 @@ members:
       every moment, live without expectations and free from all fears"  '
     linkedin: https://www.linkedin.com/in/jordiformiguera-lifecoach/
     video: ""
-  - name: Marianne Collins
-    role: Strategic Business Partner
-    photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1601145382/Marianne_for_CCC_dffzeh.jpg
-    bio: >-
-      Marianne has held C-Level roles in both large and mid-size organizations
-      where she had oversight of the full P&L, including managing both Revenue
-      and Operations functions and leading teams of over 1,000 employees. Her
-      work with CORE Coaching & Consulting focuses on Executive Development,
-      Performance Enhancement, Career Transition Strategies and coaching
-      entrepreneurs on business strategy, plan development and fundraising.
-
-      As an executive coach, Marianne partners with leaders to implement plans that enhance individual performance, drive team results, improve internal communications and accelerate profit growth strategies.  She currently serves on both for-profit and non-profit Boards of Directors.
-
-      Marianne lives with her family in Boston and volunteers with Equine Therapeutic Riding Programs, which supports the development of at-risk children and young adults.
-    linkedin: https://www.linkedin.com/in/marianneecollins/
-    video: ""
   - name: Dorothy Ginnett
     role: Teacher of CORE Teachers
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1601304340/CCC_Dorothy_qgw5r8.jpg
