@@ -1,6 +1,6 @@
 ---
 collection: contact
-email: admin@thecoreporation.com
+email: sseivert@thecoreporation.com
 phone1: +1 857-370-9734
 address: |-
   650 Ocean Avenue
