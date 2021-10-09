@@ -19,7 +19,7 @@ description: >-
 
   You will also receive detailed instructions on the procrastination process so you can return whenever you wish to blast through procrastination.
 image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1617725563/procrastination_anjsoj.jpg
-date: 2021-10-21T17:00:00.248Z
+date: 2021-12-07T18:00:00.248Z
 duration: 90
 language:
   - EN
@@ -28,11 +28,7 @@ isOnline: true
 tickets:
   - id: price_1IoqawC6qmFvoaW64wk0tzLp
     description: General Admission
-    price: 20
-    endsOn: startOfEvent
-  - id: price_1IoqavC6qmFvoaW6AqOurJsp
-    description: General Admission
-    price: 45
+    price: 24
     endsOn: startOfEvent
   - id: price_1IoqavC6qmFvoaW6BF4RT8EN
     description: Early Bird
