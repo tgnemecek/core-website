@@ -141,6 +141,22 @@ products:
       more heroic despite the challenging times in which we live.
     link: https://www.amazon.com/Working-Your-Core-Sharon-Seivert-ebook/dp/B00J4BUQ2S/ref=sr_1_1?dchild=1&keywords=Working+from+Your+Core+seivert&qid=1600888309&s=books&sr=1-1
     subtitle: Personal and corporate wisdom in a world of change
+  - title: Prosperar
+    subtitle: 6 pasos para acceder a la gran riqueza
+    link: https://www.amazon.com/Prosperar-pasos-acceder-riqueza-Spanish-ebook/dp/B089FNYYCD/ref=sr_1_1?dchild=1&keywords=prosperar+book+seivert&qid=1633814219&s=digital-text&sr=1-1
+    description: Prospering -- translated into Spanish by Mercedes Bellavista
+    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1633814498/Screen_Shot_2021-10-09_at_5.08.09_PM_qpoamu.png
+  - title: 6 pasos para Tomar las Riendas de tu Vida y tu Trabajo
+    link: https://www.amazon.com/gp/product/B098RC9TNS/ref=dbs_a_def_rwt_bibl_vppi_i3
+    subtitle: (desde dentro hacia fuera)
+    description: >
+      6 Steps to Leading Your Life & Work (from the inside out) -- translated
+      into Spanish by Mercedes Bellavista
+    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1633814525/Screen_Shot_2021-10-09_at_5.05.10_PM_pubpw3.png
+  - title: El Proceso Equilibrante/ The Balancing Process
+    link: https://www.amazon.com/gp/product/9707750499/ref=dbs_a_def_rwt_bibl_vppi_i7
+    description: The Spanish language version of The Balancing Act.
+    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1633814475/Screen_Shot_2021-10-09_at_5.16.19_PM_qw1wg5.png
 videos:
   - link: https://youtu.be/ZLraNI9Amu4
     subtitle: Why we formed CCC & how it can help you
