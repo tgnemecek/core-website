@@ -133,14 +133,6 @@ products:
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1594942999/sos-book_tc9jx9.jpg
     link: https://www.amazon.com/SOS-Switch-Stress-Sharon-Seivert-ebook/dp/B00H312T3A/ref=sr_1_1?dchild=1&keywords=switch+off+stress+seivert&qid=1600887576&s=books&sr=1-1
     subtitle: 101 Really Fast Ways
-  - title: Working from Your Core
-    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600888032/wfyccover_msrx27.jpg
-    description: Ten Heroic Core Types that can help you more confidently Lead Your
-      Life and Work from the inside out. WFYC compliments The Balancing Act
-      processes of CORE Coaching and Consulting by showing how we can become
-      more heroic despite the challenging times in which we live.
-    link: https://www.amazon.com/Working-Your-Core-Sharon-Seivert-ebook/dp/B00J4BUQ2S/ref=sr_1_1?dchild=1&keywords=Working+from+Your+Core+seivert&qid=1600888309&s=books&sr=1-1
-    subtitle: Personal and corporate wisdom in a world of change
   - title: Prosperar
     subtitle: 6 pasos para acceder a la gran riqueza
     link: https://www.amazon.com/Prosperar-pasos-acceder-riqueza-Spanish-ebook/dp/B089FNYYCD/ref=sr_1_1?dchild=1&keywords=prosperar+book+seivert&qid=1633814219&s=digital-text&sr=1-1
@@ -157,6 +149,14 @@ products:
     link: https://www.amazon.com/gp/product/9707750499/ref=dbs_a_def_rwt_bibl_vppi_i7
     description: The Spanish language version of The Balancing Act.
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1633814475/Screen_Shot_2021-10-09_at_5.16.19_PM_qw1wg5.png
+  - title: Working from Your Core
+    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600888032/wfyccover_msrx27.jpg
+    description: Ten Heroic Core Types that can help you more confidently Lead Your
+      Life and Work from the inside out. WFYC compliments The Balancing Act
+      processes of CORE Coaching and Consulting by showing how we can become
+      more heroic despite the challenging times in which we live.
+    link: https://www.amazon.com/Working-Your-Core-Sharon-Seivert-ebook/dp/B00J4BUQ2S/ref=sr_1_1?dchild=1&keywords=Working+from+Your+Core+seivert&qid=1600888309&s=books&sr=1-1
+    subtitle: Personal and corporate wisdom in a world of change
 videos:
   - link: https://youtu.be/ZLraNI9Amu4
     subtitle: Why we formed CCC & how it can help you
