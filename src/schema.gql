@@ -15,8 +15,8 @@ type Frontmatter {
 type Pages {
   landing: LandingPage
   team: TeamPage
+  legal: LegalPage
   services: ServicesPage
-
   coaching: ServicesPage
   leading: ServicesPage
   learning: ServicesPage
@@ -30,7 +30,6 @@ type Contact {
   link: String
 }
 type GeneralSettings {
-  brandName: String!
   logo: String!
   heroImage: String!
   refundPolicy: String
@@ -100,6 +99,11 @@ type Member {
   bio: String!
   linkedin: String
   video: String
+}
+
+type LegalPage {
+  privacyPolicy: String
+  termsAndConditions: String
 }
 
 type ServicesPage {

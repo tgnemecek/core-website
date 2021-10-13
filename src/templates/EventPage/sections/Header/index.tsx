@@ -41,7 +41,7 @@ const Header: React.FC = () => {
                 <Typography variant="body1">{subtitle}</Typography>
               </CardContent>
               <CardActions className={classes.cardActions}>
-                <Grid container justify="space-between">
+                <Grid container justifyContent="space-between">
                   <Grid item>
                     <div className={classes.extra}>
                       <LanguageDisplay code={language} showFlag flagSize={24} />
