@@ -8,6 +8,7 @@ import {
   EventPage,
   ServicesPage,
   TeamPage,
+  LegalPage,
 } from "./__generated__";
 import { EventFeed, Post } from "./general";
 
@@ -41,6 +42,8 @@ export type LandingPageDTO = PagesDTO<{
 export type ServicesPageDTO = PagesDTO<ServicesPage>;
 
 export type TeamPageDTO = PagesDTO<TeamPage>;
+
+export type LegalPageDTO = PagesDTO<LegalPage>;
 
 export type EventPageDTO = GenericDTO<{
   events: EventPage;

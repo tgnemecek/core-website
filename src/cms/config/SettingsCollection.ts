@@ -100,11 +100,6 @@ const SettingsCollection: CmsCollection = {
       fields: [
         ...commonFields("generalSettings"),
         {
-          label: "Brand Name",
-          name: "brandName",
-          widget: "text",
-        },
-        {
           label: "Logo Image",
           name: "logo",
           widget: "image",

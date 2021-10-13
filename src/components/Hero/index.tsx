@@ -12,14 +12,30 @@ type HeroProps = {
   title?: string;
   image?: string;
   small?: boolean;
+  hideTitle?: boolean;
 };
 
 const SMALL_HEIGHT = 400;
 
-const Hero: React.FC<HeroProps> = ({ title, image, small = false }) => {
+const Hero: React.FC<HeroProps> = ({
+  title,
+  image,
+  small = false,
+  hideTitle,
+}) => {
   const classes = useStyles({ small })();
 
-  const { brandName, heroImage } = useGeneralSettings();
+  const { heroImage } = useGeneralSettings();
+
+  const brandName = (
+    <span>
+      CORE
+      <br />
+      Coaching &amp;
+      <br />
+      Consulting
+    </span>
+  );
 
   return (
     <section className={classes.hero} id="hero">
@@ -40,11 +56,11 @@ const Hero: React.FC<HeroProps> = ({ title, image, small = false }) => {
               </Grid>
             )}
             <Grid item>
-              <Fade>
-                <Typography variant="h1">
-                  {title || parse(brandName)}
-                </Typography>
-              </Fade>
+              {!hideTitle && (
+                <Fade>
+                  <Typography variant="h1">{title || brandName}</Typography>
+                </Fade>
+              )}
             </Grid>
           </Grid>
         </Container>

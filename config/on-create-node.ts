@@ -34,6 +34,10 @@ const onCreateNode: GatsbyNode["onCreateNode"] = ({
         key: "team",
         component: "TeamPage",
       },
+      "/legal/": {
+        key: "legal",
+        component: "LegalPage",
+      },
     } as const;
 
     const value = createFilePath({ node, getNode }) as keyof typeof pageMap;

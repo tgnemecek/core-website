@@ -214,6 +214,24 @@ const PageCollection: CmsCollection = {
       ],
     },
     {
+      file: "src/collections/pages/legal.md",
+      label: "Legal Page",
+      name: "legal",
+      fields: [
+        ...commonFields("legal", "LegalPage"),
+        {
+          label: "Privacy Policy",
+          name: "privacyPolicy",
+          widget: "text",
+        },
+        {
+          label: "Purchase Terms",
+          name: "termsAndConditions",
+          widget: "text",
+        },
+      ],
+    },
+    {
       file: "src/collections/pages/coaching.md",
       label: "Coaching Page",
       name: "coaching",
