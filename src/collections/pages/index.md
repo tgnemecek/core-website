@@ -156,12 +156,11 @@ products:
     link: https://www.amazon.com/gp/product/B098RC9TNS/ref=dbs_a_def_rwt_bibl_vppi_i3
     subtitle: (desde dentro hacia fuera)
     description: >
-      ¿Por qué tomar las riendas?  Este libro es una llamada a la acción. Te
-      pide que te conviertas en héroe de la vida real, empezando hoy mismo. Te
-      muestra cómo actuar con mayor efectividad asumiendo total responsabilidad
-      en tomar las riendas de tu vida y tu trabajo para que tu confianza, tu
-      poder y tu capacidad de respuesta ante una crisis aumenten
-      exponencialmente. 
+      Este libro es una llamada a la acción. Te pide que te conviertas en héroe
+      de la vida real, empezando hoy mismo. Te muestra cómo actuar con mayor
+      efectividad asumiendo total responsabilidad en tomar las riendas de tu
+      vida y tu trabajo para que tu confianza, tu poder y tu capacidad de
+      respuesta ante una crisis aumenten exponencialmente. 
 
       Confío en que este libro te inspire a elegir el optimismo pragmático en este crítico punto de inflexión.   Aunque a simple vista el optimismo pragmático puede parecer simplista, o incluso temerario, te insto a que lo pruebes porque es una estrategia de cambio lógica que cimentarás una y otra vez en la realidad de tu experiencia diaria. Y con ello, aumentarás las probabilidades de atravesar las tormentas actuales de manera segura. 
 
