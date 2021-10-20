@@ -156,8 +156,16 @@ products:
     link: https://www.amazon.com/gp/product/B098RC9TNS/ref=dbs_a_def_rwt_bibl_vppi_i3
     subtitle: (desde dentro hacia fuera)
     description: >
-      6 Steps to Leading Your Life & Work (from the inside out) -- translated
-      into Spanish by Mercedes Bellavista
+      ¿Por qué tomar las riendas?  Este libro es una llamada a la acción. Te
+      pide que te conviertas en héroe de la vida real, empezando hoy mismo. Te
+      muestra cómo actuar con mayor efectividad asumiendo total responsabilidad
+      en tomar las riendas de tu vida y tu trabajo para que tu confianza, tu
+      poder y tu capacidad de respuesta ante una crisis aumenten
+      exponencialmente. 
+
+      Confío en que este libro te inspire a elegir el optimismo pragmático en este crítico punto de inflexión.   Aunque a simple vista el optimismo pragmático puede parecer simplista, o incluso temerario, te insto a que lo pruebes porque es una estrategia de cambio lógica que cimentarás una y otra vez en la realidad de tu experiencia diaria. Y con ello, aumentarás las probabilidades de atravesar las tormentas actuales de manera segura. 
+
+      La hora de ruta paso a paso y minuciosa que se detalla en Tomar las riendas de tu vida y tu trabajo te ayudará a tener mayor confianza, agilidad y resiliencia, de manera que te sientas impulsado a avanzar constante e inexorablemente hacia tus objetivos. Este libro también te ayudará con las herramientas prácticas de implementación para superar cualquier obstáculo que te puedas encontrar en este viaje. 
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1633814525/Screen_Shot_2021-10-09_at_5.05.10_PM_pubpw3.png
   - title: El Proceso Equilibrante/ The Balancing Process
     link: https://www.amazon.com/gp/product/9707750499/ref=dbs_a_def_rwt_bibl_vppi_i7
