@@ -98,41 +98,39 @@ products:
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600964000/6_Steps_LYL_W_cover_yatpeq.jpg
     link: https://www.amazon.com/dp/B08JYC63Y6/ref=sr_1_3?dchild=1&keywords=6+steps+to+leading+your+life+and+work&qid=1600964053&s=books&sr=1-3
     subtitle: (from the Inside Out)
+  - title: 6 pasos para Tomar las Riendas de tu Vida y tu Trabajo
+    link: https://www.amazon.com/gp/product/B098RC9TNS/ref=dbs_a_def_rwt_bibl_vppi_i3
+    subtitle: (desde dentro hacia fuera)
+    description: >
+      Este libro es una llamada a la acción. Te pide que te conviertas en héroe
+      de la vida real, empezando hoy mismo. Te muestra cómo actuar con mayor
+      efectividad asumiendo total responsabilidad en tomar las riendas de tu
+      vida y tu trabajo para que tu confianza, tu poder y tu capacidad de
+      respuesta ante una crisis aumenten exponencialmente. 
+
+      Confío en que este libro te inspire a elegir el optimismo pragmático en este crítico punto de inflexión.   Aunque a simple vista el optimismo pragmático puede parecer simplista, o incluso temerario, te insto a que lo pruebes porque es una estrategia de cambio lógica que cimentarás una y otra vez en la realidad de tu experiencia diaria. Y con ello, aumentarás las probabilidades de atravesar las tormentas actuales de manera segura. 
+
+      La hora de ruta paso a paso y minuciosa que se detalla en Tomar las riendas de tu vida y tu trabajo te ayudará a tener mayor confianza, agilidad y resiliencia, de manera que te sientas impulsado a avanzar constante e inexorablemente hacia tus objetivos. Este libro también te ayudará con las herramientas prácticas de implementación para superar cualquier obstáculo que te puedas encontrar en este viaje. 
+    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1633814525/Screen_Shot_2021-10-09_at_5.05.10_PM_pubpw3.png
   - title: Prospering!
     link: https://www.amazon.com/Prospering-Steps-Spiraling-Great-Wealth-ebook/dp/B0831QTTSC/ref=sr_1_1?dchild=1&keywords=prospering+seivert&qid=1600888410&s=books&sr=1-1
-    description: In this brand new e-book, Sharon shows how The Balancing Act
-      methodology can help you prosper in every possible way -- a timely topic
-      for these times of global economic crises!
+    description: "In this new e-book, Sharon shows how The Balancing Act methodology
+      can help you prosper in every possible way -- a timely topic for these
+      times of global economic crises! Even if other wealth-building approaches
+      have failed you in the past, Prospering can work wonders for you. There
+      are many reasons why. First and foremost, Prospering is based on The
+      Balancing Act, a powerful change process that shows you how to start
+      wealth-building from your Core (your center, essence, soul). In so doing,
+      Prospering supplies you with a powerful internal moral compass so you can
+      maintain strong balance, confidence, and calm while building new wealth,
+      from the inside out. Additionally, Prospering eases conflict and pain so
+      you can create win-win-win ripple effects that benefit you, the people you
+      love, and many others. And lastly, Prospering is a unified, systemic
+      approach in which you can make just one small improvement in one aspect of
+      your wealth and then leverage it via multi-level learning to increase
+      other forms of wealth you desire. "
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600889276/Prospering_cover_bbx8cd.jpg
     subtitle: 6 Steps for Spiraling up to Great Wealth
-  - title: "SOS: Switch Off Stress"
-    description: >-
-      SOS: Switch Off Stress is a smart-phone app with 1 to 2-minute
-      stress-reduction techniques based on The Balancing Act system. 
-
-      It will quickly improve your health, sense of well-being, and strengthen your immune-system resistance. In this way you can become even stronger as you decide the daily specifics of how you want to lead your new life and work.
-
-      To Download the app:
-
-      •	APPLE: Go to Apple Store; Choose “LITE” (free) or “PRO” version. 
-
-      •	ANDROID: Go to Play Store; choose LITE or PRO versions of SOS. 
-
-      Start the SOS app by scoring which of 6 types of stress are causing you the most pain. Then you’ll get more points for that element whenever you return to relieve your worst stressor! With points you can keep track of your progress or play a friendly competitive game with friends, family and colleagues who are trying to reduce their stress.
-    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1595801147/icon_hcpkac.jpg
-    link: https://apps.apple.com/jm/app/sos-switch-off-stress-lite/id1263283831
-    subtitle: (Mobile App)
-  - title: "SOS: Switch Off Stress"
-    description: "SOS: Switch Off Stress is a practical, immediately usable book
-      that provides 101 Really Fast Ways to stop stress (in 6 seconds to 6
-      minutes). SOS is a great book for our troubled times. It follows the The
-      Balancing Act's powerful process to show you exactly what kind of stress
-      is harming you so you can target and remove it ASAP.  Switch Off Stress is
-      used by clients of Core Coaching & Consulting to optimize their progress.
-      it is available in print or as an e-book."
-    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1594942999/sos-book_tc9jx9.jpg
-    link: https://www.amazon.com/SOS-Switch-Stress-Sharon-Seivert-ebook/dp/B00H312T3A/ref=sr_1_1?dchild=1&keywords=switch+off+stress+seivert&qid=1600887576&s=books&sr=1-1
-    subtitle: 101 Really Fast Ways
   - title: Prosperar
     subtitle: 6 pasos para acceder a la gran riqueza
     link: https://www.amazon.com/Prosperar-pasos-acceder-riqueza-Spanish-ebook/dp/B089FNYYCD/ref=sr_1_1?dchild=1&keywords=prosperar+book+seivert&qid=1633814219&s=digital-text&sr=1-1
@@ -152,23 +150,37 @@ products:
       luego, aprovecharla mediante el aprendizaje en múltiples niveles para
       aumentar otras formas de riqueza que desees. "
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1633814498/Screen_Shot_2021-10-09_at_5.08.09_PM_qpoamu.png
-  - title: 6 pasos para Tomar las Riendas de tu Vida y tu Trabajo
-    link: https://www.amazon.com/gp/product/B098RC9TNS/ref=dbs_a_def_rwt_bibl_vppi_i3
-    subtitle: (desde dentro hacia fuera)
-    description: >
-      Este libro es una llamada a la acción. Te pide que te conviertas en héroe
-      de la vida real, empezando hoy mismo. Te muestra cómo actuar con mayor
-      efectividad asumiendo total responsabilidad en tomar las riendas de tu
-      vida y tu trabajo para que tu confianza, tu poder y tu capacidad de
-      respuesta ante una crisis aumenten exponencialmente. 
+  - title: "SOS: Switch Off Stress"
+    description: "SOS: Switch Off Stress is a practical, immediately usable book
+      that provides 101 Really Fast Ways to stop stress (in 6 seconds to 6
+      minutes). SOS is a great book for our troubled times. It follows the The
+      Balancing Act's powerful process to show you exactly what kind of stress
+      is harming you so you can target and remove it ASAP.  Switch Off Stress is
+      used by clients of Core Coaching & Consulting to optimize their progress.
+      it is available in print or as an e-book."
+    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1594942999/sos-book_tc9jx9.jpg
+    link: https://www.amazon.com/SOS-Switch-Stress-Sharon-Seivert-ebook/dp/B00H312T3A/ref=sr_1_1?dchild=1&keywords=switch+off+stress+seivert&qid=1600887576&s=books&sr=1-1
+    subtitle: 101 Really Fast Ways
+  - title: "SOS: Switch Off Stress"
+    description: >-
+      SOS: Switch Off Stress is a smart-phone app with 1 to 2-minute
+      stress-reduction techniques based on The Balancing Act system. 
 
-      Confío en que este libro te inspire a elegir el optimismo pragmático en este crítico punto de inflexión.   Aunque a simple vista el optimismo pragmático puede parecer simplista, o incluso temerario, te insto a que lo pruebes porque es una estrategia de cambio lógica que cimentarás una y otra vez en la realidad de tu experiencia diaria. Y con ello, aumentarás las probabilidades de atravesar las tormentas actuales de manera segura. 
+      It will quickly improve your health, sense of well-being, and strengthen your immune-system resistance. In this way you can become even stronger as you decide the daily specifics of how you want to lead your new life and work.
 
-      La hora de ruta paso a paso y minuciosa que se detalla en Tomar las riendas de tu vida y tu trabajo te ayudará a tener mayor confianza, agilidad y resiliencia, de manera que te sientas impulsado a avanzar constante e inexorablemente hacia tus objetivos. Este libro también te ayudará con las herramientas prácticas de implementación para superar cualquier obstáculo que te puedas encontrar en este viaje. 
-    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1633814525/Screen_Shot_2021-10-09_at_5.05.10_PM_pubpw3.png
+      To Download the app:
+
+      •	APPLE: Go to Apple Store; Choose “LITE” (free) or “PRO” version. 
+
+      •	ANDROID: Go to Play Store; choose LITE or PRO versions of SOS. 
+
+      Start the SOS app by scoring which of 6 types of stress are causing you the most pain. Then you’ll get more points for that element whenever you return to relieve your worst stressor! With points you can keep track of your progress or play a friendly competitive game with friends, family and colleagues who are trying to reduce their stress.
+    image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1595801147/icon_hcpkac.jpg
+    link: https://apps.apple.com/jm/app/sos-switch-off-stress-lite/id1263283831
+    subtitle: (Mobile App)
   - title: El Proceso Equilibrante/ The Balancing Process
     link: https://www.amazon.com/gp/product/9707750499/ref=dbs_a_def_rwt_bibl_vppi_i7
-    description: The Spanish language version of The Balancing Act.
+    description: This is the Spanish language version of The Balancing Act.
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1633814475/Screen_Shot_2021-10-09_at_5.16.19_PM_qw1wg5.png
   - title: Working from Your Core
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600888032/wfyccover_msrx27.jpg
