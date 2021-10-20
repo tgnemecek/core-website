@@ -136,7 +136,21 @@ products:
   - title: Prosperar
     subtitle: 6 pasos para acceder a la gran riqueza
     link: https://www.amazon.com/Prosperar-pasos-acceder-riqueza-Spanish-ebook/dp/B089FNYYCD/ref=sr_1_1?dchild=1&keywords=prosperar+book+seivert&qid=1633814219&s=digital-text&sr=1-1
-    description: Prospering -- translated into Spanish by Mercedes Bellavista
+    description: "Incluso si otros enfoques para generar riqueza te han fallado en
+      el pasado, estoy convencida de que Prosperar puede hacer maravillas por
+      ti, y hay muchas razones de porqué.  En primer lugar y más importante,
+      Prosperar se basa en The Balancing Act, un poderoso proceso de cambio que
+      te muestra cómo empezar a construir riqueza desde tu Esencia (tu centro,
+      núcleo, alma).  Con ello, Prosperar te proporciona una poderosa brújula
+      moral interna para que puedas mantener un firme equilibrio, confianza en
+      ti mismo y calma mientras generas nueva riqueza, desde dentro hacia
+      afuera. Además, Prosperar alivia el conflicto y el dolor para que puedas
+      crear una reacción en cadena en la que todos ganan y que es beneficiosa
+      para ti, para tus seres queridos, y para muchas otras personas. Y, por
+      último, Prosperar es un enfoque unificado y sistémico en el que puedes
+      realizar simplemente una pequeña mejora en un aspecto de tu riqueza y,
+      luego, aprovecharla mediante el aprendizaje en múltiples niveles para
+      aumentar otras formas de riqueza que desees. "
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1633814498/Screen_Shot_2021-10-09_at_5.08.09_PM_qpoamu.png
   - title: 6 pasos para Tomar las Riendas de tu Vida y tu Trabajo
     link: https://www.amazon.com/gp/product/B098RC9TNS/ref=dbs_a_def_rwt_bibl_vppi_i3
