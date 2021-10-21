@@ -76,12 +76,12 @@ products:
     title: The Balancing Act
     description: >-
       The Balancing Act is the foundational work for all Core Coaching &
-      Consulting programs, including Leading Your Life and Work. TBA shows you
-      how to change your own life, work and relationships by implementing its
-      6-step holistic, systemic process.
+      Consulting programs, books, apps, and products. The Balancing Act (TBA)
+      shows how you can change your own life, work, and relationships by
+      implementing its 6-step holistic, systemic process.
 
 
-      Since The Balancing Act was published in 2001, it has grown into a global movement of business and educational change agents who deploy its powerful pragmatic programs, online assessments, and practical data-driven interventions to significantly increase the odds of success for companies who want to become more agile, leaders who want to be more effective, and individuals who want to lead happier lives and have more meaningful work.
+      Since The Balancing Act was published in 2001, it has grown into a global movement of business and educational coaches, consultants, change agents, and teachers who deploy its powerful pragmatic programs, online assessments, and practical data-driven interventions to significantly increase the odds of success for companies who want to become more agile, leaders who want to be more effective, and individuals who want to create more meaningful work, develop healthier relationships, and lead happier lives.
     link: https://www.amazon.com/Balancing-Act-Mastering-Elements-Relationships-ebook/dp/B07QGQG38H/ref=sr_1_1?dchild=1&keywords=the+balancing+act+seivert&qid=1600887520&s=books&sr=1-1
     subtitle: Mastering the 5 Elements of Success in Life, Work and Relationships
   - title: 6 Steps to Leading Your Life and Work
