@@ -15,10 +15,12 @@ privacyPolicy: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
   commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
   esse cillum dolore eu fugiat nulla pariatur.
 termsAndConditions: >
-  TERMS OF SERVICE OVERVIEW
+  TERMS OF SERVICE
+
+  OVERVIEW
 
 
-  This website is operated by Core Coaching & Consulting, LLC. Throughout the site, the terms “we”, “us” and “our” refer to Core Coaching & Consulting, LLC. Core Coaching & Consulting, LLC offers this website, including all information, tools, and services available from this site to you, the user, conditioned upon your acceptance of all terms, conditions, policies, and notices stated here.
+  This website is operated by Core Coaching & Consulting, LLC. Throughout the site, the terms “we”, “us” and “our” refer to Core Coaching & Consulting, LLC. Core Coaching & Consulting, LLC offers this website, including all information, tools and services available from this site to you, the user, conditioned upon your acceptance of all terms, conditions, policies and notices stated here.
 
 
   By visiting our site and/ or purchasing something from us, you engage in our “Service” and agree to be bound by the following terms and conditions (“Terms of Service”, “Terms”), including those additional terms and conditions and policies referenced herein and/or available by hyperlink. These Terms of Service apply to all users of the site, including without limitation users who are browsers, vendors, customers, merchants, and/or contributors of content.
@@ -30,10 +32,7 @@ termsAndConditions: >
   Any new features or tools which are added to the current store shall also be subject to the Terms of Service. You can review the most current version of the Terms of Service at any time on this page. We reserve the right to update, change or replace any part of these Terms of Service by posting updates and/or changes to our website. It is your responsibility to check this page periodically for changes. Your continued use of or access to the website following the posting of any changes constitutes acceptance of those changes.
 
 
-  Our store is hosted on Shopify Inc. They provide us with an online e-commerce platform that allows us to sell our products and services to you.
-
-
-  SECTION 1 - ONLINE STORE TERMS 
+  SECTION 1 - ONLINE STORE TERMS
 
 
   By agreeing to these Terms of Service, you represent that you are at least the age of majority in your state or province of residence, or that you are the age of majority in your state or province of residence, and you have given us your consent to allow any of your minor dependents to use this site.
@@ -53,17 +52,13 @@ termsAndConditions: >
 
   We reserve the right to refuse service to anyone for any reason at any time.
 
-
-  You understand that your content (not including credit card information), may be transferred unencrypted and involve (a) transmissions over various networks; and (b) changes to conform and adapt to technical requirements of connecting networks or devices. Credit card information is always encrypted during transfer over networks.
-
-
   You agree not to reproduce, duplicate, copy, sell, resell or exploit any portion of the Service, use of the Service, or access to the Service or any contact on the website through which the service is provided, without express written permission by us.
 
 
   The headings used in this agreement are included for convenience only and will not limit or otherwise affect these Terms.
 
 
-  SECTION 3 - ACCURACY, COMPLETENESS, AND TIMELINESS OF INFORMATION
+  SECTION 3 - ACCURACY, COMPLETENESS AND TIMELINESS OF INFORMATION
 
 
   We are not responsible if information made available on this site is not accurate, complete or current. The material on this site is provided for general information only and should not be relied upon or used as the sole basis for making decisions without consulting primary, more accurate, more complete or more timely sources of information. Any reliance on the material on this site is at your own risk.
@@ -81,10 +76,10 @@ termsAndConditions: >
   We reserve the right at any time to modify or discontinue the Service (or any part or content thereof) without notice at any time.
 
 
-  We shall not be liable to you or to any third party for any modification, price change, suspension, or discontinuance of the Service.
+  We shall not be liable to you or to any third-party for any modification, price change, suspension or discontinuance of the Service.
 
 
-  SECTION 5 - PRODUCTS OR SERVICES (if applicable)
+  SECTION 5 - PRODUCTS OR SERVICES
 
 
   Certain products or services may be available exclusively online through the website. These products or services may have limited quantities and are subject to return or exchange only according to our Return Policy.
@@ -99,7 +94,7 @@ termsAndConditions: >
   We do not warrant that the quality of any products, services, information, or other material purchased or obtained by you will meet your expectations, or that any errors in the Service will be corrected.
 
 
-  SECTION 6 - ACCURACY OF BILLING AND ACCOUNT INFORMATION
+  SECTION 6 – BILLING ACCURACY, ACCOUNT INFORMATION, REFUND POLICY
 
 
   We reserve the right to refuse any order you place with us. We may, in our sole discretion, limit or cancel quantities purchased per person, per household or per order. These restrictions may include orders placed by or under the same customer account, the same credit card, and/or orders that use the same billing and/or shipping address. If we make a change to or cancel an order, we may attempt to notify you by contacting the e-mail and/or billing address/phone number provided at the time the order was made. We reserve the right to limit or prohibit orders that, in our sole judgment, appear to be placed by dealers, resellers or distributors.
@@ -108,7 +103,7 @@ termsAndConditions: >
   You agree to provide current, complete and accurate purchase and account information for all purchases made at our store. You agree to promptly update your account and other information, including your email address and credit card numbers and expiration dates, so that we can complete your transactions and contact you as needed.
 
 
-  For more detail, please review our Returns Policy.
+  Once payment is made, all products and services are strictly non-refundable.
 
 
   SECTION 7 - OPTIONAL TOOLS
@@ -126,7 +121,7 @@ termsAndConditions: >
   We may also, in the future, offer new services and/or features through the website (including, the release of new tools and resources). Such new features and/or services shall also be subject to these Terms of Service.
 
 
-  SECTION 8 - THIRD-PARTY LINKS – what is a 3rd party link – do we have any? YouTube? Thinkific? 
+  SECTION 8 - THIRD-PARTY LINKS
 
 
   Certain content, products and services available via our Service may include materials from third parties.
@@ -217,7 +212,6 @@ termsAndConditions: >
 
   These Terms of Service are effective unless and until terminated by either you or us. You may terminate these Terms of Service at any time by notifying us that you no longer wish to use our Services, or when you cease using our site.
 
-
   If in our sole judgment you fail, or we suspect that you have failed, to comply with any term or provision of these Terms of Service, we also may terminate this agreement at any time without notice and you will remain liable for all amounts due up to and including the date of termination; and/or accordingly may deny you access to our Services (or any part thereof).
 
 
@@ -232,10 +226,12 @@ termsAndConditions: >
   Any ambiguities in the interpretation of these Terms of Service shall not be construed against the drafting party.
 
 
+
   SECTION 18 - GOVERNING LAW
 
 
   These Terms of Service and any separate agreements whereby we provide you Services shall be governed by and construed in accordance with the laws of 650 Ocean Ave., Suite 646, Revere, MA, 02151, United States.
+
 
 
   SECTION 19 - CHANGES TO TERMS OF SERVICE
@@ -245,6 +241,7 @@ termsAndConditions: >
 
 
   We reserve the right, at our sole discretion, to update, change or replace any part of these Terms of Service by posting updates and changes to our website. It is your responsibility to check our website periodically for changes. Your continued use of or access to our website or the Service following the posting of any changes to these Terms of Service constitutes acceptance of those changes.
+
 
 
   SECTION 20 - CONTACT INFORMATION
