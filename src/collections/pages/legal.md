@@ -1,19 +1,85 @@
 ---
 collection: pages
-privacyPolicy: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-  commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-  esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet,
-  consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-  ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-  in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-  pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-  commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-  esse cillum dolore eu fugiat nulla pariatur.
+privacyPolicy: >+
+  COMMITMENT TO YOUR PRIVACY
+
+
+  This site is owned and operated by Core Coaching & Consulting, LLC.  Your privacy on the Internet is of the utmost importance to us. At Core Coaching & Consulting, LLC, we want to make your experience online satisfying and safe.
+
+
+  Because we gather certain types of information about our users, we feel you should fully understand our policy and the terms and conditions surrounding the capture and use of that information. This privacy statement discloses what information we gather and how we use it.
+
+
+  INFORMATION CORE COACHING & CONSULTING, LLC, GATHERS AND TRACKS
+
+
+  Core Coaching & Consulting, LLC, gathers two types of information about users:
+       1.	Information that users provide through optional, voluntary submissions. These are voluntary submissions to receive our electronic newsletters, to participate in any message boards, forums, or blogs, and from participation in polls and surveys:
+      2.	Information is also gathered through aggregated tracking information derived mainly by tallying page views throughout our sites. This information allows us to better tailor our content to readers’ needs and to better understand the demographics of our audience. Under no circumstances does Core Coaching & Consulting, LLC, divulge any information about an individual user to a third party.
+
+  LINKS TO OTHER WEBSITES
+
+
+  Core Coaching & Consulting, LLC, is not responsible for the content, services, privacy policies, or practices of any websites to which we may hyperlink from our Site. We encourage you to be aware when you leave our site and to read the privacy statements of each and every website that collects personally identifiable information.
+
+
+  CHILDREN
+
+
+  Consistent with the Federal Children’s Online Privacy Protection Act of 1998 (COPPA), we will never knowingly request personally identifiable information from anyone under the age of 13 without requesting parental consent.  We do not market to or desire any business from anyone under the age of 13 for any reason. 
+
+
+  USE OF INFORMATION
+
+
+  Core Coaching & Consulting, LLC, uses any information voluntarily given by our users to enhance their experience in our network of sites, whether to provide interactive or personalized elements on the sites or to better prepare future content based on the interests of our users.
+
+
+  We only use information that users voluntarily provide in order to send out electronic newsletters and to enable users to participate in polls, surveys, message boards, and forums. We send out newsletters to subscribers on a regular schedule (depending on the newsletter), and occasionally send out special editions when we think subscribers might be particularly interested in something we are doing. Core Coaching & Consulting, LLC, never shares newsletter mailing lists with any third parties, including advertisers, sponsors or partners.
+
+
+  When we use tracking information to determine which areas of our site’s users like and don’t like based on traffic to those areas. We do not track what individual users read, but rather how well each page performs overall. This helps us continue to build a better service for you. We track search terms entered in Search function as one of many measures of what interests our users.  We do not track which terms a particular user enters.
+
+
+  SHARING OF THE INFORMATION
+
+
+  Core Coaching & Consulting, LLC, will not share, sell or rent information about individual users with any third party, except to comply with applicable law or valid legal process or to protect the personal safety of our users or the public.  Except as otherwise described in this notice, we restrict access to nonpublic personal information about you to employees of our organization.
+
+
+  Additionally, we are committed to processing your information in compliance with the General Data Protection Regulation (“GDPR”) a European Regulation concerning the use and processing of personal information. We will use reasonable efforts to securely process all personal information in line with the rights specified under the GDPR, in particular, those related to the following requests:
+
+  •	Access to your personal information;
+
+  •	Correction of the personal information that we hold;
+
+  •	Deletion of your personal information;
+
+  •	A restriction of processing of your personal information;
+
+  •	Transfer of your personal information to another party; or
+
+
+  We hold your information and use it as described in this Privacy Policy and will use reasonable measures to ensure that your personal information is only transferred to third parties who also maintain at least the standard of protection required under the GDPR.
+
+
+  The website is published in the United States and is subject to laws of the United States. If you are located in a country outside the United States and voluntarily submit personal information to us, you thereby consent to the general use of such information as provided in this Privacy Policy and to the transfer of that information to, and/or storage of that information in, the United States.
+
+
+  SECURITY
+
+
+  Core Coaching & Consulting, LLC, operates secure data networks protected by industry-standard firewall and password protection systems. Our security and privacy policies are periodically reviewed and enhanced as necessary and only authorized individuals have access to the information provided by our customers.
+
+
+  YOUR CONSENT
+
+
+  By using this site, you consent to the collection and use of this information by Core Coaching & Consulting, LLC.  If we decide to change our privacy policy, we will post those changes on this page so that you are always aware of what information we collect, how we use it, and under what circumstances we disclose it. Your continued use of our website will mean you accept those changes.
+
+
+  If you have any questions or requests regarding this policy, if you would like to change your preferences, if you no longer wish to receive e-mails from Core Coaching & Consulting, LLC, please click the "unsubscribe" link in any email you receive OR contact us at sseivert@thecoreporaton.com.
+
 termsAndConditions: >
   TERMS OF SERVICE
 
