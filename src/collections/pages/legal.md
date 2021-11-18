@@ -1,13 +1,13 @@
 ---
 collection: pages
 privacyPolicy: >+
-  COMMITMENT TO YOUR PRIVACY
+  WE ARE COMMITTED TO YOUR PRIVACY
 
 
   This site is owned and operated by Core Coaching & Consulting, LLC.  Your privacy on the Internet is of the utmost importance to us. At Core Coaching & Consulting, LLC, we want to make your experience online satisfying and safe.
 
 
-  Because we gather certain types of information about our users, we feel you should fully understand our policy and the terms and conditions surrounding the capture and use of that information. This privacy statement discloses what information we gather and how we use it.
+  Because we gather certain types of information about our users, we feel you should fully understand our privacy policy and the terms and conditions surrounding the capture and use of that information. This privacy statement discloses what information we gather and how we use it.
 
 
   INFORMATION CORE COACHING & CONSULTING, LLC, GATHERS AND TRACKS
@@ -15,7 +15,10 @@ privacyPolicy: >+
 
   Core Coaching & Consulting, LLC, gathers two types of information about users:
        1.	Information that users provide through optional, voluntary submissions. These are voluntary submissions to receive our electronic newsletters, to participate in any message boards, forums, or blogs, and from participation in polls and surveys:
-      2.	Information is also gathered through aggregated tracking information derived mainly by tallying page views throughout our sites. This information allows us to better tailor our content to readers’ needs and to better understand the demographics of our audience. Under no circumstances does Core Coaching & Consulting, LLC, divulge any information about an individual user to a third party.
+      2.	Information is also gathered through aggregated tracking information derived mainly by tallying page views throughout our sites. This information allows us to better tailor our content to readers’ needs and to better understand the demographics of our audience. 
+
+  Under no circumstances does Core Coaching & Consulting, LLC, divulge any information about an individual user to a third party.
+
 
   LINKS TO OTHER WEBSITES
 
@@ -81,12 +84,36 @@ privacyPolicy: >+
   If you have any questions or requests regarding this policy, if you would like to change your preferences, if you no longer wish to receive e-mails from Core Coaching & Consulting, LLC, please click the "unsubscribe" link in any email you receive OR contact us at sseivert@thecoreporaton.com.
 
 termsAndConditions: >
+  LEGAL DISCLAIMER AND TERMS OF SERVICES
+
+
+  LEGAL DISCLAIMER
+
+
+  The design, text, images, content, and graphics on this website are copyrighted by Core Coaching & Consulting, LLC. The trademarks, trade names, and company logos displayed here belong to Core Coaching & Consulting, LLC and its licensees.
+
+
+  Core Coaching & Consulting, LLC, (hereafter “the Company”) and its licensees maintain this website for informational purposes. Use of this website and access to the information and materials it contains does not confer on the user any license or right to the Company’s intellectual property. No uses may be made without the Company’s written consent.  The Company may prohibit your use of this website, at any time, without prior notification to you.
+
+
+  This website contains links to third-party websites that are not under the control of the Company and makes no representations whatsoever about these third-party websites. The Company provides these links solely as a convenience and the inclusion of such links does not imply that the Company endorses or accepts responsibility for the content or use of such websites.
+
+
+  All users of this website agree that the information contained herein is for their use only, and may not be shared or duplicated with any third party without the consent of the Company.  Additionally, all users agree that any information contained herein, or obtained from any materials, books, classes, courses, discussions, blogs, emails or other electronic means from this website is used at the user’s risk, and the Company is not liable for any decisions or actions the user may undertake as a result of the Company’s information.
+
+
+  This website (excluding linked sites) is controlled by Core Coaching & Consulting, LLC, from its offices in Massachusetts, and shall be governed by and construed in accordance with the laws of the Commonwealth of Massachusetts, without giving effect to any principles of conflicts of law.
+
+
+
+
   TERMS OF SERVICE
+
 
   OVERVIEW
 
 
-  This website is operated by Core Coaching & Consulting, LLC. Throughout the site, the terms “we”, “us” and “our” refer to Core Coaching & Consulting, LLC. Core Coaching & Consulting, LLC offers this website, including all information, tools and services available from this site to you, the user, conditioned upon your acceptance of all terms, conditions, policies and notices stated here.
+  This website is operated by Core Coaching & Consulting, LLC. Throughout the site, the terms “we”, “us” and “our” refer to Core Coaching & Consulting, LLC. Core Coaching & Consulting, LLC offers this website, including all information, tools, and services available from this site to you, the user, conditioned upon your acceptance of all terms, conditions, policies, and notices stated here.
 
 
   By visiting our site and/ or purchasing something from us, you engage in our “Service” and agree to be bound by the following terms and conditions (“Terms of Service”, “Terms”), including those additional terms and conditions and policies referenced herein and/or available by hyperlink. These Terms of Service apply to all users of the site, including without limitation users who are browsers, vendors, customers, merchants, and/or contributors of content.
