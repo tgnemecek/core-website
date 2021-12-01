@@ -15,7 +15,6 @@ module.exports = {
     url: `${process.env.GATSBY_SITE_URL}:8888`,
   },
   flags: {
-    PRESERVE_WEBPACK_CACHE: true,
     FAST_REFRESH: true,
   },
   plugins: [

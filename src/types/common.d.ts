@@ -8,7 +8,3 @@ declare module "markdown-to-text" {
   function removeMarkdown(input: string): string;
   export default removeMarkdown;
 }
-
-// declare var window: global.Window;
-
-// declare var window: (Window & typeof globalThis) | undefined;

@@ -7,7 +7,6 @@ const useGeneralSettings = () => {
       markdownRemark(fields: { slug: { eq: "/general-settings/" } }) {
         frontmatter {
           generalSettings {
-            brandName
             logo
             heroImage
             refundPolicy

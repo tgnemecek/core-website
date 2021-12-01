@@ -20,6 +20,7 @@ type FooterProps = {
 
 const Footer: React.FC<FooterProps> = ({ paddingBottom = 0 }) => {
   const { email, phone1, phone2, address, link } = useContactInfo();
+
   const classes = useStyles({ paddingBottom })();
 
   const renderPhone = (phone: string) => {
@@ -42,7 +43,7 @@ const Footer: React.FC<FooterProps> = ({ paddingBottom = 0 }) => {
     <footer className={classes.footer}>
       <Container>
         <Grid container justifyContent="space-between">
-          <Grid item className={classes.leftSide} xs={12} md={6}>
+          <Grid item xs={12} md={6}>
             <List>
               {email && (
                 <ListItem>
@@ -86,6 +87,26 @@ const Footer: React.FC<FooterProps> = ({ paddingBottom = 0 }) => {
                 ))}
               </List>
             )}
+            <List>
+              <ListItem>
+                <Typography
+                  component="a"
+                  href="/legal#privacy-policy"
+                  variant="body1"
+                >
+                  Privacy Policy
+                </Typography>
+              </ListItem>
+              <ListItem>
+                <Typography
+                  component="a"
+                  href="/legal#terms-and-conditions"
+                  variant="body1"
+                >
+                  Terms &amp; Conditions
+                </Typography>
+              </ListItem>
+            </List>
           </Grid>
         </Grid>
       </Container>
@@ -108,8 +129,6 @@ const useStyles = ({ paddingBottom }: UseStylesProps) =>
       paddingTop: 100,
       backgroundColor: theme.palette.primary.main,
       paddingBottom,
-    },
-    leftSide: {
       "& a": {
         textDecoration: "underline",
         display: "inline",
@@ -118,7 +137,7 @@ const useStyles = ({ paddingBottom }: UseStylesProps) =>
     },
     rightSide: {
       marginBottom: 100,
-      "& p": {
+      "& *": {
         textAlign: "right",
         width: "100%",
         color: theme.palette.common.white,
