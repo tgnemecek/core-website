@@ -7,7 +7,8 @@ import PostCollection from "./PostCollection";
 const config: ExtendedConfig = {
   backend: {
     name: "git-gateway",
-    branch: process.env.GATSBY_NETLIFY_CMS_BRANCH,
+    branch: "fix-events-without-id",
+    // branch: process.env.GATSBY_NETLIFY_CMS_BRANCH,
     commit_messages: {
       create: "Create {{collection}} “{{slug}}”",
       update: "Update {{collection}} “{{slug}}”",
