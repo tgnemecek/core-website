@@ -26,21 +26,25 @@ const EventCollection: CmsCollection = {
       name: "title",
       widget: "string",
       pattern: ["^.{3,80}$", "Must have between 3 and 80 characters"],
+      required: false,
     },
     {
       label: "Subtitle",
       name: "subtitle",
       widget: "string",
+      required: false,
     },
     {
       label: "Description",
       name: "description",
       widget: "markdown",
+      required: false,
     },
     {
       label: "Image",
       name: "image",
       widget: "image",
+      required: false,
     },
     {
       label: "Video",

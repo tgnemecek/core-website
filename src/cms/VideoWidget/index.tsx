@@ -1,15 +1,11 @@
 import React from "react";
 import { isVideoValid } from "utils";
-import { CustomWidget } from "../types";
+import { CmsWidgetControlProps } from "netlify-cms-core";
 
-const VideoWidget: CustomWidget = ({
-  value = "",
-  forID,
-  classNameWrapper,
-  onChange,
-}) => {
-  const isValid = () => {
-    const valid = isVideoValid(value);
+class VideoWidget extends React.Component<CmsWidgetControlProps> {
+  isValid = () => {
+    const valid = isVideoValid(this.props.value);
+
     if (!valid) {
       return {
         error: {
@@ -20,14 +16,18 @@ const VideoWidget: CustomWidget = ({
     return true;
   };
 
-  return (
-    <input
-      className={classNameWrapper}
-      id={forID}
-      onChange={({ target: { value } }) => onChange(value)}
-      value={value}
-    />
-  );
-};
+  render() {
+    const { classNameWrapper, forID, value, onChange } = this.props;
+
+    return (
+      <input
+        className={classNameWrapper}
+        id={forID}
+        onChange={({ target: { value } }) => onChange(value)}
+        value={value}
+      />
+    );
+  }
+}
 
 export default VideoWidget;
