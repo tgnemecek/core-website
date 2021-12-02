@@ -11,115 +11,122 @@ import {
   Ticket,
 } from "./types";
 
-const eventUpdate: NetlifyLambdaHandler = async (event, context) => {
-  if (!context.clientContext.user) {
-    // Restricted route
-    return {
-      statusCode: 403,
-      body: "Unauthorized",
-    };
-  }
+// @ts-ignore
+const eventUpdate: NetlifyLambdaHandler = async (event, context, response) => {
+  console.log("HERE --------------------------------");
+  return {
+    statusCode: 401,
+    body: "no-error-from-server",
+  };
 
-  const body: EventUpdateBody = JSON.parse(event.body || "{}");
+  // if (!context.clientContext.user) {
+  //   // Restricted route
+  //   return {
+  //     statusCode: 403,
+  //     body: "Unauthorized",
+  //   };
+  // }
 
-  const { id, title, tickets, duration } = body;
+  // const body: EventUpdateBody = JSON.parse(event.body || "{}");
 
-  const { meetingId, productId } = Core.decryptEventIds(id);
+  // const { id, title, tickets, duration } = body;
 
-  const startDate = moment(body.date).startOf("minute");
+  // const { meetingId, productId } = Core.decryptEventIds(id);
 
-  let meeting: ZoomMeetingType;
-  let product: StripeApi.Product;
-  let prices: StripeApi.Price[];
+  // const startDate = moment(body.date).startOf("minute");
 
-  try {
-    [meeting, product, prices] = await Promise.all([
-      Zoom.getMeeting(meetingId),
-      Stripe.getProduct(productId),
-      Stripe.listProductPrices(productId),
-    ]);
-  } catch (err) {
-    return {
-      statusCode: 503,
-      body: "External Service Providers are down. Please try again later.",
-    };
-  }
+  // let meeting: ZoomMeetingType;
+  // let product: StripeApi.Product;
+  // let prices: StripeApi.Price[];
 
-  try {
-    const titleChanged = title !== meeting.topic || title !== product.name;
-    const dateChanged = !startDate.isSame(moment(meeting.start_time), "minute");
-    const durationChanged = duration !== meeting.duration;
+  // try {
+  //   [meeting, product, prices] = await Promise.all([
+  //     Zoom.getMeeting(meetingId),
+  //     Stripe.getProduct(productId),
+  //     Stripe.listProductPrices(productId),
+  //   ]);
+  // } catch (err) {
+  //   return {
+  //     statusCode: 503,
+  //     body: "External Service Providers are down. Please try again later.",
+  //   };
+  // }
 
-    const haveTicketsChanged = Core.compareTickets(tickets, prices);
+  // try {
+  //   const titleChanged = title !== meeting.topic || title !== product.name;
+  //   const dateChanged = !startDate.isSame(moment(meeting.start_time), "minute");
+  //   const durationChanged = duration !== meeting.duration;
 
-    const promises: Promise<any>[] = [];
+  //   const haveTicketsChanged = Core.compareTickets(tickets, prices);
 
-    if (titleChanged || haveTicketsChanged) {
-      promises.push(
-        Stripe.updateProduct({
-          productId,
-          meetingId,
-          title,
-          tickets,
-        })
-      );
-    } else {
-      promises.push(Promise.resolve(undefined));
-    }
+  //   const promises: Promise<any>[] = [];
 
-    if (titleChanged || dateChanged || durationChanged) {
-      promises.push(
-        Zoom.updateMeeting({
-          meetingId,
-          title,
-          startDate,
-          duration,
-        })
-      );
-    }
+  //   if (titleChanged || haveTicketsChanged) {
+  //     promises.push(
+  //       Stripe.updateProduct({
+  //         productId,
+  //         meetingId,
+  //         title,
+  //         tickets,
+  //       })
+  //     );
+  //   } else {
+  //     promises.push(Promise.resolve(undefined));
+  //   }
 
-    if (dateChanged || durationChanged) {
-      const sendEmails = async () => {
-        const registrants = await Zoom.listRegistrants(meetingId);
+  //   if (titleChanged || dateChanged || durationChanged) {
+  //     promises.push(
+  //       Zoom.updateMeeting({
+  //         meetingId,
+  //         title,
+  //         startDate,
+  //         duration,
+  //       })
+  //     );
+  //   }
 
-        return await Promise.all(
-          registrants.map((registrant) => {
-            const timezone = registrant.address;
-            const tzStartDate = startDate.clone().tz(timezone);
+  //   if (dateChanged || durationChanged) {
+  //     const sendEmails = async () => {
+  //       const registrants = await Zoom.listRegistrants(meetingId);
 
-            return Email.send({
-              template: "meeting-update",
-              to: registrant.email,
-              tags: {
-                firstName: registrant.first_name,
-                meetingName: title,
-                meetingLink: registrant.join_url,
-                startDate: tzStartDate,
-                endDate: tzStartDate.clone().add(duration, "minutes"),
-              },
-            });
-          })
-        );
-      };
-      promises.push(sendEmails());
-    }
+  //       return await Promise.all(
+  //         registrants.map((registrant) => {
+  //           const timezone = registrant.address;
+  //           const tzStartDate = startDate.clone().tz(timezone);
 
-    const [updatedTickets] = await Promise.all<Ticket[]>(promises);
+  //           return Email.send({
+  //             template: "meeting-update",
+  //             to: registrant.email,
+  //             tags: {
+  //               firstName: registrant.first_name,
+  //               meetingName: title,
+  //               meetingLink: registrant.join_url,
+  //               startDate: tzStartDate,
+  //               endDate: tzStartDate.clone().add(duration, "minutes"),
+  //             },
+  //           });
+  //         })
+  //       );
+  //     };
+  //     promises.push(sendEmails());
+  //   }
 
-    return {
-      statusCode: 200,
-      body: JSON.stringify({
-        ...body,
-        tickets: updatedTickets || tickets,
-      }),
-    };
-  } catch (err) {
-    console.error(err);
-    return {
-      statusCode: 500,
-      body: "Server Error",
-    };
-  }
+  //   const [updatedTickets] = await Promise.all<Ticket[]>(promises);
+
+  //   return {
+  //     statusCode: 200,
+  //     body: JSON.stringify({
+  //       ...body,
+  //       tickets: updatedTickets || tickets,
+  //     }),
+  //   };
+  // } catch (err) {
+  //   console.error(err);
+  //   return {
+  //     statusCode: 500,
+  //     body: "Server Error",
+  //   };
+  // }
 };
 
 module.exports.handler = eventUpdate;

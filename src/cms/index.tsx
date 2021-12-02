@@ -6,8 +6,8 @@ import cloudinary from "netlify-cms-media-library-cloudinary";
 import VideoWidget from "./VideoWidget";
 import CurrentDateWidget from "./CurrentDateWidget";
 import config from "./config";
+import { useEventsConfig } from "./hooks";
 import { ExtendedConfig } from "./types";
-import useEventsConfig from "./useEventsConfig";
 
 const AdminConsole: React.FC = () => {
   useEventsConfig();

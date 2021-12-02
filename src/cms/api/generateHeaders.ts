@@ -15,6 +15,8 @@ const generateHeaders = () => {
 
   return {
     Authorization: `Bearer ${access_token}`,
+    // InvocationType: "Event",
+    "Access-Control-Allow-Origin": "*",
   };
 };
 
