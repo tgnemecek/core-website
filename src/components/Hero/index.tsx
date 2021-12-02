@@ -1,5 +1,4 @@
 import React from "react";
-import parse from "html-react-parser";
 import Fade from "react-reveal/Fade";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography, Grid, Button } from "@material-ui/core";
