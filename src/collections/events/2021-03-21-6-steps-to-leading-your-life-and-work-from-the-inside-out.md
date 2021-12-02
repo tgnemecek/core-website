@@ -7,7 +7,7 @@ description: >-
   **Core Coaching & Consulting** is now offering an updated strategy and
   implementation program that meets the urgent needs of people coming out of the
   global pandemic and economic crises. For this new program based on ***The
-  Balancing Act's*** pragmatic,  systemic, strategic approach to making
+  Balancing Act's*** pragmatic, systemic, strategic approach to making
   successful change, we have doubled the service hours you will receive,
   significantly decreased the program's cost, and included three one-on-one
   private sessions that will tailor the program to meet your special needs. Our
@@ -72,14 +72,14 @@ description: >-
   **Plus much more including** many instructional materials; lifetime access to the group's website portal where all resources are available.
 image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600812431/happy%20group.jpg
 video: https://www.youtube.com/watch?v=Z2OPFWTLiHE&list=UULCMeAbMEtT3P8es6rrT7Wg&index=2
-date: 2021-10-26T17:00:00.000Z
+date: 2022-03-15T17:00:00.000Z
 duration: 90
 language:
   - EN
   - ES
 isOnline: true
-location: "This is an 8-session implementation program that meets on consecutive
-  Thursdays starting April 22nd. "
+location: "This is a live 8-session implementation program that meets on
+  consecutive weeks. "
 tickets:
   - id: price_1IZGWfC6qmFvoaW62boiAJ4t
     description: Early Bird Admission

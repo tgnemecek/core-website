@@ -65,7 +65,7 @@ export const eventCreate: NetlifyLambdaHandler = async (event, context) => {
       }),
     };
   } catch (err) {
-    console.error(err.message);
+    console.error(err);
     return {
       statusCode: 500,
       body: "Internal Server Error",

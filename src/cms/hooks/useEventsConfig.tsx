@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "@reach/router";
 import CMS from "netlify-cms-app";
-import { eventCreate, eventUpdate, eventDelete } from "./api";
+import { eventCreate, eventUpdate, eventDelete } from "../api";
 import { Event, Ticket } from "types";
 
 type EventHandlerProps = { entry: Map<string, any> };
@@ -69,46 +69,31 @@ const useEventsConfig = () => {
       handler: async ({ entry }: EventHandlerProps) => {
         if (!isEventsCollection()) return;
 
-        try {
-          let dataEntry: Map<string, any> = entry.get("data");
-          const form = getForm(dataEntry);
-
-          let newData;
-
-          if (!form.id) {
-            newData = await eventCreate(form);
-          } else {
-            newData = await eventUpdate({
-              ...form,
-              id: storedData.id || form.id,
-              tickets: storedData.ticketIds
-                ? form.tickets.map((ticket, i) => {
-                    return { ...ticket, id: storedData.ticketIds![i] };
-                  })
-                : form.tickets,
-            });
-          }
-
-          const { id, tickets } = newData;
-
-          storedData = {
-            id,
-            ticketIds: tickets.map(({ id }) => id),
-          };
-
-          const newTickets = ticketsToMap(tickets, dataEntry);
-
-          dataEntry = dataEntry.set("id", id);
-          dataEntry = dataEntry.set("tickets", newTickets);
-          return dataEntry;
-        } catch (err) {
-          // This is the only way to show the user an error and prevent the form from saving
-          return Promise.resolve({
-            toJS: () => {
-              throw err;
-            },
+        let dataEntry: Map<string, any> = entry.get("data");
+        const form = getForm(dataEntry);
+        let newData;
+        if (!form.id) {
+          newData = await eventCreate(form);
+        } else {
+          newData = await eventUpdate({
+            ...form,
+            id: storedData.id || form.id,
+            tickets: storedData.ticketIds
+              ? form.tickets.map((ticket, i) => {
+                  return { ...ticket, id: storedData.ticketIds![i] };
+                })
+              : form.tickets,
           });
         }
+        const { id, tickets } = newData;
+        storedData = {
+          id,
+          ticketIds: tickets.map(({ id }) => id),
+        };
+        const newTickets = ticketsToMap(tickets, dataEntry);
+        dataEntry = dataEntry.set("id", id);
+        dataEntry = dataEntry.set("tickets", newTickets);
+        return dataEntry;
       },
     });
 
