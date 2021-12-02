@@ -16,7 +16,6 @@
     "@types/netlify-identity-widget": "^1.9.2",
     "@types/node-jose": "^1.1.8",
     "aws-lambda": "^1.0.7",
-    "axios": "^0.24.0",
     "bulma": "^0.9.3",
     "class-validator": "^0.13.1",
     "cloudinary-react": "^1.7.0",
@@ -86,7 +85,7 @@
   "main": "n/a",
   "scripts": {
     "start": "concurrently \"yarn codegen && netlify dev\" \"cd lambda && tsc -w\"",
-    "build": "graphql-codegen && tsc --build lambda && gatsby build",
+    "build": "graphql-codegen && cd lambda tsc --build && cd .. && gatsby build",
     "codegen": "graphql-codegen",
     "test": "ts-mocha -p lambda/tsconfig.json lambda/**/*.spec.ts"
   },

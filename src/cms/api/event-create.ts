@@ -17,16 +17,12 @@ const eventCreate: EventCreate = async (form) => {
   });
 
   if (!res.ok) {
-    const errorMessage = await res.text();
-    throw new Error(errorMessage);
+    throw new Error(
+      "\nFailed to communicate with external services.\nTry again later."
+    );
   }
 
   const result: Return = await res.json();
-
-  if (!result.id) {
-    throw new Error("Couldn't create product");
-  }
-
   return result;
 };
 
