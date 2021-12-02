@@ -1,7 +1,7 @@
 ---
 collection: events
 id: Ulix44j10tr5rFYvfuG3VgiOcDHK4bzyAIXlVmPKmLu+7SuxaLySb21x3Qqeo6uP
-title: Blasting through Procrastination
+title: Blasting through Procrastination!
 subtitle: The Good, the Bad, and the Ugly
 description: >-
   Most of us have problems with procrastination...we say we want to get
