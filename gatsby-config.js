@@ -16,11 +16,12 @@ module.exports = {
   },
   flags: {
     FAST_REFRESH: true,
+    GATSBY_EXPERIMENTAL_FAST_DEV: true,
+    DEV_SSR: true,
   },
   plugins: [
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-material-ui",
-    "gatsby-plugin-sass",
     {
       resolve: "gatsby-plugin-typescript",
       options: {
