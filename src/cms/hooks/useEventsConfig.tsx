@@ -73,7 +73,11 @@ const useEventsConfig = () => {
         const form = getForm(dataEntry);
         let newData;
         if (!form.id) {
+          console.log({ form });
+
           newData = await eventCreate(form);
+
+          console.log({ newData });
         } else {
           newData = await eventUpdate({
             ...form,
@@ -93,6 +97,8 @@ const useEventsConfig = () => {
         const newTickets = ticketsToMap(tickets, dataEntry);
         dataEntry = dataEntry.set("id", id);
         dataEntry = dataEntry.set("tickets", newTickets);
+
+        console.log({ dataEntry });
         return dataEntry;
       },
     });

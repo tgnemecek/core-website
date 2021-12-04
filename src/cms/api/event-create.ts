@@ -16,6 +16,8 @@ const eventCreate: EventCreate = async (form) => {
     credentials: "include",
   });
 
+  console.log({ res });
+
   if (!res.ok) {
     throw new Error(
       "\nFailed to communicate with external services.\nTry again later."
@@ -23,6 +25,11 @@ const eventCreate: EventCreate = async (form) => {
   }
 
   const result: Return = await res.json();
+
+  console.log({ result });
+
+  throw new Error("Safety error");
+
   return result;
 };
 
