@@ -10,6 +10,7 @@ description: >-
 
 
   We will then confirm your reservation so your spot is saved and also send you a booklet so you can get the most out of our time together. See you very soon.
+image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1638623723/Wonderful_Life_qudxqi.png
 date: 2021-12-21T17:00:00.000Z
 duration: 90
 language:
