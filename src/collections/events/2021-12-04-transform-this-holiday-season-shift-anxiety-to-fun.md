@@ -1,8 +1,7 @@
 ---
 collection: events
-title: Are you having a Wonderful Life or Not?
-subtitle: "Transform this Holiday Season: Shift Anxiety to Fun by Joining us
-  December 21 @ Noon ET"
+title: Are You Having a Wonderful Life or Not?
+subtitle: Shift Anxiety to Fun this Holiday Season! Join us December 21 @ Noon ET
 description: >-
   Please come to our End of Year Party! Click this link to save your space for
   this Free Seminar.
@@ -19,7 +18,9 @@ language:
 isOnline: true
 tickets:
   - id: ""
-    description: Reserved Spot
+    description: General Admission
     price: 0
     endsOn: startOfEvent
+    extra: Please make your reservation now. And if you cannot attend, please let us
+      know so we open your spot for someone else. Thank you!
 ---
