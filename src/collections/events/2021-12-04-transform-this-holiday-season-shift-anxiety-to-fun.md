@@ -1,10 +1,11 @@
 ---
 collection: events
-title: "Transform this Holiday Season: Shift Anxiety to Fun"
-subtitle: Join us December 21 @ Noon ET
+title: Are you having a Wonderful Life or Not?
+subtitle: "Transform this Holiday Season: Shift Anxiety to Fun by Joining us
+  December 21 @ Noon ET"
 description: >-
-  Join our End of Year Party! Click this link to save your space for this Free
-  Seminar.
+  Please come to our End of Year Party! Click this link to save your space for
+  this Free Seminar.
    <https://us02web.zoom.us/j/88264689878?pwd=UFhGMDZuQzh6RXltVjgrU1IwazVOZz09>
 
 
