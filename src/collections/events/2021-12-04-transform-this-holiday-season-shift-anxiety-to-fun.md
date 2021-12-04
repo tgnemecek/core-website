@@ -1,7 +1,7 @@
 ---
 collection: events
 title: Are You Having a Wonderful Life or Not?
-subtitle: Shift Anxiety to Fun this Holiday Season! Join us December 21 @ Noon ET
+subtitle: Shift Anxiety to Fun this Holiday Season!  Join us December 21 @ Noon ET
 description: >-
   For many people, it has NOT been a wonderful year--so let us help you turn
   things around in the last days of 2021. 
