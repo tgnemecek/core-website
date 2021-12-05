@@ -1,6 +1,5 @@
 ---
 collection: events
-id: "0.1488556779288852"
 title: "[Thiago's Test Please ignore]-123451"
 subtitle: "[subtitle]"
 description: "[description2]"
