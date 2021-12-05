@@ -4,15 +4,15 @@ id: uLlY92n0T7P/T/6TFGouIRkY942KIiPHPI/qzZ+OziFU0Ae5se6Fofc4ns0IqT72
 title: Are You Having a Wonderful Life?
 subtitle: Shift Anxiety to Fun this Holiday Season!  Join us December 21 @ Noon ET
 description: >-
-  For many people, 2021 has NOT been a wonderful year at all!! So let us help
-
-  you turn things around for you in these last days of December. 
-
-
-  Please come to our End of Year Party! Click this link to save your space for this Free Event.  <https://us02web.zoom.us/j/88264689878?pwd=UFhGMDZuQzh6RXltVjgrU1IwazVOZz09>
+  For many people, 2021 has NOT been a wonderful year at all!! So come to our
+  end-of-year party, and let us help you turn things around in these last days
+  of December. 
 
 
-  We will then confirm your reservation so your spot is saved and also send you a booklet so you can get the most out of our time together. See you very soon.
+  Click this link to save your space for this Free Event. https://www.eventbrite.com/e/transform-your-holiday-from-anxiety-to-fun-tickets-222884081287
+
+
+  We will then confirm your reservation so your spot is saved and then we will send you a booklet so you can get the most out of our time together. See you very soon.
 
 
   We will celebrate with old friends and new from across the world (...and we'll have two language channels to make that easier -- English and Spanish). 
@@ -27,9 +27,11 @@ language:
   - ES
 isOnline: true
 tickets:
-  - id: price_1K3KluC6qmFvoaW6Qzt9rbKo
+  - id: price_1K3LDrC6qmFvoaW6ekVU6Sm6
     description: General Admission
     price: 0
     endsOn: startOfEvent
-    extra: Reserve your spot here!
+    extra: "Go here to reserve your spot in the seminar:
+      https://www.eventbrite.com/e/transform-your-holiday-from-anxiety-to-fun-t\
+      ickets-222884081287"
 ---
