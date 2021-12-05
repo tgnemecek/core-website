@@ -12,7 +12,10 @@ const useEventsConfig = () => {
 
   const cache = useEventsCache();
 
+  console.log({ href });
+
   const isEventsCollection = () => {
+    console.log({ href });
     return href.includes("/collections/events/");
   };
 
@@ -67,8 +70,10 @@ const useEventsConfig = () => {
 
         let newData: EventServerResponse;
         if (!form.id) {
+          console.log("eventCreate");
           newData = await eventCreate(form);
         } else {
+          console.log("eventUpdate");
           newData = await eventUpdate({
             ...form,
             id: cache.current.id || form.id,
@@ -85,6 +90,7 @@ const useEventsConfig = () => {
         const newTickets = ticketsToMap(tickets, dataEntry);
         dataEntry = dataEntry.set("id", id);
         dataEntry = dataEntry.set("tickets", newTickets);
+        throw new Error("DONT PUBLISH");
         return dataEntry;
       },
     });
