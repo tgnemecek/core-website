@@ -57,13 +57,6 @@ export const eventCreate: NetlifyLambdaHandler = async (event, context) => {
 
     const id = Core.encryptEventIds(productId, meetingId);
 
-    if (!id || !ticketsWithId || ticketsWithId.some((t) => !t.id)) {
-      return {
-        statusCode: 503,
-        body: "External Service Providers are down. Please try again later.",
-      };
-    }
-
     return {
       statusCode: 200,
       body: JSON.stringify({

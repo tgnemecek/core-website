@@ -1,12 +1,7 @@
-import { Form } from "../types";
+import { EventForm, EventServerResponse } from "types";
 import generateHeaders from "./generateHeaders";
 
-type Return = {
-  id: string;
-  tickets: Form["tickets"];
-};
-
-type EventCreate = (form: Form) => Promise<Return>;
+type EventCreate = (form: EventForm) => Promise<EventServerResponse>;
 
 const eventCreate: EventCreate = async (form) => {
   const res = await fetch("/.netlify/functions/event-create", {
@@ -16,19 +11,13 @@ const eventCreate: EventCreate = async (form) => {
     credentials: "include",
   });
 
-  console.log({ res });
-
   if (!res.ok) {
     throw new Error(
       "\nFailed to communicate with external services.\nTry again later."
     );
   }
 
-  const result: Return = await res.json();
-
-  console.log({ result });
-
-  throw new Error("Safety error");
+  const result: EventServerResponse = await res.json();
 
   return result;
 };

@@ -18,7 +18,6 @@ const eventPaymentWebhook: NetlifyLambdaHandler = async (event, context) => {
     const charge: StripeApi.Charge = stripeEvent.data.object as any;
 
     if (!charge.refunded) {
-      console.log("charge-not-refunded");
       return {
         statusCode: 200,
         body: "",

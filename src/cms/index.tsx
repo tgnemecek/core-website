@@ -3,11 +3,11 @@ import CMS from "netlify-cms-app";
 import ReactDOM from "react-dom";
 import { Location, LocationProvider } from "@reach/router";
 import cloudinary from "netlify-cms-media-library-cloudinary";
+import { ExtendedCMSConfig } from "types";
 import VideoWidget from "./VideoWidget";
 import CurrentDateWidget from "./CurrentDateWidget";
 import config from "./config";
 import { useEventsConfig } from "./hooks";
-import { ExtendedConfig } from "./types";
 
 const AdminConsole: React.FC = () => {
   useEventsConfig();
@@ -17,7 +17,7 @@ const AdminConsole: React.FC = () => {
     CMS.registerWidget("video", VideoWidget);
     CMS.registerWidget("currentDate", CurrentDateWidget);
 
-    CMS.init({ config: config as ExtendedConfig });
+    CMS.init({ config: config as ExtendedCMSConfig });
   }, []);
 
   return <div id="nc-root" />;

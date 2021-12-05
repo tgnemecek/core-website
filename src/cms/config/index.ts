@@ -1,10 +1,10 @@
-import { ExtendedConfig } from "../types";
+import { ExtendedCMSConfig } from "types";
 import PageCollection from "./PageCollection";
 import EventCollection from "./EventCollection";
 import SettingsCollection from "./SettingsCollection";
 import PostCollection from "./PostCollection";
 
-const config: ExtendedConfig = {
+const config: ExtendedCMSConfig = {
   backend: {
     name: "git-gateway",
     branch: process.env.GATSBY_NETLIFY_CMS_BRANCH,
