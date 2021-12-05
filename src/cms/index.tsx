@@ -1,7 +1,7 @@
 import React from "react";
 import CMS from "netlify-cms-app";
 import ReactDOM from "react-dom";
-import { Location } from "@reach/router";
+import { Location, LocationProvider } from "@reach/router";
 import cloudinary from "netlify-cms-media-library-cloudinary";
 import VideoWidget from "./VideoWidget";
 import CurrentDateWidget from "./CurrentDateWidget";
@@ -24,4 +24,9 @@ const AdminConsole: React.FC = () => {
 };
 
 const rootElement = document.body;
-ReactDOM.render(<Location>{() => <AdminConsole />}</Location>, rootElement);
+ReactDOM.render(
+  <LocationProvider>
+    <Location>{() => <AdminConsole />}</Location>
+  </LocationProvider>,
+  rootElement
+);

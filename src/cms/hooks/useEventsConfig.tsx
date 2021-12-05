@@ -30,7 +30,6 @@ const useEventsConfig = () => {
       href,
       loc,
     });
-
     return href.includes("/collections/events/");
   };
 
@@ -123,6 +122,10 @@ const useEventsConfig = () => {
   }, []);
 
   useEffect(() => {
+    console.log({
+      href,
+      loc,
+    });
     storedData = { ...initStoredData };
   }, [href]);
 };
