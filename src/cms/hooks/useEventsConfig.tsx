@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { useLocation } from "@reach/router";
 import CMS from "netlify-cms-app";
 import { eventCreate, eventUpdate, eventDelete } from "../api";
 import { useEventsCache } from ".";
@@ -8,15 +7,11 @@ import { Event, Ticket, EventServerResponse } from "types";
 type EventHandlerProps = { entry: Map<string, any> };
 
 const useEventsConfig = () => {
-  const { href } = useLocation();
-
   const cache = useEventsCache();
 
-  console.log({ href });
-
   const isEventsCollection = () => {
-    console.log({ href });
-    return href.includes("/collections/events/");
+    // Using window.location because @reach/router is inconsistent
+    return window.location.href.includes("/collections/events/");
   };
 
   const convertFromMap = (map: Map<string, any>) => {
@@ -70,10 +65,8 @@ const useEventsConfig = () => {
 
         let newData: EventServerResponse;
         if (!form.id) {
-          console.log("eventCreate");
           newData = await eventCreate(form);
         } else {
-          console.log("eventUpdate");
           newData = await eventUpdate({
             ...form,
             id: cache.current.id || form.id,
@@ -90,7 +83,6 @@ const useEventsConfig = () => {
         const newTickets = ticketsToMap(tickets, dataEntry);
         dataEntry = dataEntry.set("id", id);
         dataEntry = dataEntry.set("tickets", newTickets);
-        throw new Error("DONT PUBLISH");
         return dataEntry;
       },
     });
