@@ -23,11 +23,14 @@ const initStoredData: StoredData = {
 let storedData: StoredData = { ...initStoredData };
 
 const useEventsConfig = () => {
-  const { href } = useLocation();
+  const { href, ...loc } = useLocation();
 
   const isEventsCollection = () => {
-    console.log("checking events collection");
-    console.log(href.includes("/collections/events/"));
+    console.log({
+      href,
+      loc,
+    });
+
     return href.includes("/collections/events/");
   };
 
@@ -69,18 +72,13 @@ const useEventsConfig = () => {
     (CMS as any).registerEventListener({
       name: "preSave",
       handler: async ({ entry }: EventHandlerProps) => {
-        console.log("inside handler");
         if (!isEventsCollection()) return;
 
         let dataEntry: Map<string, any> = entry.get("data");
         const form = getForm(dataEntry);
         let newData;
         if (!form.id) {
-          console.log({ form });
-
           newData = await eventCreate(form);
-
-          console.log({ newData });
         } else {
           newData = await eventUpdate({
             ...form,
@@ -100,9 +98,6 @@ const useEventsConfig = () => {
         const newTickets = ticketsToMap(tickets, dataEntry);
         dataEntry = dataEntry.set("id", id);
         dataEntry = dataEntry.set("tickets", newTickets);
-
-        console.log({ dataEntry });
-        throw new Error("safety in hook");
         return dataEntry;
       },
     });
