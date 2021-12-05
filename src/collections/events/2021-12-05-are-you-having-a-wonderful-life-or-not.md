@@ -1,7 +1,7 @@
 ---
 collection: events
 id: uLlY92n0T7P/T/6TFGouIRkY942KIiPHPI/qzZ+OziFU0Ae5se6Fofc4ns0IqT72
-title: Are You Having a Wonderful Life or Not?
+title: Are You Having a Wonderful Life?
 subtitle: Shift Anxiety to Fun this Holiday Season!  Join us December 21 @ Noon ET
 description: "For many people, 2021 has NOT been a wonderful year at all!! So
   let us help\r
@@ -38,17 +38,16 @@ description: "For many people, 2021 has NOT been a wonderful year at all!! So
 
   Hope to see you there!"
 image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1638623723/Wonderful_Life_qudxqi.png
-date: 2021-12-21T22:00:25.037Z
+date: 2021-12-21T17:00:25.037Z
 duration: 90
 language:
   - EN
   - ES
 isOnline: true
 tickets:
-  - id: price_1K3CgAC6qmFvoaW6Dhpf7oMS
+  - id: price_1K3KluC6qmFvoaW6Qzt9rbKo
     description: General Admission
     price: 0
     endsOn: startOfEvent
-    extra: Please make your reservation now. And if you cannot attend, please let us
-      know so we open your spot for someone else. Thank you!
+    extra: Reserve your spot here!
 ---
