@@ -26,6 +26,8 @@ const useEventsConfig = () => {
   const { href } = useLocation();
 
   const isEventsCollection = () => {
+    console.log("checking events collection");
+    console.log(href.includes("/collections/events/"));
     return href.includes("/collections/events/");
   };
 
@@ -67,6 +69,7 @@ const useEventsConfig = () => {
     (CMS as any).registerEventListener({
       name: "preSave",
       handler: async ({ entry }: EventHandlerProps) => {
+        console.log("inside handler");
         if (!isEventsCollection()) return;
 
         let dataEntry: Map<string, any> = entry.get("data");
@@ -99,6 +102,7 @@ const useEventsConfig = () => {
         dataEntry = dataEntry.set("tickets", newTickets);
 
         console.log({ dataEntry });
+        throw new Error("safety in hook");
         return dataEntry;
       },
     });
