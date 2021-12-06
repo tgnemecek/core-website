@@ -27,10 +27,14 @@ description: >-
   Ignore the BUY Button--this is a Free and Fun event.
 image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1638623723/Wonderful_Life_qudxqi.png
 date: 2021-12-21T17:00:18.101Z
-duration: 30
+duration: 90
 language:
   - EN
   - ES
 isOnline: true
-tickets: []
+tickets:
+  - id: price_1K3lCgC6qmFvoaW6nQlHYHFg
+    description: General Admission
+    price: 20
+    endsOn: startOfEvent
 ---
