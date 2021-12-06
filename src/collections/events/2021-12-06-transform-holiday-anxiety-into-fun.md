@@ -32,9 +32,5 @@ language:
   - EN
   - ES
 isOnline: true
-tickets:
-  - id: price_1K3lCgC6qmFvoaW6nQlHYHFg
-    description: General Admission
-    price: 20
-    endsOn: startOfEvent
+tickets: []
 ---
