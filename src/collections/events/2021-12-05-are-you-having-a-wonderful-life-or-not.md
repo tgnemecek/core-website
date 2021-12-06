@@ -1,8 +1,8 @@
 ---
 collection: events
 id: uLlY92n0T7P/T/6TFGouIRkY942KIiPHPI/qzZ+OziFU0Ae5se6Fofc4ns0IqT72
-title: How to Make a Wonderful Life!
-subtitle: Shift Anxiety to Fun this Holiday Season!  Join us December 21 @ Noon ET
+title: Transform Holiday Anxiety into Fun
+subtitle: Join us December 21 @ Noon ET
 description: >-
   For many people, 2021 has NOT been a wonderful year at all!! So come to our
   end-of-year party, and let us help you turn things around in these last days
@@ -29,12 +29,5 @@ language:
   - EN
   - ES
 isOnline: true
-tickets:
-  - id: price_1K3LDrC6qmFvoaW6ekVU6Sm6
-    description: General Admission
-    price: 0
-    endsOn: startOfEvent
-    extra: "Go here to reserve your spot in the seminar:
-      https://www.eventbrite.com/e/transform-your-holiday-from-anxiety-to-fun-t\
-      ickets-222884081287"
+tickets: []
 ---
