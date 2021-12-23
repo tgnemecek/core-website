@@ -1,6 +1,6 @@
 ---
 collection: posts
-title: Stop Procrastinating and Reclaim Your Life!
+title: "Stop Procrastinating: Reclaim Your Life!"
 text: >-
   Procrastination doesn't just impact your professional life; it negatively
   affects all parts of your life.\
