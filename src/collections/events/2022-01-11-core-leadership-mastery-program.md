@@ -4,7 +4,7 @@ id: mmAAbAINeSwoveK5iAUE5qk4qfErkDw+8wZb8hwHRXlLpWxl1rGDsG8RMZqTTWII
 title: Core Leadership Mastery Program
 subtitle: Become a Great Leader for Challenging Times
 description: >-
-  **Benefits You will receive from this unique Leadership Program:** 
+  **Benefits You will receive from this unique Core Leadership Program:** 
 
 
   * Learn and understand how to apply *The Balancing Act’s* systemic framework for leadership, a powerful 6-step pragmatic change process, for both your business and personal uses. 
@@ -35,7 +35,7 @@ description: >-
   *The coaches and facilitators are both challenging and compassionate. They combined inspiration with a no-excuses teaching style that made sure I got quick and lasting results.*
 
 
-  *.I have had many coaches over the years, but no one has kept my interest, built my confidence, and made sure I continued to grow as a leader as Sharon has.  And I have the promotions to prove it!*
+  *I have had many coaches over the years, but no one has kept my interest, built my confidence, and made sure I continued to grow as a leader as Sharon has.  And I have the promotions to prove it!*
 
 
   *Auke is a unique leadership coach. I have engaged him for years and he has not only brought me but also my whole company through tough times.*
