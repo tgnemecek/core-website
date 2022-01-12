@@ -12,10 +12,11 @@ description: >-
 
   Register for this free event here.
 image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1641921768/Book_launch_update_image_srbomq.jpg
-date: 2022-01-25T09:00:26.523Z
+date: 2022-02-16T09:00:00.000Z
 duration: 60
 language:
   - EN
+  - ES
 isOnline: true
 tickets:
   - id: price_1KGnXHC6qmFvoaW6zgGfsZj1
