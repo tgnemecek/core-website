@@ -23,7 +23,7 @@
     "crypto": "^1.0.1",
     "date-fns": "^2.23.0",
     "date-fns-tz": "^1.1.6",
-    "gatsby": "^4.3.0",
+    "gatsby": "^4.5.4",
     "gatsby-image": "^3.10.0",
     "gatsby-plugin-material-ui": "^3.0.1",
     "gatsby-plugin-netlify": "^3.14.0",
