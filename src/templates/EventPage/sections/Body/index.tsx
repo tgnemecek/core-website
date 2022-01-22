@@ -31,6 +31,9 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     padding: "120px 0",
+    "& > h2": {
+      paddingRight: 25,
+    },
   },
   subtitle: {
     backgroundColor: theme.palette.grey[400],

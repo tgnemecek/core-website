@@ -1,12 +1,7 @@
-import { Form } from "../types";
+import { EventForm, EventServerResponse } from "types";
 import generateHeaders from "./generateHeaders";
 
-type Return = {
-  id: string;
-  tickets: Form["tickets"];
-};
-
-type EventCreate = (form: Form) => Promise<Return>;
+type EventCreate = (form: EventForm) => Promise<EventServerResponse>;
 
 const eventCreate: EventCreate = async (form) => {
   const res = await fetch("/.netlify/functions/event-create", {
@@ -22,7 +17,8 @@ const eventCreate: EventCreate = async (form) => {
     );
   }
 
-  const result: Return = await res.json();
+  const result: EventServerResponse = await res.json();
+
   return result;
 };
 

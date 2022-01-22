@@ -1,7 +1,7 @@
 import { CmsConfig, CmsBackend } from "netlify-cms-core";
-import { Event } from "types";
+import { Event, Ticket } from "types";
 
-export type ExtendedConfig = Omit<CmsConfig, "backend"> & {
+export type ExtendedCMSConfig = Omit<CmsConfig, "backend"> & {
   backend: CmsBackend & {
     commit_messages: {
       create?: string;
@@ -20,7 +20,17 @@ export type Entry<Form = Record<string, any>> = {
   };
 };
 
-export type Form = Pick<
+export type EventForm = Pick<
   Event,
-  "id" | "title" | "subtitle" | "tickets" | "isOnline" | "date" | "duration"
->;
+  "title" | "subtitle" | "isOnline" | "date" | "duration"
+> & {
+  id?: string;
+  tickets: (Omit<Ticket, "id"> & {
+    id?: string;
+  })[];
+};
+
+export type EventServerResponse = {
+  id: string;
+  tickets: Ticket[];
+};

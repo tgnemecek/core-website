@@ -20,7 +20,7 @@ description: >-
 
   We hope you use this experience and these tools to increase your productivity, health and well-being during these challenging times.
 image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1617726389/productivity_rsmqax.jpg
-date: 2021-11-30T18:00:14.295Z
+date: 2022-01-25T18:00:14.295Z
 duration: 1
 language:
   - EN

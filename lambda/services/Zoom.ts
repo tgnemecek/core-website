@@ -11,11 +11,8 @@ import {
 // Zoom Documentation can be found here:
 // https://marketplace.zoom.us/docs/api-reference/zoom-api/meetings/meetingcreate
 
-const {
-  ZOOM_API_KEY,
-  ZOOM_API_SECRET,
-  ZOOM_USER_ID,
-} = process.env as ProcessEnvType;
+const { ZOOM_API_KEY, ZOOM_API_SECRET, ZOOM_USER_ID } =
+  process.env as ProcessEnvType;
 
 type CreateMeetingProps = {
   title: string;
@@ -113,10 +110,8 @@ const Zoom = {
       }
     );
     if (res.status === 201) {
-      const {
-        join_url: url,
-        id: meetingId,
-      } = (await res.json()) as ZoomMeetingType;
+      const { join_url: url, id: meetingId } =
+        (await res.json()) as ZoomMeetingType;
 
       const newFieldsRes = await fetch(
         `https://api.zoom.us/v2/meetings/${meetingId}/registrants/questions`,
@@ -162,7 +157,6 @@ const Zoom = {
     if (res.status === 204) {
       return true;
     } else {
-      console.log(res);
       throw new Error("Error while updating Zoom meeting.");
     }
   },

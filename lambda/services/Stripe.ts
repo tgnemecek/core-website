@@ -151,7 +151,6 @@ const Stripe = {
       prices.map((price) => {
         const found = tickets.find((ticket) => ticket.id === price.id);
         if (!found) {
-          console.log(`deactivating price: ${price.id}`);
           return stripe.prices.update(price.id, { active: false });
         }
       })
@@ -160,7 +159,6 @@ const Stripe = {
     const ticketsPromises = tickets.map((ticket) => {
       // If the ticket has no id, that means it's a new one
       if (!ticket.id) {
-        console.log("creating-new-price");
         return createPrice(ticket, productId, meetingId);
       }
       // Tries to find a price in Stripe with that id
@@ -169,15 +167,12 @@ const Stripe = {
       // If the price wasn't found, it means something went wrong
       // As a safety measure we should still create a price and get a different id
       if (!found) {
-        console.log("creating-new-price-b");
         return createPrice(ticket, productId, meetingId);
       }
 
       if (found.unit_amount !== formatPrice(ticket.price)) {
-        console.log("updating-price");
         return updatePrice(ticket, productId, meetingId);
       }
-      console.log("not-touching-price");
       return ticket;
     });
 

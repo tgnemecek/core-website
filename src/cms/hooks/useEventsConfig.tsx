@@ -1,32 +1,17 @@
 import { useEffect } from "react";
-import { useLocation } from "@reach/router";
 import CMS from "netlify-cms-app";
 import { eventCreate, eventUpdate, eventDelete } from "../api";
-import { Event, Ticket } from "types";
+import { useEventsCache } from ".";
+import { Event, Ticket, EventServerResponse } from "types";
 
 type EventHandlerProps = { entry: Map<string, any> };
 
-type StoredData = {
-  id?: string;
-  ticketIds?: string[];
-};
-
-// This is needed because the data received from the server can't actually update
-// the form, only the saved value. So as soon as you save the form is outdated,
-// that means that trying to save again will upload old values.
-// With this object we can store data received from the server to make sure its up to date.
-const initStoredData: StoredData = {
-  id: undefined,
-  ticketIds: undefined,
-};
-
-let storedData: StoredData = { ...initStoredData };
-
 const useEventsConfig = () => {
-  const { href } = useLocation();
+  const cache = useEventsCache();
 
   const isEventsCollection = () => {
-    return href.includes("/collections/events/");
+    // Using window.location because @reach/router is inconsistent
+    return window.location.href.includes("/collections/events/");
   };
 
   const convertFromMap = (map: Map<string, any>) => {
@@ -63,6 +48,12 @@ const useEventsConfig = () => {
     return newTickets;
   };
 
+  const addIdsFromCacheToTickets = (tickets: Ticket[]) => {
+    return tickets.map((ticket, i) => {
+      return { ...ticket, id: cache.current.ticketIds?.[i] };
+    });
+  };
+
   useEffect(() => {
     (CMS as any).registerEventListener({
       name: "preSave",
@@ -71,22 +62,21 @@ const useEventsConfig = () => {
 
         let dataEntry: Map<string, any> = entry.get("data");
         const form = getForm(dataEntry);
-        let newData;
+
+        let newData: EventServerResponse;
         if (!form.id) {
           newData = await eventCreate(form);
         } else {
           newData = await eventUpdate({
             ...form,
-            id: storedData.id || form.id,
-            tickets: storedData.ticketIds
-              ? form.tickets.map((ticket, i) => {
-                  return { ...ticket, id: storedData.ticketIds![i] };
-                })
+            id: cache.current.id || form.id,
+            tickets: cache.current.ticketIds
+              ? addIdsFromCacheToTickets(form.tickets)
               : form.tickets,
           });
         }
         const { id, tickets } = newData;
-        storedData = {
+        cache.current = {
           id,
           ticketIds: tickets.map(({ id }) => id),
         };
@@ -116,10 +106,6 @@ const useEventsConfig = () => {
       },
     });
   }, []);
-
-  useEffect(() => {
-    storedData = { ...initStoredData };
-  }, [href]);
 };
 
 export default useEventsConfig;
