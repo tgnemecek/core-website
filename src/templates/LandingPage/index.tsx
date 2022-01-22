@@ -37,10 +37,10 @@ const LandingPage: React.FC<LandingPageDTO> = ({
       <Navbar />
       <main>
         <Hero />
+        <AboutSection about={about} />
         <PostFeed title="What's new" />
         <CoursesFeed />
         <EventFeed title="Upcoming Events" />
-        <AboutSection about={about} />
         <Testimonials testimonials={testimonials} />
         <Services services={services} />
         <Products products={products} />
