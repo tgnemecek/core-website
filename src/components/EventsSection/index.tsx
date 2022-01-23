@@ -6,13 +6,14 @@ import { useEventFeed } from "utils";
 import { EventFeed as EventFeedType } from "types";
 import EventCard from "./EventCard";
 
-type EventFeedProps = {
-  title: string;
+type EventsSectionProps = {
   filter?: (event: EventFeedType) => boolean;
 };
 
-const EventFeed: React.FC<EventFeedProps> = ({ title, filter }) => {
-  const events = useEventFeed().filter(filter || Boolean);
+const EventsSection: React.FC<EventsSectionProps> = ({ filter }) => {
+  const { events: unfilteredEvents, heading, subheading } = useEventFeed();
+
+  const events = unfilteredEvents.filter(filter || Boolean);
 
   const sorter = (
     { date: dateA }: EventFeedType,
@@ -44,8 +45,8 @@ const EventFeed: React.FC<EventFeedProps> = ({ title, filter }) => {
   return (
     <Section id="events">
       <Container>
-        <Heading subheading="Learn more about our online events" showLine>
-          {title}
+        <Heading subheading={subheading} showLine>
+          {heading}
         </Heading>
       </Container>
       <Container>
@@ -59,4 +60,4 @@ const EventFeed: React.FC<EventFeedProps> = ({ title, filter }) => {
   );
 };
 
-export default EventFeed;
+export default EventsSection;

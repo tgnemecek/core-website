@@ -8,6 +8,7 @@ export { default as isEventValid } from "./isEventValid";
 export { default as shuffleArray } from "./shuffleArray";
 export { default as getTintedBackground } from "./getTintedBackground";
 export { default as formatLanguage } from "./formatLanguage";
+export { default as joinNodes } from "./joinNodes";
 export { default as verifyEmail } from "./verifyEmail";
 export { default as recursivelyFormatDate } from "./recursivelyFormatDate";
 
@@ -17,10 +18,8 @@ export { default as useCloudinary } from "./useCloudinary";
 export { default as useCourseFeed } from "./useCourseFeed";
 export { default as useEventFeed } from "./useEventFeed";
 export { default as usePostFeed } from "./usePostFeed";
-export { default as useGeneralSettings } from "./useGeneralSettings";
+export { default as useSettings } from "./useSettings";
 export { default as usePostImage } from "./usePostImage";
-export { default as useContactInfo } from "./useContactInfo";
-export { default as useNavigation } from "./useNavigation";
 export { default as usePayPalButtons } from "./usePayPalButtons";
 export { default as useSiteMetadata } from "./useSiteMetadata";
 

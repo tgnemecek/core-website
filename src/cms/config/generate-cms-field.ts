@@ -7,10 +7,17 @@ import {
   CmsFieldDateTime,
   CmsFieldNumber,
   CmsFieldSelect,
+  CmsFieldObject,
+  CmsFieldList,
   CmsFieldBoolean,
   CmsFieldHidden,
   CmsFieldMeta,
 } from "netlify-cms-core";
+
+// https://github.com/microsoft/TypeScript/issues/31104#issuecomment-696416882
+type OmitWithoutLosingModifiers<T, ExcludedKeys extends keyof any> = {
+  [K in keyof T as Exclude<K, ExcludedKeys>]: T[K];
+};
 
 type ConditionallyAddRequiredField<T> = undefined extends T
   ? {
@@ -20,15 +27,9 @@ type ConditionallyAddRequiredField<T> = undefined extends T
       required?: true;
     };
 
-type Base<T, Cms> = Omit<CmsFieldBase & Cms, "required" | "widget"> &
-  ConditionallyAddRequiredField<T>;
-// (string extends T
-//   ? {
-//       multiple?: false;
-//     }
-//   : {
-//       multiple: true;
-//     })
+type Base<T, Cms> = ConditionallyAddRequiredField<T> &
+  OmitWithoutLosingModifiers<CmsFieldBase & Cms, "required" | "widget">;
+
 type StringOrTextProps<T> = Base<T, CmsFieldStringOrText> & {
   widget: "string" | "text";
 };
@@ -72,19 +73,34 @@ type CurrentDate<T> = Base<T, CmsFieldMeta> & {
   required: boolean;
 };
 
+type NestedListProps = Omit<
+  CmsFieldBase & CmsFieldList,
+  "required" | "widget"
+> & {
+  widget?: string;
+};
+
+type NestedObjectProps<T> = Base<T, CmsFieldObject> & {
+  widget: "object";
+};
+
 export type FieldProps<T> = Date extends T
   ? DateProps<T> | CurrentDate<T>
   : string extends T
   ?
+      | HiddenProps<T>
       | StringOrTextProps<T>
       | MarkdownProps<T>
       | ImageProps<T>
       | SelectProps<T>
-      | HiddenProps<T>
   : number extends T
   ? NumberProps<T>
-  : Array<any> extends T
+  : Array<string> extends T
   ? SelectProps<T>
+  : T extends Array<any>
+  ? NestedListProps
+  : Object extends T
+  ? NestedObjectProps<T>
   : boolean extends T
   ? BooleanProps<T>
   : never;
@@ -99,6 +115,8 @@ const generateCmsField = <T extends unknown>(
     | CmsFieldNumber
     | CmsFieldDateTime
     | CmsFieldSelect
+    | CmsFieldObject
+    | CmsFieldList
     | CmsFieldBoolean
     | CmsFieldHidden
     | CmsFieldMeta

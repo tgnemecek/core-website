@@ -1,5 +1,5 @@
 ---
-collection: pages
+template: LegalPage
 privacyPolicy: >+
   WE ARE COMMITTED TO YOUR PRIVACY
 

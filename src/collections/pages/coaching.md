@@ -1,5 +1,5 @@
 ---
-collection: pages
+template: ServicePage
 title: CORE Coaching
 explanation:
   text: >-

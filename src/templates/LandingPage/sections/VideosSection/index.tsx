@@ -11,7 +11,7 @@ type VideosProps = {
   videos: Video[];
 };
 
-const Videos: React.FC<VideosProps> = ({ videos: rawVideos }) => {
+const VideosSection: React.FC<VideosProps> = ({ videos: rawVideos }) => {
   const classes = useStyles();
   const [activeindex, setActiveIndex] = React.useState(0);
 
@@ -53,9 +53,9 @@ const Videos: React.FC<VideosProps> = ({ videos: rawVideos }) => {
   );
 };
 
-export default Videos;
+export default VideosSection;
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   subtitle: {
     height: 31.25,
   },

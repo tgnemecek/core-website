@@ -1,6 +1,6 @@
-export { default as ContactForm } from "./ContactForm";
-export { default as CoursesFeed } from "./CoursesFeed";
-export { default as EventFeed } from "./EventFeed";
+export { default as ContactUsSection } from "./ContactUsSection";
+export { default as CoreLearningZoneSection } from "./CoreLearningZoneSection";
+export { default as EventsSection } from "./EventsSection";
 export { default as EventStatus } from "./EventStatus";
 export { default as Ellipsis } from "./Ellipsis";
 export { default as Footer } from "./Footer";
@@ -19,7 +19,7 @@ export { default as Modal } from "./Modal";
 export { default as Navbar } from "./Navbar";
 export { default as Section } from "./Section";
 export { default as SmoothScroll } from "./SmoothScroll";
-export { default as PostFeed } from "./PostFeed";
+export { default as PostsSection } from "./PostsSection";
 export { default as VideoPlayer } from "./VideoPlayer";
 
 export { default as theme } from "./theme";

@@ -1,5 +1,5 @@
 ---
-collection: pages
+template: TeamPage
 title: Meet the Team
 members:
   - name: Sharon Seivert

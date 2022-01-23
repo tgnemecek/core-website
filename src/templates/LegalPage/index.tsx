@@ -9,7 +9,7 @@ const LegalPage: React.FC<LegalPageDTO> = ({
     markdownRemark: {
       frontmatter: {
         pages: {
-          legal: { privacyPolicy, termsAndConditions },
+          LegalPage: { privacyPolicy, termsAndConditions },
         },
       },
     },
@@ -45,7 +45,7 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         pages {
-          legal {
+          LegalPage {
             privacyPolicy
             termsAndConditions
           }

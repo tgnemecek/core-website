@@ -13,9 +13,9 @@ const EventCollection: CmsCollection = {
   create: true,
   slug: "{{year}}-{{month}}-{{day}}-{{title}}",
   fields: [
-    generateCmsField<EventPage["collection"]>({
-      label: "Collection",
-      name: "collection",
+    generateCmsField<EventPage["template"]>({
+      label: "Template",
+      name: "template",
       widget: "hidden",
       default: "events",
     }),

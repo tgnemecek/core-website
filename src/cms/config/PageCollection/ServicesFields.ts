@@ -1,8 +1,8 @@
-import { ServicesPage } from "types";
+import { ServicePage } from "types";
 import generateCmsSection from "../generate-cms-section";
 import generateCmsField from "../generate-cms-field";
 
-const ExplanationSection = generateCmsSection<ServicesPage["explanation"]>({
+const ExplanationSection = generateCmsSection<ServicePage["explanation"]>({
   label: "Explanation",
   name: "explanation",
   widget: "object",
@@ -18,7 +18,7 @@ const ExplanationSection = generateCmsSection<ServicesPage["explanation"]>({
   },
 });
 
-const Benefits = generateCmsField<ServicesPage["benefits"]>({
+const Benefits = generateCmsField<ServicePage["benefits"]>({
   label: "Benefits",
   name: "benefits",
   widget: "markdown",

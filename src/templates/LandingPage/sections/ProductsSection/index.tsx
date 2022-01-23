@@ -10,14 +10,14 @@ import {
 import Fade from "react-reveal/Fade";
 import LazyLoad from "react-lazyload";
 import { Section, Gallery, Image, Heading } from "components";
-import { Product } from "types";
+import { ProductsSection as ProductsSectionProps } from "types";
 import ProductImage from "./ProductImage";
 
-type ProductsProps = {
-  products: Product[];
-};
-
-const Products: React.FC<ProductsProps> = ({ products }) => {
+const ProductsSection: React.FC<ProductsSectionProps> = ({
+  heading,
+  subheading,
+  products,
+}) => {
   const classes = useStyles();
   const [activeindex, setActiveIndex] = React.useState(0);
 
@@ -26,11 +26,8 @@ const Products: React.FC<ProductsProps> = ({ products }) => {
   return (
     <Section>
       <Container>
-        <Heading
-          subheading="From books to apps, use these resources to assist you in your journey"
-          showLine
-        >
-          Core Coaching Books &amp; Apps
+        <Heading subheading={subheading} showLine>
+          {heading}
         </Heading>
         <a
           href={products[activeindex].link || ""}
@@ -81,7 +78,7 @@ const Products: React.FC<ProductsProps> = ({ products }) => {
   );
 };
 
-export default Products;
+export default ProductsSection;
 
 const useStyles = makeStyles((theme) => ({
   featured: {

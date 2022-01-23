@@ -12,6 +12,7 @@ import {
 import Alert from "@material-ui/lab/Alert";
 import SendIcon from "@material-ui/icons/Send";
 import { Section, Heading, theme } from "components";
+import useContactUs from "./useContactUs";
 
 const initialForm = (pathname: string): Record<string, string> => ({
   name: "",
@@ -22,7 +23,8 @@ const initialForm = (pathname: string): Record<string, string> => ({
 
 type Status = "idle" | "loading" | "success" | "error";
 
-const ContactForm: React.FC = () => {
+const ContactUsSection: React.FC = () => {
+  const { heading } = useContactUs();
   const [status, setStatus] = React.useState<Status>("idle");
   const [submitted, setSubmitted] = React.useState(false);
 
@@ -72,7 +74,7 @@ const ContactForm: React.FC = () => {
 
   return (
     <Section id="contact-form" backgroundColor={theme.palette.grey[50]}>
-      <Heading textAlign="center">Send us a message</Heading>
+      <Heading textAlign="center">{heading}</Heading>
       <div className={classes.container}>
         <form
           name="contact"
@@ -164,7 +166,7 @@ const ContactForm: React.FC = () => {
   );
 };
 
-export default ContactForm;
+export default ContactUsSection;
 
 type UseStylesProps = {
   showThanks: boolean;

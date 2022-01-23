@@ -3,15 +3,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography } from "@material-ui/core";
 import Fade from "react-reveal/Fade";
 import { Section, Link, Heading } from "components";
-import { About } from "types";
+import { AboutSection as AboutSectionProps } from "types";
 
-type AboutSectionProps = {
-  about: About;
-};
-
-const AboutSection: React.FC<AboutSectionProps> = ({
-  about: { heading, text },
-}) => {
+const AboutSection: React.FC<AboutSectionProps> = ({ heading, text }) => {
   const classes = useStyles();
 
   return (

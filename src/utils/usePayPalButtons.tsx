@@ -2,7 +2,7 @@ import React from "react";
 import paypalBuyNow from "src/img/paypal-buy-now.jpg";
 import paypalDonate from "src/img/paypal-donate.jpg";
 import { PayPalButtonName, ServiceName } from "types";
-import { useContactInfo } from "utils";
+import { useSettings } from "utils";
 
 type ButtonData = {
   label: string;
@@ -15,9 +15,9 @@ type ButtonData = {
 type Buttons = Record<PayPalButtonName, ButtonData>;
 
 const usePayPalButtons = (service: ServiceName) => {
-  const { phone1 } = useContactInfo();
+  const { phone1 } = useSettings();
 
-  const formattedPhone = phone1.replace(/[^\d\+]/g, "");
+  const formattedPhone = phone1?.replace(/[^\d\+]/g, "");
 
   const getButtonNames = (): PayPalButtonName[] => {
     switch (service) {

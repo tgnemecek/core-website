@@ -4,10 +4,10 @@ import { LandingPageDTO } from "types";
 import { recursivelyFormatDate } from "utils";
 import {
   Hero,
-  CoursesFeed,
-  EventFeed,
-  PostFeed,
-  ContactForm,
+  CoreLearningZoneSection,
+  EventsSection,
+  PostsSection,
+  ContactUsSection,
   Layout,
   Navbar,
   Footer,
@@ -16,36 +16,43 @@ import {
   AboutSection,
   Testimonials,
   Services,
-  Products,
-  Videos,
+  ProductsSection,
+  VideosSection,
 } from "./sections";
 
 const LandingPage: React.FC<LandingPageDTO> = ({
   data: {
     markdownRemark: {
       frontmatter: {
-        pages: { landing },
+        pages: { LandingPage },
       },
     },
   },
 }) => {
-  const { about, testimonials, products, services, videos } =
-    recursivelyFormatDate(landing);
+  const {
+    aboutSection,
+    postsSection,
+    coreLearningZoneSection,
+    testimonials,
+    productsSection,
+    services,
+    videos,
+  } = recursivelyFormatDate(LandingPage);
 
   return (
     <Layout>
       <Navbar />
       <main>
         <Hero />
-        <AboutSection about={about} />
-        <PostFeed title="What's new" />
-        <CoursesFeed />
-        <EventFeed title="Upcoming Events" />
+        <AboutSection {...aboutSection} />
+        <PostsSection />
+        <CoreLearningZoneSection {...coreLearningZoneSection} />
+        <EventsSection />
         <Testimonials testimonials={testimonials} />
         <Services services={services} />
-        <Products products={products} />
-        <Videos videos={videos} />
-        <ContactForm />
+        <ProductsSection {...productsSection} />
+        <VideosSection videos={videos} />
+        <ContactUsSection />
       </main>
       <Footer />
     </Layout>
@@ -57,13 +64,20 @@ export default LandingPage;
 export const pageQuery = graphql`
   query LandingPageQuery($id: String!) {
     markdownRemark(id: { eq: $id }) {
-      id
       frontmatter {
         pages {
-          landing {
-            about {
+          LandingPage {
+            aboutSection {
               heading
               text
+            }
+            postsSection {
+              heading
+              subheading
+            }
+            coreLearningZoneSection {
+              heading
+              subheading
             }
             testimonials {
               author
@@ -76,12 +90,16 @@ export const pageQuery = graphql`
               description
               image
             }
-            products {
-              description
-              image
-              title
-              subtitle
-              link
+            productsSection {
+              heading
+              subheading
+              products {
+                description
+                image
+                title
+                subtitle
+                link
+              }
             }
             videos {
               title

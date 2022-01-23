@@ -3,9 +3,14 @@ import { Container } from "@material-ui/core";
 import { Skeleton } from "@material-ui/lab";
 import { Section, HorizontalFeed, Heading } from "components";
 import { useCourseFeed, useBreakpoint } from "utils";
+import { CoreLearningZoneSection as CoreLearningZoneProps } from "types";
 import CourseCard from "./CourseCard";
 
-const CourseFeed: React.FC = () => {
+const CoreLearningZoneSection: React.FC<CoreLearningZoneProps> = ({
+  heading,
+  subheading,
+  extraText,
+}) => {
   const { courses, error } = useCourseFeed();
   const { md } = useBreakpoint();
 
@@ -16,10 +21,10 @@ const CourseFeed: React.FC = () => {
       <Container>
         <Heading
           showLine
-          subheading="Anytime, Anywhere Learning to Ensure Your Success"
-          extra={md ? "(Real Solutions for Real Life & Work)" : undefined}
+          subheading={subheading}
+          extra={md ? extraText : undefined}
         >
-          Core Learning Zone
+          {heading}
         </Heading>
       </Container>
       <Container>
@@ -41,4 +46,4 @@ const CourseFeed: React.FC = () => {
   );
 };
 
-export default CourseFeed;
+export default CoreLearningZoneSection;

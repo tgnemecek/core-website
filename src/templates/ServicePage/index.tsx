@@ -1,8 +1,15 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { ServicesPageDTO, ServiceName } from "types";
+import { ServicePageDTO, ServiceName } from "types";
 import { recursivelyFormatDate } from "utils";
-import { Hero, Section, ContactForm, Layout, Navbar, Footer } from "components";
+import {
+  Hero,
+  Section,
+  ContactUsSection,
+  Layout,
+  Navbar,
+  Footer,
+} from "components";
 
 import {
   Benefits,
@@ -12,17 +19,17 @@ import {
   PayPalButtons,
 } from "./sections";
 
-const ServicesPage: React.FC<ServicesPageDTO> = ({
+const ServicePage: React.FC<ServicePageDTO> = ({
   data: {
     markdownRemark: {
       fields: { slug },
       frontmatter: {
-        pages: { services },
+        pages: { ServicePage },
       },
     },
   },
 }) => {
-  const { benefits, explanation, title } = recursivelyFormatDate(services);
+  const { benefits, explanation, title } = recursivelyFormatDate(ServicePage);
 
   const service = slug.replace(/\//g, "") as ServiceName;
 
@@ -40,25 +47,24 @@ const ServicesPage: React.FC<ServicesPageDTO> = ({
         <Section>
           <PayPalButtons service={service} />
         </Section>
-        <ContactForm />
+        <ContactUsSection />
       </main>
       <Footer />
     </Layout>
   );
 };
 
-export default ServicesPage;
+export default ServicePage;
 
 export const pageQuery = graphql`
-  query ServicesPageQuery($id: String!) {
+  query ServicePageQuery($id: String!) {
     markdownRemark(id: { eq: $id }) {
-      id
       fields {
         slug
       }
       frontmatter {
         pages {
-          services {
+          ServicePage {
             title
             benefits
             explanation {

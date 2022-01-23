@@ -1,10 +1,9 @@
 import assert from "assert";
 import sinon from "sinon";
+import * as fetch from "node-fetch";
 import { MockThinkificProduct } from "../mocks/index.mock";
 import { ThinkificProduct, Course } from "../types";
 import Thinkific from "./Thinkific";
-
-const fetch = require("node-fetch");
 
 const sandbox = sinon.createSandbox();
 

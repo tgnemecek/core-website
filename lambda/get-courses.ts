@@ -12,7 +12,7 @@ export const getCourses: NetlifyLambdaHandler = async (event, context) => {
       }),
     };
   } catch (err) {
-    console.error(err.message);
+    console.error((err as any).message);
     return {
       statusCode: 500,
       body: "Internal Server Error",

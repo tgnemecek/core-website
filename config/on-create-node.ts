@@ -6,76 +6,128 @@ const onCreateNode: GatsbyNode["onCreateNode"] = ({
   actions,
   getNode,
 }) => {
-  const { createNodeField } = actions;
+  const { createNodeField, deleteNode, createNode } = actions;
 
   if (node.internal.type === "MarkdownRemark") {
-    const pageMap = {
-      "/": {
-        key: "landing",
-        component: "LandingPage",
-      },
-      "/coaching/": {
-        key: "services",
-        component: "ServicesPage",
-      },
-      "/leading/": {
-        key: "services",
-        component: "ServicesPage",
-      },
-      "/learning/": {
-        key: "services",
-        component: "ServicesPage",
-      },
-      "/business/": {
-        key: "services",
-        component: "ServicesPage",
-      },
-      "/team/": {
-        key: "team",
-        component: "TeamPage",
-      },
-      "/legal/": {
-        key: "legal",
-        component: "LegalPage",
-      },
-    } as const;
+    const parent = getNode(node.parent || "");
+    const { sourceInstanceName } = (parent as any) || {};
 
-    const value = createFilePath({ node, getNode }) as keyof typeof pageMap;
+    node.fields = {
+      slug: createFilePath({ node, getNode }),
+      collection: sourceInstanceName,
+    };
 
-    const { frontmatter } = node as any;
+    const { template } = node.frontmatter as Record<string, string | undefined>;
 
-    if (frontmatter.collection === "pages") {
-      const { key, component } = pageMap[value];
-      createNodeField({
-        name: "slug",
-        node: {
-          ...node,
-          frontmatter: {
-            component,
-            pages: {
-              [key]: {
-                ...frontmatter,
-              },
-            },
-            collection: frontmatter.collection,
-          },
+    if (template) {
+      node.frontmatter = {
+        isPage: true,
+        template,
+        pages: {
+          [template]: node.frontmatter,
         },
-        value,
-      });
+      };
     } else {
-      createNodeField({
-        name: "slug",
-        node: {
-          ...node,
-          frontmatter: {
-            [frontmatter.collection]: node.frontmatter,
-            collection: frontmatter.collection,
-          },
-        },
-        value,
-      });
+      (node.frontmatter as any)[sourceInstanceName] = node.frontmatter;
     }
+
+    // deleteNode(node);
+    // createNode({
+    //   ...node,
+    //   fields: {
+    //     slug: createFilePath({ node, getNode }),
+    //   },
+    //   ...(parent?.sourceInstanceName
+    //     ? {
+    //         frontmatter: {
+    //           [parent.sourceInstanceName as string]: node.frontmatter,
+    //         },
+    //       }
+    //     : null),
+    // });
+    // createNodeField({
+    //   name: "slug",
+    //   node,
+    //   value: createFilePath({ node, getNode }),
+    // });
+
+    // console.log(node);
+
+    // createNodeField({
+    //   name: "slug",
+    //   node,
+    //   value: createFilePath({ node, getNode }),
+    // });
   }
+
+  // if (node.internal.type === "MarkdownRemark") {
+  //   const pageMap = {
+  //     "/": {
+  //       key: "landing",
+  //       component: "LandingPage",
+  //     },
+  //     "/coaching/": {
+  //       key: "services",
+  //       component: "ServicePage",
+  //     },
+  //     "/leading/": {
+  //       key: "services",
+  //       component: "ServicePage",
+  //     },
+  //     "/learning/": {
+  //       key: "services",
+  //       component: "ServicePage",
+  //     },
+  //     "/business/": {
+  //       key: "services",
+  //       component: "ServicePage",
+  //     },
+  //     "/team/": {
+  //       key: "team",
+  //       component: "TeamPage",
+  //     },
+  //     "/legal/": {
+  //       key: "legal",
+  //       component: "LegalPage",
+  //     },
+  //   } as const;
+
+  //   const value = createFilePath({ node, getNode }) as keyof typeof pageMap;
+
+  //   const { frontmatter } = node as any;
+
+  //   if (frontmatter.collection === "pages") {
+  //     const { key, component } = pageMap[value];
+  //     createNodeField({
+  //       name: "slug",
+  //       node: {
+  //         ...node,
+  //         frontmatter: {
+  //           component,
+  //           pages: {
+  //             [key]: {
+  //               ...frontmatter,
+  //             },
+  //           },
+  //           collection: frontmatter.collection,
+  //         },
+  //       },
+  //       value,
+  //     });
+  //   } else {
+  //     createNodeField({
+  //       name: "slug",
+  //       node: {
+  //         ...node,
+  //         frontmatter: {
+  //           [frontmatter.collection]: node.frontmatter,
+  //           collection: frontmatter.collection,
+  //         },
+  //       },
+  //       value,
+  //     });
+  //   }
+  // }
 };
 
 export default onCreateNode;

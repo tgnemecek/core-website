@@ -6,13 +6,14 @@ import { usePostFeed } from "utils";
 import { Post } from "types";
 import PostCard from "./PostCard";
 
-type PostFeedProps = {
-  title: string;
+type PostsSectionProps = {
   filter?: (post: Post) => boolean;
 };
 
-const PostFeed: React.FC<PostFeedProps> = ({ title, filter }) => {
-  const posts = usePostFeed().filter(filter || Boolean);
+const PostsSection: React.FC<PostsSectionProps> = ({ filter }) => {
+  const { posts: unfilteredPosts, heading, subheading } = usePostFeed();
+
+  const posts = unfilteredPosts.filter(filter || Boolean);
 
   const sorter = ({ date: dateA }: Post, { date: dateB }: Post) => {
     if (isBefore(dateA, dateB)) {
@@ -27,11 +28,8 @@ const PostFeed: React.FC<PostFeedProps> = ({ title, filter }) => {
   return (
     <Section id="posts">
       <Container>
-        <Heading
-          showLine
-          subheading="Keep updated with our latest posts and news"
-        >
-          {title}
+        <Heading showLine subheading={subheading}>
+          {heading}
         </Heading>
       </Container>
       <Container>
@@ -45,4 +43,4 @@ const PostFeed: React.FC<PostFeedProps> = ({ title, filter }) => {
   );
 };
 
-export default PostFeed;
+export default PostsSection;
