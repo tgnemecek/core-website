@@ -48,6 +48,7 @@ type NavigationLink {
 type LandingPage {
   collection: String
   about: About!
+  postsSection: PostsSection!
   services: [Service!]!
   products: [Product!]!
   testimonials: [Testimonial!]!
@@ -56,8 +57,13 @@ type LandingPage {
 }
 
 type About {
-  text: String
-  image: String
+  heading: String!
+  text: String!
+}
+
+type PostsSection {
+  heading: String!
+  subHeading: String!
 }
 
 type Service {

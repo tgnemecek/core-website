@@ -1,19 +1,7 @@
-import { CmsCollection, CmsField } from "netlify-cms-core";
-
-const commonFields = (key: string, collection = "settings"): CmsField[] => [
-  {
-    label: "Collection",
-    name: "collection",
-    widget: "hidden",
-    default: collection,
-  },
-  {
-    label: "Key",
-    name: "key",
-    widget: "hidden",
-    default: key,
-  },
-];
+import { CmsCollection } from "netlify-cms-core";
+import { NavigationLink, Contact, GeneralSettings } from "types";
+import generateCmsSection from "./generate-cms-section";
+import generateCmsField from "./generate-cms-field";
 
 const SettingsCollection: CmsCollection = {
   name: "settings",
@@ -27,32 +15,28 @@ const SettingsCollection: CmsCollection = {
       label: "Navigation",
       name: "navigation",
       fields: [
-        ...commonFields("navigation"),
-        {
+        generateCmsSection<NavigationLink>({
           label: "Links",
           name: "links",
           widget: "list",
           allow_add: false,
           collapsed: false,
-          fields: [
-            {
+          properties: {
+            label: {
               label: "Label",
-              name: "label",
               widget: "string",
             },
-            {
+            url: {
               label: "Relative URL",
-              name: "url",
               widget: "string",
             },
-            {
+            description: {
               label: "Tooltip",
-              name: "description",
               widget: "string",
               required: false,
             },
-          ],
-        },
+          },
+        }),
       ],
     },
     {
@@ -60,37 +44,36 @@ const SettingsCollection: CmsCollection = {
       label: "Contact Information",
       name: "contact",
       fields: [
-        ...commonFields("contact"),
-        {
-          label: "Email",
-          name: "email",
-          widget: "string",
-          required: false,
-        },
-        {
-          label: "Phone 1",
-          name: "phone1",
-          widget: "string",
-          required: false,
-        },
-        {
-          label: "Phone 2",
-          name: "phone2",
-          widget: "string",
-          required: false,
-        },
-        {
-          label: "External Link",
-          name: "link",
-          widget: "string",
-          required: false,
-        },
-        {
+        generateCmsField<Contact["address"]>({
           label: "Address",
           name: "address",
           widget: "text",
           required: false,
-        },
+        }),
+        generateCmsField<Contact["email"]>({
+          label: "Email",
+          name: "email",
+          widget: "string",
+          required: false,
+        }),
+        generateCmsField<Contact["phone1"]>({
+          label: "Phone 1",
+          name: "phone1",
+          widget: "string",
+          required: false,
+        }),
+        generateCmsField<Contact["phone2"]>({
+          label: "Phone 2",
+          name: "phone2",
+          widget: "string",
+          required: false,
+        }),
+        generateCmsField<Contact["link"]>({
+          label: "External Link",
+          name: "link",
+          widget: "string",
+          required: false,
+        }),
       ],
     },
     {
@@ -98,22 +81,21 @@ const SettingsCollection: CmsCollection = {
       label: "General",
       name: "generalSettings",
       fields: [
-        ...commonFields("generalSettings"),
-        {
+        generateCmsField<GeneralSettings["logo"]>({
           label: "Logo Image",
           name: "logo",
           widget: "image",
-        },
-        {
+        }),
+        generateCmsField<GeneralSettings["heroImage"]>({
           label: "Hero Image",
           name: "heroImage",
           widget: "image",
-        },
-        {
+        }),
+        generateCmsField<GeneralSettings["heroImage"]>({
           label: "Refund Policy",
           name: "refundPolicy",
           widget: "text",
-        },
+        }),
       ],
     },
   ],

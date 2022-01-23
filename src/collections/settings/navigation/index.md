@@ -1,5 +1,4 @@
 ---
-collection: navigation
 links:
   - label: CORE Leading
     url: /leading

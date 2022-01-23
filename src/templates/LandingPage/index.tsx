@@ -62,8 +62,8 @@ export const pageQuery = graphql`
         pages {
           landing {
             about {
+              heading
               text
-              image
             }
             testimonials {
               author

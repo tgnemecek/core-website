@@ -9,7 +9,9 @@ type AboutSectionProps = {
   about: About;
 };
 
-const AboutSection: React.FC<AboutSectionProps> = ({ about: { text } }) => {
+const AboutSection: React.FC<AboutSectionProps> = ({
+  about: { heading, text },
+}) => {
   const classes = useStyles();
 
   return (
@@ -18,7 +20,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ about: { text } }) => {
         <Container className={classes.aboutGrid}>
           <div className={classes.textWrapper}>
             <Fade left>
-              <Heading>About Us</Heading>
+              <Heading>{heading}</Heading>
               <Typography variant="body2" className={classes.text}>
                 {text}
               </Typography>
