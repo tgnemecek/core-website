@@ -1,43 +1,48 @@
-import { CmsCollectionFile } from "netlify-cms-core";
-import { Member } from "types";
+import { CmsCollectionFile, CmsFieldList } from "netlify-cms-core";
+import { Member, TypeSafeCmsField } from "types";
 import getStaticPageFields from "../get-static-page-fields";
-import generateCmsSection from "../generate-cms-section";
 
-const MembersSection = generateCmsSection<Member>({
+const MembersSection: TypeSafeCmsField<Member, CmsFieldList> = {
   label: "Members",
   name: "members",
   widget: "list",
   allow_add: true,
   collapsed: false,
-  properties: {
-    name: {
+  fields: [
+    {
       label: "Name",
       widget: "string",
+      name: "name",
     },
-    role: {
+    {
       label: "Role",
       widget: "string",
+      name: "role",
     },
-    photo: {
+    {
       label: "Photo",
       widget: "image",
+      name: "photo",
     },
-    video: {
+    {
       label: "Video",
       widget: "string",
+      name: "video",
       required: false,
     },
-    bio: {
+    {
       label: "Bio",
       widget: "text",
+      name: "bio",
     },
-    linkedin: {
+    {
       label: "LinkedIn Link",
       widget: "string",
+      name: "linkedin",
       required: false,
     },
-  },
-});
+  ],
+};
 
 const TeamPage: CmsCollectionFile = {
   file: "src/collections/pages/team.md",

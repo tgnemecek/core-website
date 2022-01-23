@@ -1,23 +1,26 @@
-import { CmsCollectionFile } from "netlify-cms-core";
-import { LegalPage as LegalPageType } from "types";
+import { CmsCollectionFile, CmsFieldStringOrText } from "netlify-cms-core";
+import { LegalPage as LegalPageType, TypeSafeCmsField } from "types";
 import getStaticPageFields from "../get-static-page-fields";
-import generateCmsField from "../generate-cms-field";
 
-const PrivacyPolicy = generateCmsField<LegalPageType["privacyPolicy"]>({
+const PrivacyPolicy: TypeSafeCmsField<
+  LegalPageType["privacyPolicy"],
+  CmsFieldStringOrText
+> = {
   label: "Privacy Policy",
   name: "privacyPolicy",
   widget: "text",
   required: false,
-});
+};
 
-const TermsAndConditions = generateCmsField<
-  LegalPageType["termsAndConditions"]
->({
+const TermsAndConditions: TypeSafeCmsField<
+  LegalPageType["termsAndConditions"],
+  CmsFieldStringOrText
+> = {
   label: "Purchase Terms",
   name: "termsAndConditions",
   widget: "text",
   required: false,
-});
+};
 
 const LegalPage: CmsCollectionFile = {
   file: "src/collections/pages/legal.md",

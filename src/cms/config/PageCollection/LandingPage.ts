@@ -1,6 +1,5 @@
 import {
   CmsCollectionFile,
-  CmsField,
   CmsFieldObject,
   CmsFieldList,
 } from "netlify-cms-core";
@@ -16,7 +15,6 @@ import {
   ContactUsSection as ContactUsSectionType,
   TypeSafeCmsField,
 } from "types";
-import generateCmsSection from "../generate-cms-section";
 
 const AboutSection: TypeSafeCmsField<AboutSectionType, CmsFieldObject> = {
   label: "About Section",
