@@ -8,3 +8,5 @@ declare module "markdown-to-text" {
   function removeMarkdown(input: string): string;
   export default removeMarkdown;
 }
+declare const describe;
+declare const it;

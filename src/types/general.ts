@@ -1,6 +1,12 @@
 import { EventPage, PostPage } from "./__generated__";
 
-export { Course } from "../../lambda/types";
+export type Course = {
+  id: number;
+  name: string;
+  slug: string;
+  description?: string;
+  image?: string;
+};
 
 export type PayPalButtonName =
   | "careerStrengths"
