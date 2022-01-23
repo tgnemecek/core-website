@@ -1,9 +1,11 @@
 import assert from "assert";
-import { LegalPage as LegalPageType } from "types";
+import { LegalPage as LegalPageType, PickOnlyRequired } from "types";
 import getStaticPageFields from "../get-static-page-fields";
 import LegalPage from "./LegalPage";
 
-class LegalPageClass implements Required<LegalPageType> {
+type LegalPageRequiredOnly = PickOnlyRequired<LegalPageType>;
+
+class LegalPageClass implements LegalPageRequiredOnly {
   privacyPolicy = "Some text";
   termsAndConditions = "Other text";
 }

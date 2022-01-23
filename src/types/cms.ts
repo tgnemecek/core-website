@@ -1,4 +1,4 @@
-import { CmsConfig, CmsBackend } from "netlify-cms-core";
+import { CmsConfig, CmsBackend, CmsFieldBase } from "netlify-cms-core";
 import { Event, Ticket } from "types";
 
 export type ExtendedCMSConfig = Omit<CmsConfig, "backend"> & {
@@ -34,3 +34,10 @@ export type EventServerResponse = {
   id: string;
   tickets: Ticket[];
 };
+
+export type TypeSafeCmsField<T, Cms> = Omit<CmsFieldBase & Cms, "required"> &
+  (undefined extends T
+    ? {
+        required: false;
+      }
+    : {});

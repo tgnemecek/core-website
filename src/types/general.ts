@@ -47,3 +47,9 @@ export type PostFeed = Pick<
   | "isOnline"
   | "tickets"
 >;
+
+type OnlyRequiredKeys<T> = {
+  [K in keyof T]-?: {} extends Pick<T, K> ? never : K;
+}[keyof T];
+
+export type PickOnlyRequired<T> = Pick<T, OnlyRequiredKeys<T>>;

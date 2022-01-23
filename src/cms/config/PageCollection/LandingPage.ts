@@ -1,4 +1,9 @@
-import { CmsCollectionFile } from "netlify-cms-core";
+import {
+  CmsCollectionFile,
+  CmsField,
+  CmsFieldObject,
+  CmsFieldList,
+} from "netlify-cms-core";
 import {
   AboutSection as AboutSectionType,
   PostsSection as PostsSectionType,
@@ -9,205 +14,235 @@ import {
   Testimonial,
   Video,
   ContactUsSection as ContactUsSectionType,
+  TypeSafeCmsField,
 } from "types";
 import generateCmsSection from "../generate-cms-section";
 
-const AboutSection = generateCmsSection<AboutSectionType>({
+const AboutSection: TypeSafeCmsField<AboutSectionType, CmsFieldObject> = {
   label: "About Section",
   name: "about",
-  widget: "list",
-  properties: {
-    heading: {
+  widget: "object",
+  fields: [
+    {
       label: "Heading",
       widget: "text",
+      name: "heading",
     },
-    text: {
+    {
       label: "Body",
       widget: "text",
+      name: "text",
     },
-  },
-});
+  ],
+};
 
-const PostsSection = generateCmsSection<PostsSectionType>({
+const PostsSection: TypeSafeCmsField<PostsSectionType, CmsFieldObject> = {
   label: "Posts Section",
   name: "posts",
   widget: "object",
-  properties: {
-    heading: {
+  fields: [
+    {
       label: "Heading",
       widget: "string",
+      name: "heading",
     },
-    subheading: {
+    {
       label: "Subheading",
       widget: "string",
+      name: "subheading",
     },
-  },
-});
+  ],
+};
 
-const CoreLearningZoneSection = generateCmsSection<CoreLearningZoneSectionType>(
-  {
-    label: "Core Learning Zone Section",
-    name: "coreLearningZoneSection",
-    widget: "object",
-    properties: {
-      heading: {
-        label: "Heading",
-        widget: "string",
-      },
-      subheading: {
-        label: "Subheading",
-        widget: "string",
-      },
-      extraText: {
-        label: "Subheading",
-        widget: "string",
-        required: false,
-      },
+const CoreLearningZoneSection: TypeSafeCmsField<
+  CoreLearningZoneSectionType,
+  CmsFieldObject
+> = {
+  label: "Core Learning Zone Section",
+  name: "coreLearningZoneSection",
+  widget: "object",
+  fields: [
+    {
+      label: "Heading",
+      widget: "string",
+      name: "heading",
     },
-  }
-);
+    {
+      label: "Subheading",
+      widget: "string",
+      name: "subheading",
+    },
+    {
+      label: "Subheading",
+      widget: "string",
+      name: "extraText",
+      required: false,
+    },
+  ],
+};
 
-const EventsSection = generateCmsSection<EventsSectionType>({
+const EventsSection: TypeSafeCmsField<EventsSectionType, CmsFieldObject> = {
   label: "Events Section",
   name: "eventsSection",
   widget: "object",
-  properties: {
-    heading: {
+  fields: [
+    {
       label: "Heading",
       widget: "string",
+      name: "heading",
     },
-    subheading: {
+    {
       label: "Subheading",
       widget: "string",
+      name: "subheading",
     },
-  },
-});
+  ],
+};
 
-const TestimonialsSection = generateCmsSection<Testimonial>({
+const TestimonialsSection: TypeSafeCmsField<Testimonial, CmsFieldList> = {
   label: "Testimonials Section",
   name: "testimonials",
   widget: "list",
   collapsed: false,
-  properties: {
-    testimonial: {
+  fields: [
+    {
       label: "Testimonial",
       widget: "text",
+      name: "testimonial",
     },
-    author: {
+    {
       label: "Author",
       widget: "string",
+      name: "author",
     },
-    role: {
+    {
       label: "Role",
       widget: "string",
+      name: "role",
     },
-  },
-});
+  ],
+};
 
-const ServicesSection = generateCmsSection<Service>({
+const ServicesSection: TypeSafeCmsField<Service, CmsFieldList> = {
   label: "Services Section",
   name: "services",
   widget: "list",
   allow_add: false,
   collapsed: false,
-  properties: {
-    title: {
+  fields: [
+    {
       label: "Title",
       widget: "string",
+      name: "title",
     },
-    description: {
+    {
       label: "Short Description",
       widget: "text",
+      name: "description",
     },
-    image: {
+    {
       label: "Image",
       widget: "image",
+      name: "image",
     },
-    name: {
+    {
       label: "Name",
       widget: "string",
+      name: "name",
     },
-  },
-});
+  ],
+};
 
-const ProductsSection = generateCmsSection<ProductsSectionType>({
+const ProductsSection: TypeSafeCmsField<ProductsSectionType, CmsFieldObject> = {
   label: "Products Section",
   name: "productsSection",
   widget: "object",
-  properties: {
-    heading: {
+  fields: [
+    {
       label: "Heading",
       widget: "string",
+      name: "heading",
     },
-    subheading: {
+    {
       label: "Subheading",
       widget: "string",
+      name: "subheading",
     },
-    products: generateCmsSection<ProductsSectionType["products"][number]>({
+    {
       label: "Products",
       name: "products",
       widget: "list",
-      properties: {
-        title: {
+      fields: [
+        {
           label: "Title",
           widget: "string",
+          name: "title",
         },
-        subtitle: {
+        {
           label: "Subtitle",
           widget: "string",
+          name: "subtitle",
           required: false,
         },
-        description: {
+        {
           label: "Description",
           widget: "string",
+          name: "description",
         },
-        image: {
+        {
           label: "Image",
           widget: "image",
+          name: "image",
         },
-        link: {
+        {
           label: "Link",
           widget: "string",
+          name: "link",
           required: false,
         },
-      },
-    }),
-  },
-});
+      ],
+    },
+  ],
+};
 
-const VideosSection = generateCmsSection<Video>({
+const VideosSection: TypeSafeCmsField<Video, CmsFieldList> = {
   label: "Videos Section",
   name: "videos",
   widget: "list",
   collapsed: false,
-  properties: {
-    title: {
+  fields: [
+    {
       label: "Video Title",
       widget: "string",
+      name: "title",
     },
-    subtitle: {
+    {
       label: "Video Subtitle",
       widget: "string",
+      name: "subtitle",
       required: false,
     },
-    link: {
+    {
       label: "Video Link",
       widget: "string",
+      name: "link",
     },
-  },
-});
+  ],
+};
 
-const ContactUsSection = generateCmsSection<ContactUsSectionType>({
-  label: "Contact Us Section",
-  name: "contactUsSection",
-  widget: "object",
-  properties: {
-    heading: {
-      label: "Heading",
-      widget: "text",
-    },
-  },
-});
+const ContactUsSection: TypeSafeCmsField<ContactUsSectionType, CmsFieldObject> =
+  {
+    label: "Contact Us Section",
+    name: "contactUsSection",
+    widget: "object",
+    fields: [
+      {
+        label: "Heading",
+        widget: "text",
+        name: "heading",
+      },
+    ],
+  };
 
 const LandingPage: CmsCollectionFile = {
   file: "src/collections/pages/index.md",

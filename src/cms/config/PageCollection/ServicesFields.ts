@@ -1,29 +1,40 @@
-import { ServicePage } from "types";
-import generateCmsSection from "../generate-cms-section";
-import generateCmsField from "../generate-cms-field";
+import {
+  CmsFieldObject,
+  CmsFieldStringOrText,
+  CmsFieldMarkdown,
+} from "netlify-cms-core";
+import { TypeSafeCmsField, ServicePage } from "types";
 
-const ExplanationSection = generateCmsSection<ServicePage["explanation"]>({
+const Title: TypeSafeCmsField<ServicePage["title"], CmsFieldStringOrText> = {
+  label: "Title",
+  name: "title",
+  widget: "string",
+};
+
+const Explanation: TypeSafeCmsField<ServicePage["title"], CmsFieldObject> = {
   label: "Explanation",
   name: "explanation",
   widget: "object",
-  properties: {
-    text: {
+  fields: [
+    {
       label: "Explanation Text",
       widget: "markdown",
+      name: "text",
     },
-    image: {
+    {
       label: "Explanation Image",
       widget: "image",
+      name: "image",
     },
-  },
-});
+  ],
+};
 
-const Benefits = generateCmsField<ServicePage["benefits"]>({
+const Benefits: TypeSafeCmsField<ServicePage["benefits"], CmsFieldMarkdown> = {
   label: "Benefits",
   name: "benefits",
   widget: "markdown",
-});
+};
 
-const ServicesFields = [ExplanationSection, Benefits];
+const ServicesFields = [Title, Explanation, Benefits];
 
 export default ServicesFields;
