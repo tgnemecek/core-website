@@ -1,7 +1,14 @@
 import React from "react";
 import { graphql, PageProps } from "gatsby";
 import { PostPageDTO } from "types";
-import { Hero, Layout, Footer, Navbar, Section } from "components";
+import {
+  Hero,
+  Layout,
+  Footer,
+  Navbar,
+  Section,
+  PostsSection,
+} from "components";
 import { usePostImage, recursivelyFormatDate } from "utils";
 import { Body, Video, BackLink } from "./sections";
 
@@ -12,6 +19,7 @@ type PostPageWithLocation = PostPageDTO & {
 const PostPage: React.FC<PostPageWithLocation> = ({
   data: {
     markdownRemark: {
+      fields: { slug },
       frontmatter: { posts: post },
     },
   },
@@ -30,7 +38,7 @@ const PostPage: React.FC<PostPageWithLocation> = ({
           {video && <Video video={video} />}
           <BackLink />
         </Section>
-        {/* <PostsSection title="Learn more" filter={(post) => post.slug !== slug} /> */}
+        <PostsSection filter={(post) => post.slug !== slug} />
       </main>
       <Footer paddingBottom={70} />
     </Layout>

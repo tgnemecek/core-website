@@ -113,6 +113,7 @@ type ContactUsSection {
 type TeamPage {
   template: String
   title: String!
+  subtitle: String!
   members: [Member!]!
 }
 
@@ -136,6 +137,7 @@ type ServicePage {
   explanation: Explanation!
   benefits: String!
   title: String!
+  subtitle: String!
 }
 
 type Explanation {

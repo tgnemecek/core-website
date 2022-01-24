@@ -23,7 +23,7 @@ const AboutSection: TypeSafeCmsField<AboutSectionType, CmsFieldObject> = {
   fields: [
     {
       label: "Heading",
-      widget: "text",
+      widget: "string",
       name: "heading",
     },
     {
@@ -71,7 +71,7 @@ const CoreLearningZoneSection: TypeSafeCmsField<
       name: "subheading",
     },
     {
-      label: "Subheading",
+      label: "Extra Text",
       widget: "string",
       name: "extraText",
       required: false,
@@ -135,7 +135,7 @@ const ServicesSection: TypeSafeCmsField<Service, CmsFieldList> = {
     },
     {
       label: "Short Description",
-      widget: "text",
+      widget: "string",
       name: "description",
     },
     {
@@ -236,7 +236,7 @@ const ContactUsSection: TypeSafeCmsField<ContactUsSectionType, CmsFieldObject> =
     fields: [
       {
         label: "Heading",
-        widget: "text",
+        widget: "string",
         name: "heading",
       },
     ],

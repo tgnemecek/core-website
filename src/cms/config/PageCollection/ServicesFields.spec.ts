@@ -7,6 +7,7 @@ type ServicePageRequiredOnly = PickOnlyRequired<ServicePageType>;
 
 class ServicePage implements ServicePageRequiredOnly {
   title = "Service Page Title";
+  subtitle = "Service Page Subtitle";
   explanation = {
     text: "This is how it works",
     image: "www.image.com",

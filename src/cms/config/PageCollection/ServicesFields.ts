@@ -11,6 +11,15 @@ const Title: TypeSafeCmsField<ServicePage["title"], CmsFieldStringOrText> = {
   widget: "string",
 };
 
+const Subtitle: TypeSafeCmsField<
+  ServicePage["subtitle"],
+  CmsFieldStringOrText
+> = {
+  label: "Subtitle",
+  name: "subtitle",
+  widget: "string",
+};
+
 const Explanation: TypeSafeCmsField<ServicePage["title"], CmsFieldObject> = {
   label: "Explanation",
   name: "explanation",
@@ -35,6 +44,6 @@ const Benefits: TypeSafeCmsField<ServicePage["benefits"], CmsFieldMarkdown> = {
   widget: "markdown",
 };
 
-const ServicesFields = [Title, Explanation, Benefits];
+const ServicesFields = [Title, Subtitle, Explanation, Benefits];
 
 export default ServicesFields;

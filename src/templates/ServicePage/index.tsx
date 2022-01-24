@@ -1,10 +1,12 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { Container } from "@material-ui/core";
 import { ServicePageDTO, ServiceName } from "types";
 import { recursivelyFormatDate } from "utils";
 import {
   Hero,
   Section,
+  Heading,
   ContactUsSection,
   Layout,
   Navbar,
@@ -29,7 +31,8 @@ const ServicePage: React.FC<ServicePageDTO> = ({
     },
   },
 }) => {
-  const { benefits, explanation, title } = recursivelyFormatDate(ServicePage);
+  const { benefits, explanation, title, subtitle } =
+    recursivelyFormatDate(ServicePage);
 
   const service = slug.replace(/\//g, "") as ServiceName;
 
@@ -39,6 +42,9 @@ const ServicePage: React.FC<ServicePageDTO> = ({
       <main>
         <Hero title={title} small={true} />
         <Section>
+          <Container>
+            <Heading showLine>{subtitle}</Heading>
+          </Container>
           <Explanation explanation={explanation} />
           <FreeReport service={service} />
           <Benefits benefits={benefits} />
@@ -66,6 +72,7 @@ export const pageQuery = graphql`
         pages {
           ServicePage {
             title
+            subtitle
             benefits
             explanation {
               text

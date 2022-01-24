@@ -1,6 +1,7 @@
 ---
 template: ServicePage
 title: CORE Learning
+subtitle: Create Change
 explanation:
   text: >-
     **We help businesses implement sustainable change** by using the holistic

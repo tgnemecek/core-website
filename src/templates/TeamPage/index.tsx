@@ -14,15 +14,15 @@ const TeamPage: React.FC<TeamPageDTO> = ({
     },
   },
 }) => {
-  const { title, members } = recursivelyFormatDate(TeamPage);
+  const { title, subtitle, members } = recursivelyFormatDate(TeamPage);
 
   return (
     <Layout>
       <Navbar />
       <main>
         <Hero title={title} small />
-        <Team members={members} />
-        {/* <ContactUsSection /> */}
+        <Team subtitle={subtitle} members={members} />
+        <ContactUsSection />
       </main>
       <Footer />
     </Layout>
@@ -38,6 +38,7 @@ export const pageQuery = graphql`
         pages {
           TeamPage {
             title
+            subtitle
             members {
               name
               role
