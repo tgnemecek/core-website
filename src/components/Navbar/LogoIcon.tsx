@@ -1,13 +1,13 @@
 import React from "react";
 import { AdvancedImage, placeholder } from "@cloudinary/react";
 import { scale } from "@cloudinary/base/actions/resize";
-import { useCloudinary, useGeneralSettings } from "utils";
+import { useCloudinary, useSettings } from "utils";
 
 const WIDTH = 50;
 const ALT = "CORE Logo Icon";
 
 const LogoIcon: React.FC = () => {
-  const { logo } = useGeneralSettings();
+  const { logo } = useSettings();
 
   const cldImage = useCloudinary(
     logo,

@@ -1,19 +1,4 @@
-import { CmsCollection, CmsField } from "netlify-cms-core";
-
-const commonFields = (key: string, collection = "settings"): CmsField[] => [
-  {
-    label: "Collection",
-    name: "collection",
-    widget: "hidden",
-    default: collection,
-  },
-  {
-    label: "Key",
-    name: "key",
-    widget: "hidden",
-    default: key,
-  },
-];
+import { CmsCollection } from "netlify-cms-core";
 
 const SettingsCollection: CmsCollection = {
   name: "settings",
@@ -27,7 +12,6 @@ const SettingsCollection: CmsCollection = {
       label: "Navigation",
       name: "navigation",
       fields: [
-        ...commonFields("navigation"),
         {
           label: "Links",
           name: "links",
@@ -37,18 +21,18 @@ const SettingsCollection: CmsCollection = {
           fields: [
             {
               label: "Label",
-              name: "label",
               widget: "string",
+              name: "label",
             },
             {
               label: "Relative URL",
-              name: "url",
               widget: "string",
+              name: "url",
             },
             {
               label: "Tooltip",
-              name: "description",
               widget: "string",
+              name: "description",
               required: false,
             },
           ],
@@ -60,7 +44,12 @@ const SettingsCollection: CmsCollection = {
       label: "Contact Information",
       name: "contact",
       fields: [
-        ...commonFields("contact"),
+        {
+          label: "Address",
+          name: "address",
+          widget: "text",
+          required: false,
+        },
         {
           label: "Email",
           name: "email",
@@ -85,12 +74,6 @@ const SettingsCollection: CmsCollection = {
           widget: "string",
           required: false,
         },
-        {
-          label: "Address",
-          name: "address",
-          widget: "text",
-          required: false,
-        },
       ],
     },
     {
@@ -98,7 +81,6 @@ const SettingsCollection: CmsCollection = {
       label: "General",
       name: "generalSettings",
       fields: [
-        ...commonFields("generalSettings"),
         {
           label: "Logo Image",
           name: "logo",

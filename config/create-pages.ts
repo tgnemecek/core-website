@@ -10,7 +10,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
   const createMainPages = async () => {
     const { data, errors } = await graphql(`
       {
-        allMarkdownRemark {
+        allMarkdownRemark(filter: { frontmatter: { isPage: { eq: true } } }) {
           edges {
             node {
               id
@@ -18,8 +18,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
                 slug
               }
               frontmatter {
-                component
-                collection
+                template
               }
             }
           }
@@ -29,21 +28,15 @@ export const createPages: GatsbyNode["createPages"] = async ({
 
     if (errors) return console.error(errors);
 
-    const pages = (data as any).allMarkdownRemark.edges.filter(
-      ({ node }: any) => {
-        return node.frontmatter.collection === "pages";
-      }
-    );
-
-    pages.forEach(({ node }: any) => {
+    (data as any).allMarkdownRemark.edges.forEach(({ node }: any) => {
       const {
         id,
         fields: { slug },
-        frontmatter: { component },
+        frontmatter: { template },
       } = node;
       createPage({
-        path: slug,
-        component: path.resolve(`src/templates/${component}/index.tsx`),
+        path: slug === "/landing/" ? "/" : slug,
+        component: path.resolve(`src/templates/${template}/index.tsx`),
         context: {
           id,
           slug,

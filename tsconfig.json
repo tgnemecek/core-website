@@ -6,9 +6,10 @@
       "src/*": ["./src/*"],
       "components": ["./src/components/index.ts"],
       "utils": ["./src/utils/index.ts"],
-      "types": ["./src/types/index.ts"]
+      "types": ["./src/types/index.ts"],
+      "tests": ["./src/tests/index.ts"]
     },
-    "types": ["node"],
+    "types": ["node", "mocha"],
     "skipLibCheck": true,
     "sourceMap": true,
     "noImplicitAny": true,

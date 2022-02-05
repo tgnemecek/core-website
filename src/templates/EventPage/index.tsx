@@ -3,7 +3,7 @@ import { graphql, PageProps } from "gatsby";
 import { Backdrop, CircularProgress } from "@material-ui/core";
 import { SnackbarProvider } from "notistack";
 import { EventPageDTO } from "types";
-import { Layout, EventFeed, Footer, Navbar } from "components";
+import { Layout, Footer, Navbar, EventsSection } from "components";
 import { recursivelyFormatDate } from "utils";
 import {
   Aside,
@@ -74,10 +74,7 @@ const EventPage: React.FC<EventPageWithLocation> = ({
             </Backdrop>
           )}
           <ContentGrid body={<Body />} aside={<Aside />}></ContentGrid>
-          <EventFeed
-            title="You might also like these events"
-            filter={(currEvent) => currEvent.slug !== slug}
-          />
+          <EventsSection filter={(e) => e.slug !== slug} />
           <FixedBar />
         </main>
         {ticketsModalOpen && <TicketsModal open />}

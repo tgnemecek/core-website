@@ -1,6 +1,7 @@
 ---
-collection: pages
+template: TeamPage
 title: Meet the Team
+subtitle: The CORE Team
 members:
   - name: Sharon Seivert
     role: CEO & Founder

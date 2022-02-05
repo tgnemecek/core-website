@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Hero, ContactForm, Layout, Navbar, Footer } from "components";
+import { Hero, ContactUsSection, Layout, Navbar, Footer } from "components";
 import { TeamPageDTO } from "types";
 import { recursivelyFormatDate } from "utils";
 import Team from "./Team";
@@ -9,20 +9,20 @@ const TeamPage: React.FC<TeamPageDTO> = ({
   data: {
     markdownRemark: {
       frontmatter: {
-        pages: { team },
+        pages: { TeamPage },
       },
     },
   },
 }) => {
-  const { title, members } = recursivelyFormatDate(team);
+  const { title, subtitle, members } = recursivelyFormatDate(TeamPage);
 
   return (
     <Layout>
       <Navbar />
       <main>
         <Hero title={title} small />
-        <Team members={members} />
-        <ContactForm />
+        <Team subtitle={subtitle} members={members} />
+        <ContactUsSection />
       </main>
       <Footer />
     </Layout>
@@ -36,8 +36,9 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         pages {
-          team {
+          TeamPage {
             title
+            subtitle
             members {
               name
               role

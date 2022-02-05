@@ -8,7 +8,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { getTintedBackground, isEventValid, useGeneralSettings } from "utils";
+import { getTintedBackground, isEventValid, useSettings } from "utils";
 import { Section } from "components";
 import EventContext from "../../EventContext";
 import FeatureList from "../../FeatureList";
@@ -22,7 +22,7 @@ const Aside: React.FC = () => {
   } = React.useContext(EventContext)!;
 
   const classes = useStyles();
-  const { refundPolicy } = useGeneralSettings();
+  const { refundPolicy } = useSettings();
 
   return (
     <>

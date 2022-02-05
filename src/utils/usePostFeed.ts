@@ -3,9 +3,9 @@ import { PostFeedDTO } from "types";
 import { recursivelyFormatDate } from "utils";
 
 const usePostFeed = () => {
-  const data: PostFeedDTO["data"] = useStaticQuery(graphql`
+  const { posts, information }: PostFeedDTO["data"] = useStaticQuery(graphql`
     query PostFeedQuery {
-      allMarkdownRemark(
+      posts: allMarkdownRemark(
         filter: { frontmatter: { collection: { eq: "posts" } } }
       ) {
         edges {
@@ -25,12 +25,29 @@ const usePostFeed = () => {
           }
         }
       }
+      information: markdownRemark(
+        frontmatter: { template: { eq: "LandingPage" } }
+      ) {
+        frontmatter {
+          pages {
+            LandingPage {
+              postsSection {
+                heading
+                subheading
+              }
+            }
+          }
+        }
+      }
     }
   `);
-  return data.allMarkdownRemark.edges.map(({ node }) => ({
-    ...recursivelyFormatDate(node.frontmatter.posts),
-    slug: node.fields.slug,
-  }));
+  return {
+    ...information.frontmatter.pages.LandingPage.postsSection,
+    posts: posts.edges.map(({ node }) => ({
+      ...recursivelyFormatDate(node.frontmatter.posts),
+      slug: node.fields.slug,
+    })),
+  };
 };
 
 export default usePostFeed;

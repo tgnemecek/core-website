@@ -3,7 +3,7 @@ import Fade from "react-reveal/Fade";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography, Grid, Button } from "@material-ui/core";
 import { SmoothScroll } from "components";
-import { useGeneralSettings } from "utils";
+import { useSettings } from "utils";
 import HeroImage from "./HeroImage";
 import Logo from "./Logo";
 
@@ -24,7 +24,7 @@ const Hero: React.FC<HeroProps> = ({
 }) => {
   const classes = useStyles({ small })();
 
-  const { heroImage } = useGeneralSettings();
+  const { heroImage } = useSettings();
 
   const brandName = (
     <span>

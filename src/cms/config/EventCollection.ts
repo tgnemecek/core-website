@@ -11,8 +11,8 @@ const EventCollection: CmsCollection = {
   slug: "{{year}}-{{month}}-{{day}}-{{title}}",
   fields: [
     {
-      label: "Collection",
-      name: "collection",
+      label: "Template",
+      name: "template",
       widget: "hidden",
       default: "events",
     },
@@ -103,27 +103,26 @@ const EventCollection: CmsCollection = {
       fields: [
         {
           label: "ID",
-          name: "id",
           widget: "hidden",
-          default: "",
+          name: "id",
         },
         {
           label: "Description",
-          name: "description",
           widget: "string",
           default: "General Admission",
+          name: "description",
         },
         {
           label: "Price",
-          name: "price",
           widget: "number",
+          name: "price",
           default: 20,
         },
         {
           label: "End of sale",
-          name: "endsOn",
           widget: "select",
           default: "startOfEvent",
+          name: "endsOn",
           options: [
             {
               label: "At the start of the event",
@@ -138,12 +137,6 @@ const EventCollection: CmsCollection = {
               value: "oneWeek",
             },
           ],
-        },
-        {
-          label: "Extra information",
-          name: "extra",
-          widget: "string",
-          required: false,
         },
       ],
     },
