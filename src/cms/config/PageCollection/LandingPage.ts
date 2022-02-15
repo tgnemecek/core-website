@@ -18,7 +18,7 @@ import {
 
 const AboutSection: TypeSafeCmsField<AboutSectionType, CmsFieldObject> = {
   label: "About Section",
-  name: "about",
+  name: "aboutSection",
   widget: "object",
   fields: [
     {
@@ -36,7 +36,7 @@ const AboutSection: TypeSafeCmsField<AboutSectionType, CmsFieldObject> = {
 
 const PostsSection: TypeSafeCmsField<PostsSectionType, CmsFieldObject> = {
   label: "Posts Section",
-  name: "posts",
+  name: "postsSection",
   widget: "object",
   fields: [
     {
@@ -243,7 +243,7 @@ const ContactUsSection: TypeSafeCmsField<ContactUsSectionType, CmsFieldObject> =
   };
 
 const LandingPage: CmsCollectionFile = {
-  file: "src/collections/pages/index.md",
+  file: "src/collections/pages/landing.md",
   label: "Landing Page",
   name: "index",
   fields: [
