@@ -2,16 +2,13 @@ scalar DateTime
 
 # Main, Settings
 
-type Frontmatter {
-  pages: Pages
-  events: EventPage
-  posts: PostPage
+type Fields {
+  id: String!
+  slug: String!
   settings: Settings
-  template: String
-  isPage: Boolean
-}
+  event: EventPage
+  post: PostPage
 
-type Pages {
   LandingPage: LandingPage
   TeamPage: TeamPage
   LegalPage: LegalPage

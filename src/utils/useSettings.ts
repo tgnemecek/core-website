@@ -7,7 +7,7 @@ const useSettings = () => {
       general: markdownRemark(
         fields: { slug: { eq: "/general/" }, collection: { eq: "settings" } }
       ) {
-        frontmatter {
+        fields {
           settings {
             heroImage
             logo
@@ -17,7 +17,7 @@ const useSettings = () => {
       navigation: markdownRemark(
         fields: { slug: { eq: "/navigation/" }, collection: { eq: "settings" } }
       ) {
-        frontmatter {
+        fields {
           settings {
             links {
               description
@@ -30,7 +30,7 @@ const useSettings = () => {
       contact: markdownRemark(
         fields: { slug: { eq: "/contact/" }, collection: { eq: "settings" } }
       ) {
-        frontmatter {
+        fields {
           settings {
             address
             email
@@ -43,9 +43,9 @@ const useSettings = () => {
     }
   `);
   return {
-    ...general.frontmatter.settings,
-    ...navigation.frontmatter.settings,
-    ...contact.frontmatter.settings,
+    ...general.fields.settings,
+    ...navigation.fields.settings,
+    ...contact.fields.settings,
   } as Settings;
 };
 

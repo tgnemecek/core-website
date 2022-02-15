@@ -23,15 +23,12 @@ import {
 const LandingPage: React.FC<LandingPageDTO> = ({
   data: {
     markdownRemark: {
-      frontmatter: {
-        pages: { LandingPage },
-      },
+      fields: { LandingPage },
     },
   },
 }) => {
   const {
     aboutSection,
-    postsSection,
     coreLearningZoneSection,
     testimonials,
     productsSection,
@@ -64,48 +61,42 @@ export default LandingPage;
 export const pageQuery = graphql`
   query LandingPageQuery($id: String!) {
     markdownRemark(id: { eq: $id }) {
-      frontmatter {
-        pages {
-          LandingPage {
-            aboutSection {
-              heading
-              text
-            }
-            postsSection {
-              heading
-              subheading
-            }
-            coreLearningZoneSection {
-              heading
-              subheading
-            }
-            testimonials {
-              author
-              role
-              testimonial
-            }
-            services {
-              title
-              name
+      fields {
+        LandingPage {
+          aboutSection {
+            heading
+            text
+          }
+          coreLearningZoneSection {
+            heading
+            subheading
+          }
+          testimonials {
+            author
+            role
+            testimonial
+          }
+          services {
+            title
+            name
+            description
+            image
+          }
+          productsSection {
+            heading
+            subheading
+            products {
               description
               image
-            }
-            productsSection {
-              heading
-              subheading
-              products {
-                description
-                image
-                title
-                subtitle
-                link
-              }
-            }
-            videos {
               title
               subtitle
               link
             }
+          }
+          videos {
+            title
+            subtitle
+            link
           }
         }
       }

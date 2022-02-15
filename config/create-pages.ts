@@ -10,14 +10,12 @@ export const createPages: GatsbyNode["createPages"] = async ({
   const createMainPages = async () => {
     const { data, errors } = await graphql(`
       {
-        allMarkdownRemark(filter: { frontmatter: { isPage: { eq: true } } }) {
+        allMarkdownRemark(filter: { fields: { collection: { eq: "page" } } }) {
           edges {
             node {
               id
               fields {
                 slug
-              }
-              frontmatter {
                 template
               }
             }
@@ -31,8 +29,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
     (data as any).allMarkdownRemark.edges.forEach(({ node }: any) => {
       const {
         id,
-        fields: { slug },
-        frontmatter: { template },
+        fields: { slug, template },
       } = node;
       createPage({
         path: slug === "/landing/" ? "/" : slug,
@@ -48,9 +45,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
   const createEventPage = () => {
     return graphql(`
       {
-        allMarkdownRemark(
-          filter: { frontmatter: { collection: { eq: "events" } } }
-        ) {
+        allMarkdownRemark(filter: { fields: { collection: { eq: "event" } } }) {
           edges {
             node {
               id
@@ -84,9 +79,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
   const createPostPage = () => {
     return graphql(`
       {
-        allMarkdownRemark(
-          filter: { frontmatter: { collection: { eq: "posts" } } }
-        ) {
+        allMarkdownRemark(filter: { fields: { collection: { eq: "post" } } }) {
           edges {
             node {
               id

@@ -7,10 +7,8 @@ import { LegalPageDTO } from "types";
 const LegalPage: React.FC<LegalPageDTO> = ({
   data: {
     markdownRemark: {
-      frontmatter: {
-        pages: {
-          LegalPage: { privacyPolicy, termsAndConditions },
-        },
+      fields: {
+        LegalPage: { privacyPolicy, termsAndConditions },
       },
     },
   },
@@ -43,12 +41,10 @@ export default LegalPage;
 export const pageQuery = graphql`
   query LegalPageQuery($id: String!) {
     markdownRemark(id: { eq: $id }) {
-      frontmatter {
-        pages {
-          LegalPage {
-            privacyPolicy
-            termsAndConditions
-          }
+      fields {
+        LegalPage {
+          privacyPolicy
+          termsAndConditions
         }
       }
     }

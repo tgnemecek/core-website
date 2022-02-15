@@ -19,8 +19,7 @@ type PostPageWithLocation = PostPageDTO & {
 const PostPage: React.FC<PostPageWithLocation> = ({
   data: {
     markdownRemark: {
-      fields: { slug },
-      frontmatter: { posts: post },
+      fields: { slug, post },
     },
   },
 }) => {
@@ -52,9 +51,7 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       fields {
         slug
-      }
-      frontmatter {
-        posts {
+        post {
           title
           text
           image

@@ -58,7 +58,7 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         path: `${projectRoot}/src/collections/pages`,
-        name: "pages",
+        name: "page",
       },
     },
     {
@@ -72,21 +72,21 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         path: `${projectRoot}/src/collections/events`,
-        name: "events",
+        name: "event",
       },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         path: `${projectRoot}/src/collections/posts`,
-        name: "posts",
+        name: "post",
       },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         path: `${projectRoot}/src/img`,
-        name: "images",
+        name: "image",
       },
     },
     "gatsby-plugin-sharp",

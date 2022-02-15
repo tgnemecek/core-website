@@ -24,10 +24,7 @@ import {
 const ServicePage: React.FC<ServicePageDTO> = ({
   data: {
     markdownRemark: {
-      fields: { slug },
-      frontmatter: {
-        pages: { ServicePage },
-      },
+      fields: { slug, ServicePage },
     },
   },
 }) => {
@@ -67,17 +64,13 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       fields {
         slug
-      }
-      frontmatter {
-        pages {
-          ServicePage {
-            title
-            subtitle
-            benefits
-            explanation {
-              text
-              image
-            }
+        ServicePage {
+          title
+          subtitle
+          benefits
+          explanation {
+            text
+            image
           }
         }
       }

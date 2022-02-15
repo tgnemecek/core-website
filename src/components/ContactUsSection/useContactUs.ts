@@ -4,13 +4,11 @@ import { ContactUsSection } from "types";
 const useContactUs = () => {
   const { markdownRemark } = useStaticQuery(graphql`
     query ContactUsQuery {
-      markdownRemark(frontmatter: { template: { eq: "LandingPage" } }) {
-        frontmatter {
-          pages {
-            LandingPage {
-              contactUsSection {
-                heading
-              }
+      markdownRemark(fields: { slug: { eq: "/landing/" } }) {
+        fields {
+          LandingPage {
+            contactUsSection {
+              heading
             }
           }
         }
@@ -18,8 +16,7 @@ const useContactUs = () => {
     }
   `);
 
-  return markdownRemark.frontmatter.pages.LandingPage
-    .contactUsSection as ContactUsSection;
+  return markdownRemark.fields.LandingPage.contactUsSection as ContactUsSection;
 };
 
 export default useContactUs;

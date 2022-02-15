@@ -6,15 +6,13 @@ const usePostFeed = () => {
   const { posts, information }: PostFeedDTO["data"] = useStaticQuery(graphql`
     query PostFeedQuery {
       posts: allMarkdownRemark(
-        filter: { frontmatter: { collection: { eq: "posts" } } }
+        filter: { fields: { collection: { eq: "post" } } }
       ) {
         edges {
           node {
             fields {
               slug
-            }
-            frontmatter {
-              posts {
+              post {
                 title
                 text
                 date
@@ -25,16 +23,12 @@ const usePostFeed = () => {
           }
         }
       }
-      information: markdownRemark(
-        frontmatter: { template: { eq: "LandingPage" } }
-      ) {
-        frontmatter {
-          pages {
-            LandingPage {
-              postsSection {
-                heading
-                subheading
-              }
+      information: markdownRemark(fields: { slug: { eq: "/landing/" } }) {
+        fields {
+          LandingPage {
+            postsSection {
+              heading
+              subheading
             }
           }
         }
@@ -42,9 +36,9 @@ const usePostFeed = () => {
     }
   `);
   return {
-    ...information.frontmatter.pages.LandingPage.postsSection,
+    ...information.fields.LandingPage.postsSection,
     posts: posts.edges.map(({ node }) => ({
-      ...recursivelyFormatDate(node.frontmatter.posts),
+      ...recursivelyFormatDate(node.fields.post),
       slug: node.fields.slug,
     })),
   };

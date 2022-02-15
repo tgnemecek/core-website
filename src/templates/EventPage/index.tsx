@@ -23,12 +23,11 @@ type EventPageWithLocation = EventPageDTO & {
 const EventPage: React.FC<EventPageWithLocation> = ({
   data: {
     markdownRemark: {
-      fields: { slug },
-      frontmatter: { events },
+      fields: { slug, event: rawEvent },
     },
   },
 }) => {
-  const event = recursivelyFormatDate(events);
+  const event = recursivelyFormatDate(rawEvent);
 
   const [loading, setLoading] = React.useState(false);
   const [ticketsModalOpen, setTicketsModalOpen] = React.useState(false);
@@ -97,9 +96,7 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       fields {
         slug
-      }
-      frontmatter {
-        events {
+        event {
           id
           title
           subtitle

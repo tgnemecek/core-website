@@ -6,15 +6,13 @@ const useEventFeed = () => {
   const { events, information }: EventFeedDTO["data"] = useStaticQuery(graphql`
     query EventFeedQuery {
       events: allMarkdownRemark(
-        filter: { frontmatter: { collection: { eq: "events" } } }
+        filter: { fields: { collection: { eq: "event" } } }
       ) {
         edges {
           node {
             fields {
               slug
-            }
-            frontmatter {
-              events {
+              event {
                 date
                 duration
                 image
@@ -33,16 +31,12 @@ const useEventFeed = () => {
           }
         }
       }
-      information: markdownRemark(
-        frontmatter: { template: { eq: "LandingPage" } }
-      ) {
-        frontmatter {
-          pages {
-            LandingPage {
-              eventsSection {
-                heading
-                subheading
-              }
+      information: markdownRemark(fields: { slug: { eq: "/landing/" } }) {
+        fields {
+          LandingPage {
+            eventsSection {
+              heading
+              subheading
             }
           }
         }
@@ -50,9 +44,9 @@ const useEventFeed = () => {
     }
   `);
   return {
-    ...information.frontmatter.pages.LandingPage.eventsSection,
+    ...information.fields.LandingPage.eventsSection,
     events: events.edges.map(({ node }: any) => ({
-      ...recursivelyFormatDate(node.frontmatter.events),
+      ...recursivelyFormatDate(node.fields.event),
       slug: node.fields.slug,
     })),
   };

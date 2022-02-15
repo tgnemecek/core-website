@@ -8,9 +8,7 @@ import Team from "./Team";
 const TeamPage: React.FC<TeamPageDTO> = ({
   data: {
     markdownRemark: {
-      frontmatter: {
-        pages: { TeamPage },
-      },
+      fields: { TeamPage },
     },
   },
 }) => {
@@ -34,19 +32,17 @@ export default TeamPage;
 export const pageQuery = graphql`
   query TeamPageQuery($id: String!) {
     markdownRemark(id: { eq: $id }) {
-      frontmatter {
-        pages {
-          TeamPage {
-            title
-            subtitle
-            members {
-              name
-              role
-              photo
-              video
-              bio
-              linkedin
-            }
+      fields {
+        TeamPage {
+          title
+          subtitle
+          members {
+            name
+            role
+            photo
+            video
+            bio
+            linkedin
           }
         }
       }
