@@ -8,7 +8,7 @@ const SettingsCollection: CmsCollection = {
   },
   files: [
     {
-      file: "src/collections/settings/navigation/index.md",
+      file: "src/collections/settings/navigation.md",
       label: "Navigation",
       name: "navigation",
       fields: [
@@ -40,7 +40,7 @@ const SettingsCollection: CmsCollection = {
       ],
     },
     {
-      file: "src/collections/settings/contact/index.md",
+      file: "src/collections/settings/contact.md",
       label: "Contact Information",
       name: "contact",
       fields: [
@@ -77,7 +77,7 @@ const SettingsCollection: CmsCollection = {
       ],
     },
     {
-      file: "src/collections/settings/general-settings/index.md",
+      file: "src/collections/settings/general.md",
       label: "General",
       name: "generalSettings",
       fields: [
