@@ -156,8 +156,6 @@ type EventPage {
   date: DateTime!
   duration: Int!
   language: [Language!]!
-  isOnline: Boolean!
-  location: String
   tickets: [Ticket!]!
 }
 

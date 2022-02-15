@@ -12,11 +12,7 @@ import {
 import { usePostImage, recursivelyFormatDate } from "utils";
 import { Body, Video, BackLink } from "./sections";
 
-type PostPageWithLocation = PostPageDTO & {
-  location: PageProps["location"];
-};
-
-const PostPage: React.FC<PostPageWithLocation> = ({
+const PostPage: React.FC<PostPageDTO> = ({
   data: {
     markdownRemark: {
       fields: { slug, post },

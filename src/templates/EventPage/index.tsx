@@ -16,11 +16,7 @@ import {
 } from "./sections";
 import EventContext from "./EventContext";
 
-type EventPageWithLocation = EventPageDTO & {
-  location: PageProps["location"];
-};
-
-const EventPage: React.FC<EventPageWithLocation> = ({
+const EventPage: React.FC<EventPageDTO> = ({
   data: {
     markdownRemark: {
       fields: { slug, event: rawEvent },
@@ -83,7 +79,7 @@ const EventPage: React.FC<EventPageWithLocation> = ({
   );
 };
 
-const EventPageWithSnackbar: React.FC<EventPageWithLocation> = (props) => (
+const EventPageWithSnackbar: React.FC<EventPageDTO> = (props) => (
   <SnackbarProvider maxSnack={3}>
     <EventPage {...props} />
   </SnackbarProvider>
@@ -106,8 +102,6 @@ export const pageQuery = graphql`
           date
           duration
           language
-          isOnline
-          location
           tickets {
             id
             description

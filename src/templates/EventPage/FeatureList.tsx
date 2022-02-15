@@ -15,7 +15,7 @@ type FeatureListProps = {
 
 const FeatureList: React.FC<FeatureListProps> = ({ dense }) => {
   const {
-    event: { duration, date, location, isOnline, language },
+    event: { duration, date, language },
     priceRange,
   } = React.useContext(EventContext)!;
 
@@ -41,9 +41,7 @@ const FeatureList: React.FC<FeatureListProps> = ({ dense }) => {
         <ListItemIcon className={classes.listIcon}>
           <PlaceIcon />
         </ListItemIcon>
-        <ListItemText className={classes.listText}>
-          {isOnline ? "Online" : location}
-        </ListItemText>
+        <ListItemText className={classes.listText}>Online</ListItemText>
       </ListItem>
       <ListItem className={classes.listItem}>
         <ListItemIcon className={classes.listIcon}>
