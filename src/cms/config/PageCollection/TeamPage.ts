@@ -48,17 +48,7 @@ const TeamPage: CmsCollectionFile = {
   file: "src/collections/pages/team.md",
   label: "Team Page",
   name: "team",
-  fields: [
-    ...getStaticPageFields("team", "TeamPage"),
-    {
-      label: "Members",
-      name: "members",
-      widget: "list",
-      allow_add: true,
-      collapsed: false,
-      fields: [MembersSection],
-    },
-  ],
+  fields: [...getStaticPageFields("team", "TeamPage"), MembersSection],
 };
 
 export default TeamPage;
