@@ -84,12 +84,6 @@ const EventCollection: CmsCollection = {
       ],
     },
     {
-      label: "Online Event",
-      name: "isOnline",
-      widget: "hidden",
-      default: true,
-    },
-    {
       label: "Tickets",
       name: "tickets",
       widget: "list",

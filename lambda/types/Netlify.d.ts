@@ -9,5 +9,6 @@ export type NetlifyContext = Omit<Context, "clientContext"> & {
 
 export type NetlifyLambdaHandler = (
   event: APIGatewayEvent,
-  context: NetlifyContext
+  context: NetlifyContext,
+  callback?: (arg1: any, arg2: any) => void
 ) => Promise<APIGatewayProxyResult>;

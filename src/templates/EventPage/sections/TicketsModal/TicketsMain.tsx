@@ -8,12 +8,12 @@ import EventContext from "../../EventContext";
 
 type TicketsMainProps = {
   goToCheckout: () => void;
-  setChosenTicket: React.Dispatch<React.SetStateAction<Ticket>>;
+  setTicket: React.Dispatch<React.SetStateAction<Ticket>>;
 };
 
 const TicketsMain: React.FC<TicketsMainProps> = ({
   goToCheckout,
-  setChosenTicket,
+  setTicket,
 }) => {
   const {
     event: { tickets, date },
@@ -23,13 +23,13 @@ const TicketsMain: React.FC<TicketsMainProps> = ({
 
   const getEndsOnText = (endsOn: Ticket["endsOn"]) => {
     if (endsOn === "startOfEvent") {
-      return "Sale ends at the start of the event";
+      return "Offer ends at the start of the event";
     }
     if (endsOn === "startOfDay") {
-      return "Sale ends at the day of the event";
+      return "Offer ends at the day of the event";
     }
     if (endsOn === "oneWeek") {
-      return "Sale ends one week before the event";
+      return "Offer ends one week before the event";
     }
     return null;
   };
@@ -42,8 +42,8 @@ const TicketsMain: React.FC<TicketsMainProps> = ({
     return baseClassName;
   };
 
-  const handleClick = (ticket: Ticket) => {
-    setChosenTicket(ticket);
+  const handleClick = (chosenTicket: Ticket) => {
+    setTicket(chosenTicket);
     goToCheckout();
   };
 
@@ -67,7 +67,7 @@ const TicketsMain: React.FC<TicketsMainProps> = ({
                   {ticket.description}
                 </Typography>
                 <Typography variant="body1" className={classes.ticketPrice}>
-                  ${ticket.price}
+                  {ticket.price ? `$${ticket.price}` : "FREE"}
                 </Typography>
                 <Typography variant="body1" className={classes.ticketEndsOn}>
                   {getEndsOnText(ticket.endsOn)}

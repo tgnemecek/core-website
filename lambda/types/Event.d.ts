@@ -18,6 +18,15 @@ export type CreatePaymentIntentBody = {
   timezone: string;
 };
 
+export type EventRegisterFreeBody = {
+  eventId: string;
+  ticketId: string;
+  timezone: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+};
+
 export type Ticket = {
   id: string;
   description: string;
