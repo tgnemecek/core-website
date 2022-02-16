@@ -5,7 +5,7 @@ import Stripe from "./services/Stripe";
 import moment from "moment-timezone";
 import { NetlifyLambdaHandler, EventRegisterFreeBody } from "./types";
 
-const eventRegisterFree: NetlifyLambdaHandler = async (event) => {
+export const eventRegisterFree: NetlifyLambdaHandler = async (event) => {
   try {
     const body: EventRegisterFreeBody = JSON.parse(event.body || "{}");
 
