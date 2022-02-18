@@ -1,7 +1,7 @@
 ---
 template: ServicePage
 title: CORE Leading
-subtitle: For transforming yourself, your team, and business
+subtitle: Discover the superpower of Balanced Leadership
 explanation:
   text: >-
     **Why face leadership challenges alone? Get an expert business Partner**
