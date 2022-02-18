@@ -1,7 +1,8 @@
 ---
 template: ServicePage
 title: CORE Community
-subtitle: Join a global group of The Balance Act leaders, practitioners, and teachers
+subtitle: For continuing your learning with an international group of Balancing
+  Act leaders, practitioners, and teachers
 explanation:
   text: >-
     **We help businesses implement sustainable change** by using the holistic
