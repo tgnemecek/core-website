@@ -2,7 +2,7 @@
 aboutSection:
   heading: We use the holistic system of The Balancing Act...
   text: ...with leaders, businesses, and individuals to significantly increase
-    their effectiveness, well-being, and flow.
+    their effectiveness, power, well-being, and flow.
 postsSection:
   heading: What's new
   subheading: Keep updated with our latest posts and news
