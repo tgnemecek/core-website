@@ -1,7 +1,7 @@
 ---
 template: ServicePage
 title: CORE Leading
-subtitle: For transforming yourself, your team, and organization
+subtitle: For transforming yourself, your team, and business
 explanation:
   text: >-
     **Why face leadership challenges alone? Get an expert business Partner**
