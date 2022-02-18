@@ -1,7 +1,7 @@
 ---
 template: ServicePage
 title: CORE Coaching
-subtitle: Powerfully Rebalance your Life, Work and Relationships
+subtitle: For powerfully rebalancing your Life, Work and Relationships
 explanation:
   text: >-
     **Core Coaching & Consulting will provide you with an expert coach** to
