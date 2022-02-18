@@ -1,8 +1,7 @@
 ---
 template: ServicePage
 title: CORE Community
-subtitle: For continuing your learning with an international group of Balancing
-  Act practitioners
+subtitle: Continue learning with an international group of Balancing Act practitioners
 explanation:
   text: >-
     **We help businesses implement sustainable change** by using the holistic
