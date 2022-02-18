@@ -1,7 +1,7 @@
 ---
 template: ServicePage
-title: CORE Learning
-subtitle: Create Change
+title: CORE Community
+subtitle: Join a global group of The Balance Act leaders, teachers and practitioners
 explanation:
   text: >-
     **We help businesses implement sustainable change** by using the holistic
