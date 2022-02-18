@@ -1,6 +1,6 @@
 ---
 aboutSection:
-  heading: Core Coaching & Consulting, LLC...
+  heading: Core Coaching & Consulting
   text: ...uses the holistic system of The Balancing Act with leaders, businesses,
     and individuals to improve their Balance, well-being, effectiveness, and
     flow.
