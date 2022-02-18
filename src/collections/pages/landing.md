@@ -2,8 +2,8 @@
 aboutSection:
   heading: Core Coaching & Consulting
   text: ...uses the superpowered system of The Balancing Act with leaders,
-    businesses, and individuals to significantly increase their effectiveness
-    and holistically improve their well-being and flow.
+    businesses, and individuals to holistically improve their effectiveness,
+    well-being, and flow.
 postsSection:
   heading: What's new
   subheading: Keep updated with our latest posts and news
