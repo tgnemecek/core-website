@@ -2,7 +2,7 @@
 aboutSection:
   heading: We help leaders, businesses, and individuals
   text: increase effectiveness, power, well-being, and flow by implementing The
-    Balancing Act's holistic strategies
+    Balancing Act holistic strategies
 postsSection:
   heading: What's new
   subheading: Keep updated with our latest posts and news
