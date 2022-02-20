@@ -1,8 +1,8 @@
 ---
 aboutSection:
-  heading: We work with leaders, businesses, and individuals
-  text: ...by using The Balancing Act's powerful holistic system to increase their
-    effectiveness, well-being, and flow.
+  heading: We help leaders, businesses, and individuals
+  text: ...increase effectiveness, power, well-being, and flow by implementing The
+    Balancing Act's holistic system
 postsSection:
   heading: What's new
   subheading: Keep updated with our latest posts and news
