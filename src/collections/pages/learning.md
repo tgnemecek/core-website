@@ -1,6 +1,7 @@
 ---
-collection: pages
-title: CORE Learning
+template: ServicePage
+title: CORE Business
+subtitle: Evolve your company with The Balancing Act's agile, systemic strategies
 explanation:
   text: >-
     **We help businesses implement sustainable change** by using the holistic

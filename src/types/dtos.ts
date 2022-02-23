@@ -1,67 +1,48 @@
 import {
-  GeneralSettings,
-  About,
-  Testimonial,
-  Service,
-  Product,
-  Video,
+  PostsSection,
+  LandingPage,
   EventPage,
-  ServicesPage,
+  ServicePage,
   TeamPage,
   LegalPage,
+  PostPage,
 } from "./__generated__";
 import { EventFeed, Post } from "./general";
+import { EventsSection } from ".";
 
 export type GenericDTO<Frontmatter> = {
   data: {
     markdownRemark: {
-      fields: {
+      fields: Frontmatter & {
         slug: string;
       };
-      frontmatter: Frontmatter;
     };
   };
 };
 
-export type GeneralSettingsDTO = GenericDTO<{
-  generalSettings: GeneralSettings;
-}>;
-
-export type PagesDTO<Page> = GenericDTO<{
-  pages: Record<string, Page>;
-}>;
-
-export type LandingPageDTO = PagesDTO<{
-  about: About;
-  testimonials: Testimonial[];
-  services: Service[];
-  products: Product[];
-  videos: Video[];
-}>;
-
-export type ServicesPageDTO = PagesDTO<ServicesPage>;
-
-export type TeamPageDTO = PagesDTO<TeamPage>;
-
-export type LegalPageDTO = PagesDTO<LegalPage>;
-
-export type EventPageDTO = GenericDTO<{
-  events: EventPage;
-}>;
-
-export type NavigationInfoDTO = GenericDTO<{
-  navigation: {
-    links: {
-      label: string;
-      url: string;
-      description?: string;
-    }[];
+export type GenericEdgesDTO<T> = {
+  data: {
+    allMarkdownRemark: {
+      edges: {
+        node: {
+          frontmatter: T;
+        };
+      }[];
+    };
   };
-}>;
+};
 
-export type ContactInfoDTO = GenericDTO<{
-  contact: Record<"address" | "email" | "phone1" | "phone2" | "link", string>;
-}>;
+export type LandingPageDTO = GenericDTO<{ LandingPage: LandingPage }>;
+
+export type ServicePageDTO = GenericDTO<{ ServicePage: ServicePage }>;
+
+export type TeamPageDTO = GenericDTO<{ TeamPage: TeamPage }>;
+
+export type LegalPageDTO = GenericDTO<{ LegalPage: LegalPage }>;
+
+export type EventPageDTO = GenericDTO<{ event: EventPage }>;
+
+export type PostPageDTO = GenericDTO<{ post: PostPage }>;
 
 export type EventSettingsDTO = GenericDTO<{
   eventSettings: Record<"refundPolicy", string>;
@@ -69,38 +50,40 @@ export type EventSettingsDTO = GenericDTO<{
 
 export type EventFeedDTO = {
   data: {
-    allMarkdownRemark: {
+    events: {
       edges: {
         node: {
           fields: {
             slug: string;
-          };
-          frontmatter: {
-            events: EventFeed;
+            event: EventFeed;
           };
         };
       }[];
+    };
+    information: {
+      fields: {
+        LandingPage: { eventsSection: EventsSection };
+      };
     };
   };
 };
 
 export type PostFeedDTO = {
   data: {
-    allMarkdownRemark: {
+    posts: {
       edges: {
         node: {
           fields: {
             slug: string;
-          };
-          frontmatter: {
-            posts: Post;
+            post: Post;
           };
         };
       }[];
     };
+    information: {
+      fields: {
+        LandingPage: { postsSection: PostsSection };
+      };
+    };
   };
 };
-
-export type PostPageDTO = GenericDTO<{
-  posts: Post;
-}>;

@@ -16,12 +16,11 @@ import {
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import { theme } from "components";
-import { useNavigation, useGeneralSettings } from "utils";
+import { useSettings } from "utils";
 import LogoIcon from "./LogoIcon";
 
 const Navbar: React.FC = () => {
-  const { logo } = useGeneralSettings();
-  const { links } = useNavigation();
+  const { links } = useSettings();
   const [isOnTop, setOnTop] = React.useState(true);
   const [isDrawerOpen, setDrawerOpen] = React.useState(false);
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));

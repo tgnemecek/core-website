@@ -2,26 +2,19 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography } from "@material-ui/core";
 import Fade from "react-reveal/Fade";
-import { Section, Link } from "components";
-import { About } from "types";
-import AboutImage from "./AboutImage";
+import { Section, Link, Heading } from "components";
+import { AboutSection as AboutSectionProps } from "types";
 
-type AboutSectionProps = {
-  about: About;
-};
-
-const AboutSection: React.FC<AboutSectionProps> = ({ about: { text } }) => {
+const AboutSection: React.FC<AboutSectionProps> = ({ heading, text }) => {
   const classes = useStyles();
 
   return (
     <Section className={classes.section}>
-      <Typography variant="srOnly" component="h2">
-        AboutSection
-      </Typography>
       <div className={classes.gridWrapper}>
         <Container className={classes.aboutGrid}>
           <div className={classes.textWrapper}>
             <Fade left>
+              <Heading>{heading}</Heading>
               <Typography variant="body2" className={classes.text}>
                 {text}
               </Typography>
@@ -29,9 +22,6 @@ const AboutSection: React.FC<AboutSectionProps> = ({ about: { text } }) => {
                 <Link to="/team">Meet the Team</Link>
               </div>
             </Fade>
-          </div>
-          <div>
-            <AboutImage />
           </div>
         </Container>
       </div>

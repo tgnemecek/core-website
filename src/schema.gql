@@ -2,41 +2,31 @@ scalar DateTime
 
 # Main, Settings
 
-type Frontmatter {
-  pages: Pages
-  events: EventPage
-  posts: PostPage
-  contact: Contact
-  navigation: Navigation
-  generalSettings: GeneralSettings
-  component: String
-  collection: String
+type Fields {
+  id: String!
+  slug: String!
+  settings: Settings
+  event: EventPage
+  post: PostPage
+
+  LandingPage: LandingPage
+  TeamPage: TeamPage
+  LegalPage: LegalPage
+  ServicePage: ServicePage
 }
-type Pages {
-  landing: LandingPage
-  team: TeamPage
-  legal: LegalPage
-  services: ServicesPage
-  coaching: ServicesPage
-  leading: ServicesPage
-  learning: ServicesPage
-  business: ServicesPage
-}
-type Contact {
+
+type Settings {
+  logo: String!
+  heroImage: String!
+  refundPolicy: String
+  links: [NavigationLink!]!
   address: String
   email: String
   phone1: String
   phone2: String
   link: String
 }
-type GeneralSettings {
-  logo: String!
-  heroImage: String!
-  refundPolicy: String
-}
-type Navigation {
-  links: [NavigationLink!]!
-}
+
 type NavigationLink {
   label: String!
   url: String!
@@ -46,18 +36,44 @@ type NavigationLink {
 # Pages
 
 type LandingPage {
-  collection: String
-  about: About!
+  template: String
+  aboutSection: AboutSection!
+  postsSection: PostsSection!
+  coreLearningZoneSection: CoreLearningZoneSection!
+  eventsSection: EventsSection!
   services: [Service!]!
-  products: [Product!]!
+  productsSection: ProductsSection!
   testimonials: [Testimonial!]!
   title: String
   videos: [Video!]!
+  contactUsSection: ContactUsSection!
 }
 
-type About {
-  text: String
-  image: String
+type AboutSection {
+  heading: String!
+  text: String!
+}
+
+type PostsSection {
+  heading: String!
+  subheading: String!
+}
+
+type CoreLearningZoneSection {
+  heading: String!
+  subheading: String!
+  extraText: String
+}
+
+type EventsSection {
+  heading: String!
+  subheading: String!
+}
+
+type ProductsSection {
+  heading: String!
+  subheading: String!
+  products: [Product!]!
 }
 
 type Service {
@@ -80,15 +96,21 @@ type Testimonial {
   role: String!
   testimonial: String!
 }
+
 type Video {
   link: String!
   title: String!
   subtitle: String
 }
 
+type ContactUsSection {
+  heading: String!
+}
+
 type TeamPage {
-  collection: String!
+  template: String
   title: String!
+  subtitle: String!
   members: [Member!]!
 }
 
@@ -102,15 +124,17 @@ type Member {
 }
 
 type LegalPage {
+  template: String
   privacyPolicy: String
   termsAndConditions: String
 }
 
-type ServicesPage {
-  collection: String!
+type ServicePage {
+  template: String
   explanation: Explanation!
   benefits: String!
   title: String!
+  subtitle: String!
 }
 
 type Explanation {
@@ -132,8 +156,6 @@ type EventPage {
   date: DateTime!
   duration: Int!
   language: [Language!]!
-  isOnline: Boolean!
-  location: String
   tickets: [Ticket!]!
 }
 

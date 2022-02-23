@@ -2,10 +2,10 @@ import React, { useMemo } from "react";
 import { AdvancedImage, placeholder } from "@cloudinary/react";
 import { crop, scale } from "@cloudinary/base/actions/resize";
 import { makeStyles } from "@material-ui/core/styles";
-import { useCloudinary, useBreakpoint, useGeneralSettings } from "utils";
+import { useCloudinary, useBreakpoint, useSettings } from "utils";
 
 const Logo: React.FC = () => {
-  const { logo } = useGeneralSettings();
+  const { logo } = useSettings();
 
   const cldImage = useCloudinary(logo);
   const breakpoints = useBreakpoint();

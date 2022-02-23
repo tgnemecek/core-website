@@ -3,76 +3,52 @@ import { GatsbyNode } from "gatsby";
 
 const onCreateNode: GatsbyNode["onCreateNode"] = ({
   node,
-  actions,
   getNode,
+  actions,
 }) => {
   const { createNodeField } = actions;
 
   if (node.internal.type === "MarkdownRemark") {
-    const pageMap = {
-      "/": {
-        key: "landing",
-        component: "LandingPage",
-      },
-      "/coaching/": {
-        key: "services",
-        component: "ServicesPage",
-      },
-      "/leading/": {
-        key: "services",
-        component: "ServicesPage",
-      },
-      "/learning/": {
-        key: "services",
-        component: "ServicesPage",
-      },
-      "/business/": {
-        key: "services",
-        component: "ServicesPage",
-      },
-      "/team/": {
-        key: "team",
-        component: "TeamPage",
-      },
-      "/legal/": {
-        key: "legal",
-        component: "LegalPage",
-      },
-    } as const;
+    const parent = getNode(node.parent || "");
+    const { sourceInstanceName } = (parent as any) || {};
 
-    const value = createFilePath({ node, getNode }) as keyof typeof pageMap;
+    createNodeField({
+      node,
+      name: `id`,
+      value: node.id,
+    });
 
-    const { frontmatter } = node as any;
+    createNodeField({
+      node,
+      name: `slug`,
+      value: createFilePath({ node, getNode }),
+    });
 
-    if (frontmatter.collection === "pages") {
-      const { key, component } = pageMap[value];
+    createNodeField({
+      node,
+      name: `collection`,
+      value: sourceInstanceName,
+    });
+
+    const { template } = node.frontmatter as Record<string, string | undefined>;
+
+    createNodeField({
+      node,
+      name: `template`,
+      value: template,
+    });
+
+    if (sourceInstanceName === "page") {
       createNodeField({
-        name: "slug",
-        node: {
-          ...node,
-          frontmatter: {
-            component,
-            pages: {
-              [key]: {
-                ...frontmatter,
-              },
-            },
-            collection: frontmatter.collection,
-          },
-        },
-        value,
+        node,
+        name: template,
+        value: node.frontmatter,
       });
     } else {
       createNodeField({
-        name: "slug",
-        node: {
-          ...node,
-          frontmatter: {
-            [frontmatter.collection]: node.frontmatter,
-            collection: frontmatter.collection,
-          },
-        },
-        value,
+        node,
+        name: sourceInstanceName,
+        value: node.frontmatter,
       });
     }
   }

@@ -3,7 +3,7 @@ import { graphql, PageProps } from "gatsby";
 import { Backdrop, CircularProgress } from "@material-ui/core";
 import { SnackbarProvider } from "notistack";
 import { EventPageDTO } from "types";
-import { Layout, EventFeed, Footer, Navbar } from "components";
+import { Layout, Footer, Navbar, EventsSection } from "components";
 import { recursivelyFormatDate } from "utils";
 import {
   Aside,
@@ -16,19 +16,14 @@ import {
 } from "./sections";
 import EventContext from "./EventContext";
 
-type EventPageWithLocation = EventPageDTO & {
-  location: PageProps["location"];
-};
-
-const EventPage: React.FC<EventPageWithLocation> = ({
+const EventPage: React.FC<EventPageDTO> = ({
   data: {
     markdownRemark: {
-      fields: { slug },
-      frontmatter: { events },
+      fields: { slug, event: rawEvent },
     },
   },
 }) => {
-  const event = recursivelyFormatDate(events);
+  const event = recursivelyFormatDate(rawEvent);
 
   const [loading, setLoading] = React.useState(false);
   const [ticketsModalOpen, setTicketsModalOpen] = React.useState(false);
@@ -74,10 +69,7 @@ const EventPage: React.FC<EventPageWithLocation> = ({
             </Backdrop>
           )}
           <ContentGrid body={<Body />} aside={<Aside />}></ContentGrid>
-          <EventFeed
-            title="You might also like these events"
-            filter={(currEvent) => currEvent.slug !== slug}
-          />
+          <EventsSection filter={(e) => e.slug !== slug} />
           <FixedBar />
         </main>
         {ticketsModalOpen && <TicketsModal open />}
@@ -87,7 +79,7 @@ const EventPage: React.FC<EventPageWithLocation> = ({
   );
 };
 
-const EventPageWithSnackbar: React.FC<EventPageWithLocation> = (props) => (
+const EventPageWithSnackbar: React.FC<EventPageDTO> = (props) => (
   <SnackbarProvider maxSnack={3}>
     <EventPage {...props} />
   </SnackbarProvider>
@@ -100,9 +92,7 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       fields {
         slug
-      }
-      frontmatter {
-        events {
+        event {
           id
           title
           subtitle
@@ -112,8 +102,6 @@ export const pageQuery = graphql`
           date
           duration
           language
-          isOnline
-          location
           tickets {
             id
             description

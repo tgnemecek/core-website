@@ -4,10 +4,10 @@ import { LandingPageDTO } from "types";
 import { recursivelyFormatDate } from "utils";
 import {
   Hero,
-  CoursesFeed,
-  EventFeed,
-  PostFeed,
-  ContactForm,
+  CoreLearningZoneSection,
+  EventsSection,
+  PostsSection,
+  ContactUsSection,
   Layout,
   Navbar,
   Footer,
@@ -16,36 +16,40 @@ import {
   AboutSection,
   Testimonials,
   Services,
-  Products,
-  Videos,
+  ProductsSection,
+  VideosSection,
 } from "./sections";
 
 const LandingPage: React.FC<LandingPageDTO> = ({
   data: {
     markdownRemark: {
-      frontmatter: {
-        pages: { landing },
-      },
+      fields: { LandingPage },
     },
   },
 }) => {
-  const { about, testimonials, products, services, videos } =
-    recursivelyFormatDate(landing);
+  const {
+    aboutSection,
+    coreLearningZoneSection,
+    testimonials,
+    productsSection,
+    services,
+    videos,
+  } = recursivelyFormatDate(LandingPage);
 
   return (
     <Layout>
       <Navbar />
       <main>
         <Hero />
-        <PostFeed title="What's new" />
-        <CoursesFeed />
-        <EventFeed title="Upcoming Events" />
-        <AboutSection about={about} />
+        <AboutSection {...aboutSection} />
+        <PostsSection />
+        <CoreLearningZoneSection {...coreLearningZoneSection} />
+        <EventsSection />
         <Testimonials testimonials={testimonials} />
         <Services services={services} />
-        <Products products={products} />
-        <Videos videos={videos} />
-        <ContactForm />
+        <ProductsSection {...productsSection} />
+        <VideosSection videos={videos} />
+        <ContactUsSection />
       </main>
       <Footer />
     </Layout>
@@ -57,25 +61,30 @@ export default LandingPage;
 export const pageQuery = graphql`
   query LandingPageQuery($id: String!) {
     markdownRemark(id: { eq: $id }) {
-      id
-      frontmatter {
-        pages {
-          landing {
-            about {
-              text
-              image
-            }
-            testimonials {
-              author
-              role
-              testimonial
-            }
-            services {
-              title
-              name
-              description
-              image
-            }
+      fields {
+        LandingPage {
+          aboutSection {
+            heading
+            text
+          }
+          coreLearningZoneSection {
+            heading
+            subheading
+          }
+          testimonials {
+            author
+            role
+            testimonial
+          }
+          services {
+            title
+            name
+            description
+            image
+          }
+          productsSection {
+            heading
+            subheading
             products {
               description
               image
@@ -83,11 +92,11 @@ export const pageQuery = graphql`
               subtitle
               link
             }
-            videos {
-              title
-              subtitle
-              link
-            }
+          }
+          videos {
+            title
+            subtitle
+            link
           }
         }
       }

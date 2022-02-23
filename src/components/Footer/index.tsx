@@ -12,14 +12,14 @@ import {
 import EmailIcon from "@material-ui/icons/Email";
 import PhoneIphoneIcon from "@material-ui/icons/PhoneIphone";
 import LinkIcon from "@material-ui/icons/Link";
-import { useContactInfo } from "utils";
+import { useSettings } from "utils";
 
 type FooterProps = {
   paddingBottom?: number;
 };
 
 const Footer: React.FC<FooterProps> = ({ paddingBottom = 0 }) => {
-  const { email, phone1, phone2, address, link } = useContactInfo();
+  const { email, phone1, phone2, address, link } = useSettings();
 
   const classes = useStyles({ paddingBottom })();
 

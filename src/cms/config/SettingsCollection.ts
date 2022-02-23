@@ -1,19 +1,4 @@
-import { CmsCollection, CmsField } from "netlify-cms-core";
-
-const commonFields = (key: string, collection = "settings"): CmsField[] => [
-  {
-    label: "Collection",
-    name: "collection",
-    widget: "hidden",
-    default: collection,
-  },
-  {
-    label: "Key",
-    name: "key",
-    widget: "hidden",
-    default: key,
-  },
-];
+import { CmsCollection } from "netlify-cms-core";
 
 const SettingsCollection: CmsCollection = {
   name: "settings",
@@ -23,11 +8,10 @@ const SettingsCollection: CmsCollection = {
   },
   files: [
     {
-      file: "src/collections/settings/navigation/index.md",
+      file: "src/collections/settings/navigation.md",
       label: "Navigation",
       name: "navigation",
       fields: [
-        ...commonFields("navigation"),
         {
           label: "Links",
           name: "links",
@@ -37,18 +21,18 @@ const SettingsCollection: CmsCollection = {
           fields: [
             {
               label: "Label",
-              name: "label",
               widget: "string",
+              name: "label",
             },
             {
               label: "Relative URL",
-              name: "url",
               widget: "string",
+              name: "url",
             },
             {
               label: "Tooltip",
-              name: "description",
               widget: "string",
+              name: "description",
               required: false,
             },
           ],
@@ -56,11 +40,16 @@ const SettingsCollection: CmsCollection = {
       ],
     },
     {
-      file: "src/collections/settings/contact/index.md",
+      file: "src/collections/settings/contact.md",
       label: "Contact Information",
       name: "contact",
       fields: [
-        ...commonFields("contact"),
+        {
+          label: "Address",
+          name: "address",
+          widget: "text",
+          required: false,
+        },
         {
           label: "Email",
           name: "email",
@@ -85,20 +74,13 @@ const SettingsCollection: CmsCollection = {
           widget: "string",
           required: false,
         },
-        {
-          label: "Address",
-          name: "address",
-          widget: "text",
-          required: false,
-        },
       ],
     },
     {
-      file: "src/collections/settings/general-settings/index.md",
+      file: "src/collections/settings/general.md",
       label: "General",
       name: "generalSettings",
       fields: [
-        ...commonFields("generalSettings"),
         {
           label: "Logo Image",
           name: "logo",
