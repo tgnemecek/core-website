@@ -22,7 +22,7 @@ export type Entry<Form = Record<string, any>> = {
 
 export type EventForm = Pick<
   Event,
-  "title" | "subtitle" | "isOnline" | "date" | "duration"
+  "title" | "subtitle" | "date" | "duration"
 > & {
   id?: string;
   tickets: (Omit<Ticket, "id"> & {

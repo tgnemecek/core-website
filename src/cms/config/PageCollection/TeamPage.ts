@@ -1,5 +1,9 @@
-import { CmsCollectionFile, CmsFieldList } from "netlify-cms-core";
-import { Member, TypeSafeCmsField } from "types";
+import {
+  CmsCollectionFile,
+  CmsFieldList,
+  CmsFieldStringOrText,
+} from "netlify-cms-core";
+import { Member, TeamPage as TeamPageType, TypeSafeCmsField } from "types";
 import getStaticPageFields from "../get-static-page-fields";
 
 const MembersSection: TypeSafeCmsField<Member, CmsFieldList> = {
@@ -44,11 +48,31 @@ const MembersSection: TypeSafeCmsField<Member, CmsFieldList> = {
   ],
 };
 
+const Title: TypeSafeCmsField<TeamPageType["title"], CmsFieldStringOrText> = {
+  label: "Title",
+  name: "title",
+  widget: "string",
+};
+
+const Subtitle: TypeSafeCmsField<
+  TeamPageType["subtitle"],
+  CmsFieldStringOrText
+> = {
+  label: "Subtitle",
+  name: "subtitle",
+  widget: "string",
+};
+
 const TeamPage: CmsCollectionFile = {
   file: "src/collections/pages/team.md",
   label: "Team Page",
   name: "team",
-  fields: [...getStaticPageFields("team", "TeamPage"), MembersSection],
+  fields: [
+    ...getStaticPageFields("team", "TeamPage"),
+    Title,
+    Subtitle,
+    MembersSection,
+  ],
 };
 
 export default TeamPage;
