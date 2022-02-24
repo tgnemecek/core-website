@@ -1,7 +1,7 @@
 ---
 template: ServicePage
 title: CORE Business
-subtitle: Evolve your company with The Balancing Act's agile, systemic strategies
+subtitle: Balance and humanize your business with our systemic success strategies
 explanation:
   text: >-
     **We help businesses implement sustainable change** by using the holistic
