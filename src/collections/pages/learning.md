@@ -11,7 +11,7 @@ explanation:
     and departments implement self-directed improvements over time.
 
 
-    > **What We Can Do for You**
+    **What We Can Do for You**
 
 
     1. Executive Coaching & Leadership Mastery
