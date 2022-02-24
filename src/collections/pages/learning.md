@@ -1,7 +1,8 @@
 ---
 template: ServicePage
 title: CORE Business
-subtitle: Balance and humanize your business with our systemic strategies for success
+subtitle: Balance and humanize your business with our systemic CORE strategies
+  for success
 explanation:
   text: >-
     **We help businesses implement sustainable change** by using the holistic
