@@ -1,7 +1,7 @@
 ---
 template: TeamPage
-title: Meet the Team
-subtitle: The CORE Team
+title: Meet the CORE Team
+subtitle: A global group of Balancing Act experts
 members:
   - name: Sharon Seivert
     role: CEO & Founder
