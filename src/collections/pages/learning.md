@@ -1,6 +1,6 @@
 ---
 template: ServicePage
-title: CORE Business
+title: CORE Learning
 subtitle: Balance and humanize your business with our systemic CORE strategies
   for success
 explanation:
