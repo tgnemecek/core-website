@@ -5,12 +5,8 @@ import { isEventValid } from "utils";
 import EventContext from "../../EventContext";
 
 const FixedBar: React.FC = () => {
-  const {
-    setTicketsModalOpen,
-    alreadyPurchased,
-    loading,
-    event,
-  } = React.useContext(EventContext)!;
+  const { setTicketsModalOpen, alreadyPurchased, loading, event } =
+    React.useContext(EventContext)!;
 
   const classes = useStyles();
   return (
@@ -22,7 +18,7 @@ const FixedBar: React.FC = () => {
         onClick={() => setTicketsModalOpen(true)}
         disabled={alreadyPurchased || loading || !isEventValid(event)}
       >
-        <div>{alreadyPurchased ? "Ticket Purchased" : "Buy Ticket"}</div>
+        <div>{alreadyPurchased ? "Ticket Purchased" : "Sign up"}</div>
       </Button>
     </div>
   );

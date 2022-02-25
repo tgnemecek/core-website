@@ -28,7 +28,7 @@ const TicketsModal: React.FC<TicketsModalProps> = ({ open }) => {
   const { setTicketsModalOpen } = React.useContext(EventContext)!;
 
   const [stage, setStage] = React.useState<Stage>("chooseTicket");
-  const [chosenTicket, setChosenTicket] = React.useState<Ticket>();
+  const [ticket, setTicket] = React.useState<Ticket>();
 
   const classes = useStyles();
 
@@ -51,13 +51,13 @@ const TicketsModal: React.FC<TicketsModalProps> = ({ open }) => {
         {stage === "chooseTicket" && (
           <TicketsMain
             goToCheckout={() => setStage("checkoutForm")}
-            setChosenTicket={setChosenTicket}
+            setTicket={setTicket}
           />
         )}
-        {stage === "checkoutForm" && chosenTicket && (
+        {stage === "checkoutForm" && ticket && (
           <Elements stripe={stripePromise}>
             <CheckoutForm
-              chosenTicket={chosenTicket}
+              ticket={ticket}
               goToSuccess={() => setStage("success")}
               goToFailed={() => setStage("failed")}
             />
@@ -66,9 +66,14 @@ const TicketsModal: React.FC<TicketsModalProps> = ({ open }) => {
         {stage === "success" && (
           <ResultMessage
             type="success"
-            title="Thank you for your order!"
-            subtitle="As soon as we verify your payment we'll send you an email with information about the event and
-          instructions on how to join."
+            title={
+              ticket?.price ? "Thank you for your order!" : "See you soon!"
+            }
+            subtitle={
+              ticket?.price
+                ? "As soon as we verify your payment we'll send you an email with information about the event and instructions on how to join."
+                : "In a few minutes you should be receiving in your email instructions on how to join the event."
+            }
           />
         )}
         {stage === "failed" && (

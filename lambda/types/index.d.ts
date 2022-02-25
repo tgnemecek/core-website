@@ -22,6 +22,7 @@ export {
   EventDeleteBody,
   EventCreateBody,
   EventUpdateBody,
+  EventRegisterFreeBody,
   CreatePaymentIntentBody,
   Ticket,
 } from "./Event";
