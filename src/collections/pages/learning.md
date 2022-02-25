@@ -1,7 +1,8 @@
 ---
 template: ServicePage
 title: CORE Learning
-subtitle: Create Change
+subtitle: Balance and humanize your business with our systemic CORE strategies
+  for success
 explanation:
   text: >-
     **We help businesses implement sustainable change** by using the holistic
@@ -11,7 +12,7 @@ explanation:
     and departments implement self-directed improvements over time.
 
 
-    > **What We Can Do for You**
+    **What We Can Do for You**
 
 
     1. Executive Coaching & Leadership Mastery
