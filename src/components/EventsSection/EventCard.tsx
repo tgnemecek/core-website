@@ -18,23 +18,15 @@ import { useBreakpoint, useCloudinary, getImageId } from "utils";
 type EventProps = {
   event: Pick<
     Event,
-    "title" | "date" | "image" | "language" | "slug" | "isOnline" | "tickets"
+    "title" | "date" | "image" | "language" | "slug" | "tickets"
   >;
 };
 
 const EventCard: React.FC<EventProps> = ({ event }) => {
-  const { title, date, image, language, slug, isOnline } = event;
+  const { title, date, image, language, slug } = event;
 
   const breakpoints = useBreakpoint();
   const classes = useStyles({ breakpoints })();
-
-  // const imageSize = () => {
-  //   const { md, sm } = breakpoints;
-
-  //   if (md) return 400;
-  //   if (sm) return 720;
-  //   return 420;
-  // };
 
   const isCloudinaryImage = Boolean(getImageId(image));
 
@@ -99,9 +91,7 @@ const EventCard: React.FC<EventProps> = ({ event }) => {
           </Typography>
           <div className={classes.extra}>
             <LanguageDisplay code={language} showFlag />
-            <Typography variant="body1">
-              {isOnline ? "Online" : "In Person"}
-            </Typography>
+            <Typography variant="body1">Online</Typography>
           </div>
           {date && (
             <div className={classes.date}>

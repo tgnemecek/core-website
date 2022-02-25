@@ -15,7 +15,7 @@ import EventContext from "../../EventContext";
 
 const Header: React.FC = () => {
   const {
-    event: { title, subtitle, date, image, isOnline, language, tickets },
+    event: { title, subtitle, date, image, language, tickets },
     priceRange,
   } = React.useContext(EventContext)!;
 
@@ -45,9 +45,7 @@ const Header: React.FC = () => {
                   <Grid item>
                     <div className={classes.extra}>
                       <LanguageDisplay code={language} showFlag flagSize={24} />
-                      <Typography variant="body1">
-                        {isOnline ? "Online" : "In Person"}
-                      </Typography>
+                      <Typography variant="body1">Online</Typography>
                     </div>
                   </Grid>
                   <Grid item>

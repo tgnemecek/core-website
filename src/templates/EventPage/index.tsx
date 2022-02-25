@@ -38,11 +38,14 @@ const EventPage: React.FC<EventPageDTO> = ({
         };
       },
       {
-        min: 999,
+        min: Number.MAX_VALUE,
         max: 0,
       }
     );
-    if (min === max) return `$${min} (USD)`;
+    if (min === max) {
+      if (max === 0) return "Free";
+      return `$${min} (USD)`;
+    }
     return `$${min} - $${max} (USD)`;
   };
 
