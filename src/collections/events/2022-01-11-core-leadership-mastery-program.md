@@ -44,7 +44,6 @@ date: 2022-03-15T20:00:32.998Z
 duration: 90
 language:
   - EN
-isOnline: true
 location: ""
 tickets:
   - id: price_1KGlXkC6qmFvoaW63TMP021z

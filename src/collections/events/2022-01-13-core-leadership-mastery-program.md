@@ -44,7 +44,6 @@ date: 2022-03-16T14:00:13.457Z
 duration: 90
 language:
   - EN
-isOnline: true
 tickets:
   - id: price_1KHYGJC6qmFvoaW6sd05Alu8
     description: General Admission

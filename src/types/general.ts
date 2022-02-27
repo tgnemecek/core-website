@@ -31,7 +31,6 @@ export type EventFeed = Pick<
   | "subtitle"
   | "title"
   | "slug"
-  | "isOnline"
   | "tickets"
 >;
 
@@ -44,7 +43,6 @@ export type PostFeed = Pick<
   | "subtitle"
   | "title"
   | "slug"
-  | "isOnline"
   | "tickets"
 >;
 

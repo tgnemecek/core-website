@@ -19,7 +19,6 @@ const useEventFeed = () => {
                 language
                 subtitle
                 title
-                isOnline
                 tickets {
                   id
                   description

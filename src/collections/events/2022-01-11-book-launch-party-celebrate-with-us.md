@@ -17,7 +17,6 @@ duration: 60
 language:
   - EN
   - ES
-isOnline: true
 tickets:
   - id: price_1KGnXHC6qmFvoaW6zgGfsZj1
     description: General Admission
