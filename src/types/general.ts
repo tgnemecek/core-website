@@ -16,7 +16,7 @@ export type PayPalButtonName =
   | "organizationAndTeamProfiles"
   | "donation";
 
-export type ServiceName = "leading" | "coaching" | "learning" | "business";
+export type ServiceName = "leading" | "coaching" | "community" | "business";
 
 export type Event = EventPage;
 

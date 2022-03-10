@@ -1,6 +1,6 @@
 ---
 template: ServicePage
-title: CORE Learning
+title: CORE Community
 subtitle: Balance and humanize your business with our systemic CORE strategies
   for success
 explanation:
