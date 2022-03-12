@@ -1,7 +1,7 @@
 ---
 template: ServicePage
 title: CORE Community
-subtitle: Get FREE resources Today + Pay it Forward for Tomorrow's Leaders
+subtitle: Get FREE resources Today + Pay it Forward for Tomorrow
 explanation:
   text: >-
     **Core Coaching & Consulting, LLC and our sister organization, Core Learning
