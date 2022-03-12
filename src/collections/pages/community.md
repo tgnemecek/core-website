@@ -22,7 +22,7 @@ explanation:
 
 
     [](sseivert@thecoreporation.com)We hope to see you at our next CORE Community event!!
-  image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1629577636/BusinessPage_for_Website_bwrwyb.jpg
+  image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1647093801/patreon_2_zvqfto.jpg
 benefits: >-
   * **C: Want to Create Change** that is systemic, holistic, self-directed,
   centered in CORE values, and integrated/aligned from the inside-out
