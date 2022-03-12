@@ -26,5 +26,5 @@ explanation:
 benefits: |-
   
 
-  ![]()
+  ![]( "Support Youth to Create a World of Balance")
 ---
