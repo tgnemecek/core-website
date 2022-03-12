@@ -23,7 +23,9 @@ explanation:
 
     [](sseivert@thecoreporation.com)We hope to see you at our next CORE Community event!!
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1647093801/patreon_2_zvqfto.jpg
-benefits: '*
-  ![](https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600804117/abdelkader-ft-CcZzQcYGYC4-unsplash_jvaahu.jpg
-  "Bringing the Superpower of Balance to Help Youth Thrive")'
+benefits: >-
+  *
+  ![](https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600804117/abdelkader-ft-CcZzQcYGYC4-unsplash_jvaahu.jpg)
+
+    ![](https://res.cloudinary.com/core-coaching-consulting/image/upload/v1647094557/Compass_on_trail_for_CLSI_site_reduced_size_kv0jem.jpg "We Help Youth Navigate through Unbalanced Times")
 ---
