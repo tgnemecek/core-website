@@ -1,7 +1,7 @@
 ---
 template: ServicePage
 title: CORE Community
-subtitle: "Join our Global Community: Get FREE resources and Pay it Forward for Youth"
+subtitle: Get FREE resources for Now -- and Pay it Forward for Tomorrow's Leaders
 explanation:
   text: >-
     **Core Coaching & Consulting, LLC and our sister organization, Core Learning
@@ -23,9 +23,8 @@ explanation:
 
     [](sseivert@thecoreporation.com)We hope to see you at our next CORE Community event!!
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1647093801/patreon_2_zvqfto.jpg
-benefits: >-
-  *
-  ![](https://res.cloudinary.com/core-coaching-consulting/image/upload/v1647095128/children_in_favela_reduced_size_bckjcr.jpg)
+benefits: |-
+  
 
-    ![](https://res.cloudinary.com/core-coaching-consulting/image/upload/v1647094557/Compass_on_trail_for_CLSI_site_reduced_size_kv0jem.jpg "You Can Help Youth Navigate to great lives by Donating or Joining the Community")
+  ![]()
 ---
