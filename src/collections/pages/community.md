@@ -25,7 +25,7 @@ explanation:
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1647093801/patreon_2_zvqfto.jpg
 benefits: >-
   *
-  ![](https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600804117/abdelkader-ft-CcZzQcYGYC4-unsplash_jvaahu.jpg)
+  ![](https://res.cloudinary.com/core-coaching-consulting/image/upload/v1647095128/children_in_favela_reduced_size_bckjcr.jpg)
 
-    ![](https://res.cloudinary.com/core-coaching-consulting/image/upload/v1647094557/Compass_on_trail_for_CLSI_site_reduced_size_kv0jem.jpg "We Help Youth Navigate through Unbalanced Times")
+    ![](https://res.cloudinary.com/core-coaching-consulting/image/upload/v1647094557/Compass_on_trail_for_CLSI_site_reduced_size_kv0jem.jpg "You Can Help Youth Navigate to great lives by Donating or Joining the Community")
 ---
