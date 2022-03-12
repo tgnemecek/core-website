@@ -1,8 +1,7 @@
 ---
-collection: events
 id: mmAAbAINeSwoveK5iAUE5qk4qfErkDw+8wZb8hwHRXlLpWxl1rGDsG8RMZqTTWII
 title: Core Leadership Mastery Program
-subtitle: Become a Great Leader for Challenging Times
+subtitle: The Superpower of Balanced Leadership
 description: >-
   **Benefits You will receive from this unique Core Leadership Program:** 
 
@@ -40,15 +39,16 @@ description: >-
 
   *Auke is a unique leadership coach. I have engaged him for years and he has not only brought me but also my whole company through tough times.*
 image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1637604998/Leadership_Compass_CLP_g3hs4h.jpg
-date: 2022-03-15T20:00:32.998Z
+date: 2022-09-21T20:00:32.998Z
 duration: 90
-language:
-  - EN
-isOnline: true
-location: ""
 tickets:
   - id: price_1KGlXkC6qmFvoaW63TMP021z
     description: General Admission
     price: 2944
     endsOn: startOfEvent
+location: ""
+language:
+  - EN
+isOnline: true
+collection: events
 ---
