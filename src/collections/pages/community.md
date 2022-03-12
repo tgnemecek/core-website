@@ -1,33 +1,27 @@
 ---
 template: ServicePage
 title: CORE Community
-subtitle: Balance and humanize your business with our systemic CORE strategies
-  for success
+subtitle: "Join our Global Community: Get FREE resources and Pay it Forward for Youth"
 explanation:
   text: >-
-    **We help businesses implement sustainable change** by using the holistic
-    system of *The Balancing Act* to assess where they are in balance versus out
-    of balance—and why. With this new clarity, companies can use our pragmatic
-    tools and logical, agile strategy to ensure that employees, leaders, teams,
-    and departments implement self-directed improvements over time.
+    **Core Coaching & Consulting, LLC and our sister organization, Core Learning
+    Services, Inc,** have joined forces to create the global CORE Community
+    where you can further develop your own Balancing Act skills, meet
+    like-minded colleagues, AND support the non-profit Core Learning Services as
+    it brings *The Balancing Act* programs to teachers and at-risk youth all
+    over the world. 
 
 
-    **What We Can Do for You**
+    You can participate in the CORE community at any level: attend our FREE monthly events, be the first to access our resources as soon as we develop them, and "pay it forward" by bringing the superpower of Balance to the lives of the next generation.  
 
 
-    1. Executive Coaching & Leadership Mastery
-
-    2. Team development
-
-    3. Organizational Change implementation
-
-    4. Employee Effectiveness [](mailto:sseivert@thecoreporation.com)
+    [Go here](https://www.patreon.com/corecommunity?fan_landing=true) to learn more about, or to join, our brand new Core Community.
 
 
-    [Contact us](sseivert@thecoreporation.com) to get more information about powerfully transforming your company from the CORE. We offer one-on-one executive coaching, leadership consultations, plus excellent business seminars that are guaranteed to increase productivity, reduce on-the-job stress, eliminate resistance and procrastination for tackling difficult tasks, and encourage every person, at every level of the company, to take full responsibility for outcomes.
+    To learn more about Core Learning Services and its exciting programs, [go here](core-learning-services.org). 
 
 
-    Click the message link below to explore what we can do for you.
+    [](sseivert@thecoreporation.com)We hope to see you at our next CORE Community event!!
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1629577636/BusinessPage_for_Website_bwrwyb.jpg
 benefits: >-
   * **C: Want to Create Change** that is systemic, holistic, self-directed,
