@@ -23,6 +23,5 @@ explanation:
 
     [](sseivert@thecoreporation.com)We hope to see you at our next CORE Community event!!
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1647093801/patreon_2_zvqfto.jpg
-benefits: '![](https://res.cloudinary.com/core-coaching-consulting/image/upload/v1647096233/children_in_favela_reduced_2_klb7fh.jpg
-  "Support Youth to Create a Whole New World of Balance")'
+benefits: '![]( "Support Youth to Create a Whole New World of Balance")'
 ---
