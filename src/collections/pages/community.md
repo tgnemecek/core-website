@@ -15,13 +15,13 @@ explanation:
     You can participate in the CORE community at any level: attend our FREE monthly events, be the first to access our resources as soon as we develop them, and "pay it forward" by bringing the superpower of Balance to the lives of the next generation.  
 
 
-    [Go here](https://www.patreon.com/corecommunity?fan_landing=true) to learn more about our exciting new global Core Community.
+    [Go here](https://www.patreon.com/corecommunity?fan_landing=true) to learn more about our exciting new global CORE COMMUNITY.
 
 
-    To learn more about Core Learning Services and its proven programs that change the lives of at-risk youth and their beleaguered teachers, [go here](core-learning-services.org). 
+    To learn more about Core Learning Services and its proven programs that have changed the lives of at-risk youth and their beleaguered teachers, [go here](core-learning-services.org). 
 
 
-    [](sseivert@thecoreporation.com)We hope to see you at our next CORE Community event!!
+    [](sseivert@thecoreporation.com)We hope to see you at our next CORE COMMUNITY event!!
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1647093801/patreon_2_zvqfto.jpg
 benefits: >-
   In the Core Community, you will receive: 
