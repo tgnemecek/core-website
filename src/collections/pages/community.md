@@ -24,7 +24,8 @@ explanation:
     [](sseivert@thecoreporation.com)We hope to see you at our next CORE COMMUNITY event!!
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1647093801/patreon_2_zvqfto.jpg
 benefits: >-
-  In the Core Community, you will receive: 
+  \    ...want to learn more about the benefits of the Core Community,
+  including:  
 
 
   * Free Monthly events to continue learning about The Balancing Act
@@ -33,10 +34,10 @@ benefits: >-
 
   * Archives of past videos and articles that you can access whenever you wish
 
-  * Discussion forums where you can meet with like minded professionals 
+  * Discussion forums where you can meet with like-minded professionals from around the world
 
   * And if you want to share what *The Balancing Act* did for you, we offer you the opportunity to "pay it forward" so children around the world can gain these tools to create great lives.
 
 
-  ![](https://res.cloudinary.com/core-coaching-consulting/image/upload/v1647096233/children_in_favela_reduced_2_klb7fh.jpg "Support Youth to Create a Whole New World of Balance")
+  ![]()
 ---
