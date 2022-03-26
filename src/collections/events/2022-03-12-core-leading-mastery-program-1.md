@@ -1,10 +1,10 @@
 ---
 template: events
 id: W/CGKigDsYLIFaVll/68hXEUm0fvhimQHbz+YHaQUMOEF1hBfzh4Z54Emx3RP9Hq
-title: Core Leading Mastery Program
-subtitle: The Superpower of Balanced Leadership
+title: "The Superpower of Balanced Leadership "
+subtitle: A Mastery Program
 description: >-
-  **Benefits You will receive from this unique Core Leadership Program:** 
+  **Benefits You will receive from this unique Leadership Program:** 
 
 
   * Learn and understand how to apply *The Balancing Act’s* systemic framework for leadership, a powerful 6-step pragmatic change process, for both your business and personal uses. 
