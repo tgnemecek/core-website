@@ -22,7 +22,7 @@ const FreeReport: React.FC<FreeReportProps> = ({ service }) => {
       case "business":
         return "Get a Free Business Report";
       case "community":
-        return "Get a Free Report to Improve Community!";
+        return "Free Report on How the Community Pays it Forward";
       default:
         throw new Error(
           `Service name unrecognized in getReportText(): ${service}`
