@@ -24,8 +24,7 @@ explanation:
     [](sseivert@thecoreporation.com)We hope to see you at our next CORE COMMUNITY event!!
   image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1647093801/patreon_2_zvqfto.jpg
 benefits: >-
-  \    ...want to learn more about the benefits of the Core Community,
-  including:  
+  ...want to learn more about the benefits of the Core Community, including:  
 
 
   * Free Monthly events to continue learning about The Balancing Act
