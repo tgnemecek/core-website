@@ -25,7 +25,7 @@ const usePayPalButtons = (service: ServiceName) => {
         return ["leaderStrengths", "entrepreneurStrengths"];
       case "coaching":
         return ["careerStrengths", "personalStrengths"];
-      case "learning":
+      case "community":
         return ["personalStrengths", "donation"];
       case "business":
         return ["leaderStrengths", "organizationAndTeamProfiles"];
@@ -87,7 +87,7 @@ const usePayPalButtons = (service: ServiceName) => {
     donation: {
       label: "Make a Difference!",
       description:
-        "Contribute to the efforts of Core Learning, a 501 c3 non-profit educational services organization, to bring The Balancing Act's transformational life/work skills training to at-risk youth and adults around the globe.",
+        "Contribute to the efforts of Core Community, a 501 c3 non-profit educational services organization, to bring The Balancing Act's transformational life/work skills training to at-risk youth and adults around the globe.",
       value: "JTFYEZ4SXFFW6",
       button: paypalDonate,
     },

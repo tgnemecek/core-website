@@ -44,7 +44,6 @@ date: 2022-09-21T20:00:22.159Z
 duration: 30
 language:
   - EN
-isOnline: true
 tickets:
   - description: General Admission
     price: 1900

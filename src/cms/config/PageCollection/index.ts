@@ -5,7 +5,7 @@ import LegalPage from "./LegalPage";
 import BusinessPage from "./BusinessPage";
 import CoachingPage from "./CoachingPage";
 import LeadingPage from "./LeadingPage";
-import LearningPage from "./LearningPage";
+import CommunityPage from "./CommunityPage";
 
 const PageCollection: CmsCollection = {
   name: "pages",
@@ -20,7 +20,7 @@ const PageCollection: CmsCollection = {
     BusinessPage,
     CoachingPage,
     LeadingPage,
-    LearningPage,
+    CommunityPage,
   ],
 };
 

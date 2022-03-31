@@ -50,7 +50,7 @@ const Aside: React.FC = () => {
                 alreadyPurchased || loading || !isEventValid({ date, tickets })
               }
             >
-              {alreadyPurchased ? "Ticket Purchased" : "Buy"}
+              {alreadyPurchased ? "Ticket Purchased" : "Sign up"}
             </Button>
           </CardActions>
         </Card>

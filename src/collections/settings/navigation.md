@@ -12,4 +12,7 @@ links:
   - label: CORE Team
     url: /team
     description: ""
+  - label: CORE Community
+    url: /community
+    description: ""
 ---

@@ -1,6 +1,6 @@
 const footer = `
 <mj-image
-  src="https://corecoachingconsulting.com/static/logo-6ea06274778be66ade36c9a9dc367bbb.png"
+  src="https://res.cloudinary.com/core-coaching-consulting/image/upload/c_scale,h_200/logo_mfpbhl.png?_a=ATAABAA0"
   width="100px"
   alt="header image"
   padding="0px"

@@ -16,7 +16,7 @@ export type PayPalButtonName =
   | "organizationAndTeamProfiles"
   | "donation";
 
-export type ServiceName = "leading" | "coaching" | "learning" | "business";
+export type ServiceName = "leading" | "coaching" | "community" | "business";
 
 export type Event = EventPage;
 
@@ -31,7 +31,6 @@ export type EventFeed = Pick<
   | "subtitle"
   | "title"
   | "slug"
-  | "isOnline"
   | "tickets"
 >;
 
@@ -44,7 +43,6 @@ export type PostFeed = Pick<
   | "subtitle"
   | "title"
   | "slug"
-  | "isOnline"
   | "tickets"
 >;
 

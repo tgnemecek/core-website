@@ -1,43 +1,28 @@
 import React from "react";
-import moment from "moment-timezone";
-import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
-import { useSnackbar } from "notistack";
 import { Button, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { Ticket } from "types";
-import { verifyEmail } from "utils";
-import EventContext from "../../../EventContext";
 import ModalFooter from "../ModalFooter";
 import FormInput from "./FormInput";
+import useFormSubmit from "./useFormSubmit";
+import usePaymentIntent from "./usePaymentIntent";
 
-const serverErrorMessage = "Something went wrong. Please try again later.";
-const cardIncompleteErrorMessage = "Please fill all required card fields.";
+import type { FormState, FormErrors } from "./types";
+
+const CARD_EMPTY_MSG = "Please fill all required card fields.";
 
 type CheckoutFormProps = {
-  chosenTicket: Ticket;
+  ticket: Ticket;
   goToSuccess: () => void;
   goToFailed: () => void;
 };
 
-type FormState = Record<"firstName" | "lastName" | "email", string>;
-type FormErrors = Record<keyof FormState | "card", string>;
-
 const CheckoutForm: React.FC<CheckoutFormProps> = ({
-  chosenTicket,
+  ticket,
   goToSuccess,
   goToFailed,
 }) => {
-  const {
-    setTicketsModalOpen,
-    setAlreadyPurchased,
-    setLoading,
-    event: { title },
-  } = React.useContext(EventContext)!;
-
   const [clientSecret, setClientSecret] = React.useState("");
-  const stripe = useStripe();
-  const elements = useElements();
-  const { enqueueSnackbar } = useSnackbar();
 
   const [formState, setFormState] = React.useState<FormState>({
     firstName: "",
@@ -46,7 +31,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
   });
 
   const [hiddenCardError, setHiddenCardError] = React.useState(
-    cardIncompleteErrorMessage
+    ticket.price ? CARD_EMPTY_MSG : ""
   );
 
   const [formErrors, setFormErrors] = React.useState<FormErrors>({
@@ -56,28 +41,20 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
     card: "",
   });
 
-  const createPaymentIntent = async () => {
-    try {
-      const res = await fetch("/.netlify/functions/create-payment-intent", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          title,
-          ticketId: chosenTicket.id,
-          timezone: moment.tz.guess(),
-        }),
-      });
-      const data = await res.json();
-      setClientSecret(data.clientSecret);
-    } catch (err) {
-      enqueueSnackbar(serverErrorMessage, {
-        variant: "error",
-      });
-      setTicketsModalOpen(false);
-    }
-  };
+  const handleSubmit = useFormSubmit({
+    formState,
+    setFormErrors,
+    hiddenCardError,
+    clientSecret,
+    ticket,
+    goToFailed,
+    goToSuccess,
+  });
+
+  usePaymentIntent({
+    ticket,
+    setClientSecret,
+  });
 
   const handleChange = (key: keyof FormState) => {
     return (value: string) => {
@@ -92,63 +69,6 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
       }));
     };
   };
-
-  const hasErrors = () => {
-    const newErrors: Partial<FormErrors> = (
-      Object.keys(formState) as (keyof FormState)[]
-    )
-      .filter((key) => !formState[key])
-      .reduce((acc, key) => {
-        return { ...acc, [key]: "This is a required field" };
-      }, {});
-
-    if (!newErrors.email && !verifyEmail(formState.email)) {
-      newErrors.email = "The provided email address is invalid.";
-    }
-
-    if (hiddenCardError) {
-      newErrors.card = hiddenCardError;
-    }
-
-    setFormErrors({
-      ...newErrors,
-      card: newErrors.card || "",
-    } as FormErrors);
-
-    return Object.values(newErrors).some(Boolean);
-  };
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (hasErrors()) return;
-    setLoading(true);
-
-    try {
-      const payload = await stripe!.confirmCardPayment(clientSecret, {
-        payment_method: {
-          card: elements!.getElement(CardElement)!,
-          billing_details: {
-            email: formState.email,
-            name: `${formState.firstName}_${formState.lastName}`,
-          },
-        },
-      });
-
-      if (payload.error) {
-        goToFailed();
-      } else {
-        setAlreadyPurchased(true);
-        goToSuccess();
-      }
-    } catch (err) {
-      goToFailed();
-    }
-    setLoading(false);
-  };
-
-  React.useEffect(() => {
-    createPaymentIntent();
-  }, []);
 
   const classes = useStyles();
 
@@ -181,22 +101,24 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
           onChange={handleChange("email")}
           error={formErrors.email}
         />
-        <FormInput
-          type="card"
-          label="Card Details"
-          error={formErrors.card}
-          onChange={({ error, complete }) => {
-            let errorMessage = "";
-            if (!complete) errorMessage = cardIncompleteErrorMessage;
-            if (error) errorMessage = error.message;
-            setFormErrors((prev) => ({ ...prev, card: "" }));
-            setHiddenCardError(errorMessage);
-          }}
-        />
+        {Boolean(ticket.price) && (
+          <FormInput
+            type="card"
+            label="Card Details"
+            error={formErrors.card}
+            onChange={({ error, complete }) => {
+              let errorMessage = "";
+              if (!complete) errorMessage = CARD_EMPTY_MSG;
+              if (error) errorMessage = error.message;
+              setFormErrors((prev) => ({ ...prev, card: "" }));
+              setHiddenCardError(errorMessage);
+            }}
+          />
+        )}
       </div>
       <ModalFooter>
         <Button type="submit" color="primary" variant="contained">
-          Pay ${chosenTicket.price}
+          {ticket.price ? `Pay $${ticket.price}` : "Sign up"}
         </Button>
       </ModalFooter>
     </form>
