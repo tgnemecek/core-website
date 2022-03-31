@@ -1,7 +1,7 @@
 ---
 template: ServicePage
 title: CORE Business
-subtitle: For Companies and Teams
+subtitle: Balance and evolve business with CORE success strategies
 explanation:
   text: >-
     **We help businesses implement sustainable change** by using the holistic

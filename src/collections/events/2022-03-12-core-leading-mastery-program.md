@@ -1,10 +1,10 @@
 ---
-collection: events
-id: tL4QmHEbQPuIVmjOLyPKSr1jEbFw3qtl5kl/hWKFgBYUpa+Ijq5aUSxARlCB2RJo
-title: Core Leadership Mastery Program
-subtitle: New Generation of Leaders
+template: events
+id: iawlae4sq9mzCeokY1UGH88w6IR0cUHwkicP1nZPyOWDT+CcDrovFR0xltTGp1KB
+title: "The Superpower of Balanced Leadership "
+subtitle: A Mastery Program
 description: >-
-  **Benefits You will receive from this unique Core Leadership Program:** 
+  **Benefits You will receive from this unique Leadership Program:** 
 
 
   * Learn and understand how to apply *The Balancing Act’s* systemic framework for leadership, a powerful 6-step pragmatic change process, for both your business and personal uses. 
@@ -39,14 +39,15 @@ description: >-
 
 
   *Auke is a unique leadership coach. I have engaged him for years and he has not only brought me but also my whole company through tough times.*
-image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1641913627/leadership_2_cropped_xrtuof.jpg
-date: 2022-03-16T14:00:13.457Z
+image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1637604998/Leadership_Compass_CLP_g3hs4h.jpg
+date: 2022-09-20T14:00:38.492Z
 duration: 90
 language:
   - EN
+location: ""
 tickets:
-  - id: price_1KHYGJC6qmFvoaW6sd05Alu8
-    description: General Admission
-    price: 2900
+  - description: General Admission
+    price: 2544
     endsOn: startOfEvent
+    id: price_1KcZEjC6qmFvoaW618dy6YOa
 ---
