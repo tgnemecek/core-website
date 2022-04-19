@@ -8,19 +8,23 @@ description: >-
   out of procrastination, so you can be more productive and happy ASAP.
 
 
-  Check our TIk Tok channel to start using some of these techniques today. 
+  Check our TIkTok channel to start using some of these techniques today. 
 
 
   Celebrate the launch of our CORE community, where you can get ALL kinds of free stuff that will make your life a whole lot easier.
+
+
+  REGISTER HERE.
 image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1648312183/really_fast_ways_to_slow_down_fafekb.jpg
-date: 2022-04-28T16:00:09.467Z
+date: 2022-05-18T16:00:09.467Z
 duration: 60
 language:
   - EN
+  - ES
 tickets:
   - description: General Admission
     price: 0
     endsOn: startOfEvent
-    id: price_1KqIUdC6qmFvoaW6XyKPoh1n
+    id: price_1KqIXmC6qmFvoaW6m5nUUeWr
 isOnline: true
 ---
