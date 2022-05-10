@@ -14,20 +14,20 @@ description: >-
   Celebrate the launch of our CORE community, where you can get ALL kinds of free stuff that will make your life a whole lot easier.
 
 
-  Please register in advance for this meeting, as we will limit the seats for this event
+  You will need to register in advance for this meeting, as seats are limited:
 
-  When: Jun 8, 2022 12:00 PM Eastern Time (US and Canada) 
-
-
-  To register, go to: https://us02web.zoom.us/meeting/register/tZIud--trTIrHtPO64CvB1PyG5rAijPKlXBH 
+  When: Jun 9, 2022 04:00 PM Eastern Time (US and Canada) 
 
 
-  After registering, you will receive a confirmation email containing information about joining the meeting.
+  Register here: https://us02web.zoom.us/meeting/register/tZ0qcuqrpzspEtGHynOrgRfp6HyUNY8GjZZw 
+
+
+  After registering, you will receive a confirmation email containing information about joining the meeting. 
 
 
   We look forward to seeing you there!
 image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1648312183/really_fast_ways_to_slow_down_fafekb.jpg
-date: 2022-05-10T13:02:13.831Z
+date: 2022-06-09T20:00:00.000Z
 duration: 90
 language:
   - EN
