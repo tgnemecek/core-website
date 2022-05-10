@@ -16,8 +16,8 @@ description: >-
 
   REGISTER HERE.
 image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1648312183/really_fast_ways_to_slow_down_fafekb.jpg
-date: 2022-05-18T16:00:09.467Z
-duration: 60
+date: 2022-06-08T16:00:09.467Z
+duration: 90
 language:
   - EN
   - ES
