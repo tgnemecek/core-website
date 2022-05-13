@@ -16,7 +16,7 @@ description: >-
 
   You will need to register in advance for this meeting, as seats are limited:
 
-  When: Jun 9, 2022 04:00 PM Eastern Time (US and Canada) 
+  When: Jun 15, 2022 04:00 PM Eastern Time (US and Canada) 
 
 
   Register here: [https://us02web.zoom.us/meeting/register/tZ0qcuqrpzspEtGHynOrgRfp6HyUNY8GjZZw ](https://us02web.zoom.us/meeting/register/tZ0qcuqrpzspEtGHynOrgRfp6HyUNY8GjZZw)
@@ -27,7 +27,7 @@ description: >-
 
   We look forward to seeing you there!
 image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1648312183/really_fast_ways_to_slow_down_fafekb.jpg
-date: 2022-06-09T20:00:00.000Z
+date: 2022-06-15T20:00:00.000Z
 duration: 90
 language:
   - EN
