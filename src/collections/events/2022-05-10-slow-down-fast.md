@@ -16,10 +16,10 @@ description: >-
 
   You will need to register in advance for this meeting, as seats are limited:
 
-  When: Jun 15, 2022 04:00 PM Eastern Time (US and Canada) 
+  When: Wednesday, Jun 15, 2022 at 4:00 PM Eastern Time (US and Canada) 
 
 
-  Register here: [https://us02web.zoom.us/meeting/register/tZ0qcuqrpzspEtGHynOrgRfp6HyUNY8GjZZw ](https://us02web.zoom.us/meeting/register/tZ0qcuqrpzspEtGHynOrgRfp6HyUNY8GjZZw)
+  Register here: [](https://us02web.zoom.us/meeting/register/tZ0qcuqrpzspEtGHynOrgRfp6HyUNY8GjZZw) <https://us02web.zoom.us/meeting/register/tZ0qcuqrpzspEtGHynOrgRfp6HyUNY8GjZZw>
 
 
   After registering, you will receive a confirmation email containing information about joining the meeting. 
