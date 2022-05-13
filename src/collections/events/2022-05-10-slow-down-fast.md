@@ -8,7 +8,7 @@ description: >-
   out of procrastination, so you can be more productive and happy ASAP.
 
 
-  Check our TIkTok channel to start using some of these techniques today. 
+  Check our TikTok channel to start using some of these techniques today. 
 
 
   Celebrate the launch of our CORE community, where you can get ALL kinds of free stuff that will make your life a whole lot easier.
