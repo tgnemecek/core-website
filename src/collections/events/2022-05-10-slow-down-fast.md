@@ -8,26 +8,26 @@ description: >-
   out of procrastination, so you can be more productive and happy ASAP.
 
 
-  Check our TIkTok channel to start using some of these techniques today. 
+  Check our TikTok channel to start using some of these techniques today. 
 
 
   Celebrate the launch of our CORE community, where you can get ALL kinds of free stuff that will make your life a whole lot easier.
 
 
-  Please register in advance for this meeting, as we will limit the seats for this event
+  You will need to register in advance for this meeting, as seats are limited:
 
-  When: Tuesday, Jun 14, 2022 at 12:00 PM Eastern Time (US and Canada) 
-
-
-  To register, go to:  <https://us02web.zoom.us/meeting/register/tZIud--trTIrHtPO64CvB1PyG5rAijPKlXBH>[](https://us02web.zoom.us/meeting/register/tZ0qcuqrpzspEtGHynOrgRfp6HyUNY8GjZZw)[](https://us02web.zoom.us/meeting/register/tZIud--trTIrHtPO64CvB1PyG5rAijPKlXBH)
+  When: Wednesday, Jun 15, 2022 at 4:00 PM Eastern Time (US and Canada) 
 
 
-  After registering, you will receive a confirmation email containing information about joining the meeting.
+  Register here: [](https://us02web.zoom.us/meeting/register/tZ0qcuqrpzspEtGHynOrgRfp6HyUNY8GjZZw) <https://us02web.zoom.us/meeting/register/tZ0qcuqrpzspEtGHynOrgRfp6HyUNY8GjZZw>
+
+
+  After registering, you will receive a confirmation email containing information about joining the meeting. 
 
 
   We look forward to seeing you there!
 image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1648312183/really_fast_ways_to_slow_down_fafekb.jpg
-date: 2022-06-14T16:00:09.467Z
+date: 2022-06-15T20:00:00.000Z
 duration: 90
 language:
   - EN

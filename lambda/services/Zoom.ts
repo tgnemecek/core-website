@@ -67,6 +67,7 @@ const Zoom = {
     if (res.status === 200) {
       return true;
     } else {
+      console.error(await res.json());
       throw new Error("Zoom servers are down");
     }
   },
@@ -78,7 +79,7 @@ const Zoom = {
     if (res.status === 200) {
       return (await res.json()) as ZoomMeetingType;
     } else {
-      console.error(res);
+      console.error(await res.json());
       throw new Error("Error while getting Zoom meeting.");
     }
   },
@@ -132,6 +133,8 @@ const Zoom = {
       if (newFieldsRes.status === 204) {
         return { url, meetingId };
       } else {
+        console.error(await res.json());
+
         throw new Error("Error while updating Zoom registrant questions.");
       }
     } else {
@@ -157,6 +160,7 @@ const Zoom = {
     if (res.status === 204) {
       return true;
     } else {
+      console.error(await res.json());
       throw new Error("Error while updating Zoom meeting.");
     }
   },
@@ -169,6 +173,7 @@ const Zoom = {
     if (res.status === 204) {
       return true;
     } else {
+      console.error(await res.json());
       throw new Error("Error while deleting Zoom meeting.");
     }
   },
@@ -194,18 +199,20 @@ const Zoom = {
       throw new Error(`Invalid email address: ${email}`);
     }
 
+    const body: ZoomAddRegistrantType = {
+      email,
+      first_name: firstName,
+      last_name: lastName,
+      auto_approve: true,
+      address: timezone,
+    };
+
     const res = await fetch(
       `https://api.zoom.us/v2/meetings/${meetingId}/registrants`,
       {
         method: "POST",
         headers,
-        body: JSON.stringify({
-          email,
-          first_name: firstName,
-          last_name: lastName,
-          auto_approve: true,
-          address: timezone,
-        } as ZoomAddRegistrantType),
+        body: JSON.stringify(body),
       }
     );
 
@@ -217,6 +224,7 @@ const Zoom = {
       } = (await res.json()) as ZoomMeetingType;
       return { joinUrl, topic, startTime };
     } else {
+      console.error(await res.json());
       throw new Error("Error while adding Zoom registrant.");
     }
   },
@@ -244,6 +252,7 @@ const Zoom = {
         }
         return newRegistrants;
       } else {
+        console.error(await res.json());
         throw new Error("Error while listing Zoom meeting registrants.");
       }
     };
@@ -268,6 +277,7 @@ const Zoom = {
     if (res.status === 204) {
       return true;
     } else {
+      console.error(await res.json());
       throw new Error("Error while removing Zoom meeting registrants.");
     }
   },
