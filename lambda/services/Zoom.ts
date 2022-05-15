@@ -106,6 +106,7 @@ const Zoom = {
             close_registration: true,
             show_share_button: false,
             registrants_email_notification: false,
+            use_pmi: false,
           },
         } as Partial<ZoomMeetingType>),
       }
