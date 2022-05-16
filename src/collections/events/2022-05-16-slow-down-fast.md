@@ -7,23 +7,13 @@ description: >-
    Learn rapid techniques to transform bad moments into good ones. 
 
 
-
   When: Jun 15, 2022, 04:00 PM Eastern Time (US and Canada) 
 
 
   Register in advance for this meeting:
 
 
-
-  [https://us02web.zoom.us/meeting/register/tZ0qcuqrpzspEtGHynOrgRfp6HyUNY8GjZZw ](<Hi there, 
-
-
-  You are invited to a Zoom meeting. 
-
-  When: Jun 15, 2022 04:00 PM Eastern Time (US and Canada) 
-
-
-  Register in advance fhttps://us02web.zoom.us/meeting/register/tZ0qcuqrpzspEtGHynOrgRfp6HyUNY8GjZZw >)
+  <https://us02web.zoom.us/meeting/register/tZ0qcuqrpzspEtGHynOrgRfp6HyUNY8GjZZw>
 
 
   After registering, you will receive a confirmation email containing information about joining the meeting.
@@ -34,7 +24,7 @@ language:
   - EN
 tickets:
   - description: General Admission
-    price: 20
+    price: 0
     endsOn: startOfEvent
-    id: price_1L0BS6C6qmFvoaW6ulN0Bn0l
+    id: price_1L0BnPC6qmFvoaW6DoXFvEZK
 ---
