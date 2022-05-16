@@ -24,7 +24,7 @@ language:
   - ES
 tickets:
   - description: General Admission
-    price: 20
+    price: 0
     endsOn: startOfEvent
-    id: price_1L0BS6C6qmFvoaW6ulN0Bn0l
+    id: price_1L0Bm3C6qmFvoaW6fV1r79pg
 ---
