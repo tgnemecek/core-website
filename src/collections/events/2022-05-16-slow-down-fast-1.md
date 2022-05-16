@@ -12,6 +12,8 @@ description: >-
 
   Register in advance for this meeting:
 
+  <https://us02web.zoom.us/meeting/register/tZIoc-qprj4uH9VXgQHxSOSPR69cBjaqwbi4> 
+
 
   After registering, you will receive a confirmation email containing information about joining the meeting.
 image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1648312183/really_fast_ways_to_slow_down_fafekb.jpg
@@ -19,6 +21,7 @@ date: 2022-06-14T16:00:00.000Z
 duration: 90
 language:
   - EN
+  - ES
 tickets:
   - description: General Admission
     price: 20
