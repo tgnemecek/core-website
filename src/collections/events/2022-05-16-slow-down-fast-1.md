@@ -1,7 +1,7 @@
 ---
 template: events
 id: 2wqeaHMibq+HoXKtbhczaPwE2jdKCNwfMQv6nnpzvfao3oygRvLxyhs1r4tFvsx2
-title: Slow Down, FAST
+title: Slow Down, FAST!
 subtitle: Gain Control of yourself in Crises
 description: >-
    Learn rapid techniques to transform bad moments into good ones. 
@@ -26,5 +26,5 @@ tickets:
   - description: General Admission
     price: 0
     endsOn: startOfEvent
-    id: price_1L0Bm3C6qmFvoaW6fV1r79pg
+    id: price_1L0CAfC6qmFvoaW6KqgqeMgl
 ---
