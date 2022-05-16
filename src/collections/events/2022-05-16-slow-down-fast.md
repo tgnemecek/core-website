@@ -8,8 +8,25 @@ description: >-
 
 
 
+  When: Jun 15, 2022, 04:00 PM Eastern Time (US and Canada) 
 
-  <https://us02web.zoom.us/meeting/register/tZ0qcuqrpzspEtGHynOrgRfp6HyUNY8GjZZw>[](javascript:;)
+
+  Register in advance for this meeting:
+
+
+
+  [https://us02web.zoom.us/meeting/register/tZ0qcuqrpzspEtGHynOrgRfp6HyUNY8GjZZw ](<Hi there, 
+
+
+  You are invited to a Zoom meeting. 
+
+  When: Jun 15, 2022 04:00 PM Eastern Time (US and Canada) 
+
+
+  Register in advance fhttps://us02web.zoom.us/meeting/register/tZ0qcuqrpzspEtGHynOrgRfp6HyUNY8GjZZw >)
+
+
+  After registering, you will receive a confirmation email containing information about joining the meeting.
 image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1648312183/really_fast_ways_to_slow_down_fafekb.jpg
 date: 2022-06-15T20:00:29.005Z
 duration: 90
