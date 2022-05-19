@@ -1,7 +1,7 @@
 ---
 template: events
 id: 5yYhYMqpBU+RS0neNnHAZOikTkO68NDVoC3NmTm4XoDT0Eea0gFVUGrWOhMfSgX+
-title: test event
+title: test event by sharon
 subtitle: trial and error
 description: i sure hope this works this time
 image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1648312183/really_fast_ways_to_slow_down_fafekb.jpg
