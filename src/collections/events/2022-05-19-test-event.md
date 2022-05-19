@@ -11,10 +11,6 @@ language:
   - EN
 tickets:
   - description: General Admission
-    price: 20
-    endsOn: startOfEvent
-    id: price_1L0x6SC6qmFvoaW6W3uxdeXe
-  - description: General Admission
     price: 0
     endsOn: startOfEvent
     id: price_1L0x6SC6qmFvoaW6fTKuyQ1w
