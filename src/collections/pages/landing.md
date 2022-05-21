@@ -30,6 +30,52 @@ productsSection:
   heading: Core Coaching Books & Apps
   subheading: From books to apps, use these resources to assist you in your journey
   products:
+    - image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1653146133/Balanced_Leadership_book_cover_2_cx25sy.jpg
+      title: The Superpower of Balanced Leadership in Unbalanced Times
+      description: "If you want to become the kind of leader everyone wants to follow,
+        this book is for you.   As a leader, you are already used to handling
+        challenging problems, and our goal is to make that daily task a lot
+        easier by providing you with an exciting new toolkit of six different
+        problem-solving powers you can use in difficult situations you face.
+        When these different powers are unified and balanced, they transform
+        into the “Superpower“ of Balanced Leadership with which you can resolve
+        complex and confusing issues, especially now, in these unbalanced times.
+        When we call Balanced Leadership a “superpower”, we are not
+        exaggerating. Here's why: Balanced Leadership combines six distinctly
+        different kinds of powers you have inside you into one unified,
+        elegantly simple problem-solving framework. It forms a comprehensive
+        “system of systems” that is useful not just for leadership, but also for
+        life, work, organizations, and the world. That is when you connect and
+        balance these different powers, not only will you become a more
+        effective leader, but you will also become a better human being. It
+        allows you to see problems from many different angles, almost as if you
+        can walk around them and gett different perspectives. This makes it much
+        more likely you’ll find the best entry point to solve, or even dissolve,
+        that problem for good. It makes you truly powerful. You may not be able
+        to change the whole world, but you can change yourself. Therefore, this
+        book focuses on YOU. Our goal is to increase your internal power,
+        confidence, and clarity. And, we know that, if you are full of your own
+        power, you will be neither power-hungry nor power-less, the two extremes
+        of unbalanced, toxic power in these challenging times. We start this
+        book with a QUICK GUIDE to the Problems You Can Solve with the Six
+        Different Powers Described in this Book.  For example, if you have the
+        following symptoms, your problems probably come from an imbalance in the
+        first power we address in Balanced Leadership: Self-doubt; insecure;
+        don’t feel safe The knee-jerk impulse to protect self (default to
+        Fight-flight-freeze-fawn) Operate at high, ongoing levels of stress that
+        cause sub-optimal functioning and exhaustion You feel safer when you
+        have a good title, money, control of territory or people, external
+        definitions of worth Vacillate between feeling that I’m the BEST versus
+        I’m not good at this, I’m an imposter Don’t trust intuition or hunches.
+        My purpose is unclear; don’t have a strong sense of who I am or why I’m
+        doing this work. And we show you how to solve them by gaining more of
+        the first power of Balanced Leadership: Power to “shine”; a strong
+        presence Calm self-esteem & sense of self Comfortable in own skin; low
+        level of stress & fear Able to calm others and lower stress Clear values
+        and guiding powers Behave authentically & coherently according to these
+        core values & powers Focus on internal power vs. external power Easy
+        access to intuition; trust hunches Deep (purpose-driven) happiness"
+      link: https://www.amazon.com/gp/product/kindle-redemption/B09QL6J9MT?ref=pe_kinw_eml_rdm&kinRedeem=GIFT&kinRedeemToken=GSF5PDRJV4TMSHW&ref_=pe_2549720_191942230
     - image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600890104/TBA_Kindlecover_cropped_irfmvt.jpg
       title: The Balancing Act
       description: >-
@@ -148,52 +194,6 @@ productsSection:
         more heroic despite the challenging times in which we live.
       link: https://www.amazon.com/Working-Your-Core-Sharon-Seivert-ebook/dp/B00J4BUQ2S/ref=sr_1_1?dchild=1&keywords=Working+from+Your+Core+seivert&qid=1600888309&s=books&sr=1-1
       subtitle: Personal and corporate wisdom in a world of change
-    - image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1653146133/Balanced_Leadership_book_cover_2_cx25sy.jpg
-      title: The Superpower of Balanced Leadership in Unbalanced Times
-      description: "If you want to become the kind of leader everyone wants to follow,
-        this book is for you.   As a leader, you are already used to handling
-        challenging problems, and our goal is to make that daily task a lot
-        easier by providing you with an exciting new toolkit of six different
-        problem-solving powers you can use in difficult situations you face.
-        When these different powers are unified and balanced, they transform
-        into the “Superpower“ of Balanced Leadership with which you can resolve
-        complex and confusing issues, especially now, in these unbalanced times.
-        When we call Balanced Leadership a “superpower”, we are not
-        exaggerating. Here's why: Balanced Leadership combines six distinctly
-        different kinds of powers you have inside you into one unified,
-        elegantly simple problem-solving framework. It forms a comprehensive
-        “system of systems” that is useful not just for leadership, but also for
-        life, work, organizations, and the world. That is when you connect and
-        balance these different powers, not only will you become a more
-        effective leader, but you will also become a better human being. It
-        allows you to see problems from many different angles, almost as if you
-        can walk around them and gett different perspectives. This makes it much
-        more likely you’ll find the best entry point to solve, or even dissolve,
-        that problem for good. It makes you truly powerful. You may not be able
-        to change the whole world, but you can change yourself. Therefore, this
-        book focuses on YOU. Our goal is to increase your internal power,
-        confidence, and clarity. And, we know that, if you are full of your own
-        power, you will be neither power-hungry nor power-less, the two extremes
-        of unbalanced, toxic power in these challenging times. We start this
-        book with a QUICK GUIDE to the Problems You Can Solve with the Six
-        Different Powers Described in this Book.  For example, if you have the
-        following symptoms, your problems probably come from an imbalance in the
-        first power we address in Balanced Leadership: Self-doubt; insecure;
-        don’t feel safe The knee-jerk impulse to protect self (default to
-        Fight-flight-freeze-fawn) Operate at high, ongoing levels of stress that
-        cause sub-optimal functioning and exhaustion You feel safer when you
-        have a good title, money, control of territory or people, external
-        definitions of worth Vacillate between feeling that I’m the BEST versus
-        I’m not good at this, I’m an imposter Don’t trust intuition or hunches.
-        My purpose is unclear; don’t have a strong sense of who I am or why I’m
-        doing this work. And we show you how to solve them by gaining more of
-        the first power of Balanced Leadership: Power to “shine”; a strong
-        presence Calm self-esteem & sense of self Comfortable in own skin; low
-        level of stress & fear Able to calm others and lower stress Clear values
-        and guiding powers Behave authentically & coherently according to these
-        core values & powers Focus on internal power vs. external power Easy
-        access to intuition; trust hunches Deep (purpose-driven) happiness"
-      link: https://www.amazon.com/gp/product/kindle-redemption/B09QL6J9MT?ref=pe_kinw_eml_rdm&kinRedeem=GIFT&kinRedeemToken=GSF5PDRJV4TMSHW&ref_=pe_2549720_191942230
 testimonials:
   - testimonial: During a crossroads in my career, Sharon coached me to overcome
       obstacles and doubts, and then supported me in making a bold decision that
