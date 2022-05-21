@@ -152,6 +152,7 @@ productsSection:
       title: The Superpower of Balanced Leadership in Unbalanced Times
       description: "Claim the superpower of Balanced Leadership to become the leader
         everyone wants to follow. "
+      link: https://www.amazon.com/gp/product/kindle-redemption/B09QL6J9MT?ref=pe_kinw_eml_rdm&kinRedeem=GIFT&kinRedeemToken=GSF5PDRJV4TMSHW&ref_=pe_2549720_191942230
 testimonials:
   - testimonial: During a crossroads in my career, Sharon coached me to overcome
       obstacles and doubts, and then supported me in making a bold decision that
