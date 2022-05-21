@@ -148,6 +148,10 @@ productsSection:
         more heroic despite the challenging times in which we live.
       link: https://www.amazon.com/Working-Your-Core-Sharon-Seivert-ebook/dp/B00J4BUQ2S/ref=sr_1_1?dchild=1&keywords=Working+from+Your+Core+seivert&qid=1600888309&s=books&sr=1-1
       subtitle: Personal and corporate wisdom in a world of change
+    - image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1653146133/Balanced_Leadership_book_cover_2_cx25sy.jpg
+      title: The Superpower of Balanced Leadership in Unbalanced Times
+      description: "Claim the superpower of Balanced Leadership to become the leader
+        everyone wants to follow. "
 testimonials:
   - testimonial: During a crossroads in my career, Sharon coached me to overcome
       obstacles and doubts, and then supported me in making a bold decision that
