@@ -58,23 +58,7 @@ productsSection:
         power, you will be neither power-hungry nor power-less, the two extremes
         of unbalanced, toxic power in these challenging times. We start this
         book with a QUICK GUIDE to the Problems You Can Solve with the Six
-        Different Powers Described in this Book.  For example, if you have the
-        following symptoms, your problems probably come from an imbalance in the
-        first power we address in Balanced Leadership: Self-doubt; insecure;
-        don’t feel safe The knee-jerk impulse to protect self (default to
-        Fight-flight-freeze-fawn) Operate at high, ongoing levels of stress that
-        cause sub-optimal functioning and exhaustion You feel safer when you
-        have a good title, money, control of territory or people, external
-        definitions of worth Vacillate between feeling that I’m the BEST versus
-        I’m not good at this, I’m an imposter Don’t trust intuition or hunches.
-        My purpose is unclear; don’t have a strong sense of who I am or why I’m
-        doing this work. And we show you how to solve them by gaining more of
-        the first power of Balanced Leadership: Power to “shine”; a strong
-        presence Calm self-esteem & sense of self Comfortable in own skin; low
-        level of stress & fear Able to calm others and lower stress Clear values
-        and guiding powers Behave authentically & coherently according to these
-        core values & powers Focus on internal power vs. external power Easy
-        access to intuition; trust hunches Deep (purpose-driven) happiness"
+        Different Powers Described in this Book. "
       link: https://www.amazon.com/gp/product/kindle-redemption/B09QL6J9MT?ref=pe_kinw_eml_rdm&kinRedeem=GIFT&kinRedeemToken=GSF5PDRJV4TMSHW&ref_=pe_2549720_191942230
     - image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600890104/TBA_Kindlecover_cropped_irfmvt.jpg
       title: The Balancing Act
