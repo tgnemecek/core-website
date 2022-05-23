@@ -27,6 +27,7 @@ date: 2022-06-15T20:00:29.005Z
 duration: 90
 language:
   - EN
+  - ES
 tickets:
   - description: General Admission
     price: 0
