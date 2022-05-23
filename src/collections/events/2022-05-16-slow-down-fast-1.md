@@ -4,7 +4,14 @@ id: 2wqeaHMibq+HoXKtbhczaPwE2jdKCNwfMQv6nnpzvfao3oygRvLxyhs1r4tFvsx2
 title: Slow Down, FAST!
 subtitle: Gain Control of yourself in Crises
 description: >-
-   Learn rapid techniques to transform bad moments into good ones. 
+  Take time out of your busy schedule to learn how to turn your Fight or Flight
+  response into a calming and energizing Core Response.
+
+
+  In this seminar, you will learn easy tools to stop anxiety & stress in their tracks. Highlights include:
+
+
+  ﻿The best part of this short seminar is that these techniques can be used quickly to stop the pain in any situation. What's more, you will receive a "care package" after the seminar that will help you continue using these life-saving tools.
 
 
   When: Jun 14, 2022, 12:00 PM Noon Eastern Time (US and Canada) 
