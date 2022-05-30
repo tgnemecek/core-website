@@ -32,34 +32,69 @@ productsSection:
   products:
     - image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1653146133/Balanced_Leadership_book_cover_2_cx25sy.jpg
       title: The Superpower of Balanced Leadership in Unbalanced Times
-      description: "If you want to become the kind of leader everyone wants to follow,
-        this book is for you.   As a leader, you are already used to handling
-        challenging problems, and our goal is to make that daily task a lot
-        easier by providing you with an exciting new toolkit of six different
-        problem-solving powers you can use in difficult situations you face.
-        When these different powers are unified and balanced, they transform
-        into the “Superpower“ of Balanced Leadership with which you can resolve
-        complex and confusing issues, especially now, in these unbalanced times.
-        When we call Balanced Leadership a “superpower”, we are not
-        exaggerating. Here's why: Balanced Leadership combines six distinctly
-        different kinds of powers you have inside you into one unified,
-        elegantly simple problem-solving framework. It forms a comprehensive
-        “system of systems” that is useful not just for leadership, but also for
-        life, work, organizations, and the world. That is when you connect and
-        balance these different powers, not only will you become a more
-        effective leader, but you will also become a better human being. It
-        allows you to see problems from many different angles, almost as if you
-        can walk around them and gett different perspectives. This makes it much
-        more likely you’ll find the best entry point to solve, or even dissolve,
-        that problem for good. It makes you truly powerful. You may not be able
-        to change the whole world, but you can change yourself. Therefore, this
-        book focuses on YOU. Our goal is to increase your internal power,
-        confidence, and clarity. And, we know that, if you are full of your own
-        power, you will be neither power-hungry nor power-less, the two extremes
-        of unbalanced, toxic power in these challenging times. We start this
-        book with a QUICK GUIDE to the Problems You Can Solve with the Six
-        Different Powers Described in this Book. "
+      description: "This book is much more than the words on its pages: it is an
+        introduction to a new way of thinking about leadership, one that will
+        provide you with increased meaning, hope, and a wider range of power. It
+        is a logical, easy-to-follow, proven strategy—a road map you can use
+        forever. In includes an invitation to a global community that will
+        support you in becoming the confident leader people trust to bring them
+        safely through our currently unpredictable times. It is a gateway to a
+        wealth of continually growing free resources. And lastly, this little
+        but powerful book contains our fervent hope for your complete success,
+        our desire that you become the whole leader and good person we believe
+        is your true nature…and who the world needs now, more than ever.  The
+        expertise in this book is priceless. It will save you countless days,
+        even months, of trial and error because we are passing on to you a
+        treasure-trove of breakthrough knowledge we have gleaned from decades of
+        hard-won, first-hand experience. Our goal is to keep you from going off
+        track by pointing out common errors and specific ways you can avoid
+        them.  The road map outlined here is easy to follow, with color-coded
+        icons serving as road signs at each step on the path.  Balanced
+        Leadership is both pragmatic and philosophical. You will become a more
+        effective leader in your current role while simultaneously expanding
+        your thinking about what the best leadership practices will be in our
+        post-pandemic era. With the exciting new paradigm of balanced
+        leadership, you will always have as your guide The Balancing Act’s
+        logical, elegantly simple, unifying strategy rather than just an
+        assortment of good tactics. (In fact, you can better leverage the good
+        tools you already have within the holistic, unifying strategy we offer
+        here.)    Let me suggest that you use this book to jumpstart your new
+        leadership journey today (for less than it cost you for this morning’s
+        coffee and breakfast bar). Doing so will ensure that you arrive sooner
+        rather than later at your destination of being the superpowered leader
+        and truly great human being you have long wanted to be.    Balanced
+        Leadership will also help you clarify YOUR own way of leading so you can
+        confidently tap into your own unique gifts, become more comfortable in
+        your own skin, trust your instincts, expand your capabilities, and
+        enthusiastically learn what you need from us and many other experts to
+        whom we will refer you.  Indeed, if you dive into the instructions in
+        this book, it will be as if you are receiving individual coaching from
+        its author, Sharon Seivert (who charges up to a thousand times the price
+        of this book for her coaching packages). What’s more, this book offers
+        you a warm invitation to the global CORE Community where you can have
+        real-time, inspiring, and caring conversations with the author and our
+        international colleagues. We would be thrilled to have you join us.  The
+        book will steer you away from common leadership errors and keep you from
+        becoming discouraged as you face one problem after another. As you
+        increase your understanding of, and comfort with, this new way of
+        leading, you will steadily build your resilience, confidence, and even
+        your day-to-day ease. We know that, as a leader, you are already used to
+        handling challenging problems, and that you probably already do that
+        quite well. It’s just that, we are offering you this book, so that these
+        daily tasks become a lot easier for you.  In Balanced Leadership, you
+        will receive a complete toolkit of six different powers you can use
+        through good times and bad…times when you need to repair damage and
+        re-stabilize so things are in a better place…and times when you could
+        proactively grow yourself, your team, and your whole system to the next
+        level of evolution. As you align these 6 different powers, you will
+        transform yourself into a superpowered whole leader who can more
+        comprehensively resolve complex and confusing issues, especially now, in
+        these unbalanced times. Indeed, this book will show you how to seize the
+        opportunity this in-between time offers so you can transform what could
+        be the worst of times into the best of times."
       link: https://www.amazon.com/gp/product/kindle-redemption/B09QL6J9MT?ref=pe_kinw_eml_rdm&kinRedeem=GIFT&kinRedeemToken=GSF5PDRJV4TMSHW&ref_=pe_2549720_191942230
+      subtitle: "6 Powers that will Transform you into the Whole Leader  People
+        Fearlessly Follow through Good Times and Bad "
     - image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600890104/TBA_Kindlecover_cropped_irfmvt.jpg
       title: The Balancing Act
       description: >-
