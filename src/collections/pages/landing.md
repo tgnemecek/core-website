@@ -1,6 +1,6 @@
 ---
 aboutSection:
-  heading: "Business owners and leaders:"
+  heading: "Business Owners and Leaders:"
   text: "We provide new tools and knowledge to achieve your growth goals without
     burning out. "
 postsSection:
