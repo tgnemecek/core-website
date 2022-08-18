@@ -10,8 +10,6 @@ const Logo: React.FC = () => {
   const breakpoints = useBreakpoint();
   const cldImage = useCloudinary(logo, () => null, [breakpoints]);
 
-  const alt = "CORE Coaching & Consulting";
-
   const [memoizedImg, height] = useMemo(() => {
     const heights = {
       xs: 130,
@@ -46,7 +44,7 @@ const Logo: React.FC = () => {
   return (
     <AdvancedImage
       cldImg={memoizedImg}
-      alt={alt}
+      alt="Core Coaching &amp; Consulting Logo"
       className={className}
       height={height}
     />

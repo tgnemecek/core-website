@@ -45,11 +45,9 @@ const Hero: React.FC<HeroProps> = ({
               </Grid>
             )}
             <Grid item>
-              {!hideTitle && (
-                <Fade>
-                  <Typography variant="h1">{title}</Typography>
-                </Fade>
-              )}
+              <Typography variant={hideTitle ? "srOnly" : "h1"} component="h1">
+                {title}
+              </Typography>
             </Grid>
           </Grid>
         </Container>

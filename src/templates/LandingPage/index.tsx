@@ -40,7 +40,7 @@ const LandingPage: React.FC<LandingPageDTO> = ({
     <Layout>
       <Navbar />
       <main>
-        <Hero />
+        <Hero title="Core Coaching &amp; Consulting" hideTitle />
         <AboutSection {...aboutSection} />
         <PostsSection />
         <CoreLearningZoneSection {...coreLearningZoneSection} />
