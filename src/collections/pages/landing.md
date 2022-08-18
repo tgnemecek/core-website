@@ -1,7 +1,8 @@
 ---
 aboutSection:
-  heading: We guide business owners and leaders...
-  text: to grow their companies without burning out themselves or those around them.
+  heading: "Business owners and leaders:"
+  text: "We provide new tools and knowledge to achieve your growth goals without
+    burning out. "
 postsSection:
   heading: What's new
   subheading: Keep updated with our latest posts and news
