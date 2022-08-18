@@ -1,5 +1,5 @@
-import React, { useMemo } from "react";
-import { AdvancedImage, placeholder } from "@cloudinary/react";
+import React from "react";
+import { AdvancedImage } from "@cloudinary/react";
 import { crop, scale } from "@cloudinary/base/actions/resize";
 import { useCloudinary, useBreakpoint } from "utils";
 

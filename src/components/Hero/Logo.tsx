@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
-import { AdvancedImage, placeholder } from "@cloudinary/react";
-import { crop, scale } from "@cloudinary/base/actions/resize";
+import { AdvancedImage } from "@cloudinary/react";
+import { scale } from "@cloudinary/base/actions/resize";
 import { makeStyles } from "@material-ui/core/styles";
 import { useCloudinary, useBreakpoint, useSettings } from "utils";
 
