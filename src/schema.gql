@@ -17,6 +17,7 @@ type Fields {
 
 type Settings {
   logo: String!
+  logoSmall: String!
   heroImage: String!
   refundPolicy: String
   links: [NavigationLink!]!

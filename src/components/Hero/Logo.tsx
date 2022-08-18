@@ -1,23 +1,21 @@
 import React, { useMemo } from "react";
-import { AdvancedImage, placeholder } from "@cloudinary/react";
-import { crop, scale } from "@cloudinary/base/actions/resize";
+import { AdvancedImage } from "@cloudinary/react";
+import { scale } from "@cloudinary/base/actions/resize";
 import { makeStyles } from "@material-ui/core/styles";
 import { useCloudinary, useBreakpoint, useSettings } from "utils";
 
 const Logo: React.FC = () => {
   const { logo } = useSettings();
 
-  const cldImage = useCloudinary(logo);
   const breakpoints = useBreakpoint();
-
-  const alt = "CORE Logo";
+  const cldImage = useCloudinary(logo, () => null, [breakpoints]);
 
   const [memoizedImg, height] = useMemo(() => {
     const heights = {
       xs: 130,
       sm: 180,
       md: 200,
-      lg: 260,
+      lg: 220,
     };
     if (!cldImage || typeof window === "undefined") return [null, heights.lg];
 
@@ -46,11 +44,9 @@ const Logo: React.FC = () => {
   return (
     <AdvancedImage
       cldImg={memoizedImg}
-      plugins={[placeholder("blur")]}
-      alt={alt}
+      alt="Core Coaching &amp; Consulting Logo"
       className={className}
       height={height}
-      width={height}
     />
   );
 };

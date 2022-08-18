@@ -1,5 +1,5 @@
-import React, { useMemo } from "react";
-import { AdvancedImage, placeholder } from "@cloudinary/react";
+import React from "react";
+import { AdvancedImage } from "@cloudinary/react";
 import { crop, scale } from "@cloudinary/base/actions/resize";
 import { useCloudinary, useBreakpoint } from "utils";
 
@@ -37,12 +37,7 @@ const HeroImage: React.FC<HeroImageProps> = ({
 
   if (memoizedImg) {
     return (
-      <AdvancedImage
-        cldImg={memoizedImg}
-        plugins={[placeholder("blur")]}
-        className={className}
-        alt={alt}
-      />
+      <AdvancedImage cldImg={memoizedImg} className={className} alt={alt} />
     );
   }
 

@@ -11,6 +11,7 @@ const useSettings = () => {
           settings {
             heroImage
             logo
+            logoSmall
           }
         }
       }
