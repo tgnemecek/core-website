@@ -37,12 +37,7 @@ const HeroImage: React.FC<HeroImageProps> = ({
 
   if (memoizedImg) {
     return (
-      <AdvancedImage
-        cldImg={memoizedImg}
-        plugins={[placeholder("blur")]}
-        className={className}
-        alt={alt}
-      />
+      <AdvancedImage cldImg={memoizedImg} className={className} alt={alt} />
     );
   }
 

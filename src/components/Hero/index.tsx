@@ -26,16 +26,6 @@ const Hero: React.FC<HeroProps> = ({
 
   const { heroImage } = useSettings();
 
-  const brandName = (
-    <span>
-      CORE
-      <br />
-      Coaching &amp;
-      <br />
-      Consulting
-    </span>
-  );
-
   return (
     <section className={classes.hero} id="hero">
       <HeroImage
@@ -57,7 +47,7 @@ const Hero: React.FC<HeroProps> = ({
             <Grid item>
               {!hideTitle && (
                 <Fade>
-                  <Typography variant="h1">{title || brandName}</Typography>
+                  <Typography variant="h1">{title}</Typography>
                 </Fade>
               )}
             </Grid>
@@ -103,6 +93,7 @@ const useStyles = ({ small }: UseStylesProps) =>
     logoBar: {
       justifyContent: small ? "flex-start" : "center",
       alignItems: "center",
+      padding: "15px 0",
     },
     explore: {
       position: "relative",

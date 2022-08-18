@@ -7,17 +7,17 @@ import { useCloudinary, useBreakpoint, useSettings } from "utils";
 const Logo: React.FC = () => {
   const { logo } = useSettings();
 
-  const cldImage = useCloudinary(logo);
   const breakpoints = useBreakpoint();
+  const cldImage = useCloudinary(logo, () => null, [breakpoints]);
 
-  const alt = "CORE Logo";
+  const alt = "CORE Coaching & Consulting";
 
   const [memoizedImg, height] = useMemo(() => {
     const heights = {
       xs: 130,
       sm: 180,
       md: 200,
-      lg: 260,
+      lg: 220,
     };
     if (!cldImage || typeof window === "undefined") return [null, heights.lg];
 
@@ -46,11 +46,9 @@ const Logo: React.FC = () => {
   return (
     <AdvancedImage
       cldImg={memoizedImg}
-      plugins={[placeholder("blur")]}
       alt={alt}
       className={className}
       height={height}
-      width={height}
     />
   );
 };
