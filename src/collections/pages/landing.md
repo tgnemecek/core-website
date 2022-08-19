@@ -1,8 +1,8 @@
 ---
 aboutSection:
   heading: "Business Owners and Leaders:"
-  text: "We provide new tools and knowledge to achieve your growth goals without
-    burning out. "
+  text: "We provide new tools, a powerful strategy, and expert business partners
+    to ensure you achieve your growth goals without burning out. "
 postsSection:
   heading: What's new
   subheading: Keep updated with our latest posts and news
