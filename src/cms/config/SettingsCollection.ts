@@ -87,6 +87,11 @@ const SettingsCollection: CmsCollection = {
           widget: "image",
         },
         {
+          label: "Logo (Small)",
+          name: "logoSmall",
+          widget: "image",
+        },
+        {
           label: "Hero Image",
           name: "heroImage",
           widget: "image",

@@ -7,10 +7,10 @@ const WIDTH = 50;
 const ALT = "CORE Logo Icon";
 
 const LogoIcon: React.FC = () => {
-  const { logo } = useSettings();
+  const { logoSmall } = useSettings();
 
   const cldImage = useCloudinary(
-    logo,
+    logoSmall,
     (cld) => cld.resize(scale().width(WIDTH)),
     []
   );
