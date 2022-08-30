@@ -40,8 +40,8 @@ description: >-
 
   *Auke is a unique leadership coach. I have engaged him for years and he has not only brought me but also my whole company through tough times.*
 image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1641913627/leadership_2_cropped_xrtuof.jpg
-date: 2022-09-21T20:00:22.159Z
-duration: 30
+date: 2022-10-19T20:00:22.159Z
+duration: 90
 language:
   - EN
 tickets:
