@@ -40,14 +40,14 @@ description: >-
 
   *Auke is a unique leadership coach. I have engaged him for years and he has not only brought me but also my whole company through tough times.*
 image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1637604998/Leadership_Compass_CLP_g3hs4h.jpg
-date: 2022-09-20T14:00:38.492Z
+date: 2022-10-25T14:00:38.492Z
 duration: 90
-language:
-  - EN
-location: ""
 tickets:
   - description: General Admission
     price: 2544
     endsOn: startOfEvent
     id: price_1KcZEjC6qmFvoaW618dy6YOa
+location: ""
+language:
+  - EN
 ---
