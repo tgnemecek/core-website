@@ -1,9 +1,28 @@
 ---
 template: events
 id: W/CGKigDsYLIFaVll/68hXEUm0fvhimQHbz+YHaQUMOEF1hBfzh4Z54Emx3RP9Hq
-title: "The Superpower of Balanced Leadership "
-subtitle: A Mastery Program
+title: The Superpower of Balanced leadership
+subtitle: Supercharge Your Leadership by Mastering 6 Different Powers
 description: >-
+  **T﻿his is an invitation-only leadership program with 3 different levels of
+  participation.**
+
+
+  **T**The premium program includes three 90 min group meetings per month, the Leadership Strengths Scale, and a strategy that is crafted just for you. 
+
+
+  T﻿he premium plus program includes one 1:1 business coaching session per month, plus the above
+
+
+  T﻿he Elite business program includes two 1:1 busines coacing sessions per month, plus the above.
+
+
+  To see whichwsuits your needs, please schedule a 1:1 Clarity session at  
+
+
+  <https://calendly.com/sseivert-1/clarity-session>
+
+
   **Benefits You will receive from this unique Leadership Program:** 
 
 
@@ -39,8 +58,8 @@ description: >-
 
 
   *Auke is a unique leadership coach. I have engaged him for years and he has not only brought me but also my whole company through tough times.*
-image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1641913627/leadership_2_cropped_xrtuof.jpg
-date: 2022-10-19T20:00:22.159Z
+image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1664394593/Supercharge_Leadership_1_pemo5y.jpg
+date: 2022-11-11T21:00:22.159Z
 duration: 90
 language:
   - EN
