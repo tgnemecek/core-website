@@ -1,17 +1,19 @@
 ---
 template: ServicePage
 title: CORE Business
-subtitle: Balance and evolve business with CORE success strategies
+subtitle: Superpowered Success Strategies
 explanation:
   text: >-
-    **We help businesses implement sustainable change** by using the holistic
-    system of *The Balancing Act* to assess where they are in balance versus out
-    of balance—and why. With this new clarity, companies can use our pragmatic
-    tools and logical, agile strategy to ensure that employees, leaders, teams,
-    and departments implement self-directed improvements over time.
+    **We help businesses improve immediate results and implement sustainable
+    long-term change** by using the "superpowered" holistic system of *The
+    Balancing Act* to assess where they are in balance versus out of balance—and
+    why. With this new clarity, companies can use our pragmatic tools and
+    logical, elegantly simple success strategy to ensure that employees,
+    leaders, teams, and departments implement self-directed improvements over
+    time.
 
 
-    > **What We Can Do for You**
+    **Ways We Can Improve Results**
 
 
     1. Executive Coaching & Leadership Mastery
@@ -22,8 +24,10 @@ explanation:
 
     4. Employee Effectiveness [](mailto:sseivert@thecoreporation.com)
 
+    5. Introductions to investors
 
-    [Contact us](sseivert@thecoreporation.com) to get more information about powerfully transforming your company from the CORE. We offer one-on-one executive coaching, leadership consultations, plus excellent business seminars that are guaranteed to increase productivity, reduce on-the-job stress, eliminate resistance and procrastination for tackling difficult tasks, and encourage every person, at every level of the company, to take full responsibility for outcomes.
+
+    [Contact us](sseivert@thecoreporation.com) to get more information about powerfully transforming your company from the CORE. We offer one-on-one executive coaching, leadership consultations, plus excellent business seminars that are guaranteed to increase productivity, reduce on-the-job stress, eliminate resistance and procrastination for tackling difficult tasks, and encourage every person, at every level of the company, to take full responsibility for outcomes. And with our partners, the [Washington DC. Archangels](https://www.dcarchangels.com/home.html), we can connect you with potential angel investors.
 
 
     Click the message link below to explore what we can do for you.
