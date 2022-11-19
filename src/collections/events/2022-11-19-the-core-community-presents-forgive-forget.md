@@ -27,9 +27,5 @@ duration: 60
 language:
   - EN
   - ES
-tickets:
-  - description: General Admission
-    price: 5
-    endsOn: startOfEvent
-    id: price_1M5q85C6qmFvoaW6JxcFMwoD
+tickets: []
 ---
