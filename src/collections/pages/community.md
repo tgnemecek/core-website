@@ -1,18 +1,28 @@
 ---
 template: ServicePage
 title: CORE Community
-subtitle: Get FREE resources Today + Pay it Forward for Tomorrow
+subtitle: Attend FREE Events & Get FREE resources
 explanation:
   text: >-
     **Core Coaching & Consulting, LLC and our sister organization, Core Learning
     Services, Inc,** have joined forces to create the global CORE Community
     where you can further develop your own Balancing Act skills, meet
-    like-minded colleagues, AND support the non-profit Core Learning Services to
-    bring *The Balancing Act* programs to teachers and at-risk youth all over
-    the world. 
+    like-minded friends, colleagues, and neighbors from around the world.
 
 
-    You can participate in the CORE community at any level: attend our FREE monthly events, be the first to access our resources as soon as we develop them, and "pay it forward" by bringing the superpower of Balance to the lives of the next generation.  
+    O﻿ur monthly events are our gifts to the world, our way to pay it forward by bringing our knowledge and love to the future. 
+
+
+    O﻿ur next event is December 21st, a special holiday session so you can "Forgive & Forget", rather than bringing old burdens into the new year. Check it out! 
+
+
+    A﻿nd there's more coming your way: I﻿n January we will bring you one of our most popular programs: Productivity in the Zone"...and in February, we will show you how to "Blast out of Procrastination".  Sounds good, right? 
+
+
+    You can participate in the CORE community at any level: attend our FREE monthly events, be the first to access our resources as we develop them, access our new archive so you can borrow and build on the thinking and research of all the CCC partners.
+
+
+    And, if you love what *The Balancing Act* programs do for you, then at some future point, you can choose to join us in "paying it forward" to future generations by bringing the superpower of Balance to the lives of the next generation via our programs for teachers and students.
 
 
     [Go here](https://www.patreon.com/corecommunity?fan_landing=true) to learn more about our exciting new global CORE COMMUNITY.
