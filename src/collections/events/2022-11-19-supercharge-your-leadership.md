@@ -29,13 +29,16 @@ description: >-
   **KEY RESULTS OF THE BALANCED LEADERSHIP PROGRAM** 
 
 
+  D﻿uring this ongoing, weekly program, you will develop:
+
+
   •	Increased leadership confidence, purpose, internal stability, intuition, & reduced burn-out
 
   •	Mastery of a new mindset: Clarified vision, ability to control thoughts, creative thinking
 
-  •	Strategic direction, clear priorities, an agile action plan that gets faster and better results 
+  •	Strategic direction, clear priorities, and an agile action plan that gets faster and better results 
 
-  •	Control your emotions & thoughts so you improve relationships, communication, loyalty with your employees and customers
+  •	Control of your emotions & thoughts so you improve relationships, communication, loyalty 
 
   •	Improved skillset with more effective habits and better outcomes from steady follow-up
 
@@ -50,17 +53,10 @@ description: >-
 
   •	1:1 private onboarding session
 
-  •	Three group sessions per month to develop your own superpowers: 
+  •	Three group sessions per month to develop your own superpowers: 1) Increasing all your leadership powers - Removing obstacles 
 
-  o	 Increasing leadership power
 
-  o	removing obstacles
-
-  o	Making your teams & organizations more successful
-
-  •	Option of more 1:1 coaching sessions per month
-
-  •	Books, videos, and many other benefits.
+  * Making your teams & organizations more successful - Option of more 1:1 coaching sessions per month Books, videos, and many other benefits.
 image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1668855529/Supercharge_Your_Leadership_bygcuj.jpg
 date: 2023-01-14T15:00:28.194Z
 duration: 90
