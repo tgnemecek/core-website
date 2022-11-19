@@ -20,7 +20,7 @@ description: >-
   '﻿Tis the season (finally!) to b﻿ecome a lighter, happier you!
 
 
-  PleaseRegister in advance for this meeting:
+  Please register in advance for this meeting:
 
   <https://us02web.zoom.us/meeting/register/tZIvf-yvpjwjHtdrrm9OLAnDTfmAqbwlEVC4> 
 
