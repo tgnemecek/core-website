@@ -10,13 +10,5 @@ date: 2023-01-28T15:00:00.000Z
 duration: 90
 language:
   - EN
-tickets:
-  - description: General Admission
-    price: 20
-    endsOn: startOfEvent
-    id: price_1M5q2QC6qmFvoaW6GKyiZpzJ
-  - description: Invited Admission
-    price: 900
-    endsOn: startOfEvent
-    id: price_1Ln61OC6qmFvoaW6ldBKzMR0
+tickets: []
 ---
