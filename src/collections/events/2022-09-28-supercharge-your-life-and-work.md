@@ -1,8 +1,8 @@
 ---
 template: events
 id: amfEu9FywjKLZG2gYf1rOONWk3CAoJJDmUPZF4QCSZGdEAQ6Wnpm9vTnGH/DSdH4
-title: Supercharge Your Life, Work & Relationships
-subtitle: "Get Unstuck! Get Energized! Become the Leader of Your Life "
+title: Supercharge Your Life, Work, & Relationships
+subtitle: "Get Unstuck! Be Energized! Become the Leader of Your Life "
 description: >-
   T﻿his is an ongoing program where you will join like-minded people to blast
   through barriers and create the life, work, and relationships you want.  We
