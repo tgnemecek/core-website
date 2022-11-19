@@ -22,13 +22,14 @@ description: >-
 
   T﻿he CORE Community's monthly events are fun and stimulating gatherings of like-minded people from around the world  -- our friends, colleagues, and neighbors who are learning, mastering and sharing the Superpower of Balance with their friends, colleagues, and neighbors. WELCOME!
 image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1668858959/CORE_Community_Logo_V1_g766j3.png
-date: 2022-11-19T12:05:03.619Z
-duration: 30
+date: 2022-12-20T17:00:03.619Z
+duration: 60
 language:
   - EN
+  - ES
 tickets:
   - description: General Admission
-    price: 20
+    price: 5
     endsOn: startOfEvent
-    id: price_1M5pqxC6qmFvoaW60Dt8AcAT
+    id: price_1M5q85C6qmFvoaW6JxcFMwoD
 ---
