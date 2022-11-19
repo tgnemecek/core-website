@@ -22,7 +22,7 @@ description: >-
 
   W﻿ELCOME! T﻿he CORE Community's monthly events are fun and stimulating gatherings of like-minded people from around the world  -- our friends, colleagues, and neighbors who are learning, mastering, and sharing the Superpower of Balance with THEIR friends, colleagues, and neighbors. We are so pleased that you are taking full advantage of all the gifts we have to offer you and those your love.
 image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1668858959/CORE_Community_Logo_V1_g766j3.png
-date: 2022-12-20T17:00:03.619Z
+date: 2022-12-21T17:00:03.619Z
 duration: 60
 language:
   - EN
