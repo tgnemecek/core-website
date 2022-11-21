@@ -13,16 +13,16 @@ explanation:
     O﻿ur monthly events are our gifts to you and people like you around the world. It is our way to pay it forward by sharing our knowledge and love with each other so we can positively and powerfully impact the future.  
 
 
-    O﻿ur next CORE Community event is December 21st, a special holiday session so you can "Forgive & Forget", rather than bring old burdens into the new year. Check it out! 
+    The next CORE Community event is December 21st, a special holiday session so you can "Forgive & Forget", rather than bring old burdens into the new year. Check it out!
 
 
     A﻿nd, there's lots more coming your way: I﻿n January we will bring you one of our most popular programs: Productivity in the Zone"...and in February, we will show you how to "Blast out of Procrastination".  Sounds good, right? 
 
 
-    You can participate in the CORE community at any level: attend our FREE monthly events, be the first to access our resources as we develop them, access our new archive so you can borrow and build on the thinking and research of all the CCC partners.
+    You can participate in the CORE community at any level: attend our FREE monthly events, be the first to access our resources as we develop them, and access our new archive so you can borrow and build on the thinking and research of all the CCC partners.
 
 
-    And, if you love what *The Balancing Act* programs do for you, then at some future point, you can choose to join us in "paying it forward" to future generations by bringing the superpower of Balance to the lives of the next generation via our programs for teachers and students. If you want to learn more about this aspect of the global CORE Community, you can [go here](https://www.patreon.com/corecommunity?fan_landing=true) to check out our new Patreon site that helps Core Learning Services deliver its proven programs that change the lives of at-risk youth and their beleaguered teachers (to learn more about those programs, [go here](core-learning-services.org). 
+    If you love what *The Balancing Act* programs do for you, then at some future point, you can choose to join us in "paying it forward" to future generations by bringing the superpower of Balance to the lives of the next generation via our programs for teachers and students. If you want to learn more about this aspect of the global CORE Community, you can [go here](https://www.patreon.com/corecommunity?fan_landing=true) to check out our new Patreon site that helps Core Learning Services deliver its proven programs that change the lives of at-risk youth and their beleaguered teachers (to learn more about those programs, [go here](core-learning-services.org). 
 
 
     [](sseivert@thecoreporation.com)We hope to see you at our next CORE COMMUNITY event!!
