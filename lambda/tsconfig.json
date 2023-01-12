@@ -9,7 +9,6 @@
     "baseUrl": "./",
     "strict": true,
     "noImplicitAny": true,
-    "noUnusedLocals": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
     "skipLibCheck": true,
