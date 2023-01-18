@@ -5,9 +5,9 @@ title: "Forgive & Forget: Make this the Best Valentine's Day Ever"
 subtitle: A CORE Community Monthly Event
 description: >-
   All of us have been disappointed in love–otherwise, there would not be so many
-  sad songs all over the world. BUT we don’t need to keep remembering how bad it
-  was, we don’t need to keep replaying how much we were hurt and how that SOB is
-  not even sorry!
+  sad songs all over the world. However, we don’t need to keep remembering how
+  bad it was, we don’t need to keep replaying how much we were hurt and how that
+  SOB is not even sorry!
 
 
   The bad news is that this old love lost may be keeping you from a future love gained. This year, we will help you stop hating and start loving again.
