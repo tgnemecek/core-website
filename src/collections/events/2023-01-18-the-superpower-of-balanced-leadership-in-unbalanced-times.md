@@ -2,7 +2,7 @@
 template: events
 id: vBTSfLizPV6k9xVwjhkFzoETz2wvsxoWQIij/aOt6iMPFn+k/zDW9C9pFqrv2W3e
 title: Master the Superpower of Balanced Leadership
-subtitle: Supercharge Your Leadership with 6 new Powers
+subtitle: test - Supercharge Your Leadership with 6 new Powers
 description: >-
   
 
