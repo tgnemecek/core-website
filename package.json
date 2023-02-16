@@ -56,7 +56,7 @@
     "netlify-cms-media-library-cloudinary": "^1.3.10",
     "netlify-identity-widget": "^1.9.2",
     "node-fetch": "^2.6.7",
-    "node-jose": "^2.0.0",
+    "node-jose": "^2.2.0",
     "nodemailer": "^6.6.3",
     "notistack": "^1.0.10",
     "prop-types": "^15.6.0",
