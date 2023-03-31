@@ -1,7 +1,7 @@
 ---
 logo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1660857570/ccc-logo-aug-2022_ebvjur.png
 logoSmall: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1660925201/ccc-logo-small-aug-2022_h162du.png
-heroImage: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1680300841/Superpower_of_Balanced_Leadership_Final__cropped_2_Square_drckqx.png
+heroImage: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1680300828/The_Balancing_Act_cropped_image_nofny1.png
 refundPolicy: To receive a full refund for an event you cannot attend, you must
   notify us at SSeivert@thecoreporation.com more than 24 hours preceding the
   start of the event. If you cannot attend the event, but have not notified us,
