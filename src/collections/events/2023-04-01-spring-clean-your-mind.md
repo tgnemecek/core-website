@@ -23,5 +23,9 @@ date: 2023-04-19T16:00:44.677Z
 duration: 60
 language:
   - EN
-tickets: []
+tickets:
+  - description: General Admission
+    price: 0
+    endsOn: startOfEvent
+    id: price_1MsCDcC6qmFvoaW66XqGb5ZY
 ---
