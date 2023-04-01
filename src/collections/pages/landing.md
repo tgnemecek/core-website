@@ -1,9 +1,9 @@
 ---
 aboutSection:
   heading: "Business Owners and Leaders:"
-  text: 'We provide highly experienced business partners, a "superpowered"
-    meta-strategy, and pragmatic new tools so you can achieve your leadership
-    and company goals without burning out. '
+  text: 'We provide you with highly experienced business partners, a
+    "superpowered" meta-strategy, and pragmatic new tools so you can achieve
+    your leadership and company goals without burning out. '
 postsSection:
   heading: What's new
   subheading: Keep updated with our latest posts and news
