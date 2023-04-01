@@ -26,8 +26,6 @@ description: >-
   •	Gain perspectives that will help you solve old problems in new ways.
 
 
-
-
   **THE BALANCED LEADERSHIP PROGRAM** **IS AN INVITATION-ONLY EVENT -- you must meet with us to mutually determine if it is right for you.**
 
 
@@ -55,10 +53,10 @@ description: >-
 
   •	1:1 private onboarding session
 
-  •	Three group sessions per month to develop your own superpowers: 1) Increasing all your leadership powers - Removing obstacles 
+  •	Three group sessions per month to develop your own superpowers: 1) Increasing all your leadership powers, 2) Removing obstacles, and 3) Making your teams & organizations more successful 
 
 
-  * Making your teams & organizations more successful - Option of more 1:1 coaching sessions per month Books, videos, and many other benefits.
+  Option of more 1:1 coaching sessions per month Books, videos, and many other benefits.
 image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1668855529/Supercharge_Your_Leadership_bygcuj.jpg
 date: 2023-04-06T17:00:17.217Z
 duration: 60
