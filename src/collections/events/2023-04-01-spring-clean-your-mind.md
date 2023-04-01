@@ -8,13 +8,16 @@ description: >-
   clutter of self-sabotaging mental habits, such as: 
 
 
-  *  The Voices of Resistance
+  * The Voices of Resistance
 
   * I﻿mposter Syndrome
 
   * A﻿nalysis Paralysis
 
   * S﻿econd guessing and self-doubt
+
+
+  L﻿earn more about this and other upcoming free events at the [CORE Community event page](core-learning-services.org/community).
 image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1668858959/CORE_Community_Logo_V1_g766j3.png
 date: 2023-04-19T16:00:44.677Z
 duration: 60
