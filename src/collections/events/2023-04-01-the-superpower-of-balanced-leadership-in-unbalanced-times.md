@@ -66,5 +66,5 @@ tickets:
   - description: General Admission
     price: 0
     endsOn: startOfEvent
-    id: price_1MsCEQC6qmFvoaW6Hzzmo6kI
+    id: price_1MsCJQC6qmFvoaW6D4PuL3Ik
 ---
