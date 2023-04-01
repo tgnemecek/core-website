@@ -61,7 +61,7 @@ description: >-
   * Making your teams & organizations more successful - Option of more 1:1 coaching sessions per month Books, videos, and many other benefits.
 image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1668855529/Supercharge_Your_Leadership_bygcuj.jpg
 date: 2023-04-06T17:00:17.217Z
-duration: 30
+duration: 60
 language:
   - EN
 tickets: []
