@@ -1,8 +1,8 @@
 ---
 aboutSection:
-  heading: We help leaders, businesses, and individuals
-  text: increase effectiveness, power, well-being, and flow by implementing The
-    Balancing Act holistic strategies
+  heading: We bring the Superpower of Balanced Leadership to business owners and leaders
+  text: To increase their power, effectiveness, and well-being -- and improve
+    results -- with our innovative, holistic strategies.
 postsSection:
   heading: What's new
   subheading: Keep updated with our latest posts and news
