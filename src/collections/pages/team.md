@@ -1,7 +1,7 @@
 ---
 template: TeamPage
 title: Meet the CORE Team
-subtitle: A global group of Balancing Act experts
+subtitle: A global group of experts who bring The Superpower of Balance programs to you
 members:
   - name: Sharon Seivert
     role: CEO & Founder
@@ -115,26 +115,6 @@ members:
       and South America.
     video: https://www.youtube.com/watch?v=52Iv5hdqDxw
     linkedin: ""
-  - name: Dorothy Ginnett
-    role: Teacher of CORE Teachers
-    photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1601304340/CCC_Dorothy_qgw5r8.jpg
-    bio: Dorothy Ginnett has benefited directly from Balancing Act coaching on two
-      separate occasions when she transitioned to more fulfilling educational
-      jobs.  Currently she teaches high school science in Barcelona, Spain and
-      serves as a Teacher Consultant for a fully online US-based virtual
-      school.  Dorothy's experience as a science educator and wildlife ecologist
-      includes teaching university through high school, with student populations
-      that range from gifted to at-risk. Dorothy brings to the CORE team her
-      expertise as a Teacher of Teachers and an online educator; this includes
-      teaching virtual courses since 2004, designing the curriculum for graduate
-      science teacher courses, teaching professional development for science
-      educators in 35 school districts, and serving as a Senior Online Advisor
-      for the National Science Teaching Association.  Her big sister, Sharon, is
-      the creative force behind CORE Coaching & Consulting--and Dorothy is
-      honored to be part of this amazing team because she believes The Balancing
-      Act holds great promise to improve educational culture.
-    linkedin: https://www.linkedin.com/in/dorothy-ginnett/
-    video: ""
   - name: Mercedes Bellavista
     role: Lead Translator
     photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600618633/Mercedes2_xo5nss.jpg
@@ -151,28 +131,4 @@ members:
     title: Alisson Garcia
     description: Customer Success Manager
     linkedin: https://www.linkedin.com/in/mercedes-bellavista-9825681a/
-  - name: Jordi Formiguera Macia
-    role: Lead CORE Coach, Spanish Team
-    photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600730640/Jordi_Formiguera_photo_1_ovy0xl.jpg
-    bio: 'Jordi lives in Barcelona and has worked for more than 15 years as a career
-      and professional counselor. He is a systemic coach accredited by the
-      University of Barcelona and currently serves on the Executive Council and
-      as the Head of the Department of Labor for a Foundation dedicated to
-      supporting people who suffer from a mental disorder or psychological
-      distress. Since 2020 Jordi has been part of the Core Coaching & Consulting
-      team. He enjoys meditation, sports and spending time with his family and
-      friends. Jordi defines his philosophy of life as: "Enjoy the moment, savor
-      every moment, live without expectations and free from all fears"  '
-    linkedin: https://www.linkedin.com/in/jordiformiguera-lifecoach/
-    video: ""
-  - name: Sam Turgeon
-    role: Social Media Advisor
-    photo: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1605792399/CCC_Sam_bkrxw9.jpg
-    bio: "As a middle-schooler from New Hampshire, Sam is the youngest member of the
-      international Core Team, leading our social media efforts on YouTube,
-      video production, and Instagram. Sam is an aspiring entrepreneur and
-      social media Influencer who has established his own YouTube channel: Turgs
-      The Skater, where he can be seen perfecting his skateboarding skills. "
-    linkedin: ""
-    video: https://www.youtube.com/channel/UC8O4QZElBgrnvrOIWGHux6Q
 ---
