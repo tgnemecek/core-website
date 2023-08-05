@@ -1,9 +1,9 @@
 ---
 aboutSection:
-  heading: "Business Owners and Leaders:"
-  text: 'We provide you with highly experienced business partners, a
-    "superpowered" meta-strategy, and pragmatic new tools so you can achieve
-    your leadership and company goals without burning out. '
+  heading: "We bring the Superpower of Balanced Leadership to Business Owners and
+    Leaders:"
+  text: To increase their power and effectiveness in achieving desired business
+    results while simultaneously protecting their well-being and happiness.
 postsSection:
   heading: What's new
   subheading: Keep updated with our latest posts and news
