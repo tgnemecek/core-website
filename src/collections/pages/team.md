@@ -1,7 +1,7 @@
 ---
 template: TeamPage
 title: Meet the CORE Team
-subtitle: A global group of experts who bring The Superpower of Balance programs to you
+subtitle: The global team who brings The Superpower of Balance programs to you
 members:
   - name: Sharon Seivert
     role: CEO & Founder
