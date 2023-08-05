@@ -1,8 +1,8 @@
 ---
 aboutSection:
   heading: We bring the Superpower of Balanced Leadership to business owners and leaders
-  text: To increase their power, effectiveness, and well-being -- and improve
-    results -- with our innovative, holistic strategies.
+  text: To increase their power, effectiveness, well-being, and desired business
+    outcomes with our innovative, holistic, proven strategies.
 postsSection:
   heading: What's new
   subheading: Keep updated with our latest posts and news
