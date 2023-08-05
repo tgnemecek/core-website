@@ -14,20 +14,21 @@ eventsSection:
   heading: Upcoming Events
   subheading: Learn more about our online events
 services:
-  - title: CORE Leading
-    description: "For leaders who want to transform themselves, their teams & companies. "
+  - title: "Superpower of Balanced Leadership "
+    description: "For Business Owners and Leaders, to transform themselves, their
+      teams & companies. "
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1629034127/business_high_5s_u2ze7k.jpg
     name: leading
   - title: CORE Coaching
     description: Transformational Coaching to ensure successful career and life transitions.
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1630620175/Coaching_step_up_shokhs.png
     name: coaching
-  - title: CORE Business
-    description: Helping Organizations, Teams & Leaders Navigate These Difficult Times
+  - title: The Superpower of Balanced Businesses
+    description: Helping Organizations, Teams & Leaders Navigate These Unbalanced Times
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1629577636/BusinessPage_for_Website_bwrwyb.jpg
     name: business
 productsSection:
-  heading: Core Coaching Books & Apps
+  heading: The Superpower of Balance Books & Apps
   subheading: From books to apps, use these resources to assist you in your journey
   products:
     - image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600890104/TBA_Kindlecover_cropped_irfmvt.jpg
