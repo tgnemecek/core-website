@@ -64,8 +64,8 @@ productsSection:
         confidently at your destination of being the superpowered leader and
         truly great human being you want to be."
       link: https://www.amazon.com/gp/product/kindle-redemption/B09QL6J9MT?ref=pe_kinw_eml_rdm&kinRedeem=GIFT&kinRedeemToken=GSF5PDRJV4TMSHW&ref_=pe_2549720_191942230
-      subtitle: "6 Powers that Transform you into the Kind of Leader  People
-        Fearlessly Follow through Good Times and Bad "
+      subtitle: "6 Powers that Transform you into the Kind of Leader People Fearlessly
+        Follow through Good Times and Bad "
     - image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1600890104/TBA_Kindlecover_cropped_irfmvt.jpg
       title: The Balancing Act
       description: >-
