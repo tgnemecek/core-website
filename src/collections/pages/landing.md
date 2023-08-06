@@ -31,7 +31,7 @@ productsSection:
   heading: 'The "Superpower of Balance" Books '
   subheading: These books and apps will supercharge your journey
   products:
-    - image: https://drive.google.com/file/d/1v6RkArMOCIwWCaxdGYY5TscGw_PFDPck/view?usp=sharing
+    - image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1691339022/book_cover_09-13-2022_Superpower_of_Balanced_Leadership_ye2i39.jpg
       title: The Superpower of Balanced Leadership in Unbalanced Times
       description: "It's your job to handle problems as a leader. But it may seem that
         the problems you’re facing today are more complicated and confusing than
