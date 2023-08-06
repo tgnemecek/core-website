@@ -1,7 +1,7 @@
 ---
 template: ServicePage
-title: CORE Leading
-subtitle: Discover the superpower of Balanced Leadership
+title: Balanced Leadershp
+subtitle: Discover the Superpower of Balanced Leadership
 explanation:
   text: >-
     **Why face leadership challenges alone? Get an expert business Partner**
@@ -34,7 +34,7 @@ explanation:
 
 
     Check out **practical programs** for yourself and your employees: Improve Productivity, reduce Procrastination, eliminate Stress, and build core skills to super-charge their effectiveness and your leadership power.
-  image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1629034127/business_high_5s_u2ze7k.jpg
+  image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1691335913/female_superpowered_business_woman_vmcczq.png
 benefits: >-
   * Feel frustrated, anxious about all the problems you have to fix ASAP.
 
