@@ -2,7 +2,7 @@
 aboutSection:
   heading: The Superpower of Balanced Leadership...
   text: ...increases the effectiveness and power of Business Leaders and Owners so
-    they can easily achieve desired business results while simultaneously
+    they can achieve or exceed desired business results while simultaneously
     protecting their well-being and happiness.
 postsSection:
   heading: What's new
@@ -31,7 +31,7 @@ productsSection:
   heading: 'The "Superpower of Balance" Books '
   subheading: These books and apps will supercharge your journey
   products:
-    - image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1653146133/Balanced_Leadership_book_cover_2_cx25sy.jpg
+    - image: https://drive.google.com/file/d/1v6RkArMOCIwWCaxdGYY5TscGw_PFDPck/view?usp=sharing
       title: The Superpower of Balanced Leadership in Unbalanced Times
       description: "It's your job to handle problems as a leader. But it may seem that
         the problems you’re facing today are more complicated and confusing than
