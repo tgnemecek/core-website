@@ -1,9 +1,9 @@
 ---
 aboutSection:
-  heading: We bring the Superpower of Balanced Leadership
-  text: To increase the power and effectiveness of Business Owners and Leaders so
-    they can more easily achieve their desired business results while
-    simultaneously protecting their well-being and happiness.
+  heading: The Superpower of Balanced Leadership
+  text: Increases the power and effectiveness of Business Owners and Leaders so
+    they can easily achieve desired business results while simultaneously
+    protecting their well-being and happiness.
 postsSection:
   heading: What's new
   subheading: Keep updated with our latest posts and news
