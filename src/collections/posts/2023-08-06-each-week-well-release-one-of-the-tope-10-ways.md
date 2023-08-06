@@ -1,6 +1,6 @@
 ---
 collection: posts
-title: Stay tuned! Each week we'll release one of the tope 10 ways...
+title: Stay tuned! Each week we'll release one of the Top 10 Ways...
 text: |-
   .t﻿he Superpower of Balanced Leadership Makes you an Extraordinary Leader.
 
