@@ -28,8 +28,8 @@ services:
     image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1630620175/Coaching_step_up_shokhs.png
     name: coaching
 productsSection:
-  heading: Books & Apps in the "Superpower of Balance" series
-  subheading: From books to apps, use these resources supercharge your journey
+  heading: 'The "Superpower of Balance" Books '
+  subheading: These books and apps will supercharge your journey
   products:
     - image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1653146133/Balanced_Leadership_book_cover_2_cx25sy.jpg
       title: The Superpower of Balanced Leadership in Unbalanced Times
