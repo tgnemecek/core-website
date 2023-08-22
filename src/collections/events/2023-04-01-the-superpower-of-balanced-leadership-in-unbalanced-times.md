@@ -1,8 +1,8 @@
 ---
 template: events
-id: sURCWicgQjeYtE+VAooUIwwhmZDMkumylunBI6n2s3NmKlcinUk/CmjKI8qlDD8Y
-title: Supercharge Your Leadership
-subtitle: Master The Superpower of Balanced Leadership
+id: NrCXM/XMGdAlyUcpwcj+jTkZb0TDw2HFPvyo4ulr5D21SnQSZFTBoec+Du8pu244
+title: The Superpower of Balanced Leadership in Unbalanced Times
+subtitle: Supercharge your Leadership with 6 different powers
 description: >-
   **Welcome to The Superpower of Balanced Leadership in Unbalanced Times**
 
@@ -14,7 +14,7 @@ description: >-
   •	Get better results, starting today, by learning “What’s In It For Me?”
 
 
-  I﻿f you'd like to learn more about all the powers you could gain from mastering Balanced Leadership, please schedule a Clarity and Strategy session by [clicking here](https://calendly.com/sseivert-1/clarity-session)
+  ***I﻿f you  would like to learn more about all the powers you could gain from mastering Balanced Leadership, please schedule a Clarity and Strategy session by [clicking here](https://calendly.com/sseivert-1/clarity-session)***
 
 
   During that one-hour conversation, you will:
@@ -26,10 +26,10 @@ description: >-
   •	Gain perspectives that will help you solve old problems in new ways.
 
 
-  **KEY RESULTS OF THE BALANCED LEADERSHIP PROGRAM** 
+  **THE BALANCED LEADERSHIP PROGRAM** **IS AN INVITATION-ONLY EVENT -- you must meet with us to mutually determine if it is right for you.**
 
 
-  D﻿uring this ongoing, weekly program, you will develop:
+  If you join this program, you will develop:
 
 
   •	Increased leadership confidence, purpose, internal stability, intuition, & reduced burn-out
@@ -53,18 +53,18 @@ description: >-
 
   •	1:1 private onboarding session
 
-  •	Three group sessions per month to develop your own superpowers: 1) Increasing all your leadership powers - Removing obstacles 
+  •	Three group sessions per month to develop your own superpowers: 1) Increasing all your leadership powers, 2) Removing obstacles, and 3) Making your teams & organizations more successful 
 
 
-  * Making your teams & organizations more successful - Option of more 1:1 coaching sessions per month Books, videos, and many other benefits.
+  Option of more 1:1 coaching sessions per month Books, videos, and many other benefits.
 image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1668855529/Supercharge_Your_Leadership_bygcuj.jpg
-date: 2023-01-14T15:00:28.194Z
-duration: 90
+date: 2023-04-06T17:00:17.217Z
+duration: 60
 language:
   - EN
 tickets:
   - description: General Admission
-    price: 20
+    price: 0
     endsOn: startOfEvent
-    id: price_1M5p1jC6qmFvoaW6r9ATFmqF
+    id: price_1MsCJQC6qmFvoaW6D4PuL3Ik
 ---

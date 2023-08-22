@@ -1,7 +1,7 @@
 ---
 template: ServicePage
-title: CORE Business
-subtitle: Superpowered Success Strategies
+title: Balanced Business
+subtitle: Superpowered Strategies for Success
 explanation:
   text: >-
     **We help businesses improve immediate results and implement sustainable
@@ -31,7 +31,7 @@ explanation:
 
 
     Click the message link below to explore what we can do for you.
-  image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1629577636/BusinessPage_for_Website_bwrwyb.jpg
+  image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1614900692/team_leaders_zfbah0.png
 benefits: >-
   * **C: Want to Create Change** that is systemic, holistic, self-directed,
   centered in CORE values, and integrated/aligned from the inside-out
@@ -41,4 +41,6 @@ benefits: >-
   * **R: Reduce** Noise (distractions from inside & outside), conflict, stress, second-guessing, wasted effort, long-standing obstacles & avoidable self-sabotage.
 
   * **E: And to do so with Ease:** The Balancing Act moves organizations, teams, and leaders from unease or disease into lasting Ease, Flow, Synergy--and sets the direction of an upward evolutionary spiral.
+
+    <https://res.cloudinary.com/core-coaching-consulting/image/upload/v1629041321/CORE_slide_cropped_l8deoi.jpg>
 ---
