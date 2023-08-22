@@ -11,7 +11,7 @@ description: >-
 
 
   Register for this free event here.
-image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1642026381/Book_launch_update_image_dwgvde.jpg
+image: https://images.theconversation.com/files/45159/original/rptgtpxd-1396254731.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1356&h=668&fit=crop
 date: 2022-02-16T09:00:00.000Z
 duration: 60
 language:

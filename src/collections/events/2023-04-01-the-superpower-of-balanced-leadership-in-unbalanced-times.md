@@ -57,7 +57,7 @@ description: >-
 
 
   Option of more 1:1 coaching sessions per month Books, videos, and many other benefits.
-image: https://res.cloudinary.com/core-coaching-consulting/image/upload/v1668855529/Supercharge_Your_Leadership_bygcuj.jpg
+image: https://res.cloudinary.com/core-coaching-consulting/image/upload/Screen_Shot_2023-07-30_at_3.28.40_PM_w3jvfg.png?_a=ATAABAA0
 date: 2023-04-06T17:00:17.217Z
 duration: 60
 language:
